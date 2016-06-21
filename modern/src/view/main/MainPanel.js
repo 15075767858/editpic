@@ -3,6 +3,7 @@ Ext.define('editpic.view.main.MainPanel',{
     extend: 'Ext.panel.Panel',
 
     requires: [
+        'Ext.plugin.Viewport',
         'editpic.view.main.MainPanelController',
         'editpic.view.main.MainPanelModel'
     ],
@@ -14,7 +15,7 @@ Ext.define('editpic.view.main.MainPanel',{
     header:{
         height:80,
         style:{
-          fontSize:20
+            fontSize:20
         },
         items:[
             {

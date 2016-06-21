@@ -865,13 +865,14 @@ $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-editpic-application: dynamic(true);;
 $include-editpic-store-personnel: dynamic(true);;
+$include-editpic-store-treelistmodel: dynamic(true);;
 $include-editpic-view-main-list: dynamic(true);;
 $include-editpic-view-main-main: dynamic(true);;
 $include-editpic-view-main-maincontroller: dynamic(true);;
 $include-editpic-view-main-mainmodel: dynamic(true);;
-$include-editpic-view-main-mainpanel: dynamic(true);;
-$include-editpic-view-main-mainpanelcontroller: dynamic(true);;
-$include-editpic-view-main-mainpanelmodel: dynamic(true);;
+$include-editpic-view-tree-svgstree: dynamic(true);;
+$include-editpic-view-tree-svgstreecontroller: dynamic(true);;
+$include-editpic-view-tree-svgstreemodel: dynamic(true);;
 $output-paths: ("path": "../../classic/resources", "shared": "../../resources");
 
 /* ======================== ETC ======================== */

@@ -12,10 +12,10 @@ Ext.define('editpic.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-
-        'editpic.view.main.MainController',
+        'Ext.panel.Panel',
         'editpic.view.main.MainModel',
-        'editpic.view.main.List'
+        'editpic.view.main.MainController',
+        'editpic.view.tree.SvgsTree'
     ],
 
     controller: 'main',
@@ -29,6 +29,7 @@ Ext.define('editpic.view.main.Main', {
 
     header: {
         layout: {
+
             align: 'stretchmax'
         },
         title: {
@@ -53,7 +54,7 @@ Ext.define('editpic.view.main.Main', {
             headerPosition: 'top'
         },
         wide: {
-            headerPosition: 'left'
+            headerPosition: 'top'
         }
     },
 
@@ -78,25 +79,37 @@ Ext.define('editpic.view.main.Main', {
     items: [{
         title: 'Home',
         iconCls: 'fa-home',
+
         // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
-        }]
+        layout:"border",
+        items:[
+            {xtype:"panel",region: 'center'},
+            {
+                xtype:"editpic.svgstree",
+                region:'east',
+                title:"imgs"
+            }
+        ]
+
+
     }, {
         title: 'Users',
         iconCls: 'fa-user',
         bind: {
             html: '{loremIpsum}'
-        }
+        },
+        hidden:true
     }, {
         title: 'Groups',
         iconCls: 'fa-users',
         bind: {
             html: '{loremIpsum}'
-        }
+        },
+        hidden:true
     }, {
         title: 'Settings',
         iconCls: 'fa-cog',
+
         bind: {
             html: '{loremIpsum}'
         }
