@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /Users/liuzhencai/Desktop/editpic/app.js
+// @require /Library/WebServer/Documents/editpic/app.js

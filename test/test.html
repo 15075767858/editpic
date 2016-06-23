@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+    var filesstr = './SvgHvac/boolean/bulbFalse.gif&./SvgHvac/boolean/bulbSmallFalse.gif&./SvgHvac/boolean/bulbSmallTrue.gif&./SvgHvac/boolean/bulbTrue.gif&./SvgHvac/boolean/occupiedFalse.gif&./SvgHvac/boolean/occupiedSmallFalse.gif&./SvgHvac/boolean/occupiedSmallTrue.gif&./SvgHvac/boolean/occupiedTrue.gif&./SvgHvac/coils/coolingCoilFalse.gif&./SvgHvac/coils/coolingCoilTrue.gif&./SvgHvac/coils/coolingCoilv2wLFalse.gif&./SvgHvac/coils/coolingCoilv2wLTrue.gif&./SvgHvac/coils/coolingCoilv2wRFalse.gif&./SvgHvac/coils/coolingCoilv2wRTrue.gif&./SvgHvac/coils/coolingCoilv3wLFalse.gif&./SvgHvac/coils/coolingCoilv3wLTrue.gif&./SvgHvac/coils/coolingCoilv3wRFalse.gif&./SvgHvac/coils/coolingCoilv3wRTrue.gif&./SvgHvac/coils/electricHeatingCoilFalse.gif&./SvgHvac/coils/electricHeatingCoilTrue.gif&./SvgHvac/coils/filterV1.gif&./SvgHvac/coils/filterV2.gif&./SvgHvac/coils/filterV3.gif&./SvgHvac/coils/filterV4.gif&./SvgHvac/coils/filterV5.gif&./SvgHvac/coils/heatingCoilFalse.gif&./SvgHvac/coils/heatingCoilTrue.gif&./SvgHvac/coils/heatingCoilv2wLFalse.gif&./SvgHvac/coils/heatingCoilv2wLTrue.gif&./SvgHvac/coils/heatingCoilv2wRFalse.gif&./SvgHvac/coils/heatingCoilv2wRTrue.gif&./SvgHvac/coils/heatingCoilv3wLFalse.gif&./SvgHvac/coils/heatingCoilv3wLTrue.gif&./SvgHvac/coils/heatingCoilv3wRFalse.gif&./SvgHvac/coils/heatingCoilv3wRTrue.gif&./SvgHvac/dampers/damperH1.gif&./SvgHvac/dampers/damperH2.gif&./SvgHvac/dampers/damperH3.gif&./SvgHvac/dampers/damperH4.gif&./SvgHvac/dampers/damperH5.gif&./SvgHvac/dampers/damperV1.gif&./SvgHvac/dampers/damperV2.gif&./SvgHvac/dampers/damperV3.gif&./SvgHvac/dampers/damperV4.gif&./SvgHvac/dampers/damperV5.gif&./SvgHvac/dampers/vavDamperA1.gif&./SvgHvac/dampers/vavDamperA2.gif&./SvgHvac/dampers/vavDamperA3.gif&./SvgHvac/dampers/vavDamperA4.gif&./SvgHvac/dampers/vavDamperA5.gif&./SvgHvac/dampers/vavDamperB1.gif&./SvgHvac/dampers/vavDamperB2.gif&./SvgHvac/dampers/vavDamperB3.gif&./SvgHvac/dampers/vavDamperB4.gif&./SvgHvac/dampers/vavDamperB5.gif&./SvgHvac/devices/dpsLongBtmAlarm.gif&./SvgHvac/devices/dpsLongBtmNorm.gif&./SvgHvac/devices/dpsLongTopAlarm.gif&./SvgHvac/devices/dpsLongTopNorm.gif&./SvgHvac/devices/dpsShortBtmAlarm.gif&./SvgHvac/devices/dpsShortBtmNorm.gif&./SvgHvac/devices/dpsShortTopAlarm.gif&./SvgHvac/devices/dpsShortTopNorm.gif&./SvgHvac/devices/flowSensorCircle.gif&./SvgHvac/devices/flowSensorCross.gif&./SvgHvac/devices/humidifierFalse.gif&./SvgHvac/devices/humidifierTrue.gif&./SvgHvac/devices/pipeSensorBottom.gif&./SvgHvac/devices/pipeSensorLeft.gif&./SvgHvac/devices/pipeSensorRight.gif&./SvgHvac/devices/pipeSensorTop.gif&./SvgHvac/devices/smokeDetectorFalse.gif&./SvgHvac/devices/smokeDetectorTrue.gif&./SvgHvac/devices/tempSensorBottom.gif&./SvgHvac/devices/tempSensorLeft.gif&./SvgHvac/devices/tempSensorTop.gif&./SvgHvac/ducts/ductA.gif&./SvgHvac/ducts/ductB.gif&./SvgHvac/ducts/ductC.gif&./SvgHvac/ducts/ductD.gif&./SvgHvac/ducts/hlbreak.gif&./SvgHvac/ducts/hlend.gif&./SvgHvac/ducts/hmid.gif&./SvgHvac/ducts/hmidSmall.gif&./SvgHvac/ducts/hrbreak.gif&./SvgHvac/ducts/hrend.gif&./SvgHvac/ducts/hrendGrate.gif&./SvgHvac/ducts/hrendHole.gif&./SvgHvac/ducts/hrendSolid.gif&./SvgHvac/ducts/hrwhy.gif&./SvgHvac/ducts/hrwhy3wayL.gif&./SvgHvac/ducts/hrwhy3wayR.gif&./SvgHvac/ducts/hrwhyLeft.gif&./SvgHvac/ducts/roundLEnd.gif&./SvgHvac/ducts/roundLTrans.gif&./SvgHvac/ducts/roundMid.gif&./SvgHvac/ducts/roundREnd.gif&./SvgHvac/ducts/roundRTrans.gif&./SvgHvac/ducts/tnorth.gif&./SvgHvac/ducts/tsouth.gif&./SvgHvac/ducts/vbend.gif&./SvgHvac/ducts/vmid.gif&./SvgHvac/ducts/vtend.gif&./SvgHvac/equipment/chillerBasic.gif&./SvgHvac/equipment/coolingTowerFalse.gif&./SvgHvac/equipment/coolingTowerTrue.gif&./SvgHvac/equipment/exhaustFanFalse.gif&./SvgHvac/equipment/exhaustFanTrue.gif&./SvgHvac/equipment/fanLeftFalse.gif&./SvgHvac/equipment/fanLeftTrue.gif&./SvgHvac/equipment/fanRightFalse.gif&./SvgHvac/equipment/fanRightTrue.gif&./SvgHvac/equipment/generatorFalse.gif&./SvgHvac/equipment/generatorTrue.gif&./SvgHvac/equipment/heatExchanger.gif&./SvgHvac/equipment/heatExchangerPF.gif&./SvgHvac/equipment/meterDial.gif&./SvgHvac/equipment/meterDialLeft0.gif&./SvgHvac/equipment/meterDialLeft1.gif&./SvgHvac/equipment/meterDialLeft2.gif&./SvgHvac/equipment/meterDialLeft3.gif&./SvgHvac/equipment/meterDialLeft4.gif&./SvgHvac/equipment/meterDialLeft5.gif&./SvgHvac/equipment/meterDialLeft6.gif&./SvgHvac/equipment/meterDialLeft7.gif&./SvgHvac/equipment/meterDialLeft8.gif&./SvgHvac/equipment/meterDialLeft9.gif&./SvgHvac/equipment/meterDialRight0.gif&./SvgHvac/equipment/meterDialRight1.gif&./SvgHvac/equipment/meterDialRight2.gif&./SvgHvac/equipment/meterDialRight3.gif&./SvgHvac/equipment/meterDialRight4.gif&./SvgHvac/equipment/meterDialRight5.gif&./SvgHvac/equipment/meterDialRight6.gif&./SvgHvac/equipment/meterDialRight7.gif&./SvgHvac/equipment/meterDialRight8.gif&./SvgHvac/equipment/meterDialRight9.gif&./SvgHvac/equipment/meterDigital.gif&./SvgHvac/equipment/pumpColdLeftFalse.gif&./SvgHvac/equipment/pumpColdLeftTrue.gif&./SvgHvac/equipment/pumpColdRightFalse.gif&./SvgHvac/equipment/pumpColdRightTrue.gif&./SvgHvac/equipment/pumpCoolLeftFalse.gif&./SvgHvac/equipment/pumpCoolLeftTrue.gif&./SvgHvac/equipment/pumpCoolRightFalse.gif&./SvgHvac/equipment/pumpCoolRightTrue.gif&./SvgHvac/equipment/pumpHotLeftFalse.gif&./SvgHvac/equipment/pumpHotLeftTrue.gif&./SvgHvac/equipment/pumpHotRightFalse.gif&./SvgHvac/equipment/pumpHotRightTrue.gif&./SvgHvac/equipment/pumpLeftFalse.gif&./SvgHvac/equipment/pumpLeftTrue.gif&./SvgHvac/equipment/pumpRightFalse.gif&./SvgHvac/equipment/pumpRightTrue.gif&./SvgHvac/equipment/pumpWarmLeftFalse.gif&./SvgHvac/equipment/pumpWarmLeftTrue.gif&./SvgHvac/equipment/pumpWarmRightFalse.gif&./SvgHvac/equipment/pumpWarmRightTrue.gif&./SvgHvac/misc/arrowDown.gif&./SvgHvac/misc/arrowLeft.gif&./SvgHvac/misc/arrowRight.gif&./SvgHvac/misc/arrowUp.gif&./SvgHvac/misc/cArrowDown.gif&./SvgHvac/misc/cArrowLeft.gif&./SvgHvac/misc/cArrowRight.gif&./SvgHvac/misc/cArrowUp.gif&./SvgHvac/misc/cPipeArrowDown.gif&./SvgHvac/misc/cPipeArrowLeft.gif&./SvgHvac/misc/cPipeArrowRight.gif&./SvgHvac/misc/cPipeArrowUp.gif&./SvgHvac/misc/dialSwitch2PosLeft.gif&./SvgHvac/misc/dialSwitch2PosRight.gif&./SvgHvac/misc/dialSwitch3PosLeft.gif&./SvgHvac/misc/dialSwitch3PosMiddle.gif&./SvgHvac/misc/dialSwitch3PosRight.gif&./SvgHvac/misc/hArrowDown.gif&./SvgHvac/misc/hArrowLeft.gif&./SvgHvac/misc/hArrowRight.gif&./SvgHvac/misc/hArrowUp.gif&./SvgHvac/misc/hPipeArrowDown.gif&./SvgHvac/misc/hPipeArrowLeft.gif&./SvgHvac/misc/hPipeArrowRight.gif&./SvgHvac/misc/hPipeArrowUp.gif&./SvgHvac/misc/meterNiagara.gif&./SvgHvac/misc/pDeckFull.gif&./SvgHvac/misc/pDeckLimited.gif&./SvgHvac/misc/pDeckVacancy.gif&./SvgHvac/misc/pipeArrowDown.gif&./SvgHvac/misc/pipeArrowLeft.gif&./SvgHvac/misc/pipeArrowRight.gif&./SvgHvac/misc/pipeArrowUp.gif&./SvgHvac/misc/textPlateDepressedLeft.gif&./SvgHvac/misc/textPlateDepressedMid.gif&./SvgHvac/misc/textPlateDepressedRight.gif&./SvgHvac/misc/textPlateLEDGreenFalse.gif&./SvgHvac/misc/textPlateLEDGreenTrue.gif&./SvgHvac/misc/textPlateLEDRedFalse.gif&./SvgHvac/misc/textPlateLEDRedTrue.gif&./SvgHvac/misc/textPlateLEDYellowFalse.gif&./SvgHvac/misc/textPlateLEDYellowTrue.gif&./SvgHvac/misc/textPlateLeft.gif&./SvgHvac/misc/textPlateMid.gif&./SvgHvac/misc/textPlateRight.gif&./SvgHvac/misc/thermometer.gif&./SvgHvac/misc/thermometerSpectrum.gif&./SvgHvac/piping/coldCross.gif&./SvgHvac/piping/coldElbowNE.gif&./SvgHvac/piping/coldElbowNW.gif&./SvgHvac/piping/coldElbowSE.gif&./SvgHvac/piping/coldElbowSW.gif&./SvgHvac/piping/coldHoriz.gif&./SvgHvac/piping/coldTeeE.gif&./SvgHvac/piping/coldTeeN.gif&./SvgHvac/piping/coldTeeS.gif&./SvgHvac/piping/coldTeeW.gif&./SvgHvac/piping/coldVert.gif&./SvgHvac/piping/coolCross.gif&./SvgHvac/piping/coolElbowNE.gif&./SvgHvac/piping/coolElbowNW.gif&./SvgHvac/piping/coolElbowSE.gif&./SvgHvac/piping/coolElbowSW.gif&./SvgHvac/piping/coolHoriz.gif&./SvgHvac/piping/coolTeeE.gif&./SvgHvac/piping/coolTeeN.gif&./SvgHvac/piping/coolTeeS.gif&./SvgHvac/piping/coolTeeW.gif&./SvgHvac/piping/coolVert.gif&./SvgHvac/piping/hotCross.gif&./SvgHvac/piping/hotElbowNE.gif&./SvgHvac/piping/hotElbowNW.gif&./SvgHvac/piping/hotElbowSE.gif&./SvgHvac/piping/hotElbowSW.gif&./SvgHvac/piping/hotHoriz.gif&./SvgHvac/piping/hotTeeE.gif&./SvgHvac/piping/hotTeeN.gif&./SvgHvac/piping/hotTeeS.gif&./SvgHvac/piping/hotTeeW.gif&./SvgHvac/piping/hotVert.gif&./SvgHvac/piping/nCross.gif&./SvgHvac/piping/nElbowNE.gif&./SvgHvac/piping/nElbowNW.gif&./SvgHvac/piping/nElbowSE.gif&./SvgHvac/piping/nElbowSW.gif&./SvgHvac/piping/nHoriz.gif&./SvgHvac/piping/nTeeE.gif&./SvgHvac/piping/nTeeN.gif&./SvgHvac/piping/nTeeS.gif&./SvgHvac/piping/nTeeW.gif&./SvgHvac/piping/nVert.gif&./SvgHvac/piping/warmCross.gif&./SvgHvac/piping/warmElbowNE.gif&./SvgHvac/piping/warmElbowNW.gif&./SvgHvac/piping/warmElbowSE.gif&./SvgHvac/piping/warmElbowSW.gif&./SvgHvac/piping/warmHoriz.gif&./SvgHvac/piping/warmTeeE.gif&./SvgHvac/piping/warmTeeN.gif&./SvgHvac/piping/warmTeeS.gif&./SvgHvac/piping/warmTeeW.gif&./SvgHvac/piping/warmVert.gif&./SvgHvac/valves/cValve2wayL.gif&./SvgHvac/valves/cValve2wayLTop.gif&./SvgHvac/valves/cValve2wayR.gif&./SvgHvac/valves/cValve2wayRTop.gif&./SvgHvac/valves/cValve3wayL.gif&./SvgHvac/valves/cValve3wayLTop.gif&./SvgHvac/valves/cValve3wayR.gif&./SvgHvac/valves/cValve3wayRTop.gif&./SvgHvac/valves/globeValve2Way.gif&./SvgHvac/valves/globeValve3Way.gif&./SvgHvac/valves/hValve2wayL.gif&./SvgHvac/valves/hValve2wayLTop.gif&./SvgHvac/valves/hValve2wayR.gif&./SvgHvac/valves/hValve2wayRTop.gif&./SvgHvac/valves/hValve3wayL.gif&./SvgHvac/valves/hValve3wayLTop.gif&./SvgHvac/valves/hValve3wayR.gif&./SvgHvac/valves/hValve3wayRTop.gif';
+
+
+
+    var strarr = filesstr.split("&");
+    for (var i = 0; i < strarr.length; i++) {
+        //console.log(strarr[i].substr(strarr[i].length-4,4))
+        if (strarr[i].substr(strarr[i].length - 4, 4) != ".gif") {
+            console.log(strarr[i])
+        }
+        var str = "./svg" + (strarr[i].substr(9, strarr[i].length - 13)) + ".svg";
+        $.ajax({
+            filename: str,
+            type: "GET",
+            url: "test.php?filename=" + str,
+            data: "",
+
+            success: function (msg) {
+                //console.log(msg)
+                var me = this;
+                msg = '<?xml version="1.0" encoding="utf-8"?>\r\n\
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->\r\n\
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\r\n\
+<svg width="100%" height="100%" version="1.1"\r\n\
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\r\n\
+<image overflow="visible" width="100%" height="100%" xlink:href="data:image/png;base64,' +
+                        msg + '" >\r\n\
+</image>\r\n\
+</svg>';
+                console.log(msg)
+                $.ajax({
+                    type: "POST",
+                    url: "xmlRW.php?rw=w&fileName=" + me.filename,
+                    data: "content=" + msg + "&rw=w&fileName=" + me.filename,
+
+                });
+
+            }
+        });
+        //console.log(str)
+    }
+
+
+</script>
+
+
+
+

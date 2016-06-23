@@ -7,51 +7,51 @@ Ext.define('editpic.store.TreeListModel', {
         name: 'text'
     }],
     alias: 'viewmodel.tree-list',
+    storeId:"tree-list",
+    proxy:{
+        type:"ajax",
+        autoLoad:true,
+        url:"resources/main.php?par=getSvgTree",
+        reader:{
+            type:"json"
 
-
-    root: {
+        }
+    },
+    /*root: {
         expanded: true,
         text: "Svgs",
         children: [
-            { text: "Child 1", leaf: true },
-            { text: "Child 2", expanded: true, children: [
+            { text: "boolean" , children: [
                 { text: "GrandChild", leaf: true }
             ]},
-            { text: "Child 1", leaf: true },
-            { text: "Child 2", expanded: true, children: [
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },{ text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-                { text: "GrandChild", leaf: true },
-
+            { text: "coils", expanded: true, children: [
+                { text: "GrandChild", leaf: true }
+            ]},
+            { text: "dampers" , children: [
+                { text: "GrandChild", leaf: true }
+            ]},
+            { text: "devices", expanded: true, children: [
+                { text: "GrandChild", leaf: true }
+            ]},
+            { text: "ducts", expanded: true, children: [
+                { text: "GrandChild", leaf: true }
+            ]},
+            { text: "equipment", expanded: true, children: [
+                { text: "GrandChild", leaf: true }
+            ]},
+            { text: "misc", expanded: true, children: [
+                { text: "GrandChild", leaf: true }
+            ]},
+            { text: "piping", expanded: true, children: [
+                { text: "GrandChild", leaf: true }
+            ]},
+            { text: "valves", expanded: true, children: [
+                { text: "GrandChild", leaf: true }
             ]}
         ]
-    }
+    }*/
 
 });
-
 
 /*
 root:[

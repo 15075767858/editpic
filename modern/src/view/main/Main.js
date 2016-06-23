@@ -17,6 +17,10 @@ Ext.define('editpic.view.main.Main', {
         'editpic.view.main.List'
     ],
 
+    title:"SmartIOEditPicTools",
+    header:{
+        html:"asdads"
+    },
     controller: 'main',
     viewModel: 'main',
 
@@ -35,21 +39,19 @@ Ext.define('editpic.view.main.Main', {
             iconCls: 'x-fa fa-home',
             layout: 'fit',
             // The following grid shares a store with the classic version's grid as well!
-            items: [{
-                xtype: 'mainlist'
-            }]
-        },{
-            title: 'Users',
-            iconCls: 'x-fa fa-user',
-            bind: {
-                html: '{loremIpsum}'
-            }
+            /*items: [{
+                //xtype: 'mainlist'
+            }]*/
+            items:Ext.create("Ext.panel.Panel",{
+                html:"Appliction EditPicShow Mobile client  <p>Theme : Blue forever</p>"
+            })
         },{
             title: 'Groups',
             iconCls: 'x-fa fa-users',
             bind: {
                 html: '{loremIpsum}'
-            }
+            },
+            hidden:true
         },{
             title: 'Settings',
             iconCls: 'x-fa fa-cog',

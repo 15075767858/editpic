@@ -3,10 +3,8 @@ Ext.define('editpic.view.tree.SvgsTreeController', {
     alias: 'controller.tree-svgstree',
     onToggleConfig: function (menuitem) {
         var me = this;
-        var tree = menuitem.up("treepanel");
-        //tree.setConfig
+        var tree = menuitem.up("treepanel").view;
         console.log(tree)
-        tree.setConfig("singleExpand", menuitem.checked);
-    },
-
+        tree.setConfig(menuitem.config, menuitem.checked);
+    }
 });

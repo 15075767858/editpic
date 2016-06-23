@@ -59,7 +59,7 @@ Ext.define('editpic.view.main.Main', {
     },
 
     defaults: {
-        bodyPadding: 20,
+        //bodyPadding: 20,
         tabConfig: {
             plugins: 'responsive',
             responsiveConfig: {
@@ -83,9 +83,10 @@ Ext.define('editpic.view.main.Main', {
         // The following grid shares a store with the classic version's grid as well!
         layout:"border",
         items:[
-            {xtype:"panel",region: 'center'},
+            {xtype:"panel",region: 'center',html:"Appliction EditPic PC client , Theme : Black Classic",border:10},
             {
                 xtype:"editpic.svgstree",
+                id:"testtree",
                 region:'east',
                 title:"imgs"
             }

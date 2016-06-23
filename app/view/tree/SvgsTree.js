@@ -12,31 +12,42 @@ Ext.define('editpic.view.tree.SvgsTree', {
         type: 'tree-svgstree'
     },
     reference: "svgstree",
+
     width: 300,
     autoScroll: true,
     animate: true,
     animateShadow: true,
     resizable: true,
     singleExpand:false,
+    rootVisible:false,
     store: Ext.create("editpic.store.TreeListModel"),//"viewmodel.tree-list",
     tbar: [{
         text: 'Expand All',
         xtype: "button",
         handler: function (th) {
             var me = this.up("treepanel");
-            console.log(this)
-            console.log(me)
-            me.expandAll()
+            console.log(this);
+            console.log(me);
+            me.expandAll();
         }
     }, {
         text: 'Collapse All',
         xtype: "button",
         handler: function (th) {
             var me = this.up("treepanel");
-            console.log(this)
-            console.log(me)
-            me.collapseAll()
+            console.log(this);
+            console.log(me);
+            me.store.load();
+            me.collapseAll();
         }
+    },{
+        text:"Options",
+        menu:[{
+            checked:false,
+            text:'Single Expand',
+            config:"singleExpand",
+            handler:"onToggleConfig"
+        }]
     }
     ],
     initComponent: function () {
@@ -48,5 +59,14 @@ Ext.define('editpic.view.tree.SvgsTree', {
             }
         }
         this.callParent();
+    },
+    listeners:{
+        boxready:function(){
+            console.log(this.items)
+        },
+        itemmouseenter:function(treeitem , record , item , index , e , eOpts){
+            console.log(arguments)
+            record.data.qtip="asdasasas"
+        }
     }
 });
