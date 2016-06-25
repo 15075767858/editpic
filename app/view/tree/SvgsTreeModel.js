@@ -3,9 +3,8 @@ Ext.define('editpic.view.tree.SvgsTreeModel', {
     alias: 'viewmodel.tree-svgstree',
     fileds:[{name:"text",type:"string"}],
     data: {
-        name: 'editpic',
+        name: 'editpic'
         //single:false
-
     }
 
 });

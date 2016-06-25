@@ -13,9 +13,11 @@ Ext.define('editpic.view.main.Main', {
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
         'Ext.panel.Panel',
+        'Ext.tree.Panel',
         'editpic.view.main.MainModel',
         'editpic.view.main.MainController',
-        'editpic.view.tree.SvgsTree'
+        'editpic.view.tree.SvgsTree',
+        "editpic.view.panel.PicPanel"
     ],
 
     controller: 'main',
@@ -83,7 +85,8 @@ Ext.define('editpic.view.main.Main', {
         // The following grid shares a store with the classic version's grid as well!
         layout:"border",
         items:[
-            {xtype:"panel",region: 'center',html:"Appliction EditPic PC client , Theme : Black Classic",border:10},
+            {xtype:"picpanel",region: 'center',border:10},
+
             {
                 xtype:"editpic.svgstree",
                 id:"testtree",

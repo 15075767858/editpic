@@ -1,2 +1,2 @@
-Compass.add_project_configuration('..\..\..\..\..\sass\config.rb')
-cache_path = 'C:\Users\Administrator\Desktop\editpic/build/.sass-cache'
+Compass.add_project_configuration('../../../../../sass/config.rb')
+cache_path = '/Library/WebServer/Documents/editpic/build/.sass-cache'

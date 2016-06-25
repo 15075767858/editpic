@@ -11,46 +11,12 @@ Ext.define('editpic.store.TreeListModel', {
     proxy:{
         type:"ajax",
         autoLoad:true,
-        url:"resources/main.php?par=getSvgTree",
+        url:"resources/main.php?par=getSvgTree",//"resources/data/tree.js",
         reader:{
             type:"json"
 
         }
-    },
-    /*root: {
-        expanded: true,
-        text: "Svgs",
-        children: [
-            { text: "boolean" , children: [
-                { text: "GrandChild", leaf: true }
-            ]},
-            { text: "coils", expanded: true, children: [
-                { text: "GrandChild", leaf: true }
-            ]},
-            { text: "dampers" , children: [
-                { text: "GrandChild", leaf: true }
-            ]},
-            { text: "devices", expanded: true, children: [
-                { text: "GrandChild", leaf: true }
-            ]},
-            { text: "ducts", expanded: true, children: [
-                { text: "GrandChild", leaf: true }
-            ]},
-            { text: "equipment", expanded: true, children: [
-                { text: "GrandChild", leaf: true }
-            ]},
-            { text: "misc", expanded: true, children: [
-                { text: "GrandChild", leaf: true }
-            ]},
-            { text: "piping", expanded: true, children: [
-                { text: "GrandChild", leaf: true }
-            ]},
-            { text: "valves", expanded: true, children: [
-                { text: "GrandChild", leaf: true }
-            ]}
-        ]
-    }*/
-
+    }
 });
 
 /*

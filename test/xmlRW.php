@@ -15,8 +15,9 @@ if ($rw == 'r') {
     }
 } else {
     $content = $_POST["content"];
-    $content =  $content;
-    echo file_put_contents($fn, $content);
+    file_put_contents($fn, $content);
 
+    echo $content;
+    exit();
 }
 ?>

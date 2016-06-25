@@ -1,2 +1,2 @@
 // @tag full-page
-// @require C:\Users\Administrator\Desktop\editpic\app.js
+// @require /Library/WebServer/Documents/editpic/app.js

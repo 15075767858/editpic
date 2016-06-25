@@ -8,6 +8,8 @@ $filename = $_GET['filename'];
 //echo toBase64($filename);
 if (isset($_GET["getfiles"])) {
     $filename = $_GET['getfiles'];
+
+
     getfiles($source);
     exit();
 }
@@ -29,7 +31,11 @@ function getfiles($path)
 
 if (isset($_GET["filename"])) {
     $filename = $_GET['filename'];
-    echo toBase64($filename);
+    //echo toBase64($filename);
+
+    $binary = file_get_contents($filename);
+    $base64 = base64_encode($binary);
+    echo $base64;
     exit();
 }
 

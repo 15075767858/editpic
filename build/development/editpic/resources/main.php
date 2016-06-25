@@ -4,6 +4,7 @@ $par = $_GET['par'];
 if ($par == 'getSvgTree') {
     $path = "svg";
     echo json_encode(getfiles($path, $fileArr = Array()));
+
 }
 function getfiles($path, $fileArr)
 {
@@ -23,9 +24,12 @@ function getfiles($path, $fileArr)
             array_push($tempArr, $arr);
         } else {
             $arr = array();
-            $arr['text'] = $afile;
-            $arr['url'] = $path . '/' . $afile;
+            $spath = $path . '/' . $afile;
+            $arr['text'] = substr($afile,0,strlen($afile)-4);
+            //$arr['url'] = 'resources/'.$spath;
             $arr['leaf'] = true;
+            //$arr['iconCls']='pictos pictos-home';
+            $arr['url']='resources/SvgHvac/'.substr($spath,4,strlen($spath)-8).'.gif';
             array_push($tempArr, $arr);
         }
     }

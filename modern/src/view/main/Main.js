@@ -41,10 +41,10 @@ Ext.define('editpic.view.main.Main', {
             // The following grid shares a store with the classic version's grid as well!
             /*items: [{
                 //xtype: 'mainlist'
-            }]*/
+            }]
             items:Ext.create("Ext.panel.Panel",{
                 html:"Appliction EditPicShow Mobile client  <p>Theme : Blue forever</p>"
-            })
+            })*/
         },{
             title: 'Groups',
             iconCls: 'x-fa fa-users',
