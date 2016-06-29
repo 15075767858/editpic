@@ -17,7 +17,8 @@ Ext.define('editpic.view.main.Main', {
         'editpic.view.main.MainModel',
         'editpic.view.main.MainController',
         'editpic.view.tree.SvgsTree',
-        "editpic.view.panel.PicPanel"
+        "editpic.view.panel.PicPanel",
+        "editpic.view.window.SetPicWindow"
     ],
 
     controller: 'main',
@@ -78,44 +79,67 @@ Ext.define('editpic.view.main.Main', {
         }
     },
 
-    items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
+    items: [
 
-        // The following grid shares a store with the classic version's grid as well!
-        layout:"border",
-        items:[
-            {xtype:"picpanel",region: 'center',border:10},
+        {
+            title: 'Home',
+            iconCls: 'fa-home',
 
-            {
-                xtype:"editpic.svgstree",
-                id:"testtree",
-                region:'east',
-                title:"imgs"
+            // The following grid shares a store with the classic version's grid as well!
+            layout: "border",
+            items: [
+                {
+                    xtype: "panel",
+                    region: 'center',
+                    layout: "center",
+                    bodyStyle: {
+                        background: "url(resources/square.png)"
+                    },
+                    items: [
+                        {
+                            xtype: "picpanel",
+                            width: 600,
+                            height: 600
+                        }
+                    ],
+
+                },
+                {
+                    xtype: "editpic.svgstree",
+                    id: "testtree",
+                    region: 'west',
+                    title: "imgs"
+                }
+            ]
+
+
+        }, {
+            title: 'Users',
+            iconCls: 'fa-user',
+            bind: {
+                html: '{loremIpsum}'
+            },
+            hidden: true
+        }, {
+            title: 'Groups',
+            iconCls: 'fa-users',
+            bind: {
+                html: '{loremIpsum}'
+            },
+            hidden: true
+        }, {
+            title: 'Settings',
+            iconCls: 'fa-cog',
+
+            bind: {
+                html: '{loremIpsum}'
             }
-        ]
-
-
-    }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        },
-        hidden:true
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        },
-        hidden:true
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }]
+        }]
 });
+
+/*
+Ext.onReady(function(){
+
+Ext.create("editpic.view.window.SetPicWindow")
+
+})*/

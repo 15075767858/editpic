@@ -1,142 +1,102 @@
 Ext.define('editpic.view.panel.PicPanelController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.panel-picpanel',
-    onRefresh: function() {
-        var me = this,
-            chart = me.lookupReference('chart'),
-            leftAxis = chart.getAxes()[0],
-            store = chart.getStore();
 
-        chart.setAnimation(true);
-        // We want the maximum to be derived from the store (series data).
-        leftAxis.setMaximum(NaN);
-        me.fromHSL = Ext.draw.Color.fly('blue').getHSL();
-        store.setData(me.createData(50));
-    },
-
-    onDropBubble: function () {
-        var me = this,
-            chart = me.lookupReference('chart'),
-            store = chart.getStore(),
-            leftAxis = chart.getAxes()[0];
-
-        chart.setAnimation({
-            easing: 'bounceOut',
-            duration: 1000
-        });
-        me.fromHSL = Ext.draw.Color.fly('cyan').getHSL();
-        // Fix the maximum for a nice bubble drop animation.
-        leftAxis.setMaximum(leftAxis.getRange()[1]);
-        store.setData(me.createData(50, true));
-    },
-
-    // The 'target' here is an object that contains information
-    // about the target value when the drag operation on the column ends.
-    onEditTipRender: function (tooltip, item, target, e) {
-        tooltip.setHtml('Temperature °F: ' + target.yValue.toFixed(1));
-
-        var parts = [];
-
-        if (target.xField) {
-            parts.push('X: ' + target.xValue.toFixed(2));
-        }
-        if (target.yField) {
-            parts.push('Y: ' + target.yValue.toFixed(2));
-        }
-
-        tooltip.setHtml(parts.join('<br>'));
-    },
-
-    onAfterRender: function () {
-        var me = this,
-            chart = me.lookupReference('chart'),
-            store = chart.getStore();
-
-        store.setData(me.createData(50));
-
-        me.fromHSL = Ext.draw.Color.fly('blue').getHSL();
-        me.toHSL = Ext.draw.Color.fly('red').getHSL();
-        me.fromHSL[2] = 0.3;
-    },
-
-    // Controllable random.
-    random: function () {
+    boxready: function (panel, width, height, eOpts) {
         var me = this;
 
-        me.seed *= 7.3;
-        me.seed -= Math.floor(me.seed);
-
-        return me.seed;
-    },
-
-    interpolate: function (lambda, minSrc, maxSrc, minDst, maxDst) {
-        var value = Math.min(1, (lambda - minSrc) / (maxSrc - minSrc));
-        return minDst + (maxDst - minDst) * Math.max(0, value);
-    },
-
-    interpolateColor: function (lambda, minSrc, maxSrc) {
-        var me = this,
-            fromHSL = me.fromHSL,
-            toHSL = me.toHSL;
-
-        return Ext.draw.Color.fly(0, 0, 0, 0).setHSL(
-            me.interpolate(lambda, minSrc, maxSrc, fromHSL[0], toHSL[0]),
-            me.interpolate(lambda, minSrc, maxSrc, fromHSL[1], toHSL[1]),
-            me.interpolate(lambda, minSrc, maxSrc, fromHSL[2], toHSL[2])
-        ).toString();
-    },
-
-    onItemRender: function (sprite, config, rendererData, index) {
-        var me = this,
-            store = rendererData.store,
-            storeItem = store.getData().items[index];
-
-        config.radius = me.interpolate(storeItem.data.g3, 0, 1000, 5, 30);
-        config.fillOpacity = me.interpolate(storeItem.data.g3, 0, 1000, 1, 0.7);
-        config.fill = me.interpolateColor(storeItem.data.g3, 0, 1000);
-        config.stroke = config.fill;
-        config.lineWidth = 3;
-    },
-
-    createData: function (count, isZeroed) {
-        var me = this,
-            data = [],
-            record = isZeroed ?
-            {
-                x: 0,
-                g0: 0,
-                g1: 0,
-                g2: 0,
-                g3: 0,
-                name: 'Item-0'
-            } : {
-                x: 0,
-                g0: 300,
-                g1: 700 * me.random() + 100,
-                g2: 700 * me.random() + 100,
-                g3: 700 * me.random() + 100,
-                name: 'Item-0'
+        console.log(arguments)
+        var marginTop = panel.el.getXY()[1];
+        var marginLeft = panel.el.getXY()[0];
+        console.log(marginTop)
+        console.log(marginLeft)
+        this.PanelDropTarget = new Ext.dd.DropTarget(panel.id, {
+            ddGroup: "picgroup",
+            notifyEnter: function (ddSource, e, data) {
+                console.log(arguments)
             },
-            i;
+            notifyDrop: function (ddSource, e, data) {
+                var selectRecord = ddSource.dragData.records[0].data;
+                var url = selectRecord.url;
+                console.log(arguments)
+                var imgWidth = 25;
+                var imgHeight = 25;
+                var img = Ext.create('Ext.Img', {
+                    src: url,
+                    width: imgWidth,
+                    height: imgHeight,
+                    maxWidth: 200,
+                    minWidht: 3,
+                    maxHeight: 200,
+                    minHeight: 3,
+                    x: e.pageX - marginLeft - imgWidth / 2,
+                    y: e.pageY - marginTop - imgHeight / 2,
+                    draggable: true,
+                    resizable: true,
+                    //resizeHandles:"n",
+                    zIndex: 1000
+                })
+                //console.log(img.getZIndex())
+                panel.add(img)
+                console.log(img)
+                var imgEl = img.el;
+                imgEl.dom.parentNode.style.zIndex = panel.maxIndex;
+                imgEl.on({
+                    click: function (e, t, eOpts) {
+                        t.parentNode.style.zIndex = panel.maxIndex += 1;
+                    },
+                    mousemove: function (e, t, eOpts) {
+                        //console.log(e)
+                        console.log(this)
+                        var text = [
+                            "<div>width:" + img.width + "</div>",
+                            "<div>height:" + img.height + "</div>",
+                            "<div>left:" + parseInt(img.getX(true) - marginLeft) + "</div>",
+                            "<div>top:" + parseInt(img.getY(true) - marginTop) + "</div>"
+                        ].join("")
 
-        data.push(record);
-        for (i = 1; i < count; i++) {
-            record = isZeroed ?
-            {
-                x: i,
-                g0: 0,
-                g1: 0,
-                g2: 0,
-                g3: 0
-            } : {
-                x: i,
-                g0: record.g0 + 30 * me.random(),
-                g1: Math.abs(record.g1 + 300 * me.random() - 140),
-                g2: Math.abs(record.g2 + 300 * me.random() - 140),
-                g3: Math.abs(record.g3 + 300 * me.random() - 140)
-            };
-            data.push(record);
-        }
-        return data;
+                        Ext.tip.QuickTipManager.register({
+                            target: t.id, // Target button's ID
+                            hideDelay: 0,
+                            showDelay: 1,
+                            trackMouse: true,
+                            dismissDelay: 10000,
+                            title: selectRecord.text,  // QuickTip Header
+                            text: text
+                        });
+
+                    }
+                })
+
+                return true;
+            }
+        })
+    },
+    maxIndex: function () {
+        console.log(arguments)
+        console.log(this)
+        return 1000;
+    },
+    onRemoveAll: function () {
+        var me = this.view;
+        console.log(arguments)
+        console.log(this)
+        me.removeAll();
+
     }
+
+
 });
+/*var surface = panel.getSurface();
+ var img = Ext.create("Ext.draw.sprite.Image",{
+ fillStyle: '#79BB3F',
+ x: e.pageX-marginLeft-imgWidth/2,
+ y: e.pageY-marginTop-imgHeight/2,
+ src:selectRecord.url,
+ height:imgWidth,
+ width:imgHeight
+ })
+ console.log(img)
+ surface.add(img)
+ surface.renderFrame();*/
+

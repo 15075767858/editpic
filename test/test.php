@@ -5,7 +5,7 @@ $source = "./SvgHvac";
 $filename = $_GET['filename'];
 
 
-//echo toBase64($filename);
+echo toBase64($filename);
 if (isset($_GET["getfiles"])) {
     $filename = $_GET['getfiles'];
 

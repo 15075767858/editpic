@@ -18,8 +18,9 @@ Ext.define('editpic.view.tree.SvgsTree', {
     animate: true,
     animateShadow: true,
     resizable: true,
-    singleExpand:false,
-    rootVisible:false,
+    singleExpand: false,
+    rootVisible: false,
+    collapsible: true,
     store: Ext.create("editpic.store.TreeListModel"),//"viewmodel.tree-list",
     tbar: [{
         text: 'Expand All',
@@ -40,13 +41,13 @@ Ext.define('editpic.view.tree.SvgsTree', {
             me.store.load();
             me.collapseAll();
         }
-    },{
-        text:"Options",
-        menu:[{
-            checked:false,
-            text:'Single Expand',
-            config:"singleExpand",
-            handler:"onToggleConfig"
+    }, {
+        text: "Options",
+        menu: [{
+            checked: false,
+            text: 'Single Expand',
+            config: "singleExpand",
+            handler: "onToggleConfig"
         }]
     }
     ],
@@ -55,15 +56,34 @@ Ext.define('editpic.view.tree.SvgsTree', {
             plugins: {
                 ptype: 'treeviewdragdrop',
                 containerScroll: true,
-                ddGroup: "DevTreeDragDropGroup"
+                ddGroup:"picgroup",
+                enableDrop:false,
+                dragText:null,
+                copy:true,
+                dragText: null,
+                stateEvents:["drop","beforedrop"]
             }
         }
+
         this.callParent();
     },
-    listeners:{
-        boxready:function(){
+    listeners: {
+
+        boxready: function () {
             console.log(this.items)
         },
-        itemmouseenter:"itemmouseenter"
+        itemmouseenter: "itemmouseenter",
+        beforedrop:function(node, data, overModel, dropPosition, dropHandlers){
+            // Defer the handling
+            dropHandlers.wait = true;
+            Ext.MessageBox.confirm('Drop', 'Are you sure', function(btn){
+                if (btn === 'yes') {
+                    dropHandlers.processDrop();
+                } else {
+                    dropHandlers.cancelDrop();
+                }
+            });
+        }
     }
 });
+

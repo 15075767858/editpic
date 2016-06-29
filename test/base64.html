@@ -1,0 +1,13 @@
+<img src="SvgHvac/boolean/bulbFalse.gif" id="img">
+
+<script>
+    var img = document.getElementById("img");
+    img.src="SvgHvac/boolean/bulbFalse.gif"
+    var canvas = document.createElement("canvas");
+    canvas.height = img.height
+    canvas.width = img.width
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0)
+
+    //console.log(canvas.toDataURL("image/gif"))
+</script>
