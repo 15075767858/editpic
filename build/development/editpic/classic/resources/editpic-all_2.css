@@ -8977,28 +8977,32 @@
     font-size: 24px;
     line-height: 24px;
 }
-/* /Library/WebServer/Documents/editpic/classic/sass/src/view/main/Main.scss:67 */
+/* /Library/WebServer/Documents/editpic/classic/sass/src/view/main/Main.scss:68 */
 .x-tab-icon-el-navigation {
     font-family: FontAwesome;
     color: #acacac;
 }
-/* /Library/WebServer/Documents/editpic/classic/sass/src/view/main/Main.scss:71 */
+/* /Library/WebServer/Documents/editpic/classic/sass/src/view/main/Main.scss:72 */
 .x-tab-over .x-tab-icon-el-navigation {
     color: #c4c4c4;
 }
-/* /Library/WebServer/Documents/editpic/classic/sass/src/view/main/Main.scss:75 */
+/* /Library/WebServer/Documents/editpic/classic/sass/src/view/main/Main.scss:76 */
 .x-tab-active .x-tab-icon-el-navigation {
     color: #fff;
 }
-/* /Library/WebServer/Documents/editpic/classic/sass/src/view/main/Main.scss:80 */
+/* /Library/WebServer/Documents/editpic/classic/sass/src/view/main/Main.scss:81 */
 .x-panel-header-title-navigation > .x-title-text-navigation:after {
     top: 30px;
     right: -24px;
 }
-/* /Library/WebServer/Documents/editpic/classic/sass/src/view/main/Main.scss:85 */
-.test {
-    height: 50px;
-    width: 60px;
-    left: -10px;
-    top: -10px;
+/* /Library/WebServer/Documents/editpic/classic/sass/src/view/main/Main.scss:86 */
+.x-title-icon,
+.x-tree-icon {
+    font-family: FontAwesome !important;
+    color: #fff !important;
+}
+/* /Library/WebServer/Documents/editpic/classic/sass/src/view/main/Main.scss:90 */
+.x-title-icon {
+    font-size: 30px !important;
+    margin-top: -15px;
 }

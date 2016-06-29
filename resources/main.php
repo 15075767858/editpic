@@ -30,7 +30,7 @@ function getfiles($path, $fileArr)
             $arr['text'] = substr($afile, 0, strlen($afile) - 4);
             //$arr['url'] = 'resources/'.$spath;
             $arr['leaf'] = true;
-            //$arr['iconCls']='pictos pictos-home';
+            $arr['iconCls']='fa-file-image-o';
             $arr['url'] = 'resources/SvgHvac/' . substr($spath, 4, strlen($spath) - 8) . '.gif';
             //$binary = file_get_contents($spath);
             //$base64 = base64_encode($binary);

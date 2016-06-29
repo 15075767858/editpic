@@ -12,7 +12,14 @@ Ext.define('editpic.view.tree.SvgsTree', {
         type: 'tree-svgstree'
     },
     reference: "svgstree",
+    //ui:"svgstree",
+    title: "&nbsp;&nbsp;&nbsp;&nbsp;Imgs",
 
+    header: {
+        //style:"background:red;font-family: FontAwesome !important;",
+        iconCls: "fa-list-ul",
+
+    },
     width: 300,
     autoScroll: true,
     animate: true,

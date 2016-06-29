@@ -2,297 +2,600 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4568aa7c-9baf-4272-89c0-4058b3e5febd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/square.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/base64.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/SmartIO.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/window/SetPicWindowController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/window/SetPicWindowModel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/cache.appcache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/editpic-all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/editpic-all_1.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/editpic-all_2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/ext/ext-watermark/Read Me.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/ext/ext-watermark/demo-files/demo.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/ext/ext-watermark/demo-files/demo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/ext/ext-watermark/demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/ext/ext-watermark/fonts/ext-watermark.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/ext/ext-watermark/fonts/ext-watermark.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/ext/ext-watermark/fonts/ext-watermark.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/ext/ext-watermark/fonts/ext-watermark.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/ext/ext-watermark/selection.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/ext/ext-watermark/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-arrow-open-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-arrow-open.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-scroll-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-scroll-right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-split-arrow-open-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-split-arrow-open.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-split-arrow-over-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-split-arrow-over.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-split-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/breadcrumb/default-split-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn-group/btn-group-default-framed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn-group/btn-group-default-framed-notitle-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn-group/btn-group-default-framed-notitle-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn-group/btn-group-default-framed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-disabled-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-disabled-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-disabled-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-focus-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-focus-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-focus-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-focus-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-focus-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-focus-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-large-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-disabled-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-disabled-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-disabled-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-focus-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-focus-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-focus-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-focus-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-focus-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-focus-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-medium-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-disabled-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-disabled-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-disabled-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-focus-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-focus-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-focus-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-focus-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-focus-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-focus-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-small-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-disabled-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-disabled-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-disabled-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-focus-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-focus-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-focus-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-focus-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-focus-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-focus-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-large-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-disabled-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-disabled-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-disabled-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-focus-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-focus-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-focus-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-focus-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-focus-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-focus-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-medium-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-disabled-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-disabled-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-disabled-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-focus-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-focus-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-focus-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-focus-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-focus-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-focus-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-default-toolbar-small-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-focus-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-focus-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-focus-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-large-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-focus-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-focus-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-focus-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-medium-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-focus-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-focus-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-focus-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-pressed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-pressed-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/btn/btn-plain-toolbar-small-pressed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-large-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-large-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-large-s-arrow-b-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-large-s-arrow-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-large-s-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-large-s-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-medium-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-medium-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-medium-s-arrow-b-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-medium-s-arrow-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-medium-s-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-medium-s-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-small-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-small-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-small-s-arrow-b-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-small-s-arrow-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-small-s-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-small-s-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-large-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-large-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-large-s-arrow-b-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-large-s-arrow-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-large-s-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-large-s-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-medium-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-medium-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-medium-s-arrow-b-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-medium-s-arrow-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-medium-s-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-medium-s-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-small-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-small-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-small-s-arrow-b-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-small-s-arrow-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-small-s-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/default-toolbar-small-s-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/grid-cell-small-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/grid-cell-small-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/grid-cell-small-s-arrow-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/grid-cell-small-s-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/grid-cell-small-s-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-large-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-large-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-large-s-arrow-b-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-large-s-arrow-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-large-s-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-large-s-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-medium-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-medium-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-medium-s-arrow-b-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-medium-s-arrow-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-medium-s-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-medium-s-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-small-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-small-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-small-s-arrow-b-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-small-s-arrow-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-small-s-arrow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/button/plain-toolbar-small-s-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/datepicker/arrow-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/datepicker/arrow-right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/datepicker/month-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/dd/drop-add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/dd/drop-no.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/dd/drop-yes.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/editor/tb-sprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/fieldset/collapse-tool.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/checkbox.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/clear-trigger-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/clear-trigger.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/date-trigger-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/date-trigger.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/exclamation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/radio.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/search-trigger-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/search-trigger.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/spinner-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/spinner.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/tag-field-item-close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/trigger-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/trigger-template.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/form/trigger.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-bottom-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-bottom-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-top-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-top-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/col-move-bottom.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/col-move-top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/columns.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/dd-insert-arrow-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/dd-insert-arrow-right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/dirty-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/dirty.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/drop-no.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/drop-yes.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/filters/equals.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/filters/find.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/filters/greater_than.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/filters/less_than.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/group-by.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/group-collapse.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/group-expand.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/hd-pop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/hmenu-asc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/hmenu-desc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/hmenu-lock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/hmenu-unlock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/page-first.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/page-last.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/page-next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/page-prev.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/pick-button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/refresh.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/sort_asc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/grid/sort_desc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/loadmask/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/magnify.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/menu/default-checked.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/menu/default-group-checked.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/menu/default-menu-parent-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/menu/default-menu-parent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/menu/default-scroll-bottom.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/menu/default-scroll-top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/menu/default-unchecked.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-bottom-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-bottom-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-collapsed-bottom-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-collapsed-bottom-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-collapsed-left-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-collapsed-left-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-collapsed-left-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-collapsed-right-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-collapsed-right-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-collapsed-right-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-collapsed-top-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-collapsed-top-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-left-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-left-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-left-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-right-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-right-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-right-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-top-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-default-framed-top-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-bottom-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-bottom-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-collapsed-bottom-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-collapsed-bottom-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-collapsed-left-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-collapsed-left-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-collapsed-left-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-collapsed-right-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-collapsed-right-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-collapsed-right-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-collapsed-top-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-collapsed-top-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-left-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-left-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-left-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-right-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-right-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-right-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-top-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel-header/panel-header-light-framed-top-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel/panel-default-framed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel/panel-default-framed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel/panel-light-framed-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/panel/panel-light-framed-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/shared/icon-error.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/shared/icon-info.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/shared/icon-question.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/shared/icon-warning.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/shared/left-btn.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/shared/right-btn.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/sizer/e-handle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/sizer/ne-handle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/sizer/nw-handle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/sizer/s-handle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/sizer/se-handle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/sizer/sw-handle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/slider/slider-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/slider/slider-thumb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/slider/slider-v-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/slider/slider-v-thumb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab-bar/default-plain-scroll-bottom.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab-bar/default-plain-scroll-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab-bar/default-plain-scroll-right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab-bar/default-plain-scroll-top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab-bar/default-scroll-bottom.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab-bar/default-scroll-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab-bar/default-scroll-right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab-bar/default-scroll-top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-active-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-active-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-active-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-disabled-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-disabled-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-disabled-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-focus-active-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-focus-active-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-focus-active-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-focus-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-focus-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-focus-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-bottom-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-active-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-active-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-active-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-disabled-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-disabled-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-disabled-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-focus-active-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-focus-active-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-focus-active-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-focus-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-focus-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-focus-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-left-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-active-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-active-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-active-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-disabled-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-disabled-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-disabled-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-focus-active-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-focus-active-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-focus-active-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-focus-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-focus-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-focus-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-right-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-active-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-active-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-active-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-disabled-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-disabled-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-disabled-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-focus-active-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-focus-active-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-focus-active-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-focus-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-focus-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-focus-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-focus-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-focus-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-focus-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-over-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-over-fbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-over-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tab/tab-default-top-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tip/tip-default-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tip/tip-default-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tip/tip-form-invalid-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tip/tip-form-invalid-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/toolbar/default-more-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/toolbar/default-more.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/toolbar/default-scroll-bottom.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/toolbar/default-scroll-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/toolbar/default-scroll-right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/toolbar/default-scroll-top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/toolbar/footer-more-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/toolbar/footer-more.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/toolbar/footer-scroll-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/toolbar/footer-scroll-right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tools/tool-sprites-dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tools/tool-sprites.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/arrows-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/arrows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-above.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-add.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-append.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-below.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-between.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-between.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-no.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-no.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-over.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-over.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-under.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-under.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-yes.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/drop-yes.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-end-minus-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-end-minus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-end-plus-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-end-plus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-end-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-end.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-line-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-line.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-minus-nl-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-minus-nl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-minus-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-minus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-plus-nl-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-plus-nl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-plus-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-plus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/elbow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/folder-open-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/folder-open.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/folder-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/folder.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/leaf-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/leaf.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/tree/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/util/splitter/mini-bottom.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/util/splitter/mini-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/util/splitter/mini-right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/util/splitter/mini-top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-bottom-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-bottom-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-collapsed-bottom-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-collapsed-bottom-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-collapsed-left-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-collapsed-left-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-collapsed-left-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-collapsed-right-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-collapsed-right-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-collapsed-right-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-collapsed-top-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-collapsed-top-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-left-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-left-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-left-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-right-corners-rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-right-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-right-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-top-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window-header/window-header-default-top-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window/toast/fade-blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window/toast/fader.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window/toast/icon16_error.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window/toast/icon16_info.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window/window-default-corners.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/classic/resources/images/window/window-default-sides.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/modern.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/editpic/modern/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/temp/production/editpic/sencha-compiler/app/full-page-master-bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/config.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.scss.tmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example_1.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example_2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/theme-capture.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/theme-capture.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classic/src/view/main/SetPicWindow.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/PicPanelController.js" afterPath="$PROJECT_DIR$/app/view/panel/PicPanelController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/PicPanelModel.js" afterPath="$PROJECT_DIR$/app/view/panel/PicPanelModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/tree/SvgsTreeController.js" afterPath="$PROJECT_DIR$/app/view/tree/SvgsTreeController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/MainModel.js" afterPath="$PROJECT_DIR$/app/view/main/MainModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/development/editpic/classic/resources/editpic-all_2.css" afterPath="$PROJECT_DIR$/build/development/editpic/classic/resources/editpic-all_2.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/development/editpic/resources/main.php" afterPath="$PROJECT_DIR$/build/development/editpic/resources/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/editpic/resources/main.php" afterPath="$PROJECT_DIR$/build/production/editpic/resources/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.css" afterPath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.scss" afterPath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.scss.tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.css" afterPath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss" afterPath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss.tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/sass/src/view/main/Main.scss" afterPath="$PROJECT_DIR$/classic/sass/src/view/main/Main.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/Main.js" afterPath="$PROJECT_DIR$/classic/src/view/main/Main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" afterPath="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/SvgsTree.js" afterPath="$PROJECT_DIR$/classic/src/view/main/SvgsTree.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modern.json" afterPath="$PROJECT_DIR$/modern.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/main.php" afterPath="$PROJECT_DIR$/resources/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/boolean/bulbFalse.svg" afterPath="$PROJECT_DIR$/test/svg/boolean/bulbFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/boolean/bulbSmallFalse.svg" afterPath="$PROJECT_DIR$/test/svg/boolean/bulbSmallFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/boolean/bulbSmallTrue.svg" afterPath="$PROJECT_DIR$/test/svg/boolean/bulbSmallTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/boolean/bulbTrue.svg" afterPath="$PROJECT_DIR$/test/svg/boolean/bulbTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/boolean/occupiedFalse.svg" afterPath="$PROJECT_DIR$/test/svg/boolean/occupiedFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/boolean/occupiedSmallFalse.svg" afterPath="$PROJECT_DIR$/test/svg/boolean/occupiedSmallFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/boolean/occupiedSmallTrue.svg" afterPath="$PROJECT_DIR$/test/svg/boolean/occupiedSmallTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/boolean/occupiedTrue.svg" afterPath="$PROJECT_DIR$/test/svg/boolean/occupiedTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/coolingCoilFalse.svg" afterPath="$PROJECT_DIR$/test/svg/coils/coolingCoilFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/coolingCoilTrue.svg" afterPath="$PROJECT_DIR$/test/svg/coils/coolingCoilTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/coolingCoilv2wLFalse.svg" afterPath="$PROJECT_DIR$/test/svg/coils/coolingCoilv2wLFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/coolingCoilv2wLTrue.svg" afterPath="$PROJECT_DIR$/test/svg/coils/coolingCoilv2wLTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/coolingCoilv2wRFalse.svg" afterPath="$PROJECT_DIR$/test/svg/coils/coolingCoilv2wRFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/coolingCoilv2wRTrue.svg" afterPath="$PROJECT_DIR$/test/svg/coils/coolingCoilv2wRTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/coolingCoilv3wLFalse.svg" afterPath="$PROJECT_DIR$/test/svg/coils/coolingCoilv3wLFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/coolingCoilv3wLTrue.svg" afterPath="$PROJECT_DIR$/test/svg/coils/coolingCoilv3wLTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/coolingCoilv3wRFalse.svg" afterPath="$PROJECT_DIR$/test/svg/coils/coolingCoilv3wRFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/coolingCoilv3wRTrue.svg" afterPath="$PROJECT_DIR$/test/svg/coils/coolingCoilv3wRTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/electricHeatingCoilFalse.svg" afterPath="$PROJECT_DIR$/test/svg/coils/electricHeatingCoilFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/electricHeatingCoilTrue.svg" afterPath="$PROJECT_DIR$/test/svg/coils/electricHeatingCoilTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/filterV1.svg" afterPath="$PROJECT_DIR$/test/svg/coils/filterV1.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/filterV2.svg" afterPath="$PROJECT_DIR$/test/svg/coils/filterV2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/filterV3.svg" afterPath="$PROJECT_DIR$/test/svg/coils/filterV3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/filterV4.svg" afterPath="$PROJECT_DIR$/test/svg/coils/filterV4.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/filterV5.svg" afterPath="$PROJECT_DIR$/test/svg/coils/filterV5.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/heatingCoilFalse.svg" afterPath="$PROJECT_DIR$/test/svg/coils/heatingCoilFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/heatingCoilTrue.svg" afterPath="$PROJECT_DIR$/test/svg/coils/heatingCoilTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/heatingCoilv2wLFalse.svg" afterPath="$PROJECT_DIR$/test/svg/coils/heatingCoilv2wLFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/heatingCoilv2wLTrue.svg" afterPath="$PROJECT_DIR$/test/svg/coils/heatingCoilv2wLTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/heatingCoilv2wRFalse.svg" afterPath="$PROJECT_DIR$/test/svg/coils/heatingCoilv2wRFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/heatingCoilv2wRTrue.svg" afterPath="$PROJECT_DIR$/test/svg/coils/heatingCoilv2wRTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/heatingCoilv3wLFalse.svg" afterPath="$PROJECT_DIR$/test/svg/coils/heatingCoilv3wLFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/heatingCoilv3wLTrue.svg" afterPath="$PROJECT_DIR$/test/svg/coils/heatingCoilv3wLTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/heatingCoilv3wRFalse.svg" afterPath="$PROJECT_DIR$/test/svg/coils/heatingCoilv3wRFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/coils/heatingCoilv3wRTrue.svg" afterPath="$PROJECT_DIR$/test/svg/coils/heatingCoilv3wRTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/damperH1.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/damperH1.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/damperH2.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/damperH2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/damperH3.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/damperH3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/damperH4.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/damperH4.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/damperH5.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/damperH5.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/damperV1.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/damperV1.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/damperV2.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/damperV2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/damperV3.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/damperV3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/damperV4.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/damperV4.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/damperV5.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/damperV5.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/vavDamperA1.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/vavDamperA1.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/vavDamperA2.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/vavDamperA2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/vavDamperA3.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/vavDamperA3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/vavDamperA4.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/vavDamperA4.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/vavDamperA5.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/vavDamperA5.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/vavDamperB1.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/vavDamperB1.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/vavDamperB2.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/vavDamperB2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/vavDamperB3.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/vavDamperB3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/vavDamperB4.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/vavDamperB4.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/dampers/vavDamperB5.svg" afterPath="$PROJECT_DIR$/test/svg/dampers/vavDamperB5.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/dpsLongBtmAlarm.svg" afterPath="$PROJECT_DIR$/test/svg/devices/dpsLongBtmAlarm.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/dpsLongBtmNorm.svg" afterPath="$PROJECT_DIR$/test/svg/devices/dpsLongBtmNorm.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/dpsLongTopAlarm.svg" afterPath="$PROJECT_DIR$/test/svg/devices/dpsLongTopAlarm.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/dpsLongTopNorm.svg" afterPath="$PROJECT_DIR$/test/svg/devices/dpsLongTopNorm.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/dpsShortBtmAlarm.svg" afterPath="$PROJECT_DIR$/test/svg/devices/dpsShortBtmAlarm.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/dpsShortBtmNorm.svg" afterPath="$PROJECT_DIR$/test/svg/devices/dpsShortBtmNorm.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/dpsShortTopAlarm.svg" afterPath="$PROJECT_DIR$/test/svg/devices/dpsShortTopAlarm.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/dpsShortTopNorm.svg" afterPath="$PROJECT_DIR$/test/svg/devices/dpsShortTopNorm.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/flowSensorCircle.svg" afterPath="$PROJECT_DIR$/test/svg/devices/flowSensorCircle.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/flowSensorCross.svg" afterPath="$PROJECT_DIR$/test/svg/devices/flowSensorCross.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/humidifierFalse.svg" afterPath="$PROJECT_DIR$/test/svg/devices/humidifierFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/humidifierTrue.svg" afterPath="$PROJECT_DIR$/test/svg/devices/humidifierTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/pipeSensorBottom.svg" afterPath="$PROJECT_DIR$/test/svg/devices/pipeSensorBottom.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/pipeSensorLeft.svg" afterPath="$PROJECT_DIR$/test/svg/devices/pipeSensorLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/pipeSensorRight.svg" afterPath="$PROJECT_DIR$/test/svg/devices/pipeSensorRight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/pipeSensorTop.svg" afterPath="$PROJECT_DIR$/test/svg/devices/pipeSensorTop.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/smokeDetectorFalse.svg" afterPath="$PROJECT_DIR$/test/svg/devices/smokeDetectorFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/smokeDetectorTrue.svg" afterPath="$PROJECT_DIR$/test/svg/devices/smokeDetectorTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/tempSensorBottom.svg" afterPath="$PROJECT_DIR$/test/svg/devices/tempSensorBottom.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/tempSensorLeft.svg" afterPath="$PROJECT_DIR$/test/svg/devices/tempSensorLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/devices/tempSensorTop.svg" afterPath="$PROJECT_DIR$/test/svg/devices/tempSensorTop.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/ductA.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/ductA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/ductB.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/ductB.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/ductC.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/ductC.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/ductD.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/ductD.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hlbreak.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hlbreak.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hlend.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hlend.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hmid.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hmid.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hmidSmall.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hmidSmall.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hrbreak.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hrbreak.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hrend.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hrend.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hrendGrate.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hrendGrate.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hrendHole.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hrendHole.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hrendSolid.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hrendSolid.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hrwhy.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hrwhy.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hrwhy3wayL.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hrwhy3wayL.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hrwhy3wayR.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hrwhy3wayR.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/hrwhyLeft.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/hrwhyLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/roundLEnd.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/roundLEnd.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/roundLTrans.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/roundLTrans.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/roundMid.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/roundMid.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/roundREnd.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/roundREnd.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/roundRTrans.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/roundRTrans.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/tnorth.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/tnorth.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/tsouth.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/tsouth.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/vbend.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/vbend.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/vmid.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/vmid.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/ducts/vtend.svg" afterPath="$PROJECT_DIR$/test/svg/ducts/vtend.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/chillerBasic.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/chillerBasic.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/coolingTowerFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/coolingTowerFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/coolingTowerTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/coolingTowerTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/exhaustFanFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/exhaustFanFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/exhaustFanTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/exhaustFanTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/fanLeftFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/fanLeftFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/fanLeftTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/fanLeftTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/fanRightFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/fanRightFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/fanRightTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/fanRightTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/generatorFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/generatorFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/generatorTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/generatorTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/heatExchanger.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/heatExchanger.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/heatExchangerPF.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/heatExchangerPF.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDial.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDial.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft0.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft0.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft1.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft1.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft2.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft3.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft4.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft4.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft5.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft5.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft6.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft6.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft7.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft7.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft8.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft8.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft9.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialLeft9.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialRight0.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialRight0.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialRight1.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialRight1.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialRight2.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialRight2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialRight3.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialRight3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialRight4.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialRight4.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialRight5.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialRight5.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialRight6.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialRight6.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialRight7.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialRight7.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialRight8.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialRight8.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDialRight9.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDialRight9.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/meterDigital.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/meterDigital.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpColdLeftFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpColdLeftFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpColdLeftTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpColdLeftTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpColdRightFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpColdRightFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpColdRightTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpColdRightTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpCoolLeftFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpCoolLeftFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpCoolLeftTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpCoolLeftTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpCoolRightFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpCoolRightFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpCoolRightTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpCoolRightTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpHotLeftFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpHotLeftFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpHotLeftTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpHotLeftTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpHotRightFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpHotRightFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpHotRightTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpHotRightTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpLeftFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpLeftFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpLeftTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpLeftTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpRightFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpRightFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpRightTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpRightTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpWarmLeftFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpWarmLeftFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpWarmLeftTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpWarmLeftTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpWarmRightFalse.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpWarmRightFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/equipment/pumpWarmRightTrue.svg" afterPath="$PROJECT_DIR$/test/svg/equipment/pumpWarmRightTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/arrowDown.svg" afterPath="$PROJECT_DIR$/test/svg/misc/arrowDown.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/arrowLeft.svg" afterPath="$PROJECT_DIR$/test/svg/misc/arrowLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/arrowRight.svg" afterPath="$PROJECT_DIR$/test/svg/misc/arrowRight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/arrowUp.svg" afterPath="$PROJECT_DIR$/test/svg/misc/arrowUp.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/cArrowDown.svg" afterPath="$PROJECT_DIR$/test/svg/misc/cArrowDown.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/cArrowLeft.svg" afterPath="$PROJECT_DIR$/test/svg/misc/cArrowLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/cArrowRight.svg" afterPath="$PROJECT_DIR$/test/svg/misc/cArrowRight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/cArrowUp.svg" afterPath="$PROJECT_DIR$/test/svg/misc/cArrowUp.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/cPipeArrowDown.svg" afterPath="$PROJECT_DIR$/test/svg/misc/cPipeArrowDown.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/cPipeArrowLeft.svg" afterPath="$PROJECT_DIR$/test/svg/misc/cPipeArrowLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/cPipeArrowRight.svg" afterPath="$PROJECT_DIR$/test/svg/misc/cPipeArrowRight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/cPipeArrowUp.svg" afterPath="$PROJECT_DIR$/test/svg/misc/cPipeArrowUp.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/dialSwitch2PosLeft.svg" afterPath="$PROJECT_DIR$/test/svg/misc/dialSwitch2PosLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/dialSwitch2PosRight.svg" afterPath="$PROJECT_DIR$/test/svg/misc/dialSwitch2PosRight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/dialSwitch3PosLeft.svg" afterPath="$PROJECT_DIR$/test/svg/misc/dialSwitch3PosLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/dialSwitch3PosMiddle.svg" afterPath="$PROJECT_DIR$/test/svg/misc/dialSwitch3PosMiddle.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/dialSwitch3PosRight.svg" afterPath="$PROJECT_DIR$/test/svg/misc/dialSwitch3PosRight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/hArrowDown.svg" afterPath="$PROJECT_DIR$/test/svg/misc/hArrowDown.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/hArrowLeft.svg" afterPath="$PROJECT_DIR$/test/svg/misc/hArrowLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/hArrowRight.svg" afterPath="$PROJECT_DIR$/test/svg/misc/hArrowRight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/hArrowUp.svg" afterPath="$PROJECT_DIR$/test/svg/misc/hArrowUp.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/hPipeArrowDown.svg" afterPath="$PROJECT_DIR$/test/svg/misc/hPipeArrowDown.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/hPipeArrowLeft.svg" afterPath="$PROJECT_DIR$/test/svg/misc/hPipeArrowLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/hPipeArrowRight.svg" afterPath="$PROJECT_DIR$/test/svg/misc/hPipeArrowRight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/hPipeArrowUp.svg" afterPath="$PROJECT_DIR$/test/svg/misc/hPipeArrowUp.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/meterNiagara.svg" afterPath="$PROJECT_DIR$/test/svg/misc/meterNiagara.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/pDeckFull.svg" afterPath="$PROJECT_DIR$/test/svg/misc/pDeckFull.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/pDeckLimited.svg" afterPath="$PROJECT_DIR$/test/svg/misc/pDeckLimited.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/pDeckVacancy.svg" afterPath="$PROJECT_DIR$/test/svg/misc/pDeckVacancy.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/pipeArrowDown.svg" afterPath="$PROJECT_DIR$/test/svg/misc/pipeArrowDown.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/pipeArrowLeft.svg" afterPath="$PROJECT_DIR$/test/svg/misc/pipeArrowLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/pipeArrowRight.svg" afterPath="$PROJECT_DIR$/test/svg/misc/pipeArrowRight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/pipeArrowUp.svg" afterPath="$PROJECT_DIR$/test/svg/misc/pipeArrowUp.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateDepressedLeft.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateDepressedLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateDepressedMid.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateDepressedMid.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateDepressedRight.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateDepressedRight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateLEDGreenFalse.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateLEDGreenFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateLEDGreenTrue.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateLEDGreenTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateLEDRedFalse.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateLEDRedFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateLEDRedTrue.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateLEDRedTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateLEDYellowFalse.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateLEDYellowFalse.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateLEDYellowTrue.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateLEDYellowTrue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateLeft.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateLeft.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateMid.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateMid.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/textPlateRight.svg" afterPath="$PROJECT_DIR$/test/svg/misc/textPlateRight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/thermometer.svg" afterPath="$PROJECT_DIR$/test/svg/misc/thermometer.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/misc/thermometerSpectrum.svg" afterPath="$PROJECT_DIR$/test/svg/misc/thermometerSpectrum.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coldCross.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coldCross.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coldElbowNE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coldElbowNE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coldElbowNW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coldElbowNW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coldElbowSE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coldElbowSE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coldElbowSW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coldElbowSW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coldHoriz.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coldHoriz.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coldTeeE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coldTeeE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coldTeeN.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coldTeeN.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coldTeeS.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coldTeeS.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coldTeeW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coldTeeW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coldVert.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coldVert.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coolCross.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coolCross.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coolElbowNE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coolElbowNE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coolElbowNW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coolElbowNW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coolElbowSE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coolElbowSE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coolElbowSW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coolElbowSW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coolHoriz.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coolHoriz.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coolTeeE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coolTeeE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coolTeeN.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coolTeeN.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coolTeeS.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coolTeeS.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coolTeeW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coolTeeW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/coolVert.svg" afterPath="$PROJECT_DIR$/test/svg/piping/coolVert.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/hotCross.svg" afterPath="$PROJECT_DIR$/test/svg/piping/hotCross.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/hotElbowNE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/hotElbowNE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/hotElbowNW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/hotElbowNW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/hotElbowSE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/hotElbowSE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/hotElbowSW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/hotElbowSW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/hotHoriz.svg" afterPath="$PROJECT_DIR$/test/svg/piping/hotHoriz.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/hotTeeE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/hotTeeE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/hotTeeN.svg" afterPath="$PROJECT_DIR$/test/svg/piping/hotTeeN.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/hotTeeS.svg" afterPath="$PROJECT_DIR$/test/svg/piping/hotTeeS.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/hotTeeW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/hotTeeW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/hotVert.svg" afterPath="$PROJECT_DIR$/test/svg/piping/hotVert.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/nCross.svg" afterPath="$PROJECT_DIR$/test/svg/piping/nCross.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/nElbowNE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/nElbowNE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/nElbowNW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/nElbowNW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/nElbowSE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/nElbowSE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/nElbowSW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/nElbowSW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/nHoriz.svg" afterPath="$PROJECT_DIR$/test/svg/piping/nHoriz.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/nTeeE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/nTeeE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/nTeeN.svg" afterPath="$PROJECT_DIR$/test/svg/piping/nTeeN.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/nTeeS.svg" afterPath="$PROJECT_DIR$/test/svg/piping/nTeeS.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/nTeeW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/nTeeW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/nVert.svg" afterPath="$PROJECT_DIR$/test/svg/piping/nVert.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/warmCross.svg" afterPath="$PROJECT_DIR$/test/svg/piping/warmCross.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/warmElbowNE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/warmElbowNE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/warmElbowNW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/warmElbowNW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/warmElbowSE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/warmElbowSE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/warmElbowSW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/warmElbowSW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/warmHoriz.svg" afterPath="$PROJECT_DIR$/test/svg/piping/warmHoriz.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/warmTeeE.svg" afterPath="$PROJECT_DIR$/test/svg/piping/warmTeeE.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/warmTeeN.svg" afterPath="$PROJECT_DIR$/test/svg/piping/warmTeeN.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/warmTeeS.svg" afterPath="$PROJECT_DIR$/test/svg/piping/warmTeeS.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/warmTeeW.svg" afterPath="$PROJECT_DIR$/test/svg/piping/warmTeeW.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/piping/warmVert.svg" afterPath="$PROJECT_DIR$/test/svg/piping/warmVert.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/cValve2wayL.svg" afterPath="$PROJECT_DIR$/test/svg/valves/cValve2wayL.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/cValve2wayLTop.svg" afterPath="$PROJECT_DIR$/test/svg/valves/cValve2wayLTop.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/cValve2wayR.svg" afterPath="$PROJECT_DIR$/test/svg/valves/cValve2wayR.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/cValve2wayRTop.svg" afterPath="$PROJECT_DIR$/test/svg/valves/cValve2wayRTop.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/cValve3wayL.svg" afterPath="$PROJECT_DIR$/test/svg/valves/cValve3wayL.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/cValve3wayLTop.svg" afterPath="$PROJECT_DIR$/test/svg/valves/cValve3wayLTop.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/cValve3wayR.svg" afterPath="$PROJECT_DIR$/test/svg/valves/cValve3wayR.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/cValve3wayRTop.svg" afterPath="$PROJECT_DIR$/test/svg/valves/cValve3wayRTop.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/globeValve2Way.svg" afterPath="$PROJECT_DIR$/test/svg/valves/globeValve2Way.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/globeValve3Way.svg" afterPath="$PROJECT_DIR$/test/svg/valves/globeValve3Way.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/hValve2wayL.svg" afterPath="$PROJECT_DIR$/test/svg/valves/hValve2wayL.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/hValve2wayLTop.svg" afterPath="$PROJECT_DIR$/test/svg/valves/hValve2wayLTop.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/hValve2wayR.svg" afterPath="$PROJECT_DIR$/test/svg/valves/hValve2wayR.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/hValve2wayRTop.svg" afterPath="$PROJECT_DIR$/test/svg/valves/hValve2wayRTop.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/hValve3wayL.svg" afterPath="$PROJECT_DIR$/test/svg/valves/hValve3wayL.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/hValve3wayLTop.svg" afterPath="$PROJECT_DIR$/test/svg/valves/hValve3wayLTop.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/hValve3wayR.svg" afterPath="$PROJECT_DIR$/test/svg/valves/hValve3wayR.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/svg/valves/hValve3wayRTop.svg" afterPath="$PROJECT_DIR$/test/svg/valves/hValve3wayRTop.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.php" afterPath="$PROJECT_DIR$/test/test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.html" afterPath="$PROJECT_DIR$/test/test.html" />
     </list>
     <ignored path="editpic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -314,11 +617,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SetPicWindow.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/main/SetPicWindow.js">
+      <file leaf-file-name="PicPanel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/PicPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.02529511">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -328,7 +631,17 @@
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/SvgsTree.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+              <caret line="29" column="22" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SetPicPanel.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37303665">
+              <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -337,8 +650,8 @@
       <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+            <state vertical-scroll-proportion="-22.73585">
+              <caret line="145" column="34" selection-start-line="145" selection-start-column="34" selection-end-line="145" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -360,12 +673,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/view/main/MainPanel.js" />
         <option value="$PROJECT_DIR$/app/Application.js" />
         <option value="$PROJECT_DIR$/classic/sass/etc/Readme.md" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/app/view/main/MainModel.js" />
         <option value="$PROJECT_DIR$/app/view/main/MainPanelModel.js" />
         <option value="$PROJECT_DIR$/app/store/treelist.js" />
         <option value="$PROJECT_DIR$/ext/packages/core/src/app/ViewModel.js" />
@@ -378,7 +689,6 @@
         <option value="$PROJECT_DIR$/resources/test/test.html" />
         <option value="$PROJECT_DIR$/test/svg/boolean/bulbFalse.svg" />
         <option value="$PROJECT_DIR$/test/xmlRW.php" />
-        <option value="$PROJECT_DIR$/test/test.html" />
         <option value="$PROJECT_DIR$/resources/svg/coils/coolingCoilFalse.svg" />
         <option value="$PROJECT_DIR$/resources/data/tree.js" />
         <option value="$PROJECT_DIR$/classic/sass/src/view/main/aaa.scss" />
@@ -387,7 +697,6 @@
         <option value="$PROJECT_DIR$/modern/src/view/main/Main.js" />
         <option value="$PROJECT_DIR$/modern/src/view/main/MainPanel.js" />
         <option value="$PROJECT_DIR$/app/store/TreeListModel.js" />
-        <option value="$PROJECT_DIR$/classic/sass/src/view/main/Main.scss" />
         <option value="$PROJECT_DIR$/ext/classic/theme-aria/sass/src/panel/Tool.scss" />
         <option value="$PROJECT_DIR$/app/view/panel/DrawContainerController.js" />
         <option value="$PROJECT_DIR$/app/view/panel/PicContainer.js" />
@@ -396,15 +705,20 @@
         <option value="$PROJECT_DIR$/classic/src/view/main/TestDrag.js" />
         <option value="$PROJECT_DIR$/app/view/panel/PicPanelModel.js" />
         <option value="$PROJECT_DIR$/test/test.php" />
-        <option value="$PROJECT_DIR$/resources/main.php" />
         <option value="$PROJECT_DIR$/test/base64.html" />
         <option value="$PROJECT_DIR$/test/test.js" />
         <option value="$PROJECT_DIR$/app/view/tree/SvgsTreeController.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" />
         <option value="$PROJECT_DIR$/app/view/panel/PicPanelController.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/test/test.html" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/SetPicWindow.js" />
+        <option value="$PROJECT_DIR$/resources/main.php" />
+        <option value="$PROJECT_DIR$/app/view/main/MainModel.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" />
+        <option value="$PROJECT_DIR$/classic/sass/src/view/main/Main.scss" />
         <option value="$PROJECT_DIR$/classic/src/view/main/SvgsTree.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/SetPicWindow.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js" />
       </list>
     </option>
   </component>
@@ -424,7 +738,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1920" />
     <option name="y" value="-356" />
-    <option name="width" value="989" />
+    <option name="width" value="978" />
     <option name="height" value="1897" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -481,7 +795,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -535,43 +849,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editpic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editpic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editpic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editpic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="window" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -690,21 +968,22 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="all.&#9;FILE&#9;file:///Library/WebServer/Documents/editpic/ext/classic/theme-aria/sass/etc/all.scss&#10;fa-th-list&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/classic/src/view/main" />
+      <recent name="$PROJECT_DIR$/app/view/panel" />
+      <recent name="$PROJECT_DIR$/app/view/window" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/resources/test" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/resources/test" />
       <recent name="$PROJECT_DIR$/modern/src/view/main" />
       <recent name="$PROJECT_DIR$/app/view/main" />
       <recent name="$PROJECT_DIR$/resources/images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/classic/src/view/main" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/resources/test" />
-      <recent name="$PROJECT_DIR$/resources/svg" />
-      <recent name="$PROJECT_DIR$/app/view/tree" />
     </key>
   </component>
   <component name="RunManager">
@@ -751,27 +1030,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-356" width="989" height="1897" extended-state="6" />
+    <frame x="1920" y="-356" width="978" height="1897" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.250264" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25213677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13795014" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2495183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13840263" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982844" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -792,215 +1071,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ext/resources/ext-watermark/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/sass/example/fashion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/sass/etc/all.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/sass/etc/font-ext-variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/sass/etc/font-awesome-variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/sass/etc/font-pictos-variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.47540984">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/store/TreeListModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.012679628">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/classic/test/local/resources/images/after_each.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/classic/test/local/resources/images/bar.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/classic/test/local/resources/images/arrows.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/classic/test/local/resources/images/dom_sandbox.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/classic/test/local/resources/reporter.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.1015005">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/all/ext-all-access.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/all/ext-all-access-rtl.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/etc/all.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/src/form/FieldSet.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/src/panel/Title.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/src/Readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/src/Component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/var/Component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/var/LoadMask.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/var/ProgressBar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/var/tip/Tip.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/var/tree/Panel.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/resources/ext-watermark/demo-files/demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/src/panel/Tool.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.025641026">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/sass/src/view/main/Main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62393165">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5890318">
-          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20615183">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/packages/charts/src/chart/CartesianChart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/svg/boolean/bulbFalse.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1022,24 +1092,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35042736">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/base64.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.102564104">
           <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/PicPanelModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1064,13 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-45.625">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2866779">
@@ -1082,22 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/PicPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/PicPanelController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1113,14 +1146,259 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21079259">
           <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/images/tab-bar/default-plain-scroll-left.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/images/tab-bar/default-plain-scroll-right.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/images/tab-bar/default-plain-scroll-top.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/images/tree/folder.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/images/tree/folder-open.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/images/breadcrumb/default-split-arrow-open-rtl.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/images/button/default-large-arrow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/images/breadcrumb/default-arrow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/sass/etc/all.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+    <entry file="file://$PROJECT_DIR$/ext/sass/etc/font-awesome-variables.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/sass/etc/font-ext-variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/sass/example/fashion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/images/button/default-large-s-arrow-rtl.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/all/ext-all-access-rtl.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/all/ext-all-access.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/etc/all.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/src/Component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/classic/theme-aria/sass/var/ProgressBar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14529915">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="0" selection-end-line="75" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/resources/ext-watermark/fonts/ext-watermark.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17706576">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/resources/ext-watermark/demo-files/demo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/resources/ext-watermark/demo-files/demo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/editpic-all.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/images/tools/tool-sprites-dark.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/Readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.025684932">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/sass/var/Readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/editpic-all_2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.008547009">
+          <caret line="4748" column="9" selection-start-line="4748" selection-start-column="1" selection-end-line="4748" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/development/editpic/classic/resources/ext/ext-watermark/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-33.125">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/MainModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1467206693000" expanded="true" signature="225:248" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.75">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/sass/src/view/main/Main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-56.25">
+          <caret line="90" column="29" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/PicPanelController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/PicPanelModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/SetPicPanelController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/SetPicPanelModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/PicPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1128,15 +1406,23 @@
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/SvgsTree.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/SetPicWindow.js">
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02529511">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state vertical-scroll-proportion="-22.73585">
+          <caret line="145" column="34" selection-start-line="145" selection-start-column="34" selection-end-line="145" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37303665">
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
           <folding />
         </state>
       </provider>

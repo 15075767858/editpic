@@ -18,7 +18,7 @@ Ext.define('editpic.view.main.Main', {
         'editpic.view.main.MainController',
         'editpic.view.tree.SvgsTree',
         "editpic.view.panel.PicPanel",
-        "editpic.view.window.SetPicWindow"
+        "editpic.view.panel.SetPicPanel"
     ],
 
     controller: 'main',
@@ -40,8 +40,11 @@ Ext.define('editpic.view.main.Main', {
                 text: '{name}'
             },
             flex: 0
-        },
-        iconCls: 'fa-th-list'
+        }
+        //iconCls: 'fa-list-ul',
+        //icon:"resources/SmartIO.png"
+
+
     },
 
     tabBar: {
@@ -95,6 +98,7 @@ Ext.define('editpic.view.main.Main', {
                     bodyStyle: {
                         background: "url(resources/square.png)"
                     },
+                    id:"test",
                     items: [
                         {
                             xtype: "picpanel",
@@ -108,7 +112,6 @@ Ext.define('editpic.view.main.Main', {
                     xtype: "editpic.svgstree",
                     id: "testtree",
                     region: 'west',
-                    title: "imgs"
                 }
             ]
 
@@ -134,12 +137,21 @@ Ext.define('editpic.view.main.Main', {
             bind: {
                 html: '{loremIpsum}'
             }
-        }]
+        }],
+    listeners: {
+        boxready: function () {
+            Ext.create('Ext.window.Window', {
+                width:600,
+                height:600,
+                collapsible: true,
+                layout:"center",
+                items: Ext.create("editpic.view.panel.SetPicPanel",{
+
+                }),
+                autoShow:true,
+            })
+
+        }
+    }
 });
 
-/*
-Ext.onReady(function(){
-
-Ext.create("editpic.view.window.SetPicWindow")
-
-})*/

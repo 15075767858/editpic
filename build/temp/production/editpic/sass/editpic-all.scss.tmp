@@ -710,10 +710,12 @@ $include-editpic-view-main-list: dynamic(true);;
 $include-editpic-view-main-main: dynamic(true);;
 $include-editpic-view-main-maincontroller: dynamic(true);;
 $include-editpic-view-main-mainmodel: dynamic(true);;
-$include-editpic-view-panel-piccontainercontroller: dynamic(false);;
-$include-editpic-view-panel-piccontainermodel: dynamic(false);;
+$include-editpic-view-panel-picpanelcontroller: dynamic(false);;
+$include-editpic-view-panel-picpanelmodel: dynamic(false);;
 $include-editpic-view-tree-svgstreecontroller: dynamic(false);;
 $include-editpic-view-tree-svgstreemodel: dynamic(false);;
+$include-editpic-view-window-setpicwindowcontroller: dynamic(false);;
+$include-editpic-view-window-setpicwindowmodel: dynamic(false);;
 $output-paths: ("path": "../../modern/resources", "shared": "../../resources");
 
 /* ======================== ETC ======================== */

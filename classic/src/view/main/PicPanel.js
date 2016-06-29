@@ -16,6 +16,7 @@ Ext.define('editpic.view.panel.PicPanel', {
     bodyStyle: {
         //background:"rgba(0,0,0,0)"
     },
+    iconCls:"fa-mobile",
     layout: 'absolute',
     width: "100%",
     //engine: "Ext.draw.engine.Svg",
