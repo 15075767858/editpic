@@ -31,8 +31,9 @@ Ext.define('editpic.view.main.Main', {
     tabRotation: 0,
 
     header: {
-        layout: {
+        resizable: true,
 
+        layout: {
             align: 'stretchmax'
         },
         title: {
@@ -60,7 +61,7 @@ Ext.define('editpic.view.main.Main', {
             headerPosition: 'top'
         },
         wide: {
-            headerPosition: 'top'
+            headerPosition: 'right'
         }
     },
 
@@ -95,17 +96,16 @@ Ext.define('editpic.view.main.Main', {
                     xtype: "panel",
                     region: 'center',
                     layout: "center",
+                    scrollable: true,
                     bodyStyle: {
                         background: "url(resources/square.png)"
                     },
-                    id:"test",
                     items: [
                         {
                             xtype: "picpanel",
-                            width: 600,
-                            height: 600
                         }
                     ],
+
 
                 },
                 {
@@ -114,8 +114,6 @@ Ext.define('editpic.view.main.Main', {
                     region: 'west',
                 }
             ]
-
-
         }, {
             title: 'Users',
             iconCls: 'fa-user',
@@ -132,26 +130,12 @@ Ext.define('editpic.view.main.Main', {
             hidden: true
         }, {
             title: 'Settings',
-            iconCls: 'fa-cog',
+            iconCls: 'fa-cogs',
 
             bind: {
                 html: '{loremIpsum}'
             }
         }],
-    listeners: {
-        boxready: function () {
-            Ext.create('Ext.window.Window', {
-                width:600,
-                height:600,
-                collapsible: true,
-                layout:"center",
-                items: Ext.create("editpic.view.panel.SetPicPanel",{
-
-                }),
-                autoShow:true,
-            })
-
-        }
-    }
+    listeners: {}
 });
 
