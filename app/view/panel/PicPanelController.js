@@ -5,8 +5,11 @@ Ext.define('editpic.view.panel.PicPanelController', {
     boxready: function (panel, width, height, eOpts) {
 
 
-
-
+        Ext.create('editpic.store.PicDatas', {
+            storeId: "picdatas",
+            autoLoad: true,
+            data: panel.items.items
+        })
         var me = this;
         console.log(arguments)
         var marginTop = panel.el.getXY()[1];
@@ -35,17 +38,36 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     x: e.event.offsetX,
                     y: e.event.offsetY,
                     draggable: true,
-                    resizable: true,
-                    //resizeHandles:"n",
-                    zIndex: 1000
+                    text: selectRecord.text,
+                    //liveDrag:true,
+                    //resizable: true,
+                    zIndex: 1000,
+                    listeners: {
+                        move: function (pic, pX, pY) {
+
+                            Ext.data.StoreManager.lookup("picdatas").load()
+                        },
+                        resize: function () {
+                            Ext.data.StoreManager.lookup("picdatas").load()
+
+                        }
+                    }
                 })
-                //console.log(img.getZIndex())
                 panel.add(img)
-                console.log(img)
+
+                var resize = Ext.create('Ext.resizer.Resizer', {
+                    target: img,
+                    handles: 'all',
+                });
+                //console.log(img.getZIndex())
+
+                Ext.data.StoreManager.lookup("picdatas").load()
+
                 var imgEl = img.el;
                 imgEl.dom.parentNode.style.zIndex = panel.maxIndex;
                 imgEl.on({
                     click: function (e, t, eOpts) {
+                        console.log(arguments)
                         t.parentNode.style.zIndex = panel.maxIndex += 1;
                     },
                     mousemove: function (e, t, eOpts) {
@@ -70,58 +92,39 @@ Ext.define('editpic.view.panel.PicPanelController', {
                             text: text
                         });
 
+                    },
+
+                    mouseup: function () {
+
+                        var resizeDom=Ext.getDoc(img.el.dom.parentNode.id)
+                        console.log(resizeDom)
+                        
+                        //resizeDom.setXY(100,100)
+
+                        //console.log(img.getPosition(true));
+
+                        console.log("mouse up")
                     }
                 })
 
                 return true;
             }
         })
-        panel.itemsStore=Ext.create('Ext.data.Store', {
-            storeId: 'picPanelItemsStore',
-            fields: ['text', 'width', 'height', 'x', 'y', 'src', "zIndex","picId"],
-            data:panel.items.items
-        })
+
 
         Ext.create('Ext.window.Window', {
             width: 600,
             x: 0,
             y: 0,
-            height: 10,
+            height: 300,
+            title:"&nbsp;&nbsp;&nbsp;&nbsp;Set Imgs",
+            iconCls:"fa-cog",
             collapsible: true,
             layout: "center",
             items: Ext.create("editpic.view.panel.SetPicPanel", {
-                store:panel.itemsStore
+                store: "picdatas"
             }),
-         /*   tools: [
-                {
-                    //iconCls: 'fa-undo'
-                    type: 'refresh',
-                    handler: "onRemoveAll"
-                },
-                {type: "close"},
-                {type: "collapse"},
-                {type: "down"},
-                {type: "expand"},
-                {type: "gear"},
-                {type: "help"},
-                {type: "left"},
-                {type: "maximize"},
-                {type: "minimize"},
-                {type: "minus"},
-                {type: "next"},
-                {type: "pin"},
-                {type: "plus"},
-                {type: "prev"},
-                {type: "print"},
-                {type: "refresh"},
-                {type: "restore"},
-                {type: "right"},
-                {type: "save"},
-                {type: "search"},
-                {type: "toggle"},
-                {type: "unpin"},
-                {type: "up"},
-            ],*/
+
             autoShow: true,
             listeners: {
                 collapse: function (th, eOpts) {
@@ -156,7 +159,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
         me.viewModel.set("width", menu.xwidth);
         me.viewModel.set("height", menu.xheight);
         //menu.setConfig("iconCls","fa-check")
-        menu.iconCls="fa-check";
+        menu.iconCls = "fa-check";
 
     },
     selectDeviceWH: function () {
@@ -195,13 +198,13 @@ Ext.define('editpic.view.panel.PicPanelController', {
                 {
                     xtype: 'colorfield',
                     fieldLabel: 'Body Color',
-                    bind:"{bodyColor}",
+                    bind: "{bodyColor}",
                     /*listeners:{
-                        change:function(field , color , previousColor , eOpts){
-                            console.log(arguments)
-                            me.setBodyStyle("background","#"+color)
-                        }
-                    }*/
+                     change:function(field , color , previousColor , eOpts){
+                     console.log(arguments)
+                     me.setBodyStyle("background","#"+color)
+                     }
+                     }*/
                 }
             ],
             listeners: {

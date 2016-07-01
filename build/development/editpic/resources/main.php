@@ -23,6 +23,7 @@ function getfiles($path, $fileArr)
             $arr['children'] = getfiles($path . '/' . $afile, $tempArr);
             $arr['allowDrop'] = false;
             $arr['allowDrag'] = false;
+            $arr['expanded']=true;
             array_push($tempArr, $arr);
         } else {
             $arr = array();

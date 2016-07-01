@@ -1107,6 +1107,7 @@ $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-editpic-application: dynamic(true);;
 $include-editpic-store-personnel: dynamic(true);;
+$include-editpic-store-picdatas: dynamic(true);;
 $include-editpic-store-treelistmodel: dynamic(true);;
 $include-editpic-view-drag-simple: dynamic(true);;
 $include-editpic-view-main-list: dynamic(true);;

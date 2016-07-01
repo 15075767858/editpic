@@ -23,15 +23,19 @@ Ext.define('editpic.view.panel.SetPicPanel', {
         ]
     }),*/
     columns: [
-        {text: 'Text', dataIndex: 'text', flex: 1},
-        {text: 'Width', dataIndex: 'width', flex: 1},
-        {text: "Height", dataIndex: 'height', flex: 1},
-        {text: 'X', dataIndex: 'x', flex: 1},
-        {text: 'Y', dataIndex: 'y', flex: 1},
+        {text: 'Img', dataIndex: 'src', flex: 1,renderer:function(value){
+            console.log(arguments)
+            return "<img style='width:20px;height:20px;' src="+value+">";
+        }},
+        {text: 'Width', dataIndex: 'width', flex: 1,hidden:true},
+        {text: "Height", dataIndex: 'height', flex: 1,hidden:true},
+        {text: 'X', dataIndex: 'x', flex: 1,hidden:true},
+        {text: 'Y', dataIndex: 'y', flex: 1,hidden:true},
         {text: 'Layer', dataIndex: 'zIndex', flex: 1},
         {
             xtype: 'widgetcolumn',
             dataIndex: 'height',
+            maxValue:"maxValue",
             // This is the widget definition for each cell.
             // Its "value" setting is taken from the column's dataIndex
             widget: {
@@ -51,9 +55,15 @@ Ext.define('editpic.view.panel.SetPicPanel', {
     //selType: 'checkboxmodel',
 
     listeners:{
-        itemmouseenter:function(){
-            console.log(arguments)
+        itemmouseenter:function(grid , record , item , index , e , eOpts){
+            document.getElementById(record.data.id).style.border="3px solid red"
+            document.getElementById(record.data.id).style.background="#00FF00"
         },
+        itemmouseleave:function(grid , record , item , index , e , eOpts){
+            document.getElementById(record.data.id).style.border=null;
+            document.getElementById(record.data.id).style.background=null;
+
+        }
 
     }
 

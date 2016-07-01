@@ -5,7 +5,8 @@ Ext.define('editpic.view.panel.PicPanel', {
         'editpic.view.panel.PicPanelController',
         'editpic.view.panel.PicPanelModel',
         'Ext.chart.CartesianChart',
-        "Ext.ux.colorpick.Field"
+        "Ext.ux.colorpick.Field",
+        "editpic.store.PicDatas"
     ],
     //plugins: ['spriteevents'],
     controller: 'panel-picpanel',
