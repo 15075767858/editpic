@@ -9,24 +9,25 @@ Ext.define("editpic.store.PicDatas", {
         'height',
         'src',
         "zIndex",
-        "picId",
         {
-            name: "src", calculate: function (data) {
-            console.log(arguments)
+            name: "zIndex", mapping: function (data) {
+            //console.log(data)
+            return data.el.dom.style.zIndex;
+        }
+        },
+        {
+            name: "picId", mapping: function (data) {
+            return data.id;
         }
         },
         {
             name: "x", mapping: function (data) {
-
-//            console.log(arguments)
-            return data.getX() - data.up().getX();
+            return data.getX() - data.up().body.getX();
         }
         },
         {
             name: "y", mapping: function (data) {
-
-//            console.log(arguments)
-            return data.getY() - data.up().getY();
+            return data.getY() - data.up().body.getY();
         }
         }
     ]

@@ -41,7 +41,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     text: selectRecord.text,
                     //liveDrag:true,
                     //resizable: true,
-                    zIndex: 1000,
+                    //zIndex: 1000,
                     listeners: {
                         move: function (pic, pX, pY) {
 
@@ -55,25 +55,26 @@ Ext.define('editpic.view.panel.PicPanelController', {
                 })
                 panel.add(img)
 
-                var resize = Ext.create('Ext.resizer.Resizer', {
+                Ext.create('Ext.resizer.Resizer', {
                     target: img,
                     handles: 'all',
                 });
+
                 //console.log(img.getZIndex())
 
                 Ext.data.StoreManager.lookup("picdatas").load()
 
                 var imgEl = img.el;
-                imgEl.dom.parentNode.style.zIndex = panel.maxIndex;
+                imgEl.el.dom.style.zIndex = 1;
                 imgEl.on({
                     click: function (e, t, eOpts) {
-                        console.log(arguments)
-                        t.parentNode.style.zIndex = panel.maxIndex += 1;
+                        //console.log(arguments)
+                        //t.style.zIndex = panel.maxIndex += 1;
                     },
                     mousemove: function (e, t, eOpts) {
                         //console.log(e)
-                        var x = img.getX() - panel.getX();
-                        var y = img.getY() - panel.getY();
+                        var x = img.getX() - panel.body.getX();
+                        var y = img.getY() - panel.body.getY();
                         var _me = this;
                         var text = [
                             "<div>width:" + img.width + "</div>",
@@ -94,16 +95,18 @@ Ext.define('editpic.view.panel.PicPanelController', {
 
                     },
 
-                    mouseup: function () {
+                    mouseup: function ( e , t , eOpts) {
+                        var resizeDom = t.parentNode;
 
-                        var resizeDom=Ext.getDoc(img.el.dom.parentNode.id)
-                        console.log(resizeDom)
-                        
+
+                        var x = img.getX() - panel.body.getX();
+                        var y = img.getY() - panel.body.getY();
+                        resizeDom.style.left=x+"px"
+                        resizeDom.style.top=y+"px"
                         //resizeDom.setXY(100,100)
+                        img.setPosition([0,0])
+                        console.log(img.getPosition(true));
 
-                        //console.log(img.getPosition(true));
-
-                        console.log("mouse up")
                     }
                 })
 

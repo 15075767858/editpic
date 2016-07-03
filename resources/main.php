@@ -19,7 +19,7 @@ function getfiles($path, $fileArr)
             $arr = array();
             $arr['text'] = $afile;
             $arr['url'] = $path . '/' . $afile;
-            $arr['leaf'] = flase;
+            $arr['leaf'] = false;
             $arr['children'] = getfiles($path . '/' . $afile, $tempArr);
             $arr['allowDrop'] = false;
             $arr['allowDrag'] = false;
