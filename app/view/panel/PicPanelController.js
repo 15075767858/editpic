@@ -25,16 +25,13 @@ Ext.define('editpic.view.panel.PicPanelController', {
                 var selectRecord = ddSource.dragData.records[0].data;
                 var url = selectRecord.url;
                 console.log(arguments)
-                var imgWidth = 25;
-                var imgHeight = 25;
+                var imgWidth = 100;
+                var imgHeight = 100;
                 var img = Ext.create('Ext.Img', {
                     src: url,
                     width: imgWidth,
                     height: imgHeight,
-                    maxWidth: 200,
-                    minWidht: 3,
-                    maxHeight: 200,
-                    minHeight: 3,
+
                     x: e.event.offsetX,
                     y: e.event.offsetY,
                     draggable: true,
@@ -183,7 +180,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     xtype: 'slider',
                     width: "100%",
                     fieldLabel: "Width",
-                    maxValue: 800,
+                    maxValue: 2000,
                     publishOnComplete: false,
                     minValue: 100,
                     bind: "{width}",
