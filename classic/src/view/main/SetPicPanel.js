@@ -66,7 +66,6 @@ Ext.define('editpic.view.panel.SetPicPanel', {
                             var record = w.getWidgetRecord();
                             document.getElementById(record.id).style.zIndex = value;
                         }
-
                     }
                 }
             },
