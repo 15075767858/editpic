@@ -6,7 +6,8 @@ Ext.define('editpic.view.panel.PicPanel', {
         'editpic.view.panel.PicPanelModel',
         'Ext.chart.CartesianChart',
         "Ext.ux.colorpick.Field",
-        "editpic.store.PicDatas"
+        "editpic.store.PicDatas",
+        "editpic.view.img.CanvasImg"
     ],
     //plugins: ['spriteevents'],
     controller: 'panel-picpanel',
@@ -29,7 +30,9 @@ Ext.define('editpic.view.panel.PicPanel', {
             //background:"red"
         },
     },
-    id: "testdraw",
+    id: "maindrawpanel",
+
+
     draggable: true,
     header: {
         /*
@@ -105,6 +108,30 @@ Ext.define('editpic.view.panel.PicPanel', {
                         xheight: 733,
                         handler: "setDeviceWH"
                     },
+                    {
+                        text: "PC 800 x 600",
+                        xtype: 'menucheckitem',
+                        group:"resolution",
+                        xwidth: 800,
+                        xheight: 600,
+                        handler: "setDeviceWH"
+                    },
+                    {
+                        text: "PC 1024 x 768",
+                        xtype: 'menucheckitem',
+                        group:"resolution",
+                        xwidth: 1024,
+                        xheight: 768,
+                        handler: "setDeviceWH"
+                    },
+                    {
+                        text: "PC 1920 x 1080",
+                        xtype: 'menucheckitem',
+                        group:"resolution",
+                        xwidth: 1920,
+                        xheight: 1080,
+                        handler: "setDeviceWH"
+                    },
                     "-",
                     {
                         text: "Rotate",
@@ -117,7 +144,6 @@ Ext.define('editpic.view.panel.PicPanel', {
     },
     tools: [
         {
-            //iconCls: 'fa-undo'
             type: 'refresh',
             handler: "onRemoveAll"
         }/*,
