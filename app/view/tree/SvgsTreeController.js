@@ -10,15 +10,21 @@ Ext.define('editpic.view.tree.SvgsTreeController', {
 
     itemmouseenter:function(treeitem , record , item , index , e , eOpts){
       //  console.log(arguments)
+        console.log(record.data.url)
         if(record.data.leaf){
-            Ext.tip.QuickTipManager.register({
-                target: treeitem.id, // Target button's ID
-                hideDelay:1,
-                showDelay: 1,
-                trackMouse: true,
-                title : record.data.text,  // QuickTip Header
-                text  : "<img src='"+record.data.url+"'>" // Tip content
-            });
+            var img = new Image();
+            img.src=record.data.url;
+
+                Ext.tip.QuickTipManager.register({
+                    target: treeitem.id, // Target button's ID
+                    hideDelay:1,
+                    showDelay: 1,
+                    trackMouse: true,
+                    title : record.data.text,  // QuickTip Header
+                    text  : img.outerHTML // Tip content
+                });
+
+
         }
     }
 });

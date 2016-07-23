@@ -26,7 +26,7 @@ Ext.define('editpic.view.panel.SetPicPanelController', {
         var me = this.view;
 
         if (me.singleFormPanel) {
-            me.up("window").remove(me.singleFormPanel);
+            me.up("panel").remove(me.singleFormPanel);
         }
         me.singleFormPanel = Ext.create("Ext.form.Panel", {
             title: "detail design",
@@ -37,9 +37,12 @@ Ext.define('editpic.view.panel.SetPicPanelController', {
                 type: 'panel-setpicpanel'
             },
             defaults: {},
-            margin: "0 0 0 10",
+            //margin: "0 0 0 10",
             bodyPadding: 10,
-            height: "100%",
+            draggable: true,
+            constrain: true,
+            //height: "100%",
+            flex:1,
             tools:[{
                 type: 'refresh',
                 handler: function(){
@@ -108,7 +111,8 @@ Ext.define('editpic.view.panel.SetPicPanelController', {
                 }
                 },
                 {
-                    name: "language", fieldLabel: "language", xtype: 'combo'
+                    name: "language", fieldLabel: "language", xtype: 'combo',
+                    store:["中文","English"]
                 },
                 {
                     name: "x", fieldLabel: "x", xtype: 'numberfield',
@@ -173,7 +177,7 @@ Ext.define('editpic.view.panel.SetPicPanelController', {
         }
 
         me.singleFormPanel.loadRecord(record);
-        var win = me.up("window");
+        var win = me.up("panel");
         win.add(me.singleFormPanel);
 
     }

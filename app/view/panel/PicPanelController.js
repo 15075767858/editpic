@@ -23,33 +23,6 @@ Ext.define('editpic.view.panel.PicPanelController', {
                 var imgWidth = 100;
                 var imgHeight = 100;
 
-                /*  var img = Ext.create('Ext.Img', {
-                 src: url,
-                 width: imgWidth,
-                 height: imgHeight,
-
-
-                 x: e.event.offsetX,
-                 y: e.event.offsetY,
-                 draggable: true,
-                 text: selectRecord.text,
-                 //liveDrag:true,
-                 //resizable: true,
-                 //zIndex: 1000,
-                 listeners: {
-                 move: function (pic, pX, pY) {
-
-                 Ext.data.StoreManager.lookup("picdatas").load()
-                 },
-                 resize: function () {
-                 Ext.data.StoreManager.lookup("picdatas").load()
-
-                 }
-                 }
-                 })
-
-                 panel.add(img)
-                 */
 
                 var canvasimg = Ext.create("editpic.view.img.CanvasImg", {
                     x: e.event.offsetX,
@@ -65,136 +38,17 @@ Ext.define('editpic.view.panel.PicPanelController', {
 
                 Ext.data.StoreManager.lookup("picdatas").load()
 
-                /*var imgEl = img.el;
-                 imgEl.el.dom.style.zIndex = 1;
-                 imgEl.on({
-                 click: function (e, t, eOpts) {
-                 //console.log(arguments)
-                 //t.style.zIndex = panel.maxIndex += 1;
-                 },
-                 mousemove: function (e, t, eOpts) {
-                 //console.log(e)
-                 var x = img.getX() - panel.body.getX();
-                 var y = img.getY() - panel.body.getY();
-                 var _me = this;
-                 var text = [
-                 "<div>width:" + img.width + "</div>",
-                 "<div>height:" + img.height + "</div>",
-                 "<div>left:" + x + "</div>",
-                 "<div>top:" + y + "</div>"
-                 ].join("")
-
-                 Ext.tip.QuickTipManager.register({
-                 target: t.id, // Target button's ID
-                 hideDelay: 0,
-                 showDelay: 1,
-                 trackMouse: true,
-                 dismissDelay: 10000,
-                 title: selectRecord.text,  // QuickTip Header
-                 text: text
-                 });
-
-                 },
-
-                 mouseup: function (e, t, eOpts) {
-                 var resizeDom = t.parentNode;
-
-
-                 var x = img.getX() - panel.body.getX();
-                 var y = img.getY() - panel.body.getY();
-                 resizeDom.style.left = x + "px"
-                 resizeDom.style.top = y + "px"
-                 //resizeDom.setXY(100,100)
-                 img.setPosition([0, 0])
-                 console.log(img.getPosition(true));
-
-                 }
-                 })*/
 
                 return true;
             }
         })
 
-        /*  var singleFormPanel = Ext.create("Ext.form.Panel", {
-         height: 300,
-         width: "100%",
-         title: "img setting",
-         border: true,
-         defaults: {},
-         bodyPadding: 10,
-         defaultType: 'textfield',
-         items: [
-         {name: "id", xtype: "hiddenfield", reference: "imgid"},
-         {name: "Effect", fieldLabel: "Effect", xtype: 'colorfield'},
-         {
-         xtype: 'slider',
-         width: "100%",
-         fieldLabel: "变色",
-         minValue: 0,
-         maxValue: 100,
-         increment: 1,
-         publishOnComplete: false,
-         listeners:{
-         change:function(slider,newValue,thumb,eOpts){
-         console.log(arguments)
 
-         }
-         }
-         //bind: "{width}",
-         },
-         {name: "Bright", fieldLabel: "Bright", xtype: 'colorfield'},
-         {name: "Color", fieldLabel: "Color", xtype: 'colorfield'},
-         {name: "language", fieldLabel: "language", xtype: 'combo'},
-         {
-         name: "x", fieldLabel: "x", xtype: 'numberfield',
-         listeners: {
-         change: function (field, newValue, oldValue) {
-         if (singleFormPanel.imgview) {
-         var value = newValue + panel.body.getX();
-         singleFormPanel.imgview.setX(value)
-         }
-         }
-         }
-         },
-         {
-         name: "y", fieldLabel: "y", xtype: 'numberfield',
-         listeners: {
-         change: function (field, newValue, oldValue) {
-         if (singleFormPanel.imgview) {
-         var value = newValue + panel.body.getY();
-         singleFormPanel.imgview.setY(value)
-         }
-         }
-         }
-         },
-         {
-         name: "width", fieldLabel: "width", xtype: 'numberfield',
-         listeners: {
-         change: function (field, newValue, oldValue) {
-         if (singleFormPanel.imgview) {
-         singleFormPanel.imgview.setWidth(newValue)
-         }
-         }
-         }
-         },
-         {
-         name: "height", fieldLabel: "height", xtype: 'numberfield',
-         listeners: {
-         change: function (field, newValue, oldValue) {
-         if (singleFormPanel.imgview) {
-         singleFormPanel.imgview.setHeight(newValue)
-         }
-         }
-         }
-         }
-         ]
-         })*/
-
-        Ext.create('Ext.window.Window', {
+       /* Ext.create('Ext.window.Window', {
             width: 330,
             height: 400,
-            x: 0,
-            y: 0,
+            x: 600,
+            y: 300,
             bodyPadding: 10,
             title: "&nbsp;&nbsp;&nbsp;&nbsp;Set Imgs",
             iconCls: "fa-cog",
@@ -233,8 +87,10 @@ Ext.define('editpic.view.panel.PicPanelController', {
                         win.setWidth(330)
                 }
             }
-        })
+        })*/
     },
+
+
     maxIndex: function () {
         console.log(arguments)
         console.log(this)

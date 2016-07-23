@@ -1,7 +1,7 @@
 /**
  * Generates a set of style rules for the "navigation" tab UI.
  */
-@include extjs-tab-panel-ui(
+/*@include extjs-tab-panel-ui(
         $ui: 'navigation',
         $ui-tab-background-color: transparent,
         $ui-tab-background-color-over: #505050,
@@ -35,7 +35,7 @@
         $ui-bar-background-gradient: 'none',
         $ui-bar-padding: 0,
         $ui-strip-height: 0
-);
+);*/
 
 /**
  * Generates a set of style rules for the "navigation" panel UI.
@@ -53,10 +53,24 @@
         $ui-header-icon-spacing: 15px,
         $ui-header-background-color: $base-color,
         $ui-header-padding: 0,
-        $ui-header-text-margin: 36px,
+        $ui-header-text-margin: 20px,
         $ui-header-noborder-adjust: false
+
 );
 
+@include extjs-panel-ui(
+  $ui:"mainpanelui",
+$ui-header-font-size: 20px,
+$ui-header-line-height: 24px,
+$ui-header-font-weight: bold,
+$ui-header-icon-height: 24px,
+$ui-header-icon-width: 24px,
+$ui-header-icon-spacing: 15px
+)
+.x-panel-header-title-mainpanelui{
+  left:0px !important;
+
+}
 .x-title-icon-navigation {
 
   font-family: FontAwesome;

@@ -19,3 +19,16 @@ Ext.define('editpic.view.main.MainController', {
         }
     }
 });
+
+
+var My={};
+
+My.Ajax=function(url, success) {
+    Ext.Ajax.request({
+        url: url,
+        method: "GET",
+        async: false,
+        params: {},
+        success: success
+    });
+}
