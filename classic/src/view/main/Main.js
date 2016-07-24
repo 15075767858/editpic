@@ -60,11 +60,12 @@ Ext.define('editpic.view.main.Main', {
                     x: 30,
                     y: 30
                 }
+
             ],
         },
         {
             xtype: "editpic.svgstree",
-            id: "testtree",
+            id: "imgTreePanel",
             region: 'west',
             collapsible: true
         },
@@ -73,9 +74,7 @@ Ext.define('editpic.view.main.Main', {
             id:"testpanel",
             region: "east",
             width: 300,
-
         }
-
 
     ]
     /* items: [

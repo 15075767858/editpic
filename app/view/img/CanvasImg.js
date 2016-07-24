@@ -23,6 +23,22 @@ Ext.define('editpic.view.img.CanvasImg', {
         background: "transparent"
     },
     sprites: [],
+    linkData:function(nodename,type){
+        var me=this;
+        me.linkName=nodename;
+        me.linkType=type;
+
+        clearInterval(me.interval);
+        me.interval = setInterval(function(){
+            My.Ajax("resources/main.php?par=gettypevalue&nodename="+nodename+"&type="+type,function(response){
+              me.linkValue=response.responseText;
+                me.b=response.responseText;
+                me.refreshCanvas();
+            })
+            Ext.data.StoreManager.lookup("picdatas").load()
+
+        },1000)
+    },
     refreshCanvas: function () {
         var me = this;
         var surface = me.getSurface();

@@ -93,6 +93,11 @@ Ext.define('editpic.view.panel.SetPicPanel', {
                 }
             },
             {
+              flex:1,
+                dataIndex:"linkValue",
+                text:"linkValue"
+            },
+            {
                 sortable: false,
                 tooltip: 'Delete',
                 text: "Delete",

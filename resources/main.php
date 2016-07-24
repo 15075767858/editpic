@@ -29,7 +29,12 @@ if($par=="gettypes"){
     echo json_encode($arList);
 
 }
+if($par=="gettypevalue"){
+    $nodeName = $_GET['nodename'];
+    $type=$_GET['type'];
+    echo $redis->hGet($nodeName, $type);
 
+}
 
 
 

@@ -146,11 +146,11 @@ Ext.define('editpic.view.panel.PicPanel', {
         {
             type: 'refresh',
             handler: "onRemoveAll"
-        }/*,
+        },
         {
-            type: "plus",
-
-        },*/
+            type: "save",
+            handler:"download"
+        },
     ],
     //sprites: [],
 

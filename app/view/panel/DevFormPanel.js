@@ -71,6 +71,7 @@ Ext.define('editpic.view.panel.DevFormPanel', {
                                 flex: 2,
                                 itemId: "devscombo",
                                 reference: "devsfield",
+                                editable:false,
                                 listeners: {
                                     change: function (combo,newValue,oldValue,e) {
                                         console.log(arguments)
@@ -86,6 +87,7 @@ Ext.define('editpic.view.panel.DevFormPanel', {
                             {
                                 xtype: "combo", flex: 2,
                                 reference: "typescombo",
+                                editable:false,
                                 listeners:{
                                     change:function(){
                                         var okbtn =  me.lookup("okbtn");
@@ -98,7 +100,20 @@ Ext.define('editpic.view.panel.DevFormPanel', {
                                 xtype: "button",
                                 reference:"okbtn",
                                 text: "ok",
-                                flex: 1
+                                flex: 1,
+                                handler:function(){
+                                    var imgGrid = Ext.getCmp("imgGrid")
+                                    var record = imgGrid.getSelection()[0]
+                                    if(record){
+                                        var img = record.data;
+                                        var devsfield = me.lookup("devsfield")
+                                        var typescombo =  me.lookup("typescombo");
+
+                                        img.linkData(devsfield.value,typescombo.value)
+                                        console.log(img)
+                                    }
+
+                                }
                             },
                         ]
 
@@ -112,6 +127,7 @@ Ext.define('editpic.view.panel.DevFormPanel', {
         boxready: function (panel) {
             var picpanel = Ext.create("editpic.view.panel.SetPicPanel", {
                 store: "picdatas",
+                id:"imgGrid",
                 maxHeight: 300,
                 height: 400,
                 border: true,

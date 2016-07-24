@@ -44,53 +44,100 @@ Ext.define('editpic.view.panel.PicPanelController', {
         })
 
 
-       /* Ext.create('Ext.window.Window', {
-            width: 330,
-            height: 400,
-            x: 600,
-            y: 300,
-            bodyPadding: 10,
-            title: "&nbsp;&nbsp;&nbsp;&nbsp;Set Imgs",
-            iconCls: "fa-cog",
-            collapsible: true,
-            layout: "hbox",
-            closable: false,
-            defaults: {
-                flex: 1,
-                frame: true
-            },
-            items: [
-                Ext.create("editpic.view.panel.SetPicPanel", {
-                    store: "picdatas",
+        /* Ext.create('Ext.window.Window', {
+         width: 330,
+         height: 400,
+         x: 600,
+         y: 300,
+         bodyPadding: 10,
+         title: "&nbsp;&nbsp;&nbsp;&nbsp;Set Imgs",
+         iconCls: "fa-cog",
+         collapsible: true,
+         layout: "hbox",
+         closable: false,
+         defaults: {
+         flex: 1,
+         frame: true
+         },
+         items: [
+         Ext.create("editpic.view.panel.SetPicPanel", {
+         store: "picdatas",
 
-                    height: "100%",
-                    border: true,
-                    title: "imgs",
-                })
-            ],
-            autoShow: true,
-            listeners: {
-                collapse: function (th, eOpts) {
-                    th.setPagePosition(0, 0, true)
-                    console.log(arguments)
-                },
-                add: function (win) {
-                    console.log(arguments)
-                    if (!win.items) {
-                        return;
-                    }
-                    if (win.items.items.length > 1)
-                        win.setWidth(660)
-                },
-                remove: function (win) {
-                    if (win.items.items.length == 1)
-                        win.setWidth(330)
-                }
-            }
-        })*/
+         height: "100%",
+         border: true,
+         title: "imgs",
+         })
+         ],
+         autoShow: true,
+         listeners: {
+         collapse: function (th, eOpts) {
+         th.setPagePosition(0, 0, true)
+         console.log(arguments)
+         },
+         add: function (win) {
+         console.log(arguments)
+         if (!win.items) {
+         return;
+         }
+         if (win.items.items.length > 1)
+         win.setWidth(660)
+         },
+         remove: function (win) {
+         if (win.items.items.length == 1)
+         win.setWidth(330)
+         }
+         }
+         })*/
     },
 
+    download: function () {
+        var me = this.view;
+        var bodyColor = me.body.getStyle("backgroundColor");
+        testme = me
+        var items = me.getItems().items;
 
+        var color = Ext.draw.Color.fromString(bodyColor)
+        console.log(color)
+        var win = Ext.create("Ext.window.Window", {
+            autoShow: true,
+            width: me.width,
+            height: me.height,
+            bodyStyle: {
+                backgroundColor: "transparent"
+            },
+            html: "<canvas id='downcanvas'></canvas>"
+        })
+
+
+        var canvas = document.getElementById("downcanvas");
+        canvas.width = me.width;
+        canvas.height = me.height;
+        var context = canvas.getContext("2d");
+        context.fillStyle = bodyColor;
+        context.fillRect(0, 0, canvas.width, canvas.height)
+        for (var i = 0; i < items.length; i++) {
+            var x = items[i].x
+            var y = items[i].y
+            var width = items[i].width
+            var height = items[i].height
+            var imgContext = items[i].el.dom.querySelector("canvas").getContext("2d")
+            var imgData = imgContext.getImageData(0, 0, width, height);
+            var pixeData=imgData.data;
+            console.log(imgData)
+            for (var j = 0; j < width * height; j++) {
+                if(pixeData[j*4+3]==0){
+                    pixeData[j * 4 + 0]=color.r
+                    pixeData[j * 4 + 1]=color.g
+                    pixeData[j * 4 + 2]=color.b
+                    pixeData[j*4+3]=255
+                }
+            }
+            //imgData.data=pixeData
+            context.putImageData(imgData, x, y, 0, 0, width, height);
+        }
+        var dataUrl = canvas.toDataURL();
+
+    },
     maxIndex: function () {
         console.log(arguments)
         console.log(this)
