@@ -23,12 +23,12 @@ Ext.define('editpic.view.main.MainController', {
 
 var My={};
 
-My.Ajax=function(url, success) {
+My.Ajax=function(url, success,params) {
     Ext.Ajax.request({
         url: url,
         method: "GET",
         async: false,
-        params: {},
+        params: params,
         success: success
     });
 }

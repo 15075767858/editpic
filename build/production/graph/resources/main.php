@@ -1,11 +1,43 @@
 <?php
 
-$par = $_GET['par'];
+$ip = $_SERVER["SERVER_ADDR"];
+$par = $_GET["par"];
+$redis = new Redis();
+if ($ip == "127.0.0.1") {
+    $redis->connect("192.168.253.253", 6379);
+} else {
+    $redis->connect($ip, 6379);
+}
+
 if ($par == 'getSvgTree') {
-    $path = "svg";
+    //$path = "svg";
+    $path = "SvgHvac";
     echo json_encode(getfiles($path, $fileArr = Array()));
+}
+
+if($par=="getdevs"){
+    $ip=$_GET['ip'];
+    $port=$_GET['port'];
+    $redis->connect($ip, 6379);
+    $arList = $redis->keys("???????");
+    sort($arList);
+    echo json_encode($arList);
+}
+if($par=="gettypes"){
+    $nodeName=$_GET['nodename'];
+    $arList = $redis->hKeys($nodeName);
+    echo json_encode($arList);
 
 }
+if($par=="gettypevalue"){
+    $nodeName = $_GET['nodename'];
+    $type=$_GET['type'];
+    echo $redis->hGet($nodeName, $type);
+
+}
+
+
+
 function getfiles($path, $fileArr)
 {
     $tempArr = array();
@@ -23,7 +55,7 @@ function getfiles($path, $fileArr)
             $arr['children'] = getfiles($path . '/' . $afile, $tempArr);
             $arr['allowDrop'] = false;
             $arr['allowDrag'] = false;
-            $arr['expanded']=true;
+            $arr['expanded'] = true;
             array_push($tempArr, $arr);
         } else {
             $arr = array();
@@ -31,8 +63,11 @@ function getfiles($path, $fileArr)
             $arr['text'] = substr($afile, 0, strlen($afile) - 4);
             //$arr['url'] = 'resources/'.$spath;
             $arr['leaf'] = true;
-            $arr['iconCls']='fa-file-image-o';
-            $arr['url'] = 'resources/SvgHvac/' . substr($spath, 4, strlen($spath) - 8) . '.gif';
+            $arr['iconCls'] = 'fa-file-image-o';
+            //$arr['url'] = 'resources/SvgHvac/' . substr($spath, 4, strlen($spath) - 8) . '.gif';
+            $arr['url'] = "resources/" . $spath;
+
+
             //$binary = file_get_contents($spath);
             //$base64 = base64_encode($binary);
             //$arr['svgurl'] = $binary;//'data:image/gif;base64,'.$base64;

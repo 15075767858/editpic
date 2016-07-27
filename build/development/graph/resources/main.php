@@ -1,8 +1,14 @@
 <?php
 
-$par = $_GET['par'];
-
+$ip = $_SERVER["SERVER_ADDR"];
+$par = $_GET["par"];
 $redis = new Redis();
+if ($ip == "127.0.0.1") {
+    $redis->connect("192.168.253.253", 6379);
+} else {
+    $redis->connect($ip, 6379);
+}
+
 if ($par == 'getSvgTree') {
     //$path = "svg";
     $path = "SvgHvac";
@@ -11,11 +17,24 @@ if ($par == 'getSvgTree') {
 
 if($par=="getdevs"){
     $ip=$_GET['ip'];
-
+    $port=$_GET['port'];
+    $redis->connect($ip, 6379);
+    $arList = $redis->keys("???????");
+    sort($arList);
+    echo json_encode($arList);
+}
+if($par=="gettypes"){
+    $nodeName=$_GET['nodename'];
+    $arList = $redis->hKeys($nodeName);
+    echo json_encode($arList);
 
 }
+if($par=="gettypevalue"){
+    $nodeName = $_GET['nodename'];
+    $type=$_GET['type'];
+    echo $redis->hGet($nodeName, $type);
 
-
+}
 
 
 

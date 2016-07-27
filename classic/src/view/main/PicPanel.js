@@ -1,3 +1,9 @@
+/*
+* 这是绘图中心的主面板,
+* 是绘图区域
+*
+*
+* */
 Ext.define('editpic.view.panel.PicPanel', {
     extend: 'Ext.draw.Container',
     xtype: "picpanel",

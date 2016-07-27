@@ -1,3 +1,9 @@
+
+
+
+/*
+* 这是右边 的图片列表 点击可以加载详细的图片信息
+* */
 Ext.define('editpic.view.panel.SetPicPanel', {
     extend: 'Ext.grid.Panel',
     xtype: "setpicpanel",
@@ -10,7 +16,12 @@ Ext.define('editpic.view.panel.SetPicPanel', {
     viewModel: {
         type: 'panel-setpicpanel'
     },
-    id: "setpicpanel",
+    //id: "setpicpanel",
+    maxHeight: 300,
+    height: 400,
+    border: true,
+    title: "imgs",
+    store: "picdatas",
 
     initComponent: function () {
         var me = this;
@@ -23,7 +34,7 @@ Ext.define('editpic.view.panel.SetPicPanel', {
         me.tbar = [
             "->", {
                 text: "toggle group",
-                reference:"GroupMenu",
+                reference: "GroupMenu",
             }
         ]
         me.columns = [
@@ -40,46 +51,6 @@ Ext.define('editpic.view.panel.SetPicPanel', {
                 return "<img style='width:20px;height:20px;' src=" + value + ">";
             }
             },
-            //{text: 'Width', dataIndex: 'width', flex: 1, hidden: true},
-            //{text: "Height", dataIndex: 'height', flex: 1, hidden: true},
-            //{text: 'X', dataIndex: 'x', flex: 1, hidden: true},
-            //{text: 'Y', dataIndex: 'y', flex: 1, hidden: true},
-            /*{
-             text: 'Layer',
-             dataIndex: 'zIndex',
-             flex: 1,
-             hidden: true,
-             editor: {
-             xtype: "numberfield",
-             maxValue: 1000,
-             minValue: 1,
-             value: 1,
-             allowBlank: false,
-             allowExponential: true,
-             }
-             },*/
-            /*{
-                xtype: 'widgetcolumn',
-                dataIndex: 'zIndex',
-                text: "Layer",
-                flex: 1,
-                hidden: true,
-                maxValue: "maxValue",
-                renderer: function () {
-                    console.log(arguments)
-                },
-                widget: {
-                    xtype: 'sliderwidget',
-                    listeners: {
-                        change: function (w, value) {
-                            if (w.getWidgetRecord) {
-                                var record = w.getWidgetRecord();
-                                document.getElementById(record.id).style.zIndex = value;
-                            }
-                        }
-                    }
-                }
-            },*/
             {
                 hidden: false,
                 flex: 1,
@@ -92,17 +63,13 @@ Ext.define('editpic.view.panel.SetPicPanel', {
                     }
                 }
             },
-            {
-              flex:1,
-                dataIndex:"linkValue",
-                text:"linkValue"
-            },
+
             {
                 sortable: false,
                 tooltip: 'Delete',
                 text: "Delete",
+                flex:1,
                 xtype: 'actioncolumn',
-                //icon: 'extjs-build/examples/restful/images/delete.png',
                 renderer: function () {
                     return "<div style='font-family: FontAwesome;margin:7px 0 0 10px; font-size: 27px;color: blanchedalmond;' class='fa-trash-o'></div>"
                 },
@@ -113,11 +80,9 @@ Ext.define('editpic.view.panel.SetPicPanel', {
                             function (choice) {
                                 if (choice === 'yes') {
                                     record.record.data.close();
-                                    Ext.data.StoreManager.lookup("picdatas").load()
                                 }
                             }
                         );
-
                     }
                 }
             }
@@ -128,10 +93,6 @@ Ext.define('editpic.view.panel.SetPicPanel', {
     features: [{
         ftype: 'grouping',
         groupHeaderTpl: '{columnName}: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
-        //hideGroupedHeader: true,
-        //startCollapsed: true,
-        //enableGroupingMenu:true,
-        //enableNoGroups:false,
         id: 'restaurantGrouping'
     }],
     iconCls: "fa-rotate-270",
@@ -147,10 +108,9 @@ Ext.define('editpic.view.panel.SetPicPanel', {
         }
     },
     listeners: {
-
-        itemmouseenter:"itemmouseenter",
-        itemmouseleave:"itemmouseleave",
-        select: "select",
+        itemmouseenter: "itemmouseenter",
+        itemmouseleave: "itemmouseleave",
+        select: "select"
     }
 
 });

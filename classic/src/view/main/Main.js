@@ -45,6 +45,9 @@ Ext.define('editpic.view.main.Main', {
     //height:"100%",
     //width:"100%",
     layout: "border",
+    defaults:{
+      //margin:"5 0 0 0"
+    },
     items: [
         {
             xtype: "panel",
@@ -72,6 +75,8 @@ Ext.define('editpic.view.main.Main', {
         {
             xtype: "devformpanel",
             id:"testpanel",
+            title:"&nbsp;&nbsp;Settings",
+            iconCls:"fa-cog",
             region: "east",
             width: 300,
         }

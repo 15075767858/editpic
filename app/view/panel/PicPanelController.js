@@ -27,11 +27,10 @@ Ext.define('editpic.view.panel.PicPanelController', {
                 var canvasimg = Ext.create("editpic.view.img.CanvasImg", {
                     x: e.event.offsetX,
                     y: e.event.offsetY,
-                    Group: "temp",
-                    plugins: ['spriteevents'],
+                    picName:selectRecord.text,
                     width: imgWidth,
                     height: imgHeight,
-                    src: url
+                    src: url,
                 });
 
                 panel.add(canvasimg);
@@ -99,15 +98,14 @@ Ext.define('editpic.view.panel.PicPanelController', {
         var color = Ext.draw.Color.fromString(bodyColor)
         console.log(color)
         var win = Ext.create("Ext.window.Window", {
-            autoShow: true,
             width: me.width,
+            autoShow:true,
             height: me.height,
             bodyStyle: {
                 backgroundColor: "transparent"
             },
             html: "<canvas id='downcanvas'></canvas>"
         })
-
 
         var canvas = document.getElementById("downcanvas");
         canvas.width = me.width;
@@ -135,8 +133,13 @@ Ext.define('editpic.view.panel.PicPanelController', {
             //imgData.data=pixeData
             context.putImageData(imgData, x, y, 0, 0, width, height);
         }
-        var dataUrl = canvas.toDataURL();
-
+        saveAsLocalImage ()
+        win.close()
+        function saveAsLocalImage () {
+            var myCanvas = document.getElementById("downcanvas");
+            var image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            window.location.href=image; // it will save locally
+        }
     },
     maxIndex: function () {
         console.log(arguments)

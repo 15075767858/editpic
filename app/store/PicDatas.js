@@ -14,7 +14,7 @@ Ext.define("editpic.store.PicDatas", {
         {
             name: "zIndex", mapping: function (data) {
             //console.log(data)
-            return data.el.dom.style.zIndex||0;
+            return data.el.dom.style.zIndex || 0;
         }
         },
         {
@@ -37,23 +37,24 @@ Ext.define("editpic.store.PicDatas", {
         load: function () {
             var store = this;
             var panel = Ext.getCmp("imgGrid");
-            console.log(panel)
             if (panel) {
                 var menu = panel.lookupReference("GroupMenu")
                 console.log(menu)
                 var toggleMenu = []
                 store.getGroups().each(function (group) {
-                        console.log(group)
+
                         toggleMenu.push({
                             xtype: 'menucheckitem',
                             text: group.getGroupKey(),
                             handler: function (checkMenu) {
                                 for (var i = 0; i < group.items.length; i++) {
-                                    group.items[i].data.block= checkMenu.checked;
-                                    group.items[i].data.refreshCanvas()
+                                    group.items[i].data.groupChecked(checkMenu.checked);
+                                    //group.items[i].data.block = checkMenu.checked;
                                 }
                             }
                         })
+
+
                     }
                 )
                 menu.setMenu(toggleMenu)

@@ -11,7 +11,7 @@ Ext.define('editpic.view.panel.DevFormPanel', {
     viewModel: {
         type: 'panel-devformpanel'
     },
-
+    scrollable:"y",
     resizable: true,
     collapsible: true,
     width: 300,
@@ -49,12 +49,8 @@ Ext.define('editpic.view.panel.DevFormPanel', {
                                 handler: function (menu) {
                                     var ip = me.lookup("ipfield").getValue();
                                     var port = me.lookup("portfield").getValue();
-                                    My.Ajax("resources/main.php?par=getdevs&ip=" + ip + "&port=" + port, function (response) {
-                                        var devsfield = me.lookup("devsfield")
-                                        console.log(devsfield)
-                                        devsfield.show()
-                                        devsfield.setStore(Ext.decode(response.responseText))
-                                    })
+                                    var devsfield = me.lookup("devsfield")
+                                    devsfield.init(ip, port);
                                 }
                             }
                         ]
@@ -62,57 +58,103 @@ Ext.define('editpic.view.panel.DevFormPanel', {
                     {
                         xtype: "container",
                         layout: "hbox",
-                        defaults:{
-                          hidden:true
+                        defaults: {
+                            hidden: true
+                        },
+                        hideAll: function () {
+                            var me = this;
+                            var items = me.items.items;
+                            for (var i = 0; i < items.length; i++) {
+                                items[i].hide()
+                            }
                         },
                         items: [
                             {
                                 xtype: "combo",
                                 flex: 2,
+                                displayField: 'name',
+                                valueField: 'value',
                                 itemId: "devscombo",
                                 reference: "devsfield",
-                                editable:false,
-                                listeners: {
-                                    change: function (combo,newValue,oldValue,e) {
-                                        console.log(arguments)
-                                        var typescombo =  me.lookup("typescombo");
-                                        typescombo.show()
-                                        My.Ajax("resources/main.php?par=gettypes&nodename="+newValue,function(response){
-                                            typescombo.setStore(Ext.decode(response.responseText))
-                                        })
+                                init: function (ip, port) {
+                                    var me = this;
+                                    me.ip = ip;
+                                    me.port = port;
+                                    My.Ajax("resources/main.php", function (response) {
+                                        var data = response.responseText
+                                        try {
+                                            var ojson = Ext.decode(data)
+                                            if (ojson) {
+                                                var store = Ext.create("Ext.data.Store", {
+                                                    fields: ['name', 'value'],
+                                                    data: ojson
+                                                })
+                                                me.show()
+                                                me.setStore(store);
+                                                return true;
+                                            }
+                                        } catch (e) {
+                                            me.up().hideAll()
+                                            if(me.store){
+                                                me.store.clearAll()
+                                            }
+                                            me.clearValue()
+                                            //me.setStore(null)
+                                            Ext.Msg.alert("Error", "Connect to database failed !");
+                                            return false;
+                                        }
+                                    },{
+                                     par:"getdevs",
+                                        ip:ip,
+                                        port:port
+                                    }
+                                    )
 
+                                },
+                                editable: false,
+                                listeners: {
+                                    change: function (combo, newValue, oldValue, e) {
+
+                                        var typescombo = me.lookup("typescombo");
+                                        typescombo.init(combo.ip, combo.port, newValue);
                                     }
                                 }
                             },
                             {
                                 xtype: "combo", flex: 2,
                                 reference: "typescombo",
-                                editable:false,
-                                listeners:{
-                                    change:function(){
-                                        var okbtn =  me.lookup("okbtn");
+                                editable: false,
+                                init: function (ip, port, nodename) {
+                                    console.log(arguments)
+                                    var me = this;
+
+                                    My.Ajax("resources/main.php", function (response) {
+                                        me.setStore(Ext.decode(response.responseText))
+                                        me.show()
+                                    }, {
+                                        par: "gettypes",
+                                        ip: ip,
+                                        port: port,
+                                        nodename: nodename
+                                    })
+                                },
+                                listeners: {
+                                    change: function () {
+                                        var okbtn = me.lookup("okbtn");
                                         okbtn.show()
                                     }
                                 }
                             },
                             {
-
                                 xtype: "button",
-                                reference:"okbtn",
+                                reference: "okbtn",
                                 text: "ok",
                                 flex: 1,
-                                handler:function(){
-                                    var imgGrid = Ext.getCmp("imgGrid")
-                                    var record = imgGrid.getSelection()[0]
-                                    if(record){
-                                        var img = record.data;
-                                        var devsfield = me.lookup("devsfield")
-                                        var typescombo =  me.lookup("typescombo");
-
-                                        img.linkData(devsfield.value,typescombo.value)
-                                        console.log(img)
-                                    }
-
+                                handler: function () {
+                                    var devsfield = me.lookup("devsfield");
+                                    var typescombo = me.lookup("typescombo");
+                                    var imgGrid = Ext.getCmp("imgGrid");
+                                    imgGrid.linkImgData(devsfield.ip,devsfield.port,devsfield.value, typescombo.value);
                                 }
                             },
                         ]
@@ -120,18 +162,29 @@ Ext.define('editpic.view.panel.DevFormPanel', {
                     }
                 ]
             }
+
         ]
         me.callParent()
     }
+
     , listeners: {
         boxready: function (panel) {
             var picpanel = Ext.create("editpic.view.panel.SetPicPanel", {
-                store: "picdatas",
-                id:"imgGrid",
-                maxHeight: 300,
-                height: 400,
-                border: true,
-                title: "imgs",
+                id: "imgGrid",
+                linkImgData:function(ip,port,nodename,type){
+                    console.log(arguments)
+                    var me=this;
+                    var record = me.getSelection()[0]
+                    if (record) {
+                        var img = record.data;
+                        img.linkData(ip,port,nodename,type)
+                    } else {
+                        Ext.Msg.alert("Massage", "Please choose a picture.")
+                    }
+
+
+                }
+
 
             })
             panel.add(picpanel)
