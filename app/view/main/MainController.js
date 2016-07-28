@@ -21,9 +21,9 @@ Ext.define('editpic.view.main.MainController', {
 });
 
 
-var My={};
+var My = {};
 
-My.Ajax=function(url, success,params) {
+My.Ajax = function (url, success, params) {
     Ext.Ajax.request({
         url: url,
         method: "GET",
@@ -32,3 +32,20 @@ My.Ajax=function(url, success,params) {
         success: success
     });
 }
+
+My.delayToast = function (title, html, delay) {
+    setTimeout(function () {
+        Ext.toast({
+            minWidth: 200,
+            title: title,
+            html: html,
+            align: 'br'
+        });
+    }, delay)
+}
+
+
+Ext.onReady(function(){
+        Ext.create("editpic.view.window.ImgPanelMenuFormWindow")
+
+})

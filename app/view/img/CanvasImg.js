@@ -119,7 +119,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         img.src = me.src;
 
         img.onload = function () {
-
+            
             context.drawImage(img, 0, 0, me.width, me.height);
             var pixeLength = me.width * me.height
             //var imgData = context.getImageData(0, 0, me.width, me.height)

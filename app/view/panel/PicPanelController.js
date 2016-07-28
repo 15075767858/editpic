@@ -17,13 +17,14 @@ Ext.define('editpic.view.panel.PicPanelController', {
                 console.log(arguments)
             },
             notifyDrop: function (ddSource, e, data) {
+
+
+
                 var selectRecord = ddSource.dragData.records[0].data;
                 var url = selectRecord.url;
                 console.log(arguments)
                 var imgWidth = 100;
                 var imgHeight = 100;
-
-
                 var canvasimg = Ext.create("editpic.view.img.CanvasImg", {
                     x: e.event.offsetX,
                     y: e.event.offsetY,
@@ -32,12 +33,8 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     height: imgHeight,
                     src: url,
                 });
-
                 panel.add(canvasimg);
-
                 Ext.data.StoreManager.lookup("picdatas").load()
-
-
                 return true;
             }
         })

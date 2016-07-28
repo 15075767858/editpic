@@ -95,12 +95,13 @@ Ext.define('editpic.view.panel.DevFormPanel', {
                                             }
                                         } catch (e) {
                                             me.up().hideAll()
+                                            Ext.Msg.alert("Error", "Connect to database failed !");
                                             if(me.store){
+                                                if(me.store.data.length>0)
                                                 me.store.clearAll()
                                             }
-                                            me.clearValue()
+                                            //me.clearValue()
                                             //me.setStore(null)
-                                            Ext.Msg.alert("Error", "Connect to database failed !");
                                             return false;
                                         }
                                     },{

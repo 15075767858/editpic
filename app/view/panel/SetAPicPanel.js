@@ -97,6 +97,7 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
             maxValue: 100,
         })
         me.lookRGBField = function () {
+            return;
             var isShow = record.data.hasLinkValue()
             if (isShow) {
                 rSlider.show()
@@ -124,10 +125,10 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
                 //hidden:false
             },
             {name: "id", xtype: "hiddenfield", reference: "imgid"},
-            styleSlider,
-            rSlider,
-            gSlider,
-            bSlider,
+            //styleSlider,
+            //rSlider,
+            //gSlider,
+            //bSlider,
             {
                 name: "language", fieldLabel: "language", xtype: 'combo',
                 store: ["中文", "English"]
