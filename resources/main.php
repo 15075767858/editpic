@@ -81,7 +81,7 @@ function getfiles($path, $fileArr)
             $arr['iconCls'] = 'fa-file-image-o';
             //$arr['url'] = 'resources/SvgHvac/' . substr($spath, 4, strlen($spath) - 8) . '.gif';
             $arr['url'] = "resources/" . $spath;
-
+            $arr['src'] = "resources/" . $spath;
 
             //$binary = file_get_contents($spath);
             //$base64 = base64_encode($binary);

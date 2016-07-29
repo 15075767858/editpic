@@ -2,8 +2,8 @@
     /**
      * The application's namespace.
      */
-    //"name": "graph",
-    "name":"editpic",
+    "name": "graph",
+    //"name":"editpic",
     /**
      * The version of the application.
      */

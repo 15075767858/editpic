@@ -5,33 +5,75 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4568aa7c-9baf-4272-89c0-4058b3e5febd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph.zip" afterPath="$PROJECT_DIR$/build/production/graph.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/theme-capture.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/form_input_field_text.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/input_tablet_48px.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/link.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/slider_16px.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/url_48px.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbSmallFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbSmallTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupiedFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupiedSmallFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupiedSmallTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupiedTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wLFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wLTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wRFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wRTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wLFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wLTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wRFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wRTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/electricHeatingCoilFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/electricHeatingCoilTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wLFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wLTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wRFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wRTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wLFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wLTrue.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wRFalse.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wRTrue.gif" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindow.js" afterPath="$PROJECT_DIR$/classic/src/view/main/ImgPanelMenuFormWindow.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/store/PicDatas.js" afterPath="$PROJECT_DIR$/app/store/PicDatas.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/CanvasImg.js" afterPath="$PROJECT_DIR$/app/view/img/CanvasImg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/CanvasImgController.js" afterPath="$PROJECT_DIR$/app/view/img/CanvasImgController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/GifImg.js" afterPath="$PROJECT_DIR$/app/view/img/GifImg.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/MainController.js" afterPath="$PROJECT_DIR$/app/view/main/MainController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" afterPath="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/DevFormPanelController.js" afterPath="$PROJECT_DIR$/app/view/panel/DevFormPanelController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/PicPanelController.js" afterPath="$PROJECT_DIR$/app/view/panel/PicPanelController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/PicPanelModel.js" afterPath="$PROJECT_DIR$/app/view/panel/PicPanelModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/SetAPicPanel.js" afterPath="$PROJECT_DIR$/app/view/panel/SetAPicPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/SetPicPanelController.js" afterPath="$PROJECT_DIR$/app/view/panel/SetPicPanelController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindowController.js" afterPath="$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindowController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap.css" afterPath="$PROJECT_DIR$/bootstrap.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap.js" afterPath="$PROJECT_DIR$/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/development/editpic/resources/main.php" afterPath="$PROJECT_DIR$/build/development/editpic/resources/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/development/graph/resources/main.php" afterPath="$PROJECT_DIR$/build/development/graph/resources/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/cache.appcache" afterPath="$PROJECT_DIR$/build/production/graph/cache.appcache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic.json" afterPath="$PROJECT_DIR$/build/production/graph/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/app.js" afterPath="$PROJECT_DIR$/build/production/graph/classic/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/resources/graph-all_1.css" afterPath="$PROJECT_DIR$/build/production/graph/classic/resources/graph-all_1.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/index.html" afterPath="$PROJECT_DIR$/build/production/graph/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern.json" afterPath="$PROJECT_DIR$/build/production/graph/modern.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern/app.js" afterPath="$PROJECT_DIR$/build/production/graph/modern/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/main.php" afterPath="$PROJECT_DIR$/build/production/graph/resources/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.css" afterPath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss" afterPath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss.tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.css" afterPath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.scss" afterPath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/development/editpic/sass/editpic-all.scss.tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/graph/sass/graph-all.css" afterPath="$PROJECT_DIR$/build/temp/development/graph/sass/graph-all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/graph/sass/graph-all.scss" afterPath="$PROJECT_DIR$/build/temp/development/graph/sass/graph-all.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/graph/sass/graph-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/development/graph/sass/graph-all.scss.tmp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.css" afterPath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.scss" afterPath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.scss.tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example_2.css" afterPath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example_2.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.css" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss.tmp" />
@@ -39,9 +81,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss.tmp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/DevTree.js" afterPath="$PROJECT_DIR$/classic/src/view/main/DevTree.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/Main.js" afterPath="$PROJECT_DIR$/classic/src/view/main/Main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" afterPath="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js" afterPath="$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/SvgsTree.js" afterPath="$PROJECT_DIR$/classic/src/view/main/SvgsTree.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modern.json" afterPath="$PROJECT_DIR$/modern.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/main.php" afterPath="$PROJECT_DIR$/resources/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.js" afterPath="$PROJECT_DIR$/sass/example/bootstrap.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/example.css" afterPath="$PROJECT_DIR$/sass/example/example.css" />
     </list>
@@ -65,44 +111,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/main.php">
+      <file leaf-file-name="CanvasImg.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/view/img/CanvasImg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-31.875">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SetAPicPanel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/panel/SetAPicPanel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="255" column="17" selection-start-line="141" selection-start-column="15" selection-end-line="255" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.44980696">
+              <caret line="153" column="8" selection-start-line="153" selection-start-column="8" selection-end-line="153" selection-end-column="8" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#3967#9103#0" expanded="false" />
+                <element signature="e#5140#8292#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImgPanelMenuFormWindow.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindow.js">
+      <file leaf-file-name="GifImgController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/img/GifImgController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18340611">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+      <file leaf-file-name="GifImg.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/img/GifImg.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,9 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/classic/sass/src/view/main/aaa.scss" />
-        <option value="$PROJECT_DIR$/app/view/tree/SvgsTree.js" />
-        <option value="$PROJECT_DIR$/app/view/tree/SvgsTreeModel.js" />
         <option value="$PROJECT_DIR$/modern/src/view/main/Main.js" />
         <option value="$PROJECT_DIR$/modern/src/view/main/MainPanel.js" />
         <option value="$PROJECT_DIR$/app/store/TreeListModel.js" />
@@ -141,40 +173,43 @@
         <option value="$PROJECT_DIR$/classic/src/view/main/SetPicWindow.js" />
         <option value="$PROJECT_DIR$/build/development/editpic/classic/resources/editpic-all_2.css" />
         <option value="$PROJECT_DIR$/ext/classic/theme-aria/sass/src/panel/Tool.scss" />
-        <option value="$PROJECT_DIR$/app/view/panel/PicPanelModel.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/CanvasImg.js" />
-        <option value="$PROJECT_DIR$/app/view/img/CanvasImgController.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/SvgsTree.js" />
         <option value="$PROJECT_DIR$/app/view/panel/SetPicPanelModel.js" />
         <option value="$PROJECT_DIR$/app/view/tree/SvgsTreeController.js" />
         <option value="$PROJECT_DIR$/app/view/tree/DevTree.js" />
         <option value="$PROJECT_DIR$/classic/sass/src/view/main/Main.scss" />
         <option value="$PROJECT_DIR$/app/view/main/MainModel.js" />
         <option value="$PROJECT_DIR$/app/view/panel/DevFormPanelModel.js" />
-        <option value="$PROJECT_DIR$/app/view/panel/DevFormPanelController.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" />
-        <option value="$PROJECT_DIR$/app/store/PicDatas.js" />
         <option value="$PROJECT_DIR$/app/view/panel/SetAPicPanelController.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
         <option value="$PROJECT_DIR$/app/view/panel/SetAPicPanelModel.js" />
-        <option value="$PROJECT_DIR$/app/view/panel/SetPicPanelController.js" />
-        <option value="$PROJECT_DIR$/app/view/img/CanvasImg.js" />
-        <option value="$PROJECT_DIR$/app/view/img/GifImg.js" />
-        <option value="$PROJECT_DIR$/resources/main.php" />
-        <option value="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/panel/SetAPicPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/panel/PicPanelController.js" />
         <option value="$PROJECT_DIR$/app/view/grid/ImgPanelMenuGrid.js" />
         <option value="$PROJECT_DIR$/app/view/form/ImgPanelMenuForm.js" />
-        <option value="$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindowController.js" />
         <option value="$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindowModel.js" />
-        <option value="$PROJECT_DIR$/app.json" />
-        <option value="$PROJECT_DIR$/app/view/main/MainController.js" />
         <option value="$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindow.js" />
+        <option value="$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindowController.js" />
+        <option value="$PROJECT_DIR$/resources/main.php" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/SvgsTree.js" />
+        <option value="$PROJECT_DIR$/app/view/panel/DevFormPanelController.js" />
+        <option value="$PROJECT_DIR$/app/view/panel/PicPanelModel.js" />
+        <option value="$PROJECT_DIR$/app/view/panel/SetPicPanelController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/DevTree.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/panel/SetAPicPanel.js" />
+        <option value="$PROJECT_DIR$/app/store/PicDatas.js" />
+        <option value="$PROJECT_DIR$/app/view/panel/PicPanelController.js" />
+        <option value="$PROJECT_DIR$/app/view/img/GifImg.js" />
+        <option value="$PROJECT_DIR$/app/view/main/MainController.js" />
+        <option value="$PROJECT_DIR$/app/view/img/CanvasImgController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/ImgPanelMenuFormWindow.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" />
+        <option value="$PROJECT_DIR$/app.json" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/app/view/panel/ToolsPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/img/CanvasImg.js" />
       </list>
     </option>
   </component>
@@ -195,7 +230,7 @@
     <option name="x" value="1920" />
     <option name="y" value="-356" />
     <option name="width" value="1080" />
-    <option name="height" value="1828" />
+    <option name="height" value="1897" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -222,8 +257,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -253,6 +288,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -439,11 +514,11 @@
       <recent name="$PROJECT_DIR$/resources/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/icons" />
       <recent name="$PROJECT_DIR$/classic/src/view/main" />
       <recent name="$PROJECT_DIR$/app/view/img" />
       <recent name="$PROJECT_DIR$/app/view/panel" />
       <recent name="$PROJECT_DIR$/app/view/window" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -503,17 +578,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-356" width="1080" height="1828" extended-state="6" />
-    <editor active="false" />
+    <frame x="1920" y="-356" width="1080" height="1897" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2495183" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29961464" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12557603" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12451577" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2495183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32430875" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32429442" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -549,63 +624,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/SvgHvac/misc/cArrowLeft.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/SvgHvac/misc/cArrowRight.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/SvgHvac/misc/cArrowUp.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/SvgHvac/misc/cPipeArrowDown.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/SvgHvac/misc/cPipeArrowLeft.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/SvgHvac/misc/cPipeArrowUp.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/SvgHvac/misc/dialSwitch2PosLeft.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/SvgHvac/misc/dialSwitch2PosRight.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/SvgHvac/misc/dialSwitch3PosLeft.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/SvgHvac/misc/dialSwitch3PosMiddle.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/tree/DevTreeModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/var/all.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -676,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/DevTree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.116071425">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ext/classic/classic/src/container/Container.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33314574">
@@ -694,27 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24479459">
           <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/SvgsTree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.033764772">
-          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/DevFormPanelController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02532358">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/tree/DevTreeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02532358">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -739,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/store/PicDatas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44710696">
-          <caret line="51" column="78" selection-start-line="51" selection-start-column="78" selection-end-line="51" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ext/build/ext-all-rtl-sandbox-debug.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.017533606">
@@ -760,148 +743,264 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.578609">
-          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/SetAPicPanelController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13150205">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/SetPicPanelController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6312098">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/PicPanelModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/DevFormPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8694429">
-          <caret line="103" column="63" selection-start-line="103" selection-start-column="63" selection-end-line="103" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/img/CanvasImg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1266179">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/PicPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.016882386">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/PicPanelController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83430916">
-          <caret line="138" column="9" selection-start-line="138" selection-start-column="9" selection-end-line="138" selection-end-column="9" />
-          <folding>
-            <element signature="e#1332#2411#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.875">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/img/GifImg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11790393">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindowController.js">
+    <entry file="file://$PROJECT_DIR$/app/store/Readme.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/TreeListModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08053691">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindowModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-51.875">
+          <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/Readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/packages/core/src/Ext.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36308724">
+          <caret line="129" column="9" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/SvgsTree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/DevFormPanelController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/tree/DevTreeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/tree/DevTreeModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/DevTree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29194632">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/SetAPicPanelController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17114094">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/classic/classic/src/form/Basic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1064" column="43" selection-start-line="1064" selection-start-column="34" selection-end-line="1064" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/PicPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31853282">
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/CanvasImgController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.077220075">
+          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41505793">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/SetPicPanelController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12548262">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/PicPanelModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.077220075">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindowController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13513513">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/panel/SetAPicPanel.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21492921">
+          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/ImgPanelMenuFormWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="255" column="17" selection-start-line="141" selection-start-column="15" selection-end-line="255" selection-end-column="17" />
+          <caret line="245" column="39" selection-start-line="245" selection-start-column="39" selection-end-line="245" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="7" selection-start-line="92" selection-start-column="4" selection-end-line="96" selection-end-column="7" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#3967#9103#0" expanded="false" />
+            <marker date="1469754597000" expanded="true" signature="1215:1238" placeholder="..." />
+            <marker date="1469754597000" expanded="true" signature="1872:1956" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02676182">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.034188036">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+    <entry file="file://$PROJECT_DIR$/resources/icons/input_tablet_48px.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45299146">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/ToolsPanel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <marker date="1469762387000" expanded="true" signature="1195:1232" placeholder="..." />
+            <marker date="1469762387000" expanded="true" signature="1281:1292" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="14" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/window/ImgPanelMenuFormWindow.js">
+    <entry file="file://$PROJECT_DIR$/app/view/panel/DevFormPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18340611">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/PicPanelController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+          <folding>
+            <element signature="e#2282#3361#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/PicDatas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3957529">
+          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/GifImg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/GifImgController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/CanvasImg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44980696">
+          <caret line="153" column="8" selection-start-line="153" selection-start-column="8" selection-end-line="153" selection-end-column="8" />
+          <folding>
+            <element signature="e#5140#8292#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

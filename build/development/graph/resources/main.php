@@ -2,12 +2,12 @@
 
 $ip = $_SERVER["SERVER_ADDR"];
 $par = $_GET["par"];
-$redis = new Redis();
+/*$redis = new Redis();
 if ($ip == "127.0.0.1") {
     $redis->connect("192.168.253.253", 6379);
 } else {
     $redis->connect($ip, 6379);
-}
+}*/
 
 if ($par == 'getSvgTree') {
     //$path = "svg";
@@ -16,27 +16,42 @@ if ($par == 'getSvgTree') {
 }
 
 if($par=="getdevs"){
-    $ip=$_GET['ip'];
-    $port=$_GET['port'];
-    $redis->connect($ip, 6379);
+    $redis=getRedisConect();
     $arList = $redis->keys("???????");
     sort($arList);
-    echo json_encode($arList);
+    $arr = array();
+    foreach ($arList as $key => $value) {
+        if(is_numeric($value)){
+            array_push($arr,array("value"=>$value,"name"=>$redis->hGet($value,"Object_Name")));
+        }
+    }
+    sort($arList);
+    echo json_encode($arr);
 }
+
 if($par=="gettypes"){
+    $redis=getRedisConect();
     $nodeName=$_GET['nodename'];
     $arList = $redis->hKeys($nodeName);
     echo json_encode($arList);
-
 }
+
 if($par=="gettypevalue"){
     $nodeName = $_GET['nodename'];
     $type=$_GET['type'];
+    $redis = getRedisConect();
     echo $redis->hGet($nodeName, $type);
-
 }
 
 
+function getRedisConect(){
+    $redis = new Redis();
+    $ip=$_GET['ip'];
+    $port=$_GET['port'];
+    $redis->connect($ip, $port);
+
+    return $redis;
+}
 
 function getfiles($path, $fileArr)
 {

@@ -1,11 +1,58 @@
 <?php
 
-$par = $_GET['par'];
-if ($par == 'getSvgTree') {
-    $path = "svg";
-    echo json_encode(getfiles($path, $fileArr = Array()));
+$ip = $_SERVER["SERVER_ADDR"];
+$par = $_GET["par"];
+/*$redis = new Redis();
+if ($ip == "127.0.0.1") {
+    $redis->connect("192.168.253.253", 6379);
+} else {
+    $redis->connect($ip, 6379);
+}*/
 
+if ($par == 'getSvgTree') {
+    //$path = "svg";
+    $path = "SvgHvac";
+    echo json_encode(getfiles($path, $fileArr = Array()));
 }
+
+if($par=="getdevs"){
+    $redis=getRedisConect();
+    $arList = $redis->keys("???????");
+    sort($arList);
+    $arr = array();
+    foreach ($arList as $key => $value) {
+        if(is_numeric($value)){
+            array_push($arr,array("value"=>$value,"name"=>$redis->hGet($value,"Object_Name")));
+        }
+    }
+    sort($arList);
+    echo json_encode($arr);
+}
+
+if($par=="gettypes"){
+    $redis=getRedisConect();
+    $nodeName=$_GET['nodename'];
+    $arList = $redis->hKeys($nodeName);
+    echo json_encode($arList);
+}
+
+if($par=="gettypevalue"){
+    $nodeName = $_GET['nodename'];
+    $type=$_GET['type'];
+    $redis = getRedisConect();
+    echo $redis->hGet($nodeName, $type);
+}
+
+
+function getRedisConect(){
+    $redis = new Redis();
+    $ip=$_GET['ip'];
+    $port=$_GET['port'];
+    $redis->connect($ip, $port);
+
+    return $redis;
+}
+
 function getfiles($path, $fileArr)
 {
     $tempArr = array();
@@ -19,11 +66,11 @@ function getfiles($path, $fileArr)
             $arr = array();
             $arr['text'] = $afile;
             $arr['url'] = $path . '/' . $afile;
-            $arr['leaf'] = flase;
+            $arr['leaf'] = false;
             $arr['children'] = getfiles($path . '/' . $afile, $tempArr);
             $arr['allowDrop'] = false;
             $arr['allowDrag'] = false;
-            $arr['expanded']=true;
+            $arr['expanded'] = true;
             array_push($tempArr, $arr);
         } else {
             $arr = array();
@@ -31,8 +78,11 @@ function getfiles($path, $fileArr)
             $arr['text'] = substr($afile, 0, strlen($afile) - 4);
             //$arr['url'] = 'resources/'.$spath;
             $arr['leaf'] = true;
-            $arr['iconCls']='fa-file-image-o';
-            $arr['url'] = 'resources/SvgHvac/' . substr($spath, 4, strlen($spath) - 8) . '.gif';
+            $arr['iconCls'] = 'fa-file-image-o';
+            //$arr['url'] = 'resources/SvgHvac/' . substr($spath, 4, strlen($spath) - 8) . '.gif';
+            $arr['url'] = "resources/" . $spath;
+
+
             //$binary = file_get_contents($spath);
             //$base64 = base64_encode($binary);
             //$arr['svgurl'] = $binary;//'data:image/gif;base64,'.$base64;

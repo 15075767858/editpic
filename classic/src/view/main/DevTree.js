@@ -27,5 +27,5 @@ Ext.define('editpic.view.tree.DevTree', {
                 treePanel.collapseAll()
             }
         }
-    ],
+    ]
 });

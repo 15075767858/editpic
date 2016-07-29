@@ -1,7 +1,7 @@
 /*
 Error: File to import not found or unreadable: compass.
         on line 4 of ../../../../../ext/classic/theme-base/sass/etc/all.scss
-        from line 1169 of graph-example.scss
+        from line 1173 of graph-example.scss
 
 1: $app-name:  dynamic( 'graph' );
 2: $image-search-path: '/Library/WebServer/Documents/editpic/build/production/graph/classic/resources';
@@ -15,7 +15,7 @@ Error: File to import not found or unreadable: compass.
 
 Backtrace:
 ../../../../../ext/classic/theme-base/sass/etc/all.scss:4
-graph-example.scss:1169
+graph-example.scss:1173
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -71,4 +71,4 @@ graph-example.scss:1169
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: compass.\A         on line 4 of ../../../../../ext/classic/theme-base/sass/etc/all.scss\A         from line 1169 of graph-example.scss\A \A 1: $app-name:  dynamic( 'graph' );\A 2: $image-search-path: '/Library/WebServer/Documents/editpic/build/production/graph/classic/resources';\A 3: $theme-name:  dynamic( 'theme-aria' );\A 4: $include-ext-abstractcomponent: dynamic(true);;\A 5: $include-ext-abstractcontainer: dynamic(true);;\A 6: $include-ext-abstractmanager: dynamic(true);;\A 7: $include-ext-abstractplugin: dynamic(true);;\A 8: $include-ext-abstractselectionmodel: dynamic(true);;\A 9: $include-ext-action: dynamic(true);;"; }
+  content: "Error: File to import not found or unreadable: compass.\A         on line 4 of ../../../../../ext/classic/theme-base/sass/etc/all.scss\A         from line 1173 of graph-example.scss\A \A 1: $app-name:  dynamic( 'graph' );\A 2: $image-search-path: '/Library/WebServer/Documents/editpic/build/production/graph/classic/resources';\A 3: $theme-name:  dynamic( 'theme-aria' );\A 4: $include-ext-abstractcomponent: dynamic(true);;\A 5: $include-ext-abstractcontainer: dynamic(true);;\A 6: $include-ext-abstractmanager: dynamic(true);;\A 7: $include-ext-abstractplugin: dynamic(true);;\A 8: $include-ext-abstractselectionmodel: dynamic(true);;\A 9: $include-ext-action: dynamic(true);;"; }

@@ -3,6 +3,7 @@ Ext.define('editpic.view.img.CanvasImgController', {
     alias: 'controller.img-canvasimg',
     resize: function () {
         var me = this.view;
+        console.log(arguments)
         me.refreshCanvas();
         /*var surface = me.getSurface();
         surface.removeAll()
@@ -32,6 +33,12 @@ Ext.define('editpic.view.img.CanvasImgController', {
             context.putImageData(imgData, 0, 0, 0, 0, me.width, me.height);
         }
         me.renderFrame();*/
+    },
+    destroy:function () {
+        var me = this.view;
+        delete me.linkValue;
+        me.clearInterval();
+        Ext.data.StoreManager.lookup("picdatas").load()
     }
 
 });

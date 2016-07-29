@@ -32,6 +32,15 @@ My.Ajax = function (url, success, params) {
         success: success
     });
 }
+My.AjaxAsync = function (url, success, params) {
+    Ext.Ajax.request({
+        url: url,
+        method: "GET",
+        async: true,
+        params: params,
+        success: success
+    });
+}
 
 My.delayToast = function (title, html, delay) {
     setTimeout(function () {
@@ -44,8 +53,3 @@ My.delayToast = function (title, html, delay) {
     }, delay)
 }
 
-
-Ext.onReady(function(){
-        Ext.create("editpic.view.window.ImgPanelMenuFormWindow")
-
-})

@@ -17,7 +17,7 @@ Ext.define('editpic.view.tree.SvgsTree', {
 
     header: {
         //style:"background:red;font-family: FontAwesome !important;",
-        iconCls: "fa-list-ul",
+        iconCls: "fa-list-ul"
 
     },
     width: 300,

@@ -6,7 +6,7 @@ Ext.define('editpic.view.panel.PicPanelModel', {
         imgWidth:1000,
         imgHeight:2000,
         width:375,
-        height:667,
+        height:667
     }
 
 });

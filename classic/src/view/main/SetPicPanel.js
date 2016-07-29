@@ -34,7 +34,7 @@ Ext.define('editpic.view.panel.SetPicPanel', {
         me.tbar = [
             "->", {
                 text: "toggle group",
-                reference: "GroupMenu",
+                reference: "GroupMenu"
             }
         ]
         me.columns = [
@@ -110,7 +110,7 @@ Ext.define('editpic.view.panel.SetPicPanel', {
     listeners: {
         itemmouseenter: "itemmouseenter",
         itemmouseleave: "itemmouseleave",
-        select: "select"
+        //select: "select"
     }
 
 });

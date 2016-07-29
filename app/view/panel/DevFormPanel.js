@@ -11,16 +11,23 @@ Ext.define('editpic.view.panel.DevFormPanel', {
     viewModel: {
         type: 'panel-devformpanel'
     },
+    title:"&nbsp;&nbsp;Settings",
+    iconCls:"fa-cog",
+    width: 300,
+    header:{
+    },
     scrollable:"y",
     resizable: true,
     collapsible: true,
     width: 300,
     initComponent: function () {
         var me = this;
-        me.items = [
+
+ /*       me.items = [
             {
                 xtype: "form",
                 bodyPadding: 10,
+
                 defaults: {
                     width: "100%",
                     margin: "0 0 10 0"
@@ -157,14 +164,14 @@ Ext.define('editpic.view.panel.DevFormPanel', {
                                     var imgGrid = Ext.getCmp("imgGrid");
                                     imgGrid.linkImgData(devsfield.ip,devsfield.port,devsfield.value, typescombo.value);
                                 }
-                            },
+                            }
                         ]
 
                     }
                 ]
             }
 
-        ]
+        ]*/
         me.callParent()
     }
 
@@ -182,13 +189,13 @@ Ext.define('editpic.view.panel.DevFormPanel', {
                     } else {
                         Ext.Msg.alert("Massage", "Please choose a picture.")
                     }
-
-
                 }
 
 
             })
             panel.add(picpanel)
+
+
 
         }
     }

@@ -32,7 +32,7 @@ Ext.define('editpic.view.panel.SetPicPanelController', {
 
         singleFormPanel=Ext.create("editpic.view.panel.SetAPicPanel",{
             flex:1,
-            record:record,
+            record:record
         })
 
         singleFormPanel.loadRecord(record);

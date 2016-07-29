@@ -39,7 +39,7 @@ Ext.define("editpic.store.PicDatas", {
             var panel = Ext.getCmp("imgGrid");
             if (panel) {
                 var menu = panel.lookupReference("GroupMenu")
-                console.log(menu)
+                //console.log(menu)
                 var toggleMenu = []
                 store.getGroups().each(function (group) {
 

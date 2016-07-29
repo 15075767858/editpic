@@ -16,25 +16,53 @@ Ext.define('editpic.view.panel.PicPanelController', {
             notifyEnter: function (ddSource, e, data) {
                 console.log(arguments)
             },
+
             notifyDrop: function (ddSource, e, data) {
-
-
 
                 var selectRecord = ddSource.dragData.records[0].data;
                 var url = selectRecord.url;
                 console.log(arguments)
                 var imgWidth = 100;
                 var imgHeight = 100;
-                var canvasimg = Ext.create("editpic.view.img.CanvasImg", {
+
+                var data = {
                     x: e.event.offsetX,
                     y: e.event.offsetY,
-                    picName:selectRecord.text,
                     width: imgWidth,
                     height: imgHeight,
                     src: url,
-                });
+                    hidden: true
+                }
+                var canvasimg = Ext.create("editpic.view.img.CanvasImg", data);
+                var gifimg = Ext.create("editpic.view.img.GifImg", data)
+
                 panel.add(canvasimg);
-                Ext.data.StoreManager.lookup("picdatas").load()
+                panel.add(gifimg);
+                var values = ddSource.dragData.records[0].data;
+
+                Ext.create("editpic.view.window.ImgPanelMenuFormWindow", {
+                    values: canvasimg,
+                    ok: function (data) {
+                        if (data.ImageType == 0) {
+                            canvasimg.init(data);
+
+                        }
+                        if (data.ImageType == 1) {
+                            gifimg.init(data)
+
+                        }
+                        Ext.data.StoreManager.lookup("picdatas").load();
+                    },
+                    cancel: function () {
+                        if (canvasimg.hidden) {
+                            canvasimg.close()
+                        }
+                        if (gifimg.hidden) {
+                            gifimg.close()
+                        }
+                    }
+                })
+
                 return true;
             }
         })
@@ -96,7 +124,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
         console.log(color)
         var win = Ext.create("Ext.window.Window", {
             width: me.width,
-            autoShow:true,
+            autoShow: true,
             height: me.height,
             bodyStyle: {
                 backgroundColor: "transparent"
@@ -117,25 +145,25 @@ Ext.define('editpic.view.panel.PicPanelController', {
             var height = items[i].height
             var imgContext = items[i].el.dom.querySelector("canvas").getContext("2d")
             var imgData = imgContext.getImageData(0, 0, width, height);
-            var pixeData=imgData.data;
+            var pixeData = imgData.data;
             console.log(imgData)
             for (var j = 0; j < width * height; j++) {
-                if(pixeData[j*4+3]==0){
-                    pixeData[j * 4 + 0]=color.r
-                    pixeData[j * 4 + 1]=color.g
-                    pixeData[j * 4 + 2]=color.b
-                    pixeData[j*4+3]=255
+                if (pixeData[j * 4 + 3] == 0) {
+                    pixeData[j * 4 + 0] = color.r
+                    pixeData[j * 4 + 1] = color.g
+                    pixeData[j * 4 + 2] = color.b
+                    pixeData[j * 4 + 3] = 255
                 }
             }
             //imgData.data=pixeData
             context.putImageData(imgData, x, y, 0, 0, width, height);
         }
-        saveAsLocalImage ()
+        saveAsLocalImage()
         win.close()
-        function saveAsLocalImage () {
+        function saveAsLocalImage() {
             var myCanvas = document.getElementById("downcanvas");
             var image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-            window.location.href=image; // it will save locally
+            window.location.href = image; // it will save locally
         }
     },
     maxIndex: function () {
@@ -186,7 +214,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     maxValue: 2000,
                     publishOnComplete: false,
                     minValue: 100,
-                    bind: "{width}",
+                    bind: "{width}"
                 },
                 {
                     xtype: 'slider',
@@ -196,12 +224,12 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     maxValue: 1200,
                     publishOnComplete: false,
                     minValue: 100,
-                    bind: "{height}",
+                    bind: "{height}"
                 },
                 {
                     xtype: 'colorfield',
                     fieldLabel: 'Body Color',
-                    bind: "{bodyColor}",
+                    bind: "{bodyColor}"
                     /*listeners:{
                      change:function(field , color , previousColor , eOpts){
                      console.log(arguments)

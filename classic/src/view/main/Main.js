@@ -19,14 +19,13 @@ Ext.define('editpic.view.main.Main', {
         'editpic.view.tree.SvgsTree',
         "editpic.view.panel.PicPanel",
         "editpic.view.panel.SetPicPanel",
-        "editpic.view.panel.DevFormPanel"
+        "editpic.view.panel.DevFormPanel",
+        'editpic.view.panel.ToolsPanel'
     ],
 
     controller: 'main',
     viewModel: 'main',
-
     //ui: 'navigation',
-
     border: true,
     header: {
         height: 50,
@@ -38,21 +37,14 @@ Ext.define('editpic.view.main.Main', {
                 text: '{name}'
             },
             flex: 1
-        },
-        //iconCls: 'fa-list-ul',
-        //icon:"resources/SmartIO.png"
+        }
     },
-    //height:"100%",
-    //width:"100%",
     layout: "border",
-    defaults:{
-      //margin:"5 0 0 0"
-    },
+    defaults: {},
     items: [
         {
             xtype: "panel",
             region: 'center',
-            //layout: "center",
             scrollable: true,
             bodyStyle: {
                 background: "url(resources/square.png)"
@@ -64,7 +56,7 @@ Ext.define('editpic.view.main.Main', {
                     y: 30
                 }
 
-            ],
+            ]
         },
         {
             xtype: "editpic.svgstree",
@@ -73,53 +65,26 @@ Ext.define('editpic.view.main.Main', {
             collapsible: true
         },
         {
-            xtype: "devformpanel",
-            id:"testpanel",
-            title:"&nbsp;&nbsp;Settings",
-            iconCls:"fa-cog",
+            xtype: "toolspanel",
             region: "east",
-            width: 300,
+
+        },
+        {
+            xtype: "devformpanel",
+            region: "east",
         }
 
-    ]
-    /* items: [
+    ],
+    listeners: {
+        boxready: function () {
+            var me = this;
+            /*
+             Ext.onReady(function () {
+             //Ext.create("editpic.view.window.ImgPanelMenuFormWindow")
+             })*/
 
-     {
-     title: 'Home',
-     iconCls: 'fa-home',
-     layout: "border",
-     items: [
-     {
-     xtype: "panel",
-     region: 'center',
-     layout: "center",
-     scrollable: true,
-     bodyStyle: {
-     background: "url(resources/square.png)"
-     },
-     items: [
-     {
-     xtype: "picpanel",
-     }
-     ],
+        }
+    }
 
-
-     },
-     {
-     xtype: "editpic.svgstree",
-     id: "testtree",
-     region: 'west',
-     }
-     ]
-     }, {
-     title: 'Settings',
-     iconCls: 'fa-cogs',
-
-     bind: {
-     html: '{loremIpsum}'
-     }
-     }
-     ],
-     listeners: {}*/
 });
 

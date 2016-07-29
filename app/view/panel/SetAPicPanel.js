@@ -32,10 +32,10 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
             type: 'refresh',
             handler: function () {
                 var imgPanel = record.data;
-                imgPanel.clearInterval()
-                me.lookRGBField()
-                imgPanel.refreshCanvas()
-                Ext.data.StoreManager.lookup("picdatas").load()
+                imgPanel.clearInterval();
+                me.lookRGBField();
+                imgPanel.refreshCanvas();
+                Ext.data.StoreManager.lookup("picdatas").load();
             }
         }];
         me.defaults = {
@@ -85,7 +85,7 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
             xtype: 'slider',
             minValue: -100,
             width: "100%",
-            maxValue: 100,
+            maxValue: 100
         })
         var bSlider = Ext.create("Ext.slider.Single", {
             name: "b",
@@ -94,7 +94,7 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
             xtype: 'slider',
             minValue: -100,
             width: "100%",
-            maxValue: 100,
+            maxValue: 100
         })
         me.lookRGBField = function () {
             return;
@@ -121,7 +121,7 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
                 fieldLabel: "Related",
                 listeners: {
                     change: "relatedCheckHandler"
-                },
+                }
                 //hidden:false
             },
             {name: "id", xtype: "hiddenfield", reference: "imgid"},
@@ -160,13 +160,11 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
                                 listeners: {
                                     change: function (field, newValue, oldValue) {
                                         if (record.data) {
-                                            var value = newValue + panel.body.getX();
-                                            record.data.x = newValue
-                                            record.data.setX(value)
+                                            record.data.mySetX(newValue)
                                         }
                                     }
                                 }
-                            },
+                            }
                         ]
                     },
                     {
@@ -189,9 +187,7 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
                                 listeners: {
                                     change: function (field, newValue, oldValue) {
                                         if (record.data) {
-                                            var value = newValue + panel.body.getY();
-                                            record.data.y = newValue
-                                            record.data.setY(value)
+                                            record.data.mySetY(newValue)
                                         }
                                     }
                                 }
@@ -250,9 +246,9 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
                                         }
                                     }
                                 }
-                            },
+                            }
                         ]
-                    },
+                    }
                 ]
             },
             {
@@ -268,7 +264,7 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
         ]
 
         me.callParent()
-    },
+    }
 
 
 });
