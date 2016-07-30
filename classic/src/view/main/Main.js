@@ -73,6 +73,7 @@ Ext.define('editpic.view.main.Main', {
             xtype: "devformpanel",
             region: "east",
         }
+        ,
 
     ],
     listeners: {
@@ -87,4 +88,3 @@ Ext.define('editpic.view.main.Main', {
     }
 
 });
-

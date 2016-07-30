@@ -13,9 +13,9 @@ Ext.define('editpic.view.window.ImgPanelMenuFormWindow', {
     title: "Propertys",
     autoShow: true,
     //layout: "fit",
-    id: "testwin",
     initComponent: function () {
         var me = this;
+        console.log(me)
         me.labelFormPanel = Ext.create("Ext.form.Panel", {
                 width: 400,
                 height: "100",
@@ -33,7 +33,7 @@ Ext.define('editpic.view.window.ImgPanelMenuFormWindow', {
                     },
                     {
                         xtype: "combo", fieldLabel: "Image Type",
-                        name: "ImageType", allowBlank: true,
+                        name: "itype", allowBlank: true,
                         store: Ext.create("Ext.data.Store", {
                             fields: ["name", "value"],
                             data: [
@@ -64,7 +64,6 @@ Ext.define('editpic.view.window.ImgPanelMenuFormWindow', {
                             hidden: "{!ImageType.value}"
                         },
                         editable: true,
-
                         emptyText: "Please drag the image here.",
                         displayField: "text",
                         valueField: "src",
@@ -278,9 +277,12 @@ Ext.define('editpic.view.window.ImgPanelMenuFormWindow', {
 
                 if (labelForm.isValid()) {
                     var bindValues = bindForm.getValues()
-                    console.log(bindValues)
+
                     var datas = labelForm.getValues();
+                    console.log(datas)
+
                     me.ok(Ext.apply(datas,bindValues));
+
                     me.close()
                 }
 

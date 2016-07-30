@@ -2,8 +2,10 @@
  * 主绘图区的单个图片
  * */
 Ext.define('editpic.view.img.CanvasImg', {
-    extend: 'Ext.draw.Container',
+    //extend: 'editpic.view.img.Base',
+    extend:"Ext.draw.Container",
     xtype: "canvasimg",
+    sprites: [],
     requires: [
         'editpic.view.img.CanvasImgController',
         'editpic.view.img.CanvasImgModel',
@@ -23,28 +25,23 @@ Ext.define('editpic.view.img.CanvasImg', {
         me.datas = {};
         me.datas.linkRGBTrue = {};
         me.datas.linkRGBFalse = {};
-
         me.callParent();
-
     },
     init: function (data) {
-
+        console.log(data)
         var me = this;
         me.show()
-        me.setWidth(parseInt(data.width));
-        me.setHeight(parseInt(data.height));
+        me.itype=data.itype;
+        me.mySetWidth(data.width);
+        me.mySetHeight(data.height);
+        me.mySetX(data.x);
+        me.mySetY(data.y);
+        me.isBind = data.isBind;
+        me.linkData(data.ip, data.port, data.nodename, data.type);
         me.src = data.src;
-        me.mySetX(parseInt(data.x))
-        me.mySetY(parseInt(data.y))
-        me.picName = data.picName
-        me.isBind=data.isBind;
-        me.linkData(data.ip, data.port, data.nodename, data.type)
-        me.refreshCanvas()
+        me.name = data.name;
+        //me.refreshCanvas();
     },
-    bodyStyle: {
-        background: "transparent"
-    },
-    sprites: [],
     groupChecked: function (checked) {
         var me = this;
         if (me.isRelated) {
@@ -52,25 +49,102 @@ Ext.define('editpic.view.img.CanvasImg', {
             me.refreshCanvas();
         }
     },
-    linkData: function (ip, port, nodename, type) {
-
+    isImg: function () {
+        return true;
+    },
+    setRelated: function (checked) {
         var me = this;
+        me.isRelated = checked;
+        me.refreshCanvas()
+    },
+    getInitData:function(){
+        var me=this;
+        var data={};
+        data.x=me.x;
+        data.y=me.y;
+        data.width=me.width;
+        data.height=me.height;
+        data.name=me.name;
+        data.isBind=me.isBind;
+        data.src=me.src;
+        data.itype=me.itype;
+        data.ip=me.ip;
+        data.port=me.port;
+        data.nodename=me.nodename;
+        data.type=me.type;
+        return data;
+    },
+    setRGB: function (type, value) {
+        if (!(type == "r" || type == "g" || type == "b")) {
+            return;
+        }
+        var me = this;
+        if (me.getLinkValue()) {
+            me.datas.linkRGBFalse[type] = value
+        } else {
+            me.datas.linkRGBTrue[type] = value
+        }
+        me.refreshCanvas();
+    },
+    refreshCanvas: function () {
+        var me = this;
+        var surface = me.getSurface();
+        surface.removeAll();
+        var img = new Image();
+        var context = surface.contexts[0];
+        img.src = me.src;
+        var width=me.getWidth()
+        var height=me.getHeight()
+        img.onload = function () {
+            console.log(context)
+            if(!context){
+                return;
+            }
+            context.drawImage(img, 0, 0, width, height);
+            var pixeLength = me.width * me.height
+            var imgData = context.getImageData(0, 0, width, height)
+            var pixeData = imgData.data;
+            if (!me.getLinkValue()) {
+                imgData.data = blackEffect(pixeData, pixeLength);
+            }
+            context.putImageData(imgData, 0, 0, 0, 0, width, height);
+        }
 
+        function blackEffect(pixeData, pixeLength) {
+            for (var i = 0; i < pixeLength; i++) {
+                var r = pixeData[i * 4 + 0];
+                var g = pixeData[i * 4 + 1];
+                var b = pixeData[i * 4 + 2];
+                var grey = r * 0.3 + g * 0.59 + b * 0.11;
+                pixeData[i * 4 + 0] = grey;
+                pixeData[i * 4 + 1] = grey;
+                pixeData[i * 4 + 2] = grey;
+            }
+            return pixeData;
+        }
+    },
+    bodyStyle: {
+        background: "transparent"
+    },
+
+    linkData: function (ip, port, nodename, type) {
+        console.log(arguments)
+        var me = this;
         if (!(!!ip & !!port & !!nodename & !!type)) {
             me.clearInterval();
             return;
         }
-        me.ip=ip;
-        me.port=port;
-        me.nodenam=nodename;
-        me.type=type;
-
+        me.ip = ip;
+        me.port = port;
+        me.nodename = nodename;
+        me.type = type;
         me.clearInterval();
         me.interval = setInterval(function () {
             My.AjaxAsync("resources/main.php", function (response) {
-                me.linkValue = response.responseText;
-                //me.b = response.responseText;
-                me.refreshCanvas();
+                if (response.responseText != me.linkValue) {
+                    me.linkValue = response.responseText;
+                    me.refreshCanvas();
+                }
             }, {
                 par: "gettypevalue",
                 ip: ip,
@@ -78,14 +152,11 @@ Ext.define('editpic.view.img.CanvasImg', {
                 nodename: nodename,
                 type: type
             })
-        }, 500)
+        }, 50)
 
-        //Ext.data.StoreManager.lookup("picdatas").load()
-
-        //setTimeout(function () {
-        //    var singleFormPanel = Ext.getCmp("singleFormPanel")
-        //    singleFormPanel.lookRGBField()
-        //}, 1500)
+    },
+    isImg: function () {
+        return false;
     },
     hasLinkValue: function () {
         var me = this;
@@ -117,66 +188,39 @@ Ext.define('editpic.view.img.CanvasImg', {
             clearInterval(me.interval);
         }
     },
-    setRelated: function (checked) {
-        var me = this;
-        me.isRelated = checked;
-        me.refreshCanvas()
-    },
     mySetX: function (newValue) {
+        newValue = parseInt(newValue)
         var me = this;
-        var panel = Ext.getCmp("maindrawpanel");
+        var panel = me.up("picpanel");
         var value = newValue + panel.body.getX();
         me.x = newValue;
         me.setX(value);
     },
     mySetY: function (newValue) {
+        newValue = parseInt(newValue)
         var me = this;
-        var panel = Ext.getCmp("maindrawpanel");
+        var panel = me.up("picpanel");
         var value = newValue + panel.body.getY();
         me.y = newValue;
         me.setY(value);
     },
-    setRGB: function (type, value) {
-        if (!(type == "r" || type == "g" || type == "b")) {
-            return;
-        }
+    mySetWidth: function (newValue) {
+        console.log(newValue)
+        newValue = parseInt(newValue)
+        newValue=newValue-0
         var me = this;
-        if (me.getLinkValue()) {
-            me.datas.linkRGBFalse[type] = value
-        } else {
-            me.datas.linkRGBTrue[type] = value
-        }
-        me.refreshCanvas();
+        me.setWidth(newValue)
+        me.width=newValue;
     },
-    refreshCanvas: function () {
+    mySetHeight: function (newValue) {
+        console.log(newValue)
+        newValue = parseInt(newValue)
+        newValue=newValue-0
+
         var me = this;
-        var surface = me.getSurface();
-        surface.removeAll();
-        var img = new Image();
-        var context = surface.contexts[0];
-        img.src = me.src;
-        img.onload = function () {
-            context.drawImage(img, 0, 0, me.width, me.height);
-            var pixeLength = me.width * me.height
-            var imgData = context.getImageData(0, 0, me.width, me.height)
-            var pixeData = imgData.data;
-            if (!me.getLinkValue()) {
-                imgData.data = blackEffect(pixeData, pixeLength);
-            }
-            context.putImageData(imgData, 0, 0, 0, 0, me.width, me.height);
-        }
-        function blackEffect(pixeData, pixeLength) {
-            for (var i = 0; i < pixeLength; i++) {
-                var r = pixeData[i * 4 + 0];
-                var g = pixeData[i * 4 + 1];
-                var b = pixeData[i * 4 + 2];
-                var grey = r * 0.3 + g * 0.59 + b * 0.11;
-                pixeData[i * 4 + 0] = grey;
-                pixeData[i * 4 + 1] = grey;
-                pixeData[i * 4 + 2] = grey;
-            }
-            return pixeData;
-        }
+
+        me.setHeight(newValue)
+        me.height=newValue
     },
     /*refreshCanvas: function () {
      var me = this;
@@ -277,19 +321,24 @@ Ext.define('editpic.view.img.CanvasImg', {
      },*/
     listeners: {
         resize: "resize",
-        destroy: "destroy",
-        el:{
-            dblclick:function(e,el){
-                var me=this.component;
+        close: "destroy",
+        boxready: function () {
+            var me = this;
+            var panel = me.up("picpanel")
+            panel.getImages()
+        },
+        el: {
+            dblclick: function (e, el) {
+                var me = this.component;
                 console.log(me)
 
                 Ext.create("editpic.view.window.ImgPanelMenuFormWindow", {
                     values: me,
                     ok: function (data) {
-                            me.init(data);
-                        Ext.data.StoreManager.lookup("picdatas").load();
+                        me.init(data);
                     },
                     cancel: function () {
+
                     }
                 })
 

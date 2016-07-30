@@ -1,7 +1,7 @@
 /*
-* 这是绘图中心的主面板,
-* 是绘图区域
-* */
+ * 这是绘图中心的主面板,
+ * 是绘图区域
+ * */
 Ext.define('editpic.view.panel.PicPanel', {
     extend: 'Ext.draw.Container',
     xtype: "picpanel",
@@ -11,7 +11,9 @@ Ext.define('editpic.view.panel.PicPanel', {
         'Ext.chart.CartesianChart',
         "Ext.ux.colorpick.Field",
         "editpic.store.PicDatas",
-        "editpic.view.img.CanvasImg"
+        "editpic.view.img.CanvasImg",
+        'editpic.view.window.ImgPanelMenuFormWindow',
+
     ],
     //plugins: ['spriteevents'],
     controller: 'panel-picpanel',
@@ -30,13 +32,32 @@ Ext.define('editpic.view.panel.PicPanel', {
         title: "You Device {width} x {height}",
 
         bodyStyle: {
-            background:"#{bodyColor}"
+            background: "#{bodyColor}"
             //background:"red"
         }
     },
-    id: "maindrawpanel",
+    //id: "maindrawpanel",
 
+    getImages: function () {
+        var me = this;
+        if (!me.items) {
+            return;
+        }
+        setTimeout(function () {
+            var items = me.items.items;
+            var arr = []
+            for (var i = 0; i < items.length; i++) {
+                console.log(items[i])
+                if (items[i].isImg()) {
+                    arr.push(items[i]);
+                }
+            }
+            me.images = arr;
+            me.store.setData(arr)
 
+        }, 1000)
+
+    },
     draggable: true,
     header: {
         /*
@@ -54,7 +75,7 @@ Ext.define('editpic.view.panel.PicPanel', {
                 menu: [
                     {
                         xtype: 'menucheckitem',
-                        group:"resolution",
+                        group: "resolution",
                         //iconCls: "fa-check",
                         text: "Responsive",
                         handler: "selectDeviceWH"
@@ -63,7 +84,7 @@ Ext.define('editpic.view.panel.PicPanel', {
                     {
                         text: "iphone 5 320*568",
                         xtype: 'menucheckitem',
-                        group:"resolution",
+                        group: "resolution",
                         xwidth: 320,
                         xheight: 568,
                         handler: "setDeviceWH"
@@ -71,7 +92,7 @@ Ext.define('editpic.view.panel.PicPanel', {
                     {
                         text: "iphone 6 375 x 667",
                         xtype: 'menucheckitem',
-                        group:"resolution",
+                        group: "resolution",
                         xwidth: 375,
                         xheight: 667,
                         handler: "setDeviceWH"
@@ -79,35 +100,35 @@ Ext.define('editpic.view.panel.PicPanel', {
                     {
                         text: "iphone 6 Plus 414 x 736",
                         xtype: 'menucheckitem',
-                        group:"resolution",
+                        group: "resolution",
                         xwidth: 414,
                         xheight: 736,
                         handler: "setDeviceWH"
                     }, {
                         text: "iPad 768 x 1024",
                         xtype: 'menucheckitem',
-                        group:"resolution",
+                        group: "resolution",
                         xwidth: 768,
                         xheight: 1024,
                         handler: "setDeviceWH"
                     }, {
                         text: "Galaxy S5 360 x 640",
                         xtype: 'menucheckitem',
-                        group:"resolution",
+                        group: "resolution",
                         xwidth: 360,
                         xheight: 640,
                         handler: "setDeviceWH"
                     }, {
                         text: "Nexus 5X 411 x 731",
                         xtype: 'menucheckitem',
-                        group:"resolution",
+                        group: "resolution",
                         xwidth: 411,
                         xheight: 731,
                         handler: "setDeviceWH"
                     }, {
                         text: "Nexus 6P 435 x 733",
                         xtype: 'menucheckitem',
-                        group:"resolution",
+                        group: "resolution",
                         xwidth: 435,
                         xheight: 733,
                         handler: "setDeviceWH"
@@ -115,7 +136,7 @@ Ext.define('editpic.view.panel.PicPanel', {
                     {
                         text: "PC 800 x 600",
                         xtype: 'menucheckitem',
-                        group:"resolution",
+                        group: "resolution",
                         xwidth: 800,
                         xheight: 600,
                         handler: "setDeviceWH"
@@ -123,7 +144,7 @@ Ext.define('editpic.view.panel.PicPanel', {
                     {
                         text: "PC 1024 x 768",
                         xtype: 'menucheckitem',
-                        group:"resolution",
+                        group: "resolution",
                         xwidth: 1024,
                         xheight: 768,
                         handler: "setDeviceWH"
@@ -131,7 +152,7 @@ Ext.define('editpic.view.panel.PicPanel', {
                     {
                         text: "PC 1920 x 1080",
                         xtype: 'menucheckitem',
-                        group:"resolution",
+                        group: "resolution",
                         xwidth: 1920,
                         xheight: 1080,
                         handler: "setDeviceWH"
@@ -153,13 +174,18 @@ Ext.define('editpic.view.panel.PicPanel', {
         },
         {
             type: "save",
-            handler:"download"
+            handler: "download"
         }
     ],
     //sprites: [],
 
 
     listeners: {
-        boxready: "boxready"
+        boxready: "boxready",
+        add: function () {
+            var me = this;
+            me.getImages()
+            return true
+        }
     }
 });

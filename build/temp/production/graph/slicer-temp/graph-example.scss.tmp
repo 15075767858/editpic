@@ -1104,7 +1104,6 @@ $include-ext-view-view: dynamic(true);;
 $include-ext-window-messagebox: dynamic(true);;
 $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
-$include-image: dynamic(true);;
 $include-editpic-application: dynamic(true);;
 $include-editpic-store-personnel: dynamic(true);;
 $include-editpic-store-picdatas: dynamic(true);;

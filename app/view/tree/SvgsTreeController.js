@@ -4,13 +4,13 @@ Ext.define('editpic.view.tree.SvgsTreeController', {
     onToggleConfig: function (menuitem) {
         var me = this;
         var tree = menuitem.up("treepanel").view;
-        console.log(tree)
+        //console.log(tree)
         tree.setConfig(menuitem.config, menuitem.checked);
     },
 
     itemmouseenter:function(treeitem , record , item , index , e , eOpts){
       //  console.log(arguments)
-        console.log(record.data.url)
+        //console.log(record.data.url)
         if(record.data.leaf){
             var img = new Image();
             img.src=record.data.url;

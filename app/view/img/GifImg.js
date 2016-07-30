@@ -12,12 +12,20 @@ Ext.define('editpic.view.img.GifImg', {
      },*/
     init: function (data) {
         var me = this;
-        console.log(data)
-        console.log(me)
+        me.callParent(arguments)
 
         me.dynamicSrc = data.dynamicSrc;
-        me.callParent(arguments)
+        console.log(data)
+
         //me.callParent
+    },
+    getInitData:function(){
+        var me=this;
+        var data=me.callParent()
+        data.dynamicSrc=me.dynamicSrc;
+        data.itype=me.itype;
+
+        return data;
     },
     refreshCanvas: function () {
 
