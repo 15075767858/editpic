@@ -53,6 +53,28 @@ function getRedisConect(){
     return $redis;
 }
 
+
+if($par=="getImageData"){
+    $fn="../../home/data.json";
+    if(file_exists($fn)){
+        echo  file_get_contents($fn);
+    }else{
+        mkdir("../../home");
+        file_put_contents($fn, "");
+    }
+}
+if($par=="putImageData"){
+    $fn="../../home/data.json";
+    $content=$_POST['content'];
+    if(file_exists($fn)){
+        echo  $content;
+        echo  file_put_contents($fn, $content);
+    }else{
+        mkdir("../../home");
+        file_put_contents($fn, "");
+    }
+}
+
 function getfiles($path, $fileArr)
 {
     $tempArr = array();
@@ -95,3 +117,4 @@ function getfiles($path, $fileArr)
     }
     return array_values($tempArr);
 } //列出所有文件
+

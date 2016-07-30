@@ -13,6 +13,7 @@ Ext.define('editpic.view.main.Main', {
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
         'Ext.panel.Panel',
+        'Ext.tab.Panel',
         'Ext.tree.Panel',
         'editpic.view.main.MainModel',
         'editpic.view.main.MainController',
@@ -26,6 +27,18 @@ Ext.define('editpic.view.main.Main', {
     controller: 'main',
     viewModel: 'main',
     //ui: 'navigation',
+    tbar: [
+        {
+            text: "save", handler: "saveHandler"
+        }, {
+            text: "open", handler: "openHandler"
+        }, {
+            text: "about",
+            handler: function () {
+                Ext.Msg.alert("Version", "SmartIOgraphTools 1.0")
+            }
+        }
+    ],
     border: true,
     header: {
         height: 50,
@@ -43,17 +56,71 @@ Ext.define('editpic.view.main.Main', {
     defaults: {},
     items: [
         {
-            xtype: "panel",
+            xtype: "tabpanel",
             region: 'center',
+            id: "mintab",
             scrollable: true,
-            bodyStyle: {
-                background: "url(resources/square.png)"
+            getCurrentTab: function () {
+                var me = this;
+                if (!me.items) {
+                    return null;
+                }
+                for (var i = 0; i < me.items.items.length; i++) {
+                    if (!me.items.items[i].hidden) {
+                        return me.items.items[i]
+                    }
+                }
+                return null;
+            },
+            getTabByTitle: function (title) {
+                var me = this;
+                if (!me.items) {
+                    return null;
+                }
+                for (var i = 0; i < me.items.items.length; i++) {
+                    if (me.items.items[i].title == title) {
+                        return me.items.items[i]
+                    }
+                }
+                return null;
+
+            },
+            addTab: function (text) {
+                var me = this
+                var panel = me.getTabByTitle(text);
+                if (panel) {
+                    panel.close()
+                }
+                var picPanel = Ext.create("editpic.view.panel.PicPanel", {
+                    x: 30,
+                    y: 30
+                })
+                me.add(
+                    {
+                        xtype: "panel",
+                        title: text,
+                        items: picPanel
+                    }
+                ).show()
+                picPanel.load(My.getImageData()[text])
+
+
+            },
+            defaults: {
+                bodyStyle: {
+                    background: "url(resources/square.png)"
+                },
+                closable: true
             },
             items: [
                 {
-                    xtype: "picpanel",
-                    x: 30,
-                    y: 30
+                    xtype: "panel",
+                    title: "untitled",
+                    items: {
+                        xtype: "picpanel",
+                        x: 30,
+                        y: 30
+                    }
                 }
 
             ]
@@ -66,15 +133,13 @@ Ext.define('editpic.view.main.Main', {
         },
         {
             xtype: "toolspanel",
-            region: "east",
-
+            border: true,
+            region: "east"
         },
         {
             xtype: "devformpanel",
-            region: "east",
+            region: "east"
         }
-        ,
-
     ],
     listeners: {
         boxready: function () {

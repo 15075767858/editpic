@@ -1,5 +1,4 @@
-
-Ext.define('editpic.view.img.BaseTool',{
+Ext.define('editpic.view.img.BaseTool', {
     extend: 'Ext.form.Panel',
 
     requires: [
@@ -13,7 +12,7 @@ Ext.define('editpic.view.img.BaseTool',{
     },
 
     resizable: true,
-    resizeHandles :"s,e,se",
+    resizeHandles: "s,e,se",
     draggable: true,
 
     bodyStyle: {
@@ -21,16 +20,22 @@ Ext.define('editpic.view.img.BaseTool',{
     },
     init: function (data) {
         var me = this;
+        console.log(data)
         me.mySetWidth(data.width);
         me.mySetHeight(data.height);
         me.mySetX(data.x);
         me.mySetY(data.y);
+        me.itype = data.itype;
         me.isBind = data.isBind;
-        me.linkData(data.ip, data.port, data.nodename, data.type);
+        me.linkData(data);
     },
 
-    linkData: function (ip, port, nodename, type) {
+    linkData: function (data) {
         var me = this;
+        var ip=data.ip;
+        var port=data.port;
+        var nodename=data.nodename;
+        var type=data.type;
         if (!(!!ip & !!port & !!nodename & !!type)) {
             me.clearInterval();
             return;
@@ -79,6 +84,22 @@ Ext.define('editpic.view.img.BaseTool',{
             }
         }
     },
+    getInitData: function () {
+        var me = this;
+        var data = {};
+        data.x = me.x;
+        data.y = me.y;
+        data.width = me.width;
+        data.height = me.height;
+        data.name = me.name;
+        data.isBind = me.isBind;
+        data.itype = me.itype;
+        data.ip = me.ip;
+        data.port = me.port;
+        data.nodename = me.nodename;
+        data.type = me.type;
+        return data;
+    },
     clearInterval: function () {
         var me = this;
         if (me.linkValue) {
@@ -117,15 +138,63 @@ Ext.define('editpic.view.img.BaseTool',{
         me.field.setHeight(value)
         me.setHeight(value)
     },
-    listeners:{
-        resize:function(me,width,height){
+    listeners: {
+        resize: function (me, width, height) {
 
             me.mySetWidth(width);
             me.mySetHeight(height)
         },
-        move:function(me,x,y){
+        move: function (me, x, y) {
             me.mySetX(x)
             me.mySetY(y)
+        },
+        el: {
+            contextmenu: function (e) {
+                e.stopEvent()
+                console.log(this)
+                var me = this.component;
+                Ext.create("Ext.menu.Menu", {
+                    x: e.pageX,
+                    y: e.pageY,
+                    autoShow: true,
+                    items: [
+                        {
+                            text: "delete", handler: function () {
+                            me.close()
+                        }
+                        },
+                        {
+                            text: "Property", handler: function () {
+                            Ext.create("editpic.view.window.FieldMenuWindow", {
+                                values: me,
+                                ok: function (data) {
+                                    me.init(data);
+                                },
+                                cancel: function () {
+
+                                }
+                            })
+                        }
+                        }
+                    ]
+                })
+
+                console.log(arguments)
+            },
+            dblclick: function () {
+                var me = this.component;
+                console.log(me)
+                Ext.create("editpic.view.window.FieldMenuWindow", {
+                    values: me,
+                    ok: function (data) {
+                        me.init(data);
+                    },
+                    cancel: function () {
+
+                    }
+                })
+
+            }
         }
     }
 

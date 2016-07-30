@@ -47,15 +47,69 @@ Ext.define('editpic.view.panel.PicPanel', {
             var items = me.items.items;
             var arr = []
             for (var i = 0; i < items.length; i++) {
-                console.log(items[i])
-                if (items[i].isImg()) {
+                if (items[i].itype == 0 || items[i].itype == 1) {
                     arr.push(items[i]);
                 }
             }
             me.images = arr;
-            me.store.setData(arr)
-
+            var store = Ext.data.StoreManager.lookup("setpicpanelstore")
+            store.setData(arr)
         }, 1000)
+    },
+    save: function () {
+        var me = this;
+        var arr = [];
+        if (!me.items) {
+            return [];
+        }
+        var items = me.items.items;
+        for (var i = 0; i < items.length; i++) {
+            console.log(items[i])
+            arr.push(items[i].getInitData());
+        }
+        var picpanelData = {}
+        picpanelData["items"]=arr;
+        picpanelData["width"]=me.getWidth();
+        picpanelData["height"]=me.getHeight();
+        picpanelData['bodyColor']=me.body.getStyle("backgroundColor")
+        return picpanelData;
+    },
+    load: function (json) {
+        var me = this;
+        me.setWidth(json.width);
+        me.setHeight(json.height);
+        me.body.setStyle("backgroundColor",json.bodyColor);
+        var data=json.items;
+        for (var i = 0; i < data.length; i++) {
+            var component;
+            console.log(data[i])
+            if (data[i].itype == 0) {
+                component = Ext.create("editpic.view.img.CanvasImg",data[i]);
+                me.add(component);
+
+                component.init(data[i]);
+
+            }
+            if (data[i].itype == 1) {
+                component = Ext.create("editpic.view.img.GifImg",data[i])
+                me.add(component);
+
+                component.init(data[i]);
+            }
+            if (data[i].itype == 2) {
+                component = Ext.create("editpic.view.img.TextFieldTool",data[i])
+                me.add(component);
+
+                component.init(data[i]);
+            }
+            if (data[i].itype == 3) {
+                component = Ext.create("editpic.view.img.LinkTool",data[i])
+                me.add(component);
+
+                component.init(data[i])
+            }
+
+        }
 
     },
     draggable: true,

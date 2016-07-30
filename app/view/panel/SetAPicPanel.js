@@ -25,7 +25,7 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
     initComponent: function () {
         var me = this;
         var record = me.record;
-        var panel = Ext.getCmp("maindrawpanel")
+        //var panel = Ext.getCmp("maindrawpanel")
 
 
         me.tools = [{
@@ -35,7 +35,7 @@ Ext.define('editpic.view.panel.SetAPicPanel', {
                 imgPanel.clearInterval();
                 me.lookRGBField();
                 imgPanel.refreshCanvas();
-                Ext.data.StoreManager.lookup("picdatas").load();
+                //Ext.data.StoreManager.lookup("picdatas").load();
             }
         }];
         me.defaults = {

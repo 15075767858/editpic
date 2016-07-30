@@ -177,21 +177,9 @@ Ext.define('editpic.view.panel.DevFormPanel', {
 
     , listeners: {
         boxready: function (panel) {
+
             var picpanel = Ext.create("editpic.view.panel.SetPicPanel", {
                 id: "imgGrid",
-                linkImgData:function(ip,port,nodename,type){
-                    console.log(arguments)
-                    var me=this;
-                    var record = me.getSelection()[0]
-                    if (record) {
-                        var img = record.data;
-                        img.linkData(ip,port,nodename,type)
-                    } else {
-                        Ext.Msg.alert("Massage", "Please choose a picture.")
-                    }
-                }
-
-
             })
             panel.add(picpanel)
 

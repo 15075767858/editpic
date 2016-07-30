@@ -16,20 +16,22 @@ Ext.define('editpic.view.panel.SetPicPanel', {
     viewModel: {
         type: 'panel-setpicpanel'
     },
-    //id: "setpicpanel",
+    id: "setpicpanel",
+    reference:"setpicpanel",
     maxHeight: 300,
     height: 400,
     border: true,
-    title: "imgs",
-    store: "picdatas",
-
+    title: "&nbsp;&nbsp;&nbsp;&nbsp;Imgs",
+    iconCls:"fa-picture-o",
     initComponent: function () {
         var me = this;
-
-        var store = Ext.data.StoreManager.lookup("picdatas")
-
-        store.getGroups();
-        console.log(store)
+        me.store = Ext.create('editpic.store.PicDatas', {
+            storeId: "setpicpanelstore",
+            //storeId:Ext.getCmp("mintab").getActiveTab().id+"store",
+            autoLoad: true
+        })
+        //me.setStore(me.store)
+        //me.store.getGroups();
 
         me.tbar = [
             "->", {
@@ -95,7 +97,6 @@ Ext.define('editpic.view.panel.SetPicPanel', {
         groupHeaderTpl: '{columnName}: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
         id: 'restaurantGrouping'
     }],
-    iconCls: "fa-rotate-270",
     selModel: 'cellmodel',
     plugins: {
         ptype: 'cellediting',
@@ -103,7 +104,7 @@ Ext.define('editpic.view.panel.SetPicPanel', {
         listeners: {
             edit: function (editor, context, eOpts) {
                 console.log(arguments)
-                Ext.data.StoreManager.lookup("picdatas").load()
+                //Ext.data.StoreManager.lookup("picdatas").load()
             }
         }
     },

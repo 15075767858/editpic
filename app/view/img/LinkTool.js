@@ -12,13 +12,37 @@ Ext.define('editpic.view.img.LinkTool', {
     },
     initComponent: function () {
         var me = this;
-        var btn = Ext.create("Ext.button.Button")
+        var btn = Ext.create("Ext.button.Button",
+            {
+
+            }
+        )
         me.field = btn;
-        me.items=btn;
+        me.items = btn;
         me.callParent();
     },
+    init: function () {
+        var me = this;
+        console.log(me)
+        me.callParent(arguments)
+    },
+    linkData: function (data) {
+        var me = this;
+        if (data.linkValue) {
+            console.log(data)
+            me.linkValue=data.linkValue;
+            me.field.setText(data.linkValue)
+            me.field.setText(data.linkValue)
+
+            me.field.setHandler(function () {
+
+                Ext.getCmp("mintab").addTab(data.linkValue)
+            })
+        }
+        me.refreshCanvas()
+    },
     refreshCanvas: function () {
-
-
+        var me = this;
     }
+
 });

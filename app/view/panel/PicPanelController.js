@@ -7,10 +7,14 @@ Ext.define('editpic.view.panel.PicPanelController', {
         console.log(panel)
 
 
-        panel.store = Ext.create('editpic.store.PicDatas', {
-            storeId: "picdatas",
-            autoLoad: true
-        })
+        /*panel.store = Ext.create('editpic.store.PicDatas', {
+         //storeId: "picdatas",
+         autoLoad: true
+         })*/
+
+
+        //setpicpanel
+
 
         this.PanelDropTarget = new Ext.dd.DropTarget(panel.id, {
             ddGroup: "picgroup",
@@ -26,6 +30,8 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     if (dragData.itype == 2) {
                         tool = Ext.create("editpic.view.img.TextFieldTool",
                             {
+                                itype: dragData.itype,
+
                                 x: e.event.offsetX,
                                 y: e.event.offsetY,
                                 width: 100,
@@ -36,6 +42,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     if (dragData.itype == 3) {
                         tool = Ext.create("editpic.view.img.LinkTool",
                             {
+                                itype: dragData.itype,
                                 x: e.event.offsetX,
                                 y: e.event.offsetY,
                                 width: 100,
@@ -47,14 +54,13 @@ Ext.define('editpic.view.panel.PicPanelController', {
                         values: tool,
                         ok: function (data) {
                             panel.add(tool);
-                            tool.init(data);
+                            tool.init(Ext.apply(data, {itype: dragData.itype}));
                         },
                         cancel: function () {
                             tool.close();
                         }
                     })
                 }
-
                 if (ddSource.dragData.records) {
                     var selectRecord = ddSource.dragData.records[0].data;
                     var url = selectRecord.url;
@@ -67,7 +73,6 @@ Ext.define('editpic.view.panel.PicPanelController', {
                         src: url,
                         hidden: true
                     };
-
                     var canvasimg = Ext.create("editpic.view.img.CanvasImg", data);
                     var gifimg = Ext.create("editpic.view.img.GifImg", data)
                     var values = ddSource.dragData.records[0].data;
