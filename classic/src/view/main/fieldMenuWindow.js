@@ -16,6 +16,11 @@ Ext.define('editpic.view.window.FieldMenuWindow',
 
         initComponent: function () {
             var me = this;
+            var values=me.values;
+            var itype=values.itype;
+
+
+
             me.labelFormPanel = Ext.create("Ext.form.Panel", {
                     width: 400,
                     height: "100",
@@ -62,6 +67,7 @@ Ext.define('editpic.view.window.FieldMenuWindow',
             console.log(me.values)
             if (me.values.itype == 3) {
                 me.bindFormPanel = Ext.create("editpic.view.form.LinkPropertyForm", {
+                    values:me.values,
                     items: [
                         {
                             xtype: 'checkbox',
@@ -87,7 +93,10 @@ Ext.define('editpic.view.window.FieldMenuWindow',
                 })
             }
             if(me.values.itype==2){
-            me.bindFormPanel = Ext.create("editpic.view.form.LinkPropertyForm")
+            me.bindFormPanel = Ext.create("editpic.view.form.LinkPropertyForm",
+                {
+                    values:me.values
+                })
             }
 
                 me.items = [me.labelFormPanel, me.bindFormPanel];

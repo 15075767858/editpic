@@ -3,7 +3,7 @@
  * 是绘图区域
  * */
 Ext.define('editpic.view.panel.PicPanel', {
-    extend: 'Ext.draw.Container',
+    extend: 'Ext.panel.Panel',
     xtype: "picpanel",
     requires: [
         'editpic.view.panel.PicPanelController',
@@ -65,7 +65,9 @@ Ext.define('editpic.view.panel.PicPanel', {
         var items = me.items.items;
         for (var i = 0; i < items.length; i++) {
             console.log(items[i])
-            arr.push(items[i].getInitData());
+            var data = items[i].getInitData()
+            console.log(data)
+           arr.push(data);
         }
         var picpanelData = {}
         picpanelData["items"]=arr;
@@ -76,40 +78,46 @@ Ext.define('editpic.view.panel.PicPanel', {
     },
     load: function (json) {
         var me = this;
-        me.setWidth(json.width);
-        me.setHeight(json.height);
-        me.body.setStyle("backgroundColor",json.bodyColor);
-        var data=json.items;
-        for (var i = 0; i < data.length; i++) {
-            var component;
-            console.log(data[i])
-            if (data[i].itype == 0) {
-                component = Ext.create("editpic.view.img.CanvasImg",data[i]);
-                me.add(component);
 
-                component.init(data[i]);
+
+            me.body.setStyle("backgroundColor",json.bodyColor);
+            var data=json.items;
+            for (var i = 0; i < data.length; i++) {
+                var component;
+                console.log(data[i])
+                if (data[i].itype == 0) {
+                    component = Ext.create("editpic.view.img.CanvasImg",data[i]);
+                    me.add(component);
+
+                    component.init(data[i]);
+
+                }
+                if (data[i].itype == 1) {
+                    component = Ext.create("editpic.view.img.GifImg",data[i])
+                    me.add(component);
+
+                    component.init(data[i]);
+                }
+                if (data[i].itype == 2) {
+                    component = Ext.create("editpic.view.img.TextFieldTool",data[i])
+                    me.add(component);
+
+                    component.init(data[i]);
+                }
+                if (data[i].itype == 3) {
+                    component = Ext.create("editpic.view.img.LinkTool",data[i])
+                    me.add(component);
+
+                    component.init(data[i])
+                }
 
             }
-            if (data[i].itype == 1) {
-                component = Ext.create("editpic.view.img.GifImg",data[i])
-                me.add(component);
 
-                component.init(data[i]);
-            }
-            if (data[i].itype == 2) {
-                component = Ext.create("editpic.view.img.TextFieldTool",data[i])
-                me.add(component);
 
-                component.init(data[i]);
-            }
-            if (data[i].itype == 3) {
-                component = Ext.create("editpic.view.img.LinkTool",data[i])
-                me.add(component);
 
-                component.init(data[i])
-            }
+            me.viewModel.set("width",json.width);
+            me.viewModel.set("height",json.height);
 
-        }
 
     },
     draggable: true,

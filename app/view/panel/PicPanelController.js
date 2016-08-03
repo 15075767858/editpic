@@ -30,8 +30,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     if (dragData.itype == 2) {
                         tool = Ext.create("editpic.view.img.TextFieldTool",
                             {
-                                itype: dragData.itype,
-
+                                itype: 2,
                                 x: e.event.offsetX,
                                 y: e.event.offsetY,
                                 width: 100,
@@ -42,7 +41,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     if (dragData.itype == 3) {
                         tool = Ext.create("editpic.view.img.LinkTool",
                             {
-                                itype: dragData.itype,
+                                itype: 3,
                                 x: e.event.offsetX,
                                 y: e.event.offsetY,
                                 width: 100,
@@ -50,7 +49,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                             }
                         )
                     }
-                    Ext.create("editpic.view.window.FieldMenuWindow", {
+                    Ext.create("editpic.view.window.CanvasConponmentWindow", {
                         values: tool,
                         ok: function (data) {
                             panel.add(tool);
@@ -71,13 +70,14 @@ Ext.define('editpic.view.panel.PicPanelController', {
                         width: 100,
                         height: 100,
                         src: url,
-                        hidden: true
+                        hidden: true,
+                        itype:0
                     };
                     var canvasimg = Ext.create("editpic.view.img.CanvasImg", data);
                     var gifimg = Ext.create("editpic.view.img.GifImg", data)
                     var values = ddSource.dragData.records[0].data;
 
-                    var win = Ext.create("editpic.view.window.ImgPanelMenuFormWindow", {
+                    var win = Ext.create("editpic.view.window.CanvasConponmentWindow", {
                         values: canvasimg,
                         ok: function (resData) {
                             if (resData.itype == 0) {

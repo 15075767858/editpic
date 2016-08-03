@@ -60,7 +60,7 @@ Ext.define('editpic.view.main.MainController', {
                         json[text] = datas
                     }
                     curPanel.setTitle(text)
-                    My.putImageData(Ext.encode(json))
+                    My.putImageData(Ext.encode(json),text)
                     //console.log(json);
                     win.close();
                     My.delayToast("Massage", "Save File OK !");
@@ -76,8 +76,7 @@ Ext.define('editpic.view.main.MainController', {
     },
     openHandler: function () {
 
-        var comboStore=My.getImageNames()
-
+        var comboStore = My.getImageNames()
 
 
         var win = Ext.create('Ext.window.Window', {
@@ -159,43 +158,117 @@ My.AjaxPost = function (url, success, params) {
         success: success
     });
 }
+My.AjaxSimple=function(params,url,success){
+    Ext.Ajax.request({
+        url: url||"resources/main.php",
+        method: "GET",
+        async: false,
+        params: params,
+        success: success
+    });
+}
 My.delayToast = function (title, html, delay) {
     setTimeout(function () {
         Ext.toast({
             minWidth: 200,
             title: title,
             html: html,
-            align: 'br'
+            slideInDuration: 400,
+
+            align: 't'
+            //align: 'br'
         });
     }, delay)
 }
 
+
 My.getImageData = function () {
-    var data = null;
+    var data = {};
 
     My.Ajax("resources/main.php?par=getImageData", function (response) {
         console.log(response.responseText)
-        data = Ext.decode(response.responseText);
+        try {
+            data = Ext.decode(response.responseText);
+        } catch (e) {
+
+        }
+
     })
-
-
     return data;
 }
 
-My.putImageData = function (content) {
+My.putImageData = function (content,text) {
     var data = null;
+    if(!text){
+        return data
+    }
     My.AjaxPost("resources/main.php?par=putImageData", function (response) {
         data = response.responseText;
+        My.AjaxSimple({
+            par:"saveImageAsHtml",
+            graph:text
+        })
+        //saveImageAsHtml
     }, {
         content: content
     })
     return data;
 }
-My.getImageNames=function(){
+My.getImageNames = function () {
     var imgData = My.getImageData()
     var arr = [];
     for (var name  in imgData) {
         arr.push(name);
     }
     return arr;
+}
+My.getDevStore = function (ip, port) {
+    var store = null;
+
+    console.log(arguments)
+
+    if (!ip & !port) {
+        return store;
+    }
+
+    My.Ajax("resources/main.php", function (response) {
+            var data = response.responseText
+            try {
+                var ojson = Ext.decode(data)
+                if (ojson) {
+                    store = Ext.create("Ext.data.Store", {
+                        fields: ['name', 'value'],
+                        data: ojson
+                    })
+                }
+            } catch (e) {
+            }
+        }, {
+            par: "getdevs",
+            ip: ip,
+            port: port
+        }
+    )
+    return store;
+}
+My.getDevTypeStore = function (ip, port, nodename) {
+
+    var store = [];
+    if (!ip & !port & !nodename) {
+        return store;
+    }
+    My.Ajax("resources/main.php", function (response) {
+        try{
+        store = Ext.decode(response.responseText)
+        }catch (e){
+
+        }
+    }, {
+        par: "gettypes",
+        ip: ip,
+        port: port,
+        nodename: nodename
+    })
+
+    return store;
 }

@@ -1,16 +1,5 @@
 Ext.define('editpic.view.form.LinkPropertyForm', {
-    extend: 'Ext.form.Panel',
-
-    requires: [
-        'editpic.view.form.LinkPropertyFormController',
-        'editpic.view.form.LinkPropertyFormModel'
-    ],
-
-    controller: 'form-linkpropertyform',
-    viewModel: {
-        type: 'form-linkpropertyform'
-    },
-
+    extend: 'editpic.view.form.CanvasMenuBaseForm',
     width: 400,
     height: "100",
     margin: 10,
@@ -21,9 +10,14 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
         allowBlank: false
     },
     initComponent: function () {
-        var me = this;
+        var me = this, values = me.values, itype = me.values.itype;
 
-        if (!me.items) {
+        console.log(values)
+
+        console.log(itype)
+        if (itype == 0 || itype == 1 || itype == 2) {
+            var nodeNameStore = My.getDevStore(me.values.ip, me.values.port)
+            var nodeTypeStore = My.getDevTypeStore(me.values.ip, me.values.port, me.values.nodename);
 
             me.items = [
 
@@ -80,59 +74,81 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     xtype: "combo",
                     //flex: 2,
                     bind: {
-                        hidden: "{!isBind.checked}",
+                        hidden: "{!isBind.checked}"
                     },
                     name: "nodename",
                     fieldLabel: "Object_Name",
                     displayField: 'name',
                     valueField: 'value',
-                    disabled: true,
+                    store: nodeNameStore,
+                    disabled: !values.nodename,
+                    value: values.nodename,
                     itemId: "devscombo",
                     reference: "devsfield",
                     init: function (ip, port) {
-                        var me = this;
-                        me.ip = ip;
-                        me.port = port;
-                        My.Ajax("resources/main.php", function (response) {
-                                var data = response.responseText
-                                try {
-                                    var ojson = Ext.decode(data)
-                                    if (ojson) {
-                                        var store = Ext.create("Ext.data.Store", {
-                                            fields: ['name', 'value'],
-                                            data: ojson
-                                        })
-                                        me.setDisabled(false)
-
-                                        me.setStore(store);
-                                        return true;
-                                    }
-                                } catch (e) {
-                                    //me.up().hideAll()
-                                    var devsfield = me.lookup("devsfield")
-                                    var typescombo = me.lookup("typescombo");
-                                    devsfield.hide()
-                                    typescombo.hide()
-                                    Ext.Msg.alert("Error", "Connect to database failed !");
-                                    if (me.store) {
-                                        if (me.store.data.length > 0)
-                                            me.store.clearAll()
-                                    }
-                                    //me.clearValue()
-                                    //me.setStore(null)
-                                    return false;
-                                }
-                            }, {
-                                par: "getdevs",
-                                ip: ip,
-                                port: port
+                        var combo = this;
+                        combo.ip = ip;
+                        combo.port = port;
+                        var store = My.getDevStore(ip, port);
+                        if (store) {
+                            combo.setDisabled(false)
+                            combo.setStore(store);
+                        } else {
+                            var devsfield = me.lookup("devsfield")
+                            var typescombo = me.lookup("typescombo");
+                            devsfield.hide()
+                            typescombo.hide()
+                            Ext.Msg.alert("Error", "Connect to database failed !");
+                            if (combo.store) {
+                                if (combo.store.data.length > 0)
+                                    combo.store.clearAll()
                             }
-                        )
+                        }
+                        /*My.Ajax("resources/main.php", function (response) {
+                         var data = response.responseText
+                         try {
+                         var ojson = Ext.decode(data)
+                         if (ojson) {
+                         var store = Ext.create("Ext.data.Store", {
+                         fields: ['name', 'value'],
+                         data: ojson
+                         })
+                         me.setDisabled(false)
+
+                         me.setStore(store);
+                         return true;
+                         }
+                         } catch (e) {
+                         //me.up().hideAll()
+                         var devsfield = me.lookup("devsfield")
+                         var typescombo = me.lookup("typescombo");
+                         devsfield.hide()
+                         typescombo.hide()
+                         Ext.Msg.alert("Error", "Connect to database failed !");
+                         if (me.store) {
+                         if (me.store.data.length > 0)
+                         me.store.clearAll()
+                         }
+                         //me.clearValue()
+                         //me.setStore(null)
+                         return false;
+                         }
+                         }, {
+                         par: "getdevs",
+                         ip: ip,
+                         port: port
+                         }
+                         )*/
                     },
                     editable: false,
                     listeners: {
+                        boxready: function (combo) {
+                            var store = My.getDevStore(me.values.ip, me.values.port)
+                            if (store) {
+                                combo.setStore(store);
+                            }
+                        },
                         change: function (combo, newValue, oldValue, e) {
-
                             var typescombo = me.lookup("typescombo");
                             typescombo.init(combo.ip, combo.port, newValue);
                         }
@@ -143,29 +159,60 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     bind: {
                         hidden: "{!isBind.checked}",
                     },
-                    //flex: 2,
                     reference: "typescombo",
                     fieldLabel: "Type",
                     editable: false,
                     name: "type",
-                    disabled: true,
+                    disabled: !values.type,
+                    store: nodeTypeStore,
+                    value: values.type,
                     init: function (ip, port, nodename) {
                         var me = this;
-
-                        My.Ajax("resources/main.php", function (response) {
-                            me.setStore(Ext.decode(response.responseText))
+                        var store = My.getDevTypeStore(ip, port, nodename);
+                        if (store) {
+                            me.setStore(store)
                             me.setDisabled(false)
-                        }, {
-                            par: "gettypes",
-                            ip: ip,
-                            port: port,
-                            nodename: nodename
-                        })
+                        }
+                        /*
+                         My.Ajax("resources/main.php", function (response) {
+                         me.setStore(Ext.decode(response.responseText))
+                         me.setDisabled(false)
+                         }, {
+                         par: "gettypes",
+                         ip: ip,
+                         port: port,
+                         nodename: nodename
+                         })*/
                     }
                 }
 
             ]
 
+        }
+
+        if (itype == 3) {
+            me.items = [
+                {
+                    xtype: 'checkbox',
+                    fieldLabel: "bind",
+                    name: 'isBind',
+                    hidden: false,
+                    reference: "isBind"
+
+                },
+                {
+                    xtype: "combo",
+                    bind: {
+                        hidden: "{!isBind.checked}",
+                        disabled: "{!isBind.checked}"
+                    },
+                    //flex: 2,
+                    store: My.getImageNames(),
+                    fieldLabel: "Type",
+                    editable: false,
+                    name: "linkValue",
+                }
+            ]
         }
         me.callParent();
     }

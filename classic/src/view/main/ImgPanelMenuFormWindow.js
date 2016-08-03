@@ -90,12 +90,14 @@ Ext.define('editpic.view.window.ImgPanelMenuFormWindow', {
                         name: "height", fieldLabel: "height", xtype: 'numberfield',
                         step: 10,
                         minValue: 0
-                    }
+                    },
                 ]
             }
         )
 
-        me.bindFormPanel = Ext.create("editpic.view.form.LinkPropertyForm", {})
+        me.bindFormPanel = Ext.create("editpic.view.form.LinkPropertyForm", {
+            values:me.values
+        })
 
         me.items = [me.labelFormPanel, me.bindFormPanel];
 

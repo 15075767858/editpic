@@ -25,7 +25,7 @@ Ext.define('editpic.view.img.BaseTool', {
         me.mySetHeight(data.height);
         me.mySetX(data.x);
         me.mySetY(data.y);
-        me.itype = data.itype;
+        me.itype = data.itype-0;
         me.isBind = data.isBind;
         me.linkData(data);
     },
@@ -93,11 +93,12 @@ Ext.define('editpic.view.img.BaseTool', {
         data.height = me.height;
         data.name = me.name;
         data.isBind = me.isBind;
-        data.itype = me.itype;
+        data.itype = me.itype-0;
         data.ip = me.ip;
         data.port = me.port;
         data.nodename = me.nodename;
         data.type = me.type;
+        data.linkValue=me.linkValue;
         return data;
     },
     clearInterval: function () {
@@ -151,7 +152,6 @@ Ext.define('editpic.view.img.BaseTool', {
         el: {
             contextmenu: function (e) {
                 e.stopEvent()
-                console.log(this)
                 var me = this.component;
                 Ext.create("Ext.menu.Menu", {
                     x: e.pageX,
@@ -178,13 +178,11 @@ Ext.define('editpic.view.img.BaseTool', {
                         }
                     ]
                 })
-
-                console.log(arguments)
             },
             dblclick: function () {
                 var me = this.component;
                 console.log(me)
-                Ext.create("editpic.view.window.FieldMenuWindow", {
+                Ext.create("editpic.view.window.CanvasConponmentWindow", {
                     values: me,
                     ok: function (data) {
                         me.init(data);

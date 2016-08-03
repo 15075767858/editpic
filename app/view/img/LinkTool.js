@@ -33,7 +33,6 @@ Ext.define('editpic.view.img.LinkTool', {
             me.linkValue=data.linkValue;
             me.field.setText(data.linkValue)
             me.field.setText(data.linkValue)
-
             me.field.setHandler(function () {
 
                 Ext.getCmp("mintab").addTab(data.linkValue)

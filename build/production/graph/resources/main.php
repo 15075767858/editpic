@@ -15,65 +15,73 @@ if ($par == 'getSvgTree') {
     echo json_encode(getfiles($path, $fileArr = Array()));
 }
 
-if($par=="getdevs"){
-    $redis=getRedisConect();
+if ($par == "getdevs") {
+    $redis = getRedisConect();
     $arList = $redis->keys("???????");
     sort($arList);
     $arr = array();
     foreach ($arList as $key => $value) {
-        if(is_numeric($value)){
-            array_push($arr,array("value"=>$value,"name"=>$redis->hGet($value,"Object_Name")));
+        if (is_numeric($value)) {
+            array_push($arr, array("value" => $value, "name" => $redis->hGet($value, "Object_Name")));
         }
     }
     sort($arList);
     echo json_encode($arr);
 }
 
-if($par=="gettypes"){
-    $redis=getRedisConect();
-    $nodeName=$_GET['nodename'];
+if ($par == "gettypes") {
+    $redis = getRedisConect();
+    $nodeName = $_GET['nodename'];
     $arList = $redis->hKeys($nodeName);
     echo json_encode($arList);
 }
 
-if($par=="gettypevalue"){
+if ($par == "gettypevalue") {
     $nodeName = $_GET['nodename'];
-    $type=$_GET['type'];
+    $type = $_GET['type'];
     $redis = getRedisConect();
     echo $redis->hGet($nodeName, $type);
 }
 
 
-function getRedisConect(){
+function getRedisConect()
+{
     $redis = new Redis();
-    $ip=$_GET['ip'];
-    $port=$_GET['port'];
+    $ip = $_GET['ip'];
+    $port = $_GET['port'];
     $redis->connect($ip, $port);
 
     return $redis;
 }
 
 
-if($par=="getImageData"){
-    $fn="../../home/data.json";
-    if(file_exists($fn)){
-        echo  file_get_contents($fn);
-    }else{
+if ($par == "getImageData") {
+    $fn = "../../home/data.json";
+    if (file_exists($fn)) {
+        echo file_get_contents($fn);
+    } else {
         mkdir("../../home");
         file_put_contents($fn, "");
     }
 }
-if($par=="putImageData"){
-    $fn="../../home/data.json";
-    $content=$_POST['content'];
-    if(file_exists($fn)){
-        echo  $content;
-        echo  file_put_contents($fn, $content);
-    }else{
+if ($par == "putImageData") {
+    $fn = "../../home/data.json";
+    $content = $_POST['content'];
+
+    if (file_exists($fn)) {
+        echo $content;
+        echo file_put_contents($fn, $content);
+    } else {
         mkdir("../../home");
         file_put_contents($fn, "");
     }
 }
+if ($par == "saveImageAsHtml") {
+    $graph=$_GET["graph"];
+    $htmlStr = "<script>window.location.href='/graph/index.html?graph=".$graph. "'</script>";
+    file_put_contents("../../home/".$graph.".html",$htmlStr);
+}
+
 
 function getfiles($path, $fileArr)
 {

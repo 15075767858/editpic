@@ -3,7 +3,7 @@
  * */
 Ext.define('editpic.view.img.CanvasImg', {
     //extend: 'editpic.view.img.Base',
-    extend:"Ext.draw.Container",
+    extend: "Ext.draw.Container",
     xtype: "canvasimg",
     sprites: [],
     requires: [
@@ -31,7 +31,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         console.log(data)
         var me = this;
         me.show()
-        me.itype=data.itype;
+        me.itype = data.itype;
         me.mySetWidth(data.width);
         me.mySetHeight(data.height);
         me.mySetX(data.x);
@@ -57,21 +57,21 @@ Ext.define('editpic.view.img.CanvasImg', {
         me.isRelated = checked;
         me.refreshCanvas()
     },
-    getInitData:function(){
-        var me=this;
-        var data={};
-        data.x=me.x;
-        data.y=me.y;
-        data.width=me.width;
-        data.height=me.height;
-        data.name=me.name;
-        data.isBind=me.isBind;
-        data.src=me.src;
-        data.itype=me.itype;
-        data.ip=me.ip;
-        data.port=me.port;
-        data.nodename=me.nodename;
-        data.type=me.type;
+    getInitData: function () {
+        var me = this;
+        var data = {};
+        data.x = me.x;
+        data.y = me.y;
+        data.width = me.width;
+        data.height = me.height;
+        data.name = me.name;
+        data.isBind = me.isBind;
+        data.src = me.src;
+        data.itype = me.itype;
+        data.ip = me.ip;
+        data.port = me.port;
+        data.nodename = me.nodename;
+        data.type = me.type;
         return data;
     },
     setRGB: function (type, value) {
@@ -93,11 +93,11 @@ Ext.define('editpic.view.img.CanvasImg', {
         var img = new Image();
         var context = surface.contexts[0];
         img.src = me.src;
-        var width=me.getWidth()
-        var height=me.getHeight()
+        var width = me.getWidth()
+        var height = me.getHeight()
         img.onload = function () {
             console.log(context)
-            if(!context){
+            if (!context) {
                 return;
             }
             context.drawImage(img, 0, 0, width, height);
@@ -207,20 +207,20 @@ Ext.define('editpic.view.img.CanvasImg', {
     mySetWidth: function (newValue) {
         console.log(newValue)
         newValue = parseInt(newValue)
-        newValue=newValue-0
+        newValue = newValue - 0
         var me = this;
         me.setWidth(newValue)
-        me.width=newValue;
+        me.width = newValue;
     },
     mySetHeight: function (newValue) {
         console.log(newValue)
         newValue = parseInt(newValue)
-        newValue=newValue-0
+        newValue = newValue - 0
 
         var me = this;
 
         me.setHeight(newValue)
-        me.height=newValue
+        me.height = newValue
     },
     /*refreshCanvas: function () {
      var me = this;
@@ -328,11 +328,40 @@ Ext.define('editpic.view.img.CanvasImg', {
             panel.getImages()
         },
         el: {
+            contextmenu: function (e) {
+                e.stopEvent()
+                var me = this.component;
+                Ext.create("Ext.menu.Menu", {
+                    x: e.pageX,
+                    y: e.pageY,
+                    autoShow: true,
+                    items: [
+                        {
+                            text: "delete", handler: function () {
+                            me.close()
+                        }
+                        },
+                        {
+                            text: "Property", handler: function () {
+                            Ext.create("editpic.view.window.CanvasConponmentWindow", {
+                                values: me,
+                                ok: function (data) {
+                                    me.init(data);
+                                },
+                                cancel: function () {
+
+                                }
+                            })
+                        }
+                        }
+                    ]
+                })
+            },
             dblclick: function (e, el) {
                 var me = this.component;
                 console.log(me)
 
-                Ext.create("editpic.view.window.ImgPanelMenuFormWindow", {
+                Ext.create("editpic.view.window.CanvasConponmentWindow", {
                     values: me,
                     ok: function (data) {
                         me.init(data);

@@ -63,12 +63,12 @@ Ext.define('editpic.view.tree.SvgsTree', {
             plugins: {
                 ptype: 'treeviewdragdrop',
                 containerScroll: true,
-                ddGroup:"picgroup",
-                enableDrop:false,
-                dragText:null,
-                copy:true,
+                ddGroup: "picgroup",
+                enableDrop: false,
                 dragText: null,
-                stateEvents:["drop","beforedrop"]
+                copy: true,
+                dragText: null,
+                stateEvents: ["drop", "beforedrop"]
             }
         }
 
@@ -80,17 +80,7 @@ Ext.define('editpic.view.tree.SvgsTree', {
             console.log(this.items)
         },
         itemmouseenter: "itemmouseenter",
-        beforedrop:function(node, data, overModel, dropPosition, dropHandlers){
-            // Defer the handling
-            dropHandlers.wait = true;
-            Ext.MessageBox.confirm('Drop', 'Are you sure', function(btn){
-                if (btn === 'yes') {
-                    dropHandlers.processDrop();
-                } else {
-                    dropHandlers.cancelDrop();
-                }
-            });
-        }
+        beforedrop: "beforedrop",
     }
 });
 

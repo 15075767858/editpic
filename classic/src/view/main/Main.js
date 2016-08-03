@@ -21,7 +21,8 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.panel.PicPanel",
         "editpic.view.panel.SetPicPanel",
         "editpic.view.panel.DevFormPanel",
-        'editpic.view.panel.ToolsPanel'
+        'editpic.view.panel.ToolsPanel',
+        "Ext.window.Toast"
     ],
 
     controller: 'main',
@@ -35,7 +36,7 @@ Ext.define('editpic.view.main.Main', {
         }, {
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 1.0")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 1.0.2")
             }
         }
     ],
@@ -86,6 +87,9 @@ Ext.define('editpic.view.main.Main', {
 
             },
             addTab: function (text) {
+                if(!text){
+                    return;
+                }
                 var me = this
                 var panel = me.getTabByTitle(text);
                 if (panel) {
@@ -102,6 +106,7 @@ Ext.define('editpic.view.main.Main', {
                         items: picPanel
                     }
                 ).show()
+                Ext.toast
                 picPanel.load(My.getImageData()[text])
 
 
@@ -122,8 +127,19 @@ Ext.define('editpic.view.main.Main', {
                         y: 30
                     }
                 }
-
-            ]
+            ],
+            listeners:{
+                boxready:function(){
+                    var me=this;
+                    var search = window.location.search;
+                    if(search){
+                        var resObj = Ext.Object.fromQueryString(search)
+                        if(resObj){
+                           me.addTab(resObj['graph'])
+                        }
+                    }
+                }
+            }
         },
         {
             xtype: "editpic.svgstree",
@@ -140,16 +156,6 @@ Ext.define('editpic.view.main.Main', {
             xtype: "devformpanel",
             region: "east"
         }
-    ],
-    listeners: {
-        boxready: function () {
-            var me = this;
-            /*
-             Ext.onReady(function () {
-             //Ext.create("editpic.view.window.ImgPanelMenuFormWindow")
-             })*/
-
-        }
-    }
+    ]
 
 });
