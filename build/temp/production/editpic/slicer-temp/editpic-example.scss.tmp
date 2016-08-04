@@ -1157,12 +1157,6 @@ $include-editpic-view-tree-svgstreemodel: dynamic(true);;
 $include-editpic-view-window-canvasconponmentwindow: dynamic(true);;
 $include-editpic-view-window-canvasconponmentwindowcontroller: dynamic(true);;
 $include-editpic-view-window-canvasconponmentwindowmodel: dynamic(true);;
-$include-editpic-view-window-fieldmenuwindow: dynamic(true);;
-$include-editpic-view-window-fieldmenuwindowcontroller: dynamic(true);;
-$include-editpic-view-window-fieldmenuwindowmodel: dynamic(true);;
-$include-editpic-view-window-imgpanelmenuformwindow: dynamic(true);;
-$include-editpic-view-window-imgpanelmenuformwindowcontroller: dynamic(true);;
-$include-editpic-view-window-imgpanelmenuformwindowmodel: dynamic(true);;
 
 
 /* ======================== ETC ======================== */

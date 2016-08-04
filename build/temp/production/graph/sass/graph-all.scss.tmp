@@ -719,9 +719,11 @@ $include-editpic-application: dynamic(true);;
 $include-editpic-store-personnel: dynamic(true);;
 $include-editpic-store-picdatas: dynamic(false);;
 $include-editpic-store-treelistmodel: dynamic(false);;
+$include-editpic-view-form-canvasmenubaseform: dynamic(false);;
+$include-editpic-view-form-canvasmenubaseformcontroller: dynamic(false);;
+$include-editpic-view-form-canvasmenubaseformmodel: dynamic(false);;
+$include-editpic-view-form-labelform: dynamic(false);;
 $include-editpic-view-form-linkpropertyform: dynamic(false);;
-$include-editpic-view-form-linkpropertyformcontroller: dynamic(false);;
-$include-editpic-view-form-linkpropertyformmodel: dynamic(false);;
 $include-editpic-view-img-basetool: dynamic(false);;
 $include-editpic-view-img-basetoolcontroller: dynamic(false);;
 $include-editpic-view-img-basetoolmodel: dynamic(false);;
@@ -758,10 +760,8 @@ $include-editpic-view-tree-devtreecontroller: dynamic(false);;
 $include-editpic-view-tree-devtreemodel: dynamic(false);;
 $include-editpic-view-tree-svgstreecontroller: dynamic(false);;
 $include-editpic-view-tree-svgstreemodel: dynamic(false);;
-$include-editpic-view-window-fieldmenuwindowcontroller: dynamic(false);;
-$include-editpic-view-window-fieldmenuwindowmodel: dynamic(false);;
-$include-editpic-view-window-imgpanelmenuformwindowcontroller: dynamic(false);;
-$include-editpic-view-window-imgpanelmenuformwindowmodel: dynamic(false);;
+$include-editpic-view-window-canvasconponmentwindowcontroller: dynamic(false);;
+$include-editpic-view-window-canvasconponmentwindowmodel: dynamic(false);;
 $output-paths: ("path": "../../modern/resources", "shared": "../../resources");
 
 /* ======================== ETC ======================== */

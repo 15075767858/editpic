@@ -42,7 +42,7 @@ Ext.define('editpic.view.img.BaseTool', {
         }
         me.ip = ip;
         me.port = port;
-        me.nodenam = nodename;
+        me.nodename = nodename;
         me.type = type;
         me.clearInterval();
         me.interval = setInterval(function () {
@@ -96,6 +96,7 @@ Ext.define('editpic.view.img.BaseTool', {
         data.itype = me.itype-0;
         data.ip = me.ip;
         data.port = me.port;
+        console.log(me)
         data.nodename = me.nodename;
         data.type = me.type;
         data.linkValue=me.linkValue;
@@ -139,6 +140,18 @@ Ext.define('editpic.view.img.BaseTool', {
         me.field.setHeight(value)
         me.setHeight(value)
     },
+    openMenu:function(ok,cancel){
+        var me =this;
+        Ext.create("editpic.view.window.CanvasConponmentWindow", {
+            values: me,
+            ok: ok||function (data) {
+                me.init(data);
+            },
+            cancel: cancel||function () {
+
+            }
+        })
+    },
     listeners: {
         resize: function (me, width, height) {
 
@@ -165,7 +178,8 @@ Ext.define('editpic.view.img.BaseTool', {
                         },
                         {
                             text: "Property", handler: function () {
-                            Ext.create("editpic.view.window.FieldMenuWindow", {
+                            me.openMenu()
+                            /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
                                 values: me,
                                 ok: function (data) {
                                     me.init(data);
@@ -173,7 +187,7 @@ Ext.define('editpic.view.img.BaseTool', {
                                 cancel: function () {
 
                                 }
-                            })
+                            })*/
                         }
                         }
                     ]
@@ -182,7 +196,8 @@ Ext.define('editpic.view.img.BaseTool', {
             dblclick: function () {
                 var me = this.component;
                 console.log(me)
-                Ext.create("editpic.view.window.CanvasConponmentWindow", {
+                me.openMenu()
+                /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
                     values: me,
                     ok: function (data) {
                         me.init(data);
@@ -190,7 +205,7 @@ Ext.define('editpic.view.img.BaseTool', {
                     cancel: function () {
 
                     }
-                })
+                })*/
 
             }
         }

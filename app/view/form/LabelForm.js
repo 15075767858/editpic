@@ -8,7 +8,16 @@ Ext.define('editpic.view.form.LabelForm', {
         anchor: "100%",
         allowBlank: false
     },
+    /* requires: [
+     'editpic.view.form.CanvasMenuBaseFormController',
+     'editpic.view.form.CanvasMenuBaseFormModel'
+     ],
 
+     controller: 'form-canvasmenubaseform',
+     viewModel: {
+     type: 'form-canvasmenubaseform'
+     },
+     */
     initComponent: function () {
         var me = this;
 
@@ -25,37 +34,13 @@ Ext.define('editpic.view.form.LabelForm', {
                     xtype: "textfield", allowBlank: true,
                     fieldLabel: "name", name: "name"
                 },
-                {
-                    name: "x", fieldLabel: "x", xtype: 'numberfield',
-                    step: 10,
-                    minValue: 0
-                },
-                {
-                    name: "y", fieldLabel: "y", xtype: 'numberfield',
-                    step: 10,
-                    minValue: 0
-                },
-                {
-                    name: "width", fieldLabel: "width", xtype: 'numberfield',
-                    step: 10,
-                    minValue: 0
-                },
-                {
-                    name: "height", fieldLabel: "height", xtype: 'numberfield',
-                    step: 10,
-                    minValue: 0
-                },
-                {
-                    name: "layer", fieldLabel: "layer", xtype: "numberfield",
-                    step: 2,
-                    minValue: 0,
-                    value: 0
-                }
+
+
             ]
         }
 
         if (itype == 0 || itype == 1) {
-            labelFormItems =[
+            labelFormItems = [
                 {
                     xtype: "textfield", allowBlank: true,
                     fieldLabel: "name", name: "name"
@@ -99,30 +84,91 @@ Ext.define('editpic.view.form.LabelForm', {
                     listeners: {
                         render: "dragImageSetUrl"
                     }
-                },
-                {
-                    name: "x", fieldLabel: "x", xtype: 'numberfield',
-                    step: 10,
-                    minValue: 0
-                },
-                {
-                    name: "y", fieldLabel: "y", xtype: 'numberfield',
-                    step: 10,
-                    minValue: 0
-                },
-                {
-                    name: "width", fieldLabel: "width", xtype: 'numberfield',
-                    step: 10,
-                    minValue: 0
-                },
-                {
-                    name: "height", fieldLabel: "height", xtype: 'numberfield',
-                    step: 10,
-                    minValue: 0
                 }
             ]
         }
 
+        var publicItems = [{
+            name: "x", fieldLabel: "x", xtype: 'numberfield',
+            step: 10,
+            minValue: 0
+        },
+            {
+                name: "y", fieldLabel: "y", xtype: 'numberfield',
+                step: 10,
+                minValue: 0
+            },
+            {
+                name: "width", fieldLabel: "width", xtype: 'numberfield',
+                step: 10,
+                minValue: 0
+            },
+            {
+                name: "height", fieldLabel: "height", xtype: 'numberfield',
+                step: 10,
+                minValue: 0
+            },
+            {
+                scope: me,
+                name: "disabled",
+                configName: "disabled",
+                fieldLabel: "enabled",
+                xtype: "combo",
+                store: [false, true],
+                listeners: {
+                    change: "mySetConfig"
+                }
+            },
+            {
+                name: "background", fieldLabel: "background", xtype: "textfield",
+                step: 2,
+                minValue: 0,
+                value: 0,
+                disabled: true
+
+            },
+            {
+                name: "font", fieldLabel: "font", xtype: "textfield",
+                step: 2,
+                minValue: 0,
+                value: 0,
+                disabled: true
+
+            },
+            {
+                name: "blink", fieldLabel: "blink", xtype: "textfield",
+                step: 2,
+                minValue: 0,
+                value: 0,
+                disabled: true
+
+            },
+            {
+                name: "halign", fieldLabel: "halign", xtype: "textfield",
+                step: 2,
+                minValue: 0,
+                value: 0,
+                disabled: true
+            },
+            {
+                name: "layer", fieldLabel: "layer",
+                allowBlank:true,xtype: "numberfield",
+                step: 2,
+                minValue: 0,
+                listeners: {
+                    change: function (field,newValue) {
+                        if(!newValue){
+                            return;
+                        }
+                        me.values.el.dom.style.zIndex = newValue;
+                        me.values.layer=newValue
+                    }
+                }
+            }
+        ]
+        for (var i = 0; i < publicItems.length; i++) {
+            labelFormItems.push(publicItems[i])
+        }
         me.items = labelFormItems;
 
         me.callParent()

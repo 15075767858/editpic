@@ -14,5 +14,20 @@ Ext.define('editpic.view.form.CanvasMenuBaseFormController', {
                 return true;
             }
         })
+    },
+    mySetConfig:function(field,newVlaue,oldValue,e){
+        console.log(this);
+        console.log(arguments)
+        if(!newVlaue){
+            return;
+        }
+
+        var me=this.view.values;
+        if(field.configName=="disabled"){
+            me.setDisabled(newVlaue)
+        }
+
+        //me.setConfig(field.configName,newValue)
+
     }
 });

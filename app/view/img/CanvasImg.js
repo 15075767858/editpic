@@ -319,6 +319,18 @@ Ext.define('editpic.view.img.CanvasImg', {
      }
 
      },*/
+    openMenu:function(ok,cancel){
+        var me =this;
+        Ext.create("editpic.view.window.CanvasConponmentWindow", {
+            values: me,
+            ok: ok||function (data) {
+                me.init(data);
+            },
+            cancel: cancel||function () {
+
+            }
+        })
+    },
     listeners: {
         resize: "resize",
         close: "destroy",
@@ -343,7 +355,8 @@ Ext.define('editpic.view.img.CanvasImg', {
                         },
                         {
                             text: "Property", handler: function () {
-                            Ext.create("editpic.view.window.CanvasConponmentWindow", {
+                            me.openMenu()
+                            /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
                                 values: me,
                                 ok: function (data) {
                                     me.init(data);
@@ -351,7 +364,7 @@ Ext.define('editpic.view.img.CanvasImg', {
                                 cancel: function () {
 
                                 }
-                            })
+                            })*/
                         }
                         }
                     ]
@@ -360,8 +373,8 @@ Ext.define('editpic.view.img.CanvasImg', {
             dblclick: function (e, el) {
                 var me = this.component;
                 console.log(me)
-
-                Ext.create("editpic.view.window.CanvasConponmentWindow", {
+                me.openMenu()
+                /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
                     values: me,
                     ok: function (data) {
                         me.init(data);
@@ -369,9 +382,7 @@ Ext.define('editpic.view.img.CanvasImg', {
                     cancel: function () {
 
                     }
-                })
-
-
+                })*/
             }
         }
     }

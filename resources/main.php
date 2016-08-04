@@ -108,7 +108,10 @@ function getfiles($path, $fileArr)
             $arr['text'] = substr($afile, 0, strlen($afile) - 4);
             //$arr['url'] = 'resources/'.$spath;
             $arr['leaf'] = true;
-            $arr['iconCls'] = 'fa-file-image-o';
+            $arr["icon"]="resources/" . $spath;
+            //$arr['iconCls'] = 'fa-file-image-o';
+            $arr['iconCls'] = 'aaaaaa';
+
             //$arr['url'] = 'resources/SvgHvac/' . substr($spath, 4, strlen($spath) - 8) . '.gif';
             $arr['url'] = "resources/" . $spath;
             $arr['src'] = "resources/" . $spath;

@@ -112,6 +112,7 @@ Ext.define('editpic.view.panel.SetPicPanel', {
         itemmouseenter: "itemmouseenter",
         itemmouseleave: "itemmouseleave",
         //select: "select"
+        itemcontextmenu:"itemcontextmenu"
     }
 
 });
