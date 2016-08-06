@@ -2,14 +2,14 @@ Ext.define('editpic.view.img.TextFieldTool',
     {
         //extend: 'editpic.view.img.Base',
         extend: "editpic.view.img.BaseTool",
-        requires: [
+       /* requires: [
             'editpic.view.img.TextFieldToolController',
             'editpic.view.img.TextFieldToolModel'
         ],
         controller: 'img-textfieldtool',
         viewModel: {
             type: 'img-textfieldtool'
-        },
+        },*/
         initComponent: function () {
             var me = this;
 
@@ -23,6 +23,7 @@ Ext.define('editpic.view.img.TextFieldTool',
         refreshCanvas: function () {
             var me = this;
             me.field.setValue(me.getLinkValue())
-        }
+        },
+
     }
 );

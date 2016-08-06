@@ -16,7 +16,9 @@ Ext.define('editpic.view.img.CanvasImgController', {
         me.clearInterval();
         var panel = me.up("picpanel");
         panel.getImages()
-
+    },
+    click:function(){
+        alert("click")
     }
 
 });

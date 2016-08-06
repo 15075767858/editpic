@@ -1,10 +1,10 @@
 Ext.define('editpic.view.img.GifImg', {
     extend: 'editpic.view.img.CanvasImg',
 
-    requires: [
+    /*requires: [
         'editpic.view.img.GifImgController',
         'editpic.view.img.GifImgModel'
-    ],
+    ],*/
     /*initComponent:function(){
      var me=this;
 
@@ -31,7 +31,7 @@ Ext.define('editpic.view.img.GifImg', {
 
         var me = this;
         me.callParent(arguments)
-        console.log(me)
+        //console.log(me)
 
         var img = new Image()
 

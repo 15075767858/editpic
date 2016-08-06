@@ -26,30 +26,35 @@ Ext.define('editpic.view.panel.PicPanelController', {
                 var dragData = ddSource.dragData;
                 if (dragData.itype) {
                     var tool;
-                    var toolstr=null;
+                    var toolstr = null;
                     if (dragData.itype == 2) {
                         toolstr = "editpic.view.img.TextFieldTool"
                         /*tool = Ext.create("editpic.view.img.TextFieldTool",
-                            {
-                                itype: 2,
-                                x: e.event.offsetX,
-                                y: e.event.offsetY,
-                                width: 100,
-                                height: 30
-                            }
-                        )*/
+                         {
+                         itype: 2,
+                         x: e.event.offsetX,
+                         y: e.event.offsetY,
+                         width: 100,
+                         height: 30
+                         }
+                         )*/
                     }
                     if (dragData.itype == 3) {
                         toolstr = "editpic.view.img.LinkTool"
                     }
+                    if (dragData.itype == 4) {
+                        toolstr = "editpic.view.img.TextTool"
+                    }
+
                     tool = Ext.create(toolstr,
                         {
-                            itype: 3,
+                            itype: dragData.itype,
                             x: e.event.offsetX,
                             y: e.event.offsetY,
                             width: 100,
                             height: 30,
-                            disabled: false
+                            disabled: false,
+                            zindex:0
                         }
                     )
                     tool.openMenu(function (data) {
@@ -81,33 +86,94 @@ Ext.define('editpic.view.panel.PicPanelController', {
                         disabled: false,
                         src: url,
                         hidden: true,
-                        itype: 0
+                        zindex:0
                     };
-                    var canvasimg = Ext.create("editpic.view.img.CanvasImg", data);
-                    var gifimg = Ext.create("editpic.view.img.GifImg", data)
-                    var values = ddSource.dragData.records[0].data;
+                    //var canvasimg = Ext.create("editpic.view.img.CanvasImg", data);
+                    //var gifimg = Ext.create("editpic.view.img.GifImg", data)
+                    //var values = ddSource.dragData.records[0].data;
+                    var selectImgWin = Ext.create("Ext.window.Window", {
+                        autoShow: true,
 
-                    var win = Ext.create("editpic.view.window.CanvasConponmentWindow", {
-                        values: canvasimg,
-                        ok: function (resData) {
-                            if (resData.itype == 0) {
-                                panel.add(canvasimg);
-                                canvasimg.init(resData)
-                            }
-                            if (resData.itype == 1) {
-                                panel.add(gifimg);
-                                gifimg.init(resData)
+                        title: "Image Type",
+                        items: {
+                            margin: 10,
+                            xtype: "form",
+                            items: {
+                                xtype: "combo", fieldLabel: "Image Type",
+                                name: "itype", allowBlank: true,
+                                store: Ext.create("Ext.data.Store", {
+                                    fields: ["name", "value"],
+                                    data: [
+                                        {name: "static Image", value: 0},
+                                        {name: "Dynamic Image", value: 1}
+                                    ]
+                                }),
+                                editable: false,
+                                value: 0,
+                                displayField: 'name',
+                                valueField: 'value',
+                                reference: "ImageType",
+                                publishes: [
+                                    "value"
+                                ]
                             }
                         },
-                        cancel: function () {
-                            if (canvasimg.hidden) {
-                                canvasimg.close()
+                        buttons: [
+                            {
+                                text: "OK", handler: function () {
+                                var imageType = selectImgWin.down("combo").value
+                                var imagePanel = null;
+                                if (imageType == 0) {
+                                    imagePanel = Ext.create("editpic.view.img.CanvasImg", Ext.apply(data, {itype: 0}));
+                                } else if (imageType == 1) {
+                                    imagePanel = Ext.create("editpic.view.img.GifImg", Ext.apply(data, {itype: 1}))
+                                }
+
+                                var win = Ext.create("editpic.view.window.CanvasConponmentWindow", {
+                                    values: imagePanel,
+                                    ok: function (resData) {
+                                        panel.add(imagePanel);
+                                        imagePanel.init(resData)
+                                        selectImgWin.close()
+
+                                    },
+                                    cancel: function () {
+                                        selectImgWin.close()
+
+                                    }
+                                })
                             }
-                            if (gifimg.hidden) {
-                                gifimg.close()
+                            },
+                            {
+                                text: "Cancel", handler: function () {
+                                selectImgWin.close();
                             }
-                        }
+                            }
+                        ]
+
                     })
+
+                    /*var win = Ext.create("editpic.view.window.CanvasConponmentWindow", {
+                     values: canvasimg,
+                     ok: function (resData) {
+                     if (resData.itype == 0) {
+                     panel.add(canvasimg);
+                     canvasimg.init(resData)
+                     }
+                     if (resData.itype == 1) {
+                     panel.add(gifimg);
+                     gifimg.init(resData)
+                     }
+                     },
+                     cancel: function () {
+                     if (canvasimg.hidden) {
+                     canvasimg.close()
+                     }
+                     if (gifimg.hidden) {
+                     gifimg.close()
+                     }
+                     }
+                     })*/
 
 
                 }
@@ -161,6 +227,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
          }
          })*/
     },
+
 
     download: function () {
         var me = this.view;

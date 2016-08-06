@@ -1,7 +1,7 @@
 Ext.define('editpic.view.img.LinkTool', {
     extend: 'editpic.view.img.BaseTool',
 
-    requires: [
+    /*requires: [
         'editpic.view.img.LinkToolController',
         'editpic.view.img.LinkToolModel'
     ],
@@ -9,7 +9,7 @@ Ext.define('editpic.view.img.LinkTool', {
     controller: 'img-linktool',
     viewModel: {
         type: 'img-linktool'
-    },
+    },*/
     initComponent: function () {
         var me = this;
         var btn = Ext.create("Ext.button.Button",
@@ -21,10 +21,12 @@ Ext.define('editpic.view.img.LinkTool', {
         me.items = btn;
         me.callParent();
     },
-    init: function () {
+    init: function (data) {
         var me = this;
         console.log(me)
         me.callParent(arguments)
+        me.linkData(data);
+
     },
     linkData: function (data) {
         var me = this;

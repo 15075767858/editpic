@@ -36,7 +36,8 @@ Ext.define('editpic.view.main.Main', {
         }, {
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 1.0.4")
+
+                Ext.Msg.alert("Version", "SmartIOgraphTools 1.15")
             }
         }
     ],
@@ -138,6 +139,7 @@ Ext.define('editpic.view.main.Main', {
                            me.addTab(resObj['graph'])
                         }
                     }
+                    My.linkManger.init()
                 }
             }
         },

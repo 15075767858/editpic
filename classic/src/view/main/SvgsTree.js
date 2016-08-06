@@ -79,7 +79,7 @@ Ext.define('editpic.view.tree.SvgsTree', {
         boxready: function () {
             console.log(this.items)
         },
-        itemmouseenter: "itemmouseenter",
+        //itemmouseenter: "itemmouseenter",
         beforedrop: "beforedrop",
     }
 });

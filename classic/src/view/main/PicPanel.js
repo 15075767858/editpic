@@ -64,58 +64,70 @@ Ext.define('editpic.view.panel.PicPanel', {
         var items = me.items.items;
         for (var i = 0; i < items.length; i++) {
             console.log(items[i])
+            if (!items[i]) {
+                console.log('items[i]')
+                continue
+            }
+            ;
+            if (!items[i].getInitData) {
+                console.log("getInitData")
+                continue
+            }
+
             var data = items[i].getInitData()
             console.log(data)
-           arr.push(data);
+            arr.push(data);
         }
         var picpanelData = {}
-        picpanelData["items"]=arr;
-        picpanelData["width"]=me.getWidth();
-        picpanelData["height"]=me.getHeight();
-        picpanelData['bodyColor']=me.body.getStyle("backgroundColor")
+        picpanelData["items"] = arr;
+        picpanelData["width"] = me.getWidth();
+        picpanelData["height"] = me.getHeight();
+        picpanelData['bodyColor'] = me.body.getStyle("backgroundColor")
         return picpanelData;
     },
     load: function (json) {
         var me = this;
+        me.body.setStyle("backgroundColor", json.bodyColor);
+        var data = json.items;
+        for (var i = 0; i < data.length; i++) {
+            var component;
+            console.log(data[i])
+            if (data[i].itype == 0) {
+                component = Ext.create("editpic.view.img.CanvasImg", data[i]);
+                me.add(component);
 
+                component.init(data[i]);
 
-            me.body.setStyle("backgroundColor",json.bodyColor);
-            var data=json.items;
-            for (var i = 0; i < data.length; i++) {
-                var component;
-                console.log(data[i])
-                if (data[i].itype == 0) {
-                    component = Ext.create("editpic.view.img.CanvasImg",data[i]);
-                    me.add(component);
+            }
+            if (data[i].itype == 1) {
+                component = Ext.create("editpic.view.img.GifImg", data[i])
+                me.add(component);
 
-                    component.init(data[i]);
+                component.init(data[i]);
+            }
+            if (data[i].itype == 2) {
+                component = Ext.create("editpic.view.img.TextFieldTool", data[i])
+                me.add(component);
 
-                }
-                if (data[i].itype == 1) {
-                    component = Ext.create("editpic.view.img.GifImg",data[i])
-                    me.add(component);
-
-                    component.init(data[i]);
-                }
-                if (data[i].itype == 2) {
-                    component = Ext.create("editpic.view.img.TextFieldTool",data[i])
-                    me.add(component);
-
-                    component.init(data[i]);
-                }
-                if (data[i].itype == 3) {
-                    component = Ext.create("editpic.view.img.LinkTool",data[i])
-                    me.add(component);
-
-                    component.init(data[i])
-                }
-
+                component.init(data[i]);
+            }
+            if (data[i].itype == 3) {
+                component = Ext.create("editpic.view.img.LinkTool", data[i])
+                me.add(component);
+                component.init(data[i])
+            }
+            if (data[i].itype == 4) {
+                component = Ext.create("editpic.view.img.TextTool", data[i])
+                me.add(component);
+                component.init(data[i])
             }
 
 
+        }
 
-            me.viewModel.set("width",json.width);
-            me.viewModel.set("height",json.height);
+
+        me.viewModel.set("width", json.width);
+        me.viewModel.set("height", json.height);
 
 
     },
@@ -247,6 +259,31 @@ Ext.define('editpic.view.panel.PicPanel', {
             var me = this;
             me.getImages()
             return true
+        },
+        el: {
+            contextmenu: function (e) {
+                e.stopEvent()
+                var me = this.component;
+                Ext.create("Ext.menu.Menu", {
+                    x: e.pageX,
+                    y: e.pageY,
+                    autoShow: true,
+                    items: [
+                        {
+                            text: "paste", disabled: !me.copyImg, handler: function () {
+                            if (me.copyImg) {
+                                var data = me.copyImg.getInitData()
+                                data.x=data.x+10
+                                data.y=data.y+10
+                                var img = My.createImg(data)
+                                me.add(img)
+                                img.init(data)
+                            }
+                        }
+                        }
+                    ]
+                })
+            }
         }
     }
 });

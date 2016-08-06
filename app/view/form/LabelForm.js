@@ -33,9 +33,7 @@ Ext.define('editpic.view.form.LabelForm', {
                 {
                     xtype: "textfield", allowBlank: true,
                     fieldLabel: "name", name: "name"
-                },
-
-
+                }
             ]
         }
 
@@ -45,7 +43,7 @@ Ext.define('editpic.view.form.LabelForm', {
                     xtype: "textfield", allowBlank: true,
                     fieldLabel: "name", name: "name"
                 },
-                {
+                /*{
                     xtype: "combo", fieldLabel: "Image Type",
                     name: "itype", allowBlank: true,
                     store: Ext.create("Ext.data.Store", {
@@ -63,6 +61,11 @@ Ext.define('editpic.view.form.LabelForm', {
                     publishes: [
                         "value"
                     ]
+                },*/
+                {
+                    xtype:"hiddenfield",
+                    name:"itype",
+
                 },
                 {
                     xtype: "textfield", name: "src", fieldLabel: "Image",
@@ -73,10 +76,12 @@ Ext.define('editpic.view.form.LabelForm', {
                 {
                     xtype: "textfield",
                     name: "dynamicSrc", fieldLabel: "Dynamic Image",
-                    bind: {
+                    /*bind: {
                         disabled: "{!ImageType.value}",
                         hidden: "{!ImageType.value}"
-                    },
+                    },*/
+                    hidden:values.itype==0,
+                    disabled:values.itype==0,
                     editable: true,
                     emptyText: "Please drag the image here.",
                     displayField: "text",
@@ -88,25 +93,42 @@ Ext.define('editpic.view.form.LabelForm', {
             ]
         }
 
+
         var publicItems = [{
-            name: "x", fieldLabel: "x", xtype: 'numberfield',
-            step: 10,
-            minValue: 0
+            name: "x", fieldLabel: "x", configName: "mySetX", xtype: 'numberfield',
+            step: 1,
+            minValue: 1,
+            listeners: {
+                values:values,
+                change: "mySetConfig"
+            }
         },
             {
-                name: "y", fieldLabel: "y", xtype: 'numberfield',
-                step: 10,
-                minValue: 0
+                name: "y", fieldLabel: "y", configName: "mySetY", xtype: 'numberfield',
+                step: 1,
+                minValue: 1,
+                listeners: {
+                    values:values,
+                    change: "mySetConfig"
+                }
             },
             {
-                name: "width", fieldLabel: "width", xtype: 'numberfield',
-                step: 10,
-                minValue: 0
+                name: "width", fieldLabel: "width", configName: "mySetWidth", xtype: 'numberfield',
+                step: 1,
+                minValue: 1,
+                listeners: {
+                    values:values,
+                    change: "mySetConfig"
+                }
             },
             {
-                name: "height", fieldLabel: "height", xtype: 'numberfield',
-                step: 10,
-                minValue: 0
+                name: "height", fieldLabel: "height", configName: "mySetHeight", xtype: 'numberfield',
+                step: 1,
+                minValue: 1,
+                listeners: {
+                    values:values,
+                    change:"mySetConfig"
+                }
             },
             {
                 scope: me,
@@ -115,6 +137,8 @@ Ext.define('editpic.view.form.LabelForm', {
                 fieldLabel: "enabled",
                 xtype: "combo",
                 store: [false, true],
+                allowBlank: true,
+                disabled:true,
                 listeners: {
                     change: "mySetConfig"
                 }
@@ -151,17 +175,16 @@ Ext.define('editpic.view.form.LabelForm', {
                 disabled: true
             },
             {
-                name: "layer", fieldLabel: "layer",
-                allowBlank:true,xtype: "numberfield",
+                name: "zindex", fieldLabel: "layer",
+                allowBlank: true, xtype: "numberfield",
                 step: 2,
                 minValue: 0,
                 listeners: {
-                    change: function (field,newValue) {
-                        if(!newValue){
+                    change: function (field, newValue) {
+                        if (!newValue) {
                             return;
                         }
-                        me.values.el.dom.style.zIndex = newValue;
-                        me.values.layer=newValue
+                        me.values.mySetZIndex(newValue)
                     }
                 }
             }

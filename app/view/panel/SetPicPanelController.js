@@ -286,10 +286,7 @@ Ext.define('editpic.view.panel.SetPicPanelController', {
     },
     itemcontextmenu:function( me , record , item , index , e , eOpts ){
         //var me=this.view;
-        console.log(this)
-        console.log(arguments)
-        console.log(me)
         e.stopEvent()
-
+        record.data.openMenu();
     }
 });

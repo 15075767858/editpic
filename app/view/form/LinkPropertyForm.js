@@ -214,6 +214,15 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 }
             ]
         }
+        if (itype == 4) {
+            me.title = "Set Value"
+            me.items = [
+                {
+                    xtype: "textfield", allowBlank: false, name: "linkValue", fieldLabel: "Text"
+                }
+            ]
+        }
+
         me.callParent();
     }
 

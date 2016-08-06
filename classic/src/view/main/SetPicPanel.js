@@ -30,9 +30,6 @@ Ext.define('editpic.view.panel.SetPicPanel', {
             //storeId:Ext.getCmp("mintab").getActiveTab().id+"store",
             autoLoad: true
         })
-        //me.setStore(me.store)
-        //me.store.getGroups();
-
         me.tbar = [
             "->", {
                 text: "toggle group",

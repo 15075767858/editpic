@@ -77,11 +77,73 @@ if ($par == "putImageData") {
     }
 }
 if ($par == "saveImageAsHtml") {
-    $graph=$_GET["graph"];
-    $htmlStr = "<script>window.location.href='/graph/index.html?graph=".$graph. "'</script>";
-    file_put_contents("../../home/".$graph.".html",$htmlStr);
+    $graph = $_GET["graph"];
+    //$htmlStr = "<script>window.location.href='/graph/index.html?graph=" . $graph . "'</script>";
+    $str = '<!DOCTYPE html>' .
+        '<html lang="en">' .
+        '<head>' .
+        '<meta charset="UTF-8">' .
+        '<title>Title</title>' .
+        '</head>' .
+        '<style>' .
+        '*{' .
+        'margin: 0;' .
+        'padding: 0;' .
+        '}' .
+        'html,body,iframe{' .
+        'width:100%;' .
+        'height:100%;' .
+        'overflow: hidden;' .
+        '}' .
+        'iframe{' .
+        'border:none;' .
+        '}' .
+        '</style>' .
+        '<body>' .
+        '<iframe src="../graph/index.html?graph=' . $graph . '"></iframe>' .
+        '</body>' .
+        '</html>';
+
+    file_put_contents("../../home/" . $graph . ".html", $str);
+}
+if ($par == "getLinkValues") {
+    $datas = json_decode($_GET['datas']);
+    $datas = object_array($datas);
+
+    foreach ($datas as $key => $value) {
+
+        $value['value'] = getNodeTypeValue($value);
+        $datas[$key] = $value;
+    }
+
+
+    echo json_encode($datas);
 }
 
+function object_array($array)
+{
+    if (is_object($array)) {
+        $array = (array)$array;
+    }
+    if (is_array($array)) {
+        foreach ($array as $key => $value) {
+            $array[$key] = object_array($value);
+        }
+    }
+
+    return $array;
+}
+
+function getNodeTypeValue($arr)
+{
+    $ip=$arr['ip'];
+    $port=$arr['port'];
+    $nodeName=$arr['nodename'];
+    $type=$arr['type'];
+    $redis = new Redis();
+    $redis->connect($ip, $port);
+    return $redis->hGet($nodeName, $type);
+}
 
 function getfiles($path, $fileArr)
 {
@@ -108,10 +170,11 @@ function getfiles($path, $fileArr)
             $arr['text'] = substr($afile, 0, strlen($afile) - 4);
             //$arr['url'] = 'resources/'.$spath;
             $arr['leaf'] = true;
-            $arr["icon"]="resources/" . $spath;
+            $arr["icon"] = "resources/" . $spath;
             //$arr['iconCls'] = 'fa-file-image-o';
             $arr['iconCls'] = 'aaaaaa';
-
+            $arr['qtitle'] = substr($afile, 0, strlen($afile) - 4);
+            $arr['qtip'] = "<img src=" . "resources/" . $spath . ">";
             //$arr['url'] = 'resources/SvgHvac/' . substr($spath, 4, strlen($spath) - 8) . '.gif';
             $arr['url'] = "resources/" . $spath;
             $arr['src'] = "resources/" . $spath;
