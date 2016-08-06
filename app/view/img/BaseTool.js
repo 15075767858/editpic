@@ -20,8 +20,9 @@ Ext.define('editpic.view.img.BaseTool', {
     },
     initComponent: function () {
         var me = this;
-        Ext.apply(me, My.initComponentConfig)
         me.callParent()
+
+        Ext.apply(me, My.initComponentConfig)
     },
     init: function (data) {
         var me = this;
@@ -31,12 +32,19 @@ Ext.define('editpic.view.img.BaseTool', {
         me.mySetX(data.x);
         me.mySetY(data.y);
         me.mySetZIndex(data.zindex);
-        me.itype = data.itype - 0;
+        if(data.itype){
+            me.itype =me.itype|| data.itype;
+        }
         me.isBind = data.isBind;
         me.linkData(data);
+        me.setFontColor(data.fontcolor)
+        me.mySetBackgroundColor(data.backgroundColor);
     },
-    linkData: function (ip, port, nodename, type) {
+   /* linkData: function (ip, port, nodename, type) {
+
         var me = this;
+        console.log(arguments)
+
         if (!(!!ip & !!port & !!nodename & !!type)) {
             me.clearInterval();
             return;
@@ -47,8 +55,7 @@ Ext.define('editpic.view.img.BaseTool', {
         me.type = type;
         me.clearInterval();
         me.setLinkValue();
-
-    },
+    },*/
     getInitData: function () {
         var me = this;
         var data = {};
@@ -66,7 +73,46 @@ Ext.define('editpic.view.img.BaseTool', {
         data.type = me.type;
         data.linkValue = me.linkValue;
         data.zindex = me.zindex;
+        data.fontcolor=me.getFontColor();
+        data.backgroundColor=me.myGetBackgroundColor();
         return data;
+    },
+    getFontColor: function () {
+        var me = this;
+        if (me.body) {
+            var color = me.body.getColor("color");
+            return color;
+        } else {
+            return "#FFFFFF";
+        }
+    },
+    setFontColor: function (color) {
+        if(!color){
+            return;
+        }
+        var me = this;
+        if (me.body) {
+            me.body.setStyle("color", color);
+            me.fontColor = color;
+        }
+    },
+    linkData: function (data) {
+        var ip = data.ip;
+        var port = data.port;
+        var nodename = data.nodename;
+        var type = data.type;
+        var me = this;
+        console.log(arguments)
+        if (!(!!ip & !!port & !!nodename & !!type)) {
+            me.clearInterval();
+            return;
+        }
+        me.ip = ip;
+        me.port = port;
+        me.nodename = nodename;
+        me.type = type;
+        me.clearInterval();
+        me.setLinkValue();
     },
     /*linkData: function (data) {
      var me = this;
@@ -255,54 +301,8 @@ Ext.define('editpic.view.img.BaseTool', {
                 textfield.focus()
                 textfield.focus()
             },*/
-            contextmenu: function (e) {
-                e.stopEvent()
-                var me = this.component;
-                Ext.create("Ext.menu.Menu", {
-                    x: e.pageX,
-                    y: e.pageY,
-                    autoShow: true,
-                    items: [
-                        {text:"copy",handler:function(){
-                           me.up().copyImg=me;
-                        }},
-                        {
-                            text: "delete", handler: function () {
-                            me.close()
-                        }
-                        },
-                        {
-                            text: "Property", handler: function () {
-                            me.openMenu()
-                            /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
-                             values: me,
-                             ok: function (data) {
-                             me.init(data);
-                             },
-                             cancel: function () {
-
-                             }
-                             })*/
-                        }
-                        }
-                    ]
-                })
-            },
-            dblclick: function () {
-                var me = this.component;
-                console.log(me)
-                me.openMenu()
-                /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
-                 values: me,
-                 ok: function (data) {
-                 me.init(data);
-                 },
-                 cancel: function () {
-
-                 }
-                 })*/
-
-            }
+            contextmenu: "contextmenu",
+            dblclick: "dblclick"
         }
     }
 

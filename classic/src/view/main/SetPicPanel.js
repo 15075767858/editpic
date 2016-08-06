@@ -1,9 +1,6 @@
-
-
-
 /*
-* 这是右边 的图片列表 点击可以加载详细的图片信息
-* */
+ * 这是右边 的图片列表 点击可以加载详细的图片信息
+ * */
 Ext.define('editpic.view.panel.SetPicPanel', {
     extend: 'Ext.grid.Panel',
     xtype: "setpicpanel",
@@ -17,12 +14,13 @@ Ext.define('editpic.view.panel.SetPicPanel', {
         type: 'panel-setpicpanel'
     },
     id: "setpicpanel",
-    reference:"setpicpanel",
+    reference: "setpicpanel",
     maxHeight: 300,
     height: 400,
     border: true,
     title: "&nbsp;&nbsp;&nbsp;&nbsp;Imgs",
-    iconCls:"fa-picture-o",
+    iconCls: "fa-picture-o",
+
     initComponent: function () {
         var me = this;
         me.store = Ext.create('editpic.store.PicDatas', {
@@ -30,6 +28,7 @@ Ext.define('editpic.view.panel.SetPicPanel', {
             //storeId:Ext.getCmp("mintab").getActiveTab().id+"store",
             autoLoad: true
         })
+
         me.tbar = [
             "->", {
                 text: "toggle group",
@@ -42,7 +41,8 @@ Ext.define('editpic.view.panel.SetPicPanel', {
                 editor: {
                     xtype: 'textfield',
                     allowBlank: false
-                }
+                },
+                flex:1
             },
             {
                 text: 'Img', dataIndex: 'src', width: 50, renderer: function (value) {
@@ -67,7 +67,7 @@ Ext.define('editpic.view.panel.SetPicPanel', {
                 sortable: false,
                 tooltip: 'Delete',
                 text: "Delete",
-                flex:1,
+                flex: 1,
                 xtype: 'actioncolumn',
                 renderer: function () {
                     return "<div style='font-family: FontAwesome;margin:7px 0 0 10px; font-size: 27px;color: blanchedalmond;' class='fa-trash-o'></div>"
@@ -94,8 +94,7 @@ Ext.define('editpic.view.panel.SetPicPanel', {
         groupHeaderTpl: '{columnName}: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
         id: 'restaurantGrouping'
     }],
-    selModel: 'cellmodel',
-    plugins: {
+    plugins: [{
         ptype: 'cellediting',
         clicksToEdit: 1,
         listeners: {
@@ -104,12 +103,29 @@ Ext.define('editpic.view.panel.SetPicPanel', {
                 //Ext.data.StoreManager.lookup("picdatas").load()
             }
         }
+    }],
+    //selModel: 'cellmodel',
+
+    //selType: 'checkboxmodel',
+    selModel: {
+        selType: 'checkboxmodel',
     },
     listeners: {
         itemmouseenter: "itemmouseenter",
         itemmouseleave: "itemmouseleave",
-        //select: "select"
-        itemcontextmenu:"itemcontextmenu"
+        itemcontextmenu: "itemcontextmenu",
+        selectionchange: function(){
+            console.log(arguments)
+        },
+        select:function(model,record){
+            record.data.setLinkDataBase(true)
+            console.log(arguments)
+        },
+        deselect:function(model,record){
+            record.data.setLinkDataBase(false)
+            console.log(arguments)
+        }
+
     }
 
 });

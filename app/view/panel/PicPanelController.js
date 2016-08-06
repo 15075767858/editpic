@@ -26,10 +26,10 @@ Ext.define('editpic.view.panel.PicPanelController', {
                 var dragData = ddSource.dragData;
                 if (dragData.itype) {
                     var tool;
-                    var toolstr = null;
+                   /* var toolstr = null;
                     if (dragData.itype == 2) {
                         toolstr = "editpic.view.img.TextFieldTool"
-                        /*tool = Ext.create("editpic.view.img.TextFieldTool",
+                        /!*tool = Ext.create("editpic.view.img.TextFieldTool",
                          {
                          itype: 2,
                          x: e.event.offsetX,
@@ -37,7 +37,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                          width: 100,
                          height: 30
                          }
-                         )*/
+                         )*!/
                     }
                     if (dragData.itype == 3) {
                         toolstr = "editpic.view.img.LinkTool"
@@ -45,7 +45,6 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     if (dragData.itype == 4) {
                         toolstr = "editpic.view.img.TextTool"
                     }
-
                     tool = Ext.create(toolstr,
                         {
                             itype: dragData.itype,
@@ -54,9 +53,19 @@ Ext.define('editpic.view.panel.PicPanelController', {
                             width: 100,
                             height: 30,
                             disabled: false,
-                            zindex:0
+                            zindex: 0
                         }
-                    )
+                    )*/
+                   tool= My.createImg({
+                        itype: dragData.itype,
+                        x: e.event.offsetX,
+                        y: e.event.offsetY,
+                        width: 100,
+                        height: 30,
+                        disabled: false,
+                        zindex: 0
+                    })
+
                     tool.openMenu(function (data) {
                         panel.add(tool);
                         tool.init(Ext.apply(data, {itype: dragData.itype}));
@@ -86,7 +95,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                         disabled: false,
                         src: url,
                         hidden: true,
-                        zindex:0
+                        zindex: 0
                     };
                     //var canvasimg = Ext.create("editpic.view.img.CanvasImg", data);
                     //var gifimg = Ext.create("editpic.view.img.GifImg", data)
@@ -334,7 +343,6 @@ Ext.define('editpic.view.panel.PicPanelController', {
                 {
                     xtype: 'slider',
                     width: "100%",
-
                     fieldLabel: "Height",
                     maxValue: 1200,
                     publishOnComplete: false,
@@ -345,12 +353,13 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     xtype: 'colorfield',
                     fieldLabel: 'Body Color',
                     bind: "{bodyColor}"
-                    /*listeners:{
-                     change:function(field , color , previousColor , eOpts){
-                     console.log(arguments)
-                     me.setBodyStyle("background","#"+color)
-                     }
-                     }*/
+                    /*,
+                    listeners: {
+                        change: function (field, color, previousColor, eOpts) {
+                            console.log(arguments)
+                            //me.setBodyStyle("background", "#" + color)
+                        }
+                    }*/
                 }
             ],
             listeners: {

@@ -16,7 +16,7 @@ Ext.define('editpic.view.window.CanvasConponmentWindow', {
         var me = this;
         var values = me.values;
         var itype = values.itype;
-
+        me.items=[]
         me.labelFormPanel = Ext.create("editpic.view.form.LabelForm", {
             values: values,
             itype: itype
@@ -27,11 +27,19 @@ Ext.define('editpic.view.window.CanvasConponmentWindow', {
                 values: me.values
             }
         )
-
         me.bindFormPanel.getForm().setValues(me.values)
-
-        me.items = [me.labelFormPanel, me.bindFormPanel];
-
+        console.log(me.bindFormPanel)
+        if(me.labelFormPanel.items.length){
+            me.items.push(me.labelFormPanel)
+        }
+        if(me.bindFormPanel.items.length){
+            me.items.push(me.bindFormPanel)
+        //me.items = [me.labelFormPanel, me.bindFormPanel];
+        }
+       /*
+        else{
+            me.items=me.labelFormPanel
+        }*/
 
         me.buttons = [
             {

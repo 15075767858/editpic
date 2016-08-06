@@ -170,6 +170,15 @@ My.AjaxSimple = function (params, url, success) {
         success: success
     });
 }
+My.AjaxSimplePost = function (params, url, success) {
+    Ext.Ajax.request({
+        url: url || "resources/main.php",
+        method: "POST",
+        async: false,
+        params: params,
+        success: success
+    });
+}
 My.delayToast = function (title, html, delay) {
     setTimeout(function () {
         Ext.toast({
@@ -306,10 +315,10 @@ My.linkManger.init = function () {
 
     setInterval(function () {
         var data = {
-            par: "getLinkValues",
+            //par: "getLinkValues",
             datas: My.linkManger.getLinkDatas()
         }
-        My.AjaxSimple(data, "", function (response) {
+        My.AjaxSimplePost(data, "resources/main.php?par=getLinkValues", function (response) {
             if (response.responseText.length == 2) {
                 //console.log(response.responseText)
                 My.linkManger.items = {}
@@ -330,24 +339,55 @@ My.linkManger.init = function () {
 
         });
     }, 500)
-
 }
+
 My.initComponentConfig = {
+    myGetBackgroundColor: function () {
+        var me = this;
+        if (me.body) {
+            var backgroundColor = me.body.getStyle("backgroundColor");
+            var color = Ext.ux.colorpick.ColorUtils.parseColor(backgroundColor);
+            return Ext.ux.colorpick.ColorUtils.getRGBAString(color);
+        } else {
+            //return Ext.ux.colorpick.ColorUtils.parseColor("transparent");
+            return "transparent";
+        }
+    },
+    mySetBackgroundColor: function (color) {
+        if(!color){
+            return;
+        }
+        var me = this;
+        if (me.body) {
+            if (typeof color == "string") {
+                me.body.setStyle("backgroundColor", color);
+                me.backgroundColor = color;
+            }
+            if (typeof color == "object") {
+                var rgbaStr = Ext.ux.colorpick.ColorUtils.getRGBAString(color)
+                me.body.setStyle("backgroundColor", rgbaStr)
+                me.backgroundColor = rgbaStr;
+            }
+        }
+
+    },
     mySetX: function (newValue) {
         newValue = parseInt(newValue)
         var me = this;
         var panel = me.up("picpanel");
         var value = newValue + panel.body.getX();
-        me.x = newValue;
         me.setX(value);
+
+        me.x = newValue;
     },
     mySetY: function (newValue) {
         newValue = parseInt(newValue)
         var me = this;
         var panel = me.up("picpanel");
         var value = newValue + panel.body.getY();
-        me.y = newValue;
         me.setY(value);
+
+        me.y = newValue;
     },
     mySetWidth: function (value) {
         value = parseInt(value)
@@ -435,6 +475,7 @@ My.initComponentConfig = {
         me.linkValue = linkValue || My.linkManger.getValue(me);
         me.refreshCanvas();
     },
+
     clearInterval: function () {
         var me = this;
         if (me.linkValue) {
@@ -468,6 +509,7 @@ My.initComponentConfig = {
         Ext.create("editpic.view.window.CanvasConponmentWindow", {
             values: me,
             ok: ok || function (data) {
+
                 me.init(data);
             },
             cancel: cancel || function () {
@@ -507,7 +549,48 @@ My.initComponentConfig = {
         textfield.setZIndex(-1)
         textfield.focus()
         textfield.focus()
-    }
+    },
+    contextmenu: function (e) {
+        e.stopEvent()
+        var me = this;
+        Ext.create("Ext.menu.Menu", {
+            x: e.pageX,
+            y: e.pageY,
+            autoShow: true,
+            items: [
+
+                {
+                    text: "copy", handler: function () {
+                    me.up().copyImg = me;
+                }
+                },
+                {
+                    text: "delete", handler: function () {
+                    me.close()
+                }
+                },
+                {
+                    text: "Property", handler: function () {
+                    me.openMenu()
+                    /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
+                     values: me,
+                     ok: function (data) {
+                     me.init(data);
+                     },
+                     cancel: function () {
+
+                     }
+                     })*/
+                }
+                }
+            ]
+        })
+    },
+    dblclick: function (e, el) {
+        var me = this;
+        console.log(me)
+        me.openMenu()
+    },
 }
 My.createImg = function (data) {
     var component = null;
@@ -532,6 +615,9 @@ My.createImg = function (data) {
     if (data.itype == 4) {
         component = Ext.create("editpic.view.img.TextTool", data)
         //component.init(data[i])
+    }
+    if(data.itype==5){
+        component = Ext.create("editpic.view.img.DynamicTextTool", data)
     }
     return component;
 }

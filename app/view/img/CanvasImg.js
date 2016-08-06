@@ -45,6 +45,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         me.src = data.src;
         me.name = data.name;
         me.mySetZIndex(data.zindex);
+
         //me.refreshCanvas();
     },
 
@@ -71,33 +72,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         me.isRelated = checked;
         me.refreshCanvas()
     },
-    linkData: function (ip, port, nodename, type) {
-        var me = this;
-        if (!(!!ip & !!port & !!nodename & !!type)) {
-            me.clearInterval();
-            return;
-        }
-        me.ip = ip;
-        me.port = port;
-        me.nodename = nodename;
-        me.type = type;
-        me.clearInterval();
-        me.setLinkValue();
-        /*me.interval = setInterval(function () {
-         My.AjaxAsync("resources/main.php", function (response) {
-         if (response.responseText != me.linkValue) {
-         me.linkValue = response.responseText;
-         me.refreshCanvas();
-         }
-         }, {
-         par: "gettypevalue",
-         ip: ip,
-         port: port,
-         nodename: nodename,
-         type: type
-         })
-         }, 50)*/
-    },
+
     getInitData: function () {
         var me = this;
         var data = {};
@@ -114,6 +89,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         data.nodename = me.nodename;
         data.type = me.type;
         data.zindex = me.zindex;
+        data.isLinkDataBase = isLinkDataBase;
         return data;
     },
     setRGB: function (type, value) {
@@ -128,6 +104,16 @@ Ext.define('editpic.view.img.CanvasImg', {
         }
         me.refreshCanvas();
     },
+    setLinkDataBase: function (bol) {
+        var me = this;
+        if (bol) {
+            me.isLinkDataBase = true;
+        } else {
+            me.isLinkDataBase = false;
+        }
+        me.refreshCanvas()
+    },
+
     refreshCanvas: function () {
         var me = this;
         var surface = me.getSurface();
@@ -138,11 +124,16 @@ Ext.define('editpic.view.img.CanvasImg', {
         var width = me.getWidth()
         var height = me.getHeight()
         img.onload = function () {
+
+
 //            console.log(context)
             if (!context) {
                 return;
             }
             context.drawImage(img, 0, 0, width, height);
+            if(!me.isLinkDataBase&me.itype==0){
+                return;
+            }
             var pixeLength = me.width * me.height
             var imgData = context.getImageData(0, 0, width, height)
             var pixeData = imgData.data;
@@ -304,7 +295,34 @@ Ext.define('editpic.view.img.CanvasImg', {
     isImg: function () {
         return false;
     },
-
+    linkData: function (ip, port, nodename, type) {
+        var me = this;
+        console.log(arguments)
+        if (!(!!ip & !!port & !!nodename & !!type)) {
+            me.clearInterval();
+            return;
+        }
+        me.ip = ip;
+        me.port = port;
+        me.nodename = nodename;
+        me.type = type;
+        me.clearInterval();
+        me.setLinkValue();
+        /*me.interval = setInterval(function () {
+         My.AjaxAsync("resources/main.php", function (response) {
+         if (response.responseText != me.linkValue) {
+         me.linkValue = response.responseText;
+         me.refreshCanvas();
+         }
+         }, {
+         par: "gettypevalue",
+         ip: ip,
+         port: port,
+         nodename: nodename,
+         type: type
+         })
+         }, 50)*/
+    },
 
     /*refreshCanvas: function () {
      var me = this;
@@ -416,55 +434,8 @@ Ext.define('editpic.view.img.CanvasImg', {
         el: {
             scope: "this",
             click: "click",
-
-            contextmenu: function (e) {
-                e.stopEvent()
-                var me = this.component;
-                Ext.create("Ext.menu.Menu", {
-                    x: e.pageX,
-                    y: e.pageY,
-                    autoShow: true,
-                    items: [
-
-                        {text:"copy",handler:function(){
-                            me.up().copyImg=me;
-                        }},
-                        {
-                            text: "delete", handler: function () {
-                            me.close()
-                        }
-                        },
-                        {
-                            text: "Property", handler: function () {
-                            me.openMenu()
-                            /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
-                             values: me,
-                             ok: function (data) {
-                             me.init(data);
-                             },
-                             cancel: function () {
-
-                             }
-                             })*/
-                        }
-                        }
-                    ]
-                })
-            },
-            dblclick: function (e, el) {
-                var me = this.component;
-                console.log(me)
-                me.openMenu()
-                /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
-                 values: me,
-                 ok: function (data) {
-                 me.init(data);
-                 },
-                 cancel: function () {
-
-                 }
-                 })*/
-            }
+            contextmenu: "contextmenu",
+            dblclick: "dblclick"
         }
     }
 });

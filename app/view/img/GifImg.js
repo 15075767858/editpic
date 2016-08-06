@@ -2,9 +2,9 @@ Ext.define('editpic.view.img.GifImg', {
     extend: 'editpic.view.img.CanvasImg',
 
     /*requires: [
-        'editpic.view.img.GifImgController',
-        'editpic.view.img.GifImgModel'
-    ],*/
+     'editpic.view.img.GifImgController',
+     'editpic.view.img.GifImgModel'
+     ],*/
     /*initComponent:function(){
      var me=this;
 
@@ -19,11 +19,11 @@ Ext.define('editpic.view.img.GifImg', {
 
         //me.callParent
     },
-    getInitData:function(){
-        var me=this;
-        var data=me.callParent()
-        data.dynamicSrc=me.dynamicSrc;
-        data.itype=me.itype;
+    getInitData: function () {
+        var me = this;
+        var data = me.callParent()
+        data.dynamicSrc = me.dynamicSrc;
+        data.itype = me.itype;
 
         return data;
     },
@@ -41,16 +41,21 @@ Ext.define('editpic.view.img.GifImg', {
             img.src = me.src;
         }
         var beforeImg = me.el.dom.querySelector("img")
+
         if (beforeImg) {
             beforeImg.parentNode.removeChild(beforeImg);
         }
+
         var canvas = me.el.dom.querySelector("canvas")
-        //canvas.style.display = "none"
-        if(canvas){
-        canvas.style.zIndex = -1;
-        img.style.width = me.width + "px"
-        img.style.height = me.height + "px"
-        canvas.parentNode.appendChild(img)
+        console.log(canvas)
+        canvas.style.display = "none"
+        if (canvas) {
+            canvas.style.zIndex = -10;
+            canvas.style.left = me.width;
+
+            img.style.width = me.width + "px"
+            img.style.height = me.height + "px"
+            canvas.parentNode.appendChild(img)
         }
 
     }

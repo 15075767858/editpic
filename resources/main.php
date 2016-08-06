@@ -107,7 +107,7 @@ if ($par == "saveImageAsHtml") {
     file_put_contents("../../home/" . $graph . ".html", $str);
 }
 if ($par == "getLinkValues") {
-    $datas = json_decode($_GET['datas']);
+    $datas = json_decode($_POST['datas']);
     $datas = object_array($datas);
 
     foreach ($datas as $key => $value) {

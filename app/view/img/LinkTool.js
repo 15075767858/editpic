@@ -23,11 +23,9 @@ Ext.define('editpic.view.img.LinkTool', {
     },
     init: function (data) {
         var me = this;
-        console.log(me)
         me.callParent(arguments)
-        me.linkData(data);
-
     },
+
     linkData: function (data) {
         var me = this;
         if (data.linkValue) {

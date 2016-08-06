@@ -45,8 +45,9 @@ Ext.define('editpic.view.panel.ToolsPanel', {
                 {src: 'resources/icons/input_tablet_48px.png', caption: 'input',itype:2,disabled:false},
                 {src: 'resources/icons/link.png', caption: 'link',type:0,itype:3,disabled:false},
                 {src: 'resources/icons/font_48px.png', caption: 'text',itype:4,disabled:false},
-                {src: 'resources/icons/slider_16px.png', caption: 'slider',itype:5,disabled:true},
-                {src: 'resources/icons/url_48px.png', caption: 'url',type:0,itype:6,disabled:true},
+                {src: 'resources/icons/dynamictext_48px.png', caption: 'dynamic text',itype:5,disabled:false},
+                {src: 'resources/icons/slider_16px.png', caption: 'slider',itype:6,disabled:true},
+                {src: 'resources/icons/url_48px.png', caption: 'url',type:0,itype:7,disabled:true},
             ]
 
             for (var i = 0; i < data.length; i++) {

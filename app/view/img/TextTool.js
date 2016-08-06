@@ -1,45 +1,51 @@
-
-Ext.define('editpic.view.img.TextTool',{
+/*
+ * 这个是自己输入文字 仅用做展示
+ * */
+Ext.define('editpic.view.img.TextTool', {
     extend: 'editpic.view.img.BaseTool',
 
     /*requires: [
-        'editpic.view.img.TextToolController',
-        'editpic.view.img.TextToolModel'
-    ],
+     'editpic.view.img.TextToolController',
+     'editpic.view.img.TextToolModel'
+     ],
 
-    controller: 'img-texttool',
-    viewModel: {
-        type: 'img-texttool'
-    },*/
+     controller: 'img-texttool',
+     viewModel: {
+     type: 'img-texttool'
+     },*/
 
+    itype: 4,
     initComponent: function () {
         var me = this;
-        /*var btn = Ext.create("Ext.form.field.Text",
-            {
-            }
-        )
-
-        me.field = btn;
-        me.items = btn;*/
         me.callParent();
     },
-    init: function () {
+
+    init: function (data) {
         var me = this;
-        console.log(me)
         me.callParent(arguments)
+        me.text = data.text;
+        console.log(me)
+    },
+    getInitData: function () {
+        var me = this;
+        var data = me.callParent()
+        Ext.apply(data, {
+            text: me.text
+        })
+        return data;
     },
     linkData: function (data) {
         var me = this;
-        if (data.linkValue) {
+        if (data.text) {
             console.log(data)
-            me.linkValue=data.linkValue;
-            me.setHtml(data.linkValue)
-            //me.field.setValue(data.linkValue)
+            me.text = data.text;
+            me.setHtml(data.text)
+            //me.field.setValue(data.text)
         }
         me.refreshCanvas()
     },
     refreshCanvas: function () {
-        var me = this;
 
     }
+
 });

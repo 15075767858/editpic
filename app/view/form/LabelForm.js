@@ -28,9 +28,6 @@ Ext.define('editpic.view.form.LabelForm', {
         if (itype == 2 || itype == 3) {
             labelFormItems = [
                 {
-                    xtype: "hiddenfield", name: "itype"
-                },
-                {
                     xtype: "textfield", allowBlank: true,
                     fieldLabel: "name", name: "name"
                 }
@@ -44,29 +41,25 @@ Ext.define('editpic.view.form.LabelForm', {
                     fieldLabel: "name", name: "name"
                 },
                 /*{
-                    xtype: "combo", fieldLabel: "Image Type",
-                    name: "itype", allowBlank: true,
-                    store: Ext.create("Ext.data.Store", {
-                        fields: ["name", "value"],
-                        data: [
-                            {name: "static Image", value: 0},
-                            {name: "Dynamic Image", value: 1}
-                        ]
-                    }),
-                    editable: false,
-                    value: 0,
-                    displayField: 'name',
-                    valueField: 'value',
-                    reference: "ImageType",
-                    publishes: [
-                        "value"
-                    ]
-                },*/
-                {
-                    xtype:"hiddenfield",
-                    name:"itype",
+                 xtype: "combo", fieldLabel: "Image Type",
+                 name: "itype", allowBlank: true,
+                 store: Ext.create("Ext.data.Store", {
+                 fields: ["name", "value"],
+                 data: [
+                 {name: "static Image", value: 0},
+                 {name: "Dynamic Image", value: 1}
+                 ]
+                 }),
+                 editable: false,
+                 value: 0,
+                 displayField: 'name',
+                 valueField: 'value',
+                 reference: "ImageType",
+                 publishes: [
+                 "value"
+                 ]
+                 },*/
 
-                },
                 {
                     xtype: "textfield", name: "src", fieldLabel: "Image",
                     listeners: {
@@ -77,11 +70,11 @@ Ext.define('editpic.view.form.LabelForm', {
                     xtype: "textfield",
                     name: "dynamicSrc", fieldLabel: "Dynamic Image",
                     /*bind: {
-                        disabled: "{!ImageType.value}",
-                        hidden: "{!ImageType.value}"
-                    },*/
-                    hidden:values.itype==0,
-                    disabled:values.itype==0,
+                     disabled: "{!ImageType.value}",
+                     hidden: "{!ImageType.value}"
+                     },*/
+                    hidden: values.itype == 0,
+                    disabled: values.itype == 0,
                     editable: true,
                     emptyText: "Please drag the image here.",
                     displayField: "text",
@@ -92,23 +85,57 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             ]
         }
+        if (itype == 4 || itype == 5) {
+            labelFormItems = [
+                {
+                    xtype: "textfield", allowBlank: false, value: "null", name: "text", fieldLabel: "Text"
+                },
+                {
+                    xtype: "textfield",
+                    allowBlank: false,
+                    value: "null",
+                    name: "dynamictext",
+                    fieldLabel: "Dynamic Text",
+                    disabled:itype==4,
+                    hidden:itype==4
+                },
+                {
+                    xtype: 'colorfield',
+                    fieldLabel: 'Font Color',
+                    value: values.getFontColor(),
+                    name: "fontColor",
+                    listeners: {
+                        change: function (field, color) {
+                            values.setFontColor("#" + color);
+                        }
+                    }
+                }
+            ]
+        }
+        if (itype == 5) {
 
+        }
 
-        var publicItems = [{
-            name: "x", fieldLabel: "x", configName: "mySetX", xtype: 'numberfield',
-            step: 1,
-            minValue: 1,
-            listeners: {
-                values:values,
-                change: "mySetConfig"
-            }
-        },
+        var publicItems = [
+            {
+                xtype: "hiddenfield",
+                name: "itype",
+            },
+            {
+                name: "x", fieldLabel: "x", configName: "mySetX", xtype: 'numberfield',
+                step: 1,
+                minValue: 1,
+                listeners: {
+                    values: values,
+                    change: "mySetConfig"
+                }
+            },
             {
                 name: "y", fieldLabel: "y", configName: "mySetY", xtype: 'numberfield',
                 step: 1,
                 minValue: 1,
                 listeners: {
-                    values:values,
+                    values: values,
                     change: "mySetConfig"
                 }
             },
@@ -117,7 +144,7 @@ Ext.define('editpic.view.form.LabelForm', {
                 step: 1,
                 minValue: 1,
                 listeners: {
-                    values:values,
+                    values: values,
                     change: "mySetConfig"
                 }
             },
@@ -126,8 +153,8 @@ Ext.define('editpic.view.form.LabelForm', {
                 step: 1,
                 minValue: 1,
                 listeners: {
-                    values:values,
-                    change:"mySetConfig"
+                    values: values,
+                    change: "mySetConfig"
                 }
             },
             {
@@ -138,18 +165,25 @@ Ext.define('editpic.view.form.LabelForm', {
                 xtype: "combo",
                 store: [false, true],
                 allowBlank: true,
-                disabled:true,
+                disabled: true,
                 listeners: {
                     change: "mySetConfig"
                 }
             },
             {
-                name: "background", fieldLabel: "background", xtype: "textfield",
-                step: 2,
-                minValue: 0,
-                value: 0,
-                disabled: true
-
+                xtype: 'colorfield',
+                fieldLabel: 'background',
+                value: values.myGetBackgroundColor(),
+                hidden: !values.body,
+                disabled: !values.body,
+                name: "backgroundColor",
+                listeners: {
+                    change: function (field, color, previousColor, eOpts) {
+                        if (field.color) {
+                            values.mySetBackgroundColor(field.getColor())
+                        }
+                    }
+                }
             },
             {
                 name: "font", fieldLabel: "font", xtype: "textfield",

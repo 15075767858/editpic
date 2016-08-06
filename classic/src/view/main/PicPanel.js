@@ -90,7 +90,7 @@ Ext.define('editpic.view.panel.PicPanel', {
         me.body.setStyle("backgroundColor", json.bodyColor);
         var data = json.items;
         for (var i = 0; i < data.length; i++) {
-            var component;
+            /*var component;
             console.log(data[i])
             if (data[i].itype == 0) {
                 component = Ext.create("editpic.view.img.CanvasImg", data[i]);
@@ -120,9 +120,10 @@ Ext.define('editpic.view.panel.PicPanel', {
                 component = Ext.create("editpic.view.img.TextTool", data[i])
                 me.add(component);
                 component.init(data[i])
-            }
-
-
+            }*/
+            var img = My.createImg(data[i])
+            me.add(img);
+            img.init(data[i])
         }
 
 

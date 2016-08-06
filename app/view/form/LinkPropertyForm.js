@@ -15,7 +15,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
         console.log(values)
 
         console.log(itype)
-        if (itype == 0 || itype == 1 || itype == 2) {
+        if (itype == 0 || itype == 1 || itype == 2||itype==5) {
             var nodeNameStore = My.getDevStore(me.values.ip, me.values.port)
             var nodeTypeStore = My.getDevTypeStore(me.values.ip, me.values.port, me.values.nodename);
 
@@ -187,7 +187,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 }
 
             ]
-
         }
 
         if (itype == 3) {
@@ -210,19 +209,28 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     store: My.getImageNames(),
                     fieldLabel: "Type",
                     editable: false,
-                    name: "linkValue",
+                    name: "linkValue"
                 }
             ]
         }
-        if (itype == 4) {
+        /*if (itype == 4) {
             me.title = "Set Value"
             me.items = [
                 {
                     xtype: "textfield", allowBlank: false, name: "linkValue", fieldLabel: "Text"
+                },{
+                    xtype: 'colorfield',
+                    fieldLabel: 'Font Color',
+                    value:values.getFontColor(),
+                    name:"fontColor",
+                    listeners:{
+                        change:function(field,color){
+                            values.setFontColor("#"+color);
+                        }
+                    }
                 }
             ]
-        }
-
+        }*/
         me.callParent();
     }
 
