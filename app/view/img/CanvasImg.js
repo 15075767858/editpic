@@ -13,8 +13,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         'editpic.view.img.CanvasImgModel',
         'Ext.draw.plugin.SpriteEvents'
     ],
-    draggable: true,
-    resizable: true,
+
     controller: 'img-canvasimg',
     viewModel: {
         type: 'img-canvasimg'
@@ -45,7 +44,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         me.src = data.src;
         me.name = data.name;
         me.mySetZIndex(data.zindex);
-
+        me.setLinkDataBase(data.isLinkDataBase)
         //me.refreshCanvas();
     },
 
@@ -89,7 +88,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         data.nodename = me.nodename;
         data.type = me.type;
         data.zindex = me.zindex;
-        data.isLinkDataBase = isLinkDataBase;
+        data.isLinkDataBase = me.isLinkDataBase;
         return data;
     },
     setRGB: function (type, value) {
@@ -106,12 +105,34 @@ Ext.define('editpic.view.img.CanvasImg', {
     },
     setLinkDataBase: function (bol) {
         var me = this;
-        if (bol) {
+        if (bol=="true") {
             me.isLinkDataBase = true;
-        } else {
+        } else if(bol=="false"){
             me.isLinkDataBase = false;
+        }else if(bol){
+            me.isLinkDataBase=true;
+        }else{
+            me.isLinkDataBase=false;
         }
         me.refreshCanvas()
+    },
+    getLinkDataBase: function () {
+        var me = this;
+        console.log(me.isLinkDataBase)
+        if (me.itype != 0) {
+            return true;
+        }
+        return me.isLinkDataBase;
+        /*if (me.isLinkDataBase=="true") {
+            return false;
+        }
+        else if(me.isLinkDataBase=="false"){
+            return true;
+        }else if(me.isLinkDataBase==true){
+            return false;
+        }else{
+            return true;
+        }*/
     },
 
     refreshCanvas: function () {
@@ -131,7 +152,10 @@ Ext.define('editpic.view.img.CanvasImg', {
                 return;
             }
             context.drawImage(img, 0, 0, width, height);
-            if(!me.isLinkDataBase&me.itype==0){
+
+            //console.log(me.getLinkDataBase())
+
+            if (!me.getLinkDataBase()) {
                 return;
             }
             var pixeLength = me.width * me.height

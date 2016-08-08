@@ -104,17 +104,14 @@ Ext.define('editpic.view.panel.SetPicPanel', {
             }
         }
     }],
-    //selModel: 'cellmodel',
-
-    //selType: 'checkboxmodel',
-    selModel: {
+    /*selModel: {
         selType: 'checkboxmodel',
-    },
+    },*/
     listeners: {
         itemmouseenter: "itemmouseenter",
         itemmouseleave: "itemmouseleave",
         itemcontextmenu: "itemcontextmenu",
-        selectionchange: function(){
+        /*selectionchange: function(){
             console.log(arguments)
         },
         select:function(model,record){
@@ -124,7 +121,7 @@ Ext.define('editpic.view.panel.SetPicPanel', {
         deselect:function(model,record){
             record.data.setLinkDataBase(false)
             console.log(arguments)
-        }
+        }*/
 
     }
 

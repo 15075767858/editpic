@@ -20,7 +20,6 @@ Ext.define('editpic.view.form.LabelForm', {
      */
     initComponent: function () {
         var me = this;
-
         var values = me.values;
         var itype = values.itype;
         var labelFormItems = [];
@@ -31,7 +30,8 @@ Ext.define('editpic.view.form.LabelForm', {
                     xtype: "textfield", allowBlank: true,
                     fieldLabel: "name", name: "name"
                 }
-            ]
+            ];
+
         }
 
         if (itype == 0 || itype == 1) {
@@ -59,7 +59,29 @@ Ext.define('editpic.view.form.LabelForm', {
                  "value"
                  ]
                  },*/
-
+                {
+                    xtype: "checkboxfield", fieldLabel: "link database",
+                    reference: "isLinkDataBase",
+                    publishes: {
+                        value: true
+                    },
+                    name:"isLinkDataBase",
+                    hidden: itype == 1,
+                    disabled: itype == 1,
+                    /*listeners:{
+                     change:function(field,bol){
+                     var win =  me.up();
+                     var isBindComponent = win.query("[name=isBind]")[0];
+                     isBindComponent.setDisabled(!bol)
+                     }
+                     }*/
+                },
+               /* {
+                    xtype: "hiddenfield", name: "isLinkDataBase", disabled: itype == 1,
+                    bind: {
+                        value: "{isLinkDataBase.checked}"
+                    }
+                },*/
                 {
                     xtype: "textfield", name: "src", fieldLabel: "Image",
                     listeners: {
@@ -96,8 +118,8 @@ Ext.define('editpic.view.form.LabelForm', {
                     value: "null",
                     name: "dynamictext",
                     fieldLabel: "Dynamic Text",
-                    disabled:itype==4,
-                    hidden:itype==4
+                    disabled: itype == 4,
+                    hidden: itype == 4
                 },
                 {
                     xtype: 'colorfield',
@@ -112,7 +134,7 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             ]
         }
-        if (itype == 5) {
+        if (itype == 2) {
 
         }
 
@@ -234,5 +256,8 @@ Ext.define('editpic.view.form.LabelForm', {
             form.setValues(me.values)
         }
 
+    },
+    listeners: {
+        boxready: "boxready"
     }
 });

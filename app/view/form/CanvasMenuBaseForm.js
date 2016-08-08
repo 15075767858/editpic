@@ -4,13 +4,13 @@ Ext.define('editpic.view.form.CanvasMenuBaseForm',{
 
     requires: [
         'editpic.view.form.CanvasMenuBaseFormController',
-        'editpic.view.form.CanvasMenuBaseFormModel'
+        //'editpic.view.form.CanvasMenuBaseFormModel'
     ],
 
     controller: 'form-canvasmenubaseform',
-    viewModel: {
+    /*viewModel: {
         type: 'form-canvasmenubaseform'
-    },
+    },*/
 
     width: 400,
     margin: 10,
@@ -22,6 +22,7 @@ Ext.define('editpic.view.form.CanvasMenuBaseForm',{
     },
     initComponent:function(){
         var me=this;
+
         var values = me.values;
         me.callParent()
     }

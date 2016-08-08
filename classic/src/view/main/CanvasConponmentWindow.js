@@ -18,12 +18,14 @@ Ext.define('editpic.view.window.CanvasConponmentWindow', {
         var itype = values.itype;
         me.items=[]
         me.labelFormPanel = Ext.create("editpic.view.form.LabelForm", {
+            viewModel:me.viewModel,
             values: values,
             itype: itype
         })
 
         me.bindFormPanel = Ext.create("editpic.view.form.LinkPropertyForm",
             {
+                viewModel:me.viewModel,
                 values: me.values
             }
         )
@@ -47,8 +49,7 @@ Ext.define('editpic.view.window.CanvasConponmentWindow', {
 
                 var labelForm = me.labelFormPanel.getForm();
                 var bindForm = me.bindFormPanel.getForm();
-
-                if (labelForm.isValid()) {
+                if (labelForm.isValid()&bindForm.isValid()) {
                     var bindValues = bindForm.getValues()
                     console.log(bindValues)
                     var datas = labelForm.getValues();

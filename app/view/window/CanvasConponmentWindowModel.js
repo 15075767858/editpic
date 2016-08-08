@@ -4,5 +4,4 @@ Ext.define('editpic.view.window.CanvasConponmentWindowModel', {
     data: {
         name: 'editpic'
     }
-
 });

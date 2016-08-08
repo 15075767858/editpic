@@ -25,6 +25,7 @@ Ext.define('editpic.view.main.Main', {
         "Ext.window.Toast"
     ],
 
+    id:"mainPanel",
     controller: 'main',
     viewModel: 'main',
     //ui: 'navigation',
@@ -37,7 +38,7 @@ Ext.define('editpic.view.main.Main', {
             text: "about",
             handler: function () {
 
-                Ext.Msg.alert("Version", "SmartIOgraphTools 1.20")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 1.23")
             }
         }
     ],
@@ -97,8 +98,8 @@ Ext.define('editpic.view.main.Main', {
                     panel.close()
                 }
                 var picPanel = Ext.create("editpic.view.panel.PicPanel", {
-                    x: 30,
-                    y: 30
+                    x: 0,
+                    y: 0
                 })
                 me.add(
                     {
@@ -124,21 +125,34 @@ Ext.define('editpic.view.main.Main', {
                     title: "untitled",
                     items: {
                         xtype: "picpanel",
-                        x: 30,
-                        y: 30
+                        x:30,
+                        y:30
                     }
                 }
             ],
             listeners:{
                 boxready:function(){
                     var me=this;
-                    var search = window.location.search;
+                    /*var search = window.location.search;
                     if(search){
                         var resObj = Ext.Object.fromQueryString(search)
                         if(resObj){
                            me.addTab(resObj['graph'])
                         }
+                    }*/
+                    var resObj = My.getSearch();
+                    if(resObj){
+                        me.addTab(resObj['graph'])
+                        Ext.getCmp("imgTreePanel").hide()
+                        Ext.getCmp("toolPanel").hide()
+                        Ext.getCmp("devformpanel").hide()
+                        console.log(me.getDockedItems())
+                        var mainPanel = Ext.getCmp("mainPanel")
+                        mainPanel.getDockedItems()[0].hide();
+                        mainPanel.getDockedItems()[1].hide();
+
                     }
+
                     My.linkManger.init()
                 }
             }
@@ -156,6 +170,7 @@ Ext.define('editpic.view.main.Main', {
         },
         {
             xtype: "devformpanel",
+            id:"devformpanel",
             region: "east"
         }
     ]

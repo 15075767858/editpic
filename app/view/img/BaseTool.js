@@ -11,10 +11,13 @@ Ext.define('editpic.view.img.BaseTool', {
         type: 'img-basetool'
     },
 
-    resizable: true,
-    resizeHandles: "s,e,se",
-    draggable: true,
+    /*resizable: true,
 
+    draggable: true,
+*/
+    //draggable:!My.getSearch(),
+    //resizable: !My.getSearch(),
+    resizeHandles: "s,e,se",
     bodyStyle: {
         background: "transparent"
     },

@@ -10,6 +10,7 @@ Ext.define('editpic.view.panel.ToolsPanel', {
     viewModel: {
         type: 'panel-toolspanel'
     },
+    id:"toolPanel",
     width: 100,
     bodyPadding: 10,
     resizable: true,

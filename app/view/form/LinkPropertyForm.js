@@ -12,10 +12,9 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
     initComponent: function () {
         var me = this, values = me.values, itype = me.values.itype;
 
-        console.log(values)
 
         console.log(itype)
-        if (itype == 0 || itype == 1 || itype == 2||itype==5) {
+        if (itype == 0 || itype == 1 || itype == 2 || itype == 5) {
             var nodeNameStore = My.getDevStore(me.values.ip, me.values.port)
             var nodeTypeStore = My.getDevTypeStore(me.values.ip, me.values.port, me.values.nodename);
 
@@ -26,7 +25,10 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     fieldLabel: "bind",
                     name: 'isBind',
                     hidden: false,
-                    reference: "isBind"
+                    reference: "isBind",
+                    bind: itype != 0 || {
+                        disabled: "{!isLinkDataBase.checked}"
+                    }
                     //publishes: [
                     //    "value"
                     //]
@@ -89,6 +91,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         var combo = this;
                         combo.ip = ip;
                         combo.port = port;
+                        values.ip=ip;
+                        values.port=port;
                         var store = My.getDevStore(ip, port);
                         if (store) {
                             combo.setDisabled(false)
@@ -151,6 +155,12 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         change: function (combo, newValue, oldValue, e) {
                             var typescombo = me.lookup("typescombo");
                             typescombo.init(combo.ip, combo.port, newValue);
+                            var a  = me.lookup("priority")
+                            console.log(a)
+                            console.log(arguments)
+                            a.add(values.getFormItems(newValue))
+                                //.setItems()
+
                         }
                     }
                 },
@@ -184,7 +194,22 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                          nodename: nodename
                          })*/
                     }
-                }
+                },
+                {
+                    xtype: 'fieldset',
+                    title: 'Priority_For_Writing',
+                    reference:"priority",
+                    defaultType: 'combo',
+                    defaults: {
+                        anchor: '100%'
+                    },
+                    bind: {
+                        hidden: "{!isBind.checked}",
+                        disabled: "{!isBind.checked}",
+                    },
+                    items:values.getFormItems()||[]
+                },
+
 
             ]
         }
@@ -197,7 +222,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     name: 'isBind',
                     hidden: false,
                     reference: "isBind"
-
                 },
                 {
                     xtype: "combo",
@@ -214,24 +238,108 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
             ]
         }
         /*if (itype == 4) {
-            me.title = "Set Value"
-            me.items = [
-                {
-                    xtype: "textfield", allowBlank: false, name: "linkValue", fieldLabel: "Text"
-                },{
-                    xtype: 'colorfield',
-                    fieldLabel: 'Font Color',
-                    value:values.getFontColor(),
-                    name:"fontColor",
-                    listeners:{
-                        change:function(field,color){
-                            values.setFontColor("#"+color);
-                        }
-                    }
-                }
-            ]
-        }*/
+         me.title = "Set Value"
+         me.items = [
+         {
+         xtype: "textfield", allowBlank: false, name: "linkValue", fieldLabel: "Text"
+         },{
+         xtype: 'colorfield',
+         fieldLabel: 'Font Color',
+         value:values.getFontColor(),
+         name:"fontColor",
+         listeners:{
+         change:function(field,color){
+         values.setFontColor("#"+color);
+         }
+         }
+         }
+         ]
+         }*/
         me.callParent();
+    },
+    listeners: {
+        boxready: "boxready"
     }
 
 });
+/*
+[
+    /!* {
+     xtype: "combo",
+     reference:"priority_type",
+     fieldLabel: "Type",
+     editable: false,
+     name: "priorityType",
+     store: Ext.create("Ext.data.Store", {
+     fields: ["name", "value"],
+     data: [{
+     name: "boolean", value: 0
+     }, {
+     name: "float", value: 1
+     }]
+     }),
+     value:values.priorityType,
+     displayField: 'name',
+     valueField: 'value',
+     listeners:{
+     change:function(field,newValue){
+     var value0 = me.lookup("value0");
+     var value1 = me.lookup("value1");
+     console.log(value0)
+     console.log(value1)
+     if(newValue==0){
+     value0.show()
+     value0.setDisabled(false)
+     value1.hide()
+     value1.setDisabled(true)
+     }
+     if(newValue==1){
+     value1.show()
+     value1.setDisabled(false)
+     value0.hide()
+     value0.setDisabled(true)
+     }
+     }
+     }
+     },
+     {
+     fieldLabel: "Priority",
+     name:"Priority_For_Writing",
+     value:values.Priority_For_Writing||8,
+     editable:false,
+     store: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+     },
+     {
+     fieldLabel:"Value",
+     reference:"value0",
+     store:[0,1],
+     name:"Priority",
+     value:values.Priority,
+     disabled:values.priorityType==1,
+     hidden:values.priorityType==1,
+
+     },{
+     xtype:"numberfield",
+     reference:"value1",
+     fieldLabel:"Value",
+     decimalPrecision:4,
+     name:"priorityValue",
+     value:values.priorityValue,
+     allowDecimals: true,
+     maxValue:1000000,
+     minValue:-1000000,
+     disabled:values.priorityType==0,
+     hidden:values.priorityType==0
+     /!*listeners:{
+     change:function(field,newValue,oldValue){
+     console.log(arguments)
+     var value = Ext.util.Format.number(newValue,"000000.0000")
+     field.setValue(value)
+     console.log(value)
+
+     }
+     }*!/
+     },*!/
+    //Ext.create("editpic.view.form.field.KeybordNumber"),
+
+]*/

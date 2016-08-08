@@ -284,7 +284,16 @@ My.getDevTypeStore = function (ip, port, nodename) {
 
     return store;
 }
-
+My.getSearch = function () {
+    var search = window.location.search;
+    if (search) {
+        var resObj = Ext.Object.fromQueryString(search)
+        if (resObj) {
+            return resObj
+        }
+    }
+    return false;
+}
 My.linkManger = {};
 My.linkManger.items = {};
 My.linkManger.getValue = function (data) {
@@ -342,6 +351,8 @@ My.linkManger.init = function () {
 }
 
 My.initComponentConfig = {
+    draggable: !My.getSearch(),
+    resizable: !My.getSearch(),
     myGetBackgroundColor: function () {
         var me = this;
         if (me.body) {
@@ -354,7 +365,7 @@ My.initComponentConfig = {
         }
     },
     mySetBackgroundColor: function (color) {
-        if(!color){
+        if (!color) {
             return;
         }
         var me = this;
@@ -518,7 +529,14 @@ My.initComponentConfig = {
         })
     },
     click: function (e, t, eOpts) {
+
         var me = this;
+        if (My.getSearch()) {
+            if (me.itype == 2)
+
+                me.openAlermWindow()
+            return;
+        }
         console.log(arguments)
         var divs = me.el.dom.querySelectorAll(".x-resizable-handle");
         for (var i = 0; i < divs.length; i++) {
@@ -551,7 +569,12 @@ My.initComponentConfig = {
         textfield.focus()
     },
     contextmenu: function (e) {
+
         e.stopEvent()
+        if (My.getSearch()) {
+
+            return;
+        }
         var me = this;
         Ext.create("Ext.menu.Menu", {
             x: e.pageX,
@@ -588,6 +611,9 @@ My.initComponentConfig = {
     },
     dblclick: function (e, el) {
         var me = this;
+        if (My.getSearch()) {
+            return;
+        }
         console.log(me)
         me.openMenu()
     },
@@ -616,7 +642,7 @@ My.createImg = function (data) {
         component = Ext.create("editpic.view.img.TextTool", data)
         //component.init(data[i])
     }
-    if(data.itype==5){
+    if (data.itype == 5) {
         component = Ext.create("editpic.view.img.DynamicTextTool", data)
     }
     return component;

@@ -31,5 +31,8 @@ Ext.define('editpic.view.form.CanvasMenuBaseFormController', {
         console.log(values)
         values[configName](newVlaue);
 
+    },
+    boxready:function(){
+        console.log(this.getViewModel())
     }
 });

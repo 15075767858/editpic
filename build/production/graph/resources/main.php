@@ -43,6 +43,21 @@ if ($par == "gettypevalue") {
     echo $redis->hGet($nodeName, $type);
 }
 
+if ($par == "changevalue") {
+    $redis = getRedisConect();
+    $nodeName = $_GET["nodename"];
+    $type = $_GET["type"];
+    if (isset($_GET["value"])) {
+        $value = $_GET["value"];
+    }
+    if (isset($_POST["value"])) {
+        $value = $_POST["value"];
+    }
+    //echo "{type:'".$type."',value:'"."12313"."'}";
+    echo $redis->hSet($nodeName, $type, $value);
+    $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\n" . $type . "\r\n" . $value);
+}
+
 
 function getRedisConect()
 {
@@ -107,7 +122,7 @@ if ($par == "saveImageAsHtml") {
     file_put_contents("../../home/" . $graph . ".html", $str);
 }
 if ($par == "getLinkValues") {
-    $datas = json_decode($_GET['datas']);
+    $datas = json_decode($_POST['datas']);
     $datas = object_array($datas);
 
     foreach ($datas as $key => $value) {
