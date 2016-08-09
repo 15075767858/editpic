@@ -1,7 +1,6 @@
 Ext.define('editpic.view.form.LinkPropertyForm', {
     extend: 'editpic.view.form.CanvasMenuBaseForm',
-    width: 400,
-    height: "100",
+    width: 300,
     margin: 10,
     title: "Value Binding",
     border: true,
@@ -29,9 +28,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     bind: itype != 0 || {
                         disabled: "{!isLinkDataBase.checked}"
                     }
-                    //publishes: [
-                    //    "value"
-                    //]
                 },
 
                 {
@@ -158,9 +154,9 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                             var a  = me.lookup("priority")
                             console.log(a)
                             console.log(arguments)
+                            a.removeAll()
                             a.add(values.getFormItems(newValue))
                                 //.setItems()
-
                         }
                     }
                 },
@@ -196,6 +192,21 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     }
                 },
                 {
+                    xtype: 'checkbox',
+                    fieldLabel: "bind priority",
+                    name: 'isBindPriority',
+                    hidden: false,
+                    reference: "isBindPriority",
+                    bind: {
+                        hidden: "{!isBind.checked}",
+                        disabled: "{!isBind.checked}",
+                    },
+                    /*bind: itype != 0 || {
+                        disabled: "{!isLinkDataBase.checked}"
+                    }*/
+                },
+
+                {
                     xtype: 'fieldset',
                     title: 'Priority_For_Writing',
                     reference:"priority",
@@ -204,10 +215,10 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         anchor: '100%'
                     },
                     bind: {
-                        hidden: "{!isBind.checked}",
-                        disabled: "{!isBind.checked}",
+                        hidden: "{!isBindPriority.checked}",
+                        disabled: "{!isBindPriority.checked}",
                     },
-                    items:values.getFormItems()||[]
+                    items:values.getFormItems?values.getFormItems():[]
                 },
 
 

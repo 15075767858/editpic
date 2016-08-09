@@ -45,6 +45,9 @@ Ext.define('editpic.view.img.CanvasImg', {
         me.name = data.name;
         me.mySetZIndex(data.zindex);
         me.setLinkDataBase(data.isLinkDataBase)
+        me.Priority_For_Writing = data.Priority_For_Writing;
+        me.priorityValue = data.priorityValue;
+        me.isBindPriority = data.isBindPriority;
         //me.refreshCanvas();
     },
 
@@ -89,6 +92,9 @@ Ext.define('editpic.view.img.CanvasImg', {
         data.type = me.type;
         data.zindex = me.zindex;
         data.isLinkDataBase = me.isLinkDataBase;
+        data.Priority_For_Writing = me.Priority_For_Writing
+        data.priorityValue = me.priorityValue
+        data.isBindPriority = me.isBindPriority
         return data;
     },
     setRGB: function (type, value) {
@@ -105,14 +111,14 @@ Ext.define('editpic.view.img.CanvasImg', {
     },
     setLinkDataBase: function (bol) {
         var me = this;
-        if (bol=="true") {
+        if (bol == "true") {
             me.isLinkDataBase = true;
-        } else if(bol=="false"){
+        } else if (bol == "false") {
             me.isLinkDataBase = false;
-        }else if(bol){
-            me.isLinkDataBase=true;
-        }else{
-            me.isLinkDataBase=false;
+        } else if (bol) {
+            me.isLinkDataBase = true;
+        } else {
+            me.isLinkDataBase = false;
         }
         me.refreshCanvas()
     },
@@ -124,15 +130,15 @@ Ext.define('editpic.view.img.CanvasImg', {
         }
         return me.isLinkDataBase;
         /*if (me.isLinkDataBase=="true") {
-            return false;
-        }
-        else if(me.isLinkDataBase=="false"){
-            return true;
-        }else if(me.isLinkDataBase==true){
-            return false;
-        }else{
-            return true;
-        }*/
+         return false;
+         }
+         else if(me.isLinkDataBase=="false"){
+         return true;
+         }else if(me.isLinkDataBase==true){
+         return false;
+         }else{
+         return true;
+         }*/
     },
 
     refreshCanvas: function () {

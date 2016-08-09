@@ -9,6 +9,12 @@ if ($ip == "127.0.0.1") {
     $redis->connect($ip, 6379);
 }*/
 
+
+
+
+//echo move_uploaded_file($_FILES["file"]["tmp_name"], "devsinfo/" . $_FILES["file"]["name"]);
+
+
 if ($par == 'getSvgTree') {
     //$path = "svg";
     $path = "SvgHvac";
@@ -115,11 +121,21 @@ if ($par == "saveImageAsHtml") {
         '}' .
         '</style>' .
         '<body>' .
-        '<iframe src="../graph/index.html?graph=' . $graph . '"></iframe>' .
         '</body>' .
+        '<script>' .
+        'var iframe = document.createElement("iframe");' .
+        'var body = document.getElementsByTagName("body")[0];' .
+        'body.appendChild(iframe);' .
+        'if(!location.hostname){' .
+        'var ip = window.prompt("please input IP ","' . $ip . '");' .
+        'iframe.src="http://'.$ip.'/graph/index.html?graph=' . $graph . '";' .
+        '}else{' .
+        'iframe.src="../graph/index.html?graph=' . $graph . '"}' .
+        '</script>' .
         '</html>';
-
     file_put_contents("../../home/" . $graph . ".html", $str);
+//    '<iframe id="iframe" src="../graph/index.html?graph=' . $graph . '"></iframe>' .
+
 }
 if ($par == "getLinkValues") {
     $datas = json_decode($_POST['datas']);
@@ -130,10 +146,12 @@ if ($par == "getLinkValues") {
         $value['value'] = getNodeTypeValue($value);
         $datas[$key] = $value;
     }
-
-
     echo json_encode($datas);
 }
+
+
+
+
 
 function object_array($array)
 {
@@ -151,14 +169,16 @@ function object_array($array)
 
 function getNodeTypeValue($arr)
 {
-    $ip=$arr['ip'];
-    $port=$arr['port'];
-    $nodeName=$arr['nodename'];
-    $type=$arr['type'];
+    $ip = $arr['ip'];
+    $port = $arr['port'];
+    $nodeName = $arr['nodename'];
+    $type = $arr['type'];
     $redis = new Redis();
     $redis->connect($ip, $port);
     return $redis->hGet($nodeName, $type);
 }
+
+
 
 function getfiles($path, $fileArr)
 {

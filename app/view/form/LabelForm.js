@@ -1,6 +1,6 @@
 Ext.define('editpic.view.form.LabelForm', {
     extend: 'editpic.view.form.CanvasMenuBaseForm',
-    width: 400,
+    width: 300,
     margin: 10,
     title: "Label",
     border: true,
@@ -65,7 +65,7 @@ Ext.define('editpic.view.form.LabelForm', {
                     publishes: {
                         value: true
                     },
-                    name:"isLinkDataBase",
+                    name: "isLinkDataBase",
                     hidden: itype == 1,
                     disabled: itype == 1,
                     /*listeners:{
@@ -76,12 +76,12 @@ Ext.define('editpic.view.form.LabelForm', {
                      }
                      }*/
                 },
-               /* {
-                    xtype: "hiddenfield", name: "isLinkDataBase", disabled: itype == 1,
-                    bind: {
-                        value: "{isLinkDataBase.checked}"
-                    }
-                },*/
+                /* {
+                 xtype: "hiddenfield", name: "isLinkDataBase", disabled: itype == 1,
+                 bind: {
+                 value: "{isLinkDataBase.checked}"
+                 }
+                 },*/
                 {
                     xtype: "textfield", name: "src", fieldLabel: "Image",
                     listeners: {
@@ -134,8 +134,81 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             ]
         }
-        if (itype == 2) {
-
+        if (itype == 2 || itype == 3 || itype == 4 || itype == 5) {
+            labelFormItems.push(
+                {
+                    name: "font", fieldLabel: "font", allowBlank:true,xtype: "textfield",
+                    listeners: {
+                        focus: function (field) {
+                           var win =  Ext.create("Ext.window.Window", {
+                                autoShow: true,
+                                width:400,
+                                modal:true,
+                                title: "set font",
+                                items: {
+                                    xtype: "form",
+                                    reference:"fontForm",
+                                    itemId:"fontForm",
+                                    defaults: {
+                                        width: "100%",
+                                        editable:false
+                                    },
+                                    padding:10,
+                                    items: [
+                                        {
+                                            fieldLabel:"font style",
+                                            name:"font_style",
+                                            xtype:"combo",
+                                            store:["normal","italic","oblique"],
+                                            value:"normal"
+                                        },{
+                                            fieldLabel:"font variant",
+                                            name:"font_variant",
+                                            xtype:"hiddenfield",
+                                            value:"normal"
+                                        },{
+                                            fieldLabel:"font weight",
+                                            name:"font_weight",
+                                            xtype:"combo",
+                                            store:["normal","bold","bolder","lighter",100,200,300,400,500,600,700,800,900],
+                                            value:"normal"
+                                        },{
+                                            fieldLabel:"font size",
+                                            name:"font_size",
+                                            xtype:"numberfield",
+                                            minValue:1,
+                                            value:15
+                                        },{
+                                            fieldLabel:"font family",
+                                            name:"font_family",
+                                            xtype:"combo",
+                                            editable:true,
+                                            store:["normal","times","courier","arial","serif","sans-serif","cursive","fantasy","monospace"],
+                                            value:"normal"
+                                        }
+                                    ]
+                                },
+                                buttons:[
+                                    {text:"OK",handler:function(){
+                                        var form = win.getComponent("fontForm")
+                                        var fontJson=form.getForm().getValues();
+                                        var style = fontJson['font_style']
+                                        var variant = fontJson['font_variant']
+                                        var weight = fontJson['font_weight']
+                                        var size = fontJson['font_size']
+                                        var family = fontJson['font_family']
+                                        var fontStr= style+" "+ variant+" "+weight+" "+size+"px "+family;
+                                        field.setValue(fontStr);
+                                        win.close()
+                                    }},{text:"Cancel",handler:function(){
+                                        win.close()
+                                    }}
+                                ]
+                            })
+                        }
+                    }
+                }
+            )
         }
 
         var publicItems = [
@@ -208,20 +281,11 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             },
             {
-                name: "font", fieldLabel: "font", xtype: "textfield",
-                step: 2,
-                minValue: 0,
-                value: 0,
-                disabled: true
-
-            },
-            {
                 name: "blink", fieldLabel: "blink", xtype: "textfield",
                 step: 2,
                 minValue: 0,
                 value: 0,
                 disabled: true
-
             },
             {
                 name: "halign", fieldLabel: "halign", xtype: "textfield",

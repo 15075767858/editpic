@@ -12,6 +12,9 @@ Ext.define('editpic.view.window.CanvasConponmentWindow', {
     },
     title: "Propertys",
     autoShow: true,
+    //maxHeight: Ext.getBody().getHeight(),
+    constrainHeader: true,
+    scrollable:"y",
     initComponent: function () {
         var me = this;
         var values = me.values;

@@ -13,8 +13,8 @@ Ext.define('editpic.view.img.BaseTool', {
 
     /*resizable: true,
 
-    draggable: true,
-*/
+     draggable: true,
+     */
     //draggable:!My.getSearch(),
     //resizable: !My.getSearch(),
     resizeHandles: "s,e,se",
@@ -35,30 +35,34 @@ Ext.define('editpic.view.img.BaseTool', {
         me.mySetX(data.x);
         me.mySetY(data.y);
         me.mySetZIndex(data.zindex);
-        if(data.itype){
-            me.itype =me.itype|| data.itype;
+        if (data.itype) {
+            me.itype = me.itype || data.itype;
         }
         me.isBind = data.isBind;
         me.linkData(data);
         me.setFontColor(data.fontcolor)
+        me.setFont(data.font);
         me.mySetBackgroundColor(data.backgroundColor);
+        me.Priority_For_Writing = data.Priority_For_Writing;
+        me.priorityValue = data.priorityValue;
+        me.isBindPriority = data.isBindPriority;
     },
-   /* linkData: function (ip, port, nodename, type) {
+    /* linkData: function (ip, port, nodename, type) {
 
-        var me = this;
-        console.log(arguments)
+     var me = this;
+     console.log(arguments)
 
-        if (!(!!ip & !!port & !!nodename & !!type)) {
-            me.clearInterval();
-            return;
-        }
-        me.ip = ip;
-        me.port = port;
-        me.nodename = nodename;
-        me.type = type;
-        me.clearInterval();
-        me.setLinkValue();
-    },*/
+     if (!(!!ip & !!port & !!nodename & !!type)) {
+     me.clearInterval();
+     return;
+     }
+     me.ip = ip;
+     me.port = port;
+     me.nodename = nodename;
+     me.type = type;
+     me.clearInterval();
+     me.setLinkValue();
+     },*/
     getInitData: function () {
         var me = this;
         var data = {};
@@ -76,9 +80,49 @@ Ext.define('editpic.view.img.BaseTool', {
         data.type = me.type;
         data.linkValue = me.linkValue;
         data.zindex = me.zindex;
-        data.fontcolor=me.getFontColor();
-        data.backgroundColor=me.myGetBackgroundColor();
+        data.fontcolor = me.getFontColor();
+        data.font = me.getFont()
+        data.backgroundColor = me.myGetBackgroundColor();
+        data.Priority_For_Writing = me.Priority_For_Writing
+        data.priorityValue = me.priorityValue
+        data.isBindPriority = me.isBindPriority
         return data;
+    },
+
+    getFont: function () {
+        var me = this;
+        if (me.field) {
+            var input = me.field.el.dom.querySelector("input")
+            if(input){
+            var font = input.style.font;
+            return font;
+            }else{
+                return ""
+            }
+        }
+        if (me.body) {
+            var font = me.body.getStyle("font");
+            return font;
+        } else {
+            return "";
+        }
+    },
+
+    setFont: function (font) {
+        var me = this;
+
+        if (!font) {
+            return;
+        }
+        if (me.field) {
+            var input = me.field.el.dom.querySelector("input")
+            input.style.font=font;
+            return ;
+        }
+        if (me.body) {
+            me.body.setStyle("font", font);
+            me.font = font;
+        }
     },
     getFontColor: function () {
         var me = this;
@@ -89,8 +133,9 @@ Ext.define('editpic.view.img.BaseTool', {
             return "#FFFFFF";
         }
     },
+
     setFontColor: function (color) {
-        if(!color){
+        if (!color) {
             return;
         }
         var me = this;
@@ -116,6 +161,12 @@ Ext.define('editpic.view.img.BaseTool', {
         me.type = type;
         me.clearInterval();
         me.setLinkValue();
+    },
+    mySetFontSize: function () {
+
+    },
+    mySetFontFamily: function () {
+
     },
     /*linkData: function (data) {
      var me = this;
@@ -272,38 +323,38 @@ Ext.define('editpic.view.img.BaseTool', {
             me.mySetY(y)
         },
         el: {
-            scope:"this",
-            click:"click",
+            scope: "this",
+            click: "click",
             /*click: function (e, t, eOpts) {
-                var me = this.component;
-                console.log(arguments)
-                var divs = me.el.dom.querySelectorAll(".x-resizable-handle");
-                for (var i = 0; i < divs.length; i++) {
-                    divs[i].style.opacity = 1
-                }
-                var textfield = Ext.create("Ext.form.field.Text", {
-                    hidden: false,
-                    width: 1,
-                    height: 1,
-                    listeners: {
-                        specialkey: function (field, e) {
-                            console.log(arguments)
-                            me.moveController(e)
-                        },
-                        focusleave: function () {
-                            console.log("鼠标离开")
-                            for (var i = 0; i < divs.length; i++) {
-                                divs[i].style.opacity = 0
-                            }
-                            textfield.up().remove(textfield)
-                        }
-                    }
-                })
-                me.up().add(textfield)
-                textfield.setZIndex(-1)
-                textfield.focus()
-                textfield.focus()
-            },*/
+             var me = this.component;
+             console.log(arguments)
+             var divs = me.el.dom.querySelectorAll(".x-resizable-handle");
+             for (var i = 0; i < divs.length; i++) {
+             divs[i].style.opacity = 1
+             }
+             var textfield = Ext.create("Ext.form.field.Text", {
+             hidden: false,
+             width: 1,
+             height: 1,
+             listeners: {
+             specialkey: function (field, e) {
+             console.log(arguments)
+             me.moveController(e)
+             },
+             focusleave: function () {
+             console.log("鼠标离开")
+             for (var i = 0; i < divs.length; i++) {
+             divs[i].style.opacity = 0
+             }
+             textfield.up().remove(textfield)
+             }
+             }
+             })
+             me.up().add(textfield)
+             textfield.setZIndex(-1)
+             textfield.focus()
+             textfield.focus()
+             },*/
             contextmenu: "contextmenu",
             dblclick: "dblclick"
         }

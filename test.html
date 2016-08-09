@@ -9,27 +9,17 @@
 </head>
 
 <body>
-<canvas id="canvas">
-
-</canvas>
 </body>
 <script>
-    var canvas = document.getElementById("canvas")
-    var context =  canvas.getContext("2d");
-    window.onload=function(){
-        canvas.width=1024
-        canvas.height=768
-        context.fillStyle='red';
-        var img=new Image()
-        img.src="http://img04.tooopen.com/images/20130126/tooopen_13060231.jpg";
-        img.onload=function(){
-            console.log(arguments)
-        context.drawImage(img,0,0,canvas.width,canvas.height)
+    var iframe = document.createElement("iframe");
+    var body = document.getElementsByTagName("body")[0];
+    body.appendChild(iframe)
 
-        }
-        var data=  context.getImageData(0,0,canvas.width,canvas.height)
-
-        console.log(data.data.join(""))
+    if(!location.hostname){
+       var ip = window.prompt("please input IP ");
+        iframe.src=ip+"/graph/index.html";
+    }else{
+        iframe.src=""
     }
 
 </script>

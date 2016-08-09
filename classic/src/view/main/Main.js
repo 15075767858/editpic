@@ -25,7 +25,7 @@ Ext.define('editpic.view.main.Main', {
         "Ext.window.Toast"
     ],
 
-    id:"mainPanel",
+    id: "mainPanel",
     controller: 'main',
     viewModel: 'main',
     //ui: 'navigation',
@@ -37,9 +37,65 @@ Ext.define('editpic.view.main.Main', {
         }, {
             text: "about",
             handler: function () {
-
-                Ext.Msg.alert("Version", "SmartIOgraphTools 1.23")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 1.35")
             }
+        }, {
+            text: "update data.json", handler: function () {
+                var win = Ext.create("Ext.window.Window", {
+                    autoShow: true,
+                    width: 400,
+                    title: "Upload data.json",
+                    items: {
+                        xtype: "form",
+                        bodyPadding: 10,
+                        frame: true,
+                        items: [{
+                            xtype: 'filebutton',
+                            name: 'file',
+                            fieldLabel: 'data.json',
+                            labelWidth: 50,
+                            msgTarget: 'side',
+                            allowBlank: false,
+                            anchor: '100%',
+                            buttonText: 'Select data.json',
+                            /*validator: function (val) {
+                                return "adsdadsa";
+                            },*/
+                            //isFileUpload : Boolean
+                            listeners: {
+                                change: function () {
+
+                                    testfield = this;
+                                    console.log(arguments)
+                                }
+                            }
+                        }
+                        ],
+                    },
+                    buttons: [{
+                        text: 'Upload',
+                        handler: function () {
+                            var form = win.down('form').getForm();
+                            if (form.isValid()) {
+                                form.submit({
+                                    url: 'photo-upload.php',
+                                    waitMsg: 'Uploading your photo...',
+                                    success: function (fp, o) {
+                                        Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
+                                    }
+                                });
+                            }
+                        }
+                    }]
+                });
+
+            }
+        }, {
+            text: "update graph",
+            disabled: true
+        },{
+            text:"upload image",
+            disabled:true
         }
     ],
     border: true,
@@ -89,7 +145,7 @@ Ext.define('editpic.view.main.Main', {
 
             },
             addTab: function (text) {
-                if(!text){
+                if (!text) {
                     return;
                 }
                 var me = this
@@ -110,8 +166,6 @@ Ext.define('editpic.view.main.Main', {
                 ).show()
                 Ext.toast
                 picPanel.load(My.getImageData()[text])
-
-
             },
             defaults: {
                 bodyStyle: {
@@ -125,23 +179,24 @@ Ext.define('editpic.view.main.Main', {
                     title: "untitled",
                     items: {
                         xtype: "picpanel",
-                        x:30,
-                        y:30
+                        x: 30,
+                        y: 30
                     }
                 }
             ],
-            listeners:{
-                boxready:function(){
-                    var me=this;
+            listeners: {
+                boxready: function () {
+                    var me = this;
                     /*var search = window.location.search;
-                    if(search){
-                        var resObj = Ext.Object.fromQueryString(search)
-                        if(resObj){
-                           me.addTab(resObj['graph'])
-                        }
-                    }*/
+                     if(search){
+                     var resObj = Ext.Object.fromQueryString(search)
+                     if(resObj){
+                     me.addTab(resObj['graph'])
+                     }
+                     }*/
                     var resObj = My.getSearch();
-                    if(resObj){
+                    if (resObj) {
+                        me.removeAll()
                         me.addTab(resObj['graph'])
                         Ext.getCmp("imgTreePanel").hide()
                         Ext.getCmp("toolPanel").hide()
@@ -170,7 +225,7 @@ Ext.define('editpic.view.main.Main', {
         },
         {
             xtype: "devformpanel",
-            id:"devformpanel",
+            id: "devformpanel",
             region: "east"
         }
     ]

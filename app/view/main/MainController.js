@@ -473,7 +473,7 @@ My.initComponentConfig = {
         if (me.hasLinkValue()) {
             if (me.linkValue) {
                 if (!isNaN(me.linkValue)) {
-                    return parseInt(me.linkValue)
+                    return parseFloat(me.linkValue)
                 }
                 return true;
             } else {
@@ -532,9 +532,9 @@ My.initComponentConfig = {
 
         var me = this;
         if (My.getSearch()) {
-            if (me.itype == 2)
-
+            if (me.clientOpenMenu()){
                 me.openAlermWindow()
+            }
             return;
         }
         console.log(arguments)
@@ -567,6 +567,9 @@ My.initComponentConfig = {
         textfield.setZIndex(-1)
         textfield.focus()
         textfield.focus()
+    },
+    clientOpenMenu:function(){
+      return true;
     },
     contextmenu: function (e) {
 
@@ -616,6 +619,219 @@ My.initComponentConfig = {
         }
         console.log(me)
         me.openMenu()
+    },
+
+    getFormItems: function (nodename,bloakFn) {
+        var me = this;
+        console.log(me);
+
+        nodename = nodename || me.nodename;
+        me.nodename=nodename
+        if(!nodename){
+            return;
+        }
+        var nodeType = nodename.substr(4, 1);
+
+        var items = [];
+        //var textfield=Ext.create("Ext.form.field.Textfield")
+        var combo1 = Ext.create("Ext.form.field.ComboBox", {
+            fieldLabel: "Priority",
+            name: "Priority_For_Writing",
+            value: me.Priority_For_Writing || 8,
+            editable: false,
+            store: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+        });
+
+        var valueField = null;
+        if (nodeType == 1 || nodeType == 2) {
+            valueField = Ext.create("Ext.form.field.Number", {
+                fieldLabel: "Value",
+                decimalPrecision: 4,
+                name: "priorityValue",
+                value: me.priorityValue,
+                allowDecimals: true,
+                maxValue: 1000000,
+                minValue: -1000000
+            })
+
+        } else if (nodeType == 4 || nodeType == 5) {
+
+            valueField = Ext.create("Ext.form.field.ComboBox",
+                {
+                    fieldLabel: "Value",
+                    store: Ext.create("Ext.data.Store", {
+                        field: ["name", "value"],
+                        data: [{name: "Off", value: 0}, {name: "On", value: 1}]
+                    }),
+                    displayField: 'name',
+                    valueField: 'value',
+                    name: "priorityValue",
+                    value: me.priorityValue
+                })
+
+        } else {
+            return null;
+        }
+
+        items.push(combo1);
+
+        items.push(valueField);
+
+        items.push({
+            xtype: "button", text: "OK", handler: function (button) {
+                me.Priority_For_Writing = combo1.getValue();
+                me.priorityValue = valueField.getValue();
+                me.publishPriority()
+                if(bloakFn){
+                    bloakFn()
+                }
+            }
+        })
+
+        return items;
+    },
+    openAlermWindow: function () {
+        var me = this;
+
+        /* var combo1 = Ext.create("Ext.form.field.ComboBox", {
+         fieldLabel: "Priority",
+         name: "Priority_For_Writing",
+         value: me.Priority_For_Writing || 8,
+         editable: false,
+         store: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+         })
+
+         var type0 = Ext.create("Ext.form.field.ComboBox",
+         {
+         fieldLabel: "Value",
+         reference: "value0",
+         store: [0, 1],
+         name: "Priority",
+         value: me.Priority,
+
+         })
+
+         var type1 = Ext.create("Ext.form.field.Number", {
+         reference: "value1",
+         fieldLabel: "Value",
+         decimalPrecision: 4,
+         name: "priorityValue",
+         value: me.priorityValue,
+         allowDecimals: true,
+         maxValue: 1000000,
+         minValue: -1000000,
+
+         })*/
+        /*form.add(combo1);
+         if (me.priorityType == 0) {
+         form.add(type0);
+         } else {
+         form.add(type1);
+         }
+         console.log(me)
+         console.log(form)
+         */
+        var formItems = me.getFormItems();
+        if (!formItems) {
+            return;
+        }
+        var form = Ext.create("Ext.form.Panel", {
+            padding: 10,
+            defaults: {
+                anchor: '100%',
+                width:"100%"
+            },
+            items: me.getFormItems("",function(){
+                win.close()
+            })
+        })
+
+        var win = Ext.create("Ext.window.Window", {
+            title: "Priority",
+            autoShow: true,
+            width:400,
+            items: form,
+            /* buttons: [
+             {
+             text: "OK", handler: function () {
+             var formValues = form.getValues()
+             var ip = me.ip;
+             var port = me.port;
+             var nodename = me.nodename;
+
+             My.AjaxSimple({
+             par: "changevalue",
+             ip: ip,
+             port: port,
+             nodename: nodename,
+             type: "Priority_For_Writing",
+             value: formValues.Priority_For_Writing
+             }, "", function () {
+             My.delayToast("Massage", "Change Priority_For_Writing success , new value is " + formValues.priority);
+             })
+
+
+             My.AjaxSimple({
+             par: "changevalue",
+             ip: ip,
+             port: port,
+             nodename: nodename,
+             type: "Priority",
+             value: formValues.Priority_For_Writing
+             }, "", function () {
+             My.delayToast("Massage", "Change Priority_Value success , new value is " + formValues.Priority);
+             })
+
+             win.close()
+             }
+             },
+             {
+             text: "Cancel", handler: function () {
+             win.close()
+             }
+             }
+             ]*/
+        })
+        form.getForm().setValues(me);
+    },
+    publishPriority: function () {
+
+        var me = this;
+        var ip = me.ip, port = me.port, nodename = me.nodename, devname = me.nodename.substr(0, 4), strnull = "", pubstr = "";
+
+        My.AjaxSimple({
+            par: "gettypevalue",
+            ip: ip,
+            port: port,
+            nodename: nodename,
+            type: "Priority_Array"
+        }, "", function (response) {
+            var aPriority = response.responseText.split(",");
+            for (var i = 0; i < 16; i++) {
+                if (i + 1 == parseInt(me.Priority_For_Writing)) {
+                    strnull += me.priorityValue + ",";
+                    pubstr += me.priorityValue + ",";
+                } else {
+                    strnull += aPriority[i] || "NULL"
+                    strnull+=","
+                    pubstr += "NULL,";
+                }
+            }
+            My.AjaxSimple({
+                par: "changevalue",
+                ip: ip,
+                port: port,
+                nodename: nodename,
+                type: "Priority_Array",
+                value: pubstr.substr(0,pubstr.length-1)
+            }, "", function () {
+                My.delayToast('Success', nodename + ' Change value Priority_Array success new value is ' + strnull.substr(0, strnull.length - 1), 0)
+            })
+        })
+
+
+        console.log(strnull)
+        console.log(pubstr)
     },
 }
 My.createImg = function (data) {
