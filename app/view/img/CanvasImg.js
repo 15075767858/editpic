@@ -48,6 +48,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         me.Priority_For_Writing = data.Priority_For_Writing;
         me.priorityValue = data.priorityValue;
         me.isBindPriority = data.isBindPriority;
+        me.setRotate(data.ratate);
         //me.refreshCanvas();
     },
 
@@ -59,11 +60,11 @@ Ext.define('editpic.view.img.CanvasImg', {
         }
     },
 
-    mySetZIndex: function (value) {
+    /*mySetZIndex: function (value) {
         var me = this;
         me.setZIndex(value);
         me.zindex = value;
-    },
+    },*/
 
 
     isImg: function () {
@@ -92,9 +93,10 @@ Ext.define('editpic.view.img.CanvasImg', {
         data.type = me.type;
         data.zindex = me.zindex;
         data.isLinkDataBase = me.isLinkDataBase;
-        data.Priority_For_Writing = me.Priority_For_Writing
-        data.priorityValue = me.priorityValue
-        data.isBindPriority = me.isBindPriority
+        data.Priority_For_Writing = me.Priority_For_Writing;
+        data.priorityValue = me.priorityValue;
+        data.isBindPriority = me.isBindPriority;
+        data.ratate = me.getRotate();
         return data;
     },
     setRGB: function (type, value) {
@@ -141,6 +143,24 @@ Ext.define('editpic.view.img.CanvasImg', {
          }*/
     },
 
+    setRotate: function (value) {
+        if (value == null || value == undefined) {
+            return;
+        }
+        var me = this;
+        if (me.el) {
+            me.el.setStyle("transform", "rotate(" + value + "deg)");
+            me.rotate = value;
+        }
+    },
+    getRotate: function () {
+        var me = this;
+        if (me.el) {
+            return me.rotate || me.el.getStyle("transform");
+        } else {
+            return ""
+        }
+    },
     refreshCanvas: function () {
         var me = this;
         var surface = me.getSurface();

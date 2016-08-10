@@ -1,7 +1,5 @@
 Ext.define('editpic.view.form.LabelForm', {
     extend: 'editpic.view.form.CanvasMenuBaseForm',
-    width: 300,
-    margin: 10,
     title: "Label",
     border: true,
     defaults: {
@@ -83,14 +81,24 @@ Ext.define('editpic.view.form.LabelForm', {
                  }
                  },*/
                 {
-                    xtype: "textfield", name: "src", fieldLabel: "Image",
+                  xtype:"numberfield",allowBlank:true,configName:"setRotate",name:"rotate",fieldLabel:"ratate",
+                    minValue:0,
+                    maxValue:360,
+                    value:0,
+                    listeners: {
+                        values: values,
+                        change: "mySetConfig"
+                    }
+                },
+                {
+                    xtype: "textfield", allowBlank:true,name: "src", fieldLabel: "Image",
                     listeners: {
                         render: "dragImageSetUrl"
                     }
                 },
                 {
                     xtype: "textfield",
-                    name: "dynamicSrc", fieldLabel: "Dynamic Image",
+                    name: "dynamicSrc", allowBlank:true, fieldLabel: "Dynamic Image",
                     /*bind: {
                      disabled: "{!ImageType.value}",
                      hidden: "{!ImageType.value}"

@@ -40,7 +40,7 @@ Ext.define('editpic.view.img.BaseTool', {
         }
         me.isBind = data.isBind;
         me.linkData(data);
-        me.setFontColor(data.fontcolor)
+        me.setFontColor(data.fontcolor);
         me.setFont(data.font);
         me.mySetBackgroundColor(data.backgroundColor);
         me.Priority_For_Writing = data.Priority_For_Writing;

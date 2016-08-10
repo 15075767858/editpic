@@ -11,21 +11,6 @@ Ext.define('editpic.view.img.DynamicTextTool', {
         var me = this;
         me.callParent(arguments)
     },
-    linkData: function (data) {
-        var me = this;
-
-        if (data.linkValue) {
-            console.log(data)
-            me.linkValue = data.linkValue;
-            me.field.setText(data.linkValue)
-            me.field.setText(data.linkValue)
-            me.field.setHandler(function () {
-                Ext.getCmp("mintab").addTab(data.linkValue)
-            })
-        }
-
-        me.refreshCanvas()
-    },
 
     init: function (data) {
         var me = this;
@@ -43,6 +28,23 @@ Ext.define('editpic.view.img.DynamicTextTool', {
         })
         return data;
     },
+
+    /*linkData: function (data) {
+        var me = this;
+
+        if (data.linkValue) {
+            console.log(data)
+            me.linkValue = data.linkValue;
+            me.field.setText(data.linkValue)
+            me.field.setText(data.linkValue)
+            me.field.setHandler(function () {
+                Ext.getCmp("mintab").addTab(data.linkValue)
+            })
+        }
+
+        me.refreshCanvas()
+    },
+
     linkData: function (data) {
         var me = this;
 
@@ -50,15 +52,15 @@ Ext.define('editpic.view.img.DynamicTextTool', {
         setTimeout(function(){
             me.refreshCanvas()
         },500)
-    },
+    },*/
     refreshCanvas: function () {
         var me = this;
         console.log(me)
+        console.log(me.getLinkValue())
         if (me.getLinkValue()) {
             me.setHtml(me.dynamictext);
         } else {
             me.setHtml(me.text);
         }
-
     }
 });

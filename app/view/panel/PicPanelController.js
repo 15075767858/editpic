@@ -26,6 +26,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
 
             notifyDrop: function (ddSource, e, data) {
                 var dragData = ddSource.dragData;
+
                 if (dragData.itype) {
                     var tool;
                     /* var toolstr = null;
@@ -58,6 +59,16 @@ Ext.define('editpic.view.panel.PicPanelController', {
                      zindex: 0
                      }
                      )*/
+                    var itype=dragData.itype;
+                    var zindex=0;
+                    if(itype==2||itype==3||itype==4){
+                        zindex=20;
+                    }
+                    if(itype==5){
+                        zindex=15;
+                    }
+
+
                     tool = My.createImg({
                         itype: dragData.itype,
                         x: e.event.offsetX,
@@ -65,7 +76,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                         width: 100,
                         height: 30,
                         disabled: false,
-                        zindex: 0
+                        zindex: zindex
                     })
 
                     tool.openMenu(function (data) {
@@ -97,7 +108,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                         disabled: false,
                         src: url,
                         hidden: true,
-                        zindex: 0
+                        zindex: 2
                     };
                     //var canvasimg = Ext.create("editpic.view.img.CanvasImg", data);
                     //var gifimg = Ext.create("editpic.view.img.GifImg", data)

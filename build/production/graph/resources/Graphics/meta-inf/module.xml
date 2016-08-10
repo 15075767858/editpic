@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="kitPxGraphics" bajaVersion="0" vendor="Tridium" vendorVersion="1.0.14" description="kitPx Graphics Library" preferredSymbol="kitPxGraphics" buildDate="13-Sep-13 11:43 EDT" buildMillis="1379086992131" buildHost="VA51LTJ9CMBS1" reloadable="true">
+ <dirs>
+  <dir name="/Boilers" install="ui"/>
+  <dir name="/Chillers" install="ui"/>
+  <dir name="/Coils" install="ui"/>
+  <dir name="/CoolingTowers" install="ui"/>
+  <dir name="/Dampers" install="ui"/>
+  <dir name="/Ductwork" install="ui"/>
+  <dir name="/Electrical" install="ui"/>
+  <dir name="/Fans" install="ui"/>
+  <dir name="/Filters" install="ui"/>
+  <dir name="/Fire" install="ui"/>
+  <dir name="/Generators" install="ui"/>
+  <dir name="/HeatExchangers" install="ui"/>
+  <dir name="/Labs" install="ui"/>
+  <dir name="/Lighting" install="ui"/>
+  <dir name="/Misc" install="ui"/>
+  <dir name="/Piping" install="ui"/>
+  <dir name="/Pumps" install="ui"/>
+  <dir name="/RTU" install="ui"/>
+  <dir name="/Security" install="ui"/>
+  <dir name="/Sensors" install="ui"/>
+  <dir name="/Tanks" install="ui"/>
+  <dir name="/TerminalUnits" install="ui"/>
+  <dir name="/Valves" install="ui"/>
+ </dirs>
+ <dependencies>
+  <dependency name="kitPx" vendor="Tridium" vendorVersion="1.0"/>
+ </dependencies>
+</module>

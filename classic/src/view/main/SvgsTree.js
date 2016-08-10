@@ -29,34 +29,55 @@ Ext.define('editpic.view.tree.SvgsTree', {
     rootVisible: false,
     collapsible: true,
     store: Ext.create("editpic.store.TreeListModel"),//"viewmodel.tree-list",
-    tbar: [{
-        text: 'Expand All',
-        xtype: "button",
-        handler: function (th) {
-            var me = this.up("treepanel");
-            console.log(this);
-            console.log(me);
-            me.expandAll();
+    tbar: [
+        {
+            xtype: 'segmentedbutton',
+            items: [{
+                text: 'SvgHvac',
+                pressed: true
+            }, {
+                text: 'Hvac'
+            }, {
+                text: 'Graphics'
+            }],
+            listeners: {
+                toggle: function (container, button, pressed) {
+                    var me = this.up("treepanel");
+                    me.store.setData([])
+                    me.store.load({
+                        url:"resources/main.php?par=getSvgTree&path="+button.text
+                    });
+                }
+            }
+        },
+        {
+            text: "Options",
+            menu: [{
+                checked: false,
+                text: 'Single Expand',
+                config: "singleExpand",
+                handler: "onToggleConfig"
+            },
+                {
+                    text: 'Expand All',
+                    xtype: "button",
+                    handler: function (th) {
+                        var me = this.up("treepanel");
+                        console.log(this);
+                        console.log(me);
+                        me.expandAll();
+                    }
+                }, {
+                    text: 'Collapse All',
+                    xtype: "button",
+                    handler: function (th) {
+                        var me = this.up("treepanel");
+                        //me.store.load();
+                        me.collapseAll();
+                    }
+                }
+            ]
         }
-    }, {
-        text: 'Collapse All',
-        xtype: "button",
-        handler: function (th) {
-            var me = this.up("treepanel");
-            console.log(this);
-            console.log(me);
-            me.store.load();
-            me.collapseAll();
-        }
-    }, {
-        text: "Options",
-        menu: [{
-            checked: false,
-            text: 'Single Expand',
-            config: "singleExpand",
-            handler: "onToggleConfig"
-        }]
-    }
     ],
     initComponent: function () {
         this.viewConfig = {

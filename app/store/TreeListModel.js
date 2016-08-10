@@ -11,7 +11,7 @@ Ext.define('editpic.store.TreeListModel', {
     proxy:{
         type:"ajax",
         autoLoad:true,
-        url:"resources/main.php?par=getSvgTree",//"resources/data/tree.js",
+        url:"resources/main.php?par=getSvgTree&path=SvgHvac",//"resources/data/tree.js",
         reader:{
             type:"json"
 

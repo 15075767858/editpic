@@ -125,6 +125,66 @@ Ext.define('editpic.view.main.MainController', {
                 }
             ]
         })
+    },
+    dataJsonUpload: function () {
+        var win = Ext.create("Ext.window.Window", {
+            autoShow: true,
+            width: 400,
+            title: "Upload data.json",
+            items: {
+                xtype: "form",
+                bodyPadding: 10,
+                frame: true,
+                items: [{
+                    xtype: 'filebutton',
+                    name: 'file',
+                    fieldLabel: 'data.json',
+                    labelWidth: 50,
+                    msgTarget: 'side',
+                    allowBlank: false,
+                    anchor: '100%',
+                    buttonText: 'Select data.json',
+                    /*validator: function (val) {
+                     return "adsdadsa";
+                     },*/
+                    //isFileUpload : Boolean
+                    listeners: {
+                        change: function (menu, target, eOpts) {
+                            var files = target.target.files;
+
+                            if (files.length) {
+                                var file = files[0];
+                                var reader = new FileReader();
+                                reader.onload = function () {
+                                    //document.getElementById("filecontent").innerHTML = this.result;
+
+                                    textarea.setValue(this.result);
+                                    checkbox.setValue(true)
+                                };
+                                reader.readAsText(file);
+                            }
+                        }
+                    }
+                }
+                ],
+            },
+            buttons: [{
+                text: 'Upload',
+                handler: function () {
+                    var form = win.down('form').getForm();
+                    if (form.isValid()) {
+                        form.submit({
+                            url: 'photo-upload.php',
+                            waitMsg: 'Uploading your photo...',
+                            success: function (fp, o) {
+                                Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
+                            }
+                        });
+                    }
+                }
+            }]
+        });
+
     }
 });
 String.prototype.replaceAll = function (s1, s2) {
@@ -175,8 +235,12 @@ My.AjaxSimplePost = function (params, url, success) {
         url: url || "resources/main.php",
         method: "POST",
         async: false,
+        timeout: 1000,
         params: params,
-        success: success
+        success: success,
+        failure: function () {
+            console.log(arguments)
+        }
     });
 }
 My.delayToast = function (title, html, delay) {
@@ -186,7 +250,7 @@ My.delayToast = function (title, html, delay) {
             title: title,
             html: html,
             slideInDuration: 400,
-
+            maxWidth: 800,
             align: 't'
             //align: 'br'
         });
@@ -322,12 +386,23 @@ My.linkManger.getLinkDatas = function () {
 
 My.linkManger.init = function () {
 
-    setInterval(function () {
+    var interval1 = setInterval(function () {
         var data = {
             //par: "getLinkValues",
             datas: My.linkManger.getLinkDatas()
         }
+
         My.AjaxSimplePost(data, "resources/main.php?par=getLinkValues", function (response) {
+            try {
+                Ext.decode(response.responseText);
+            } catch (e) {
+                //Ext.Msg.alert("Massage"," linkDataBase Error Program 10 seconds after the automatic return to normal . "+response.responseText);
+                clearInterval(interval1);
+                setTimeout(function () {
+                    My.linkManger.init()
+                }, 10000)
+                return;
+            }
             if (response.responseText.length == 2) {
                 //console.log(response.responseText)
                 My.linkManger.items = {}
@@ -347,7 +422,7 @@ My.linkManger.init = function () {
             }
 
         });
-    }, 500)
+    }, 1000)
 }
 
 My.initComponentConfig = {
@@ -456,8 +531,10 @@ My.initComponentConfig = {
      },*/
     mySetZIndex: function (value) {
         var me = this;
-        me.setZIndex(value);
-        me.zindex = value;
+        if (me.el) {
+            me.setZIndex(value);
+            me.zindex = value;
+        }
     },
 
     hasLinkValue: function () {
@@ -471,14 +548,19 @@ My.initComponentConfig = {
     getLinkValue: function () {
         var me = this;
         if (me.hasLinkValue()) {
-            if (me.linkValue) {
-                if (!isNaN(me.linkValue)) {
-                    return parseFloat(me.linkValue)
-                }
-                return true;
-            } else {
-                return false;
+            if (!isNaN(me.linkValue)) {
+                return parseFloat(me.linkValue);
             }
+
+            return me.linkValue;
+            /*if (me.linkValue) {
+             if (!isNaN(me.linkValue)) {
+             return me.linkValue
+             }
+             return true;
+             } else {
+             return false;
+             }*/
         }
     },
     setLinkValue: function (linkValue) {
@@ -532,7 +614,7 @@ My.initComponentConfig = {
 
         var me = this;
         if (My.getSearch()) {
-            if (me.clientOpenMenu()){
+            if (me.clientOpenMenu()) {
                 me.openAlermWindow()
             }
             return;
@@ -568,8 +650,8 @@ My.initComponentConfig = {
         textfield.focus()
         textfield.focus()
     },
-    clientOpenMenu:function(){
-      return true;
+    clientOpenMenu: function () {
+        return true;
     },
     contextmenu: function (e) {
 
@@ -621,13 +703,13 @@ My.initComponentConfig = {
         me.openMenu()
     },
 
-    getFormItems: function (nodename,bloakFn) {
+    getFormItems: function (nodename, bloakFn) {
         var me = this;
         console.log(me);
 
         nodename = nodename || me.nodename;
-        me.nodename=nodename
-        if(!nodename){
+        me.nodename = nodename
+        if (!nodename) {
             return;
         }
         var nodeType = nodename.substr(4, 1);
@@ -661,9 +743,10 @@ My.initComponentConfig = {
                     fieldLabel: "Value",
                     store: Ext.create("Ext.data.Store", {
                         field: ["name", "value"],
-                        data: [{name: "Off", value: 0}, {name: "On", value: 1}]
+                        data: [{name: "Off", value: 0}, {name: "On", value: 1}, {name: "Null", value: "NULL"}]
                     }),
                     displayField: 'name',
+                    editable:false,
                     valueField: 'value',
                     name: "priorityValue",
                     value: me.priorityValue
@@ -682,7 +765,7 @@ My.initComponentConfig = {
                 me.Priority_For_Writing = combo1.getValue();
                 me.priorityValue = valueField.getValue();
                 me.publishPriority()
-                if(bloakFn){
+                if (bloakFn) {
                     bloakFn()
                 }
             }
@@ -739,9 +822,9 @@ My.initComponentConfig = {
             padding: 10,
             defaults: {
                 anchor: '100%',
-                width:"100%"
+                width: "100%"
             },
-            items: me.getFormItems("",function(){
+            items: me.getFormItems("", function () {
                 win.close()
             })
         })
@@ -749,8 +832,8 @@ My.initComponentConfig = {
         var win = Ext.create("Ext.window.Window", {
             title: "Priority",
             autoShow: true,
-            width:400,
-            items: form,
+            width: 400,
+            items: form
             /* buttons: [
              {
              text: "OK", handler: function () {
@@ -813,17 +896,32 @@ My.initComponentConfig = {
                     pubstr += me.priorityValue + ",";
                 } else {
                     strnull += aPriority[i] || "NULL"
-                    strnull+=","
+                    strnull += ","
                     pubstr += "NULL,";
                 }
             }
+
+
+            /* My.AjaxSimple({
+             par: "changevalue",
+             ip: ip,
+             port: port,
+             nodename: nodename,
+             type: "Priority_Array",
+             value: pubstr.substr(0,pubstr.length-1)
+             }, "", function () {
+             My.delayToast('Success', nodename + ' Change value Priority_Array success new value is ' + strnull.substr(0, strnull.length - 1), 0)
+             })*/
+
+
             My.AjaxSimple({
-                par: "changevalue",
+                par: me.priorityValue == "NULL" ? "PresentArraySetNull" : "changevalue",
                 ip: ip,
                 port: port,
                 nodename: nodename,
+                number:me.Priority_For_Writing,
                 type: "Priority_Array",
-                value: pubstr.substr(0,pubstr.length-1)
+                value: pubstr.substr(0, pubstr.length - 1)
             }, "", function () {
                 My.delayToast('Success', nodename + ' Change value Priority_Array success new value is ' + strnull.substr(0, strnull.length - 1), 0)
             })

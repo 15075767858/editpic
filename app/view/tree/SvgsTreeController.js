@@ -20,7 +20,6 @@ Ext.define('editpic.view.tree.SvgsTreeController', {
         if (record.data.leaf) {
             var img = new Image();
             img.src = record.data.url;
-            console.log("aaa")
             img.onload = function () {
                 /*Ext.tip.QuickTipManager.register({
                  target: treeitem.id, // Target button's ID

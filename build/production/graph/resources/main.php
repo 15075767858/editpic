@@ -9,15 +9,14 @@ if ($ip == "127.0.0.1") {
     $redis->connect($ip, 6379);
 }*/
 
-
-
-
 //echo move_uploaded_file($_FILES["file"]["tmp_name"], "devsinfo/" . $_FILES["file"]["name"]);
+
 
 
 if ($par == 'getSvgTree') {
     //$path = "svg";
-    $path = "SvgHvac";
+    $path=$_GET['path'];
+    //$path = "SvgHvac";
     echo json_encode(getfiles($path, $fileArr = Array()));
 }
 
@@ -40,6 +39,7 @@ if ($par == "gettypes") {
     $nodeName = $_GET['nodename'];
     $arList = $redis->hKeys($nodeName);
     echo json_encode($arList);
+    $redis->close();
 }
 
 if ($par == "gettypevalue") {
@@ -47,7 +47,22 @@ if ($par == "gettypevalue") {
     $type = $_GET['type'];
     $redis = getRedisConect();
     echo $redis->hGet($nodeName, $type);
+    $redis->close();
+
 }
+
+if($par=="PresentArraySetNull"){
+    $redis = getRedisConect();
+    $key = $_GET["key"];
+    $value = $_GET["value"];
+    $number=$_GET["number"];
+    $nodeName = $_GET["nodename"];
+    echo $redis->hSet($nodeName, $type, $value);
+    $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\nCancel_Priority_Array\r\n" . $number);
+    $redis->close();
+}
+
+
 
 if ($par == "changevalue") {
     $redis = getRedisConect();
@@ -62,6 +77,8 @@ if ($par == "changevalue") {
     //echo "{type:'".$type."',value:'"."12313"."'}";
     echo $redis->hSet($nodeName, $type, $value);
     $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\n" . $type . "\r\n" . $value);
+    $redis->close();
+
 }
 
 
@@ -70,7 +87,7 @@ function getRedisConect()
     $redis = new Redis();
     $ip = $_GET['ip'];
     $port = $_GET['port'];
-    $redis->connect($ip, $port);
+    $redis->connect($ip, $port,0.3);
 
     return $redis;
 }
@@ -139,6 +156,9 @@ if ($par == "saveImageAsHtml") {
 }
 if ($par == "getLinkValues") {
     $datas = json_decode($_POST['datas']);
+   /* if(!$datas){
+        exit();
+    }*/
     $datas = object_array($datas);
 
     foreach ($datas as $key => $value) {
@@ -148,9 +168,6 @@ if ($par == "getLinkValues") {
     }
     echo json_encode($datas);
 }
-
-
-
 
 
 function object_array($array)
@@ -167,15 +184,21 @@ function object_array($array)
     return $array;
 }
 
+
+
 function getNodeTypeValue($arr)
 {
     $ip = $arr['ip'];
     $port = $arr['port'];
+
     $nodeName = $arr['nodename'];
     $type = $arr['type'];
     $redis = new Redis();
-    $redis->connect($ip, $port);
-    return $redis->hGet($nodeName, $type);
+    //$ip="192.168.2.20";
+    $redis->connect($ip, $port,0.5);
+    $value = $redis->hGet($nodeName, $type);
+    $redis->close();
+    return $value;
 }
 
 

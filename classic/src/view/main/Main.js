@@ -37,65 +37,16 @@ Ext.define('editpic.view.main.Main', {
         }, {
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 1.35")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 1.60")
             }
         }, {
-            text: "update data.json", handler: function () {
-                var win = Ext.create("Ext.window.Window", {
-                    autoShow: true,
-                    width: 400,
-                    title: "Upload data.json",
-                    items: {
-                        xtype: "form",
-                        bodyPadding: 10,
-                        frame: true,
-                        items: [{
-                            xtype: 'filebutton',
-                            name: 'file',
-                            fieldLabel: 'data.json',
-                            labelWidth: 50,
-                            msgTarget: 'side',
-                            allowBlank: false,
-                            anchor: '100%',
-                            buttonText: 'Select data.json',
-                            /*validator: function (val) {
-                                return "adsdadsa";
-                            },*/
-                            //isFileUpload : Boolean
-                            listeners: {
-                                change: function () {
-
-                                    testfield = this;
-                                    console.log(arguments)
-                                }
-                            }
-                        }
-                        ],
-                    },
-                    buttons: [{
-                        text: 'Upload',
-                        handler: function () {
-                            var form = win.down('form').getForm();
-                            if (form.isValid()) {
-                                form.submit({
-                                    url: 'photo-upload.php',
-                                    waitMsg: 'Uploading your photo...',
-                                    success: function (fp, o) {
-                                        Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
-                                    }
-                                });
-                            }
-                        }
-                    }]
-                });
-
-            }
+            text: "update data.json", handler: "dataJsonUpload"
         }, {
             text: "update graph",
             disabled: true
-        },{
-            text:"upload image",
-            disabled:true
+        }, {
+            text: "upload image",
+            disabled: true
         }
     ],
     border: true,
@@ -196,13 +147,13 @@ Ext.define('editpic.view.main.Main', {
                      }*/
                     var resObj = My.getSearch();
                     if (resObj) {
-                        me.removeAll()
-                        me.addTab(resObj['graph'])
-                        Ext.getCmp("imgTreePanel").hide()
-                        Ext.getCmp("toolPanel").hide()
-                        Ext.getCmp("devformpanel").hide()
-                        console.log(me.getDockedItems())
-                        var mainPanel = Ext.getCmp("mainPanel")
+                        me.removeAll();
+                        me.addTab(resObj['graph']);
+                        Ext.getCmp("imgTreePanel").hide();
+                        Ext.getCmp("toolPanel").hide();
+                        Ext.getCmp("devformpanel").hide();
+                        console.log(me.getDockedItems());
+                        var mainPanel = Ext.getCmp("mainPanel");
                         mainPanel.getDockedItems()[0].hide();
                         mainPanel.getDockedItems()[1].hide();
 

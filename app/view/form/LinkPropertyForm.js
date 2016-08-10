@@ -1,7 +1,5 @@
 Ext.define('editpic.view.form.LinkPropertyForm', {
     extend: 'editpic.view.form.CanvasMenuBaseForm',
-    width: 300,
-    margin: 10,
     title: "Value Binding",
     border: true,
     defaults: {
@@ -171,7 +169,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     name: "type",
                     disabled: !values.type,
                     store: nodeTypeStore,
-                    value: values.type,
+                    value: values.type||"Present_Value",
                     init: function (ip, port, nodename) {
                         var me = this;
                         var store = My.getDevTypeStore(ip, port, nodename);
