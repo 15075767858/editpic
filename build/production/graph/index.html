@@ -104,10 +104,6 @@ b.cache()}c.notifyUpdateReady()},notifyUpdateReady:function(){if("checking"!==c.
 1);"/"==e?b.substring(2,d+2)!==a&&(c=!1):"f"==e?b.substring(10,d+10)!==a&&(c=!1):"."==e&&b.substring(1,d+1)!==a&&(c=!1);return c},parseResult:function(b){var a={};(b.exception||0===b.status)&&!e.env.phantom?a.error=!0:200<=b.status&&300>b.status||304===b.status||e.env.phantom||0===b.status&&0<b.content.length?a.content=b.content:a.error=!0;return a}};return c}();Ext.manifest=Ext.manifest||"bootstrap";Ext.Microloader.run();</script>
 
 
-    <script src="resources/keybord/jquery-latest.min.js"></script>
-    <script src="resources/keybord/jquery-ui.min.js"></script>
-    <link href="resources/keybord/keyboard.css" rel="stylesheet">
-    <script src="resources/keybord/jquery.keyboard.js"></script>
 </head>
 <body>
 </body>

@@ -55,10 +55,10 @@
      *      ]
      */
     "requires": [
-        "font-awesome",
         "sencha-charts",
         "ux"
     ],
+    //"font-awesome",
 
     /**
      * Fashion build configuration properties.

@@ -726,14 +726,34 @@ My.initComponentConfig = {
 
         var valueField = null;
         if (nodeType == 1 || nodeType == 2) {
-            valueField = Ext.create("Ext.form.field.Number", {
+            valueField = Ext.create("Ext.form.field.ComboBox", {
                 fieldLabel: "Value",
-                decimalPrecision: 4,
+                //decimalPrecision: 4,
                 name: "priorityValue",
                 value: me.priorityValue,
-                allowDecimals: true,
-                maxValue: 1000000,
-                minValue: -1000000
+                validator: function (val) {
+                    if (val == "NULL") {
+                        return true;
+                    }
+                    if (isNaN(val)) {
+                        return "please input number .";
+                    }
+                    if (parseFloat(val) > 1000000) {
+                        return "Number is too large .";
+                    }
+                    if (parseFloat(val) < -1000000) {
+                        return "Number is too small .";
+                    }
+                    if (val.length > 12) {
+                        return "Invalid input";
+                    }
+                    return true;
+                },
+                store: ["NULL"]
+                //allowDecimals: true,
+
+                //maxValue: 1000000,
+                //minValue: -1000000
             })
 
         } else if (nodeType == 4 || nodeType == 5) {
@@ -746,7 +766,7 @@ My.initComponentConfig = {
                         data: [{name: "Off", value: 0}, {name: "On", value: 1}, {name: "Null", value: "NULL"}]
                     }),
                     displayField: 'name',
-                    editable:false,
+                    editable: false,
                     valueField: 'value',
                     name: "priorityValue",
                     value: me.priorityValue
@@ -764,9 +784,12 @@ My.initComponentConfig = {
             xtype: "button", text: "OK", handler: function (button) {
                 me.Priority_For_Writing = combo1.getValue();
                 me.priorityValue = valueField.getValue();
-                me.publishPriority()
-                if (bloakFn) {
-                    bloakFn()
+
+                if (button.up("form").isValid()) {
+                    me.publishPriority()
+                    if (bloakFn) {
+                        bloakFn()
+                    }
                 }
             }
         })
@@ -901,7 +924,6 @@ My.initComponentConfig = {
                 }
             }
 
-
             /* My.AjaxSimple({
              par: "changevalue",
              ip: ip,
@@ -919,7 +941,7 @@ My.initComponentConfig = {
                 ip: ip,
                 port: port,
                 nodename: nodename,
-                number:me.Priority_For_Writing,
+                number: me.Priority_For_Writing,
                 type: "Priority_Array",
                 value: pubstr.substr(0, pubstr.length - 1)
             }, "", function () {

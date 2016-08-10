@@ -1205,14 +1205,6 @@ $current-resource-root: $theme-aria-resource-root;
 $relative-image-path-for-uis: $theme-aria-resource-path;
 @import '../../../../../ext/classic/theme-aria/sass/etc/all';
 
-/* including package font-awesome */
-$font-awesome-resource-root: 'font-awesome' !default;
-$font-awesome-resource-path: 'font-awesome/images' !default;
-$current-package: 'font-awesome';
-$current-resource-root: $font-awesome-resource-root;
-$relative-image-path-for-uis: $font-awesome-resource-path;
-@import '../../../../../ext/packages/font-awesome/sass/etc/all';
-
 /* including package charts */
 $charts-resource-root: 'charts' !default;
 $charts-resource-path: 'charts/images' !default;
@@ -1621,14 +1613,6 @@ $relative-image-path-for-uis: $theme-aria-resource-path;
 @import '../../../../../ext/classic/theme-aria/sass/src/panel/Title';
 @import '../../../../../ext/classic/theme-aria/sass/src/panel/Tool';
 @import '../../../../../ext/classic/theme-aria/sass/src/form/FieldSet';
-
-/* including package font-awesome */
-$font-awesome-resource-root: 'font-awesome' !default;
-$font-awesome-resource-path: 'font-awesome/images' !default;
-$current-package: 'font-awesome';
-$current-resource-root: $font-awesome-resource-root;
-$relative-image-path-for-uis: $font-awesome-resource-path;
-@import '../../../../../ext/packages/font-awesome/sass/src/all';
 
 /* including package charts */
 $charts-resource-root: 'charts' !default;

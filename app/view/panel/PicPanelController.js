@@ -61,10 +61,10 @@ Ext.define('editpic.view.panel.PicPanelController', {
                      )*/
                     var itype=dragData.itype;
                     var zindex=0;
-                    if(itype==2||itype==3||itype==4){
+                    if(itype==2||itype==4){
                         zindex=20;
                     }
-                    if(itype==5){
+                    if(itype==5||itype==3){
                         zindex=15;
                     }
 

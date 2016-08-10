@@ -13,11 +13,11 @@ Ext.define('editpic.view.tree.SvgsTree', {
     },
     reference: "svgstree",
     //ui:"svgstree",
-    title: "&nbsp;&nbsp;&nbsp;&nbsp;Imgs",
+    title: "Imgs",
 
     header: {
         //style:"background:red;font-family: FontAwesome !important;",
-        iconCls: "fa-list-ul"
+        //iconCls: "fa-list-ul"
 
     },
     width: 300,

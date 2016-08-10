@@ -22,7 +22,10 @@ Ext.define('editpic.view.panel.PicPanel', {
     scrollable: true,
     constrainHeader: true,
 
-    iconCls: "fa-mobile",
+    //iconCls: "fa-mobile",
+    //iconCls:"myicon-device",
+    //iconCls:"opacity1",
+    //icon:"resources/icons/Phone_32px.ico",
     layout: 'absolute',
     //engine: "Ext.draw.engine.Svg",
     bind: {

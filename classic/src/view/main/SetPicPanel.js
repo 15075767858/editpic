@@ -18,8 +18,8 @@ Ext.define('editpic.view.panel.SetPicPanel', {
     maxHeight: 300,
     height: 400,
     border: true,
-    title: "&nbsp;&nbsp;&nbsp;&nbsp;Imgs",
-    iconCls: "fa-picture-o",
+    title: "Imgs",
+    //iconCls: "fa-picture-o",
 
     initComponent: function () {
         var me = this;

@@ -11,8 +11,8 @@ Ext.define('editpic.view.panel.DevFormPanel', {
     viewModel: {
         type: 'panel-devformpanel'
     },
-    title:"&nbsp;&nbsp;Settings",
-    iconCls:"fa-cog",
+    title:"Settings",
+    //iconCls:"fa-cog",
     width: 300,
     header:{
     },

@@ -57,7 +57,9 @@ if($par=="PresentArraySetNull"){
     $value = $_GET["value"];
     $number=$_GET["number"];
     $nodeName = $_GET["nodename"];
-    echo $redis->hSet($nodeName, $type, $value);
+    echo $value;
+    echo $number;
+     $redis->hSet($nodeName, $type, $value);
     $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\nCancel_Priority_Array\r\n" . $number);
     $redis->close();
 }
