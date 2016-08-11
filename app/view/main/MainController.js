@@ -732,6 +732,9 @@ My.initComponentConfig = {
                 name: "priorityValue",
                 value: me.priorityValue,
                 validator: function (val) {
+                    if (val.trim == "") {
+                        return "Can not be empty";
+                    }
                     if (val == "NULL") {
                         return true;
                     }
@@ -749,11 +752,44 @@ My.initComponentConfig = {
                     }
                     return true;
                 },
-                store: ["NULL"]
-                //allowDecimals: true,
+                store: ["NULL"],
+                listeners: {
+                    focus: function (field, t, e) {
+                        if (!My.getSearch()) {
+                            return;
+                        }
+                        var id = "#" + t.target.id;
+                        var keybord = popKeybord(id);
 
-                //maxValue: 1000000,
-                //minValue: -1000000
+                        function popKeybord(id) {
+                            $(id).keyboard({
+                                layout: 'custom',
+                                customLayout: {
+                                    'normal': [
+                                        '7 8 9 {clear} {b}',
+                                        '4 5 6 {left} {right}',
+                                        '1 2 3 . {a}  '
+                                    ],
+                                },
+                                maxLength: 11,
+                                maxValue: 10000
+                            })
+
+                            var keybord = document.querySelector(".ui-keyboard");
+                            if (keybord) {
+                                return keybord
+                            } else {
+                                field.focus()
+                            }
+                        }
+
+                        keybord.style.position = "fixed";
+                        keybord.style.zIndex = 200000;
+                        keybord.style.left = (field.getX() + field.labelWidth) + "px";
+                        keybord.style.top = field.getY() + "px";
+                        keybord.style.backgroundColor = "#3f4655"
+                    }
+                }
             })
 
         } else if (nodeType == 4 || nodeType == 5) {

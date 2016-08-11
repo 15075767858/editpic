@@ -2,8 +2,6 @@
 <html manifest="">
 
 
-
-
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
@@ -20,7 +18,7 @@
         //
         Ext.beforeLoad = function (tags) {
             var s = location.search,  // the query string (ex "?foo=1&bar")
-                profile;
+                    profile;
 
             // For testing look for "?classic" or "?modern" in the URL to override
             // device detection default.
@@ -42,15 +40,19 @@
             // any data is pulled from it.
             //
             //return function (manifest) {
-                // peek at / modify the manifest object
+            // peek at / modify the manifest object
             //};
         };
     </script>
-    
-    
-    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
-    <script id="microloader" data-app="d5ee001c-92ad-4cc0-8d1b-8333fb1d56d9" type="text/javascript" src="bootstrap.js"></script>
 
+
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script id="microloader" data-app="d5ee001c-92ad-4cc0-8d1b-8333fb1d56d9" type="text/javascript"
+            src="bootstrap.js"></script>
+
+    <link href="resources/keybord/keyboard.css" rel="stylesheet">
+    <script src="resources/keybord/jquery-latest.min.js"></script>
+    <script src="resources/keybord/jquery.keyboard.js"></script>
 
 </head>
 <body>
