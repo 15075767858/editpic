@@ -142,7 +142,7 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             ]
         }
-        if (itype == 2 || itype == 3 || itype == 4 || itype == 5) {
+        if (itype >1) {
             labelFormItems.push(
                 {
                     name: "font", fieldLabel: "font", allowBlank:true,xtype: "textfield",
@@ -217,6 +217,66 @@ Ext.define('editpic.view.form.LabelForm', {
                     }
                 }
             )
+            labelFormItems.push({
+                name:"boxShadow",fieldLabel:"shadow",allowBlank:true,xtype:"textfield",
+                listeners:{
+                    focus:function(field){
+
+                        var win =  Ext.create("Ext.window.Window", {
+                            autoShow: true,
+                            width:400,
+                            modal:true,
+                            title: "set shadow",
+                            items: {
+                                xtype: "form",
+                                itemId:"shadowForm",
+                                defaults: {
+                                    width: "100%",
+                                    editable:false,
+                                    allwoBlank:false
+                                },
+                                padding:10,
+                                items: [
+                                    {
+                                        xtype:"numberfield",name:"hShadow",fieldLabel:"x",
+                                        value:0
+                                    },
+                                    {
+                                        xtype:"numberfield",name:"vShadow",fieldLabel:"y",
+                                        value:0
+                                    },
+                                    {
+                                        xtype:"numberfield",name:"blur",fieldLabel:"blur",
+                                        value:20
+                                    },
+                                    {
+                                        fieldLabel:"shadow color",
+                                        name:"shadowColor",
+                                        xtype: 'colorfield',
+                                        value:"#FFFFFF"
+                                    }
+                                ]
+                            },
+                            buttons:[
+                                {text:"OK",handler:function(){
+                                    var form = win.getComponent("shadowForm")
+                                    var oJson=form.getForm().getValues();
+                                    var hShadow = oJson['hShadow']
+                                    var vShadow = oJson['vShadow']
+                                    var blur = oJson['blur']
+                                    var shadowColor = oJson['shadowColor']
+                                    var resStr = hShadow+"px "+vShadow+"px "+blur+"px "+"#"+shadowColor
+                                    field.setValue(resStr);
+                                    win.close()
+                                }},{text:"Cancel",handler:function(){
+                                    win.close()
+                                }}
+                            ]
+                        })
+
+                    }
+                }
+            })
         }
 
         var publicItems = [
@@ -330,6 +390,7 @@ Ext.define('editpic.view.form.LabelForm', {
 
     },
     listeners: {
-        boxready: "boxready"
+        boxready: "boxready",
+
     }
 });

@@ -14,6 +14,9 @@ Ext.define('editpic.view.panel.ToolsPanel', {
     width: 100,
     bodyPadding: 10,
     resizable: true,
+    scrollable:"y",
+    collapsible:true,
+    //collapsed:true,
     initComponent: function () {
         var me = this;
 
@@ -43,18 +46,25 @@ Ext.define('editpic.view.panel.ToolsPanel', {
         boxready: function () {
             var me = this;
             var data = [
-                {src: 'resources/icons/input_tablet_48px.png', caption: 'input',itype:2,disabled:false},
-                {src: 'resources/icons/link.png', caption: 'link',type:0,itype:3,disabled:false},
-                {src: 'resources/icons/font_48px.png', caption: 'text',itype:4,disabled:false},
-                {src: 'resources/icons/dynamictext_48px.png', caption: 'dynamic text',itype:5,disabled:false},
+                {src: 'resources/icons/input2.png', caption: 'input',itype:2,disabled:false},
+                {src: 'resources/icons/link2.png', caption: 'link',type:0,itype:3,disabled:false},
+                {src: 'resources/icons/text_48px.png', caption: 'text',itype:4,disabled:false},
+                {src: 'resources/icons/dynamictext2.png', caption: 'dynamic text',itype:5,disabled:false},
                 //{src: 'resources/icons/slider_16px.png', caption: 'slider',itype:6,disabled:true},
-                {src: 'resources/icons/url_48px.png', caption: 'url',type:0,itype:7,disabled:true}
+                {src: 'resources/icons/url2.png', caption: 'url',type:0,itype:7,disabled:true},
+                {src: 'resources/icons/clock.png', caption: 'clock',itype:8,disabled:true},
+                {src: 'resources/icons/OnOff.png', caption: 'on off',itype:10,disabled:true},
+                {src: 'resources/icons/path.png', caption: 'path',itype:11,disabled:true},
+                {src: 'resources/icons/schdule.png', caption: 'schdule',itype:12,disabled:true},
+                {src: 'resources/icons/time.png', caption: 'time',itype:13,disabled:true},
+                {src: 'resources/icons/video.png', caption: 'video',itype:14,disabled:true},
+                {src: 'resources/icons/weather.png', caption: 'weather',itype:15,disabled:true}
             ]
 
             for (var i = 0; i < data.length; i++) {
                 var panel = Ext.create("Ext.panel.Panel", {
-                    height: 80,
                     margin:"10",
+                    height:75,
                     disabled:data[i].disabled,
 
                     html: [

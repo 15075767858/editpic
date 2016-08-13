@@ -5,7 +5,7 @@ Ext.define('editpic.view.img.BaseTool', {
         'editpic.view.img.BaseToolController',
         'editpic.view.img.BaseToolModel'
     ],
-
+    shadow: "2px 2px 10px red",
     controller: 'img-basetool',
     viewModel: {
         type: 'img-basetool'
@@ -34,6 +34,7 @@ Ext.define('editpic.view.img.BaseTool', {
         me.mySetHeight(data.height);
         me.mySetX(data.x);
         me.mySetY(data.y);
+
         me.mySetZIndex(data.zindex);
         if (data.itype) {
             me.itype = me.itype || data.itype;
@@ -41,7 +42,10 @@ Ext.define('editpic.view.img.BaseTool', {
         me.isBind = data.isBind;
         me.linkData(data);
         me.setFontColor(data.fontcolor);
-        me.setFont(data.font);
+        //me.setFont(data.font);
+        me.mySetConfig('font',data.font)
+        me.setBoxShadow(data.boxShadow)
+        //me.mySetConfig('font',data.font)
         me.mySetBackgroundColor(data.backgroundColor);
         me.Priority_For_Writing = data.Priority_For_Writing;
         me.priorityValue = data.priorityValue;
@@ -81,7 +85,10 @@ Ext.define('editpic.view.img.BaseTool', {
         data.linkValue = me.linkValue;
         data.zindex = me.zindex;
         data.fontcolor = me.getFontColor();
-        data.font = me.getFont()
+        //data.font = me.getFont()
+        data.font=me.myGetConfig("font");
+        data.font=me.getBoxShadow("boxShadow");
+        //data.boxShadow=me.myGetConfig("font")
         data.backgroundColor = me.myGetBackgroundColor();
         data.Priority_For_Writing = me.Priority_For_Writing
         data.priorityValue = me.priorityValue
@@ -89,14 +96,105 @@ Ext.define('editpic.view.img.BaseTool', {
         return data;
     },
 
+/*
+    getShadow: function () {
+        var me = this;
+        if (me.field) {
+            var input = me.field.el.dom.querySelector("input")
+            if (input) {
+                var font = input.style.font;
+                return font;
+            } else {
+                return ""
+            }
+        }
+        if (me.body) {
+            var font = me.body.getStyle("font");
+            return font;
+        } else {
+            return "";
+        }
+    },
+
+    setShadow: function (shadow) {
+        var me = this;
+
+        if (!font) {
+            return;
+        }
+        if (me.field) {
+            var input = me.field.el.dom.querySelector("input")
+            input.style.font = font;
+            return;
+        }
+        if (me.body) {
+            me.body.setStyle("font", font);
+            me.font = font;
+        }
+    },*/
+    myGetConfig: function (configName) {
+        var me = this;
+        if (me.field) {
+            var input = me.field.el.dom.querySelector("input")
+            if (input) {
+                return input.style[configName];
+            } else {
+                return ""
+            }
+        }
+        if (me.body) {
+            return  me.body.getStyle(configName);
+        } else {
+            return "";
+        }
+    },
+    mySetConfig: function (configName, value) {
+        var me = this;
+        if (!value&value!=0) {
+            return;
+        }
+        if (me.field) {
+            var input = me.field.el.dom.querySelector("input")
+            if(input){
+            input.style[configName] = value;
+            return;
+            }else{
+                return;
+            }
+        }
+        if (me.body) {
+            me.body.setStyle(configName, value);
+            me[configName] = value;
+        }
+    },
+    //boxShadow
+    getBoxShadow:function(){
+        var me = this;
+        if (me.el) {
+            var boxShadow = me.el.getStyle("boxShadow");
+            return boxShadow;
+        } else {
+            return "";
+        }
+    },
+    setBoxShadow:function(shadow){
+        var me = this;
+        if(!shadow){
+            return;
+        }
+        if (me.el) {
+            me.setStyle("boxShadow", shadow);
+            me.boxShadow = shadow;
+        }
+    },
     getFont: function () {
         var me = this;
         if (me.field) {
             var input = me.field.el.dom.querySelector("input")
-            if(input){
-            var font = input.style.font;
-            return font;
-            }else{
+            if (input) {
+                var font = input.style.font;
+                return font;
+            } else {
                 return ""
             }
         }
@@ -116,8 +214,8 @@ Ext.define('editpic.view.img.BaseTool', {
         }
         if (me.field) {
             var input = me.field.el.dom.querySelector("input")
-            input.style.font=font;
-            return ;
+            input.style.font = font;
+            return;
         }
         if (me.body) {
             me.body.setStyle("font", font);
@@ -162,12 +260,7 @@ Ext.define('editpic.view.img.BaseTool', {
         me.clearInterval();
         me.setLinkValue();
     },
-    mySetFontSize: function () {
 
-    },
-    mySetFontFamily: function () {
-
-    },
     /*linkData: function (data) {
      var me = this;
      var ip = data.ip;
@@ -278,8 +371,8 @@ Ext.define('editpic.view.img.BaseTool', {
      if (e.keyCode == 40) {
      me.mySetY(me.y + 1)
      }
-     },*/
-    /*   mySetX: function (newValue) {
+     },
+       mySetX: function (newValue) {
      newValue = parseInt(newValue)
      var me = this;
      var panel = me.up("picpanel");
@@ -308,7 +401,7 @@ Ext.define('editpic.view.img.BaseTool', {
      me.field.setHeight(value)
      me.setHeight(value)
      },
-     */
+*/
     isImg: function () {
         return false;
     },
@@ -356,7 +449,20 @@ Ext.define('editpic.view.img.BaseTool', {
              textfield.focus()
              },*/
             contextmenu: "contextmenu",
-            dblclick: "dblclick"
+            dblclick: "dblclick",
+            mouseenter:function(){
+                var me=this;
+                me.el.setStyle("backgroundColor","#da7b19");
+
+            },
+            mouseout:function(){
+                var me=this;
+                me.el.setStyle("backgroundColor",me.backgroundColor||"transparent");
+
+            },
+            mousedown:function(){
+
+            }
         }
     }
 

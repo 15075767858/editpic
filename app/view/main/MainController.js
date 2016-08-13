@@ -126,7 +126,11 @@ Ext.define('editpic.view.main.MainController', {
             ]
         })
     },
+    BackupGraphice:function(){
+
+    },
     dataJsonUpload: function () {
+
         var win = Ext.create("Ext.window.Window", {
             autoShow: true,
             width: 400,

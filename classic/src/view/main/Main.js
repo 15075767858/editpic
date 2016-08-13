@@ -34,19 +34,22 @@ Ext.define('editpic.view.main.Main', {
             text: "save", handler: "saveHandler"
         }, {
             text: "open", handler: "openHandler"
-        }, {
-            text: "about",
-            handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 1.65")
-            }
-        }, {
-            text: "update data.json", handler: "dataJsonUpload"
+        },
+        {
+            text:"Backup Graphice",/*handler:"BackupGraphice"*/
+        },
+        {
+            text: "Restor Graphice", /*handler: "dataJsonUpload"*/
         }, {
             text: "update graph",
-            disabled: true
-        }, {
-            text: "upload image",
-            disabled: true
+            handler: function () {
+                Ext.create("editpic.view.window.UploadWindow")
+            }
+        } ,{
+            text: "about",
+            handler: function () {
+                Ext.Msg.alert("Version", "SmartIOgraphTools 1.68")
+            }
         }
     ],
     border: true,
@@ -120,7 +123,8 @@ Ext.define('editpic.view.main.Main', {
             },
             defaults: {
                 bodyStyle: {
-                    background: "url(resources/square.png)"
+                    //background: "url(resources/square.png)"
+                    background:"#1491fb"
                 },
                 closable: true
             },

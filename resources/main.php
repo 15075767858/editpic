@@ -186,8 +186,6 @@ function object_array($array)
     return $array;
 }
 
-
-
 function getNodeTypeValue($arr)
 {
     $ip = $arr['ip'];
@@ -201,6 +199,30 @@ function getNodeTypeValue($arr)
     $value = $redis->hGet($nodeName, $type);
     $redis->close();
     return $value;
+}
+
+if($par == "beforeUploadGraph"){
+    $dir="upload/";
+    listDir("/mnt/nandflash/web_arm/www/graph");
+    $scanned_directory = array_diff(scandir($dir), array('..', '.'));
+    foreach ($scanned_directory as $key => $value) {
+        echo unlink($dir.$value);
+    }
+}
+
+if ($par == "uploadGraphFiles") {
+    $dir="upload/";
+    if (!file_exists($dir)){
+        mkdir($dir);
+    }
+    echo move_uploaded_file($_FILES["file"]["tmp_name"], $dir . $_FILES["file"]["name"]);
+}
+
+if($par=="afterUploadGraph"){
+
+    exec("cat /mnt/nandflash/web_arm/www/graph/resources/upload/autoInstallGraph* > /mnt/nandflash/web_arm/www/graph/resources/upload/install");
+    exec("tar -xzvf /mnt/nandflash/web_arm/www/graph/resources/upload/install -C /mnt/nandflash/web_arm/www/");
+
 }
 
 
@@ -251,4 +273,22 @@ function getfiles($path, $fileArr)
     }
     return array_values($tempArr);
 } //列出所有文件
+
+function listDir($dir)
+{
+    if (is_dir($dir)) {
+        if ($dh = opendir($dir)) {
+            while (($file = readdir($dh)) !== false) {
+                if ((is_dir($dir . "/" . $file)) && $file != "." && $file != "..") {
+                    listDir($dir . "/" . $file . "/");
+                } else {
+                    if ($file != "." && $file != "..") {
+                        chmod($dir . '/' . $file, 0777);
+                    }
+                }
+            }
+            closedir($dh);
+        }
+    }
+}
 
