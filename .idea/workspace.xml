@@ -5,145 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4568aa7c-9baf-4272-89c0-4058b3e5febd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/SvgHvac/boolean/Off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/SvgHvac/boolean/OnOff.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/OnOff.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/clock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/dynamictext1_48px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/dynamictext2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/input2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/input_48px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/link2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/link_48px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/path.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/schdule.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/text_48px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/time.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/url1_48px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/url2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/icons/weather.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/Moxie.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/Moxie.xap" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.plupload.queue/img/backgrounds.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.plupload.queue/img/buttons-disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.plupload.queue/img/buttons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.plupload.queue/img/delete.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.plupload.queue/img/done.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.plupload.queue/img/error.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.plupload.queue/img/throbber.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.plupload.queue/img/transp50.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.ui.plupload/img/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.ui.plupload/img/plupload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/window/DownLoadWindowController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/window/DownLoadWindowModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/production/graph/resources/keybord/jquery-latest.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/production/graph/resources/keybord/jquery.keyboard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/production/graph/resources/keybord/keyboard.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classic/src/view/main/DownLoadWindow.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classic/src/view/main/UploadWindow.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/az.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/be_BY.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/bs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/cy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/hy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/ka.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/kk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/ku_IQ.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/ms.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/pt_BR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/th_TH.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/uk_UA.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/zh_CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/i18n/zh_TW.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.plupload.queue/css/jquery.plupload.queue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.plupload.queue/jquery.plupload.queue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.plupload.queue/jquery.plupload.queue.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.ui.plupload/css/jquery.ui.plupload.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.ui.plupload/jquery.ui.plupload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/jquery.ui.plupload/jquery.ui.plupload.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/moxie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/moxie.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/plupload.dev.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/plupload.full.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/js/plupload.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/run.sh" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/program.tar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/theme-capture.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/SmartIO.png" afterPath="$PROJECT_DIR$/resources/SmartIO.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/square.png" afterPath="$PROJECT_DIR$/resources/square.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/form/LabelForm.js" afterPath="$PROJECT_DIR$/app/view/form/LabelForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/BaseTool.js" afterPath="$PROJECT_DIR$/app/view/img/BaseTool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/MainController.js" afterPath="$PROJECT_DIR$/app/view/main/MainController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/PicPanelController.js" afterPath="$PROJECT_DIR$/app/view/panel/PicPanelController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/ToolsPanel.js" afterPath="$PROJECT_DIR$/app/view/panel/ToolsPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap.css" afterPath="$PROJECT_DIR$/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/cache.appcache" afterPath="$PROJECT_DIR$/build/production/graph/cache.appcache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic.json" afterPath="$PROJECT_DIR$/build/production/graph/classic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/app.js" afterPath="$PROJECT_DIR$/build/production/graph/classic/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/resources/graph-all_1.css" afterPath="$PROJECT_DIR$/build/production/graph/classic/resources/graph-all_1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/resources/graph-all_2.css" afterPath="$PROJECT_DIR$/build/production/graph/classic/resources/graph-all_2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/index.html" afterPath="$PROJECT_DIR$/build/production/graph/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern.json" afterPath="$PROJECT_DIR$/build/production/graph/modern.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern/app.js" afterPath="$PROJECT_DIR$/build/production/graph/modern/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/main.php" afterPath="$PROJECT_DIR$/build/production/graph/resources/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.css" afterPath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss" afterPath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/editpic/sass/editpic-all.scss.tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.css" afterPath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.scss" afterPath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example.scss.tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example_2.css" afterPath="$PROJECT_DIR$/build/temp/production/editpic/slicer-temp/editpic-example_2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.css" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss.tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss.tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/Main.js" afterPath="$PROJECT_DIR$/classic/src/view/main/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modern.json" afterPath="$PROJECT_DIR$/modern.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/main.php" afterPath="$PROJECT_DIR$/resources/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/test.php" afterPath="$PROJECT_DIR$/resources/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/example.css" afterPath="$PROJECT_DIR$/sass/example/example.css" />
     </list>
     <ignored path="editpic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -172,23 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UploadWindow.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/main/UploadWindow.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7832326">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#44#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+      <file leaf-file-name="LinkTool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/img/LinkTool.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+              <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -198,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+              <caret line="434" column="4" selection-start-line="434" selection-start-column="4" selection-end-line="434" selection-end-column="4" />
               <folding>
                 <element signature="e#14215#15091#0" expanded="false" />
                 <element signature="e#16299#16677#0" expanded="false" />
@@ -214,30 +64,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/main.php">
+      <file leaf-file-name="BaseTool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/img/BaseTool.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.958333">
-              <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="459" column="84" selection-start-line="459" selection-start-column="84" selection-end-line="459" selection-end-column="84" />
               <folding>
-                <marker date="1471077981000" expanded="true" signature="2989:3930" placeholder="..." />
-                <marker date="1471077981000" expanded="true" signature="3008:3096" placeholder="..." />
-                <marker date="1471077981000" expanded="true" signature="3116:3395" placeholder="..." />
-                <marker date="1471077981000" expanded="true" signature="3131:3193" placeholder="{...}" />
-                <marker date="1471077981000" expanded="true" signature="3222:3316" placeholder="{...}" />
-                <marker date="1471077981000" expanded="true" signature="3335:3375" placeholder="{...}" />
-                <marker date="1471077981000" expanded="true" signature="3414:3434" placeholder="..." />
+                <element signature="e#1449#1792#0" expanded="false" />
+                <element signature="e#2751#3595#0" expanded="false" />
+                <element signature="e#6760#9911#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run.sh">
+      <file leaf-file-name="LabelForm.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/view/form/LabelForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43548387">
+              <caret line="239" column="36" selection-start-line="239" selection-start-column="36" selection-end-line="239" selection-end-column="36" />
+              <folding>
+                <element signature="e#5033#9186#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextTool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/img/TextTool.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-              <folding />
+              <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -258,6 +118,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/app/view/panel/DevFormPanelController.js" />
+        <option value="$PROJECT_DIR$/app/view/panel/PicPanelModel.js" />
+        <option value="$PROJECT_DIR$/app/store/PicDatas.js" />
         <option value="$PROJECT_DIR$/app/view/img/InputTool.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/fieldMenuWindow.js" />
         <option value="$PROJECT_DIR$/app/view/window/FieldMenuWindow.js" />
@@ -289,26 +152,23 @@
         <option value="$PROJECT_DIR$/app/view/img/CanvasImg.js" />
         <option value="$PROJECT_DIR$/app/store/TreeListModel.js" />
         <option value="$PROJECT_DIR$/app/view/tree/SvgsTreeController.js" />
+        <option value="$PROJECT_DIR$/resources/main.php" />
         <option value="$PROJECT_DIR$/classic/sass/src/view/main/Main.scss" />
         <option value="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" />
         <option value="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/SvgsTree.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/panel/PicPanelController.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/app/view/window/DownLoadWindow.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
         <option value="$PROJECT_DIR$/app/view/main/MainController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/DownLoadWindow.js" />
         <option value="$PROJECT_DIR$/app/view/img/LinkTool.js" />
         <option value="$PROJECT_DIR$/app/view/panel/ToolsPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/panel/PicPanelController.js" />
         <option value="$PROJECT_DIR$/app/view/img/BaseTool.js" />
         <option value="$PROJECT_DIR$/app/view/form/LabelForm.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/app.json" />
-        <option value="$PROJECT_DIR$/resources/install.sh" />
-        <option value="$PROJECT_DIR$/run.sh" />
-        <option value="$PROJECT_DIR$/resources/main.php" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/UploadWindow.js" />
       </list>
     </option>
   </component>
@@ -329,7 +189,7 @@
     <option name="x" value="1920" />
     <option name="y" value="-356" />
     <option name="width" value="1080" />
-    <option name="height" value="1897" />
+    <option name="height" value="1142" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -356,7 +216,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -386,6 +245,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icons" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -578,6 +455,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -591,19 +469,19 @@
     <property name="SearchEverywhereHistoryKey" value="dragImage&#9;null&#9;null&#10;all.css&#9;FILE&#9;file:///Library/WebServer/Documents/editpic/build/development/editpic/classic/resources/editpic-all_2.css&#10;.fa-reply&#9;null&#9;null&#10;all.&#9;FILE&#9;file:///Library/WebServer/Documents/editpic/ext/classic/theme-aria/sass/etc/all.scss&#10;fa-th-list&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/resources" />
-      <recent name="$PROJECT_DIR$/resources/SvgHvac" />
-      <recent name="$PROJECT_DIR$/resources/icons" />
-      <recent name="$PROJECT_DIR$/resources/keybord" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/classic/src/view/main" />
       <recent name="$PROJECT_DIR$/resources/SvgHvac/boolean" />
       <recent name="$PROJECT_DIR$/resources/icons" />
       <recent name="$PROJECT_DIR$/resources/keybord" />
       <recent name="$PROJECT_DIR$/resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/SvgHvac" />
+      <recent name="$PROJECT_DIR$/resources/icons" />
+      <recent name="$PROJECT_DIR$/resources/keybord" />
+      <recent name="$PROJECT_DIR$/resources/jquery-keybord" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.test.html">
@@ -674,17 +552,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-356" width="1080" height="1897" extended-state="6" />
+    <frame x="1920" y="-356" width="1080" height="1142" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33044317" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23988439" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.029028436" sideWeight="0.5462428" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858837" sideWeight="0.49614644" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.02770083" sideWeight="0.45375723" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.028571429" sideWeight="0.45375723" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2495183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25096953" sideWeight="0.45375723" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17653824" sideWeight="0.45375723" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -720,6 +598,96 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/view/img/BaseToolModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/CanvasImgModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/classic/classic/test/specs/view/NodeCache.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.083903044">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/TreeListModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13051584">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/tree/DevTreeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/tree/SvgsTreeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24390244">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.625">
+          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+          <folding>
+            <marker date="1471077981000" expanded="true" signature="2989:3930" placeholder="..." />
+            <marker date="1471077981000" expanded="true" signature="3008:3096" placeholder="..." />
+            <marker date="1471077981000" expanded="true" signature="3116:3395" placeholder="..." />
+            <marker date="1471077981000" expanded="true" signature="3131:3193" placeholder="{...}" />
+            <marker date="1471077981000" expanded="true" signature="3222:3316" placeholder="{...}" />
+            <marker date="1471077981000" expanded="true" signature="3335:3375" placeholder="{...}" />
+            <marker date="1471077981000" expanded="true" signature="3414:3434" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/icons/dynamictext_48px.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/icons/settings_48px.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/icons/tools_48px.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/icons/Images_48px_blue.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/icons/Images_48px_red.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/build/ext-all-debug.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5848353">
+          <caret line="228066" column="38" selection-start-line="228066" selection-start-column="38" selection-end-line="228066" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/icons/Device_24px.ico">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -840,6 +808,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/PicPanelController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.010323469">
+          <caret line="73" column="28" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/form/LinkPropertyForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -854,10 +829,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23670368">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04366812">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -880,6 +869,13 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/DownLoadWindow.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -891,6 +887,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+          <folding>
+            <marker date="1470990082000" expanded="true" signature="2804:2823" placeholder="..." />
+            <marker date="1470990082000" expanded="true" signature="2839:2851" placeholder="..." />
+            <marker date="1470990082000" expanded="true" signature="2923:2942" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -923,156 +924,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/PicPanelModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/img/TextTool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/PicPanelController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/img/BaseTool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="185" column="14" selection-start-line="185" selection-start-column="14" selection-end-line="185" selection-end-column="14" />
-          <folding>
-            <element signature="e#1449#1792#0" expanded="false" />
-            <element signature="e#2751#3595#0" expanded="false" />
-            <element signature="e#6760#9911#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/form/LabelForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5243056">
-          <caret line="255" column="36" selection-start-line="255" selection-start-column="36" selection-end-line="255" selection-end-column="36" />
-          <folding>
-            <element signature="e#5033#9186#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/i18n/zh_CN.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/i18n/ka.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/i18n/ar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/plupload.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/plupload.full.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48415494">
-          <caret line="55" column="84" selection-start-line="55" selection-start-column="84" selection-end-line="55" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_5.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.958334">
-          <caret line="383" column="9" selection-start-line="383" selection-start-column="9" selection-end-line="383" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33923078">
-          <caret line="696" column="9" selection-start-line="696" selection-start-column="9" selection-end-line="696" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026056746">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+          <caret line="434" column="4" selection-start-line="434" selection-start-column="4" selection-end-line="434" selection-end-column="4" />
           <folding>
             <element signature="e#14215#15091#0" expanded="false" />
             <element signature="e#16299#16677#0" expanded="false" />
@@ -1087,36 +942,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/main.php">
+    <entry file="file://$PROJECT_DIR$/app/view/img/BaseTool.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.958333">
-          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="459" column="84" selection-start-line="459" selection-start-column="84" selection-end-line="459" selection-end-column="84" />
           <folding>
-            <marker date="1471077981000" expanded="true" signature="2989:3930" placeholder="..." />
-            <marker date="1471077981000" expanded="true" signature="3008:3096" placeholder="..." />
-            <marker date="1471077981000" expanded="true" signature="3116:3395" placeholder="..." />
-            <marker date="1471077981000" expanded="true" signature="3131:3193" placeholder="{...}" />
-            <marker date="1471077981000" expanded="true" signature="3222:3316" placeholder="{...}" />
-            <marker date="1471077981000" expanded="true" signature="3335:3375" placeholder="{...}" />
-            <marker date="1471077981000" expanded="true" signature="3414:3434" placeholder="..." />
+            <element signature="e#1449#1792#0" expanded="false" />
+            <element signature="e#2751#3595#0" expanded="false" />
+            <element signature="e#6760#9911#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+    <entry file="file://$PROJECT_DIR$/app/view/form/LabelForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-          <folding />
+        <state vertical-scroll-proportion="0.43548387">
+          <caret line="239" column="36" selection-start-line="239" selection-start-column="36" selection-end-line="239" selection-end-column="36" />
+          <folding>
+            <element signature="e#5033#9186#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/UploadWindow.js">
+    <entry file="file://$PROJECT_DIR$/app/view/img/TextTool.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7832326">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
           <folding>
-            <element signature="e#0#44#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
