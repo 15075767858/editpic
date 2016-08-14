@@ -27,10 +27,12 @@
                 profile = 'classic';
             }
             else if (s.match(/\bmodern\b/)) {
-                profile = 'modern';
+                profile = 'classic';
+                //profile = 'modern';
             }
             else {
-                profile = tags.desktop ? 'classic' : 'modern';
+                //profile = tags.desktop ? 'classic' : 'modern';
+                profile = tags.desktop ? 'classic' : 'classic';
                 //profile = tags.phone ? 'modern' : 'classic';
             }
 

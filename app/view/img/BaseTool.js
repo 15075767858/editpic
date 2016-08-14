@@ -87,7 +87,7 @@ Ext.define('editpic.view.img.BaseTool', {
         data.fontcolor = me.getFontColor();
         //data.font = me.getFont()
         data.font=me.myGetConfig("font");
-        data.font=me.getBoxShadow("boxShadow");
+        data.boxShadow=me.boxShadow;
         //data.boxShadow=me.myGetConfig("font")
         data.backgroundColor = me.myGetBackgroundColor();
         data.Priority_For_Writing = me.Priority_For_Writing
@@ -170,22 +170,24 @@ Ext.define('editpic.view.img.BaseTool', {
     //boxShadow
     getBoxShadow:function(){
         var me = this;
-        if (me.el) {
+        return me.boxShadow;
+        /*if (me.el) {
             var boxShadow = me.el.getStyle("boxShadow");
             return boxShadow;
         } else {
             return "";
-        }
+        }*/
     },
     setBoxShadow:function(shadow){
         var me = this;
         if(!shadow){
             return;
         }
-        if (me.el) {
-            me.setStyle("boxShadow", shadow);
-            me.boxShadow = shadow;
-        }
+            if (me.el) {
+                me.setStyle("boxShadow", shadow);
+                me.boxShadow = shadow;
+            }
+
     },
     getFont: function () {
         var me = this;

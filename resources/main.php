@@ -203,11 +203,12 @@ function getNodeTypeValue($arr)
 
 if($par == "beforeUploadGraph"){
     $dir="upload/";
-    listDir("/mnt/nandflash/web_arm/www/graph");
+
     $scanned_directory = array_diff(scandir($dir), array('..', '.'));
-    foreach ($scanned_directory as $key => $value) {
+    /*foreach ($scanned_directory as $key => $value) {
         echo unlink($dir.$value);
-    }
+    }*/
+    listDir("/mnt/nandflash/web_arm/www/");
 }
 
 if ($par == "uploadGraphFiles") {
@@ -219,9 +220,21 @@ if ($par == "uploadGraphFiles") {
 }
 
 if($par=="afterUploadGraph"){
+    echo "更新中。。请勿关闭此页面!";
+    echo '<script type="text/javascript">window.onload=function(){alert("upldate success.");}</script>';
+    exec("cat /mnt/nandflash/web_arm/www/graph/resources/upload/autoInstallGraph* > /mnt/nandflash/web_arm/www/graph/resources/upload/install",$arr);
+    print_r($arr);
+    exec("tar -xzvf upload/install");
+    exec("cp -r graph/ ../../",$arr);
+    print_r($arr);
+    exec("rm -rf graph/");
+    exec("rm -rf upload/");
+    //exec("move ");
+    //popen("tar -xzvf /mnt/nandflash/web_arm/www/graph/resources/upload/install -C /mnt/nandflash/web_arm/www/",'r');
+    //exec("tar -xzvf /mnt/nandflash/web_arm/www/graph/resources/upload/install -C /mnt/nandflash/web_arm/www/",$arr);
+    echo "<br>";
 
-    exec("cat /mnt/nandflash/web_arm/www/graph/resources/upload/autoInstallGraph* > /mnt/nandflash/web_arm/www/graph/resources/upload/install");
-    exec("tar -xzvf /mnt/nandflash/web_arm/www/graph/resources/upload/install -C /mnt/nandflash/web_arm/www/");
+    echo "更新成功";
 
 }
 

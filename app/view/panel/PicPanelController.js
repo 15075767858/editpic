@@ -76,7 +76,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                         width: 100,
                         height: 30,
                         disabled: false,
-                        boxShadow:"0px 0px 20px #FFFFFF",
+                        boxShadow:"1px 1px 1px #FFFFFF",
                         zindex: zindex
                     })
 

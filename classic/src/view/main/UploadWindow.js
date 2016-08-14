@@ -76,13 +76,32 @@ Ext.define("editpic.view.window.UploadWindow", {
          console.log(arguments)
          })*/
         me.uploader.bind("UploadComplete", function () {
-            Ext.Msg.alert("Massage","graph uploading ...   please wait ...")
 
-            My.AjaxSimple({
+
+            /*Ext.create("Ext.form.Panel",{
+                url:"resources/main.php?par="
+            })*/
+
+            Ext.Msg.alert("Massage","graph uploading please wait... It takes about 5 minutes.")
+            /*var bar = Ext.create("Ext.ProgressBar",{
+                width:300
+            });
+            var win = Ext.create("Ext.window.Window",{
+                title:"Massage",
+                items:bar
+            })*/
+            var iframe = document.createElement("iframe");
+            iframe.src="resources/main.php?par=afterUploadGraph";
+
+            Ext.getBody().dom.appendChild(iframe)
+
+
+
+            /*My.AjaxSimpleAsync({
                 par: "afterUploadGraph"
             }, "", function (response) {
+                console.log(arguments);
                 My.delayToast("Status", "Upload graph successfully .");
-
                 Ext.Msg.show({
                     title: 'Massage',
                     message: 'program update success .',
@@ -95,7 +114,18 @@ Ext.define("editpic.view.window.UploadWindow", {
                         }
                     }
                 });
-            })
+            })*/
+            me.close()
+            /*bar.wait({
+                interval: 500, //bar will move fast!
+                duration: 50000,
+                increment: 15,
+                text: 'Updating...',
+                scope: this,
+                fn: function(){
+                    bar.updateText('Done!');
+                }
+            });*/
             console.log(arguments)
         })
     },

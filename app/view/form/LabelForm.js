@@ -239,15 +239,15 @@ Ext.define('editpic.view.form.LabelForm', {
                                 items: [
                                     {
                                         xtype:"numberfield",name:"hShadow",fieldLabel:"x",
-                                        value:0
+                                        value:1
                                     },
                                     {
                                         xtype:"numberfield",name:"vShadow",fieldLabel:"y",
-                                        value:0
+                                        value:1
                                     },
                                     {
                                         xtype:"numberfield",name:"blur",fieldLabel:"blur",
-                                        value:20
+                                        value:1
                                     },
                                     {
                                         fieldLabel:"shadow color",

@@ -234,6 +234,16 @@ My.AjaxSimple = function (params, url, success) {
         success: success
     });
 }
+My.AjaxSimpleAsync= function (params, url, success) {
+    Ext.Ajax.request({
+        url: url || "resources/main.php",
+        method: "GET",
+        async: true,
+        timeout:600000,
+        params: params,
+        success: success
+    });
+}
 My.AjaxSimplePost = function (params, url, success) {
     Ext.Ajax.request({
         url: url || "resources/main.php",
