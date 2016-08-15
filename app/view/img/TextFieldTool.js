@@ -12,7 +12,7 @@ Ext.define('editpic.view.img.TextFieldTool',
          },*/
         initComponent: function () {
             var me = this;
-            var textfield = Ext.create("Ext.form.field.Text", {
+           /* var textfield = Ext.create("Ext.form.field.Text", {
                 editable: false,
                 listeners: {
                     el: {
@@ -25,32 +25,40 @@ Ext.define('editpic.view.img.TextFieldTool',
             })
             me.items = textfield;
             me.field = textfield;
-
+*/
             me.callParent()
         },
-
+        getInitData: function () {
+            var me = this;
+            var data = me.callParent()
+            /*Ext.apply(data, {
+             Priority_For_Writing: me.Priority_For_Writing,
+             priorityValue: me.priorityValue,
+             isBindPriority:me.isBindPriority
+             })*/
+            return data;
+        },
 
         init: function (data) {
             var me = this;
             me.callParent(arguments)
+            //me.setLinkValue()
             /*Ext.apply()
             me.Priority_For_Writing = data.Priority_For_Writing;
             me.priorityValue = data.priorityValue;
             me.isBindPriority=data.isBindPriority
             console.log(me)*/
         },
-        getInitData: function () {
+
+        refreshCanvas: function () {
             var me = this;
-            var data = me.callParent()
-            /*Ext.apply(data, {
-                Priority_For_Writing: me.Priority_For_Writing,
-                priorityValue: me.priorityValue,
-                isBindPriority:me.isBindPriority
-            })*/
-            return data;
+            me.setHtml(me.getLinkValue());
+            //me.field.setValue(me.getLinkValue())
         },
-
-
+        /*linkData:function(){
+            var me=this;
+            me.setHtml(me.getLinkValue())
+        },*/
         setPresent_Value: function (sDevNodeName, text1, text2) {
 
             var sDevName = sDevNodeName.substr(0, 4);
@@ -94,11 +102,7 @@ Ext.define('editpic.view.img.TextFieldTool',
                     })
 
             }
-        },
+        }
 
-        refreshCanvas: function () {
-            var me = this;
-            me.field.setValue(me.getLinkValue())
-        },
     }
 );

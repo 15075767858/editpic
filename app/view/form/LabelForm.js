@@ -81,24 +81,28 @@ Ext.define('editpic.view.form.LabelForm', {
                  }
                  },*/
                 {
-                  xtype:"numberfield",allowBlank:true,configName:"setRotate",name:"rotate",fieldLabel:"ratate",
-                    minValue:0,
-                    maxValue:360,
-                    value:0,
+                    xtype: "numberfield",
+                    allowBlank: true,
+                    configName: "setRotate",
+                    name: "rotate",
+                    fieldLabel: "ratate",
+                    minValue: 0,
+                    maxValue: 360,
+                    value: 0,
                     listeners: {
                         values: values,
                         change: "mySetConfig"
                     }
                 },
                 {
-                    xtype: "textfield", allowBlank:true,name: "src", fieldLabel: "Image",
+                    xtype: "textfield", allowBlank: true, name: "src", fieldLabel: "Image",
                     listeners: {
                         render: "dragImageSetUrl"
                     }
                 },
                 {
                     xtype: "textfield",
-                    name: "dynamicSrc", allowBlank:true, fieldLabel: "Dynamic Image",
+                    name: "dynamicSrc", allowBlank: true, fieldLabel: "Dynamic Image",
                     /*bind: {
                      disabled: "{!ImageType.value}",
                      hidden: "{!ImageType.value}"
@@ -142,75 +146,79 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             ]
         }
-        if (itype >1) {
+        if (itype > 1) {
             labelFormItems.push(
                 {
-                    name: "font", fieldLabel: "font", allowBlank:true,xtype: "textfield",
+                    name: "font", fieldLabel: "font", allowBlank: true, xtype: "textfield",
                     listeners: {
                         focus: function (field) {
-                           var win =  Ext.create("Ext.window.Window", {
+                            var win = Ext.create("Ext.window.Window", {
                                 autoShow: true,
-                                width:400,
-                                modal:true,
+                                width: 400,
+                                modal: true,
                                 title: "set font",
                                 items: {
                                     xtype: "form",
-                                    reference:"fontForm",
-                                    itemId:"fontForm",
+                                    reference: "fontForm",
+                                    itemId: "fontForm",
                                     defaults: {
                                         width: "100%",
-                                        editable:false
+                                        editable: false
                                     },
-                                    padding:10,
+                                    padding: 10,
                                     items: [
                                         {
-                                            fieldLabel:"font style",
-                                            name:"font_style",
-                                            xtype:"combo",
-                                            store:["normal","italic","oblique"],
-                                            value:"normal"
-                                        },{
-                                            fieldLabel:"font variant",
-                                            name:"font_variant",
-                                            xtype:"hiddenfield",
-                                            value:"normal"
-                                        },{
-                                            fieldLabel:"font weight",
-                                            name:"font_weight",
-                                            xtype:"combo",
-                                            store:["normal","bold","bolder","lighter",100,200,300,400,500,600,700,800,900],
-                                            value:"normal"
-                                        },{
-                                            fieldLabel:"font size",
-                                            name:"font_size",
-                                            xtype:"numberfield",
-                                            minValue:1,
-                                            value:15
-                                        },{
-                                            fieldLabel:"font family",
-                                            name:"font_family",
-                                            xtype:"combo",
-                                            editable:true,
-                                            store:["normal","times","courier","arial","serif","sans-serif","cursive","fantasy","monospace"],
-                                            value:"normal"
+                                            fieldLabel: "font style",
+                                            name: "font_style",
+                                            xtype: "combo",
+                                            store: ["normal", "italic", "oblique"],
+                                            value: "normal"
+                                        }, {
+                                            fieldLabel: "font variant",
+                                            name: "font_variant",
+                                            xtype: "hiddenfield",
+                                            value: "normal"
+                                        }, {
+                                            fieldLabel: "font weight",
+                                            name: "font_weight",
+                                            xtype: "combo",
+                                            store: ["normal", "bold", "bolder", "lighter", 100, 200, 300, 400, 500, 600, 700, 800, 900],
+                                            value: "normal"
+                                        }, {
+                                            fieldLabel: "font size",
+                                            name: "font_size",
+                                            xtype: "numberfield",
+                                            minValue: 1,
+                                            value: 15
+                                        }, {
+                                            fieldLabel: "font family",
+                                            name: "font_family",
+                                            xtype: "combo",
+                                            editable: true,
+                                            store: ["normal", "times", "courier", "arial", "serif", "sans-serif", "cursive", "fantasy", "monospace"],
+                                            value: "normal"
                                         }
                                     ]
                                 },
-                                buttons:[
-                                    {text:"OK",handler:function(){
+                                buttons: [
+                                    {
+                                        text: "OK", handler: function () {
                                         var form = win.getComponent("fontForm")
-                                        var fontJson=form.getForm().getValues();
+                                        var fontJson = form.getForm().getValues();
                                         var style = fontJson['font_style']
                                         var variant = fontJson['font_variant']
                                         var weight = fontJson['font_weight']
                                         var size = fontJson['font_size']
                                         var family = fontJson['font_family']
-                                        var fontStr= style+" "+ variant+" "+weight+" "+size+"px "+family;
+                                        var fontStr = style + " " + variant + " " + weight + " " + size + "px " + family;
                                         field.setValue(fontStr);
                                         win.close()
-                                    }},{text:"Cancel",handler:function(){
-                                        win.close()
-                                    }}
+                                    }
+                                    }, {
+                                        text: "Cancel", handler: function () {
+                                            win.close()
+                                        }
+                                    }
                                 ]
                             })
                         }
@@ -218,65 +226,77 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             )
             labelFormItems.push({
-                name:"boxShadow",fieldLabel:"shadow",allowBlank:true,xtype:"textfield",
-                listeners:{
-                    focus:function(field){
+                name: "boxShadow", fieldLabel: "shadow", allowBlank: true, xtype: "textfield",
+                listeners: {
+                    focus: function (field) {
 
-                        var win =  Ext.create("Ext.window.Window", {
+                        var win = Ext.create("Ext.window.Window", {
                             autoShow: true,
-                            width:400,
-                            modal:true,
+                            width: 400,
+                            modal: true,
                             title: "set shadow",
                             items: {
                                 xtype: "form",
-                                itemId:"shadowForm",
+                                itemId: "shadowForm",
                                 defaults: {
                                     width: "100%",
-                                    editable:false,
-                                    allwoBlank:false
+                                    editable: false,
+                                    allwoBlank: false
                                 },
-                                padding:10,
+                                padding: 10,
                                 items: [
                                     {
-                                        xtype:"numberfield",name:"hShadow",fieldLabel:"x",
-                                        value:1
+                                        xtype: "numberfield", name: "hShadow", fieldLabel: "x",
+                                        value: 1
                                     },
                                     {
-                                        xtype:"numberfield",name:"vShadow",fieldLabel:"y",
-                                        value:1
+                                        xtype: "numberfield", name: "vShadow", fieldLabel: "y",
+                                        value: 1
                                     },
                                     {
-                                        xtype:"numberfield",name:"blur",fieldLabel:"blur",
-                                        value:1
+                                        xtype: "numberfield", name: "blur", fieldLabel: "blur",
+                                        value: 1
                                     },
                                     {
-                                        fieldLabel:"shadow color",
-                                        name:"shadowColor",
+                                        fieldLabel: "shadow color",
+                                        name: "shadowColor",
                                         xtype: 'colorfield',
-                                        value:"#FFFFFF"
+                                        value: "#FFFFFF"
                                     }
                                 ]
                             },
-                            buttons:[
-                                {text:"OK",handler:function(){
+                            buttons: [
+                                {
+                                    text: "OK", handler: function () {
                                     var form = win.getComponent("shadowForm")
-                                    var oJson=form.getForm().getValues();
+                                    var oJson = form.getForm().getValues();
                                     var hShadow = oJson['hShadow']
                                     var vShadow = oJson['vShadow']
                                     var blur = oJson['blur']
                                     var shadowColor = oJson['shadowColor']
-                                    var resStr = hShadow+"px "+vShadow+"px "+blur+"px "+"#"+shadowColor
+                                    var resStr = hShadow + "px " + vShadow + "px " + blur + "px " + "#" + shadowColor
                                     field.setValue(resStr);
                                     win.close()
-                                }},{text:"Cancel",handler:function(){
-                                    win.close()
-                                }}
+                                }
+                                }, {
+                                    text: "Cancel", handler: function () {
+                                        win.close()
+                                    }
+                                }
                             ]
                         })
 
                     }
                 }
             })
+            /*labelFormItems.push(
+                {
+                    xtype: "textfield", allowBlank: true, name: "src", fieldLabel: "background image",
+                    listeners: {
+                        render: "dragImageSetUrl"
+                    }
+                }
+            )*/
         }
 
         var publicItems = [
@@ -335,7 +355,7 @@ Ext.define('editpic.view.form.LabelForm', {
             },
             {
                 xtype: 'colorfield',
-                fieldLabel: 'background',
+                fieldLabel: 'background color',
                 value: values.myGetBackgroundColor(),
                 hidden: !values.body,
                 disabled: !values.body,

@@ -48,7 +48,7 @@ Ext.define('editpic.view.main.Main', {
         } ,{
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 1.73")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 1.74")
             }
         }
     ],

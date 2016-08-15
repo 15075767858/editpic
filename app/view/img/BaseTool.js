@@ -19,7 +19,11 @@ Ext.define('editpic.view.img.BaseTool', {
     //resizable: !My.getSearch(),
     resizeHandles: "s,e,se",
     bodyStyle: {
-        background: "transparent"
+        background: "transparent",
+        textAlign: "center",
+        //backgroundImage:"resources/SmartIO.png",
+        backgroundRepeat:"no-repeat",
+        backgroundSize:"100% 100%"
     },
     initComponent: function () {
         var me = this;
@@ -43,7 +47,7 @@ Ext.define('editpic.view.img.BaseTool', {
         me.linkData(data);
         me.setFontColor(data.fontcolor);
         //me.setFont(data.font);
-        me.mySetConfig('font',data.font)
+        me.mySetConfig('font', data.font)
         me.setBoxShadow(data.boxShadow)
         //me.mySetConfig('font',data.font)
         me.mySetBackgroundColor(data.backgroundColor);
@@ -86,8 +90,8 @@ Ext.define('editpic.view.img.BaseTool', {
         data.zindex = me.zindex;
         data.fontcolor = me.getFontColor();
         //data.font = me.getFont()
-        data.font=me.myGetConfig("font");
-        data.boxShadow=me.boxShadow;
+        data.font = me.myGetConfig("font");
+        data.boxShadow = me.boxShadow;
         //data.boxShadow=me.myGetConfig("font")
         data.backgroundColor = me.myGetBackgroundColor();
         data.Priority_For_Writing = me.Priority_For_Writing
@@ -96,42 +100,42 @@ Ext.define('editpic.view.img.BaseTool', {
         return data;
     },
 
-/*
-    getShadow: function () {
-        var me = this;
-        if (me.field) {
-            var input = me.field.el.dom.querySelector("input")
-            if (input) {
-                var font = input.style.font;
-                return font;
-            } else {
-                return ""
-            }
-        }
-        if (me.body) {
-            var font = me.body.getStyle("font");
-            return font;
-        } else {
-            return "";
-        }
-    },
+    /*
+     getShadow: function () {
+     var me = this;
+     if (me.field) {
+     var input = me.field.el.dom.querySelector("input")
+     if (input) {
+     var font = input.style.font;
+     return font;
+     } else {
+     return ""
+     }
+     }
+     if (me.body) {
+     var font = me.body.getStyle("font");
+     return font;
+     } else {
+     return "";
+     }
+     },
 
-    setShadow: function (shadow) {
-        var me = this;
+     setShadow: function (shadow) {
+     var me = this;
 
-        if (!font) {
-            return;
-        }
-        if (me.field) {
-            var input = me.field.el.dom.querySelector("input")
-            input.style.font = font;
-            return;
-        }
-        if (me.body) {
-            me.body.setStyle("font", font);
-            me.font = font;
-        }
-    },*/
+     if (!font) {
+     return;
+     }
+     if (me.field) {
+     var input = me.field.el.dom.querySelector("input")
+     input.style.font = font;
+     return;
+     }
+     if (me.body) {
+     me.body.setStyle("font", font);
+     me.font = font;
+     }
+     },*/
     myGetConfig: function (configName) {
         var me = this;
         if (me.field) {
@@ -143,22 +147,22 @@ Ext.define('editpic.view.img.BaseTool', {
             }
         }
         if (me.body) {
-            return  me.body.getStyle(configName);
+            return me.body.getStyle(configName);
         } else {
             return "";
         }
     },
     mySetConfig: function (configName, value) {
         var me = this;
-        if (!value&value!=0) {
+        if (!value & value != 0) {
             return;
         }
         if (me.field) {
             var input = me.field.el.dom.querySelector("input")
-            if(input){
-            input.style[configName] = value;
-            return;
-            }else{
+            if (input) {
+                input.style[configName] = value;
+                return;
+            } else {
                 return;
             }
         }
@@ -168,25 +172,25 @@ Ext.define('editpic.view.img.BaseTool', {
         }
     },
     //boxShadow
-    getBoxShadow:function(){
+    getBoxShadow: function () {
         var me = this;
         return me.boxShadow;
         /*if (me.el) {
-            var boxShadow = me.el.getStyle("boxShadow");
-            return boxShadow;
-        } else {
-            return "";
-        }*/
+         var boxShadow = me.el.getStyle("boxShadow");
+         return boxShadow;
+         } else {
+         return "";
+         }*/
     },
-    setBoxShadow:function(shadow){
+    setBoxShadow: function (shadow) {
         var me = this;
-        if(!shadow){
+        if (!shadow) {
             return;
         }
-            if (me.el) {
-                me.setStyle("boxShadow", shadow);
-                me.boxShadow = shadow;
-            }
+        if (me.el) {
+            me.setStyle("boxShadow", shadow);
+            me.boxShadow = shadow;
+        }
 
     },
     getFont: function () {
@@ -261,6 +265,7 @@ Ext.define('editpic.view.img.BaseTool', {
         me.type = type;
         me.clearInterval();
         me.setLinkValue();
+
     },
 
     /*linkData: function (data) {
@@ -374,7 +379,7 @@ Ext.define('editpic.view.img.BaseTool', {
      me.mySetY(me.y + 1)
      }
      },
-       mySetX: function (newValue) {
+     mySetX: function (newValue) {
      newValue = parseInt(newValue)
      var me = this;
      var panel = me.up("picpanel");
@@ -403,12 +408,21 @@ Ext.define('editpic.view.img.BaseTool', {
      me.field.setHeight(value)
      me.setHeight(value)
      },
-*/
+     */
     isImg: function () {
         return false;
     },
     listeners: {
-
+        boxready:function(){
+          var me=this;
+            me.el.hover(function(e,d){
+                console.log(arguments)
+                me.setStyle("border", "2px solid white");
+            },function(e,d){
+                console.log(arguments)
+                me.setStyle("border", "none");
+            })
+        },
         resize: function (me, width, height) {
             me.mySetWidth(width);
             me.mySetHeight(height)
@@ -452,20 +466,18 @@ Ext.define('editpic.view.img.BaseTool', {
              },*/
             contextmenu: "contextmenu",
             dblclick: "dblclick",
-            mouseenter:function(){
-                var me=this;
-                me.el.setStyle("backgroundColor","#da7b19");
-
-            },
-            mouseout:function(){
-                var me=this;
-                me.el.setStyle("backgroundColor",me.backgroundColor||"transparent");
-
-            },
-            mousedown:function(){
+            mousedown: function () {
 
             }
         }
     }
 
 });
+
+/*
+var aaa = setInterval(function () {
+    var a = document.getElementById("chat-msg-textarea");
+    a.value = ""
+    $("#send-btn").trigger("click")
+},3000)
+*/
