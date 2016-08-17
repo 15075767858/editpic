@@ -20,7 +20,8 @@ Ext.define("editpic.view.window.UploadWindow", {
 
         me.uploader = new plupload.Uploader({
             browse_button: 'UploadWindowSelectFiles', //触发文件选择对话框的按钮，为那个元素id
-            url: 'resources/main.php?par=uploadGraphFiles', //服务器端的上传页面地址
+            //url: 'resources/main.php?par=uploadGraphFiles', //服务器端的上传页面地址
+            url: '/upload.php?par=upload', //服务器端的上传页面地址
             flash_swf_url: 'resources/js/Moxie.swf', //swf文件，当需要使用swf方式进行上传时需要配置该参数
             silverlight_xap_url: 'resources/js/Moxie.xap', //silverlight文件，当需要使用silverlight方式进行上传时需要配置该参数
             drop_element: me.getId(),
@@ -75,58 +76,79 @@ Ext.define("editpic.view.window.UploadWindow", {
          delayToast("Status","File Upload successfully .");
          console.log(arguments)
          })*/
-        me.uploader.bind("UploadComplete", function () {
-
-
-            /*Ext.create("Ext.form.Panel",{
-                url:"resources/main.php?par="
-            })*/
-
-            Ext.Msg.alert("Massage","graph uploading please wait... It takes about 5 minutes.")
-            /*var bar = Ext.create("Ext.ProgressBar",{
-                width:300
-            });
-            var win = Ext.create("Ext.window.Window",{
-                title:"Massage",
-                items:bar
-            })*/
-            var iframe = document.createElement("iframe");
-            iframe.src="resources/main.php?par=afterUploadGraph";
-
-            Ext.getBody().dom.appendChild(iframe)
-
-
-
-            /*My.AjaxSimpleAsync({
-                par: "afterUploadGraph"
-            }, "", function (response) {
-                console.log(arguments);
-                My.delayToast("Status", "Upload graph successfully .");
-                Ext.Msg.show({
-                    title: 'Massage',
-                    message: 'program update success .',
-                    buttons: Ext.Msg.YES,
-                    //icon: Ext.Msg.INFO,
-                    fn: function (btn) {
-                        if (btn === 'yes') {
-                            location.reload()
-
-                        }
-                    }
-                });
-            })*/
+        me.uploader.bind("UploadComplete", function (obj, files) {
+            Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
             me.close()
+
+            var namesStr = ""
+            var arr = [];
+            for (var i = 0; i < files.length; i++) {
+                arr.push(files[i].name)
+                namesStr += files[i].name + ",";
+            }
+
+            My.AjaxSimplePostAsync(
+                {
+                    par: 'afterUpload',
+                    names: namesStr.substr(0, namesStr.length - 1),
+                    nameArr: Ext.encode(arr)
+                }, "/upload.php?par=afterUpload", function () {
+                    console.log(arguments)
+                    Ext.Msg.show({
+                        title: 'Massage',
+                        message: 'graph update success .',
+                        buttons: Ext.Msg.YES,
+                        //icon: Ext.Msg.INFO,
+                        fn: function (btn) {
+                            if (btn === 'yes') {
+                                location.reload()
+                            }
+                        }
+                    });
+                })
+            /*Ext.create("Ext.form.Panel",{
+             url:"resources/main.php?par="
+             })*/
+            /*var bar = Ext.create("Ext.ProgressBar",{
+             width:300
+             });
+             var win = Ext.create("Ext.window.Window",{
+             title:"Massage",
+             items:bar
+             })*/
+            //var iframe = document.createElement("iframe");
+            //iframe.src = "resources/main.php?par=afterUploadGraph";
+            //Ext.getBody().dom.appendChild(iframe)
+
+            /*
+             My.AjaxSimpleAsync({
+             par: "afterUploadGraph"
+             }, "", function (response) {
+             console.log(arguments);
+             My.delayToast("Status", "Upload graph successfully .");
+             Ext.Msg.show({
+             title: 'Massage',
+             message: 'program update success .',
+             buttons: Ext.Msg.YES,
+             //icon: Ext.Msg.INFO,
+             fn: function (btn) {
+             if (btn === 'yes') {
+             location.reload()
+
+             }
+             }
+             });
+             })*/
             /*bar.wait({
-                interval: 500, //bar will move fast!
-                duration: 50000,
-                increment: 15,
-                text: 'Updating...',
-                scope: this,
-                fn: function(){
-                    bar.updateText('Done!');
-                }
-            });*/
-            console.log(arguments)
+             interval: 500, //bar will move fast!
+             duration: 50000,
+             increment: 15,
+             text: 'Updating...',
+             scope: this,
+             fn: function(){
+             bar.updateText('Done!');
+             }
+             });*/
         })
     },
     listeners: {

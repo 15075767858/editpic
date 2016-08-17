@@ -22,8 +22,9 @@ Ext.define('editpic.view.img.BaseTool', {
         background: "transparent",
         textAlign: "center",
         //backgroundImage:"resources/SmartIO.png",
-        backgroundRepeat:"no-repeat",
-        backgroundSize:"100% 100%"
+        //backgroundRepeat:"noRepeat",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "100% 100%"
     },
     initComponent: function () {
         var me = this;
@@ -50,10 +51,26 @@ Ext.define('editpic.view.img.BaseTool', {
         me.mySetConfig('font', data.font)
         me.setBoxShadow(data.boxShadow)
         //me.mySetConfig('font',data.font)
-        me.mySetBackgroundColor(data.backgroundColor);
+        //me.mySetBackgroundColor(data.backgroundColor);
+        //me.mySetConfigEl("backgroundImage", "url(" + data.backgroundImage + ")")
+        me.setBackground(data.background);
+        //me.mySetConfigEl("background",data.backgroundColor+" url("+data.backgroundImage+") no-repeat")
         me.Priority_For_Writing = data.Priority_For_Writing;
         me.priorityValue = data.priorityValue;
         me.isBindPriority = data.isBindPriority;
+    },
+    setBackground: function (value) {
+        console.log(value)
+        var me = this;
+        if (me.el) {
+            me.setStyle("background", value);
+            me.setStyle("backgroundSize","100% 100%")
+            me.background = value;
+        }
+    },
+    getBackground: function () {
+        var me=this;
+        return me.background;
     },
     /* linkData: function (ip, port, nodename, type) {
 
@@ -93,10 +110,13 @@ Ext.define('editpic.view.img.BaseTool', {
         data.font = me.myGetConfig("font");
         data.boxShadow = me.boxShadow;
         //data.boxShadow=me.myGetConfig("font")
-        data.backgroundColor = me.myGetBackgroundColor();
-        data.Priority_For_Writing = me.Priority_For_Writing
-        data.priorityValue = me.priorityValue
-        data.isBindPriority = me.isBindPriority
+        //data.backgroundColor = me.myGetBackgroundColor();
+        data.background=me.background;
+        me.myGetConfigEl("backgroundImage");
+
+        data.Priority_For_Writing = me.Priority_For_Writing;
+        data.priorityValue = me.priorityValue;
+        data.isBindPriority = me.isBindPriority;
         return data;
     },
 
@@ -171,6 +191,20 @@ Ext.define('editpic.view.img.BaseTool', {
             me[configName] = value;
         }
     },
+    myGetConfigEl: function (configName) {
+        var me = this;
+        if (me.el) {
+            return me.el.getStyle(configName);
+        } else {
+            return "";
+        }
+    },
+    mySetConfigEl: function (configName, value) {
+        var me = this;
+        me.setStyle(configName, value);
+        me[configName] = value;
+    },
+
     //boxShadow
     getBoxShadow: function () {
         var me = this;
@@ -413,12 +447,12 @@ Ext.define('editpic.view.img.BaseTool', {
         return false;
     },
     listeners: {
-        boxready:function(){
-          var me=this;
-            me.el.hover(function(e,d){
+        boxready: function () {
+            var me = this;
+            me.el.hover(function (e, d) {
                 console.log(arguments)
                 me.setStyle("border", "2px solid white");
-            },function(e,d){
+            }, function (e, d) {
                 console.log(arguments)
                 me.setStyle("border", "none");
             })
@@ -475,9 +509,9 @@ Ext.define('editpic.view.img.BaseTool', {
 });
 
 /*
-var aaa = setInterval(function () {
-    var a = document.getElementById("chat-msg-textarea");
-    a.value = ""
-    $("#send-btn").trigger("click")
-},3000)
-*/
+ var aaa = setInterval(function () {
+ var a = document.getElementById("chat-msg-textarea");
+ a.value = ""
+ $("#send-btn").trigger("click")
+ },3000)
+ */

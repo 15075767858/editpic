@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/resources/main.php" description="$spath = $path . '/' . $afile;" line="263" />
+    <bookmark url="file://$PROJECT_DIR$/resources/main.php" description="$spath = $path . '/' . $afile;" line="254" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4568aa7c-9baf-4272-89c0-4058b3e5febd" name="Default" comment="">
@@ -9,16 +9,20 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/form/LabelForm.js" afterPath="$PROJECT_DIR$/app/view/form/LabelForm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/BaseTool.js" afterPath="$PROJECT_DIR$/app/view/img/BaseTool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/LinkTool.js" afterPath="$PROJECT_DIR$/app/view/img/LinkTool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/TextFieldTool.js" afterPath="$PROJECT_DIR$/app/view/img/TextFieldTool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/PicPanelController.js" afterPath="$PROJECT_DIR$/app/view/panel/PicPanelController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/MainController.js" afterPath="$PROJECT_DIR$/app/view/main/MainController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic.json" afterPath="$PROJECT_DIR$/build/production/graph/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/app.js" afterPath="$PROJECT_DIR$/build/production/graph/classic/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern.json" afterPath="$PROJECT_DIR$/build/production/graph/modern.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern/app.js" afterPath="$PROJECT_DIR$/build/production/graph/modern/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/main.php" afterPath="$PROJECT_DIR$/build/production/graph/resources/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/test.php" afterPath="$PROJECT_DIR$/build/production/graph/resources/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/Main.js" afterPath="$PROJECT_DIR$/classic/src/view/main/Main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/UploadWindow.js" afterPath="$PROJECT_DIR$/classic/src/view/main/UploadWindow.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modern.json" afterPath="$PROJECT_DIR$/modern.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/main.php" afterPath="$PROJECT_DIR$/resources/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/test.php" afterPath="$PROJECT_DIR$/resources/test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.sh" afterPath="$PROJECT_DIR$/run.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
     </list>
     <ignored path="editpic.iws" />
@@ -48,34 +52,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LabelForm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/form/LabelForm.js">
+      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="296" column="21" selection-start-line="296" selection-start-column="21" selection-end-line="296" selection-end-column="21" />
-              <folding>
-                <element signature="e#1090#1743#0" expanded="false" />
-                <element signature="e#2122#2402#0" expanded="false" />
-                <element signature="e#2438#2644#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-35.291668">
-              <caret line="211" column="1" selection-start-line="211" selection-start-column="1" selection-end-line="211" selection-end-column="1" />
-              <folding>
-                <marker date="1471150348000" expanded="true" signature="2989:3930" placeholder="..." />
-                <marker date="1471150348000" expanded="true" signature="3008:3096" placeholder="..." />
-                <marker date="1471150348000" expanded="true" signature="3116:3395" placeholder="..." />
-                <marker date="1471150348000" expanded="true" signature="3131:3193" placeholder="{...}" />
-                <marker date="1471150348000" expanded="true" signature="3222:3316" placeholder="{...}" />
-                <marker date="1471150348000" expanded="true" signature="3335:3375" placeholder="{...}" />
-                <marker date="1471150348000" expanded="true" signature="3414:3434" placeholder="..." />
-              </folding>
+              <caret line="392" column="0" selection-start-line="392" selection-start-column="0" selection-end-line="392" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,8 +65,8 @@
       <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.01">
-              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.632107">
+              <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -129,7 +111,6 @@
         <option value="$PROJECT_DIR$/app/view/form/field/KeybordNumber.js" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/classic/src/view/main/CanvasConponmentWindow.js" />
-        <option value="$PROJECT_DIR$/resources/test.php" />
         <option value="$PROJECT_DIR$/app/view/img/GifImg.js" />
         <option value="$PROJECT_DIR$/app/view/img/DynamicTextTool.js" />
         <option value="$PROJECT_DIR$/app/view/form/LinkPropertyForm.js" />
@@ -145,18 +126,19 @@
         <option value="$PROJECT_DIR$/app/view/window/DownLoadWindow.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/DownLoadWindow.js" />
         <option value="$PROJECT_DIR$/app/view/panel/ToolsPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/main/MainController.js" />
         <option value="$PROJECT_DIR$/resources/install.sh" />
-        <option value="$PROJECT_DIR$/run.sh" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/UploadWindow.js" />
-        <option value="$PROJECT_DIR$/resources/main.php" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/view/img/LinkTool.js" />
         <option value="$PROJECT_DIR$/app/view/panel/PicPanelController.js" />
         <option value="$PROJECT_DIR$/app/view/img/TextFieldTool.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
+        <option value="$PROJECT_DIR$/resources/test.php" />
+        <option value="$PROJECT_DIR$/run.sh" />
+        <option value="$PROJECT_DIR$/resources/main.php" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/UploadWindow.js" />
         <option value="$PROJECT_DIR$/app/view/img/BaseTool.js" />
         <option value="$PROJECT_DIR$/app/view/form/LabelForm.js" />
+        <option value="$PROJECT_DIR$/app/view/main/MainController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
       </list>
     </option>
   </component>
@@ -177,7 +159,7 @@
     <option name="x" value="1920" />
     <option name="y" value="-356" />
     <option name="width" value="1080" />
-    <option name="height" value="1831" />
+    <option name="height" value="1825" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -204,7 +186,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -425,7 +407,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -535,32 +517,38 @@
       <option name="project" value="LOCAL" />
       <updated>1471176607386</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1.74 增加了 背景 保存下准备弄兼容多系统">
+      <created>1471230168618</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1471230168618</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-356" width="1080" height="1831" extended-state="6" />
+    <frame x="1920" y="-356" width="1080" height="1825" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27360308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2842004" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.029028436" sideWeight="0.5462428" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858837" sideWeight="0.49614644" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.028719127" sideWeight="0.45375723" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2495183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12234348" sideWeight="0.45375723" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1221902" sideWeight="0.45375723" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.028242076" sideWeight="0.45375723" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290859" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39988458" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -577,42 +565,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="提交" />
     <MESSAGE value="1.73 弄好了更新 准备弄 背景图" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.73 弄好了更新 准备弄 背景图" />
+    <MESSAGE value="1.74 增加了 背景 保存下准备弄兼容多系统" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.74 增加了 背景 保存下准备弄兼容多系统" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="33" />
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/icons/tools_48px.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/icons/Images_48px_blue.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/icons/Images_48px_red.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/build/ext-all-debug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5848353">
-          <caret line="228066" column="38" selection-start-line="228066" selection-start-column="38" selection-end-line="228066" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/icons/Device_24px.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/icons/phone_16px.ico">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -721,13 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04366812">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/window/CanvasConponmentWindowModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -768,18 +723,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0719856">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/form/LinkPropertyForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.009014423">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,20 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/UploadWindow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02630041">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ext/build/ext-debug.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33279613">
@@ -822,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6833199">
           <caret line="5619" column="23" selection-start-line="5619" selection-start-column="23" selection-end-line="5619" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -837,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42559353">
           <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,27 +779,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="585" column="4" selection-start-line="585" selection-start-column="4" selection-end-line="585" selection-end-column="4" />
-          <folding>
-            <element signature="e#16545#16923#0" expanded="false" />
-            <element signature="e#16961#17240#0" expanded="false" />
-            <element signature="e#19163#19452#0" expanded="false" />
-            <element signature="e#19552#19688#0" expanded="false" />
-            <element signature="e#25240#25441#0" expanded="false" />
-            <element signature="e#25996#27207#0" expanded="false" />
-            <element signature="e#28134#28552#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/img/CanvasImg.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="347" column="4" selection-start-line="347" selection-start-column="4" selection-end-line="374" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -876,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2431963">
           <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,11 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
-          <folding>
-            <element signature="e#422#841#0" expanded="false" />
-            <element signature="e#876#1180#0" expanded="false" />
-            <element signature="e#1889#3797#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -904,19 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/img/BaseTool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding>
-            <element signature="e#2903#3588#0" expanded="false" />
-            <element signature="e#6804#9958#0" expanded="false" />
-            <element signature="e#10664#11676#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -924,35 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13529766">
           <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/form/LabelForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="296" column="21" selection-start-line="296" selection-start-column="21" selection-end-line="296" selection-end-column="21" />
-          <folding>
-            <element signature="e#1090#1743#0" expanded="false" />
-            <element signature="e#2122#2402#0" expanded="false" />
-            <element signature="e#2438#2644#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-35.291668">
-          <caret line="211" column="1" selection-start-line="211" selection-start-column="1" selection-end-line="211" selection-end-column="1" />
-          <folding>
-            <marker date="1471150348000" expanded="true" signature="2989:3930" placeholder="..." />
-            <marker date="1471150348000" expanded="true" signature="3008:3096" placeholder="..." />
-            <marker date="1471150348000" expanded="true" signature="3116:3395" placeholder="..." />
-            <marker date="1471150348000" expanded="true" signature="3131:3193" placeholder="{...}" />
-            <marker date="1471150348000" expanded="true" signature="3222:3316" placeholder="{...}" />
-            <marker date="1471150348000" expanded="true" signature="3335:3375" placeholder="{...}" />
-            <marker date="1471150348000" expanded="true" signature="3414:3434" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -960,14 +825,114 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.38617885">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/ereg.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37209302">
+          <caret line="166" column="9" selection-start-line="166" selection-start-column="9" selection-end-line="166" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26086956">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/install.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/classic/classic/src/fx/PropertyHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="12" selection-start-line="127" selection-start-column="12" selection-end-line="127" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/packages/ux/classic/src/colorpick/ColorUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4984672">
+          <caret line="112" column="13" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/packages/ux/classic/src/colorpick/Field.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1628468">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9002448">
+          <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+          <folding>
+            <marker date="1471329931000" expanded="true" signature="2989:3930" placeholder="..." />
+            <marker date="1471329931000" expanded="true" signature="3008:3096" placeholder="..." />
+            <marker date="1471329931000" expanded="true" signature="3116:3395" placeholder="..." />
+            <marker date="1471329931000" expanded="true" signature="3131:3193" placeholder="{...}" />
+            <marker date="1471329931000" expanded="true" signature="3222:3316" placeholder="{...}" />
+            <marker date="1471329931000" expanded="true" signature="3335:3375" placeholder="{...}" />
+            <marker date="1471329931000" expanded="true" signature="3414:3434" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/UploadWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.685766">
+          <caret line="192" column="26" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/form/LabelForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5190393">
+          <caret line="325" column="37" selection-start-line="325" selection-start-column="37" selection-end-line="325" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/BaseTool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59753954">
+          <caret line="170" column="16" selection-start-line="170" selection-start-column="16" selection-end-line="170" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="392" column="0" selection-start-line="392" selection-start-column="0" selection-end-line="392" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.01">
-          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.632107">
+          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
           <folding />
         </state>
       </provider>

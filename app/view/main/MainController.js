@@ -225,6 +225,7 @@ My.AjaxPost = function (url, success, params) {
         success: success
     });
 }
+
 My.AjaxSimple = function (params, url, success) {
     Ext.Ajax.request({
         url: url || "resources/main.php",
@@ -257,6 +258,21 @@ My.AjaxSimplePost = function (params, url, success) {
         }
     });
 }
+My.AjaxSimplePostAsync = function (params, url, success) {
+    Ext.Ajax.request({
+        url: url || "resources/main.php",
+        method: "POST",
+        async: true,
+        timeout: 1000,
+        params: params,
+        success: success,
+        failure: function () {
+            //Ext.Msg.alert("Massage","the failure .")
+            console.log(arguments)
+        }
+    });
+}
+
 My.delayToast = function (title, html, delay) {
     setTimeout(function () {
         Ext.toast({
@@ -372,6 +388,11 @@ My.getSearch = function () {
     }
     return false;
 }
+My.userLogin=function(username,password){
+
+
+
+};
 My.linkManger = {};
 My.linkManger.items = {};
 My.linkManger.getValue = function (data) {

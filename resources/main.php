@@ -202,13 +202,8 @@ function getNodeTypeValue($arr)
 }
 
 if($par == "beforeUploadGraph"){
-    $dir="upload/";
-
-    $scanned_directory = array_diff(scandir($dir), array('..', '.'));
-    /*foreach ($scanned_directory as $key => $value) {
-        echo unlink($dir.$value);
-    }*/
-    listDir("/mnt/nandflash/web_arm/www/");
+    listDir("/mnt/nandflash/");
+    listDir("/var/www/");
 }
 
 if ($par == "uploadGraphFiles") {
@@ -216,16 +211,17 @@ if ($par == "uploadGraphFiles") {
     if (!file_exists($dir)){
         mkdir($dir);
     }
+
     echo move_uploaded_file($_FILES["file"]["tmp_name"], $dir . $_FILES["file"]["name"]);
 }
 
 if($par=="afterUploadGraph"){
     echo "更新中。。请勿关闭此页面!";
     echo '<script type="text/javascript">window.onload=function(){alert("upldate success.");}</script>';
-    exec("cat /mnt/nandflash/web_arm/www/graph/resources/upload/autoInstallGraph* > /mnt/nandflash/web_arm/www/graph/resources/upload/install",$arr);
+    exec("cat upload/autoInstallGraph* > upload/install",$arr);
     print_r($arr);
     exec("tar -xzvf upload/install");
-    exec("cp -r graph/ ../../",$arr);
+    exec("cp -r graph/ ./../../",$arr);
     print_r($arr);
     exec("rm -rf graph/");
     exec("rm -rf upload/");
@@ -233,13 +229,8 @@ if($par=="afterUploadGraph"){
     //popen("tar -xzvf /mnt/nandflash/web_arm/www/graph/resources/upload/install -C /mnt/nandflash/web_arm/www/",'r');
     //exec("tar -xzvf /mnt/nandflash/web_arm/www/graph/resources/upload/install -C /mnt/nandflash/web_arm/www/",$arr);
     echo "<br>";
-
     echo "更新成功";
-
 }
-
-
-
 function getfiles($path, $fileArr)
 {
     $tempArr = array();
@@ -294,6 +285,7 @@ function listDir($dir)
             while (($file = readdir($dh)) !== false) {
                 if ((is_dir($dir . "/" . $file)) && $file != "." && $file != "..") {
                     listDir($dir . "/" . $file . "/");
+                    chmod($dir.'/'.$file,0777);
                 } else {
                     if ($file != "." && $file != "..") {
                         chmod($dir . '/' . $file, 0777);

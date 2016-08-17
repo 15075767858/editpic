@@ -289,14 +289,70 @@ Ext.define('editpic.view.form.LabelForm', {
                     }
                 }
             })
-            /*labelFormItems.push(
+            labelFormItems.push(
                 {
-                    xtype: "textfield", allowBlank: true, name: "src", fieldLabel: "background image",
+                    xtype: "textfield", allowBlank: true, name: "background", fieldLabel: "background",
                     listeners: {
-                        render: "dragImageSetUrl"
+                        focus: function (field) {
+                            var colorfield =  Ext.create("Ext.ux.colorpick.Field",{
+                                itemId: "backgroundColor",
+                                name: "backgroundColor",
+                                fieldLabel: "Background Color",
+                            })
+                            var win = Ext.create("Ext.window.Window", {
+                                autoShow: true,
+                                width: 400,
+                                modal: false,
+                                title: "set shadow",
+                                controller: me.controller,
+                                items: {
+                                    xtype: "form",
+                                    itemId: "form",
+                                    defaults: {
+                                        width: "100%",
+                                        editable: false,
+                                        allwoBlank: false
+                                    },
+                                    padding: 10,
+                                    items: [
+                                        colorfield,
+                                        {
+                                            xtype: "textfield", name: "backgroundImage", fieldLabel: "Background Image",
+                                            emptyText: "Please drag the image here.",
+                                            listeners: {
+                                                render: "dragImageSetUrl"
+                                            }
+                                        }
+                                    ]
+                                },
+                                buttons: [
+                                    {
+                                        text: "OK", handler: function () {
+                                        var form = win.getComponent("form")
+
+                                        var oJson = form.getForm().getValues();
+                                        var color = form.getComponent("backgroundColor").getColor();
+                                        color = Ext.ux.colorpick.ColorUtils.getRGBAString(color);
+                                        console.log(color)
+                                        var backgroundImage = oJson['backgroundImage']
+                                        values.setBackground(oJson);
+                                        var backgroundStr=color+" url(" + backgroundImage + ")  no-repeat  scroll  center" ;
+                                        field.setValue(backgroundStr);
+                                        win.close()
+                                    }
+                                    }, {
+                                        text: "Cancel", handler: function () {
+                                            win.close()
+                                        }
+                                    }
+                                ]
+                            })
+                            colorfield.setColor("rgba(0,0,0,1)");
+
+                        }
                     }
                 }
-            )*/
+            )
         }
 
         var publicItems = [
@@ -357,8 +413,8 @@ Ext.define('editpic.view.form.LabelForm', {
                 xtype: 'colorfield',
                 fieldLabel: 'background color',
                 value: values.myGetBackgroundColor(),
-                hidden: !values.body,
-                disabled: !values.body,
+                hidden: !values.body & itype > 1,
+                disabled: !values.body & itype > 1,
                 name: "backgroundColor",
                 listeners: {
                     change: function (field, color, previousColor, eOpts) {
