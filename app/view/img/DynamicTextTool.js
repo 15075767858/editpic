@@ -18,6 +18,7 @@ Ext.define('editpic.view.img.DynamicTextTool', {
         me.text = data.text;
         me.dynamictext = data.dynamictext;
         console.log(me)
+        me.refreshCanvas()
     },
     getInitData: function () {
         var me = this;

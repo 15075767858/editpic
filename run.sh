@@ -11,8 +11,9 @@ tar czvf graph.tar.bz2 graph/
 split -b 1m graph.tar.bz2 autoInstallPackage/autoInstallGraph.
 tar czvf autoInstallPackage.tar.bz2 autoInstallPackage
 cd /Library/WebServer/Documents/editpic/build/production
+sudo find ./ -name .DS_Store -depth -exec rm {} \;
 #rm -rf autoInstallPackage/
-open .
+#open .
 #cd /Library/WebServer/Documents/editpic/build/production
 #ftp -n<<!
 #open 192.168.253.253

@@ -11,36 +11,38 @@ Ext.define('editpic.view.img.LinkTool', {
      type: 'img-linktool'
      },*/
     /*initComponent: function () {
-        var me = this;
-        var btn = Ext.create("Ext.button.Button",
-            {}
-        )
-        me.field = btn;
-        me.items = btn;
-        me.callParent();
-    },
-    linkData: function (data) {
-        var me = this;
-        if (data.linkValue) {
-            console.log(data)
-            me.linkValue = data.linkValue;
-            me.field.setText(data.linkValue)
-            me.field.setText(data.linkValue)
-            me.field.setHandler(function () {
+     var me = this;
+     var btn = Ext.create("Ext.button.Button",
+     {}
+     )
+     me.field = btn;
+     me.items = btn;
+     me.callParent();
+     },
+     linkData: function (data) {
+     var me = this;
+     if (data.linkValue) {
+     console.log(data)
+     me.linkValue = data.linkValue;
+     me.field.setText(data.linkValue)
+     me.field.setText(data.linkValue)
+     me.field.setHandler(function () {
 
-                Ext.getCmp("mintab").addTab(data.linkValue)
-            })
-        }
-        me.refreshCanvas()
-    },*/
+     Ext.getCmp("mintab").addTab(data.linkValue)
+     })
+     }
+     me.refreshCanvas()
+     },*/
     linkData: function (data) {
         var me = this;
-        if(data.linkValue){
+    console.log(data)
+        if (data.linkValue) {
+            me.linkValue=data.linkValue;
             me.setHtml(data.linkValue);
         }
     },
-    initComponent:function(){
-      var me=this;
+    initComponent: function () {
+        var me = this;
         me.callParent()
     },
     refreshCanvas: function () {
@@ -49,5 +51,14 @@ Ext.define('editpic.view.img.LinkTool', {
     init: function (data) {
         var me = this;
         me.callParent(arguments)
+    },
+    listeners: {
+        el: {
+            click: function () {
+                var me = this.component;
+                console.log(me.linkValue)
+                Ext.getCmp("mintab").addTab(me.linkValue)
+            }
+        }
     }
 });

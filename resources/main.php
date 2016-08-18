@@ -12,10 +12,9 @@ if ($ip == "127.0.0.1") {
 //echo move_uploaded_file($_FILES["file"]["tmp_name"], "devsinfo/" . $_FILES["file"]["name"]);
 
 
-
 if ($par == 'getSvgTree') {
     //$path = "svg";
-    $path=$_GET['path'];
+    $path = $_GET['path'];
     //$path = "SvgHvac";
     echo json_encode(getfiles($path, $fileArr = Array()));
 }
@@ -32,6 +31,33 @@ if ($par == "getdevs") {
     }
     sort($arList);
     echo json_encode($arr);
+}
+
+
+if ($par == "login") {
+    session_start();
+    $userArray = array();
+    $userArray['SmartIO'] = "Admin123";
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    //  `if()
+
+    if ($username == "SmartIO" & $password == "Admin123") {
+        $_SESSION['isLogin']=1;
+        $_SESSION['permission']=1;
+        $_SESSION['username']=$username;
+        echo  json_encode($_SESSION);
+    }else{
+        $_SESSION['isLogin']=0;
+        $_SESSION['permission']=0;
+        $_SESSION['username']='';
+        echo json_encode($_SESSION);
+    }
+}
+if($par=="getSession"){
+    session_start();
+    echo json_encode($_SESSION);
+
 }
 
 if ($par == "gettypes") {
@@ -51,19 +77,18 @@ if ($par == "gettypevalue") {
 
 }
 
-if($par=="PresentArraySetNull"){
+if ($par == "PresentArraySetNull") {
     $redis = getRedisConect();
     $key = $_GET["key"];
     $value = $_GET["value"];
-    $number=$_GET["number"];
+    $number = $_GET["number"];
     $nodeName = $_GET["nodename"];
     echo $value;
     echo $number;
-     $redis->hSet($nodeName, $type, $value);
+    $redis->hSet($nodeName, $type, $value);
     $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\nCancel_Priority_Array\r\n" . $number);
     $redis->close();
 }
-
 
 
 if ($par == "changevalue") {
@@ -89,7 +114,7 @@ function getRedisConect()
     $redis = new Redis();
     $ip = $_GET['ip'];
     $port = $_GET['port'];
-    $redis->connect($ip, $port,0.3);
+    $redis->connect($ip, $port, 0.3);
 
     return $redis;
 }
@@ -147,7 +172,7 @@ if ($par == "saveImageAsHtml") {
         'body.appendChild(iframe);' .
         'if(!location.hostname){' .
         'var ip = window.prompt("please input IP ","' . $ip . '");' .
-        'iframe.src="http://'.$ip.'/graph/index.html?graph=' . $graph . '";' .
+        'iframe.src="http://' . $ip . '/graph/index.html?graph=' . $graph . '";' .
         '}else{' .
         'iframe.src="../graph/index.html?graph=' . $graph . '"}' .
         '</script>' .
@@ -158,9 +183,9 @@ if ($par == "saveImageAsHtml") {
 }
 if ($par == "getLinkValues") {
     $datas = json_decode($_POST['datas']);
-   /* if(!$datas){
-        exit();
-    }*/
+    /* if(!$datas){
+         exit();
+     }*/
     $datas = object_array($datas);
 
     foreach ($datas as $key => $value) {
@@ -195,33 +220,33 @@ function getNodeTypeValue($arr)
     $type = $arr['type'];
     $redis = new Redis();
     //$ip="192.168.2.20";
-    $redis->connect($ip, $port,0.5);
+    $redis->connect($ip, $port, 0.5);
     $value = $redis->hGet($nodeName, $type);
     $redis->close();
     return $value;
 }
 
-if($par == "beforeUploadGraph"){
+if ($par == "beforeUploadGraph") {
     listDir("/mnt/nandflash/");
     listDir("/var/www/");
 }
 
 if ($par == "uploadGraphFiles") {
-    $dir="upload/";
-    if (!file_exists($dir)){
+    $dir = "upload/";
+    if (!file_exists($dir)) {
         mkdir($dir);
     }
 
     echo move_uploaded_file($_FILES["file"]["tmp_name"], $dir . $_FILES["file"]["name"]);
 }
 
-if($par=="afterUploadGraph"){
+if ($par == "afterUploadGraph") {
     echo "更新中。。请勿关闭此页面!";
     echo '<script type="text/javascript">window.onload=function(){alert("upldate success.");}</script>';
-    exec("cat upload/autoInstallGraph* > upload/install",$arr);
+    exec("cat upload/autoInstallGraph* > upload/install", $arr);
     print_r($arr);
     exec("tar -xzvf upload/install");
-    exec("cp -r graph/ ./../../",$arr);
+    exec("cp -r graph/ ./../../", $arr);
     print_r($arr);
     exec("rm -rf graph/");
     exec("rm -rf upload/");
@@ -285,7 +310,7 @@ function listDir($dir)
             while (($file = readdir($dh)) !== false) {
                 if ((is_dir($dir . "/" . $file)) && $file != "." && $file != "..") {
                     listDir($dir . "/" . $file . "/");
-                    chmod($dir.'/'.$file,0777);
+                    chmod($dir . '/' . $file, 0777);
                 } else {
                     if ($file != "." && $file != "..") {
                         chmod($dir . '/' . $file, 0777);

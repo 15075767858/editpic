@@ -42,7 +42,8 @@ Ext.define('editpic.view.img.CanvasImg', {
         me.isBind = data.isBind;
         me.linkData(data.ip, data.port, data.nodename, data.type);
         me.src = data.src;
-        me.name = data.name;
+        me.mySetName(data.name)
+
         me.mySetZIndex(data.zindex);
         me.setLinkDataBase(data.isLinkDataBase)
         me.Priority_For_Writing = data.Priority_For_Writing;
@@ -83,7 +84,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         data.y = me.y;
         data.width = me.width;
         data.height = me.height;
-        data.name = me.name;
+        data.name = me.myGetName();
         data.isBind = me.isBind;
         data.src = me.src;
         data.itype = me.itype;

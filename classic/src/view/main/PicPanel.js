@@ -94,39 +94,50 @@ Ext.define('editpic.view.panel.PicPanel', {
         var data = json.items;
         for (var i = 0; i < data.length; i++) {
             /*var component;
-            console.log(data[i])
-            if (data[i].itype == 0) {
-                component = Ext.create("editpic.view.img.CanvasImg", data[i]);
-                me.add(component);
+             console.log(data[i])
+             if (data[i].itype == 0) {
+             component = Ext.create("editpic.view.img.CanvasImg", data[i]);
+             me.add(component);
 
-                component.init(data[i]);
+             component.init(data[i]);
 
-            }
-            if (data[i].itype == 1) {
-                component = Ext.create("editpic.view.img.GifImg", data[i])
-                me.add(component);
+             }
+             if (data[i].itype == 1) {
+             component = Ext.create("editpic.view.img.GifImg", data[i])
+             me.add(component);
 
-                component.init(data[i]);
-            }
-            if (data[i].itype == 2) {
-                component = Ext.create("editpic.view.img.TextFieldTool", data[i])
-                me.add(component);
+             component.init(data[i]);
+             }
+             if (data[i].itype == 2) {
+             component = Ext.create("editpic.view.img.TextFieldTool", data[i])
+             me.add(component);
 
-                component.init(data[i]);
-            }
-            if (data[i].itype == 3) {
-                component = Ext.create("editpic.view.img.LinkTool", data[i])
-                me.add(component);
-                component.init(data[i])
-            }
-            if (data[i].itype == 4) {
-                component = Ext.create("editpic.view.img.TextTool", data[i])
-                me.add(component);
-                component.init(data[i])
-            }*/
-            var img = My.createImg(data[i])
-            me.add(img);
-            img.init(data[i])
+             component.init(data[i]);
+             }
+             if (data[i].itype == 3) {
+             component = Ext.create("editpic.view.img.LinkTool", data[i])
+             me.add(component);
+             component.init(data[i])
+             }
+             if (data[i].itype == 4) {
+             component = Ext.create("editpic.view.img.TextTool", data[i])
+             me.add(component);
+             component.init(data[i])
+             }*/
+            (function (data) {
+                requestAnimFrame(function () {
+                    var img = My.createImg(data)
+                    me.add(img);
+                    img.init(data)
+                })
+            })(data[i])
+            /*(function (data,i) {
+             setTimeout(function () {
+             var img = My.createImg(data)
+             me.add(img);
+             img.init(data)
+             }, i*50)
+             })(data[i],i)*/
         }
 
 
@@ -226,14 +237,14 @@ Ext.define('editpic.view.panel.PicPanel', {
                         xheight: 768,
                         handler: "setDeviceWH"
                     },
-                    {
-                        text: "PC 1920 x 1080",
-                        xtype: 'menucheckitem',
-                        group: "resolution",
-                        xwidth: 1920,
-                        xheight: 1080,
-                        handler: "setDeviceWH"
-                    },
+                    /*{
+                     text: "PC 1920 x 1080",
+                     xtype: 'menucheckitem',
+                     group: "resolution",
+                     xwidth: 1920,
+                     xheight: 1080,
+                     handler: "setDeviceWH"
+                     },*/
                     "-",
                     {
                         text: "Rotate",
@@ -277,8 +288,8 @@ Ext.define('editpic.view.panel.PicPanel', {
                             text: "paste", disabled: !me.copyImg, handler: function () {
                             if (me.copyImg) {
                                 var data = me.copyImg.getInitData()
-                                data.x=data.x+10
-                                data.y=data.y+10
+                                data.x = data.x + 10
+                                data.y = data.y + 10
                                 var img = My.createImg(data)
                                 me.add(img)
                                 img.init(data)

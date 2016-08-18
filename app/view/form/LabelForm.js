@@ -22,22 +22,11 @@ Ext.define('editpic.view.form.LabelForm', {
         var itype = values.itype;
         var labelFormItems = [];
 
-        if (itype == 2 || itype == 3) {
-            labelFormItems = [
-                {
-                    xtype: "textfield", allowBlank: true,
-                    fieldLabel: "name", name: "name"
-                }
-            ];
 
-        }
 
         if (itype == 0 || itype == 1) {
             labelFormItems = [
-                {
-                    xtype: "textfield", allowBlank: true,
-                    fieldLabel: "name", name: "name"
-                },
+
                 /*{
                  xtype: "combo", fieldLabel: "Image Type",
                  name: "itype", allowBlank: true,
@@ -122,17 +111,33 @@ Ext.define('editpic.view.form.LabelForm', {
         if (itype == 4 || itype == 5) {
             labelFormItems = [
                 {
-                    xtype: "textfield", allowBlank: false, value: "null", name: "text", fieldLabel: "Text"
+                    xtype: "textfield", allowBlank: true, value: "null", name: "text", fieldLabel: "Text"
                 },
                 {
                     xtype: "textfield",
-                    allowBlank: false,
+                    allowBlank: true,
                     value: "null",
                     name: "dynamictext",
                     fieldLabel: "Dynamic Text",
                     disabled: itype == 4,
                     hidden: itype == 4
                 },
+                Ext.create("Ext.form.field.ComboBox",{
+                    /*store:Ext.create("Ext.data.Store",{
+                     fields:['name','color','html'],
+                     data:["white","blue","red","gray","green","black"]
+                     }),*/
+                    store:["white","blue","red","gray","brown","green","black"],
+                    fieldLabel: 'Font Color',
+                    value: values.fontColor||"white",
+                    name: "fontColor",
+                    listeners:{
+                        change:function(field,newValue){
+                            values.setFontColor(newValue);
+                           // values.backgroundColor=newValue
+                        }
+                    }
+                })/*,
                 {
                     xtype: 'colorfield',
                     fieldLabel: 'Font Color',
@@ -143,9 +148,10 @@ Ext.define('editpic.view.form.LabelForm', {
                             values.setFontColor("#" + color);
                         }
                     }
-                }
+                }*/
             ]
         }
+
         if (itype > 1) {
             labelFormItems.push(
                 {
@@ -303,7 +309,7 @@ Ext.define('editpic.view.form.LabelForm', {
                                 autoShow: true,
                                 width: 400,
                                 modal: false,
-                                title: "set shadow",
+                                title: "set background",
                                 controller: me.controller,
                                 items: {
                                     xtype: "form",
@@ -315,30 +321,50 @@ Ext.define('editpic.view.form.LabelForm', {
                                     },
                                     padding: 10,
                                     items: [
-                                        colorfield,
+
+                                        Ext.create("Ext.form.field.ComboBox",{
+                                            /*store:Ext.create("Ext.data.Store",{
+                                                fields:['name','color','html'],
+                                                data:["white","blue","red","gray","green","black"]
+                                            }),*/
+                                            store:["white","blue","red","gray","brown","green","black"],
+                                            fieldLabel:"Background Color",
+                                            name:"backgroundColor",
+                                            value:values.backgroundColor||"",
+                                            listeners:{
+                                                change:function(field,newValue){
+
+                                                    values.backgroundColor=newValue
+                                                }
+                                            }
+                                        }),
                                         {
                                             xtype: "textfield", name: "backgroundImage", fieldLabel: "Background Image",
                                             emptyText: "Please drag the image here.",
+                                            value:values.backgroundImage,
                                             listeners: {
-                                                render: "dragImageSetUrl"
+                                                render: "dragImageSetUrl",
+                                                change:function(field,newValue){
+                                                    values.backgroundImage=newValue
+                                                }
                                             }
-                                        }
+                                        },
+
                                     ]
                                 },
                                 buttons: [
                                     {
                                         text: "OK", handler: function () {
-                                        var form = win.getComponent("form")
-
+                                        var form = win.getComponent("form");
                                         var oJson = form.getForm().getValues();
-                                        var color = form.getComponent("backgroundColor").getColor();
-                                        color = Ext.ux.colorpick.ColorUtils.getRGBAString(color);
-                                        console.log(color)
-                                        var backgroundImage = oJson['backgroundImage']
+                                        var color = oJson["backgroundColor"];
+                                        var backgroundImage = oJson['backgroundImage'];
+                                        //color = Ext.ux.colorpick.ColorUtils.getRGBAString(color);
+                                        //console.log(color)
                                         values.setBackground(oJson);
                                         var backgroundStr=color+" url(" + backgroundImage + ")  no-repeat  scroll  center" ;
                                         field.setValue(backgroundStr);
-                                        win.close()
+                                        win.close();
                                     }
                                     }, {
                                         text: "Cancel", handler: function () {
@@ -348,12 +374,17 @@ Ext.define('editpic.view.form.LabelForm', {
                                 ]
                             })
                             colorfield.setColor("rgba(0,0,0,1)");
-
                         }
                     }
                 }
             )
         }
+
+
+        labelFormItems.unshift({
+            xtype: "textfield", allowBlank: true,
+            fieldLabel: "name", name: "name"
+        })
 
         var publicItems = [
             {
@@ -409,7 +440,7 @@ Ext.define('editpic.view.form.LabelForm', {
                     change: "mySetConfig"
                 }
             },
-            {
+            /*{
                 xtype: 'colorfield',
                 fieldLabel: 'background color',
                 value: values.myGetBackgroundColor(),
@@ -423,7 +454,7 @@ Ext.define('editpic.view.form.LabelForm', {
                         }
                     }
                 }
-            },
+            },*/
             {
                 name: "blink", fieldLabel: "blink", xtype: "textfield",
                 step: 2,

@@ -18,6 +18,112 @@ Ext.define('editpic.view.main.MainController', {
             //
         }
     },
+    userLogin: function () {
+        var me = this.view;
+        var win = Ext.create("Ext.window.Window", {
+            autoShow: true,
+            width: 400,
+            modal: true,
+            title: "Login",
+            items: {
+                xtype: "form",
+                itemId: "form",
+                defaults: {
+                    width: "100%",
+                    editable: false,
+                    allwoBlank: false
+                },
+                items: []
+            }
+        })
+        var loginForm = Ext.create("Ext.form.Panel", {
+            bodyPadding: 10,
+            url: "resources/main.php?par=login",
+            method: "POST",
+            items: [
+                //My.getKeyBordFn(),
+                {
+                    xtype: "textfield",
+                    allowBlank: false,
+                    fieldLabel: 'User Name',
+                    name: 'username',
+                    emptyText: 'user name',
+                    value: localStorage.getItem("loginUserName"),
+                    listeners: {
+                        focus: My.textfieldFocus
+                    }
+                },
+                {
+                    xtype: "textfield",
+                    allowBlank: false,
+                    fieldLabel: 'Password',
+                    name: 'password',
+                    emptyText: 'password',
+                    inputType: 'password',
+                    listeners: {
+                        focus: My.textfieldFocus
+                    }
+                },
+                {
+                    xtype: 'checkbox',
+                    fieldLabel: 'Remember me',
+                    name: 'remember',
+                    value: localStorage.getItem("loginRemember")
+                }
+            ],
+            buttons: [
+                /*{
+                 text: 'Register'
+                 },*/
+                {
+                    text: 'Login', handler: function () {
+                    var values = loginForm.getValues();
+                    if (values['remember']) {
+                        localStorage.setItem("loginUserName", values['username']);
+                        localStorage.setItem("loginRemember", values['remember']);
+                    }
+                    loginForm.submit({
+                        success: loginFn,
+                        failure: loginFn
+                    });
+                }
+                }
+            ],
+            defaults: {
+                anchor: '100%',
+                labelWidth: 120
+            }
+        })
+
+        function loginFn(form, action) {
+            console.log(arguments);
+            var res = Ext.decode(action.response.responseText);
+            var vm = me.getViewModel()
+            vm.set(res);
+            console.log(res);
+            if (res.isLogin) {
+                My.delayToast("Massage", "login success .")
+            } else {
+                Ext.Msg.alert("Massage", "login failure ")
+            }
+            win.close()
+        }
+
+        win.add(loginForm)
+    },
+    outLogin: function () {
+        var me = this.view;
+        My.AjaxPost("resources/main.php?par=login", function (response) {
+            var res = Ext.decode(response.responseText)
+            var vm = me.getViewModel()
+            vm.set(res);
+            My.delayToast("Massage", "out login  ok . ")
+        }, {
+            username: "",
+            password: ""
+        })
+    },
+
     saveHandler: function () {
         var curPanel = Ext.getCmp("mintab").getCurrentTab()
         console.log(curPanel)
@@ -126,7 +232,7 @@ Ext.define('editpic.view.main.MainController', {
             ]
         })
     },
-    BackupGraphice:function(){
+    BackupGraphice: function () {
 
     },
     dataJsonUpload: function () {
@@ -235,12 +341,12 @@ My.AjaxSimple = function (params, url, success) {
         success: success
     });
 }
-My.AjaxSimpleAsync= function (params, url, success) {
+My.AjaxSimpleAsync = function (params, url, success) {
     Ext.Ajax.request({
         url: url || "resources/main.php",
         method: "GET",
         async: true,
-        timeout:600000,
+        timeout: 600000,
         params: params,
         success: success
     });
@@ -388,15 +494,21 @@ My.getSearch = function () {
     }
     return false;
 }
-My.userLogin=function(username,password){
-
-
-
+My.isLogin = function () {
+    return My.getSession().isLogin;
+}
+My.getSession = function () {
+    var res = null;
+    My.Ajax("resources/main.php?par=getSession", function (response) {
+        res = Ext.decode(response.responseText);
+    })
+    return res;
 };
 My.linkManger = {};
 My.linkManger.items = {};
 My.linkManger.getValue = function (data) {
     var linkManger = this;
+
     var items = linkManger.items;
     var id = data.id;
     if (!items[id]) {
@@ -463,6 +575,9 @@ My.linkManger.init = function () {
 My.initComponentConfig = {
     draggable: !My.getSearch(),
     resizable: !My.getSearch(),
+    style: {
+        overflow: "inherit"
+    },
     myGetBackgroundColor: function () {
         var me = this;
         if (me.body) {
@@ -472,6 +587,31 @@ My.initComponentConfig = {
         } else {
             //return Ext.ux.colorpick.ColorUtils.parseColor("transparent");
             return "transparent";
+        }
+    },
+    mySetName: function (value) {
+        var me = this;
+        me.name = value;
+        if (me.nameDiv) {
+            me.nameDiv.parentNode.removeChild(me.nameDiv);
+        }
+        if (value) {
+            var div = document.createElement("div");
+            div.innerHTML = value;
+            div.style.position = "relative";
+            div.style.width = me.width + "px";
+            div.style.lineHeight = "35px";
+            div.style.textAlign = "center";
+            me.el.dom.appendChild(div)
+            me.nameDiv = div;
+        }
+    },
+    myGetName: function () {
+        var me = this;
+        if (me.name) {
+            return me.name;
+        } else {
+            return "";
         }
     },
     mySetBackgroundColor: function (color) {
@@ -523,6 +663,7 @@ My.initComponentConfig = {
     mySetHeight: function (value) {
         value = parseInt(value)
         var me = this;
+        me.setStyle("lineHeight", value + "px")
         if (me.field) {
             me.field.setHeight(value)
         }
@@ -648,12 +789,19 @@ My.initComponentConfig = {
     click: function (e, t, eOpts) {
 
         var me = this;
+        console.log(me)
+        /*if(me.itype==4){
+         Ext.getCmp("mintab").addTab(me.linkValue)
+         return ;
+         }*/
+
         if (My.getSearch()) {
             if (me.clientOpenMenu()) {
                 me.openAlermWindow()
             }
             return;
         }
+
         console.log(arguments)
         var divs = me.el.dom.querySelectorAll(".x-resizable-handle");
         for (var i = 0; i < divs.length; i++) {
@@ -667,8 +815,6 @@ My.initComponentConfig = {
                 specialkey: function (field, e) {
                     console.log(arguments)
                     me.moveController(e)
-
-
                 },
                 focusleave: function () {
                     console.log("鼠标离开")
@@ -676,7 +822,6 @@ My.initComponentConfig = {
                         divs[i].style.opacity = 0
                     }
                     textfield.up().remove(textfield)
-
                 }
             }
         })
@@ -686,6 +831,9 @@ My.initComponentConfig = {
         textfield.focus()
     },
     clientOpenMenu: function () {
+        /*if (!My.isLogin()) {
+         return false;
+         }*/
         return true;
     },
     contextmenu: function (e) {
@@ -789,41 +937,43 @@ My.initComponentConfig = {
                 },
                 store: ["NULL"],
                 listeners: {
-                    focus: function (field, t, e) {
-                        if (!My.getSearch()) {
-                            return;
-                        }
-                        var id = "#" + t.target.id;
-                        var keybord = popKeybord(id);
+                    focus: My.textfieldFocus
+                    /*
+                     function (field, t, e) {
+                     if (!My.getSearch()) {
+                     return;
+                     }
+                     var id = "#" + t.target.id;
+                     var keybord = popKeybord(id);
 
-                        function popKeybord(id) {
-                            $(id).keyboard({
-                                layout: 'custom',
-                                customLayout: {
-                                    'normal': [
-                                        '7 8 9 {clear} {b}',
-                                        '4 5 6 {left} {right}',
-                                        '1 2 3 . {a}  '
-                                    ],
-                                },
-                                maxLength: 11,
-                                maxValue: 10000
-                            })
+                     function popKeybord(id) {
+                     $(id).keyboard({
+                     layout: 'custom',
+                     customLayout: {
+                     'normal': [
+                     '7 8 9 {clear} {b}',
+                     '4 5 6 {left} {right}',
+                     '1 2 3 . {a}  '
+                     ],
+                     },
+                     maxLength: 11,
+                     maxValue: 10000
+                     })
 
-                            var keybord = document.querySelector(".ui-keyboard");
-                            if (keybord) {
-                                return keybord
-                            } else {
-                                field.focus()
-                            }
-                        }
+                     var keybord = document.querySelector(".ui-keyboard");
+                     if (keybord) {
+                     return keybord
+                     } else {
+                     field.focus()
+                     }
+                     }
 
-                        keybord.style.position = "fixed";
-                        keybord.style.zIndex = 200000;
-                        keybord.style.left = (field.getX() + field.labelWidth) + "px";
-                        keybord.style.top = field.getY() + "px";
-                        keybord.style.backgroundColor = "#3f4655"
-                    }
+                     keybord.style.position = "fixed";
+                     keybord.style.zIndex = 200000;
+                     keybord.style.left = (field.getX() + field.labelWidth) + "px";
+                     keybord.style.top = field.getY() + "px";
+                     keybord.style.backgroundColor = "#3f4655"
+                     }*/
                 }
             })
 
@@ -916,7 +1066,8 @@ My.initComponentConfig = {
             padding: 10,
             defaults: {
                 anchor: '100%',
-                width: "100%"
+                width: "100%",
+                margin: "10 0 10 0"
             },
             items: me.getFormItems("", function () {
                 win.close()
@@ -926,8 +1077,9 @@ My.initComponentConfig = {
         var win = Ext.create("Ext.window.Window", {
             title: "Priority",
             autoShow: true,
-            width: 400,
-            items: form
+            width: 251,
+            items: form,
+
             /* buttons: [
              {
              text: "OK", handler: function () {
@@ -1024,7 +1176,92 @@ My.initComponentConfig = {
         console.log(strnull)
         console.log(pubstr)
     },
+};
+
+My.textfieldFocus = function (field, t, e) {
+    console.log(arguments)
+    if (!My.isKeyBord) {
+        return;
+    }
+    var id = "#" + t.target.id;
+    var keybord = popKeybord(id);
+
+    function popKeybord(id) {
+        $(id).keyboard({
+            layout: 'qwerty',
+        })
+
+        var keybord = document.querySelector(".ui-keyboard");
+        if (keybord) {
+            return keybord
+        } else {
+            field.focus()
+        }
+    }
+
+    keybord.style.position = "fixed";
+    keybord.style.zIndex = 200000;
+    //keybord.style.left = (field.getX() + field.labelWidth) + "px";
+    //keybord.style.top = field.getY() + "px";
+    keybord.style.left = "0px";
+    keybord.style.top = "0px";
+    keybord.style.backgroundColor = "#3f4655";
+    /* var btns = document.querySelectorAll(".ui-keyboard-button");
+     for (var i = 0; i < btns.length; i++) {
+     console.log(btns[i].style.height)
+     console.log(btns[i].style.width)
+     }*/
 }
+My.getColorArr = function () {
+    var colors = Ext.ux.colorpick.ColorUtils.colorMap;
+    var arr = [];
+    for (var color in colors) {
+        var ojson = {};
+        ojson.name = color;
+        ojson.color = "rgb(" + colors[color].join(',') + ")";
+        ojson.html = "<div style='background-color:" + ojson.color + "'></div>"
+        arr.push(ojson);
+    }
+
+    return arr;
+}
+My.createKeyBordTextField = function (data) {
+    var data = Ext.apply(
+        {
+            listeners: {
+                focus: function (field, t, e) {
+                    console.log(arguments)
+                    var id = "#" + t.target.id;
+                    var keybord = popKeybord(id);
+
+                    function popKeybord(id) {
+                        $(id).keyboard({
+                            layout: 'qwerty',
+                        })
+
+                        var keybord = document.querySelector(".ui-keyboard");
+                        if (keybord) {
+                            return keybord
+                        } else {
+                            field.focus()
+                            return keybord
+                        }
+                    }
+
+                    //keybord.style.position = "fixed";
+                    keybord.style.zIndex = 200000;
+                    //keybord.style.top ="1px";
+                    //keybord.style.left = "1px";
+
+                    //keybord.style.left = (field.getX() + field.labelWidth) + "px";
+                    //keybord.style.top = field.getY() + "px";
+                    keybord.style.backgroundColor = "#3f4655"
+                }
+            }
+        }, data)
+    return Ext.create("Ext.form.field.Text", data);
+}
+My.isKeyBord = false;
 My.createImg = function (data) {
     var component = null;
     if (data.itype == 0) {
@@ -1054,3 +1291,9 @@ My.createImg = function (data) {
     }
     return component;
 }
+window.requestAnimFrame = (function () {
+    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+        function (/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+            return window.setTimeout(callback, 1000 / 60);
+        };
+})();

@@ -18,18 +18,19 @@ Ext.define('editpic.view.img.BaseTool', {
     //draggable:!My.getSearch(),
     //resizable: !My.getSearch(),
     resizeHandles: "s,e,se",
+
     bodyStyle: {
         background: "transparent",
         textAlign: "center",
         //backgroundImage:"resources/SmartIO.png",
         //backgroundRepeat:"noRepeat",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "100% 100%"
+        backgroundSize: "100% 100%",
     },
+
     initComponent: function () {
         var me = this;
         me.callParent()
-
         Ext.apply(me, My.initComponentConfig)
     },
     init: function (data) {
@@ -39,7 +40,7 @@ Ext.define('editpic.view.img.BaseTool', {
         me.mySetHeight(data.height);
         me.mySetX(data.x);
         me.mySetY(data.y);
-
+        me.mySetName(data.name)
         me.mySetZIndex(data.zindex);
         if (data.itype) {
             me.itype = me.itype || data.itype;
@@ -68,6 +69,7 @@ Ext.define('editpic.view.img.BaseTool', {
             me.background = value;
         }
     },
+
     getBackground: function () {
         var me=this;
         return me.background;
@@ -95,7 +97,7 @@ Ext.define('editpic.view.img.BaseTool', {
         data.y = me.y;
         data.width = me.width;
         data.height = me.height;
-        data.name = me.name;
+        //data.myGetName=me.myGetName();
         data.isBind = me.isBind;
         data.itype = me.itype - 0;
         data.ip = me.ip;
@@ -113,10 +115,13 @@ Ext.define('editpic.view.img.BaseTool', {
         //data.backgroundColor = me.myGetBackgroundColor();
         data.background=me.background;
         me.myGetConfigEl("backgroundImage");
-
+        data.backgroundColor=me.backgroundColor;
+        data.backgroundImage=me.backgroundImage;
         data.Priority_For_Writing = me.Priority_For_Writing;
         data.priorityValue = me.priorityValue;
         data.isBindPriority = me.isBindPriority;
+        data.name = me.name;
+
         return data;
     },
 
@@ -283,6 +288,7 @@ Ext.define('editpic.view.img.BaseTool', {
         }
     },
     linkData: function (data) {
+
         var ip = data.ip;
         var port = data.port;
         var nodename = data.nodename;

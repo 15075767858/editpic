@@ -29,6 +29,12 @@ Ext.define('editpic.view.main.Main', {
     controller: 'main',
     viewModel: 'main',
     //ui: 'navigation',
+    listeners:{
+      boxready:function(){
+          var me=this
+          me.getViewModel().set(My.getSession())
+      }
+    },
     tbar: [
         {
             text: "save", handler: "saveHandler"
@@ -48,8 +54,34 @@ Ext.define('editpic.view.main.Main', {
         } ,{
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 1.76")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 1.83")
             }
+        }
+    ],
+    bbar:[]||[
+        "->",
+        {
+            xtype:"checkbox",
+            inputValue:true,
+            boxLabel:" Screen keyboard",
+            handler:function(field,bol){
+                console.log(arguments)
+                My.isKeyBord=bol;
+            }
+        },
+        {text:"login",handler:"userLogin",
+            bind:{
+                hidden:"{isLogin}"
+            }
+        },
+        {
+            bind:{
+                text:"Welcome {username}",
+                hidden:"{!isLogin}"
+            },
+            menu:[
+                {text:"Out Login",handler:"outLogin"}
+            ]
         }
     ],
     border: true,
@@ -115,6 +147,7 @@ Ext.define('editpic.view.main.Main', {
                     {
                         xtype: "panel",
                         title: text,
+                        scrollable:true,
                         items: picPanel
                     }
                 ).show()
@@ -132,6 +165,9 @@ Ext.define('editpic.view.main.Main', {
                 {
                     xtype: "panel",
                     title: "untitled",
+                    //minWidth:1024,
+                    //minHeight:768,
+                    scrollable:true,
                     items: {
                         xtype: "picpanel",
                         x: 30,
@@ -142,6 +178,7 @@ Ext.define('editpic.view.main.Main', {
             listeners: {
                 boxready: function () {
                     var me = this;
+
                     /*var search = window.location.search;
                      if(search){
                      var resObj = Ext.Object.fromQueryString(search)

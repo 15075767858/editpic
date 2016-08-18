@@ -349,7 +349,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     xtype: 'slider',
                     width: "100%",
                     fieldLabel: "Width",
-                    maxValue: 2000,
+                    maxValue: 1024,
                     publishOnComplete: false,
                     minValue: 100,
                     bind: "{width}"
@@ -358,7 +358,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     xtype: 'slider',
                     width: "100%",
                     fieldLabel: "Height",
-                    maxValue: 1200,
+                    maxValue: 768,
                     publishOnComplete: false,
                     minValue: 100,
                     bind: "{height}"
