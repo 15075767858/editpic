@@ -22,6 +22,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     fieldLabel: "bind",
                     name: 'isBind',
                     hidden: false,
+                    inputValue:true,
                     reference: "isBind",
                     bind: itype != 0 || {
                         disabled: "{!isLinkDataBase.checked}"

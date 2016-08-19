@@ -40,17 +40,19 @@ Ext.define('editpic.view.img.BaseTool', {
         me.mySetHeight(data.height);
         me.mySetX(data.x);
         me.mySetY(data.y);
-        me.mySetName(data.name)
+        me.mySetName(data.name);
         me.mySetZIndex(data.zindex);
+
         if (data.itype) {
             me.itype = me.itype || data.itype;
         }
+
         me.isBind = data.isBind;
         me.linkData(data);
         me.setFontColor(data.fontcolor);
         //me.setFont(data.font);
-        me.mySetConfig('font', data.font)
-        me.setBoxShadow(data.boxShadow)
+        me.mySetConfig('font', data.font);
+        me.setBoxShadow(data.boxShadow);
         //me.mySetConfig('font',data.font)
         //me.mySetBackgroundColor(data.backgroundColor);
         //me.mySetConfigEl("backgroundImage", "url(" + data.backgroundImage + ")")
@@ -121,7 +123,6 @@ Ext.define('editpic.view.img.BaseTool', {
         data.priorityValue = me.priorityValue;
         data.isBindPriority = me.isBindPriority;
         data.name = me.name;
-
         return data;
     },
 
@@ -289,16 +290,21 @@ Ext.define('editpic.view.img.BaseTool', {
     },
     linkData: function (data) {
 
+
+
         var ip = data.ip;
         var port = data.port;
         var nodename = data.nodename;
         var type = data.type;
         var me = this;
-        console.log(arguments)
+        console.log(data)
         if (!(!!ip & !!port & !!nodename & !!type)) {
+            console.log("清楚")
+
             me.clearInterval();
             return;
         }
+
         me.ip = ip;
         me.port = port;
         me.nodename = nodename;
@@ -456,10 +462,10 @@ Ext.define('editpic.view.img.BaseTool', {
         boxready: function () {
             var me = this;
             me.el.hover(function (e, d) {
-                console.log(arguments)
+                //console.log(arguments)
                 me.setStyle("border", "2px solid white");
             }, function (e, d) {
-                console.log(arguments)
+                //console.log(arguments)
                 me.setStyle("border", "none");
             })
         },

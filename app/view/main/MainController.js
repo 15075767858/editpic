@@ -509,9 +509,10 @@ My.linkManger.items = {};
 My.linkManger.getValue = function (data) {
     var linkManger = this;
 
+
     var items = linkManger.items;
     var id = data.id;
-    if (!items[id]) {
+     if (!items[id]) {
         items[id] = {};
     }
 
@@ -748,7 +749,10 @@ My.initComponentConfig = {
     clearInterval: function () {
         var me = this;
         if (me.linkValue) {
+
             delete me.linkValue
+            delete My.linkManger.items[me.id]
+            me.refreshCanvas()
         }
         if (me.interval) {
             clearInterval(me.interval);
@@ -789,7 +793,8 @@ My.initComponentConfig = {
     click: function (e, t, eOpts) {
 
         var me = this;
-        console.log(me)
+
+        //console.log(me)
         /*if(me.itype==4){
          Ext.getCmp("mintab").addTab(me.linkValue)
          return ;
@@ -802,7 +807,7 @@ My.initComponentConfig = {
             return;
         }
 
-        console.log(arguments)
+        //console.log(arguments)
         var divs = me.el.dom.querySelectorAll(".x-resizable-handle");
         for (var i = 0; i < divs.length; i++) {
             divs[i].style.opacity = 1
@@ -936,44 +941,42 @@ My.initComponentConfig = {
                     return true;
                 },
                 store: ["NULL"],
-                listeners: {
-                    focus: My.textfieldFocus
-                    /*
-                     function (field, t, e) {
-                     if (!My.getSearch()) {
-                     return;
-                     }
-                     var id = "#" + t.target.id;
-                     var keybord = popKeybord(id);
+                listeners: {//My.textfieldFocus
+                    focus: function (field, t, e) {
+                        if (!My.getSearch()) {
+                            return;
+                        }
+                        var id = "#" + t.target.id;
+                        var keybord = popKeybord(id);
 
-                     function popKeybord(id) {
-                     $(id).keyboard({
-                     layout: 'custom',
-                     customLayout: {
-                     'normal': [
-                     '7 8 9 {clear} {b}',
-                     '4 5 6 {left} {right}',
-                     '1 2 3 . {a}  '
-                     ],
-                     },
-                     maxLength: 11,
-                     maxValue: 10000
-                     })
+                        function popKeybord(id) {
+                            $(id).keyboard({
+                                layout: 'custom',
+                                customLayout: {
+                                    'normal': [
+                                        '7 8 9 {clear} {b}',
+                                        '4 5 6 {left} {right}',
+                                        '1 2 3 0 . {a}  '
+                                    ],
+                                },
+                                maxLength: 11,
+                                maxValue: 10000
+                            })
 
-                     var keybord = document.querySelector(".ui-keyboard");
-                     if (keybord) {
-                     return keybord
-                     } else {
-                     field.focus()
-                     }
-                     }
+                            var keybord = document.querySelector(".ui-keyboard");
+                            if (keybord) {
+                                return keybord
+                            } else {
+                                field.focus()
+                            }
+                        }
 
-                     keybord.style.position = "fixed";
-                     keybord.style.zIndex = 200000;
-                     keybord.style.left = (field.getX() + field.labelWidth) + "px";
-                     keybord.style.top = field.getY() + "px";
-                     keybord.style.backgroundColor = "#3f4655"
-                     }*/
+                        keybord.style.position = "fixed";
+                        keybord.style.zIndex = 200000;
+                        keybord.style.left = (field.getX() + field.labelWidth) + "px";
+                        keybord.style.top = field.getY() + "px";
+                        keybord.style.backgroundColor = "#3f4655"
+                    }
                 }
             })
 
