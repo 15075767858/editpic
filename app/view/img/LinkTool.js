@@ -36,9 +36,11 @@ Ext.define('editpic.view.img.LinkTool', {
     linkData: function (data) {
         var me = this;
     console.log(data)
+        me.linkValue=data.linkValue;
         if (data.linkValue) {
-            me.linkValue=data.linkValue;
             me.setHtml(data.linkValue);
+        }else{
+            me.setHtml("");
         }
     },
     initComponent: function () {

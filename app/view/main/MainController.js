@@ -782,7 +782,6 @@ My.initComponentConfig = {
         Ext.create("editpic.view.window.CanvasConponmentWindow", {
             values: me,
             ok: ok || function (data) {
-
                 me.init(data);
             },
             cancel: cancel || function () {
