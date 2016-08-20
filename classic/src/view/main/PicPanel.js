@@ -124,13 +124,16 @@ Ext.define('editpic.view.panel.PicPanel', {
              me.add(component);
              component.init(data[i])
              }*/
-            (function (data) {
+            var img = My.createImg(data[i])
+            me.add(img);
+            img.init(data[i])
+            /*(function (data) {
                 requestAnimFrame(function () {
                     var img = My.createImg(data)
                     me.add(img);
                     img.init(data)
                 })
-            })(data[i])
+            })(data[i])*/
             /*(function (data,i) {
              setTimeout(function () {
              var img = My.createImg(data)

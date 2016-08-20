@@ -106,49 +106,7 @@ Ext.define("editpic.view.window.UploadWindow", {
                         }
                     });
                 })
-            /*Ext.create("Ext.form.Panel",{
-             url:"resources/main.php?par="
-             })*/
-            /*var bar = Ext.create("Ext.ProgressBar",{
-             width:300
-             });
-             var win = Ext.create("Ext.window.Window",{
-             title:"Massage",
-             items:bar
-             })*/
-            //var iframe = document.createElement("iframe");
-            //iframe.src = "resources/main.php?par=afterUploadGraph";
-            //Ext.getBody().dom.appendChild(iframe)
 
-            /*
-             My.AjaxSimpleAsync({
-             par: "afterUploadGraph"
-             }, "", function (response) {
-             console.log(arguments);
-             My.delayToast("Status", "Upload graph successfully .");
-             Ext.Msg.show({
-             title: 'Massage',
-             message: 'program update success .',
-             buttons: Ext.Msg.YES,
-             //icon: Ext.Msg.INFO,
-             fn: function (btn) {
-             if (btn === 'yes') {
-             location.reload()
-
-             }
-             }
-             });
-             })*/
-            /*bar.wait({
-             interval: 500, //bar will move fast!
-             duration: 50000,
-             increment: 15,
-             text: 'Updating...',
-             scope: this,
-             fn: function(){
-             bar.updateText('Done!');
-             }
-             });*/
         })
     },
     listeners: {

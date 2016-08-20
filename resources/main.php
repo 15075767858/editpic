@@ -33,6 +33,16 @@ if ($par == "getdevs") {
     echo json_encode($arr);
 }
 
+if($par=='tarHome'){
+    exec("pwd",$arr);
+    echo print_r($arr);
+
+    //exec("tar czvf home.tar.gz keybord",$arr);
+
+    exec("ls",$arr);
+    echo json_encode($arr);
+}
+
 
 if ($par == "login") {
     session_start();
@@ -114,8 +124,7 @@ function getRedisConect()
     $redis = new Redis();
     $ip = $_GET['ip'];
     $port = $_GET['port'];
-    $redis->connect($ip, $port, 0.3);
-
+    $redis->connect($ip, $port, 0.3) or $redis=false;
     return $redis;
 }
 
@@ -187,9 +196,7 @@ if ($par == "getLinkValues") {
          exit();
      }*/
     $datas = object_array($datas);
-
     foreach ($datas as $key => $value) {
-
         $value['value'] = getNodeTypeValue($value);
         $datas[$key] = $value;
     }
@@ -215,15 +222,20 @@ function getNodeTypeValue($arr)
 {
     $ip = $arr['ip'];
     $port = $arr['port'];
-
     $nodeName = $arr['nodename'];
     $type = $arr['type'];
     $redis = new Redis();
     //$ip="192.168.2.20";
-    $redis->connect($ip, $port, 0.5);
+    $redis->connect($ip, $port, 0.5) or $redis=false;
+    if($redis){
     $value = $redis->hGet($nodeName, $type);
+
     $redis->close();
+
     return $value;
+    }else{
+        return false;
+    }
 }
 
 if ($par == "beforeUploadGraph") {

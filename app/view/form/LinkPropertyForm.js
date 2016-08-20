@@ -22,11 +22,30 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     fieldLabel: "bind",
                     name: 'isBind',
                     hidden: false,
-                    inputValue:true,
+                    inputValue: true,
                     reference: "isBind",
                     bind: itype != 0 || {
                         disabled: "{!isLinkDataBase.checked}"
+                    }, handler: function (field, value) {
+                    var priority = me.lookup("priority");
+                    var isBindPriority=me.lookup("isBindPriority");
+                    if(!value){
+                        priority.hide()
+                        priority.setDisabled(true)
+                        isBindPriority.hide()
+                        isBindPriority.setValue(value)
+                    }else{
+
+                        isBindPriority.show()
                     }
+
+                   /* bind: {
+                        name: 'isBindPriority',
+                            hidden: "{!isBind.checked}",
+                            disabled: "{!isBind.checked}",
+                    },*/
+
+                }
                 },
 
                 {
@@ -86,8 +105,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         var combo = this;
                         combo.ip = ip;
                         combo.port = port;
-                        values.ip=ip;
-                        values.port=port;
+                        values.ip = ip;
+                        values.port = port;
                         var store = My.getDevStore(ip, port);
                         if (store) {
                             combo.setDisabled(false)
@@ -150,12 +169,12 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         change: function (combo, newValue, oldValue, e) {
                             var typescombo = me.lookup("typescombo");
                             typescombo.init(combo.ip, combo.port, newValue);
-                            var a  = me.lookup("priority")
+                            var a = me.lookup("priority")
                             console.log(a)
                             console.log(arguments)
                             a.removeAll()
                             a.add(values.getFormItems(newValue))
-                                //.setItems()
+                            //.setItems()
                         }
                     }
                 },
@@ -170,7 +189,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     name: "type",
                     disabled: !values.type,
                     store: nodeTypeStore,
-                    value: values.type||"Present_Value",
+                    value: values.type || "Present_Value",
                     init: function (ip, port, nodename) {
                         var me = this;
                         var store = My.getDevTypeStore(ip, port, nodename);
@@ -194,21 +213,19 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     xtype: 'checkbox',
                     fieldLabel: "bind priority",
                     name: 'isBindPriority',
-                    hidden: false,
+                    hidden: true,
+                    inputValue:true,
                     reference: "isBindPriority",
-                    bind: {
-                        hidden: "{!isBind.checked}",
-                        disabled: "{!isBind.checked}",
-                    },
+
                     /*bind: itype != 0 || {
-                        disabled: "{!isLinkDataBase.checked}"
-                    }*/
+                     disabled: "{!isLinkDataBase.checked}"
+                     }*/
                 },
 
                 {
                     xtype: 'fieldset',
                     title: 'Priority_For_Writing',
-                    reference:"priority",
+                    reference: "priority",
                     defaultType: 'combo',
                     defaults: {
                         anchor: '100%'
@@ -217,7 +234,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         hidden: "{!isBindPriority.checked}",
                         disabled: "{!isBindPriority.checked}",
                     },
-                    items:values.getFormItems?values.getFormItems():[]
+                    items: values.getFormItems ? values.getFormItems() : []
                 },
 
 
@@ -273,83 +290,83 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
 });
 /*
-[
-    /!* {
-     xtype: "combo",
-     reference:"priority_type",
-     fieldLabel: "Type",
-     editable: false,
-     name: "priorityType",
-     store: Ext.create("Ext.data.Store", {
-     fields: ["name", "value"],
-     data: [{
-     name: "boolean", value: 0
-     }, {
-     name: "float", value: 1
-     }]
-     }),
-     value:values.priorityType,
-     displayField: 'name',
-     valueField: 'value',
-     listeners:{
-     change:function(field,newValue){
-     var value0 = me.lookup("value0");
-     var value1 = me.lookup("value1");
-     console.log(value0)
-     console.log(value1)
-     if(newValue==0){
-     value0.show()
-     value0.setDisabled(false)
-     value1.hide()
-     value1.setDisabled(true)
-     }
-     if(newValue==1){
-     value1.show()
-     value1.setDisabled(false)
-     value0.hide()
-     value0.setDisabled(true)
-     }
-     }
-     }
-     },
-     {
-     fieldLabel: "Priority",
-     name:"Priority_For_Writing",
-     value:values.Priority_For_Writing||8,
-     editable:false,
-     store: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-     },
-     {
-     fieldLabel:"Value",
-     reference:"value0",
-     store:[0,1],
-     name:"Priority",
-     value:values.Priority,
-     disabled:values.priorityType==1,
-     hidden:values.priorityType==1,
+ [
+ /!* {
+ xtype: "combo",
+ reference:"priority_type",
+ fieldLabel: "Type",
+ editable: false,
+ name: "priorityType",
+ store: Ext.create("Ext.data.Store", {
+ fields: ["name", "value"],
+ data: [{
+ name: "boolean", value: 0
+ }, {
+ name: "float", value: 1
+ }]
+ }),
+ value:values.priorityType,
+ displayField: 'name',
+ valueField: 'value',
+ listeners:{
+ change:function(field,newValue){
+ var value0 = me.lookup("value0");
+ var value1 = me.lookup("value1");
+ console.log(value0)
+ console.log(value1)
+ if(newValue==0){
+ value0.show()
+ value0.setDisabled(false)
+ value1.hide()
+ value1.setDisabled(true)
+ }
+ if(newValue==1){
+ value1.show()
+ value1.setDisabled(false)
+ value0.hide()
+ value0.setDisabled(true)
+ }
+ }
+ }
+ },
+ {
+ fieldLabel: "Priority",
+ name:"Priority_For_Writing",
+ value:values.Priority_For_Writing||8,
+ editable:false,
+ store: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+ },
+ {
+ fieldLabel:"Value",
+ reference:"value0",
+ store:[0,1],
+ name:"Priority",
+ value:values.Priority,
+ disabled:values.priorityType==1,
+ hidden:values.priorityType==1,
 
-     },{
-     xtype:"numberfield",
-     reference:"value1",
-     fieldLabel:"Value",
-     decimalPrecision:4,
-     name:"priorityValue",
-     value:values.priorityValue,
-     allowDecimals: true,
-     maxValue:1000000,
-     minValue:-1000000,
-     disabled:values.priorityType==0,
-     hidden:values.priorityType==0
-     /!*listeners:{
-     change:function(field,newValue,oldValue){
-     console.log(arguments)
-     var value = Ext.util.Format.number(newValue,"000000.0000")
-     field.setValue(value)
-     console.log(value)
+ },{
+ xtype:"numberfield",
+ reference:"value1",
+ fieldLabel:"Value",
+ decimalPrecision:4,
+ name:"priorityValue",
+ value:values.priorityValue,
+ allowDecimals: true,
+ maxValue:1000000,
+ minValue:-1000000,
+ disabled:values.priorityType==0,
+ hidden:values.priorityType==0
+ /!*listeners:{
+ change:function(field,newValue,oldValue){
+ console.log(arguments)
+ var value = Ext.util.Format.number(newValue,"000000.0000")
+ field.setValue(value)
+ console.log(value)
 
-     }
-     }*!/
-     },*!/
-    //Ext.create("editpic.view.form.field.KeybordNumber"),
+ }
+ }*!/
+ },*!/
+ //Ext.create("editpic.view.form.field.KeybordNumber"),
 
-]*/
+ ]*/

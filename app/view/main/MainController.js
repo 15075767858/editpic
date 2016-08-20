@@ -233,7 +233,12 @@ Ext.define('editpic.view.main.MainController', {
         })
     },
     BackupGraphice: function () {
-
+        My.AjaxSimple("/upload.php",function(){
+            location.href="/home.tar.gz";
+        },{
+            par:"system",
+            command:"tar czvf home.tar.gz home"
+        })
     },
     dataJsonUpload: function () {
 
@@ -512,7 +517,7 @@ My.linkManger.getValue = function (data) {
 
     var items = linkManger.items;
     var id = data.id;
-     if (!items[id]) {
+    if (!items[id]) {
         items[id] = {};
     }
 
@@ -940,15 +945,24 @@ My.initComponentConfig = {
                     return true;
                 },
                 store: ["NULL"],
-                listeners: {//My.textfieldFocus
+                listeners: {
                     focus: function (field, t, e) {
-                        if (!My.getSearch()) {
-                            return;
-                        }
+                        /*if (!My.getSearch()) {
+                         return;
+                         }*/
+                        /* if(!My.isKeyBord){
+                         return;
+                         }*/
+                        //var id = "#" + t.target.id;
+                        //$(id).getkeyboard().removeKeyboard()
+                        return;
+
                         var id = "#" + t.target.id;
+                        console.log(arguments)
                         var keybord = popKeybord(id);
 
                         function popKeybord(id) {
+
                             $(id).keyboard({
                                 layout: 'custom',
                                 customLayout: {
@@ -956,17 +970,16 @@ My.initComponentConfig = {
                                         '7 8 9 {clear} {b}',
                                         '4 5 6 {left} {right}',
                                         '1 2 3 0 . {a}  '
-                                    ],
+                                    ]
                                 },
                                 maxLength: 11,
                                 maxValue: 10000
                             })
-
                             var keybord = document.querySelector(".ui-keyboard");
                             if (keybord) {
                                 return keybord
                             } else {
-                                field.focus()
+                                //field.focus()
                             }
                         }
 
@@ -974,7 +987,8 @@ My.initComponentConfig = {
                         keybord.style.zIndex = 200000;
                         keybord.style.left = (field.getX() + field.labelWidth) + "px";
                         keybord.style.top = field.getY() + "px";
-                        keybord.style.backgroundColor = "#3f4655"
+                        keybord.style.backgroundColor = "#3f4655";
+
                     }
                 }
             })
@@ -1002,6 +1016,60 @@ My.initComponentConfig = {
         items.push(combo1);
 
         items.push(valueField);
+
+        items.push({
+            xtype: "checkbox",
+            inputValue: true,
+            hidden:!My.getSearch(),
+            disabled:!My.getSearch(),
+            fieldLabel: " Screen keyboard",
+            handler: function (field, value) {
+                var id = "#" + valueField.ariaEl.dom.id;
+                console.log(arguments)
+                console.log(id)
+                if(value){
+                var keybord = popKeybord(id);
+                keybord.style.position = "fixed";
+                keybord.style.zIndex = 200000;
+                keybord.style.left = (field.getX() + field.labelWidth) + "px";
+                keybord.style.top = field.getY() + "px";
+                keybord.style.backgroundColor = "#3f4655";
+                }
+                function popKeybord(id) {
+                    console.log($(id).keyboard({
+                            layout: 'custom',
+                            customLayout: {
+                                'normal': [
+                                    '7 8 9 {clear} {b}',
+                                    '4 5 6 {left} {right}',
+                                    '1 2 3 0 . {a}  '
+                                ]
+                            },
+                            maxLength: 11,
+                            maxValue: 10000
+                        })
+                    )
+                    $(id).getkeyboard().reveal()
+                    $(id).getkeyboard().close()
+                    var keybord = document.querySelector(".ui-keyboard");
+                    if (keybord) {
+                        return keybord
+                    } else {
+
+                        //field.focus()
+                    }
+                }
+
+
+                if (!value) {
+
+                    var keyboard =$(id).getkeyboard();
+                    keyboard.reveal()
+                    keyboard.removeKeyboard();
+
+                }
+            }
+        })
 
         items.push({
             xtype: "button", text: "OK", handler: function (button) {
