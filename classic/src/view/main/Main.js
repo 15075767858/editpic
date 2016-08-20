@@ -47,15 +47,11 @@ Ext.define('editpic.view.main.Main', {
         {
             text: "Restor Graphice", handler: "dataJsonUpload"
         }, {
-            text: "update graph",
-            handler: function () {
-
-                Ext.create("editpic.view.window.UploadWindow")
-            }
+            text: "update graph",handler:"updateGraph"
         } ,{
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 1.87")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 1.89")
             }
         }
     ],

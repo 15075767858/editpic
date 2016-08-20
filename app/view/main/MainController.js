@@ -111,6 +111,7 @@ Ext.define('editpic.view.main.MainController', {
 
         win.add(loginForm)
     },
+
     outLogin: function () {
         var me = this.view;
         My.AjaxPost("resources/main.php?par=login", function (response) {
@@ -233,75 +234,131 @@ Ext.define('editpic.view.main.MainController', {
         })
     },
     BackupGraphice: function () {
-        My.AjaxSimple("/upload.php",function(){
-            location.href="/home.tar.gz";
-        },{
-            par:"system",
-            command:"tar czvf home.tar.gz home"
+        My.AjaxSimple("/upload.php", function () {
+            location.href = "/home.tar.gz";
+        }, {
+            par: "system",
+            command: "tar czvf home.tar.gz home"
         })
     },
     dataJsonUpload: function () {
+        //上传home目录下的文件
+        console.log(arguments)
+        var win = Ext.create("editpic.view.window.UploadWindow", {
+                url: '/upload.php?par=upload',
+                fieuploaded: function (object, file) {
+                    My.Ajax("/upload.php", function () {
+                    }, {
+                        par: "system",
+                        command: "mv " + file.name + " home"
+                    })
+                },
+                uploadcomplete: function () {
+                    My.delayToast("Status", "File Upload successfully .");
 
-        var win = Ext.create("Ext.window.Window", {
-            autoShow: true,
-            width: 400,
-            title: "Upload data.json",
-            items: {
-                xtype: "form",
-                bodyPadding: 10,
-                frame: true,
-                items: [{
-                    xtype: 'filebutton',
-                    name: 'file',
-                    fieldLabel: 'data.json',
-                    labelWidth: 50,
-                    msgTarget: 'side',
-                    allowBlank: false,
-                    anchor: '100%',
-                    buttonText: 'Select data.json',
-                    /*validator: function (val) {
-                     return "adsdadsa";
-                     },*/
-                    //isFileUpload : Boolean
-                    listeners: {
-                        change: function (menu, target, eOpts) {
-                            var files = target.target.files;
-
-                            if (files.length) {
-                                var file = files[0];
-                                var reader = new FileReader();
-                                reader.onload = function () {
-                                    //document.getElementById("filecontent").innerHTML = this.result;
-
-                                    textarea.setValue(this.result);
-                                    checkbox.setValue(true)
-                                };
-                                reader.readAsText(file);
-                            }
-                        }
-                    }
                 }
-                ],
-            },
-            buttons: [{
-                text: 'Upload',
-                handler: function () {
-                    var form = win.down('form').getForm();
-                    if (form.isValid()) {
-                        form.submit({
-                            url: 'photo-upload.php',
-                            waitMsg: 'Uploading your photo...',
-                            success: function (fp, o) {
-                                Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
+            }
+        )
+
+        /*  var win = Ext.create("Ext.window.Window", {
+         autoShow: true,
+         width: 400,
+         title: "Upload data.json",
+         items: {
+         xtype: "form",
+         bodyPadding: 10,
+         frame: true,
+         items: [{
+         xtype: 'filebutton',
+         name: 'file',
+         fieldLabel: 'data.json',
+         labelWidth: 50,
+         msgTarget: 'side',
+         allowBlank: false,
+         anchor: '100%',
+         buttonText: 'Select data.json',
+         /!*validator: function (val) {
+         return "adsdadsa";
+         },*!/
+         //isFileUpload : Boolean
+         listeners: {
+         change: function (menu, target, eOpts) {
+         var files = target.target.files;
+
+         if (files.length) {
+         var file = files[0];
+         var reader = new FileReader();
+         reader.onload = function () {
+         //document.getElementById("filecontent").innerHTML = this.result;
+
+         textarea.setValue(this.result);
+         checkbox.setValue(true)
+         };
+         reader.readAsText(file);
+         }
+         }
+         }
+         }
+         ],
+         },
+         buttons: [{
+         text: 'Upload',
+         handler: function () {
+         var form = win.down('form').getForm();
+         if (form.isValid()) {
+         form.submit({
+         url: 'photo-upload.php',
+         waitMsg: 'Uploading your photo...',
+         success: function (fp, o) {
+         Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
+         }
+         });
+         }
+         }
+         }]
+         });
+         */
+    },
+    updateGraph: function () {
+        My.AjaxAsync("", "", {
+            par: "beforeUploadGraph"
+        })
+        var win = Ext.create("editpic.view.window.UploadWindow", {
+            url: '/upload.php?par=upload',
+            uploadcomplete: function (obj, files) {
+                Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
+                win.close()
+                var namesStr = ""
+                var arr = [];
+                for (var i = 0; i < files.length; i++) {
+                    arr.push(files[i].name)
+                    namesStr += files[i].name + ",";
+                }
+                My.AjaxSimplePostAsync(
+                    {
+                        par: 'afterUpload',
+                        names: namesStr.substr(0, namesStr.length - 1),
+                        nameArr: Ext.encode(arr)
+                    }, "/upload.php?par=afterUpload", function () {
+                        console.log(arguments)
+                        Ext.Msg.show({
+                            title: 'Massage',
+                            message: 'graph update success .',
+                            buttons: Ext.Msg.YES,
+                            //icon: Ext.Msg.INFO,
+                            fn: function (btn) {
+                                if (btn === 'yes') {
+                                    location.reload()
+                                }
                             }
                         });
-                    }
-                }
-            }]
-        });
+                    })
+            }
 
+        })
     }
-});
+})
+
 String.prototype.replaceAll = function (s1, s2) {
     return this.replace(new RegExp(s1, "gm"), s2);
 }
@@ -730,9 +787,10 @@ My.initComponentConfig = {
     getLinkValue: function () {
         var me = this;
         if (me.hasLinkValue()) {
-            if (!isNaN(me.linkValue)) {
-                return parseFloat(me.linkValue);
-            }
+            //if (!isNaN(me.linkValue)) {
+            //
+            //    return parseFloat(me.linkValue);
+            //}
 
             return me.linkValue;
             /*if (me.linkValue) {
@@ -747,7 +805,14 @@ My.initComponentConfig = {
     },
     setLinkValue: function (linkValue) {
         var me = this;
-        me.linkValue = linkValue || My.linkManger.getValue(me);
+        linkValue+=""
+        console.log(linkValue)
+        if(linkValue=="undefined"||linkValue==""||linkValue=="false"){
+         me.linkValue=My.linkManger.getValue(me);
+        }else{
+            me.linkValue=linkValue;
+        }
+        //me.linkValue = linkValue || My.linkManger.getValue(me);
         me.refreshCanvas();
     },
 
@@ -924,7 +989,7 @@ My.initComponentConfig = {
                 name: "priorityValue",
                 value: me.priorityValue,
                 validator: function (val) {
-                    if (val.trim == "") {
+                    if (val.trim() == "") {
                         return "Can not be empty";
                     }
                     if (val == "NULL") {
@@ -1020,20 +1085,20 @@ My.initComponentConfig = {
         items.push({
             xtype: "checkbox",
             inputValue: true,
-            hidden:!My.getSearch(),
-            disabled:!My.getSearch(),
+            hidden: !My.getSearch(),
+            disabled: !My.getSearch(),
             fieldLabel: " Screen keyboard",
             handler: function (field, value) {
                 var id = "#" + valueField.ariaEl.dom.id;
                 console.log(arguments)
                 console.log(id)
-                if(value){
-                var keybord = popKeybord(id);
-                keybord.style.position = "fixed";
-                keybord.style.zIndex = 200000;
-                keybord.style.left = (field.getX() + field.labelWidth) + "px";
-                keybord.style.top = field.getY() + "px";
-                keybord.style.backgroundColor = "#3f4655";
+                if (value) {
+                    var keybord = popKeybord(id);
+                    keybord.style.position = "fixed";
+                    keybord.style.zIndex = 200000;
+                    keybord.style.left = (field.getX() + field.labelWidth) + "px";
+                    keybord.style.top = field.getY() + "px";
+                    keybord.style.backgroundColor = "#3f4655";
                 }
                 function popKeybord(id) {
                     console.log($(id).keyboard({
@@ -1063,7 +1128,7 @@ My.initComponentConfig = {
 
                 if (!value) {
 
-                    var keyboard =$(id).getkeyboard();
+                    var keyboard = $(id).getkeyboard();
                     keyboard.reveal()
                     keyboard.removeKeyboard();
 

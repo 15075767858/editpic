@@ -93,8 +93,8 @@ if ($par == "PresentArraySetNull") {
     $value = $_GET["value"];
     $number = $_GET["number"];
     $nodeName = $_GET["nodename"];
-    echo $value;
-    echo $number;
+    $type=$_GET['type'];
+    echo json_encode($_GET);
     $redis->hSet($nodeName, $type, $value);
     $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\nCancel_Priority_Array\r\n" . $number);
     $redis->close();
@@ -111,8 +111,11 @@ if ($par == "changevalue") {
     if (isset($_POST["value"])) {
         $value = $_POST["value"];
     }
+    echo json_encode($_GET);
+    echo json_encode($_POST);
+
     //echo "{type:'".$type."',value:'"."12313"."'}";
-    echo $redis->hSet($nodeName, $type, $value);
+    $redis->hSet($nodeName, $type, $value);
     $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\n" . $type . "\r\n" . $value);
     $redis->close();
 
@@ -234,7 +237,7 @@ function getNodeTypeValue($arr)
 
     return $value;
     }else{
-        return false;
+        return "";
     }
 }
 
