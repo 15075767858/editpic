@@ -55,22 +55,22 @@
         $ui-header-padding: 0,
         $ui-header-text-margin: 20px,
         $ui-header-noborder-adjust: false
-
 );
 
 @include extjs-panel-ui(
-  $ui:"mainpanelui",
-$ui-header-font-size: 20px,
-$ui-header-line-height: 24px,
-$ui-header-font-weight: bold,
-$ui-header-icon-height: 24px,
-$ui-header-icon-width: 24px,
-$ui-header-icon-spacing: 15px
+        $ui: "mainpanelui",
+        $ui-header-font-size: 20px,
+        $ui-header-line-height: 24px,
+        $ui-header-font-weight: bold,
+        $ui-header-icon-height: 24px,
+        $ui-header-icon-width: 24px,
+        $ui-header-icon-spacing: 15px
 )
-.x-panel-header-title-mainpanelui{
-  left:0px !important;
+.x-panel-header-title-mainpanelui {
+  left: 0px !important;
 
 }
+
 .x-title-icon-navigation {
 
   font-family: FontAwesome;
@@ -91,6 +91,44 @@ $ui-header-icon-spacing: 15px
     color: #fff;
   }
 }
+
+@include extjs-button-large-ui(
+        $ui: "keyboard",
+        $border-radius: $button-large-border-radius,
+        $border-width: $button-large-border-width,
+        $padding: $button-large-padding,
+        $text-padding: $button-large-text-padding,
+        //$background-gradient: $button-default-background-gradient,
+        //$background-gradient-over: $button-default-background-gradient-over,
+        //$background-gradient-focus: $button-default-background-gradient-focus,
+        //$background-gradient-pressed: $button-default-background-gradient-pressed,
+        //$background-gradient-focus-over: $button-default-background-gradient-focus-over,
+        //$background-gradient-focus-pressed: $button-default-background-gradient-focus-pressed,
+        //$background-gradient-disabled: $button-default-background-gradient-disabled,
+        //$body-outline-width-focus: $button-default-body-outline-width-focus,
+        //$body-outline-style-focus: $button-default-body-outline-style-focus,
+        //$body-outline-color-focus: $button-default-body-outline-color-focus,
+        //$line-height: $button-large-line-height,
+        //$icon-size: $button-large-icon-size,
+        //$glyph-font-size: $button-large-glyph-font-size,
+        //$icon-spacing: $button-large-icon-spacing,
+        //$glyph-color: $button-default-glyph-color,
+        //$glyph-opacity: $button-default-glyph-opacity,
+        //$arrow-width: $button-large-arrow-width,
+        //$arrow-height: $button-large-arrow-height,
+        //$arrow-glyph: $button-large-arrow-glyph,
+        //$arrow-glyph-color: $button-default-arrow-glyph-color,
+        //$split-width: $button-large-split-width,
+        //$split-height: $button-large-split-height,
+        //$split-line-width: $button-large-split-line-width,
+        //$split-line-color: $button-default-split-line-color,
+        //$include-ui-menu-arrows: $button-include-ui-menu-arrows,
+        //$include-ui-split-arrows: $button-include-ui-split-arrows,
+        //$include-split-noline-arrows: $button-include-split-noline-arrows,
+        //$include-split-over-arrows: $button-include-split-over-arrows,
+        //$opacity-disabled: $button-opacity-disabled,
+        $inner-opacity-disabled: $button-inner-opacity-disabled
+)
 
 /*
 .x-panel-header-title-navigation > .x-title-text-navigation:after {
@@ -114,6 +152,6 @@ $ui-header-icon-spacing: 15px
 
 */
 
-.opacity1{
+.opacity1 {
   opacity: 1;
 }

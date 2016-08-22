@@ -22,7 +22,8 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.panel.SetPicPanel",
         "editpic.view.panel.DevFormPanel",
         'editpic.view.panel.ToolsPanel',
-        "Ext.window.Toast"
+        "Ext.window.Toast",
+        "editpic.view.ux.KeyBoard"
     ],
 
     id: "mainPanel",
@@ -33,6 +34,9 @@ Ext.define('editpic.view.main.Main', {
       boxready:function(){
           var me=this
           me.getViewModel().set(My.getSession())
+
+          //Ext.create("editpic.view.ux.KeyBoard")
+
       }
     },
     tbar: [
@@ -51,7 +55,7 @@ Ext.define('editpic.view.main.Main', {
         } ,{
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 1.89")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 1.94")
             }
         }
     ],
@@ -148,7 +152,7 @@ Ext.define('editpic.view.main.Main', {
                         items: picPanel
                     }
                 ).show()
-                Ext.toast
+                //Ext.toast
                 picPanel.load(My.getImageData()[text])
             },
             defaults: {

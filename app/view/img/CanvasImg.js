@@ -62,10 +62,10 @@ Ext.define('editpic.view.img.CanvasImg', {
     },
 
     /*mySetZIndex: function (value) {
-        var me = this;
-        me.setZIndex(value);
-        me.zindex = value;
-    },*/
+     var me = this;
+     me.setZIndex(value);
+     me.zindex = value;
+     },*/
 
 
     isImg: function () {
@@ -143,7 +143,34 @@ Ext.define('editpic.view.img.CanvasImg', {
          return true;
          }*/
     },
+    getLinkValue: function () {
+        var me = this;
 
+
+        var linkvalue = parseFloat(me.linkValue)
+
+        if (linkvalue > 0) {
+            return true
+        } else {
+            return false;
+
+        }
+        /*if (me.hasLinkValue()) {
+         //if (!isNaN(me.linkValue)) {
+         //
+         //    return parseFloat(me.linkValue);
+         //}
+         //return me.linkValue;
+         if (me.linkValue) {
+         if (!isNaN(me.linkValue)) {
+         return me.linkValue
+         }
+         return true;
+         } else {
+         return false;
+         }
+         }*/
+    },
     setRotate: function (value) {
         if (value == null || value == undefined) {
             return;

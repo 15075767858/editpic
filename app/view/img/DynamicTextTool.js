@@ -54,6 +54,15 @@ Ext.define('editpic.view.img.DynamicTextTool', {
             me.refreshCanvas()
         },500)
     },*/
+    getLinkValue: function () {
+        var me = this;
+        var linkvalue = parseFloat(me.linkValue)
+        if (linkvalue > 0) {
+            return true
+        } else {
+            return false;
+        }
+    },
     refreshCanvas: function () {
         var me = this;
         console.log(me)

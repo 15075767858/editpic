@@ -47,9 +47,9 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
                 }
                 },
-
                 {
-                    xtype: "textfield",
+                    //xtype: "textfield",
+                    xtype:"combo",
                     flex: 3,
                     fieldLabel: "ip",
                     reference: "ipfield",
@@ -58,7 +58,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         hidden: "{!isBind.checked}",
                         disabled: "{!isBind.checked}"
                     },
-                    value: "192.168.253.253" || window.location.hostname
+                    store:[window.location.hostname,"192.168.253.253"],
+                    value: window.location.hostname
                 },
                 {
                     xtype: "textfield",
@@ -116,7 +117,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                             var typescombo = me.lookup("typescombo");
                             devsfield.hide()
                             typescombo.hide()
-                            Ext.Msg.alert("Error", "Connect to database failed !");
+                            //Ext.Msg.alert("Error", "Connect to database failed !");
                             if (combo.store) {
                                 if (combo.store.data.length > 0)
                                     combo.store.clearAll()
@@ -170,7 +171,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                             var typescombo = me.lookup("typescombo");
                             typescombo.init(combo.ip, combo.port, newValue);
                             var a = me.lookup("priority")
-                            console.log(a)
                             console.log(arguments)
                             a.removeAll()
                             a.add(values.getFormItems(newValue))
@@ -216,7 +216,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     hidden: true,
                     inputValue:true,
                     reference: "isBindPriority",
-
                     /*bind: itype != 0 || {
                      disabled: "{!isLinkDataBase.checked}"
                      }*/

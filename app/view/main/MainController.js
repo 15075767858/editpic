@@ -234,7 +234,7 @@ Ext.define('editpic.view.main.MainController', {
         })
     },
     BackupGraphice: function () {
-        My.AjaxSimple("/upload.php", function () {
+        My.Ajax("/upload.php", function () {
             location.href = "/home.tar.gz";
         }, {
             par: "system",
@@ -418,7 +418,6 @@ My.AjaxSimplePost = function (params, url, success) {
         url: url || "resources/main.php",
         method: "POST",
         async: false,
-        timeout: 1000,
         params: params,
         success: success,
         failure: function () {
@@ -431,7 +430,6 @@ My.AjaxSimplePostAsync = function (params, url, success) {
         url: url || "resources/main.php",
         method: "POST",
         async: true,
-        timeout: 1000,
         params: params,
         success: success,
         failure: function () {
@@ -509,7 +507,11 @@ My.getDevStore = function (ip, port) {
             var data = response.responseText
             try {
                 var ojson = Ext.decode(data)
-                if (ojson) {
+                if (ojson["isError"]) {
+
+
+                    return store;
+                } else {
                     store = Ext.create("Ext.data.Store", {
                         fields: ['name', 'value'],
                         data: ojson
@@ -602,7 +604,7 @@ My.linkManger.init = function () {
             datas: My.linkManger.getLinkDatas()
         }
 
-        My.AjaxSimplePost(data, "resources/main.php?par=getLinkValues", function (response) {
+        My.AjaxSimplePostAsync(data, "resources/main.php?par=getLinkValues", function (response) {
             try {
                 Ext.decode(response.responseText);
             } catch (e) {
@@ -784,33 +786,33 @@ My.initComponentConfig = {
             return true;
         }
     },
-    getLinkValue: function () {
-        var me = this;
-        if (me.hasLinkValue()) {
-            //if (!isNaN(me.linkValue)) {
-            //
-            //    return parseFloat(me.linkValue);
-            //}
+    /*getLinkValue: function () {
+     var me = this;
+     if (me.hasLinkValue()) {
+     //if (!isNaN(me.linkValue)) {
+     //
+     //    return parseFloat(me.linkValue);
+     //}
 
-            return me.linkValue;
-            /*if (me.linkValue) {
-             if (!isNaN(me.linkValue)) {
-             return me.linkValue
-             }
-             return true;
-             } else {
-             return false;
-             }*/
-        }
-    },
+     return me.linkValue;
+     /!*if (me.linkValue) {
+     if (!isNaN(me.linkValue)) {
+     return me.linkValue
+     }
+     return true;
+     } else {
+     return false;
+     }*!/
+     }
+     },*/
     setLinkValue: function (linkValue) {
         var me = this;
-        linkValue+=""
+        linkValue += ""
         console.log(linkValue)
-        if(linkValue=="undefined"||linkValue==""||linkValue=="false"){
-         me.linkValue=My.linkManger.getValue(me);
-        }else{
-            me.linkValue=linkValue;
+        if (linkValue == "undefined" || linkValue == "" || linkValue == "false") {
+            me.linkValue = My.linkManger.getValue(me);
+        } else {
+            me.linkValue = linkValue;
         }
         //me.linkValue = linkValue || My.linkManger.getValue(me);
         me.refreshCanvas();
@@ -1009,51 +1011,65 @@ My.initComponentConfig = {
                     }
                     return true;
                 },
-                store: ["NULL"],
+                store: ["NULL", ""],
                 listeners: {
                     focus: function (field, t, e) {
-                        /*if (!My.getSearch()) {
-                         return;
-                         }*/
-                        /* if(!My.isKeyBord){
-                         return;
-                         }*/
-                        //var id = "#" + t.target.id;
-                        //$(id).getkeyboard().removeKeyboard()
-                        return;
+                        var form = field.up("form");
 
-                        var id = "#" + t.target.id;
-                        console.log(arguments)
-                        var keybord = popKeybord(id);
-
-                        function popKeybord(id) {
-
-                            $(id).keyboard({
-                                layout: 'custom',
-                                customLayout: {
-                                    'normal': [
-                                        '7 8 9 {clear} {b}',
-                                        '4 5 6 {left} {right}',
-                                        '1 2 3 0 . {a}  '
-                                    ]
-                                },
-                                maxLength: 11,
-                                maxValue: 10000
-                            })
-                            var keybord = document.querySelector(".ui-keyboard");
-                            if (keybord) {
-                                return keybord
-                            } else {
-                                //field.focus()
-                            }
+                        var win1 = Ext.getCmp("win"+field.id)
+                        if(win1){
+                            return;
                         }
+                        var isUseKeyboard = form.getComponent("useKeyboard").getValue();
+                        if (isUseKeyboard) {
 
-                        keybord.style.position = "fixed";
-                        keybord.style.zIndex = 200000;
-                        keybord.style.left = (field.getX() + field.labelWidth) + "px";
-                        keybord.style.top = field.getY() + "px";
-                        keybord.style.backgroundColor = "#3f4655";
 
+                            var win = field.up("window");
+                            Ext.create("editpic.view.ux.KeyBoard", {
+                                id:"win"+field.id,
+                                x:win.getX()+win.getWidth()+5,
+                                inputValue: field.getValue(),
+                                okFn: function (value) {
+                                    field.setValue(value)
+                                }
+                            })
+
+                            field.win=win;
+
+
+                        }
+                        return;
+                        /*var id = "#" + t.target.id;
+                         console.log(arguments)
+                         var keybord = popKeybord(id);
+
+                         function popKeybord(id) {
+
+                         $(id).keyboard({
+                         layout: 'custom',
+                         customLayout: {
+                         'normal': [
+                         '7 8 9 {clear} {b}',
+                         '4 5 6 {left} {right}',
+                         '1 2 3 0 . {a}  '
+                         ]
+                         },
+                         maxLength: 11,
+                         maxValue: 10000
+                         })
+                         var keybord = document.querySelector(".ui-keyboard");
+                         if (keybord) {
+                         return keybord
+                         } else {
+                         //field.focus()
+                         }
+                         }
+
+                         keybord.style.position = "fixed";
+                         keybord.style.zIndex = 200000;
+                         keybord.style.left = (field.getX() + field.labelWidth) + "px";
+                         keybord.style.top = field.getY() + "px";
+                         keybord.style.backgroundColor = "#3f4655";*/
                     }
                 }
             })
@@ -1085,62 +1101,60 @@ My.initComponentConfig = {
         items.push({
             xtype: "checkbox",
             inputValue: true,
+            itemId:"useKeyboard",
+            reference: "screenkeyboard",
             hidden: !My.getSearch(),
             disabled: !My.getSearch(),
-            fieldLabel: " Screen keyboard",
+            fieldLabel: " Screen keyboard"
+            /*,
             handler: function (field, value) {
                 var id = "#" + valueField.ariaEl.dom.id;
-                console.log(arguments)
-                console.log(id)
-                if (value) {
-                    var keybord = popKeybord(id);
-                    keybord.style.position = "fixed";
-                    keybord.style.zIndex = 200000;
-                    keybord.style.left = (field.getX() + field.labelWidth) + "px";
-                    keybord.style.top = field.getY() + "px";
-                    keybord.style.backgroundColor = "#3f4655";
-                }
-                function popKeybord(id) {
-                    console.log($(id).keyboard({
-                            layout: 'custom',
-                            customLayout: {
-                                'normal': [
-                                    '7 8 9 {clear} {b}',
-                                    '4 5 6 {left} {right}',
-                                    '1 2 3 0 . {a}  '
-                                ]
-                            },
-                            maxLength: 11,
-                            maxValue: 10000
-                        })
-                    )
-                    $(id).getkeyboard().reveal()
-                    $(id).getkeyboard().close()
-                    var keybord = document.querySelector(".ui-keyboard");
-                    if (keybord) {
-                        return keybord
-                    } else {
+                 if (value) {
+                 var keybord = popKeybord(id);
+                 keybord.style.position = "fixed";
+                 keybord.style.zIndex = 200000;
+                 keybord.style.left = (field.getX() + field.labelWidth) + "px";
+                 keybord.style.top = field.getY() + "px";
+                 keybord.style.backgroundColor = "#3f4655";
+                 }
+                 function popKeybord(id) {
+                 console.log($(id).keyboard({
+                 layout: 'custom',
+                 customLayout: {
+                 'normal': [
+                 '7 8 9 {clear} {b}',
+                 '4 5 6 {left} {right}',
+                 '1 2 3 0 . {a}  '
+                 ]
+                 },
+                 maxLength: 11,
+                 maxValue: 10000
+                 })
+                 )
+                 $(id).getkeyboard().reveal()
+                 $(id).getkeyboard().close()
+                 var keybord = document.querySelector(".ui-keyboard");
+                 if (keybord) {
+                 return keybord
+                 } else {
 
-                        //field.focus()
-                    }
-                }
+                 //field.focus()
+                 }
+                 }
+                 if (!value) {
 
+                 var keyboard = $(id).getkeyboard();
+                 keyboard.reveal()
+                 keyboard.removeKeyboard();
 
-                if (!value) {
-
-                    var keyboard = $(id).getkeyboard();
-                    keyboard.reveal()
-                    keyboard.removeKeyboard();
-
-                }
-            }
+                 }
+            }*/
         })
 
         items.push({
             xtype: "button", text: "OK", handler: function (button) {
                 me.Priority_For_Writing = combo1.getValue();
                 me.priorityValue = valueField.getValue();
-
                 if (button.up("form").isValid()) {
                     me.publishPriority()
                     if (bloakFn) {
@@ -1149,7 +1163,6 @@ My.initComponentConfig = {
                 }
             }
         })
-
         return items;
     },
     openAlermWindow: function () {
@@ -1202,7 +1215,8 @@ My.initComponentConfig = {
             defaults: {
                 anchor: '100%',
                 width: "100%",
-                margin: "10 0 10 0"
+                margin: "30 0 30 0",
+                height: 50
             },
             items: me.getFormItems("", function () {
                 win.close()
@@ -1213,8 +1227,10 @@ My.initComponentConfig = {
             title: "Priority",
             autoShow: true,
             width: 251,
-            items: form,
+            x:100,
 
+            items: form,
+            height: 430
             /* buttons: [
              {
              text: "OK", handler: function () {
@@ -1258,11 +1274,10 @@ My.initComponentConfig = {
         })
         form.getForm().setValues(me);
     },
-    publishPriority: function () {
 
+    publishPriority: function () {
         var me = this;
         var ip = me.ip, port = me.port, nodename = me.nodename, devname = me.nodename.substr(0, 4), strnull = "", pubstr = "";
-
         My.AjaxSimple({
             par: "gettypevalue",
             ip: ip,
@@ -1293,7 +1308,6 @@ My.initComponentConfig = {
              My.delayToast('Success', nodename + ' Change value Priority_Array success new value is ' + strnull.substr(0, strnull.length - 1), 0)
              })*/
 
-
             My.AjaxSimple({
                 par: me.priorityValue == "NULL" ? "PresentArraySetNull" : "changevalue",
                 ip: ip,
@@ -1306,8 +1320,6 @@ My.initComponentConfig = {
                 My.delayToast('Success', nodename + ' Change value Priority_Array success new value is ' + strnull.substr(0, strnull.length - 1), 0)
             })
         })
-
-
         console.log(strnull)
         console.log(pubstr)
     },
@@ -1432,3 +1444,14 @@ window.requestAnimFrame = (function () {
             return window.setTimeout(callback, 1000 / 60);
         };
 })();
+
+Array.prototype.unique1 = function () {
+    var n = []; //一个新的临时数组
+    for (var i = 0; i < this.length; i++) //遍历当前数组
+    {
+        //如果当前数组的第i已经保存进了临时数组，那么跳过，
+        //否则把当前项push到临时数组里面
+        if (n.indexOf(this[i]) == -1) n.push(this[i]);
+    }
+    return n;
+}

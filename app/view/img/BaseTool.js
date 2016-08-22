@@ -251,7 +251,30 @@ Ext.define('editpic.view.img.BaseTool', {
             return "";
         }
     },
+    getLinkValue: function () {
+        var me = this;
+        if (me.hasLinkValue()) {
+            //if (!isNaN(me.linkValue)) {
+            //
+            //    return parseFloat(me.linkValue);
+            //}
+            if(me.linkValue===false){
+                return "";
+            }
 
+            
+
+            return me.linkValue;
+            /*if (me.linkValue) {
+             if (!isNaN(me.linkValue)) {
+             return me.linkValue
+             }
+             return true;
+             } else {
+             return false;
+             }*/
+        }
+    },
     setFont: function (font) {
         var me = this;
 

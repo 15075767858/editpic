@@ -21,6 +21,7 @@ if ($par == 'getSvgTree') {
 
 if ($par == "getdevs") {
     $redis = getRedisConect();
+    if($redis){
     $arList = $redis->keys("???????");
     sort($arList);
     $arr = array();
@@ -31,8 +32,25 @@ if ($par == "getdevs") {
     }
     sort($arList);
     echo json_encode($arr);
+    $redis->close();
+    }else{
+        $arr=Array("isError"=>true);
+        echo json_encode($arr);
+    }
 }
 
+if ($par == "gettypes") {
+    $redis = getRedisConect();
+    if($redis){
+        $nodeName = $_GET['nodename'];
+        $arList = $redis->hKeys($nodeName);
+        echo json_encode($arList);
+        $redis->close();
+    }else{
+        $arr=Array("isError"=>true);
+        echo json_encode($arr);
+    }
+}
 if($par=='tarHome'){
     exec("pwd",$arr);
     echo print_r($arr);
@@ -70,13 +88,7 @@ if($par=="getSession"){
 
 }
 
-if ($par == "gettypes") {
-    $redis = getRedisConect();
-    $nodeName = $_GET['nodename'];
-    $arList = $redis->hKeys($nodeName);
-    echo json_encode($arList);
-    $redis->close();
-}
+
 
 if ($par == "gettypevalue") {
     $nodeName = $_GET['nodename'];
@@ -232,12 +244,10 @@ function getNodeTypeValue($arr)
     $redis->connect($ip, $port, 0.5) or $redis=false;
     if($redis){
     $value = $redis->hGet($nodeName, $type);
-
     $redis->close();
-
     return $value;
     }else{
-        return "";
+        return false;
     }
 }
 
