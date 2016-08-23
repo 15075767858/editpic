@@ -4,7 +4,7 @@ rm -rf /Library/WebServer/Documents/editpic/build/production
 sencha app build
 rm -rf /Library/WebServer/Documents/editpic/build/production/graph/resources/font-awesome
 rm -rf /Library/WebServer/Documents/editpic/build/production/graph/resources/fonts
-#rm -rf /Library/WebServer/Documents/editpic/build/production/graph/modern
+rm -rf /Library/WebServer/Documents/editpic/build/production/graph/modern
 cd /Library/WebServer/Documents/editpic/build/production
 mkdir autoInstallPackage
 tar czvf graph.tar.bz2 graph/

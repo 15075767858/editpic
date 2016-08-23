@@ -53,9 +53,15 @@ Ext.define('editpic.view.ux.KeyBoard', {
         var me = this;
         var button = Ext.create("Ext.button.Button", Ext.apply(data, {
                 //ui: "keyboard",
-
-                cls: "opacity1",
+                style:{
+                    backgroundColor:"blue"
+                },
+                bodyStyle:{
+                    backgroundColor:"blue"
+                },
+                //cls: "opacity1",
                 scale: 'large',
+
                 handler: "buttonHandler"
 
             }

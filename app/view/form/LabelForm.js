@@ -169,55 +169,64 @@ Ext.define('editpic.view.form.LabelForm', {
                                     itemId: "fontForm",
                                     defaults: {
                                         width: "100%",
-                                        editable: false
+                                        editable: false,
+                                        listeners:{
+                                            change:function(field,newValue){
+                                                var name = field.name;
+                                               values[name]=newValue
+
+                                            }
+                                        }
                                     },
                                     padding: 10,
                                     items: [
                                         {
                                             fieldLabel: "font style",
-                                            name: "font_style",
+                                            name: "fontStyle",
                                             xtype: "combo",
                                             store: ["normal", "italic", "oblique"],
-                                            value: "normal"
+                                            value: values.fontStyle||"normal"
                                         }, {
                                             fieldLabel: "font variant",
-                                            name: "font_variant",
+                                            name: "fontVariant",
                                             xtype: "hiddenfield",
-                                            value: "normal"
+                                            value: values.fontVariant||"normal"
                                         }, {
                                             fieldLabel: "font weight",
-                                            name: "font_weight",
+                                            name: "fontWeight",
                                             xtype: "combo",
                                             store: ["normal", "bold", "bolder", "lighter", 100, 200, 300, 400, 500, 600, 700, 800, 900],
-                                            value: "normal"
+                                            value: values.fontWeight||"normal"
                                         }, {
                                             fieldLabel: "font size",
-                                            name: "font_size",
+                                            name: "fontSize",
                                             xtype: "numberfield",
                                             minValue: 1,
-                                            value: 15
+                                            value: values.fontSize||15
                                         }, {
                                             fieldLabel: "font family",
-                                            name: "font_family",
+                                            name: "fontFamily",
                                             xtype: "combo",
                                             editable: true,
                                             store: ["normal", "times", "courier", "arial", "serif", "sans-serif", "cursive", "fantasy", "monospace"],
-                                            value: "normal"
+                                            value: values.fontFamily||"normal"
                                         }
                                     ]
                                 },
                                 buttons: [
                                     {
                                         text: "OK", handler: function () {
+                                        console.log(values)
                                         var form = win.getComponent("fontForm")
                                         var fontJson = form.getForm().getValues();
-                                        var style = fontJson['font_style']
-                                        var variant = fontJson['font_variant']
-                                        var weight = fontJson['font_weight']
-                                        var size = fontJson['font_size']
-                                        var family = fontJson['font_family']
+                                        var style = fontJson['fontStyle']
+                                        var variant = fontJson['fontVariant']
+                                        var weight = fontJson['fontWeight']
+                                        var size = fontJson['fontSize']
+                                        var family = fontJson['fontFamily']
                                         var fontStr = style + " " + variant + " " + weight + " " + size + "px " + family;
                                         field.setValue(fontStr);
+                                        //Ext.apply(values,fontJson);
                                         win.close()
                                     }
                                     }, {
@@ -227,6 +236,9 @@ Ext.define('editpic.view.form.LabelForm', {
                                     }
                                 ]
                             })
+
+
+
                         }
                     }
                 }

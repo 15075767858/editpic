@@ -52,6 +52,12 @@ Ext.define('editpic.view.img.BaseTool', {
         me.setFontColor(data.fontcolor);
         //me.setFont(data.font);
         me.mySetConfig('font', data.font);
+        //me.fontStyle=data.fontStyle;
+        //me.fontVariant=data.fontVariant;
+        //me.fontWeight=data.fontWeight;
+        //me.fontSize=data.fontSize;
+        //me.fontFamily=data.fontFamily;
+
         me.setBoxShadow(data.boxShadow);
         //me.mySetConfig('font',data.font)
         //me.mySetBackgroundColor(data.backgroundColor);
@@ -94,6 +100,7 @@ Ext.define('editpic.view.img.BaseTool', {
      },*/
     getInitData: function () {
         var me = this;
+        console.log(me)
         var data = {};
         data.x = me.x;
         data.y = me.y;
@@ -112,6 +119,11 @@ Ext.define('editpic.view.img.BaseTool', {
         data.fontcolor = me.getFontColor();
         //data.font = me.getFont()
         data.font = me.myGetConfig("font");
+        data.fontStyle = me.fontStyle;
+        data.fontVariant = me.fontVariant;
+        data.fontWeight = me.fontWeight;
+        data.fontSize = me.fontSize;
+        data.fontFamily = me.fontFamily;
         data.boxShadow = me.boxShadow;
         //data.boxShadow=me.myGetConfig("font")
         //data.backgroundColor = me.myGetBackgroundColor();
@@ -123,6 +135,7 @@ Ext.define('editpic.view.img.BaseTool', {
         data.priorityValue = me.priorityValue;
         data.isBindPriority = me.isBindPriority;
         data.name = me.name;
+
         return data;
     },
 
