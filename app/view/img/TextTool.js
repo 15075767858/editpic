@@ -41,6 +41,8 @@ Ext.define('editpic.view.img.TextTool', {
             me.text = data.text;
             me.setHtml(data.text)
             //me.field.setValue(data.text)
+        }else{
+            me.setHtml("")
         }
         me.refreshCanvas()
     },

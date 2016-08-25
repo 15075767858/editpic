@@ -2,10 +2,10 @@ Ext.define('editpic.view.form.LabelForm', {
     extend: 'editpic.view.form.CanvasMenuBaseForm',
     title: "Label",
     border: true,
-    defaults: {
-        anchor: "100%",
-        allowBlank: false
-    },
+    /*defaults: {
+     anchor: "100%",
+     allowBlank: false
+     },*/
     /* requires: [
      'editpic.view.form.CanvasMenuBaseFormController',
      'editpic.view.form.CanvasMenuBaseFormModel'
@@ -16,17 +16,15 @@ Ext.define('editpic.view.form.LabelForm', {
      type: 'form-canvasmenubaseform'
      },
      */
+
     initComponent: function () {
         var me = this;
         var values = me.values;
         var itype = values.itype;
         var labelFormItems = [];
 
-
-
         if (itype == 0 || itype == 1) {
             labelFormItems = [
-
                 /*{
                  xtype: "combo", fieldLabel: "Image Type",
                  name: "itype", allowBlank: true,
@@ -122,37 +120,50 @@ Ext.define('editpic.view.form.LabelForm', {
                     disabled: itype == 4,
                     hidden: itype == 4
                 },
-                Ext.create("Ext.form.field.ComboBox",{
+                Ext.create("Ext.form.field.ComboBox", {
                     /*store:Ext.create("Ext.data.Store",{
                      fields:['name','color','html'],
                      data:["white","blue","red","gray","green","black"]
                      }),*/
-                    store:["white","blue","red","gray","brown","green","black"],
+                    store: ["white", "blue", "red", "gray", "brown", "green", "black"],
                     fieldLabel: 'Font Color',
-                    value: values.fontColor||"white",
+                    value: values.fontColor || "white",
                     name: "fontColor",
-                    listeners:{
-                        change:function(field,newValue){
+                    listeners: {
+                        change: function (field, newValue) {
                             values.setFontColor(newValue);
-                           // values.backgroundColor=newValue
+                            // values.backgroundColor=newValue
                         }
                     }
                 })/*,
-                {
-                    xtype: 'colorfield',
-                    fieldLabel: 'Font Color',
-                    value: values.getFontColor(),
-                    name: "fontColor",
-                    listeners: {
-                        change: function (field, color) {
-                            values.setFontColor("#" + color);
-                        }
-                    }
-                }*/
+                 {
+                 xtype: 'colorfield',
+                 fieldLabel: 'Font Color',
+                 value: values.getFontColor(),
+                 name: "fontColor",
+                 listeners: {
+                 change: function (field, color) {
+                 values.setFontColor("#" + color);
+                 }
+                 }
+                 }*/
             ]
         }
 
         if (itype > 1) {
+            if(itype==3){
+                labelFormItems.push({
+                    fieldLabel:"alias",xtype:"textfield",name:"aliasName",allowBlank:true,
+                    value:values.aliasName
+                })
+                labelFormItems.push({
+                    fieldLabel:"show filename",
+                    xtype:"checkboxfield",
+                    name:"showFilename",
+                    inputValue:true,
+                    value:values.showFilename
+                })
+            }
             labelFormItems.push(
                 {
                     name: "font", fieldLabel: "font", allowBlank: true, xtype: "textfield",
@@ -170,11 +181,10 @@ Ext.define('editpic.view.form.LabelForm', {
                                     defaults: {
                                         width: "100%",
                                         editable: false,
-                                        listeners:{
-                                            change:function(field,newValue){
+                                        listeners: {
+                                            change: function (field, newValue) {
                                                 var name = field.name;
-                                               values[name]=newValue
-
+                                                values[name] = newValue
                                             }
                                         }
                                     },
@@ -185,31 +195,31 @@ Ext.define('editpic.view.form.LabelForm', {
                                             name: "fontStyle",
                                             xtype: "combo",
                                             store: ["normal", "italic", "oblique"],
-                                            value: values.fontStyle||"normal"
+                                            value: values.fontStyle || "normal"
                                         }, {
                                             fieldLabel: "font variant",
                                             name: "fontVariant",
                                             xtype: "hiddenfield",
-                                            value: values.fontVariant||"normal"
+                                            value: values.fontVariant || "normal"
                                         }, {
                                             fieldLabel: "font weight",
                                             name: "fontWeight",
                                             xtype: "combo",
                                             store: ["normal", "bold", "bolder", "lighter", 100, 200, 300, 400, 500, 600, 700, 800, 900],
-                                            value: values.fontWeight||"normal"
+                                            value: values.fontWeight || "normal"
                                         }, {
                                             fieldLabel: "font size",
                                             name: "fontSize",
                                             xtype: "numberfield",
                                             minValue: 1,
-                                            value: values.fontSize||15
+                                            value: values.fontSize || 15
                                         }, {
                                             fieldLabel: "font family",
                                             name: "fontFamily",
                                             xtype: "combo",
                                             editable: true,
                                             store: ["normal", "times", "courier", "arial", "serif", "sans-serif", "cursive", "fantasy", "monospace"],
-                                            value: values.fontFamily||"normal"
+                                            value: values.fontFamily || "normal"
                                         }
                                     ]
                                 },
@@ -238,11 +248,14 @@ Ext.define('editpic.view.form.LabelForm', {
                             })
 
 
-
                         }
                     }
                 }
             )
+            labelFormItems.push({
+                name:"fontPostion",fieldLabel:"font postion",xtype:"slider",
+                minValue:0,maxValue:values.height
+            })
             labelFormItems.push({
                 name: "boxShadow", fieldLabel: "shadow", allowBlank: true, xtype: "textfield",
                 listeners: {
@@ -312,7 +325,7 @@ Ext.define('editpic.view.form.LabelForm', {
                     xtype: "textfield", allowBlank: true, name: "background", fieldLabel: "background",
                     listeners: {
                         focus: function (field) {
-                            var colorfield =  Ext.create("Ext.ux.colorpick.Field",{
+                            var colorfield = Ext.create("Ext.ux.colorpick.Field", {
                                 itemId: "backgroundColor",
                                 name: "backgroundColor",
                                 fieldLabel: "Background Color",
@@ -334,30 +347,30 @@ Ext.define('editpic.view.form.LabelForm', {
                                     padding: 10,
                                     items: [
 
-                                        Ext.create("Ext.form.field.ComboBox",{
+                                        Ext.create("Ext.form.field.ComboBox", {
                                             /*store:Ext.create("Ext.data.Store",{
-                                                fields:['name','color','html'],
-                                                data:["white","blue","red","gray","green","black"]
-                                            }),*/
-                                            store:["white","blue","red","gray","brown","green","black"],
-                                            fieldLabel:"Background Color",
-                                            name:"backgroundColor",
-                                            value:values.backgroundColor||"",
-                                            listeners:{
-                                                change:function(field,newValue){
+                                             fields:['name','color','html'],
+                                             data:["white","blue","red","gray","green","black"]
+                                             }),*/
+                                            store: ["white", "blue", "red", "gray", "brown", "green", "black"],
+                                            fieldLabel: "Background Color",
+                                            name: "backgroundColor",
+                                            value: values.backgroundColor || "",
+                                            listeners: {
+                                                change: function (field, newValue) {
 
-                                                    values.backgroundColor=newValue
+                                                    values.backgroundColor = newValue
                                                 }
                                             }
                                         }),
                                         {
                                             xtype: "textfield", name: "backgroundImage", fieldLabel: "Background Image",
                                             emptyText: "Please drag the image here.",
-                                            value:values.backgroundImage,
+                                            value: values.backgroundImage,
                                             listeners: {
                                                 render: "dragImageSetUrl",
-                                                change:function(field,newValue){
-                                                    values.backgroundImage=newValue
+                                                change: function (field, newValue) {
+                                                    values.backgroundImage = newValue
                                                 }
                                             }
                                         },
@@ -374,7 +387,7 @@ Ext.define('editpic.view.form.LabelForm', {
                                         //color = Ext.ux.colorpick.ColorUtils.getRGBAString(color);
                                         //console.log(color)
                                         values.setBackground(oJson);
-                                        var backgroundStr=color+" url(" + backgroundImage + ")  no-repeat  scroll  center" ;
+                                        var backgroundStr = color + " url(" + backgroundImage + ")  no-repeat  scroll  center";
                                         field.setValue(backgroundStr);
                                         win.close();
                                     }
@@ -431,7 +444,10 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             },
             {
-                name: "height", fieldLabel: "height", configName: "mySetHeight", xtype: 'numberfield',
+                name: "height", fieldLabel: "height",
+                configName: "mySetHeight",
+
+                xtype: 'numberfield',
                 step: 1,
                 minValue: 1,
                 listeners: {
@@ -453,20 +469,20 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             },
             /*{
-                xtype: 'colorfield',
-                fieldLabel: 'background color',
-                value: values.myGetBackgroundColor(),
-                hidden: !values.body & itype > 1,
-                disabled: !values.body & itype > 1,
-                name: "backgroundColor",
-                listeners: {
-                    change: function (field, color, previousColor, eOpts) {
-                        if (field.color) {
-                            values.mySetBackgroundColor(field.getColor())
-                        }
-                    }
-                }
-            },*/
+             xtype: 'colorfield',
+             fieldLabel: 'background color',
+             value: values.myGetBackgroundColor(),
+             hidden: !values.body & itype > 1,
+             disabled: !values.body & itype > 1,
+             name: "backgroundColor",
+             listeners: {
+             change: function (field, color, previousColor, eOpts) {
+             if (field.color) {
+             values.mySetBackgroundColor(field.getColor())
+             }
+             }
+             }
+             },*/
             {
                 name: "blink", fieldLabel: "blink", xtype: "textfield",
                 step: 2,

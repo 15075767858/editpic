@@ -21,46 +21,64 @@ if ($par == 'getSvgTree') {
 
 if ($par == "getdevs") {
     $redis = getRedisConect();
-    if($redis){
-    $arList = $redis->keys("???????");
-    sort($arList);
-    $arr = array();
-    foreach ($arList as $key => $value) {
-        if (is_numeric($value)) {
-            array_push($arr, array("value" => $value, "name" => $redis->hGet($value, "Object_Name")));
+    if ($redis) {
+        $arList = $redis->keys("???????");
+        sort($arList);
+        $arr = array();
+        foreach ($arList as $key => $value) {
+            if (is_numeric($value)) {
+                array_push($arr, array("value" => $value, "name" => $redis->hGet($value, "Object_Name")));
+            }
         }
-    }
-    sort($arList);
-    echo json_encode($arr);
-    $redis->close();
-    }else{
-        $arr=Array("isError"=>true);
+        sort($arList);
+        echo json_encode($arr);
+        $redis->close();
+    } else {
+        $arr = Array("isError" => true);
         echo json_encode($arr);
     }
 }
 
 if ($par == "gettypes") {
     $redis = getRedisConect();
-    if($redis){
+    if ($redis) {
         $nodeName = $_GET['nodename'];
         $arList = $redis->hKeys($nodeName);
         echo json_encode($arList);
         $redis->close();
-    }else{
-        $arr=Array("isError"=>true);
+    } else {
+        $arr = Array("isError" => true);
         echo json_encode($arr);
     }
 }
-if($par=='tarHome'){
-    exec("pwd",$arr);
+if ($par == 'tarHome') {
+    exec("pwd", $arr);
     echo print_r($arr);
 
     //exec("tar czvf home.tar.gz keybord",$arr);
 
-    exec("ls",$arr);
+    exec("ls", $arr);
     echo json_encode($arr);
 }
 
+if ($par == "linkInfo") {
+    //echo json_encode($_REQUEST);
+    //exit;
+
+    $redis = getRedisConect();
+    $arr = array();
+    $arr['ip'] = $redis;
+    if ($redis) {
+        $arr['ip'] = true;
+        $nodename = $redis->keys($_GET['nodename'])[0];
+        $arr['nodename'] = $nodename;
+        if($nodename){
+            $arr['type']=$redis->hGet($nodename,$_REQUEST['type']);
+        }
+    }
+    echo json_encode($arr);
+
+}
 
 if ($par == "login") {
     session_start();
@@ -71,23 +89,22 @@ if ($par == "login") {
     //  `if()
 
     if ($username == "SmartIO" & $password == "Admin123") {
-        $_SESSION['isLogin']=1;
-        $_SESSION['permission']=1;
-        $_SESSION['username']=$username;
-        echo  json_encode($_SESSION);
-    }else{
-        $_SESSION['isLogin']=0;
-        $_SESSION['permission']=0;
-        $_SESSION['username']='';
+        $_SESSION['isLogin'] = 1;
+        $_SESSION['permission'] = 1;
+        $_SESSION['username'] = $username;
+        echo json_encode($_SESSION);
+    } else {
+        $_SESSION['isLogin'] = 0;
+        $_SESSION['permission'] = 0;
+        $_SESSION['username'] = '';
         echo json_encode($_SESSION);
     }
 }
-if($par=="getSession"){
+if ($par == "getSession") {
     session_start();
     echo json_encode($_SESSION);
 
 }
-
 
 
 if ($par == "gettypevalue") {
@@ -105,9 +122,10 @@ if ($par == "PresentArraySetNull") {
     $value = $_GET["value"];
     $number = $_GET["number"];
     $nodeName = $_GET["nodename"];
-    $type=$_GET['type'];
+    $type = $_GET['type'];
     echo json_encode($_GET);
-    $redis->hSet($nodeName, $type, $value);
+    echo $redis->hSet($nodeName, $type, $value);
+
     $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\nCancel_Priority_Array\r\n" . $number);
     $redis->close();
 }
@@ -128,7 +146,7 @@ if ($par == "changevalue") {
 
     //echo "{type:'".$type."',value:'"."12313"."'}";
     $redis->hSet($nodeName, $type, $value);
-    $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\n" . $type . "\r\n" . $value);
+    $redis->publish(substr($nodeName, 0, 4) . ".8." . rand(1000, 9999), $nodeName . "\r\n" . $type . "\r\n" . $value);
     $redis->close();
 
 }
@@ -139,7 +157,7 @@ function getRedisConect()
     $redis = new Redis();
     $ip = $_GET['ip'];
     $port = $_GET['port'];
-    $redis->connect($ip, $port, 0.3) or $redis=false;
+    $redis->connect($ip, $port, 0.3) or $redis = false;
     return $redis;
 }
 
@@ -218,6 +236,33 @@ if ($par == "getLinkValues") {
     echo json_encode($datas);
 }
 
+/*function callback($redis, $channel, $message, $val)
+{
+    $ip = $_SERVER["SERVER_ADDR"];
+    $arr = array();
+    $arr['ip'] = $ip;
+    $arr['value'] = $val;
+    echo "(";
+    echo json_encode($arr);
+    echo ")";
+    exit;
+}
+
+if ($par == "subscribe") {
+
+    ini_set('default_socket_timeout', -1);
+
+    $subnode = $_GET['subnode'];
+
+    $redis = new Redis();
+
+    $redis->connect("127.0.0.1", "6379");
+
+    $channel = $subnode;  // channel
+
+    $redis->psubscribe(array($channel), 'callback');
+}
+*/
 
 function object_array($array)
 {
@@ -241,12 +286,12 @@ function getNodeTypeValue($arr)
     $type = $arr['type'];
     $redis = new Redis();
     //$ip="192.168.2.20";
-    $redis->connect($ip, $port, 0.5) or $redis=false;
-    if($redis){
-    $value = $redis->hGet($nodeName, $type);
-    $redis->close();
-    return $value;
-    }else{
+    $redis->connect($ip, $port, 0.5) or $redis = false;
+    if ($redis) {
+        $value = $redis->hGet($nodeName, $type);
+        $redis->close();
+        return $value;
+    } else {
         return false;
     }
 }

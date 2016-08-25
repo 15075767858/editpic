@@ -11,6 +11,7 @@ Ext.define('editpic.view.panel.DevFormPanel', {
     viewModel: {
         type: 'panel-devformpanel'
     },
+
     title: "Settings",
     //iconCls:"fa-cog",
     width: 300,
@@ -18,6 +19,7 @@ Ext.define('editpic.view.panel.DevFormPanel', {
     scrollable: "y",
     resizable: true,
     collapsible: true,
+    collapsed:false,
     width: 300,
     initComponent: function () {
         var me = this;

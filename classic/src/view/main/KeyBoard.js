@@ -17,7 +17,6 @@ Ext.define('editpic.view.ux.KeyBoard', {
     //bodyPadding: 10,
     initComponent: function () {
         var me = this;
-
         var input = Ext.create("Ext.form.field.Text", {
             width: "97%",
             height: 50,

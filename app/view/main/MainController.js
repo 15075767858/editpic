@@ -598,45 +598,45 @@ My.linkManger.getLinkDatas = function () {
 
 My.linkManger.init = function () {
 
-    var interval1 = setInterval(function () {
-        var data = {
-            //par: "getLinkValues",
-            datas: My.linkManger.getLinkDatas()
-        }
-
-        My.AjaxSimplePostAsync(data, "resources/main.php?par=getLinkValues", function (response) {
-            try {
-                Ext.decode(response.responseText);
-            } catch (e) {
-                //Ext.Msg.alert("Massage"," linkDataBase Error Program 10 seconds after the automatic return to normal . "+response.responseText);
-                clearInterval(interval1);
-                setTimeout(function () {
-                    My.linkManger.init()
-                }, 10000)
-                return;
-            }
-            if (response.responseText.length == 2) {
-                //console.log(response.responseText)
-                My.linkManger.items = {}
-            } else {
-                My.linkManger.items = Ext.decode(response.responseText)
-                for (var id in My.linkManger.items) {
-                    var img = Ext.getCmp(id);
-                    if (img) {
-                        if (img.linkValue != My.linkManger.items[id].value) {
-                            img.setLinkValue(My.linkManger.items[id].value)
-                        }
-                    } else {
-                        delete My.linkManger.items[id];
-                    }
-                }
-
-            }
-
-        });
-    }, 1000)
+    var interval1 = setInterval(My.initLinkValue, 8000)
 }
+My.initLinkValue=function () {
 
+    var data = {
+        //par: "getLinkValues",
+        datas: My.linkManger.getLinkDatas()
+    }
+
+    My.AjaxSimplePostAsync(data, "resources/main.php?par=getLinkValues", function (response) {
+        try {
+            Ext.decode(response.responseText);
+        } catch (e) {
+            //Ext.Msg.alert("Massage"," linkDataBase Error Program 10 seconds after the automatic return to normal . "+response.responseText);
+            clearInterval(interval1);
+            setTimeout(function () {
+                My.linkManger.init()
+            }, My.eachDelay)
+            return;
+        }
+        if (response.responseText.length == 2) {
+            //console.log(response.responseText)
+            My.linkManger.items = {}
+        } else {
+            My.linkManger.items = Ext.decode(response.responseText)
+            for (var id in My.linkManger.items) {
+                var img = Ext.getCmp(id);
+                if (img) {
+                    if (img.linkValue != My.linkManger.items[id].value) {
+                        img.setLinkValue(My.linkManger.items[id].value)
+                    }
+                } else {
+                    delete My.linkManger.items[id];
+                }
+            }
+        }
+    });
+
+};
 My.initComponentConfig = {
     draggable: !My.getSearch(),
     resizable: !My.getSearch(),
@@ -654,6 +654,153 @@ My.initComponentConfig = {
             return "transparent";
         }
     },
+
+    isLinkData: function (data) {
+        var me = this;
+        if (data) {
+            var ip = data.ip;
+            var port = data.port;
+            var nodename = data.nodename;
+            var type = data.type;
+            me.ip = ip;
+            me.port = port;
+            me.nodename = nodename;
+            me.type = type;
+        }
+        console.log(data)
+
+        if (!!me.ip & !!me.port & !!me.nodename & !!me.type) {
+            return true;
+        } else {
+            return false;
+        }
+
+        if (!(!!me.ip & !!me.port & !!me.nodename & !!me.type)) {
+            return false;
+        } else {
+            return true;
+        }
+    },
+    linkInfo:function(){
+        var resJson={};
+        var me=this;
+        My.Ajax("resources/main.php",function(response){
+            resJson = Ext.decode(response.responseText);
+        },{
+            par:'linkInfo',
+            ip:me.ip,
+            port:me.port,
+            nodename:me.nodename,
+            type:me.type
+        })
+        return resJson;
+    },
+    mySubscribe: function () {
+        var me = this;
+
+        if (!me.isLinkData()) {
+            return;
+        }
+        var linkJson=me.linkInfo();
+        if(!(linkJson.ip&linkJson.nodename)){
+            setTimeout(function(){
+                me.mySubscribe();
+            },My.eachDelay)
+
+            return ;
+        }
+        console.log("开始监听 ip=" + me.ip + "nodename=" + me.nodename+" "+me.type+"="+me.value);
+        console.log(me);
+        var subnode = me.nodename.substr(0, 4) + ".8.*";
+
+        var data = {
+            params: {
+                subnode: subnode
+            },
+            timeout: 0,
+            success: function (response) {
+                console.log("success");
+                me.mySubscribe();
+                var resJson = Ext.decode(response.responseText.substring(1, response.responseText.length - 1))
+                console.log(resJson)
+
+                var arr = resJson.value.split("\r\n");
+                console.log(arr)
+                if(arr.length!=3){
+                    console.log("length ! = 3")
+                    return;
+                }
+
+                if(arr[0]!=me.nodename){
+                    console.log(arr[0])
+                    return;
+                }
+                if(arr[1]!=me.type){
+                    console.log(arr[1])
+                    return;
+                }
+                if(arr[2]!=me.linkValue){
+                    console.log(arr[2])
+                    me.setLinkValue(arr[2])
+                }
+            },
+            failure: function () {
+                setTimeout(function () {
+                    me.mySubscribe()
+                }, My.eachDelay)
+            }
+        };
+
+        if (location.hostname == me.ip) {
+            data.url = "resources/subscribe.php"
+            Ext.Ajax.request(data)
+        } else {
+            data.url = "http://" + me.ip + "/graph/resources/subscribe.php"
+            Ext.data.JsonP.request(data)
+        }
+
+        /*        Ext.Ajax.request({
+         url: "resources/main.php?par=subscribe",
+         method: "GET",
+         async: true,
+         params: {},
+         success: function (response) {
+         console.log('success')
+         console.log(arguments)
+         var data = response.responseText
+         console.log(data.split('\r\n'))
+         },
+         failure: function () {
+         console.log('failure')
+         console.log(arguments)
+         }
+         });*/
+
+    }, subscribeCallBack: function (value) {
+        var arr = []
+        if (value) {
+            arr = value.split('\r\n');
+            if (arr.length != 3) {
+                return;
+            }
+        }
+        var items = My.linkManger.items;
+        var key;
+        var arr = [];
+        for (key in items) {
+        }
+        console.log(arr);
+    }, getSubscribeIps: function () {
+        var items = My.linkManger.items;
+        var key;
+        var arr = [];
+        for (key in items) {
+            var ip = items[key].ip
+            arr.push(ip)
+        }
+        arr = arr.unique1();
+        return arr;
+    },
     mySetName: function (value) {
         var me = this;
         me.name = value;
@@ -670,7 +817,8 @@ My.initComponentConfig = {
             me.el.dom.appendChild(div)
             me.nameDiv = div;
         }
-    },
+    }
+    ,
     myGetName: function () {
         var me = this;
         if (me.name) {
@@ -678,7 +826,8 @@ My.initComponentConfig = {
         } else {
             return "";
         }
-    },
+    }
+    ,
     mySetBackgroundColor: function (color) {
         if (!color) {
             return;
@@ -696,7 +845,8 @@ My.initComponentConfig = {
             }
         }
 
-    },
+    }
+    ,
     mySetX: function (newValue) {
         newValue = parseInt(newValue)
         var me = this;
@@ -705,7 +855,8 @@ My.initComponentConfig = {
         me.setX(value);
 
         me.x = newValue;
-    },
+    }
+    ,
     mySetY: function (newValue) {
         newValue = parseInt(newValue)
         var me = this;
@@ -714,7 +865,8 @@ My.initComponentConfig = {
         me.setY(value);
 
         me.y = newValue;
-    },
+    }
+    ,
     mySetWidth: function (value) {
         value = parseInt(value)
         var me = this;
@@ -724,17 +876,19 @@ My.initComponentConfig = {
         console.log(me.field);
         me.setWidth(value)
         me.width = value
-    },
+    }
+    ,
     mySetHeight: function (value) {
         value = parseInt(value)
         var me = this;
-        me.setStyle("lineHeight", value + "px")
+        //me.setStyle("lineHeight", value + "px")
         if (me.field) {
             me.field.setHeight(value)
         }
         me.setHeight(value)
         me.height = value;
-    },
+    }
+    ,
 
     /*    mySetX: function (newValue) {
      newValue = parseInt(newValue)
@@ -776,7 +930,8 @@ My.initComponentConfig = {
             me.setZIndex(value);
             me.zindex = value;
         }
-    },
+    }
+    ,
 
     hasLinkValue: function () {
         var me = this;
@@ -785,7 +940,8 @@ My.initComponentConfig = {
         } else {
             return true;
         }
-    },
+    }
+    ,
     /*getLinkValue: function () {
      var me = this;
      if (me.hasLinkValue()) {
@@ -816,7 +972,8 @@ My.initComponentConfig = {
         }
         //me.linkValue = linkValue || My.linkManger.getValue(me);
         me.refreshCanvas();
-    },
+    }
+    ,
 
     clearInterval: function () {
         var me = this;
@@ -829,7 +986,8 @@ My.initComponentConfig = {
         if (me.interval) {
             clearInterval(me.interval);
         }
-    },
+    }
+    ,
     moveController: function (e) {
         if (!e.keyCode) {
             return;
@@ -847,7 +1005,8 @@ My.initComponentConfig = {
         if (e.keyCode == 40) {
             me.mySetY(me.y + 1)
         }
-    },
+    }
+    ,
     openMenu: function (ok, cancel) {
         var me = this;
 
@@ -860,7 +1019,8 @@ My.initComponentConfig = {
 
             }
         })
-    },
+    }
+    ,
     click: function (e, t, eOpts) {
 
         var me = this;
@@ -905,13 +1065,15 @@ My.initComponentConfig = {
         textfield.setZIndex(-1)
         textfield.focus()
         textfield.focus()
-    },
+    }
+    ,
     clientOpenMenu: function () {
         /*if (!My.isLogin()) {
          return false;
          }*/
         return true;
-    },
+    }
+    ,
     contextmenu: function (e) {
 
         e.stopEvent()
@@ -952,7 +1114,8 @@ My.initComponentConfig = {
                 }
             ]
         })
-    },
+    }
+    ,
     dblclick: function (e, el) {
         var me = this;
         if (My.getSearch()) {
@@ -960,7 +1123,8 @@ My.initComponentConfig = {
         }
         console.log(me)
         me.openMenu()
-    },
+    }
+    ,
 
     getFormItems: function (nodename, bloakFn) {
         var me = this;
@@ -1016,8 +1180,8 @@ My.initComponentConfig = {
                     focus: function (field, t, e) {
                         var form = field.up("form");
 
-                        var win1 = Ext.getCmp("win"+field.id)
-                        if(win1){
+                        var win1 = Ext.getCmp("win" + field.id)
+                        if (win1) {
                             return;
                         }
                         var isUseKeyboard = form.getComponent("useKeyboard").getValue();
@@ -1026,15 +1190,15 @@ My.initComponentConfig = {
 
                             var win = field.up("window");
                             Ext.create("editpic.view.ux.KeyBoard", {
-                                id:"win"+field.id,
-                                x:win.getX()+win.getWidth()+5,
+                                id: "win" + field.id,
+                                x: win.getX() + win.getWidth() + 5,
                                 inputValue: field.getValue(),
                                 okFn: function (value) {
                                     field.setValue(value)
                                 }
                             })
 
-                            field.win=win;
+                            field.win = win;
 
 
                         }
@@ -1101,54 +1265,54 @@ My.initComponentConfig = {
         items.push({
             xtype: "checkbox",
             inputValue: true,
-            itemId:"useKeyboard",
+            itemId: "useKeyboard",
             reference: "screenkeyboard",
             hidden: !My.getSearch(),
             disabled: !My.getSearch(),
             fieldLabel: " Screen keyboard"
             /*,
-            handler: function (field, value) {
-                var id = "#" + valueField.ariaEl.dom.id;
-                 if (value) {
-                 var keybord = popKeybord(id);
-                 keybord.style.position = "fixed";
-                 keybord.style.zIndex = 200000;
-                 keybord.style.left = (field.getX() + field.labelWidth) + "px";
-                 keybord.style.top = field.getY() + "px";
-                 keybord.style.backgroundColor = "#3f4655";
-                 }
-                 function popKeybord(id) {
-                 console.log($(id).keyboard({
-                 layout: 'custom',
-                 customLayout: {
-                 'normal': [
-                 '7 8 9 {clear} {b}',
-                 '4 5 6 {left} {right}',
-                 '1 2 3 0 . {a}  '
-                 ]
-                 },
-                 maxLength: 11,
-                 maxValue: 10000
-                 })
-                 )
-                 $(id).getkeyboard().reveal()
-                 $(id).getkeyboard().close()
-                 var keybord = document.querySelector(".ui-keyboard");
-                 if (keybord) {
-                 return keybord
-                 } else {
+             handler: function (field, value) {
+             var id = "#" + valueField.ariaEl.dom.id;
+             if (value) {
+             var keybord = popKeybord(id);
+             keybord.style.position = "fixed";
+             keybord.style.zIndex = 200000;
+             keybord.style.left = (field.getX() + field.labelWidth) + "px";
+             keybord.style.top = field.getY() + "px";
+             keybord.style.backgroundColor = "#3f4655";
+             }
+             function popKeybord(id) {
+             console.log($(id).keyboard({
+             layout: 'custom',
+             customLayout: {
+             'normal': [
+             '7 8 9 {clear} {b}',
+             '4 5 6 {left} {right}',
+             '1 2 3 0 . {a}  '
+             ]
+             },
+             maxLength: 11,
+             maxValue: 10000
+             })
+             )
+             $(id).getkeyboard().reveal()
+             $(id).getkeyboard().close()
+             var keybord = document.querySelector(".ui-keyboard");
+             if (keybord) {
+             return keybord
+             } else {
 
-                 //field.focus()
-                 }
-                 }
-                 if (!value) {
+             //field.focus()
+             }
+             }
+             if (!value) {
 
-                 var keyboard = $(id).getkeyboard();
-                 keyboard.reveal()
-                 keyboard.removeKeyboard();
+             var keyboard = $(id).getkeyboard();
+             keyboard.reveal()
+             keyboard.removeKeyboard();
 
-                 }
-            }*/
+             }
+             }*/
         })
 
         items.push({
@@ -1164,7 +1328,8 @@ My.initComponentConfig = {
             }
         })
         return items;
-    },
+    }
+    ,
     openAlermWindow: function () {
         var me = this;
 
@@ -1227,7 +1392,7 @@ My.initComponentConfig = {
             title: "Priority",
             autoShow: true,
             width: 251,
-            x:100,
+            x: 100,
 
             items: form,
             height: 430
@@ -1273,7 +1438,8 @@ My.initComponentConfig = {
              ]*/
         })
         form.getForm().setValues(me);
-    },
+    }
+    ,
 
     publishPriority: function () {
         var me = this;
@@ -1322,8 +1488,10 @@ My.initComponentConfig = {
         })
         console.log(strnull)
         console.log(pubstr)
-    },
-};
+    }
+    ,
+}
+;
 
 My.textfieldFocus = function (field, t, e) {
     console.log(arguments)
@@ -1438,6 +1606,7 @@ My.createImg = function (data) {
     }
     return component;
 }
+My.eachDelay=1000*60*3
 window.requestAnimFrame = (function () {
     return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
         function (/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
@@ -1455,3 +1624,17 @@ Array.prototype.unique1 = function () {
     }
     return n;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

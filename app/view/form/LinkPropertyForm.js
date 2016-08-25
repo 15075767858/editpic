@@ -97,11 +97,14 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     fieldLabel: "Object_Name",
                     displayField: 'name',
                     valueField: 'value',
+                    allowBlank:true,
                     store: nodeNameStore,
                     disabled: !values.nodename,
                     value: values.nodename,
                     itemId: "devscombo",
                     reference: "devsfield",
+                    editable: true,
+
                     init: function (ip, port) {
                         var combo = this;
                         combo.ip = ip;
@@ -159,7 +162,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                          }
                          )*/
                     },
-                    editable: false,
                     listeners: {
                         boxready: function (combo) {
                             var store = My.getDevStore(me.values.ip, me.values.port)

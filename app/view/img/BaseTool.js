@@ -67,11 +67,17 @@ Ext.define('editpic.view.img.BaseTool', {
         me.Priority_For_Writing = data.Priority_For_Writing;
         me.priorityValue = data.priorityValue;
         me.isBindPriority = data.isBindPriority;
+        me.mySubscribe()
+
     },
     setBackground: function (value) {
         console.log(value)
         var me = this;
         if (me.el) {
+
+            //ip连不上红色
+            //key连不上黑色
+
             me.setStyle("background", value);
             me.setStyle("backgroundSize","100% 100%")
             me.background = value;
@@ -125,6 +131,7 @@ Ext.define('editpic.view.img.BaseTool', {
         data.fontSize = me.fontSize;
         data.fontFamily = me.fontFamily;
         data.boxShadow = me.boxShadow;
+
         //data.boxShadow=me.myGetConfig("font")
         //data.backgroundColor = me.myGetBackgroundColor();
         data.background=me.background;
@@ -325,28 +332,27 @@ Ext.define('editpic.view.img.BaseTool', {
         }
     },
     linkData: function (data) {
-
-
-
-        var ip = data.ip;
+        var me = this;
+        /*var ip = data.ip;
         var port = data.port;
         var nodename = data.nodename;
         var type = data.type;
-        var me = this;
-        console.log(data)
-        if (!(!!ip & !!port & !!nodename & !!type)) {
-            console.log("清楚")
-
-            me.clearInterval();
-            return;
-        }
-
         me.ip = ip;
         me.port = port;
         me.nodename = nodename;
         me.type = type;
+
+        console.log(data)
+        if (!(!!ip & !!port & !!nodename & !!type)) {
+
+            me.clearInterval();
+            return;
+        }*/
         me.clearInterval();
-        me.setLinkValue();
+
+        if(me.isLinkData(data)){
+            me.setLinkValue();
+        }
 
     },
 

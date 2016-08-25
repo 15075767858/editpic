@@ -238,7 +238,7 @@ $include-ext-data-errorcollection: dynamic(true);;
 $include-ext-data-errors: dynamic(true);;
 $include-ext-data-field: dynamic(true);;
 $include-ext-data-httpproxy: dynamic(true);;
-$include-ext-data-jsonp: dynamic(false);;
+$include-ext-data-jsonp: dynamic(true);;
 $include-ext-data-jsonpstore: dynamic(false);;
 $include-ext-data-jsonreader: dynamic(true);;
 $include-ext-data-jsonstore: dynamic(false);;

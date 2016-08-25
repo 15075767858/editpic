@@ -35,8 +35,9 @@ Ext.define('editpic.view.main.Main', {
           var me=this
           me.getViewModel().set(My.getSession())
 
-          //Ext.create("editpic.view.ux.KeyBoard")
 
+          //Ext.create("editpic.view.ux.KeyBoard")
+          //var socket=new WebSocket("resources/test.main?ip=192.168.253.253&port=6379");
       }
     },
     tbar: [
@@ -55,7 +56,7 @@ Ext.define('editpic.view.main.Main', {
         } ,{
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 1.95")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.001")
             }
         }
     ],
@@ -171,8 +172,8 @@ Ext.define('editpic.view.main.Main', {
                     scrollable:true,
                     items: {
                         xtype: "picpanel",
-                        x: 30,
-                        y: 30
+                        x: 0,
+                        y: 0
                     }
                 }
             ],
@@ -205,12 +206,7 @@ Ext.define('editpic.view.main.Main', {
                 }
             }
         },
-        {
-            xtype: "editpic.svgstree",
-            id: "imgTreePanel",
-            region: 'west',
-            collapsible: true
-        },
+
         {
             xtype: "toolspanel",
             border: true,
@@ -220,7 +216,12 @@ Ext.define('editpic.view.main.Main', {
             xtype: "devformpanel",
             id: "devformpanel",
             region: "east"
-        }
+        },{
+            xtype: "editpic.svgstree",
+            id: "imgTreePanel",
+            region: 'east',
+            collapsible: true
+        },
     ]
 
 });

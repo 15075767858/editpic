@@ -14,6 +14,7 @@ Ext.define('editpic.view.tree.SvgsTree', {
     reference: "svgstree",
     //ui:"svgstree",
     title: "Imgs",
+    collapsed:true,
 
     header: {
         //style:"background:red;font-family: FontAwesome !important;",
