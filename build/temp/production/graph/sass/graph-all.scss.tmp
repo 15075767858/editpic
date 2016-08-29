@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'graph' );
-$image-search-path: '/Library/WebServer/Documents/editpic/build/production/graph/modern/resources';
+$image-search-path: '/Library/WebServer/Documents/graph/build/production/graph/modern/resources';
 $theme-name:  dynamic( 'theme-triton' );
 $include-ext-abstractcomponent: dynamic(false);;
 $include-ext-abstractmanager: dynamic(false);;

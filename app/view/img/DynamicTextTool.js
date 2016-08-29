@@ -7,10 +7,8 @@ Ext.define('editpic.view.img.DynamicTextTool', {
 
         me.callParent();
     },
-    init: function (data) {
-        var me = this;
-        me.callParent(arguments)
-    },
+    layout: "absolute",
+
 
     init: function (data) {
         var me = this;
@@ -65,12 +63,25 @@ Ext.define('editpic.view.img.DynamicTextTool', {
     },
     refreshCanvas: function () {
         var me = this;
-        console.log(me)
-        console.log(me.getLinkValue())
-        if (me.getLinkValue()) {
+
+
+       /* if (me.getLinkValue()) {
             me.setHtml(me.dynamictext);
         } else {
             me.setHtml(me.text);
+        }*/
+        if (!me.contentPanel) {
+            me.contentPanel = Ext.create("Ext.panel.Panel", {
+                bodyStyle: {
+                    backgroundColor: "transparent"
+                },
+                y:me.fontPostion,
+                html: me.getLinkValue()?me.dynamictext:me.text
+            })
+            me.add(me.contentPanel);
+        } else{
+            me.contentPanel.setHtml(me.getLinkValue()? me.dynamictext:me.text)
         }
+
     }
 });

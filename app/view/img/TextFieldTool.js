@@ -52,7 +52,20 @@ Ext.define('editpic.view.img.TextFieldTool',
 
         refreshCanvas: function () {
             var me = this;
-            me.setHtml(me.getLinkValue());
+
+            if (!me.contentPanel) {
+                me.contentPanel = Ext.create("Ext.panel.Panel", {
+                    bodyStyle: {
+                        backgroundColor: "transparent"
+                    },
+                    html: me.getLinkValue()
+                })
+                me.add(me.contentPanel);
+            } else{
+                me.contentPanel.setHtml(me.getLinkValue())
+            }
+
+            ///me.setHtml(me.getLinkValue());
             //me.field.setValue(me.getLinkValue())
         },
         /*linkData:function(){

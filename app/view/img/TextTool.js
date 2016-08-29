@@ -36,18 +36,25 @@ Ext.define('editpic.view.img.TextTool', {
     },
     linkData: function (data) {
         var me = this;
-        if (data.text) {
-            console.log(data)
-            me.text = data.text;
-            me.setHtml(data.text)
-            //me.field.setValue(data.text)
-        }else{
-            me.setHtml("")
-        }
+        me.text = data.text;
+
         me.refreshCanvas()
     },
     refreshCanvas: function () {
-
+            var me = this;
+            if (!me.contentPanel) {
+                me.contentPanel = Ext.create("Ext.panel.Panel", {
+                    bodyStyle: {
+                        backgroundColor: "transparent"
+                    },
+                    html: me.text
+                })
+                me.add(me.contentPanel);
+            } else{
+                me.contentPanel.setHtml(me.text||"")
+            }
+            ///me.setHtml(me.getLinkValue());
+            //me.field.setValue(me.getLinkValue())
     }
 
 });

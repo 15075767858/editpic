@@ -80,19 +80,25 @@ Ext.define('editpic.view.img.LinkTool', {
 
         if (me.showFilename) {
             me.setHtml(me.linkValue);
+        }else{
+            me.setHtml("")
         }
         console.log(me.showFilename)
-        var contentPanel = Ext.create("Ext.panel.Panel", {
-            bodyStyle: {
-                backgroundColor: "transparent"
-            },
-            //y:50,
-            //height: "-50%",
-            //width: "100%",
-            html: me.aliasName
-        })
-        me.add(contentPanel);
 
+        if (!me.contentPanel) {
+            me.contentPanel = Ext.create("Ext.panel.Panel", {
+                bodyStyle: {
+                    backgroundColor: "transparent"
+                },
+                //y:50,
+                //height: "-50%",
+                //width: "100%",
+                html: me.aliasName
+            })
+            me.add(me.contentPanel);
+        } else{
+            me.contentPanel.setHtml(me.aliasName)
+        }
 
         /*if(me.linkValue){
          me.setHtml(me.aliasName)

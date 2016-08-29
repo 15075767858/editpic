@@ -19,11 +19,9 @@ Ext.define('editpic.view.panel.DevFormPanel', {
     scrollable: "y",
     resizable: true,
     collapsible: true,
-    collapsed:false,
-    width: 300,
+    //collapsed:false,
     initComponent: function () {
         var me = this;
-
         /*       me.items = [
          {
          xtype: "form",
@@ -173,20 +171,21 @@ Ext.define('editpic.view.panel.DevFormPanel', {
          }
 
          ]*/
-
-
         me.callParent()
     }
 
     , listeners: {
         boxready: function (panel) {
-
             var picpanel = Ext.create("editpic.view.panel.SetPicPanel", {
-                id: "imgGrid",
+                id: "imgGrid"
             })
             panel.add(picpanel)
 
-        }
+            setTimeout(function(){
+                panel.setCollapsed(true)
+            },50)
+        },
+
     }
 
 });

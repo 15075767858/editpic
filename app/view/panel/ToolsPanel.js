@@ -16,7 +16,7 @@ Ext.define('editpic.view.panel.ToolsPanel', {
     resizable: true,
     scrollable:"y",
     collapsible:true,
-    collapsed:false,
+    collapsed:true,
 
     //collapsed:true,
     initComponent: function () {

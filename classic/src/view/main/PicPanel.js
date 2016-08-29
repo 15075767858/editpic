@@ -2,6 +2,23 @@
  * 这是绘图中心的主面板,
  * 是绘图区域
  * */
+
+/*var a = {x:100,y:100,width:100,height:100}
+ var b = {x:101,y:101,width:99,height:99}
+ isCollsionRect(a,b)
+ function isCollsionRect(mR,oR){
+
+ if(mR.x<oR.x&mR.width>oR.width&mR.height>oR.height){
+
+ return true;
+
+ }else{
+
+ return false;
+
+ }
+
+ }*/
 Ext.define('editpic.view.panel.PicPanel', {
     extend: 'Ext.panel.Panel',
     xtype: "picpanel",
@@ -32,13 +49,98 @@ Ext.define('editpic.view.panel.PicPanel', {
         height: "{height}",
         width: "{width}",
         title: "You Device {width} x {height}",
-
         bodyStyle: {
             background: "#{bodyColor}"
             //background:"red"
         }
     },
     //id: "maindrawpanel",
+    initComponent: function () {
+        var me = this;
+        me.listeners = {
+            el: {
+                mousedown: function (e, target, oP) {
+                    console.log(arguments)
+
+                    me.selectPanel = Ext.create("Ext.panel.Panel", {
+                        bodyStyle: {
+                            backgroundColor: "red"
+                        },
+                        x: e.pageX - me.body.getLeft(),
+                        y: e.pageY - me.body.getTop(),
+                        width: 1,
+                        height: 1
+                    })
+                    me.add(me.selectPanel)
+                    document.onmousemove = function (moveEven) {
+                        var dX = e.pageX, dY = e.pageY, mX = moveEven.pageX, mY = moveEven.pageY;
+                        var selectWidth = Math.abs(dX - mX);
+                        var selectHeight = Math.abs(dY - mY);
+                        me.selectPanel.setWidth(selectWidth);
+                        me.selectPanel.setHeight(selectHeight);
+
+                        if (dX > mX & dY > mY) {
+                            me.selectPanel.setX(moveEven.pageX)
+                            me.selectPanel.setY(moveEven.pageY)
+                            me.selectPanel.x=moveEven.pageX-me.body.getLeft();
+                            me.selectPanel.y=moveEven.pageY-me.body.getTop();
+                        }
+                        if (dX > mX & dY < mY) {
+                            me.selectPanel.setX(moveEven.pageX)
+                            me.selectPanel.x=moveEven.pageX-me.body.getLeft();
+
+                        }
+                        if (dX < mX & dY > mY) {
+                            me.selectPanel.setY(moveEven.pageY)
+                            me.selectPanel.y=moveEven.pageY-me.body.getTop();
+
+                        }
+
+                    }
+                    document.onmouseup = function () {
+                        console.log(testpanel = me.selectPanel)
+                        selectComponent.call(me, me.selectPanel)
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                        me.selectPanel.close()
+                    }
+                },
+
+            }
+        }
+        function selectComponent(data) {
+            var me = this;
+            var x = data.x, y = data.y, width = data.width, height = data.height;
+            if (!me.items) {
+                return;
+            }
+            var items = me.items.items;
+            for (var i = 0; i < items.length; i++) {
+                var isCollsion = isCollsionRect(me.selectPanel, items[i]);
+                if (isCollsion) {
+                    console.log(items[i])
+
+                }
+            }
+        }
+
+        function isCollsionRect(mR, oR) {
+
+            if (mR.x < oR.x & mR.width > oR.width & mR.height > oR.height) {
+
+                return true;
+
+            } else {
+
+                return false;
+
+            }
+
+        }
+
+
+        me.callParent();
+    },
 
     getImages: function () {
         var me = this;
@@ -128,12 +230,12 @@ Ext.define('editpic.view.panel.PicPanel', {
             me.add(img);
             img.init(data[i])
             /*(function (data) {
-                requestAnimFrame(function () {
-                    var img = My.createImg(data)
-                    me.add(img);
-                    img.init(data)
-                })
-            })(data[i])*/
+             requestAnimFrame(function () {
+             var img = My.createImg(data)
+             me.add(img);
+             img.init(data)
+             })
+             })(data[i])*/
             /*(function (data,i) {
              setTimeout(function () {
              var img = My.createImg(data)
@@ -275,10 +377,12 @@ Ext.define('editpic.view.panel.PicPanel', {
         boxready: "boxready",
         add: function () {
             var me = this;
+            console.log(arguments)
             me.getImages()
             return true
         },
         el: {
+
             contextmenu: function (e) {
                 e.stopEvent()
                 var me = this.component;

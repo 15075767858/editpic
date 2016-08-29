@@ -56,7 +56,7 @@ Ext.define('editpic.view.main.Main', {
         } ,{
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.001")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.03")
             }
         }
     ],
@@ -201,12 +201,10 @@ Ext.define('editpic.view.main.Main', {
                         mainPanel.getDockedItems()[1].hide();
 
                     }
-
                     My.linkManger.init()
                 }
             }
         },
-
         {
             xtype: "toolspanel",
             border: true,
@@ -219,7 +217,7 @@ Ext.define('editpic.view.main.Main', {
         },{
             xtype: "editpic.svgstree",
             id: "imgTreePanel",
-            region: 'east',
+            region: 'west',
             collapsible: true
         },
     ]

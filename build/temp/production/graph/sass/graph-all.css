@@ -4,7 +4,7 @@ Error: File to import not found or unreadable: compass/css3.
         from line 791 of graph-all.scss
 
 1: $app-name:  dynamic( 'graph' );
-2: $image-search-path: '/Library/WebServer/Documents/editpic/build/production/graph/modern/resources';
+2: $image-search-path: '/Library/WebServer/Documents/graph/build/production/graph/modern/resources';
 3: $theme-name:  dynamic( 'theme-triton' );
 4: $include-ext-abstractcomponent: dynamic(false);;
 5: $include-ext-abstractmanager: dynamic(false);;
@@ -71,4 +71,4 @@ graph-all.scss:791
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: compass/css3.\A         on line 4 of ../../../../../ext/modern/theme-base/sass/etc/all.scss\A         from line 791 of graph-all.scss\A \A 1: $app-name:  dynamic( 'graph' );\A 2: $image-search-path: '/Library/WebServer/Documents/editpic/build/production/graph/modern/resources';\A 3: $theme-name:  dynamic( 'theme-triton' );\A 4: $include-ext-abstractcomponent: dynamic(false);;\A 5: $include-ext-abstractmanager: dynamic(false);;\A 6: $include-ext-abstractplugin: dynamic(true);;\A 7: $include-ext-actionsheet: dynamic(false);;\A 8: $include-ext-ajax: dynamic(true);;\A 9: $include-ext-anim: dynamic(false);;"; }
+  content: "Error: File to import not found or unreadable: compass/css3.\A         on line 4 of ../../../../../ext/modern/theme-base/sass/etc/all.scss\A         from line 791 of graph-all.scss\A \A 1: $app-name:  dynamic( 'graph' );\A 2: $image-search-path: '/Library/WebServer/Documents/graph/build/production/graph/modern/resources';\A 3: $theme-name:  dynamic( 'theme-triton' );\A 4: $include-ext-abstractcomponent: dynamic(false);;\A 5: $include-ext-abstractmanager: dynamic(false);;\A 6: $include-ext-abstractplugin: dynamic(true);;\A 7: $include-ext-actionsheet: dynamic(false);;\A 8: $include-ext-ajax: dynamic(true);;\A 9: $include-ext-anim: dynamic(false);;"; }

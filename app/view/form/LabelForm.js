@@ -253,8 +253,20 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             )
             labelFormItems.push({
-                name:"fontPostion",fieldLabel:"font postion",xtype:"slider",
-                minValue:0,maxValue:values.height
+                name:"fontPostion",
+                fieldLabel:"font postion",
+                xtype:"slider",
+                minValue:0,
+                configName:"mySetFontPosition",
+                maxValue:values.height,
+                bind:{maxValue:"{height.value}"},
+                value:values.fontPostion||values.height/2-10,
+                listeners: {
+                    values: values,
+                    change: function(field,newValue){
+                        values.mySetFontPosition(newValue)
+                    }
+                }
             })
             labelFormItems.push({
                 name: "boxShadow", fieldLabel: "shadow", allowBlank: true, xtype: "textfield",
@@ -444,12 +456,16 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             },
             {
-                name: "height", fieldLabel: "height",
+                name: "height",
+                fieldLabel: "height",
                 configName: "mySetHeight",
-
                 xtype: 'numberfield',
                 step: 1,
                 minValue: 1,
+                reference:"height",
+                publishes: [
+                    "value"
+                ],
                 listeners: {
                     values: values,
                     change: "mySetConfig"

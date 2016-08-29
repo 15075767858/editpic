@@ -255,7 +255,6 @@ Ext.define('editpic.view.main.MainController', {
                 },
                 uploadcomplete: function () {
                     My.delayToast("Status", "File Upload successfully .");
-
                 }
             }
         )
@@ -326,33 +325,62 @@ Ext.define('editpic.view.main.MainController', {
         var win = Ext.create("editpic.view.window.UploadWindow", {
             url: '/upload.php?par=upload',
             uploadcomplete: function (obj, files) {
-                Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
-                win.close()
-                var namesStr = ""
-                var arr = [];
-                for (var i = 0; i < files.length; i++) {
-                    arr.push(files[i].name)
-                    namesStr += files[i].name + ",";
-                }
-                My.AjaxSimplePostAsync(
-                    {
-                        par: 'afterUpload',
-                        names: namesStr.substr(0, namesStr.length - 1),
-                        nameArr: Ext.encode(arr)
-                    }, "/upload.php?par=afterUpload", function () {
-                        console.log(arguments)
-                        Ext.Msg.show({
-                            title: 'Massage',
-                            message: 'graph update success .',
-                            buttons: Ext.Msg.YES,
-                            //icon: Ext.Msg.INFO,
-                            fn: function (btn) {
-                                if (btn === 'yes') {
-                                    location.reload()
-                                }
-                            }
-                        });
+                console.log(files)
+                My.AjaxAsync("/upload.php", "", {
+                    par: "system",
+                    command: "chmod 777 * -R"
+                })
+                if (files.length == 1) {
+                    var file = files[0];
+                    var fn = file.name;
+                    Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
+
+                    My.AjaxAsync("/upload.php", resFn, {
+                        par: "system",
+                        command: "tar  -xzvf  " + fn
                     })
+
+                } else {
+                    var namesStr = ""
+                    var arr = [];
+                    for (var i = 0; i < files.length; i++) {
+                        arr.push(files[i].name)
+                        namesStr += files[i].name + ",";
+                    }
+                    My.AjaxSimplePostAsync(
+                        {
+                            par: 'afterUpload',
+                            names: namesStr.substr(0, namesStr.length - 1),
+                            nameArr: Ext.encode(arr)
+                        }, "/upload.php?par=afterUpload", resFn
+                    )
+
+
+                }
+
+                function resFn() {
+                    Ext.Msg.show({
+                        title: 'Massage',
+                        message: 'graph update success .',
+                        buttons: Ext.Msg.YES,
+                        //icon: Ext.Msg.INFO,
+                        fn: function (btn) {
+
+                            My.AjaxAsync("/upload.php", "", {
+                                par: "system",
+                                command: "chmod 777 * -R"
+                            })
+
+                            if (btn === 'yes') {
+                                location.reload()
+                            }
+                        }
+                    });
+                }
+
+                win.close()
+
+
             }
 
         })
@@ -600,7 +628,7 @@ My.linkManger.init = function () {
 
     var interval1 = setInterval(My.initLinkValue, 8000)
 }
-My.initLinkValue=function () {
+My.initLinkValue = function () {
 
     var data = {
         //par: "getLinkValues",
@@ -681,17 +709,17 @@ My.initComponentConfig = {
             return true;
         }
     },
-    linkInfo:function(){
-        var resJson={};
-        var me=this;
-        My.Ajax("resources/main.php",function(response){
+    linkInfo: function () {
+        var resJson = {};
+        var me = this;
+        My.Ajax("resources/main.php", function (response) {
             resJson = Ext.decode(response.responseText);
-        },{
-            par:'linkInfo',
-            ip:me.ip,
-            port:me.port,
-            nodename:me.nodename,
-            type:me.type
+        }, {
+            par: 'linkInfo',
+            ip: me.ip,
+            port: me.port,
+            nodename: me.nodename,
+            type: me.type
         })
         return resJson;
     },
@@ -701,15 +729,15 @@ My.initComponentConfig = {
         if (!me.isLinkData()) {
             return;
         }
-        var linkJson=me.linkInfo();
-        if(!(linkJson.ip&linkJson.nodename)){
-            setTimeout(function(){
+        var linkJson = me.linkInfo();
+        if (!(linkJson.ip & linkJson.nodename)) {
+            setTimeout(function () {
                 me.mySubscribe();
-            },My.eachDelay)
+            }, My.eachDelay)
 
-            return ;
+            return;
         }
-        console.log("开始监听 ip=" + me.ip + "nodename=" + me.nodename+" "+me.type+"="+me.value);
+        console.log("开始监听 ip=" + me.ip + "nodename=" + me.nodename + " " + me.type + "=" + me.value);
         console.log(me);
         var subnode = me.nodename.substr(0, 4) + ".8.*";
 
@@ -726,20 +754,20 @@ My.initComponentConfig = {
 
                 var arr = resJson.value.split("\r\n");
                 console.log(arr)
-                if(arr.length!=3){
+                if (arr.length != 3) {
                     console.log("length ! = 3")
                     return;
                 }
 
-                if(arr[0]!=me.nodename){
+                if (arr[0] != me.nodename) {
                     console.log(arr[0])
                     return;
                 }
-                if(arr[1]!=me.type){
+                if (arr[1] != me.type) {
                     console.log(arr[1])
                     return;
                 }
-                if(arr[2]!=me.linkValue){
+                if (arr[2] != me.linkValue) {
                     console.log(arr[2])
                     me.setLinkValue(arr[2])
                 }
@@ -988,25 +1016,7 @@ My.initComponentConfig = {
         }
     }
     ,
-    moveController: function (e) {
-        if (!e.keyCode) {
-            return;
-        }
-        var me = this;
-        if (e.keyCode == 37) {
-            me.mySetX(me.x - 1)
-        }
-        if (e.keyCode == 38) {
-            me.mySetY(me.y - 1)
-        }
-        if (e.keyCode == 39) {
-            me.mySetX(me.x + 1)
-        }
-        if (e.keyCode == 40) {
-            me.mySetY(me.y + 1)
-        }
-    }
-    ,
+
     openMenu: function (ok, cancel) {
         var me = this;
 
@@ -1039,6 +1049,11 @@ My.initComponentConfig = {
         }
 
         //console.log(arguments)
+        me.createMoveField()
+    }
+    ,
+    createMoveField: function (focusFn, leaveFn) {
+        var me = this;
         var divs = me.el.dom.querySelectorAll(".x-resizable-handle");
         for (var i = 0; i < divs.length; i++) {
             divs[i].style.opacity = 1
@@ -1048,12 +1063,10 @@ My.initComponentConfig = {
             width: 1,
             height: 1,
             listeners: {
-                specialkey: function (field, e) {
-                    console.log(arguments)
+                specialkey: focusFn || function (field, e) {
                     me.moveController(e)
                 },
-                focusleave: function () {
-                    console.log("鼠标离开")
+                focusleave: leaveFn || function () {
                     for (var i = 0; i < divs.length; i++) {
                         divs[i].style.opacity = 0
                     }
@@ -1065,6 +1078,25 @@ My.initComponentConfig = {
         textfield.setZIndex(-1)
         textfield.focus()
         textfield.focus()
+
+    },
+    moveController: function (e) {
+        if (!e.keyCode) {
+            return;
+        }
+        var me = this;
+        if (e.keyCode == 37) {
+            me.mySetX(me.x - 1)
+        }
+        if (e.keyCode == 38) {
+            me.mySetY(me.y - 1)
+        }
+        if (e.keyCode == 39) {
+            me.mySetX(me.x + 1)
+        }
+        if (e.keyCode == 40) {
+            me.mySetY(me.y + 1)
+        }
     }
     ,
     clientOpenMenu: function () {
@@ -1606,7 +1638,7 @@ My.createImg = function (data) {
     }
     return component;
 }
-My.eachDelay=1000*60*3
+My.eachDelay = 1000 * 60 * 3
 window.requestAnimFrame = (function () {
     return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
         function (/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
