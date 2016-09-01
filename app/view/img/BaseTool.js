@@ -370,7 +370,7 @@ Ext.define('editpic.view.img.BaseTool', {
         if(me.isLinkData(data)){
             me.setLinkValue();
         }
-
+        me.refreshCanvas()
     },
 
     /*linkData: function (data) {
@@ -527,6 +527,7 @@ Ext.define('editpic.view.img.BaseTool', {
                 //console.log(arguments)
                 me.setStyle("border", "none");
             })
+
         },
         resize: function (me, width, height) {
             me.mySetWidth(width);
@@ -535,6 +536,7 @@ Ext.define('editpic.view.img.BaseTool', {
         move: function (me, x, y) {
             me.mySetX(x)
             me.mySetY(y)
+            console.log("move")
         },
         el: {
             scope: "this",

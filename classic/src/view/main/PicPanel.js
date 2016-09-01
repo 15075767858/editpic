@@ -61,11 +61,18 @@ Ext.define('editpic.view.panel.PicPanel', {
             el: {
                 mousedown: function (e, target, oP) {
                     console.log(arguments)
+                    me.unSelect()
 
+                    if (me.body.getTop() > e.pageY) {
+                        return;
+                    }
                     me.selectPanel = Ext.create("Ext.panel.Panel", {
                         bodyStyle: {
-                            backgroundColor: "red"
+                            //backgroundColor: "red"
+                            backgroundColor: "transparent"
                         },
+                        border:true,
+                        id: "selectPanel",
                         x: e.pageX - me.body.getLeft(),
                         y: e.pageY - me.body.getTop(),
                         width: 1,
@@ -82,30 +89,28 @@ Ext.define('editpic.view.panel.PicPanel', {
                         if (dX > mX & dY > mY) {
                             me.selectPanel.setX(moveEven.pageX)
                             me.selectPanel.setY(moveEven.pageY)
-                            me.selectPanel.x=moveEven.pageX-me.body.getLeft();
-                            me.selectPanel.y=moveEven.pageY-me.body.getTop();
+                            me.selectPanel.x = moveEven.pageX - me.body.getLeft();
+                            me.selectPanel.y = moveEven.pageY - me.body.getTop();
                         }
                         if (dX > mX & dY < mY) {
                             me.selectPanel.setX(moveEven.pageX)
-                            me.selectPanel.x=moveEven.pageX-me.body.getLeft();
+                            me.selectPanel.x = moveEven.pageX - me.body.getLeft();
 
                         }
                         if (dX < mX & dY > mY) {
                             me.selectPanel.setY(moveEven.pageY)
-                            me.selectPanel.y=moveEven.pageY-me.body.getTop();
+                            me.selectPanel.y = moveEven.pageY - me.body.getTop();
 
                         }
 
                     }
                     document.onmouseup = function () {
-                        console.log(testpanel = me.selectPanel)
                         selectComponent.call(me, me.selectPanel)
                         document.onmousemove = null;
                         document.onmouseup = null;
                         me.selectPanel.close()
                     }
                 },
-
             }
         }
         function selectComponent(data) {
@@ -114,34 +119,83 @@ Ext.define('editpic.view.panel.PicPanel', {
             if (!me.items) {
                 return;
             }
-            var items = me.items.items;
-            for (var i = 0; i < items.length; i++) {
-                var isCollsion = isCollsionRect(me.selectPanel, items[i]);
-                if (isCollsion) {
-                    console.log(items[i])
-
+            me.items.each(function (items, index, length) {
+                var me = this;
+                if (items.selectStyle) {
+                    var isCollsion = isCollsionRect(me.selectPanel, items)
+                    if (isCollsion) {
+                        items.selectStyle(true);
+                    }
                 }
-            }
+            }, me)
+
+            me.textfield = me.createMoveField(
+                function (field, e) {
+                    me.items.each(function (item, index, length) {
+                        if (!!item.moveController & item.isselect) {
+                            item.moveController(e)
+                        }
+                    }, me)
+                },
+                function () {
+                    me.unSelect()
+                }
+            )
+            console.log(me.textfield)
         }
 
         function isCollsionRect(mR, oR) {
-
-            if (mR.x < oR.x & mR.width > oR.width & mR.height > oR.height) {
-
+            var mRwidth = mR.x + mR.width;
+            var mRheight = mR.y + mR.height;
+            var oRwidth = oR.x + oR.width;
+            var oRheight = oR.y + oR.height;
+            console.log(mR.x < oR.x & mR.y < oR.y & mR.width > oR.width & mR.height > oR.height)
+            if (mR.x < oR.x & mR.y < oR.y & mRwidth > oRwidth & mRheight > oRheight) {
                 return true;
-
             } else {
-
                 return false;
-
             }
-
         }
-
 
         me.callParent();
     },
-
+    unSelect: function () {
+        var me = this;
+        if (me.selectPanel) {
+            me.remove(me.selectPanel)
+            delete me.selectPanel
+        }
+        if (me.textfield) {
+            me.textfield.up().remove(me.textfield)
+            //me.remove(me.textfield);
+            delete me.textfield
+        }
+        me.items.each(function (item, index, length) {
+            if (item.selectStyle) {
+                item.selectStyle(false)
+            }
+        })
+    },
+    createMoveField: function (focusFn, leaveFn) {
+        var me = this;
+        var textfield = Ext.create("Ext.form.field.Text", {
+            hidden: false,
+            width: 1,
+            height: 1,
+            listeners: {
+                specialkey: focusFn,
+                focusleave: leaveFn || function () {
+                    me.selectStyle(false)
+                    textfield.up().remove(textfield)
+                }
+            }
+        })
+        me.add(textfield)
+        textfield.setZIndex(-1)
+        textfield.focus()
+        textfield.focus()
+        return textfield;
+    },
     getImages: function () {
         var me = this;
         if (!me.items) {
@@ -377,7 +431,6 @@ Ext.define('editpic.view.panel.PicPanel', {
         boxready: "boxready",
         add: function () {
             var me = this;
-            console.log(arguments)
             me.getImages()
             return true
         },

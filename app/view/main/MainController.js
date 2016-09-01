@@ -1029,8 +1029,7 @@ My.initComponentConfig = {
 
             }
         })
-    }
-    ,
+    },
     click: function (e, t, eOpts) {
 
         var me = this;
@@ -1050,35 +1049,51 @@ My.initComponentConfig = {
 
         //console.log(arguments)
         me.createMoveField()
-    }
-    ,
-    createMoveField: function (focusFn, leaveFn) {
+    },
+    selectStyle: function (isSelect) {
         var me = this;
         var divs = me.el.dom.querySelectorAll(".x-resizable-handle");
-        for (var i = 0; i < divs.length; i++) {
-            divs[i].style.opacity = 1
-        }
-        var textfield = Ext.create("Ext.form.field.Text", {
-            hidden: false,
-            width: 1,
-            height: 1,
-            listeners: {
-                specialkey: focusFn || function (field, e) {
-                    me.moveController(e)
-                },
-                focusleave: leaveFn || function () {
-                    for (var i = 0; i < divs.length; i++) {
-                        divs[i].style.opacity = 0
-                    }
-                    textfield.up().remove(textfield)
-                }
-            }
-        })
-        me.up().add(textfield)
-        textfield.setZIndex(-1)
-        textfield.focus()
-        textfield.focus()
 
+        if (isSelect) {
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].style.opacity = 1
+                me.isselect = true;
+            }
+        } else {
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].style.opacity = 0
+                me.isselect = false;
+            }
+        }
+    },
+    createMoveField: function (focusFn, leaveFn) {
+        var me = this;
+        me.selectStyle(true);
+        var picPanel = me.up();
+        picPanel.createMoveField(function (field, e) {
+            me.moveController(e)
+        }, function () {
+            me.selectStyle(false)
+            picPanel.remove(this)
+        })
+        /*var textfield = Ext.create("Ext.form.field.Text", {
+         hidden: false,
+         width: 1,
+         height: 1,
+         listeners: {
+         specialkey: focusFn || function (field, e) {
+         me.moveController(e)
+         },
+         focusleave: leaveFn || function () {
+         me.selectStyle(false)
+         textfield.up().remove(textfield)
+         }
+         }
+         })
+         me.up().add(textfield)
+         textfield.setZIndex(-1)
+         textfield.focus()
+         textfield.focus()*/
     },
     moveController: function (e) {
         if (!e.keyCode) {
@@ -1109,6 +1124,8 @@ My.initComponentConfig = {
     contextmenu: function (e) {
 
         e.stopEvent()
+        console.log(this)
+
         if (My.getSearch()) {
 
             return;
@@ -1635,6 +1652,12 @@ My.createImg = function (data) {
     }
     if (data.itype == 5) {
         component = Ext.create("editpic.view.img.DynamicTextTool", data)
+    }
+    if (data.itype == 8) {
+        component = Ext.create("editpic.view.img.ClockTool", data)
+    }
+    if (data.itype == 13) {
+        component = Ext.create("editpic.view.img.TimeTool", data)
     }
     return component;
 }

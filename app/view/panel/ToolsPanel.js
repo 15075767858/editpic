@@ -54,11 +54,11 @@ Ext.define('editpic.view.panel.ToolsPanel', {
                 {src: 'resources/icons/dynamictext2.png', caption: 'dynamic text',itype:5,disabled:false},
                 //{src: 'resources/icons/slider_16px.png', caption: 'slider',itype:6,disabled:true},
                 {src: 'resources/icons/url2.png', caption: 'url',type:0,itype:7,disabled:true},
-                {src: 'resources/icons/clock.png', caption: 'clock',itype:8,disabled:true},
+                {src: 'resources/icons/clock.png', caption: 'clock',itype:8,disabled:false},
                 {src: 'resources/icons/OnOff.png', caption: 'on off',itype:10,disabled:true},
                 {src: 'resources/icons/path.png', caption: 'path',itype:11,disabled:true},
                 {src: 'resources/icons/schdule.png', caption: 'schdule',itype:12,disabled:true},
-                {src: 'resources/icons/time.png', caption: 'time',itype:13,disabled:true},
+                {src: 'resources/icons/time.png', caption: 'time',itype:13,disabled:false},
                 {src: 'resources/icons/video.png', caption: 'video',itype:14,disabled:true},
                 {src: 'resources/icons/weather.png', caption: 'weather',itype:15,disabled:true}
             ]

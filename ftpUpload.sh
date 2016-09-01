@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd /Library/WebServer/Documents/editpic/build/production
+cd /Library/WebServer/Documents/graph/build/production
 ftp  -n<<!
 open 192.168.253.253
 user
@@ -10,4 +10,3 @@ ls
 put graph.tar.bz2
 close
 bye
-

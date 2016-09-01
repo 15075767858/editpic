@@ -6,39 +6,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4568aa7c-9baf-4272-89c0-4058b3e5febd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/autoInstallPackage/autoInstallGraph.aa" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/autoInstallPackage.tar.bz2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/autoInstallPackage/autoInstallGraph.aa" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/autoInstallPackage/autoInstallGraph.ab" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/autoInstallPackage/autoInstallGraph.ac" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/autoGraph.tar.bz2" afterPath="$PROJECT_DIR$/build/production/autoGraph.tar.bz2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph.tar.bz2" afterPath="$PROJECT_DIR$/build/production/graph.tar.bz2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/form/LabelForm.js" afterPath="$PROJECT_DIR$/app/view/form/LabelForm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/BaseTool.js" afterPath="$PROJECT_DIR$/app/view/img/BaseTool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/DynamicTextTool.js" afterPath="$PROJECT_DIR$/app/view/img/DynamicTextTool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/LinkTool.js" afterPath="$PROJECT_DIR$/app/view/img/LinkTool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/TextFieldTool.js" afterPath="$PROJECT_DIR$/app/view/img/TextFieldTool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/TextTool.js" afterPath="$PROJECT_DIR$/app/view/img/TextTool.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/MainController.js" afterPath="$PROJECT_DIR$/app/view/main/MainController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" afterPath="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/ToolsPanel.js" afterPath="$PROJECT_DIR$/app/view/panel/ToolsPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic.json" afterPath="$PROJECT_DIR$/build/production/graph/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/app.js" afterPath="$PROJECT_DIR$/build/production/graph/classic/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern.json" afterPath="$PROJECT_DIR$/build/production/graph/modern.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern/app.js" afterPath="$PROJECT_DIR$/build/production/graph/modern/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/config.rb" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/config.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.css" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss.tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sencha-compiler/app/full-page-master-bundle.js" afterPath="$PROJECT_DIR$/build/temp/production/graph/sencha-compiler/app/full-page-master-bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss.tmp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/Main.js" afterPath="$PROJECT_DIR$/classic/src/view/main/Main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" afterPath="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ftpUpload.sh" afterPath="$PROJECT_DIR$/ftpUpload.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modern.json" afterPath="$PROJECT_DIR$/modern.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.sh" afterPath="$PROJECT_DIR$/run.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
     </list>
     <ignored path="editpic.iws" />
@@ -67,13 +55,77 @@
     <favorites_list name="editpic" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="PicPanel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/PicPanel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+              <caret line="86" column="17" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
+              <folding>
+                <element signature="e#8117#9166#0" expanded="false" />
+                <element signature="e#9278#9481#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ToolsPanel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/panel/ToolsPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="60" column="89" selection-start-line="60" selection-start-column="89" selection-end-line="60" selection-end-column="89" />
+              <folding>
+                <marker date="1472720344000" expanded="true" signature="2827:2846" placeholder="..." />
+                <marker date="1472720344000" expanded="true" signature="2862:2874" placeholder="..." />
+                <marker date="1472720344000" expanded="true" signature="2946:2965" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5062167">
+              <caret line="58" column="64" selection-start-line="58" selection-start-column="64" selection-end-line="58" selection-end-column="64" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClockTool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/img/ClockTool.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeTool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/img/TimeTool.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5094337">
+              <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1659" column="53" selection-start-line="1659" selection-start-column="53" selection-end-line="1659" selection-end-column="53" />
+              <folding>
+                <element signature="e#25863#26739#0" expanded="false" />
+                <element signature="e#27097#27470#0" expanded="false" />
+                <element signature="e#40035#40236#0" expanded="false" />
+                <element signature="e#40902#42113#0" expanded="false" />
+                <element signature="e#43044#43462#0" expanded="false" />
+                <marker date="1472720312000" expanded="true" signature="45338:45355" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,27 +134,11 @@
         <entry file="file://$PROJECT_DIR$/app/view/img/BaseTool.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+              <caret line="348" column="9" selection-start-line="348" selection-start-column="9" selection-end-line="348" selection-end-column="9" />
               <folding>
                 <element signature="e#9192#9555#0" expanded="false" />
-                <element signature="e#9672#12826#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61752516">
-              <caret line="1059" column="9" selection-start-line="1059" selection-start-column="9" selection-end-line="1059" selection-end-column="9" />
-              <folding>
-                <element signature="e#25863#26739#0" expanded="false" />
-                <element signature="e#27097#27470#0" expanded="false" />
-                <element signature="e#39608#39809#0" expanded="false" />
-                <element signature="e#40475#41686#0" expanded="false" />
-                <element signature="e#42617#43035#0" expanded="false" />
-                <marker date="1472461031000" expanded="true" signature="44911:44928" placeholder="..." />
+                <element signature="e#9698#12852#0" expanded="false" />
+                <element signature="e#13609#14621#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -127,8 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ext/packages/core/src/ComponentManager.js" />
-        <option value="$PROJECT_DIR$/app/view/window/CanvasConponmentWindow.js" />
         <option value="$PROJECT_DIR$/resources/index.html" />
         <option value="$PROJECT_DIR$/app/view/panel/SetPicPanelController.js" />
         <option value="$PROJECT_DIR$/app/view/img/CanvasImgController.js" />
@@ -150,7 +184,6 @@
         <option value="$PROJECT_DIR$/resources/keybord/keyboard.css" />
         <option value="$PROJECT_DIR$/ext/classic/classic/src/form/field/ComboBox.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/UploadWindow.js" />
-        <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/app/view/ux/KeyBoard.js" />
         <option value="$PROJECT_DIR$/app/view/ux/KeyBoardController.js" />
         <option value="$PROJECT_DIR$/classic/sass/src/view/main/Main.scss" />
@@ -161,7 +194,6 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/telnetTar.sh" />
-        <option value="$PROJECT_DIR$/ftpUpload.sh" />
         <option value="$PROJECT_DIR$/resources/subscribe.php" />
         <option value="$PROJECT_DIR$/app/view/img/CanvasImg.js" />
         <option value="$PROJECT_DIR$/resources/main.php" />
@@ -171,13 +203,17 @@
         <option value="$PROJECT_DIR$/app/view/img/TextFieldTool.js" />
         <option value="$PROJECT_DIR$/app/view/img/LinkTool.js" />
         <option value="$PROJECT_DIR$/app/view/img/DynamicTextTool.js" />
-        <option value="$PROJECT_DIR$/app/view/panel/ToolsPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/img/BaseTool.js" />
         <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" />
+        <option value="$PROJECT_DIR$/ftpUpload.sh" />
+        <option value="$PROJECT_DIR$/app/view/img/BaseTool.js" />
+        <option value="$PROJECT_DIR$/app/view/img/ClockTool.js" />
+        <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/app/view/main/MainController.js" />
+        <option value="$PROJECT_DIR$/app/view/panel/ToolsPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/img/TimeTool.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
       </list>
     </option>
   </component>
@@ -225,6 +261,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -334,6 +371,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="panel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -362,7 +421,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -527,7 +585,7 @@
     <frame x="1920" y="-356" width="1080" height="1807" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23988439" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2591522" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07618284" sideWeight="0.6830443" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -573,53 +631,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="38" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ext/classic/theme-neutral/sass/var/Component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.25">
-          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.058252428">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35427573">
-          <caret line="846" column="0" selection-start-line="846" selection-start-column="0" selection-end-line="846" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/modern/theme-windows/sass/var/Component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5918619">
-          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/classic/sass/example/fashion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/classic/classic/src/button/Button.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="16.804375">
-          <caret line="1844" column="33" selection-start-line="1844" selection-start-column="28" selection-end-line="1844" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ext/classic/theme-classic/sass/etc/all.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -725,13 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/CanvasConponmentWindow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-33.75">
@@ -807,27 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/img/LinkTool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/img/DynamicTextTool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/img/TextFieldTool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11111111">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="80.0">
@@ -843,20 +831,6 @@
             <marker date="1472094033000" expanded="true" signature="5101:5121" placeholder="..." />
             <marker date="1472094033000" expanded="true" signature="5142:5191" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ftpUpload.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1371308">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telnetTar.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -881,42 +855,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24261603">
-          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/panel/DevFormPanel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3463588">
           <caret line="187" column="8" selection-start-line="187" selection-start-column="8" selection-end-line="187" selection-end-column="8" />
-          <folding>
-            <element signature="e#560#4204#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/ToolsPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding>
-            <marker date="1472180463000" expanded="true" signature="2825:2844" placeholder="..." />
-            <marker date="1472180463000" expanded="true" signature="2860:2872" placeholder="..." />
-            <marker date="1472180463000" expanded="true" signature="2944:2963" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -924,7 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3118" column="4" selection-start-line="3118" selection-start-column="4" selection-end-line="3118" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -932,22 +873,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+    <entry file="file://$PROJECT_DIR$/telnetTar.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding />
+        <state vertical-scroll-proportion="0.08438819">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/PicPanel.js">
+    <entry file="file://$PROJECT_DIR$/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23206751">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ftpUpload.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/SetAPicPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/GifImg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/CanvasConponmentWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5555556">
+          <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/TextFieldTool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25316456">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/LinkTool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -955,26 +936,90 @@
     <entry file="file://$PROJECT_DIR$/app/view/img/BaseTool.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <caret line="348" column="9" selection-start-line="348" selection-start-column="9" selection-end-line="348" selection-end-column="9" />
           <folding>
             <element signature="e#9192#9555#0" expanded="false" />
-            <element signature="e#9672#12826#0" expanded="false" />
+            <element signature="e#9698#12852#0" expanded="false" />
+            <element signature="e#13609#14621#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/ClockTool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/DynamicTextTool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/PicPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="17" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
+          <folding>
+            <element signature="e#8117#9166#0" expanded="false" />
+            <element signature="e#9278#9481#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61752516">
-          <caret line="1059" column="9" selection-start-line="1059" selection-start-column="9" selection-end-line="1059" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1659" column="53" selection-start-line="1659" selection-start-column="53" selection-end-line="1659" selection-end-column="53" />
           <folding>
             <element signature="e#25863#26739#0" expanded="false" />
             <element signature="e#27097#27470#0" expanded="false" />
-            <element signature="e#39608#39809#0" expanded="false" />
-            <element signature="e#40475#41686#0" expanded="false" />
-            <element signature="e#42617#43035#0" expanded="false" />
-            <marker date="1472461031000" expanded="true" signature="44911:44928" placeholder="..." />
+            <element signature="e#40035#40236#0" expanded="false" />
+            <element signature="e#40902#42113#0" expanded="false" />
+            <element signature="e#43044#43462#0" expanded="false" />
+            <marker date="1472720312000" expanded="true" signature="45338:45355" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05364807">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/ToolsPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="89" selection-start-line="60" selection-start-column="89" selection-end-line="60" selection-end-column="89" />
+          <folding>
+            <marker date="1472720344000" expanded="true" signature="2827:2846" placeholder="..." />
+            <marker date="1472720344000" expanded="true" signature="2862:2874" placeholder="..." />
+            <marker date="1472720344000" expanded="true" signature="2946:2965" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/TimeTool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5094337">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5062167">
+          <caret line="58" column="64" selection-start-line="58" selection-start-column="64" selection-end-line="58" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
