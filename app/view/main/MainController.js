@@ -164,7 +164,7 @@ Ext.define('editpic.view.main.MainController', {
                         json[text] = datas;
                     } else {
                         json = {}
-                        json[text] = datas
+                        json[text] = datas;
                     }
                     curPanel.setTitle(text)
                     My.putImageData(Ext.encode(json), text)
@@ -232,6 +232,56 @@ Ext.define('editpic.view.main.MainController', {
                 }
             ]
         })
+    },
+    deleteHandler:function(){
+        var comboStore = My.getImageNames()
+        var win = Ext.create('Ext.window.Window', {
+            title: 'Delete',
+            frame: true,
+            width: 325,
+            bodyPadding: 10,
+            autoShow: true,
+            defaultType: 'textfield',
+            defaults: {
+                anchor: '100%'
+            },
+            items: [
+                {
+                    margin: 10,
+                    xtype: "combobox",
+                    allowBlank: false,
+                    fieldLabel: 'File Name',
+                    store: comboStore,
+                    editable: false,
+                    queryMode: 'local',
+                    displayField: 'name',
+                    valueField: 'name',
+                    autoSelect: false
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Ok', handler: function () {
+                    var text = win.down("textfield").getValue();
+                    if (text == null) {
+                        Ext.Msg.alert('Info', 'Plase input file name.');
+                        return;
+                    }
+                    var json = My.getImageData();
+                    delete json[text];
+                    My.deleteImageData(Ext.encode(json),text)
+                    win.close();
+                    My.delayToast("Massage", "Delete File OK !");
+                }
+                },
+                {
+                    text: 'Cancel', handler: function () {
+                    win.close();
+                }
+                }
+            ]
+        })
+
     },
     BackupGraphice: function () {
         My.Ajax("/upload.php", function () {
@@ -514,6 +564,20 @@ My.putImageData = function (content, text) {
     })
     return data;
 }
+My.deleteImageData=function(content,text){
+    console.log(content)
+    var data = null;
+    if (!text) {
+        return data
+    }
+    My.AjaxPost("resources/main.php?par=deleteImageData", function (response) {
+
+    }, {
+        graph: text,
+        content: content
+    })
+    return data;
+}
 My.getImageNames = function () {
     var imgData = My.getImageData()
     var arr = [];
@@ -573,9 +637,38 @@ My.getDevTypeStore = function (ip, port, nodename) {
         port: port,
         nodename: nodename
     })
-
     return store;
 }
+My.getSchdules = function (ip, port) {
+    var store = null;
+    if (!ip & !port) {
+        return store;
+    }
+    My.Ajax("resources/main.php", function (response) {
+            var data = response.responseText
+            try {
+                var ojson = Ext.decode(data)
+                if (ojson["isError"]) {
+                    return store;
+                } else {
+
+                    store = Ext.create("Ext.data.Store", {
+                        fields: ['name', 'value'],
+                        data: ojson
+                    })
+
+                }
+            } catch (e) {
+            }
+        }, {
+            par: "getSchdule",
+            ip: ip,
+            port: port
+        }
+    )
+    return store;
+}
+
 My.getSearch = function () {
     var search = window.location.search;
     if (search) {
@@ -585,6 +678,12 @@ My.getSearch = function () {
         }
     }
     return false;
+}
+My.login = function (data) {
+    My.Ajax("resources/main.php?par=login", function (response) {
+
+        }, data
+    )
 }
 My.isLogin = function () {
     return My.getSession().isLogin;
@@ -1512,17 +1611,6 @@ My.initComponentConfig = {
                 }
             }
 
-            /* My.AjaxSimple({
-             par: "changevalue",
-             ip: ip,
-             port: port,
-             nodename: nodename,
-             type: "Priority_Array",
-             value: pubstr.substr(0,pubstr.length-1)
-             }, "", function () {
-             My.delayToast('Success', nodename + ' Change value Priority_Array success new value is ' + strnull.substr(0, strnull.length - 1), 0)
-             })*/
-
             My.AjaxSimple({
                 par: me.priorityValue == "NULL" ? "PresentArraySetNull" : "changevalue",
                 ip: ip,
@@ -1656,6 +1744,9 @@ My.createImg = function (data) {
     if (data.itype == 8) {
         component = Ext.create("editpic.view.img.ClockTool", data)
     }
+    if (data.itype == 12) {
+        component = Ext.create("editpic.view.img.ScheduleTool", data)
+    }
     if (data.itype == 13) {
         component = Ext.create("editpic.view.img.TimeTool", data)
     }
@@ -1668,7 +1759,70 @@ window.requestAnimFrame = (function () {
             return window.setTimeout(callback, 1000 / 60);
         };
 })();
+My.isTime = function (val) {
+    console.log(val)
+    var vals = val.split(":")
+    if (vals.length != 3) {
+        return "This field error";
+    }
+    if (!(vals[0] >= 0 & vals[0] <= 23 & vals[1] >= 0 & vals[1] <= 59 & vals[2] >= 0 & vals[2] <= 59)) {
+        return "This field error";
+    }
+    for (var i = 0; i < vals.length; i++) {
+        if (isNaN(vals[i]) || (vals[i] + "") == "-0") {
+            return "This field error";
+        }
+    }
+    return true;
+}
 
+My.devPublish = function (key, value, success, ip, port) {
+
+    Ext.Ajax.request({
+        url: "resources/main.php",
+        method: "GET",
+        async: false,
+        params: {
+            par: "devPublish",
+            key: key,
+            value: value,
+            ip: ip,
+            port: port
+        },
+        success: success || function (response) {
+            var text = response.responseText;
+            if (text == 1) {
+                My.delayToast('Success', 'Publish Ok.', 0)
+            } else {
+                //  Ext.Msg.alert('Info', 'Please download later.');
+            }
+        }
+    })
+}
+function getNetNumberValue(filename) {
+    var str = "";
+    Ext.Ajax.request({
+        url: "resources/xmlRW.php",
+        async: false,
+        params: {
+            fileName: filename || "../../../../bac_config.xml",
+            rw: "r"
+        },
+        success: function (response) {
+            var text = response.responseText
+            var xml = $($.parseXML(text));
+            str = xml.find("root net").text()
+
+        }
+    })
+    return str;
+}
+function isBarCollsion(x1, y1, x2, y2, w, h) {
+    if (x1 >= x2 && x1 <= x2 + w && y1 >= y2 && y1 <= y2 + h) {
+        return true;
+    }
+    return false;
+}
 Array.prototype.unique1 = function () {
     var n = []; //一个新的临时数组
     for (var i = 0; i < this.length; i++) //遍历当前数组

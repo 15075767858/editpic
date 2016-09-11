@@ -23,6 +23,7 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.panel.DevFormPanel",
         'editpic.view.panel.ToolsPanel',
         "Ext.window.Toast",
+        "editpic.view.login.LoginWindow",
         "editpic.view.ux.KeyBoard"
     ],
 
@@ -34,8 +35,6 @@ Ext.define('editpic.view.main.Main', {
       boxready:function(){
           var me=this
           me.getViewModel().set(My.getSession())
-
-
           //Ext.create("editpic.view.ux.KeyBoard")
           //var socket=new WebSocket("resources/test.main?ip=192.168.253.253&port=6379");
       }
@@ -45,6 +44,8 @@ Ext.define('editpic.view.main.Main', {
             text: "save", handler: "saveHandler"
         }, {
             text: "open", handler: "openHandler"
+        },{
+          text:"delete",handler:"deleteHandler"
         },
         {
             text:"Backup Graphice",handler:"BackupGraphice"
@@ -56,7 +57,7 @@ Ext.define('editpic.view.main.Main', {
         } ,{
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.05")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.07")
             }
         }
     ],

@@ -181,9 +181,14 @@ Ext.define('editpic.view.panel.DevFormPanel', {
             })
             panel.add(picpanel)
 
-            setTimeout(function(){
+            setTimeout(function () {
                 panel.setCollapsed(true)
-            },50)
+                setTimeout(function () {
+                    if (My.getSearch()) {
+                        panel.hide()
+                    }
+                }, 500)
+            }, 50)
         },
 
     }

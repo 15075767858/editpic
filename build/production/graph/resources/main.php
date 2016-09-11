@@ -51,6 +51,26 @@ if ($par == "gettypes") {
         echo json_encode($arr);
     }
 }
+if ($par == "getSchdule") {
+    $redis = getRedisConect();
+    if ($redis) {
+        $arList = array_merge($redis->keys("????601"),$redis->keys("????602"),$redis->keys("????604"),$redis->keys("????605"),$redis->keys("????606"),$redis->keys("????607"),$redis->keys("????608"),$redis->keys("????609"),$redis->keys("????610"));
+        sort($arList);
+        $arr = array();
+        foreach ($arList as $key => $value) {
+            if (is_numeric($value)) {
+                array_push($arr, array("value" => $value, "name" => $redis->hGet($value, "Object_Name")));
+            }
+        }
+        sort($arList);
+        echo json_encode($arr);
+        $redis->close();
+    } else {
+        $arr = Array("isError" => true);
+        echo json_encode($arr);
+    }
+}
+
 if ($par == 'tarHome') {
     exec("pwd", $arr);
     echo print_r($arr);
@@ -72,8 +92,8 @@ if ($par == "linkInfo") {
         $arr['ip'] = true;
         $nodename = $redis->keys($_GET['nodename'])[0];
         $arr['nodename'] = $nodename;
-        if($nodename){
-            $arr['type']=$redis->hGet($nodename,$_REQUEST['type']);
+        if ($nodename) {
+            $arr['type'] = $redis->hGet($nodename, $_REQUEST['type']);
         }
     }
     echo json_encode($arr);
@@ -82,23 +102,34 @@ if ($par == "linkInfo") {
 
 if ($par == "login") {
     session_start();
-    $userArray = array();
-    $userArray['SmartIO'] = "Admin123";
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    //  `if()
+    /*if ($_SESSION['isLogin']) {
+        echo json_encode($_SESSION);
+        exit();
+    }*/
+    $username = $_REQUEST['username'];
+    $password = $_REQUEST['password'];
 
-    if ($username == "SmartIO" & $password == "Admin123") {
-        $_SESSION['isLogin'] = 1;
-        $_SESSION['permission'] = 1;
-        $_SESSION['username'] = $username;
-        echo json_encode($_SESSION);
+    $userArr = simplexml_load_file('passwd.xml') or $userArr = false;
+    if ($userArr) {
+        $userArr = xmlToArray($userArr);
     } else {
-        $_SESSION['isLogin'] = 0;
-        $_SESSION['permission'] = 0;
-        $_SESSION['username'] = '';
+        $_SESSION['error'] = 1;
+        $_SESSION['errorinfo'] = 'Xml Open Error';
         echo json_encode($_SESSION);
+        exit();
     }
+
+    $userArr = $userArr['user'];
+    foreach ($userArr as $user) {
+        if ($user['username'] == $username & $user['password'] == $password) {
+            $_SESSION['isLogin'] = true;
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['password'] = $user['password'];
+            $_SESSION['level'] = $user['level'];
+        }
+    }
+
+    echo json_encode($_SESSION);
 }
 if ($par == "getSession") {
     session_start();
@@ -151,6 +182,17 @@ if ($par == "changevalue") {
 
 }
 
+
+function xmlToArray($simpleXmlElement)
+{
+    $simpleXmlElement = (array)$simpleXmlElement;
+    foreach ($simpleXmlElement as $k => $v) {
+        if ($v instanceof SimpleXMLElement || is_array($v)) {
+            $simpleXmlElement[$k] = xmlToArray($v);
+        }
+    }
+    return $simpleXmlElement;
+}
 
 function getRedisConect()
 {

@@ -11,9 +11,11 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
 
         console.log(itype)
+
         if (itype == 0 || itype == 1 || itype == 2 || itype == 5) {
             var nodeNameStore = My.getDevStore(me.values.ip, me.values.port)
             var nodeTypeStore = My.getDevTypeStore(me.values.ip, me.values.port, me.values.nodename);
+
 
             me.items = [
 
@@ -28,28 +30,20 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         disabled: "{!isLinkDataBase.checked}"
                     }, handler: function (field, value) {
                     var priority = me.lookup("priority");
-                    var isBindPriority=me.lookup("isBindPriority");
-                    if(!value){
+                    var isBindPriority = me.lookup("isBindPriority");
+                    if (!value) {
                         priority.hide()
                         priority.setDisabled(true)
                         isBindPriority.hide()
                         isBindPriority.setValue(value)
-                    }else{
-
+                    } else {
                         isBindPriority.show()
                     }
-
-                   /* bind: {
-                        name: 'isBindPriority',
-                            hidden: "{!isBind.checked}",
-                            disabled: "{!isBind.checked}",
-                    },*/
-
                 }
                 },
                 {
                     //xtype: "textfield",
-                    xtype:"combo",
+                    xtype: "combo",
                     flex: 3,
                     fieldLabel: "ip",
                     reference: "ipfield",
@@ -58,7 +52,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         hidden: "{!isBind.checked}",
                         disabled: "{!isBind.checked}"
                     },
-                    store:[window.location.hostname,"192.168.253.253"],
+                    store: [window.location.hostname, "192.168.253.253"],
                     value: window.location.hostname
                 },
                 {
@@ -97,7 +91,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     fieldLabel: "Object_Name",
                     displayField: 'name',
                     valueField: 'value',
-                    allowBlank:true,
+                    allowBlank: true,
                     store: nodeNameStore,
                     disabled: !values.nodename,
                     value: values.nodename,
@@ -118,14 +112,15 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         } else {
                             var devsfield = me.lookup("devsfield")
                             var typescombo = me.lookup("typescombo");
-                            devsfield.hide()
-                            typescombo.hide()
-                            //Ext.Msg.alert("Error", "Connect to database failed !");
+                            //devsfield.hide()
+                            //typescombo.hide()
+                            Ext.Msg.alert("Error", "Connect to database failed !");
                             if (combo.store) {
                                 if (combo.store.data.length > 0)
                                     combo.store.clearAll()
                             }
                         }
+
                         /*My.Ajax("resources/main.php", function (response) {
                          var data = response.responseText
                          try {
@@ -199,16 +194,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                             me.setStore(store)
                             me.setDisabled(false)
                         }
-                        /*
-                         My.Ajax("resources/main.php", function (response) {
-                         me.setStore(Ext.decode(response.responseText))
-                         me.setDisabled(false)
-                         }, {
-                         par: "gettypes",
-                         ip: ip,
-                         port: port,
-                         nodename: nodename
-                         })*/
                     }
                 },
                 {
@@ -216,11 +201,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     fieldLabel: "bind priority",
                     name: 'isBindPriority',
                     hidden: true,
-                    inputValue:true,
-                    reference: "isBindPriority",
-                    /*bind: itype != 0 || {
-                     disabled: "{!isLinkDataBase.checked}"
-                     }*/
+                    inputValue: true,
+                    reference: "isBindPriority"
                 },
 
                 {
@@ -236,9 +218,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         disabled: "{!isBindPriority.checked}",
                     },
                     items: values.getFormItems ? values.getFormItems() : []
-                },
-
-
+                }
             ]
         }
 
@@ -265,24 +245,67 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 }
             ]
         }
-        /*if (itype == 4) {
-         me.title = "Set Value"
-         me.items = [
-         {
-         xtype: "textfield", allowBlank: false, name: "linkValue", fieldLabel: "Text"
-         },{
-         xtype: 'colorfield',
-         fieldLabel: 'Font Color',
-         value:values.getFontColor(),
-         name:"fontColor",
-         listeners:{
-         change:function(field,color){
-         values.setFontColor("#"+color);
-         }
-         }
-         }
-         ]
-         }*/
+
+        if (itype == 12) {
+            var schdules = My.getSchdules(me.values.ip, me.values.port)
+            var ipFiled = {
+                xtype: "combo",
+                flex: 3,
+                fieldLabel: "ip",
+                reference: "ipfield",
+                name: "ip",
+                store: [window.location.hostname, "192.168.253.253"],
+                value: window.location.hostname
+            };
+            var portField = {
+                xtype: "textfield",
+                flex: 1,
+                fieldLabel: "port",
+                name: "port",
+                reference: "portfield",
+                value: "6379"
+            };
+
+            var linkBtnField = {
+                xtype: "button",
+                text: "link",
+                flex: 1
+            };
+
+            me.items = [
+                ipFiled,
+                portField,
+                Ext.apply(linkBtnField, {
+                    handler: function () {
+                        var ip = me.lookup("ipfield").getValue();
+                        var port = me.lookup("portfield").getValue();
+                        var store = My.getSchdules(ip, port);
+                        if (store) {
+                            var devscombo = me.lookup("devscombo")
+                            console.log(devscombo)
+                            devscombo.setStore(store)
+                        } else {
+                            Ext.Msg.alert("Error", "Connect to database failed !");
+                        }
+                    }
+                }),
+                {
+                    xtype: "combo",
+                    name: "schdule",
+                    fieldLabel: "schdule",
+                    displayField: 'name',
+                    valueField: 'value',
+                    allowBlank: true,
+                    itemId: "devscombo",
+                    reference: "devscombo",
+                    editable: true,
+                    store:schdules
+                },
+            ]
+
+        }
+
+
         me.callParent();
     },
     listeners: {

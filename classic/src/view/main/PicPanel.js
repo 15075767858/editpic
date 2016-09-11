@@ -437,7 +437,7 @@ Ext.define('editpic.view.panel.PicPanel', {
         el: {
 
             contextmenu: function (e) {
-                e.stopEvent()
+                e.stopEvent();
                 var me = this.component;
                 Ext.create("Ext.menu.Menu", {
                     x: e.pageX,

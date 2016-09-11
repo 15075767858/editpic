@@ -1,49 +1,19 @@
 Ext.define('editpic.view.img.LinkTool', {
     extend: 'editpic.view.img.BaseTool',
 
-    /*requires: [
-     'editpic.view.img.LinkToolController',
-     'editpic.view.img.LinkToolModel'
-     ],
 
-     controller: 'img-linktool',
-     viewModel: {
-     type: 'img-linktool'
-     },*/
-    /*initComponent: function () {
-     var me = this;
-     var btn = Ext.create("Ext.button.Button",
-     {}
-     )
-     me.field = btn;
-     me.items = btn;
-     me.callParent();
-     },
-     linkData: function (data) {
-     var me = this;
-     if (data.linkValue) {
-     console.log(data)
-     me.linkValue = data.linkValue;
-     me.field.setText(data.linkValue)
-     me.field.setText(data.linkValue)
-     me.field.setHandler(function () {
-
-     Ext.getCmp("mintab").addTab(data.linkValue)
-     })
-     }
-     me.refreshCanvas()
-     },*/
 
     layout: "absolute",
 
+
     initComponent: function () {
         var me = this;
-        me.callParent()
+        me.callParent();
     },
 
     init: function (data) {
         var me = this;
-        console.log(data)
+        console.log(data);
         me.aliasName = data.aliasName;
         me.showFilename = data.showFilename;
         me.callParent(arguments)
@@ -65,11 +35,6 @@ Ext.define('editpic.view.img.LinkTool', {
 
         me.refreshCanvas();
 
-        /*if (data.linkValue) {
-         me.setHtml(data.linkValue);
-         } else {
-         me.setHtml("");
-         }*/
     },
     refreshCanvas: function () {
 
@@ -80,7 +45,7 @@ Ext.define('editpic.view.img.LinkTool', {
 
         if (me.showFilename) {
             me.setHtml(me.linkValue);
-        }else{
+        } else {
             me.setHtml("")
         }
         console.log(me.showFilename)
@@ -96,7 +61,7 @@ Ext.define('editpic.view.img.LinkTool', {
                 html: me.aliasName
             })
             me.add(me.contentPanel);
-        } else{
+        } else {
             me.contentPanel.setHtml(me.aliasName)
         }
 
@@ -111,8 +76,21 @@ Ext.define('editpic.view.img.LinkTool', {
         el: {
             click: function () {
                 var me = this.component;
-                console.log(me.linkValue)
-                Ext.getCmp("mintab").addTab(me.linkValue)
+                if (My.getSearch()) {
+                    Ext.create("editpic.view.login.LoginWindow", {
+                            callbackFn: function () {
+                                var session = My.getSession();
+                                if (session.level > 99) {
+                                    Ext.getCmp("mintab").addTab(me.linkValue);
+                                } else {
+                                    Ext.Msg.alert("Error", "Permission denied .")
+                                }
+                            }
+                        }
+                    )
+                } else {
+                    Ext.getCmp("mintab").addTab(me.linkValue);
+                }
             }
         }
     }

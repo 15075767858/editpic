@@ -66,6 +66,8 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     }
                     if(itype==5||itype==3){
                         zindex=15;
+                    }else{
+                        zindex=20;
                     }
 
 

@@ -49,7 +49,7 @@ Ext.define('editpic.view.panel.ToolsPanel', {
             var me = this;
             var data = [
                 {src: 'resources/icons/input2.png', caption: 'input',itype:2,disabled:false},
-                {src: 'resources/icons/link2.png', caption: 'link',type:0,itype:3,disabled:false},
+                {src: 'resources/icons/logview.png', caption: 'link',type:0,itype:3,disabled:false},
                 {src: 'resources/icons/text_48px.png', caption: 'text',itype:4,disabled:false},
                 {src: 'resources/icons/dynamictext2.png', caption: 'dynamic text',itype:5,disabled:false},
                 //{src: 'resources/icons/slider_16px.png', caption: 'slider',itype:6,disabled:true},
@@ -57,7 +57,7 @@ Ext.define('editpic.view.panel.ToolsPanel', {
                 {src: 'resources/icons/clock.png', caption: 'clock',itype:8,disabled:false},
                 {src: 'resources/icons/OnOff.png', caption: 'on off',itype:10,disabled:true},
                 {src: 'resources/icons/path.png', caption: 'path',itype:11,disabled:true},
-                {src: 'resources/icons/schdule.png', caption: 'schdule',itype:12,disabled:true},
+                {src: 'resources/icons/schdule.png', caption: 'schdule',itype:12,disabled:false},
                 {src: 'resources/icons/time.png', caption: 'time',itype:13,disabled:false},
                 {src: 'resources/icons/video.png', caption: 'video',itype:14,disabled:true},
                 {src: 'resources/icons/weather.png', caption: 'weather',itype:15,disabled:true}
