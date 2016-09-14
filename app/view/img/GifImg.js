@@ -15,7 +15,7 @@ Ext.define('editpic.view.img.GifImg', {
         me.callParent(arguments)
 
         me.dynamicSrc = data.dynamicSrc;
-        console.log(data)
+        //console.log(data)
 
         //me.callParent
     },
@@ -47,7 +47,7 @@ Ext.define('editpic.view.img.GifImg', {
         }
 
         var canvas = me.el.dom.querySelector("canvas")
-        console.log(canvas)
+        //console.log(canvas)
         canvas.style.display = "none"
         if (canvas) {
             canvas.style.zIndex = -10;

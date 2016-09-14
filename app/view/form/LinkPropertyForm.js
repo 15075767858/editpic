@@ -18,7 +18,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
 
             me.items = [
-
                 {
                     xtype: 'checkbox',
                     fieldLabel: "bind",

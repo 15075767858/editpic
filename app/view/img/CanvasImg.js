@@ -31,7 +31,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         me.callParent();
     },
     init: function (data) {
-        console.log(data)
+        //console.log(data)
         var me = this;
         me.show()
         me.itype = data.itype;
@@ -128,7 +128,7 @@ Ext.define('editpic.view.img.CanvasImg', {
     },
     getLinkDataBase: function () {
         var me = this;
-        console.log(me.isLinkDataBase)
+//        console.log(me.isLinkDataBase)
         if (me.itype != 0) {
             return true;
         }
@@ -376,7 +376,7 @@ Ext.define('editpic.view.img.CanvasImg', {
     },
     linkData: function (ip, port, nodename, type) {
         var me = this;
-        console.log(arguments)
+//        console.log(arguments)
         if (!(!!ip & !!port & !!nodename & !!type)) {
             me.clearInterval();
             return;

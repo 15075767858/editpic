@@ -53,13 +53,14 @@ Ext.define('editpic.view.img.LinkTool', {
         if (!me.contentPanel) {
             me.contentPanel = Ext.create("Ext.panel.Panel", {
                 bodyStyle: {
-                    backgroundColor: "transparent"
+                    backgroundColor: "transparent",
                 },
                 //y:50,
                 //height: "-50%",
                 //width: "100%",
                 html: me.aliasName
             })
+            me.contentPanel.setStyle("color","red")
             me.add(me.contentPanel);
         } else {
             me.contentPanel.setHtml(me.aliasName)
@@ -77,9 +78,17 @@ Ext.define('editpic.view.img.LinkTool', {
             click: function () {
                 var me = this.component;
                 if (My.getSearch()) {
+                    var session=My.getSession();
+                    if(session.level>99){
+
+                        Ext.getCmp("mintab").addTab(me.linkValue);
+                        return ;
+                    }
+
                     Ext.create("editpic.view.login.LoginWindow", {
                             callbackFn: function () {
                                 var session = My.getSession();
+
                                 if (session.level > 99) {
                                     Ext.getCmp("mintab").addTab(me.linkValue);
                                 } else {

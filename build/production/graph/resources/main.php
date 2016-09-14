@@ -51,10 +51,11 @@ if ($par == "gettypes") {
         echo json_encode($arr);
     }
 }
+
 if ($par == "getSchdule") {
     $redis = getRedisConect();
     if ($redis) {
-        $arList = array_merge($redis->keys("????601"),$redis->keys("????602"),$redis->keys("????604"),$redis->keys("????605"),$redis->keys("????606"),$redis->keys("????607"),$redis->keys("????608"),$redis->keys("????609"),$redis->keys("????610"));
+        $arList = array_merge($redis->keys("????601"), $redis->keys("????602"), $redis->keys("????604"), $redis->keys("????605"), $redis->keys("????606"), $redis->keys("????607"), $redis->keys("????608"), $redis->keys("????609"), $redis->keys("????610"));
         sort($arList);
         $arr = array();
         foreach ($arList as $key => $value) {
@@ -136,6 +137,14 @@ if ($par == "getSession") {
     echo json_encode($_SESSION);
 
 }
+if($par=="outLogin"){
+    session_start();
+    $_SESSION['isLogin']=false;
+    $_SESSION['username']=false;
+    $_SESSION['password']=false;
+    $_SESSION['level']=0;
+
+}
 
 
 if ($par == "gettypevalue") {
@@ -181,7 +190,33 @@ if ($par == "changevalue") {
     $redis->close();
 
 }
+if ($par == "changevaluenopublish") {
+    $redis = getRedisConect();
+    if ($redis) {
 
+        $nodeName = $_REQUEST["nodename"];
+        $type = $_REQUEST["type"];
+        if (isset($_REQUEST["value"])) {
+            $value = $_REQUEST["value"];
+        }
+        if (isset($_REQUEST["value"])) {
+            $value = $_REQUEST["value"];
+        }
+        $redis->hSet($nodeName, $type, $value);
+        $redis->close();
+
+    }
+}
+
+if ($par == "devPublish") {
+    $redis = getRedisConect();
+    if ($redis) {
+        $key = $_GET["key"];
+        $value = $_GET["value"];
+        echo $redis->publish($key, $value);
+        $redis->close();
+    }
+}
 
 function xmlToArray($simpleXmlElement)
 {
@@ -265,6 +300,14 @@ if ($par == "saveImageAsHtml") {
 //    '<iframe id="iframe" src="../graph/index.html?graph=' . $graph . '"></iframe>' .
 
 }
+if ($par == "deleteImageData") {
+    $fn = "../../home/data.json";
+    $content = $_REQUEST['content'];
+    echo file_put_contents($fn, $content);
+    $graph = $_REQUEST["graph"];
+    echo unlink("../../home/" . $graph . ".html");
+    //file_put_contents("../../home/" . $graph . ".html", $str);
+}
 if ($par == "getLinkValues") {
     $datas = json_decode($_POST['datas']);
     /* if(!$datas){
@@ -339,8 +382,7 @@ function getNodeTypeValue($arr)
 }
 
 if ($par == "beforeUploadGraph") {
-    listDir("/mnt/nandflash/");
-    listDir("/var/www/");
+    listDir();
 }
 
 if ($par == "uploadGraphFiles") {
@@ -415,22 +457,104 @@ function getfiles($path, $fileArr)
     return array_values($tempArr);
 } //列出所有文件
 
-function listDir($dir)
+function listDir()
 {
+
+
+    $dir = __DIR__;
+    $index = strripos($dir, "/");
+    $dir = substr(__DIR__, 0, $index);
+    $index = strripos($dir, "/");
+    $dir = substr(__DIR__, 0, $index);
+
+    $telnet = getTelnet();
+
+    $telnet->write("cd $dir\r\n");
+
+    $telnet->write("chmod 777 *\r\n");
+
+    echo $telnet->read_till(":> ");
     if (is_dir($dir)) {
         if ($dh = opendir($dir)) {
             while (($file = readdir($dh)) !== false) {
                 if ((is_dir($dir . "/" . $file)) && $file != "." && $file != "..") {
-                    listDir($dir . "/" . $file . "/");
-                    chmod($dir . '/' . $file, 0777);
+                    $path = $dir . "/" . $file;
+                    $telnet->write("chmod 777 $path -R\r\n");
+                    echo $path;
+                    echo $telnet->read_till(":> ");
+                    echo "<br>";
                 } else {
                     if ($file != "." && $file != "..") {
-                        chmod($dir . '/' . $file, 0777);
+                        //chmod($dir . '/' . $file, 0777);
                     }
                 }
             }
             closedir($dh);
         }
     }
-}
 
+    echo $telnet->close();
+
+    /*
+        //$telnet->write("cd /mnt/nandflash/web_arm/www/program\r\n");
+
+        echo $telnet->read_till(":> ");
+
+        //$telnet->write("chmod 777 * -R\r\n");
+        $telnet->write("ls\r\n");
+        echo $telnet->read_till(":> ");
+
+        $telnet->write("sh t.bash\r\n");
+
+        echo $telnet->read_till(":> ");
+
+        */
+}
+function getTelnet(){
+    include('telnet.php');
+    //error_reporting(-1);
+    $telnetUP = simplexml_load_file('telnet.xml') or $telnetUP = false;
+    if (!$telnetUP) {
+        return;
+    }
+    $username = $telnetUP->username;
+    $password = $telnetUP->password;
+    $telnet = new telnet("192.168.253.253", 23);
+    echo $telnet->read_till("login: ");
+    $telnet->write("$username\r\n");
+    echo $telnet->read_till("password: ");
+    $telnet->write("$password\r\n");
+
+
+    return $telnet;
+}
+/*
+function listDir($dir)
+{
+
+
+        if (is_dir($dir)) {
+              if ($dh = opendir($dir)) {
+                  while (($file = readdir($dh)) !== false) {
+                      if ((is_dir($dir . "/" . $file)) && $file != "." && $file != "..") {
+                          $path = $dir . "/" . $file;
+
+                          $telnet->write("chmod 777 $path -R\r\n");
+                          echo $path;
+                          echo $telnet->read_till(":> ");
+                          echo "<br>";
+                          //listDir($dir . "/" . $file . "/");
+
+                          //chmod($dir . '/' . $file, 0777);
+                      } else {
+                          if ($file != "." && $file != "..") {
+                              //chmod($dir . '/' . $file, 0777);
+                          }
+                      }
+                  }
+                  closedir($dh);
+              }
+          }
+
+
+}*/

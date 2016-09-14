@@ -7,7 +7,7 @@ Ext.define('editpic.view.img.CanvasImgController', {
         {
             return ;
         }
-        console.log(arguments)
+        //console.log(arguments)
         me.refreshCanvas();
     },
     close:function () {

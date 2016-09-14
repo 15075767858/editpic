@@ -49,7 +49,6 @@ Ext.define('editpic.view.img.BaseTool', {
 
         me.isBind = data.isBind;
         me.linkData(data);
-        me.setFontColor(data.fontcolor);
         me.mySetConfig('font', data.font);
         //me.fontStyle=data.fontStyle;
         //me.fontVariant=data.fontVariant;
@@ -67,23 +66,24 @@ Ext.define('editpic.view.img.BaseTool', {
         me.isBindPriority = data.isBindPriority;
         me.mySetFontPosition(data.fontPostion);
         me.setFont(data.font);
+        me.setFontColor(data.fontColor);
 
         me.mySubscribe()
     },
-    mySetFontPosition:function(value){
-        var me=this;
-        if(value==undefined){
-            value=me.getHeight()/2-10;
+    mySetFontPosition: function (value) {
+        var me = this;
+        if (value == undefined) {
+            value = me.getHeight() / 2 - 10;
         }
-        console.log(me.contentPanel)
-        me.fontPostion=value;
-        if(me.contentPanel){
-            me.contentPanel.setY(value+me.getPosition()[1])
+        //console.log(me.contentPanel)
+        me.fontPostion = value;
+        if (me.contentPanel) {
+            me.contentPanel.setY(value + me.getPosition()[1])
         }
 
     },
     setBackground: function (value) {
-        console.log(value)
+        //console.log(value)
         var me = this;
         if (me.el) {
 
@@ -91,31 +91,16 @@ Ext.define('editpic.view.img.BaseTool', {
             //key连不上黑色
 
             me.setStyle("background", value);
-            me.setStyle("backgroundSize","100% 100%")
+            me.setStyle("backgroundSize", "100% 100%")
             me.background = value;
         }
     },
 
     getBackground: function () {
-        var me=this;
+        var me = this;
         return me.background;
     },
-    /* linkData: function (ip, port, nodename, type) {
 
-     var me = this;
-     console.log(arguments)
-
-     if (!(!!ip & !!port & !!nodename & !!type)) {
-     me.clearInterval();
-     return;
-     }
-     me.ip = ip;
-     me.port = port;
-     me.nodename = nodename;
-     me.type = type;
-     me.clearInterval();
-     me.setLinkValue();
-     },*/
     getInitData: function () {
         var me = this;
         console.log(me)
@@ -134,7 +119,7 @@ Ext.define('editpic.view.img.BaseTool', {
         data.type = me.type;
         data.linkValue = me.linkValue;
         data.zindex = me.zindex;
-        data.fontcolor = me.getFontColor();
+        data.fontColor = me.getFontColor();
         //data.font = me.getFont()
         data.font = me.myGetConfig("font");
         data.fontStyle = me.fontStyle;
@@ -143,13 +128,13 @@ Ext.define('editpic.view.img.BaseTool', {
         data.fontSize = me.fontSize;
         data.fontFamily = me.fontFamily;
         data.boxShadow = me.boxShadow;
-        data.fontPostion=me.fontPostion;
+        data.fontPostion = me.fontPostion;
         //data.boxShadow=me.myGetConfig("font")
         //data.backgroundColor = me.myGetBackgroundColor();
-        data.background=me.background;
+        data.background = me.background;
         me.myGetConfigEl("backgroundImage");
-        data.backgroundColor=me.backgroundColor;
-        data.backgroundImage=me.backgroundImage;
+        data.backgroundColor = me.backgroundColor;
+        data.backgroundImage = me.backgroundImage;
         data.Priority_For_Writing = me.Priority_For_Writing;
         data.priorityValue = me.priorityValue;
         data.isBindPriority = me.isBindPriority;
@@ -158,42 +143,7 @@ Ext.define('editpic.view.img.BaseTool', {
         return data;
     },
 
-    /*
-     getShadow: function () {
-     var me = this;
-     if (me.field) {
-     var input = me.field.el.dom.querySelector("input")
-     if (input) {
-     var font = input.style.font;
-     return font;
-     } else {
-     return ""
-     }
-     }
-     if (me.body) {
-     var font = me.body.getStyle("font");
-     return font;
-     } else {
-     return "";
-     }
-     },
 
-     setShadow: function (shadow) {
-     var me = this;
-
-     if (!font) {
-     return;
-     }
-     if (me.field) {
-     var input = me.field.el.dom.querySelector("input")
-     input.style.font = font;
-     return;
-     }
-     if (me.body) {
-     me.body.setStyle("font", font);
-     me.font = font;
-     }
-     },*/
     myGetConfig: function (configName) {
         var me = this;
         if (me.field) {
@@ -290,25 +240,18 @@ Ext.define('editpic.view.img.BaseTool', {
             //
             //    return parseFloat(me.linkValue);
             //}
-            if(me.linkValue===false){
+            if (me.linkValue === false) {
                 return "";
             }
 
-            
 
             return me.linkValue;
-            /*if (me.linkValue) {
-             if (!isNaN(me.linkValue)) {
-             return me.linkValue
-             }
-             return true;
-             } else {
-             return false;
-             }*/
+
         }
     },
     setFont: function (font) {
         var me = this;
+
 
         if (!font) {
             return;
@@ -318,15 +261,36 @@ Ext.define('editpic.view.img.BaseTool', {
             return;
         }
         if (me.contentPanel.body) {
-            me.contentPanel.body.setStyle("font", font);
+            setTimeout(function () {
+                me.contentPanel.body.setStyle("font", font);
+            }, 100)
             me.font = font;
+        }
+    },
+    setFontColor: function (color) {
+        var me = this;
+
+        if (!color) {
+            return;
+        }
+
+        if (!me.contentPanel) {
+            return;
+        }
+        if (me.contentPanel.body) {
+            setTimeout(function () {
+                me.contentPanel.body.setStyle("color", color);
+            }, 100)
+            me.fontColor=color;
         }
     },
     getFontColor: function () {
         var me = this;
-        if(!me.contentPanel){
+
+        if (!me.contentPanel) {
             return "#FFFFFF"
         }
+
         if (me.contentPanel.body) {
             var color = me.contentPanel.body.getColor("color");
             return color;
@@ -335,185 +299,19 @@ Ext.define('editpic.view.img.BaseTool', {
         }
     },
 
-    setFontColor: function (color) {
-        if (!color) {
-            return;
-        }
-        var me = this;
-        me.fontColor = color;
-        if(!me.contentPanel){
-            return;
-        }
-        if (me.contentPanel.body) {
-            me.contentPanel.body.setStyle("color", color);
-        }
-    },
+
     linkData: function (data) {
         var me = this;
-        /*var ip = data.ip;
-        var port = data.port;
-        var nodename = data.nodename;
-        var type = data.type;
-        me.ip = ip;
-        me.port = port;
-        me.nodename = nodename;
-        me.type = type;
 
-        console.log(data)
-        if (!(!!ip & !!port & !!nodename & !!type)) {
-
-            me.clearInterval();
-            return;
-        }*/
         me.clearInterval();
 
-        if(me.isLinkData(data)){
+        if (me.isLinkData(data)) {
             me.setLinkValue();
         }
         me.refreshCanvas()
     },
 
-    /*linkData: function (data) {
-     var me = this;
-     var ip = data.ip;
-     var port = data.port;
-     var nodename = data.nodename;
-     var type = data.type;
-     if (!(!!ip & !!port & !!nodename & !!type)) {
-     //me.clearInterval();
-     return;
-     }
-     me.ip = ip;
-     me.port = port;
-     me.nodename = nodename;
-     me.type = type;
-     //me.clearInterval();
-     me.setLinkValue();
 
-     /!*  me.interval = setInterval(function () {
-     me.setLinkValue();
-     me.refreshCanvas();
-     },500)*!/
-     /!*
-     me.interval = setInterval(function () {
-     My.AjaxAsync("resources/main.php", function (response) {
-     if (response.responseText != me.linkValue) {
-     me.linkValue = response.responseText;
-     me.refreshCanvas();
-     }
-     }, {
-     par: "gettypevalue",
-     ip: ip,
-     port: port,
-     nodename: nodename,
-     type: type
-     })
-     }, 50)*!/
-     },
-     mySetZIndex: function (value) {
-     var me = this;
-     me.setZIndex(value);
-     me.zindex = value;
-     },
-     setLinkValue: function (linkValue) {
-     var me = this;
-     me.linkValue = linkValue || My.linkManger.getValue(me);
-     me.refreshCanvas();
-     },
-
-
-
-     hasLinkValue: function () {
-     var me = this;
-     if (me.linkValue == undefined) {
-     return false;
-     } else {
-     return true;
-     }
-     },
-     getLinkValue: function () {
-     var me = this;
-     if (me.hasLinkValue()) {
-     if (me.linkValue) {
-     if (!isNaN(me.linkValue)) {
-     return parseInt(me.linkValue)
-     }
-     return true;
-     } else {
-     return false;
-     }
-     }
-     },
-
-     clearInterval: function () {
-     var me = this;
-     if (me.linkValue) {
-     delete me.linkValue;
-     }
-     if (me.interval) {
-     clearInterval(me.interval);
-     }
-     },
-     openMenu: function (ok, cancel) {
-     var me = this;
-     Ext.create("editpic.view.window.CanvasConponmentWindow", {
-     values: me,
-     ok: ok || function (data) {
-     me.init(data);
-     },
-     cancel: cancel || function () {
-
-     }
-     })
-     },
-     moveController: function (e) {
-     if (!e.keyCode) {
-     return;
-     }
-     var me = this;
-     if (e.keyCode == 37) {
-     me.mySetX(me.x - 1)
-     }
-     if (e.keyCode == 38) {
-     me.mySetY(me.y - 1)
-     }
-     if (e.keyCode == 39) {
-     me.mySetX(me.x + 1)
-     }
-     if (e.keyCode == 40) {
-     me.mySetY(me.y + 1)
-     }
-     },
-     mySetX: function (newValue) {
-     newValue = parseInt(newValue)
-     var me = this;
-     var panel = me.up("picpanel");
-     var value = newValue + panel.body.getX();
-     me.x = newValue;
-     me.setX(value);
-     },
-     mySetY: function (newValue) {
-     newValue = parseInt(newValue)
-     var me = this;
-     var panel = me.up("picpanel");
-     var value = newValue + panel.body.getY();
-     me.y = newValue;
-     me.setY(value);
-     },
-     mySetWidth: function (value) {
-     value = parseInt(value)
-     var me = this;
-     me.field.setWidth(value)
-     console.log(me.field);
-     me.setWidth(value)
-     },
-     mySetHeight: function (value) {
-     value = parseInt(value)
-     var me = this;
-     me.field.setHeight(value)
-     me.setHeight(value)
-     },
-     */
     isImg: function () {
         return false;
     },
@@ -541,36 +339,7 @@ Ext.define('editpic.view.img.BaseTool', {
         el: {
             scope: "this",
             click: "click",
-            /*click: function (e, t, eOpts) {
-             var me = this.component;
-             console.log(arguments)
-             var divs = me.el.dom.querySelectorAll(".x-resizable-handle");
-             for (var i = 0; i < divs.length; i++) {
-             divs[i].style.opacity = 1
-             }
-             var textfield = Ext.create("Ext.form.field.Text", {
-             hidden: false,
-             width: 1,
-             height: 1,
-             listeners: {
-             specialkey: function (field, e) {
-             console.log(arguments)
-             me.moveController(e)
-             },
-             focusleave: function () {
-             console.log("鼠标离开")
-             for (var i = 0; i < divs.length; i++) {
-             divs[i].style.opacity = 0
-             }
-             textfield.up().remove(textfield)
-             }
-             }
-             })
-             me.up().add(textfield)
-             textfield.setZIndex(-1)
-             textfield.focus()
-             textfield.focus()
-             },*/
+
             contextmenu: "contextmenu",
             dblclick: "dblclick",
             mousedown: function () {

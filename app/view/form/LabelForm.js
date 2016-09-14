@@ -106,6 +106,7 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             ]
         }
+
         if (itype == 4 || itype == 5) {
             labelFormItems = [
                 {
@@ -119,38 +120,33 @@ Ext.define('editpic.view.form.LabelForm', {
                     fieldLabel: "Dynamic Text",
                     disabled: itype == 4,
                     hidden: itype == 4
-                },
-                Ext.create("Ext.form.field.ComboBox", {
-                    /*store:Ext.create("Ext.data.Store",{
-                     fields:['name','color','html'],
-                     data:["white","blue","red","gray","green","black"]
-                     }),*/
-                    store: ["white", "blue", "red", "gray", "brown", "green", "black"],
-                    fieldLabel: 'Font Color',
-                    value: values.fontColor || "white",
-                    name: "fontColor",
-                    listeners: {
-                        change: function (field, newValue) {
-                            values.setFontColor(newValue);
-                            // values.backgroundColor=newValue
-                        }
-                    }
-                })/*,
-                 {
-                 xtype: 'colorfield',
-                 fieldLabel: 'Font Color',
-                 value: values.getFontColor(),
-                 name: "fontColor",
-                 listeners: {
-                 change: function (field, color) {
-                 values.setFontColor("#" + color);
-                 }
-                 }
-                 }*/
+                }
             ]
         }
 
+
+
         if (itype > 1) {
+
+            var fontColorField = Ext.create("Ext.form.field.ComboBox", {
+                /*store:Ext.create("Ext.data.Store",{
+                 fields:['name','color','html'],
+                 data:["white","blue","red","gray","green","black"]
+                 }),*/
+                store: ["white", "blue", "red", "gray", "brown", "green", "black"],
+                fieldLabel: 'Font Color',
+                value: values.fontColor || "white",
+                name: "fontColor",
+                /*listeners: {
+                    change: function (field, newValue) {
+                        values.setFontColor(newValue);
+                        // values.backgroundColor=newValue
+                    }
+                }*/
+            })
+
+            labelFormItems.push(fontColorField)
+
             if(itype==3){
                 labelFormItems.push({
                     fieldLabel:"alias",xtype:"textfield",name:"aliasName",allowBlank:true,

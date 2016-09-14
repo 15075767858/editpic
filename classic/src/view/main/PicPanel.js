@@ -71,7 +71,7 @@ Ext.define('editpic.view.panel.PicPanel', {
                             //backgroundColor: "red"
                             backgroundColor: "transparent"
                         },
-                        border:true,
+                        border: true,
                         id: "selectPanel",
                         x: e.pageX - me.body.getLeft(),
                         y: e.pageY - me.body.getTop(),
@@ -198,10 +198,11 @@ Ext.define('editpic.view.panel.PicPanel', {
     },
     getImages: function () {
         var me = this;
-        if (!me.items) {
-            return;
-        }
+
         setTimeout(function () {
+            if (!me.items) {
+                return;
+            }
             var items = me.items.items;
             var arr = []
             for (var i = 0; i < items.length; i++) {
@@ -245,64 +246,31 @@ Ext.define('editpic.view.panel.PicPanel', {
         return picpanelData;
     },
     load: function (json) {
+        var start = new Date().getTime()
         var me = this;
         me.body.setStyle("backgroundColor", json.bodyColor);
         var data = json.items;
+        var bufferContainer = Ext.create("Ext.panel.Panel", {
+            hidden: true
+        })
         for (var i = 0; i < data.length; i++) {
-            /*var component;
-             console.log(data[i])
-             if (data[i].itype == 0) {
-             component = Ext.create("editpic.view.img.CanvasImg", data[i]);
-             me.add(component);
 
-             component.init(data[i]);
-
-             }
-             if (data[i].itype == 1) {
-             component = Ext.create("editpic.view.img.GifImg", data[i])
-             me.add(component);
-
-             component.init(data[i]);
-             }
-             if (data[i].itype == 2) {
-             component = Ext.create("editpic.view.img.TextFieldTool", data[i])
-             me.add(component);
-
-             component.init(data[i]);
-             }
-             if (data[i].itype == 3) {
-             component = Ext.create("editpic.view.img.LinkTool", data[i])
-             me.add(component);
-             component.init(data[i])
-             }
-             if (data[i].itype == 4) {
-             component = Ext.create("editpic.view.img.TextTool", data[i])
-             me.add(component);
-             component.init(data[i])
-             }*/
             var img = My.createImg(data[i])
-            me.add(img);
-            img.init(data[i])
-            /*(function (data) {
-             requestAnimFrame(function () {
-             var img = My.createImg(data)
-             me.add(img);
-             img.init(data)
-             })
-             })(data[i])*/
-            /*(function (data,i) {
-             setTimeout(function () {
-             var img = My.createImg(data)
-             me.add(img);
-             img.init(data)
-             }, i*50)
-             })(data[i],i)*/
+            img.bufferDatas = data[i];
+            bufferContainer.add(img);
+            //me.add(img);
+            //img.init(data[i])
+
+        }
+        me.add(bufferContainer.items.items);
+        var items=me.items.items;
+        for(var i=0;i<items.length;i++){
+            items[i].init(items[i].bufferDatas)
         }
 
-
+        console.log(data.length+"个图片 耗时"+(new Date().getTime()-start)+"ms");
         me.viewModel.set("width", json.width);
         me.viewModel.set("height", json.height);
-
         My.initLinkValue()
     },
     draggable: true,

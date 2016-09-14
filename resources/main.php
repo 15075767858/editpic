@@ -51,6 +51,7 @@ if ($par == "gettypes") {
         echo json_encode($arr);
     }
 }
+
 if ($par == "getSchdule") {
     $redis = getRedisConect();
     if ($redis) {
@@ -134,6 +135,14 @@ if ($par == "login") {
 if ($par == "getSession") {
     session_start();
     echo json_encode($_SESSION);
+
+}
+if($par=="outLogin"){
+    session_start();
+    $_SESSION['isLogin']=false;
+    $_SESSION['username']=false;
+    $_SESSION['password']=false;
+    $_SESSION['level']=0;
 
 }
 
@@ -373,8 +382,7 @@ function getNodeTypeValue($arr)
 }
 
 if ($par == "beforeUploadGraph") {
-    listDir("/mnt/nandflash/");
-    listDir("/var/www/");
+    listDir();
 }
 
 if ($par == "uploadGraphFiles") {
@@ -449,22 +457,104 @@ function getfiles($path, $fileArr)
     return array_values($tempArr);
 } //列出所有文件
 
-function listDir($dir)
+function listDir()
 {
+
+
+    $dir = __DIR__;
+    $index = strripos($dir, "/");
+    $dir = substr(__DIR__, 0, $index);
+    $index = strripos($dir, "/");
+    $dir = substr(__DIR__, 0, $index);
+
+    $telnet = getTelnet();
+
+    $telnet->write("cd $dir\r\n");
+
+    $telnet->write("chmod 777 *\r\n");
+
+    echo $telnet->read_till(":> ");
     if (is_dir($dir)) {
         if ($dh = opendir($dir)) {
             while (($file = readdir($dh)) !== false) {
                 if ((is_dir($dir . "/" . $file)) && $file != "." && $file != "..") {
-                    listDir($dir . "/" . $file . "/");
-                    chmod($dir . '/' . $file, 0777);
+                    $path = $dir . "/" . $file;
+                    $telnet->write("chmod 777 $path -R\r\n");
+                    echo $path;
+                    echo $telnet->read_till(":> ");
+                    echo "<br>";
                 } else {
                     if ($file != "." && $file != "..") {
-                        chmod($dir . '/' . $file, 0777);
+                        //chmod($dir . '/' . $file, 0777);
                     }
                 }
             }
             closedir($dh);
         }
     }
-}
 
+    echo $telnet->close();
+
+    /*
+        //$telnet->write("cd /mnt/nandflash/web_arm/www/program\r\n");
+
+        echo $telnet->read_till(":> ");
+
+        //$telnet->write("chmod 777 * -R\r\n");
+        $telnet->write("ls\r\n");
+        echo $telnet->read_till(":> ");
+
+        $telnet->write("sh t.bash\r\n");
+
+        echo $telnet->read_till(":> ");
+
+        */
+}
+function getTelnet(){
+    include('telnet.php');
+    //error_reporting(-1);
+    $telnetUP = simplexml_load_file('telnet.xml') or $telnetUP = false;
+    if (!$telnetUP) {
+        return;
+    }
+    $username = $telnetUP->username;
+    $password = $telnetUP->password;
+    $telnet = new telnet("192.168.253.253", 23);
+    echo $telnet->read_till("login: ");
+    $telnet->write("$username\r\n");
+    echo $telnet->read_till("password: ");
+    $telnet->write("$password\r\n");
+
+
+    return $telnet;
+}
+/*
+function listDir($dir)
+{
+
+
+        if (is_dir($dir)) {
+              if ($dh = opendir($dir)) {
+                  while (($file = readdir($dh)) !== false) {
+                      if ((is_dir($dir . "/" . $file)) && $file != "." && $file != "..") {
+                          $path = $dir . "/" . $file;
+
+                          $telnet->write("chmod 777 $path -R\r\n");
+                          echo $path;
+                          echo $telnet->read_till(":> ");
+                          echo "<br>";
+                          //listDir($dir . "/" . $file . "/");
+
+                          //chmod($dir . '/' . $file, 0777);
+                      } else {
+                          if ($file != "." && $file != "..") {
+                              //chmod($dir . '/' . $file, 0777);
+                          }
+                      }
+                  }
+                  closedir($dh);
+              }
+          }
+
+
+}*/

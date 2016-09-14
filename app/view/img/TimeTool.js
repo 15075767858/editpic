@@ -5,7 +5,7 @@ Ext.define('editpic.view.img.TimeTool',{
     layout: "absolute",
 
     refreshCanvas: function () {
-        console.log("clock refreshCanvas")
+        //console.log("clock refreshCanvas")
         var me = this;
 
         if (!me.contentPanel) {

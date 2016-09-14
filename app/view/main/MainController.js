@@ -794,7 +794,7 @@ My.initComponentConfig = {
             me.nodename = nodename;
             me.type = type;
         }
-        console.log(data)
+//        console.log(data)
 
         if (!!me.ip & !!me.port & !!me.nodename & !!me.type) {
             return true;
@@ -809,9 +809,11 @@ My.initComponentConfig = {
         }
     },
     linkInfo: function () {
+        //return {"ip":true,"nodename":"1001004","type":false}
+
         var resJson = {};
         var me = this;
-        My.Ajax("resources/main.php", function (response) {
+        My.AjaxAsync("resources/main.php", function (response) {
             resJson = Ext.decode(response.responseText);
         }, {
             par: 'linkInfo',
@@ -821,6 +823,7 @@ My.initComponentConfig = {
             type: me.type
         })
         return resJson;
+
     },
     mySubscribe: function () {
         var me = this;
@@ -943,6 +946,8 @@ My.initComponentConfig = {
             div.style.textAlign = "center";
             me.el.dom.appendChild(div)
             me.nameDiv = div;
+        }else{
+            delete  me.nameDiv
         }
     }
     ,
@@ -997,10 +1002,10 @@ My.initComponentConfig = {
     mySetWidth: function (value) {
         value = parseInt(value)
         var me = this;
-        if (me.field) {
-            me.field.setWidth(value)
-        }
-        console.log(me.field);
+        //if (me.field) {
+        //    me.field.setWidth(value)
+        //}
+//        console.log(me.field);
         me.setWidth(value)
         me.width = value
     }
@@ -1009,9 +1014,9 @@ My.initComponentConfig = {
         value = parseInt(value)
         var me = this;
         //me.setStyle("lineHeight", value + "px")
-        if (me.field) {
-            me.field.setHeight(value)
-        }
+        //if (me.field) {
+        //    me.field.setHeight(value)
+        //}
         me.setHeight(value)
         me.height = value;
     }
@@ -1091,7 +1096,7 @@ My.initComponentConfig = {
     setLinkValue: function (linkValue) {
         var me = this;
         linkValue += ""
-        console.log(linkValue)
+//        console.log(linkValue)
         if (linkValue == "undefined" || linkValue == "" || linkValue == "false") {
             me.linkValue = My.linkManger.getValue(me);
         } else {
