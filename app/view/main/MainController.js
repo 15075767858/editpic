@@ -1246,10 +1246,22 @@ My.initComponentConfig = {
                     me.up().copyImg = me;
                 }
                 },
+
                 {
                     text: "delete", handler: function () {
                     me.close()
                 }
+                },
+                {
+                    text:"Duplicate",
+                    handler:function(){
+                        var data = me.getInitData()
+                        data.x = data.x + 10
+                        data.y = data.y + 10
+                        var img = My.createImg(data)
+                        me.up().add(img)
+                        img.init(data)
+                    }
                 },
                 {
                     text: "Property", handler: function () {

@@ -35,7 +35,7 @@ Ext.define('editpic.view.img.BaseTool', {
     },
     init: function (data) {
         var me = this;
-        console.log(data)
+        //console.log(data)
         me.mySetWidth(data.width);
         me.mySetHeight(data.height);
         me.mySetX(data.x);

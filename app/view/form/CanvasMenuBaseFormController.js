@@ -34,5 +34,6 @@ Ext.define('editpic.view.form.CanvasMenuBaseFormController', {
     },
     boxready:function(){
         console.log(this.getViewModel())
-    }
+    },
+
 });

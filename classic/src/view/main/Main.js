@@ -57,7 +57,7 @@ Ext.define('editpic.view.main.Main', {
         } ,{
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.10")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.11")
             }
         }
     ],
@@ -137,15 +137,20 @@ Ext.define('editpic.view.main.Main', {
                 if (!text) {
                     return;
                 }
-                var me = this
+                var me = this;
+
+                
+
                 var panel = me.getTabByTitle(text);
                 if (panel) {
                     panel.close()
                 }
+
                 var picPanel = Ext.create("editpic.view.panel.PicPanel", {
                     x: 0,
                     y: 0
                 })
+
                 me.add(
                     {
                         xtype: "panel",
@@ -154,7 +159,7 @@ Ext.define('editpic.view.main.Main', {
                         items: picPanel
                     }
                 ).show()
-                //Ext.toast
+
                 picPanel.load(My.getImageData()[text])
             },
             defaults: {

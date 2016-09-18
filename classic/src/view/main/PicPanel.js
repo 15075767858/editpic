@@ -268,7 +268,7 @@ Ext.define('editpic.view.panel.PicPanel', {
             items[i].init(items[i].bufferDatas)
         }
 
-        console.log(data.length+"个图片 耗时"+(new Date().getTime()-start)+"ms");
+        console.log("Open Info","打开成功"+data.length+"个图片 耗时"+(new Date().getTime()-start)+"ms");
         me.viewModel.set("width", json.width);
         me.viewModel.set("height", json.height);
         My.initLinkValue()

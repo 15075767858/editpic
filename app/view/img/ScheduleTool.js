@@ -10,7 +10,7 @@ Ext.define('editpic.view.img.ScheduleTool', {
 
     init: function (data) {
         var me = this;
-        console.log(data)
+        //console.log(data)
         me.schdule = data.schdule;
         me.schduleName = me.schdule;
         me.ip = data.ip;

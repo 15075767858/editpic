@@ -52,7 +52,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         disabled: "{!isBind.checked}"
                     },
                     store: [window.location.hostname, "192.168.253.253"],
-                    value: window.location.hostname
+                    value: window.location.hostname,
+
                 },
                 {
                     xtype: "textfield",
@@ -120,41 +121,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                             }
                         }
 
-                        /*My.Ajax("resources/main.php", function (response) {
-                         var data = response.responseText
-                         try {
-                         var ojson = Ext.decode(data)
-                         if (ojson) {
-                         var store = Ext.create("Ext.data.Store", {
-                         fields: ['name', 'value'],
-                         data: ojson
-                         })
-                         me.setDisabled(false)
-
-                         me.setStore(store);
-                         return true;
-                         }
-                         } catch (e) {
-                         //me.up().hideAll()
-                         var devsfield = me.lookup("devsfield")
-                         var typescombo = me.lookup("typescombo");
-                         devsfield.hide()
-                         typescombo.hide()
-                         Ext.Msg.alert("Error", "Connect to database failed !");
-                         if (me.store) {
-                         if (me.store.data.length > 0)
-                         me.store.clearAll()
-                         }
-                         //me.clearValue()
-                         //me.setStore(null)
-                         return false;
-                         }
-                         }, {
-                         par: "getdevs",
-                         ip: ip,
-                         port: port
-                         }
-                         )*/
                     },
                     listeners: {
                         boxready: function (combo) {
@@ -171,6 +137,76 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                             a.removeAll()
                             a.add(values.getFormItems(newValue))
                             //.setItems()
+                        }, focus: function (combo) {
+                           var win = Ext.create("Ext.window.Window", {
+                                title: "Select Object_Name",
+                                autoShow: true,
+                                layout: "auto",
+                                width: 800,
+                                height: 600,
+                                scrollable: "y",
+                                modal: true,
+                                items: {
+                                    xtype: "grid",
+                                    width: "100%",
+                                    height: "100%",
+                                    scrollable: "y",
+                                    plugins: 'gridfilters',
+                                    store: combo.store,
+                                    columns: [{
+                                        text: "Object_Name", dataIndex: "name", flex: 7, filter: {
+                                            type: "string",
+                                        },
+                                        items: {
+                                            xtype: 'textfield',
+                                            flex: 1,
+                                            margin: 2,
+                                            enableKeyEvents: true,
+                                            listeners: {
+                                                change: function (field, newValue, oldValue) {
+                                                    var colum = this.up()
+                                                    colum.filter.setValue(newValue)
+                                                }
+                                            }
+                                        }
+                                    }, {
+                                        text: "Key", dataIndex: "value", flex: 3, filter: {
+                                            type: "string",
+                                        },
+                                        items: {
+                                            xtype: 'textfield',
+                                            flex: 1,
+                                            margin: 2,
+                                            enableKeyEvents: true,
+                                            listeners: {
+                                                change: function (field, newValue, oldValue) {
+                                                    var colum = this.up()
+                                                    colum.filter.setValue(newValue)
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ]
+                                },
+                                buttons: [
+                                    {
+                                        text: "Ok",
+                                        handler:function(){
+                                            var grid = win.down("grid");
+                                            var selectArr=grid.getSelection();
+                                            if(selectArr.length){
+                                                combo.setValue(selectArr[0].data.value)
+                                                win.close();
+                                            }
+                                        }
+                                    },{
+                                        text:"Cancel",
+                                        handler:function(){
+                                            win.close();
+                                        }
+                                    }
+                                ]
+                            })
                         }
                     }
                 },
@@ -298,7 +334,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     itemId: "devscombo",
                     reference: "devscombo",
                     editable: true,
-                    store:schdules
+                    store: schdules
                 },
             ]
 
