@@ -1159,15 +1159,15 @@ $include-editpic-view-tree-svgstreemodel: dynamic(true);;
 $include-editpic-view-ux-keyboard: dynamic(true);;
 $include-editpic-view-ux-keyboardcontroller: dynamic(true);;
 $include-editpic-view-ux-keyboardmodel: dynamic(true);;
+$include-editpic-view-week-weekwin: dynamic(true);;
+$include-editpic-view-week-weekwincontroller: dynamic(true);;
+$include-editpic-view-week-weekwinmodel: dynamic(true);;
 $include-editpic-view-window-canvasconponmentwindow: dynamic(true);;
 $include-editpic-view-window-canvasconponmentwindowcontroller: dynamic(true);;
 $include-editpic-view-window-canvasconponmentwindowmodel: dynamic(true);;
 $include-editpic-view-window-downloadwindow: dynamic(true);;
 $include-editpic-view-window-downloadwindowcontroller: dynamic(true);;
 $include-editpic-view-window-downloadwindowmodel: dynamic(true);;
-$include-editpic-view-window-drawweekswindow: dynamic(true);;
-$include-editpic-view-window-drawweekswindowcontroller: dynamic(true);;
-$include-editpic-view-window-drawweekswindowmodel: dynamic(true);;
 $include-editpic-view-window-uploadwindow: dynamic(true);;
 
 

@@ -55,6 +55,7 @@
      *      ]
      */
     "requires": [
+        "charts",
         "sencha-charts",
         "ux"
     ],

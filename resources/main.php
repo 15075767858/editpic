@@ -1,7 +1,7 @@
 <?php
 
 $ip = $_SERVER["SERVER_ADDR"];
-$par = $_GET["par"];
+$par = $_REQUEST["par"];
 /*$redis = new Redis();
 if ($ip == "127.0.0.1") {
     $redis->connect("192.168.253.253", 6379);
@@ -14,7 +14,7 @@ if ($ip == "127.0.0.1") {
 
 if ($par == 'getSvgTree') {
     //$path = "svg";
-    $path = $_GET['path'];
+    $path = $_REQUEST['path'];
     //$path = "SvgHvac";
     echo json_encode(getfiles($path, $fileArr = Array()));
 }
@@ -42,7 +42,7 @@ if ($par == "getdevs") {
 if ($par == "gettypes") {
     $redis = getRedisConect();
     if ($redis) {
-        $nodeName = $_GET['nodename'];
+        $nodeName = $_REQUEST['nodename'];
         $arList = $redis->hKeys($nodeName);
         echo json_encode($arList);
         $redis->close();
@@ -91,7 +91,7 @@ if ($par == "linkInfo") {
     $arr['ip'] = $redis;
     if ($redis) {
         $arr['ip'] = true;
-        $nodename = $redis->keys($_GET['nodename'])[0];
+        $nodename = $redis->keys($_REQUEST['nodename'])[0];
         $arr['nodename'] = $nodename;
         if ($nodename) {
             $arr['type'] = $redis->hGet($nodename, $_REQUEST['type']);
@@ -137,19 +137,19 @@ if ($par == "getSession") {
     echo json_encode($_SESSION);
 
 }
-if($par=="outLogin"){
+if ($par == "outLogin") {
     session_start();
-    $_SESSION['isLogin']=false;
-    $_SESSION['username']=false;
-    $_SESSION['password']=false;
-    $_SESSION['level']=0;
+    $_SESSION['isLogin'] = false;
+    $_SESSION['username'] = false;
+    $_SESSION['password'] = false;
+    $_SESSION['level'] = 0;
 
 }
 
 
 if ($par == "gettypevalue") {
-    $nodeName = $_GET['nodename'];
-    $type = $_GET['type'];
+    $nodeName = $_REQUEST['nodename'];
+    $type = $_REQUEST['type'];
     $redis = getRedisConect();
     echo $redis->hGet($nodeName, $type);
     $redis->close();
@@ -158,12 +158,12 @@ if ($par == "gettypevalue") {
 
 if ($par == "PresentArraySetNull") {
     $redis = getRedisConect();
-    $key = $_GET["key"];
-    $value = $_GET["value"];
-    $number = $_GET["number"];
-    $nodeName = $_GET["nodename"];
-    $type = $_GET['type'];
-    echo json_encode($_GET);
+    $key = $_REQUEST["key"];
+    $value = $_REQUEST["value"];
+    $number = $_REQUEST["number"];
+    $nodeName = $_REQUEST["nodename"];
+    $type = $_REQUEST['type'];
+    echo json_encode($_REQUEST);
     echo $redis->hSet($nodeName, $type, $value);
 
     $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\nCancel_Priority_Array\r\n" . $number);
@@ -173,20 +173,20 @@ if ($par == "PresentArraySetNull") {
 
 if ($par == "changevalue") {
     $redis = getRedisConect();
-    $nodeName = $_GET["nodename"];
-    $type = $_GET["type"];
-    if (isset($_GET["value"])) {
-        $value = $_GET["value"];
+    $nodeName = $_REQUEST["nodename"];
+    $type = $_REQUEST["type"];
+    if (isset($_REQUEST["value"])) {
+        $value = $_REQUEST["value"];
     }
-    if (isset($_POST["value"])) {
-        $value = $_POST["value"];
+    if (isset($_REQUEST["value"])) {
+        $value = $_REQUEST["value"];
     }
-    echo json_encode($_GET);
-    echo json_encode($_POST);
+    echo json_encode($_REQUEST);
 
     //echo "{type:'".$type."',value:'"."12313"."'}";
     $redis->hSet($nodeName, $type, $value);
     $redis->publish(substr($nodeName, 0, 4) . ".8." . rand(1000, 9999), $nodeName . "\r\n" . $type . "\r\n" . $value);
+
     $redis->close();
 
 }
@@ -211,8 +211,8 @@ if ($par == "changevaluenopublish") {
 if ($par == "devPublish") {
     $redis = getRedisConect();
     if ($redis) {
-        $key = $_GET["key"];
-        $value = $_GET["value"];
+        $key = $_REQUEST["key"];
+        $value = $_REQUEST["value"];
         echo $redis->publish($key, $value);
         $redis->close();
     }
@@ -232,8 +232,8 @@ function xmlToArray($simpleXmlElement)
 function getRedisConect()
 {
     $redis = new Redis();
-    $ip = $_GET['ip'];
-    $port = $_GET['port'];
+    $ip = $_REQUEST['ip'];
+    $port = $_REQUEST['port'];
     $redis->connect($ip, $port, 0.3) or $redis = false;
     return $redis;
 }
@@ -250,7 +250,7 @@ if ($par == "getImageData") {
 }
 if ($par == "putImageData") {
     $fn = "../../home/data.json";
-    $content = $_POST['content'];
+    $content = $_REQUEST['content'];
 
     if (file_exists($fn)) {
         echo $content;
@@ -261,7 +261,7 @@ if ($par == "putImageData") {
     }
 }
 if ($par == "saveImageAsHtml") {
-    $graph = $_GET["graph"];
+    $graph = $_REQUEST["graph"];
     //$htmlStr = "<script>window.location.href='/graph/index.html?graph=" . $graph . "'</script>";
     $str = '<!DOCTYPE html>' .
         '<html lang="en">' .
@@ -309,7 +309,7 @@ if ($par == "deleteImageData") {
     //file_put_contents("../../home/" . $graph . ".html", $str);
 }
 if ($par == "getLinkValues") {
-    $datas = json_decode($_POST['datas']);
+    $datas = json_decode($_REQUEST['datas']);
     /* if(!$datas){
          exit();
      }*/
@@ -320,6 +320,8 @@ if ($par == "getLinkValues") {
     }
     echo json_encode($datas);
 }
+
+
 
 /*function callback($redis, $channel, $message, $val)
 {
@@ -337,7 +339,7 @@ if ($par == "subscribe") {
 
     ini_set('default_socket_timeout', -1);
 
-    $subnode = $_GET['subnode'];
+    $subnode = $_REQUEST['subnode'];
 
     $redis = new Redis();
 
@@ -510,7 +512,20 @@ function listDir()
 
         */
 }
-function getTelnet(){
+
+
+
+function uploadProgram($name){
+    $telnet = getTelnet();
+
+    $telnet->write("cd ../../\r\n");
+    echo $telnet->read_till(":> ");
+    $telnet->write("tar czvf $name\r\n");
+    echo $telnet->read_till(":> ");
+    echo $telnet->close();
+}
+function getTelnet()
+{
     include('telnet.php');
     //error_reporting(-1);
     $telnetUP = simplexml_load_file('telnet.xml') or $telnetUP = false;
@@ -528,6 +543,7 @@ function getTelnet(){
 
     return $telnet;
 }
+
 /*
 function listDir($dir)
 {

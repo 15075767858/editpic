@@ -59,14 +59,16 @@ Ext.define('editpic.view.img.ScheduleTool', {
         el: {
             click: function () {
                 var me = this.component;
-                    Ext.create("editpic.view.window.DrawWeeksWindow", {
-                            id: "drawWindow",
-                            sDevNodeName: me.schdule,
-                            sDevName: me.schdule.substr(0, 4),
-                            ip: me.ip,
-                            port: me.port
-                        }
-                    )
+                //Ext.create("editpic.view.week.WeekWin")
+
+                 Ext.create("editpic.view.week.WeekWin", {
+                         id: "drawWindow",
+                         sDevNodeName: me.schdule,
+                         sDevName: me.schdule.substr(0, 4),
+                         ip: me.ip,
+                         port: me.port
+                     }
+                 )
             }
         }
     }

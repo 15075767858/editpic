@@ -291,6 +291,7 @@ Ext.define('editpic.view.main.MainController', {
             command: "tar czvf home.tar.gz home"
         })
     },
+
     dataJsonUpload: function () {
         //上传home目录下的文件
         console.log(arguments)
@@ -369,26 +370,27 @@ Ext.define('editpic.view.main.MainController', {
          */
     },
     updateGraph: function () {
-        My.AjaxAsync("", "", {
+        My.AjaxAsync("/upload.php", "", {
             par: "beforeUploadGraph"
         })
         var win = Ext.create("editpic.view.window.UploadWindow", {
             url: '/upload.php?par=upload',
             uploadcomplete: function (obj, files) {
                 console.log(files)
-                My.AjaxAsync("/upload.php", "", {
-                    par: "system",
-                    command: "chmod 777 * -R"
-                })
                 if (files.length == 1) {
                     var file = files[0];
                     var fn = file.name;
                     Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
-
-                    My.AjaxAsync("/upload.php", resFn, {
+                    /*My.AjaxAsync("/upload.php", resFn, {
                         par: "system",
                         command: "tar  -xzvf  " + fn
+                    })*/
+                    My.AjaxAsync("/upload.php", resFn, {
+                        par: "uploadProgram",
+                        filename: fn
                     })
+
+
 
                 } else {
                     var namesStr = ""
@@ -397,6 +399,7 @@ Ext.define('editpic.view.main.MainController', {
                         arr.push(files[i].name)
                         namesStr += files[i].name + ",";
                     }
+
                     My.AjaxSimplePostAsync(
                         {
                             par: 'afterUpload',
@@ -415,10 +418,8 @@ Ext.define('editpic.view.main.MainController', {
                         buttons: Ext.Msg.YES,
                         //icon: Ext.Msg.INFO,
                         fn: function (btn) {
-
                             My.AjaxAsync("/upload.php", "", {
-                                par: "system",
-                                command: "chmod 777 * -R"
+                                par: "beforeUploadGraph"
                             })
 
                             if (btn === 'yes') {
@@ -443,6 +444,7 @@ String.prototype.replaceAll = function (s1, s2) {
 
 
 var My = {};
+
 
 My.Ajax = function (url, success, params) {
     Ext.Ajax.request({
@@ -504,10 +506,13 @@ My.AjaxSimplePost = function (params, url, success) {
     });
 }
 My.AjaxSimplePostAsync = function (params, url, success) {
+    console.log("开始")
+    console.log(params)
     Ext.Ajax.request({
         url: url || "resources/main.php",
         method: "POST",
         async: true,
+        //timeout:-1,
         params: params,
         success: success,
         failure: function () {
@@ -515,6 +520,7 @@ My.AjaxSimplePostAsync = function (params, url, success) {
             console.log(arguments)
         }
     });
+
 }
 
 My.delayToast = function (title, html, delay) {
@@ -639,6 +645,7 @@ My.getDevTypeStore = function (ip, port, nodename) {
     })
     return store;
 }
+
 My.getSchdules = function (ip, port) {
     var store = null;
     if (!ip & !port) {
@@ -719,13 +726,13 @@ My.linkManger.autoLink = function () {
 
 }
 My.linkManger.getLinkDatas = function () {
-
     return Ext.encode(My.linkManger.items);
 }
 
 My.linkManger.init = function () {
 
-    var interval1 = setInterval(My.initLinkValue, 8000)
+   My.interval1 = setInterval(My.initLinkValue, 15000)
+
 }
 My.initLinkValue = function () {
 
@@ -735,11 +742,13 @@ My.initLinkValue = function () {
     }
 
     My.AjaxSimplePostAsync(data, "resources/main.php?par=getLinkValues", function (response) {
+        console.log(response.responseText)
         try {
             Ext.decode(response.responseText);
         } catch (e) {
+
             //Ext.Msg.alert("Massage"," linkDataBase Error Program 10 seconds after the automatic return to normal . "+response.responseText);
-            clearInterval(interval1);
+            clearInterval(My.interval1);
             setTimeout(function () {
                 My.linkManger.init()
             }, My.eachDelay)
@@ -764,6 +773,7 @@ My.initLinkValue = function () {
     });
 
 };
+
 My.initComponentConfig = {
     draggable: !My.getSearch(),
     resizable: !My.getSearch(),
@@ -1249,7 +1259,8 @@ My.initComponentConfig = {
 
                 {
                     text: "delete", handler: function () {
-                    me.close()
+                    console.log(me.up('panel'))
+                    me.up("panel").removeStackPush(me)
                 }
                 },
                 {
@@ -1368,37 +1379,7 @@ My.initComponentConfig = {
 
                         }
                         return;
-                        /*var id = "#" + t.target.id;
-                         console.log(arguments)
-                         var keybord = popKeybord(id);
 
-                         function popKeybord(id) {
-
-                         $(id).keyboard({
-                         layout: 'custom',
-                         customLayout: {
-                         'normal': [
-                         '7 8 9 {clear} {b}',
-                         '4 5 6 {left} {right}',
-                         '1 2 3 0 . {a}  '
-                         ]
-                         },
-                         maxLength: 11,
-                         maxValue: 10000
-                         })
-                         var keybord = document.querySelector(".ui-keyboard");
-                         if (keybord) {
-                         return keybord
-                         } else {
-                         //field.focus()
-                         }
-                         }
-
-                         keybord.style.position = "fixed";
-                         keybord.style.zIndex = 200000;
-                         keybord.style.left = (field.getX() + field.labelWidth) + "px";
-                         keybord.style.top = field.getY() + "px";
-                         keybord.style.backgroundColor = "#3f4655";*/
                     }
                 }
             })
@@ -1435,49 +1416,7 @@ My.initComponentConfig = {
             hidden: !My.getSearch(),
             disabled: !My.getSearch(),
             fieldLabel: " Screen keyboard"
-            /*,
-             handler: function (field, value) {
-             var id = "#" + valueField.ariaEl.dom.id;
-             if (value) {
-             var keybord = popKeybord(id);
-             keybord.style.position = "fixed";
-             keybord.style.zIndex = 200000;
-             keybord.style.left = (field.getX() + field.labelWidth) + "px";
-             keybord.style.top = field.getY() + "px";
-             keybord.style.backgroundColor = "#3f4655";
-             }
-             function popKeybord(id) {
-             console.log($(id).keyboard({
-             layout: 'custom',
-             customLayout: {
-             'normal': [
-             '7 8 9 {clear} {b}',
-             '4 5 6 {left} {right}',
-             '1 2 3 0 . {a}  '
-             ]
-             },
-             maxLength: 11,
-             maxValue: 10000
-             })
-             )
-             $(id).getkeyboard().reveal()
-             $(id).getkeyboard().close()
-             var keybord = document.querySelector(".ui-keyboard");
-             if (keybord) {
-             return keybord
-             } else {
 
-             //field.focus()
-             }
-             }
-             if (!value) {
-
-             var keyboard = $(id).getkeyboard();
-             keyboard.reveal()
-             keyboard.removeKeyboard();
-
-             }
-             }*/
         })
 
         items.push({
@@ -1498,44 +1437,7 @@ My.initComponentConfig = {
     openAlermWindow: function () {
         var me = this;
 
-        /* var combo1 = Ext.create("Ext.form.field.ComboBox", {
-         fieldLabel: "Priority",
-         name: "Priority_For_Writing",
-         value: me.Priority_For_Writing || 8,
-         editable: false,
-         store: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-         })
 
-         var type0 = Ext.create("Ext.form.field.ComboBox",
-         {
-         fieldLabel: "Value",
-         reference: "value0",
-         store: [0, 1],
-         name: "Priority",
-         value: me.Priority,
-
-         })
-
-         var type1 = Ext.create("Ext.form.field.Number", {
-         reference: "value1",
-         fieldLabel: "Value",
-         decimalPrecision: 4,
-         name: "priorityValue",
-         value: me.priorityValue,
-         allowDecimals: true,
-         maxValue: 1000000,
-         minValue: -1000000,
-
-         })*/
-        /*form.add(combo1);
-         if (me.priorityType == 0) {
-         form.add(type0);
-         } else {
-         form.add(type1);
-         }
-         console.log(me)
-         console.log(form)
-         */
         var formItems = me.getFormItems();
         if (!formItems) {
             return;
@@ -1561,46 +1463,7 @@ My.initComponentConfig = {
 
             items: form,
             height: 430
-            /* buttons: [
-             {
-             text: "OK", handler: function () {
-             var formValues = form.getValues()
-             var ip = me.ip;
-             var port = me.port;
-             var nodename = me.nodename;
 
-             My.AjaxSimple({
-             par: "changevalue",
-             ip: ip,
-             port: port,
-             nodename: nodename,
-             type: "Priority_For_Writing",
-             value: formValues.Priority_For_Writing
-             }, "", function () {
-             My.delayToast("Massage", "Change Priority_For_Writing success , new value is " + formValues.priority);
-             })
-
-
-             My.AjaxSimple({
-             par: "changevalue",
-             ip: ip,
-             port: port,
-             nodename: nodename,
-             type: "Priority",
-             value: formValues.Priority_For_Writing
-             }, "", function () {
-             My.delayToast("Massage", "Change Priority_Value success , new value is " + formValues.Priority);
-             })
-
-             win.close()
-             }
-             },
-             {
-             text: "Cancel", handler: function () {
-             win.close()
-             }
-             }
-             ]*/
         })
         form.getForm().setValues(me);
     }

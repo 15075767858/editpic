@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /Library/WebServer/Documents/editpic/app.js
+// @require /Library/WebServer/Documents/graph/app.js

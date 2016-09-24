@@ -24,7 +24,8 @@ Ext.define('editpic.view.main.Main', {
         'editpic.view.panel.ToolsPanel',
         "Ext.window.Toast",
         "editpic.view.login.LoginWindow",
-        "editpic.view.ux.KeyBoard"
+        "editpic.view.ux.KeyBoard",
+        "editpic.view.week.WeekWin"
     ],
 
     id: "mainPanel",
@@ -33,7 +34,8 @@ Ext.define('editpic.view.main.Main', {
     //ui: 'navigation',
     listeners:{
       boxready:function(){
-          var me=this
+
+          var me=this;
           me.getViewModel().set(My.getSession())
           //Ext.create("editpic.view.ux.KeyBoard")
           //var socket=new WebSocket("resources/test.main?ip=192.168.253.253&port=6379");
@@ -57,7 +59,7 @@ Ext.define('editpic.view.main.Main', {
         } ,{
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.11")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.15")
             }
         }
     ],

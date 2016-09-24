@@ -159,6 +159,7 @@ Ext.define('editpic.view.panel.PicPanel', {
 
         me.callParent();
     },
+
     unSelect: function () {
         var me = this;
         if (me.selectPanel) {
@@ -176,6 +177,7 @@ Ext.define('editpic.view.panel.PicPanel', {
             }
         })
     },
+
     createMoveField: function (focusFn, leaveFn) {
         var me = this;
         var textfield = Ext.create("Ext.form.field.Text", {
@@ -263,12 +265,12 @@ Ext.define('editpic.view.panel.PicPanel', {
 
         }
         me.add(bufferContainer.items.items);
-        var items=me.items.items;
-        for(var i=0;i<items.length;i++){
+        var items = me.items.items;
+        for (var i = 0; i < items.length; i++) {
             items[i].init(items[i].bufferDatas)
         }
 
-        console.log("Open Info","打开成功"+data.length+"个图片 耗时"+(new Date().getTime()-start)+"ms");
+        console.log("Open Info", "打开成功" + data.length + "个图片 耗时" + (new Date().getTime() - start) + "ms");
         me.viewModel.set("width", json.width);
         me.viewModel.set("height", json.height);
         My.initLinkValue()
@@ -382,6 +384,7 @@ Ext.define('editpic.view.panel.PicPanel', {
             }
         ]
     },
+
     tools: [
         {
             type: 'refresh',
@@ -390,8 +393,35 @@ Ext.define('editpic.view.panel.PicPanel', {
         {
             type: "save",
             handler: "download"
+        }, {
+            type: "left",
+            bind: {
+                disabled: "{!removeStack.length}",
+            },
+            handler: function () {
+                var me = this.up('panel');
+
+                me.removeStackPop();
+
+            }
         }
     ],
+    removeStackPush: function (img) {
+        var me=this;
+        var removeStack = me.viewModel.data.removeStack;
+        var img = me.remove(img);
+        removeStack.push(img);
+        me.viewModel.set("removeStack",removeStack.concat([]));
+    },
+    removeStackPop: function () {
+        var me = this;
+        var removeStack = me.viewModel.data.removeStack;
+        var img = removeStack.pop();
+        var newImg = My.createImg(img.getInitData())
+
+        me.add(newImg);
+        me.viewModel.set("removeStack",removeStack.concat([]));
+    },
     //sprites: [],
 
 
