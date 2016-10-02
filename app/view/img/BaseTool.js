@@ -35,40 +35,36 @@ Ext.define('editpic.view.img.BaseTool', {
     },
     init: function (data) {
         var me = this;
-        //console.log(data)
         me.mySetWidth(data.width);
         me.mySetHeight(data.height);
         me.mySetX(data.x);
         me.mySetY(data.y);
         me.mySetName(data.name);
         me.mySetZIndex(data.zindex);
-
         if (data.itype) {
             me.itype = me.itype || data.itype;
         }
-
         me.isBind = data.isBind;
         me.linkData(data);
         me.mySetConfig('font', data.font);
-        //me.fontStyle=data.fontStyle;
-        //me.fontVariant=data.fontVariant;
-        //me.fontWeight=data.fontWeight;
-        //me.fontSize=data.fontSize;
-        //me.fontFamily=data.fontFamily;
         me.setBoxShadow(data.boxShadow);
-        //me.mySetConfig('font',data.font)
-        //me.mySetBackgroundColor(data.backgroundColor);
-        //me.mySetConfigEl("backgroundImage", "url(" + data.backgroundImage + ")")
         me.setBackground(data.background);
-        //me.mySetConfigEl("background",data.backgroundColor+" url("+data.backgroundImage+") no-repeat")
         me.Priority_For_Writing = data.Priority_For_Writing;
         me.priorityValue = data.priorityValue;
         me.isBindPriority = data.isBindPriority;
         me.mySetFontPosition(data.fontPostion);
         me.setFont(data.font);
         me.setFontColor(data.fontColor);
-
         me.mySubscribe()
+        //me.fontStyle=data.fontStyle;
+        //me.fontVariant=data.fontVariant;
+        //me.fontWeight=data.fontWeight;
+        //me.fontSize=data.fontSize;
+        //me.fontFamily=data.fontFamily;
+        //me.mySetConfig('font',data.font)
+        //me.mySetBackgroundColor(data.backgroundColor);
+        //me.mySetConfigEl("backgroundImage", "url(" + data.backgroundImage + ")")
+        //me.mySetConfigEl("background",data.backgroundColor+" url("+data.backgroundImage+") no-repeat")
     },
     mySetFontPosition: function (value) {
         var me = this;
@@ -120,8 +116,8 @@ Ext.define('editpic.view.img.BaseTool', {
         data.linkValue = me.linkValue;
         data.zindex = me.zindex;
         data.fontColor = me.getFontColor();
-        //data.font = me.getFont()
-        data.font = me.myGetConfig("font");
+        data.font = me.getFont()
+        //data.font = me.myGetConfig("font");
         data.fontStyle = me.fontStyle;
         data.fontVariant = me.fontVariant;
         data.fontWeight = me.fontWeight;
@@ -226,12 +222,13 @@ Ext.define('editpic.view.img.BaseTool', {
                 return ""
             }
         }
-        if (me.body) {
+        return me.font||"";
+        /*if (me.body) {
             var font = me.body.getStyle("font");
             return font;
         } else {
             return "";
-        }
+        }*/
     },
     getLinkValue: function () {
         var me = this;

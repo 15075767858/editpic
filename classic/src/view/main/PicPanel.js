@@ -37,12 +37,9 @@ Ext.define('editpic.view.panel.PicPanel', {
         type: 'panel-picpanel'
     },
     scrollable: true,
-    constrainHeader: true,
-
-    //iconCls: "fa-mobile",
-    //iconCls:"myicon-device",
-    //iconCls:"opacity1",
-    //icon:"resources/icons/Phone_32px.ico",
+    constrainHeader: false,
+    constrain: false,
+    renderTo: Ext.getBody(),
     layout: 'absolute',
     //engine: "Ext.draw.engine.Svg",
     bind: {
@@ -59,10 +56,16 @@ Ext.define('editpic.view.panel.PicPanel', {
         var me = this;
         me.listeners = {
             el: {
-                mousedown: function (e, target, oP) {
-                    console.log(arguments)
-                    me.unSelect()
 
+                mousedown: function (e, target, oP) {
+
+                    var dom = this.component.up().body.el.dom
+                    var st = dom.scrollTop;
+                    var sl = dom.scrollLeft;
+
+
+
+                    me.unSelect()
                     if (me.body.getTop() > e.pageY) {
                         return;
                     }
@@ -102,13 +105,19 @@ Ext.define('editpic.view.panel.PicPanel', {
                             me.selectPanel.y = moveEven.pageY - me.body.getTop();
 
                         }
-
                     }
+
                     document.onmouseup = function () {
+
                         selectComponent.call(me, me.selectPanel)
                         document.onmousemove = null;
                         document.onmouseup = null;
                         me.selectPanel.close()
+                        setTimeout(function () {
+
+                            dom.scrollTop=st
+                            dom.scrollLeft=sl
+                        }, 1)
                     }
                 },
             }
@@ -407,11 +416,11 @@ Ext.define('editpic.view.panel.PicPanel', {
         }
     ],
     removeStackPush: function (img) {
-        var me=this;
+        var me = this;
         var removeStack = me.viewModel.data.removeStack;
         var img = me.remove(img);
         removeStack.push(img);
-        me.viewModel.set("removeStack",removeStack.concat([]));
+        me.viewModel.set("removeStack", removeStack.concat([]));
     },
     removeStackPop: function () {
         var me = this;
@@ -420,7 +429,7 @@ Ext.define('editpic.view.panel.PicPanel', {
         var newImg = My.createImg(img.getInitData())
 
         me.add(newImg);
-        me.viewModel.set("removeStack",removeStack.concat([]));
+        me.viewModel.set("removeStack", removeStack.concat([]));
     },
     //sprites: [],
 

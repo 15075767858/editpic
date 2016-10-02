@@ -32,60 +32,87 @@ Ext.define('editpic.view.main.Main', {
     controller: 'main',
     viewModel: 'main',
     //ui: 'navigation',
-    listeners:{
-      boxready:function(){
+    listeners: {
+        boxready: function () {
 
-          var me=this;
-          me.getViewModel().set(My.getSession())
-          //Ext.create("editpic.view.ux.KeyBoard")
-          //var socket=new WebSocket("resources/test.main?ip=192.168.253.253&port=6379");
-      }
+
+            /*var win = Ext.create("Ext.window.Window", {
+                autoShow: true,
+                width: 800,
+                height: 600,
+                items: {
+                    xtype: "treepanel",
+                    width: 800,
+                    height: 600,
+
+                    store: Ext.create("Ext.data.TreeStore", {
+                        autoLoad: true,
+                        url: "resources/main.php?par=nodes",
+
+                        proxy: {
+                            type: "ajax",
+                            url: "resources/main.php?par=nodes&ip=192.168.253.253&port=6379",
+                            reader: {
+                                type: "json"
+                            }
+                        }
+                    })
+                }
+
+            })
+            testtree = win.down('treepanel')*/
+            var me = this;
+            me.getViewModel().set(My.getSession())
+            //Ext.create("editpic.view.ux.KeyBoard")
+            //var socket=new WebSocket("resources/test.main?ip=192.168.253.253&port=6379");
+        }
     },
     tbar: [
         {
             text: "save", handler: "saveHandler"
         }, {
             text: "open", handler: "openHandler"
-        },{
-          text:"delete",handler:"deleteHandler"
+        }, {
+            text: "delete", handler: "deleteHandler"
         },
         {
-            text:"Backup Graphice",handler:"BackupGraphice"
+            text: "Backup Graphice", handler: "BackupGraphice"
         },
         {
             text: "Restor Graphice", handler: "dataJsonUpload"
         }, {
-            text: "update graph",handler:"updateGraph"
-        } ,{
+            text: "update graph", handler: "updateGraph"
+        }, {
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.15")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.18")
             }
         }
     ],
-    bbar:[]||[
+    bbar: [] || [
         "->",
         {
-            xtype:"checkbox",
-            inputValue:true,
-            boxLabel:" Screen keyboard",
-            handler:function(field,bol){
+            xtype: "checkbox",
+            inputValue: true,
+            boxLabel: " Screen keyboard",
+            handler: function (field, bol) {
                 console.log(arguments)
-                My.isKeyBord=bol;
-            }
-        },
-        {text:"login",handler:"userLogin",
-            bind:{
-                hidden:"{isLogin}"
+                My.isKeyBord = bol;
             }
         },
         {
-            bind:{
-                text:"Welcome {username}",
-                hidden:"{!isLogin}"
+            text: "login", handler: "userLogin",
+            bind: {
+                hidden: "{isLogin}"
+            }
+        },
+        {
+            bind: {
+                text: "Welcome {username}",
+                hidden: "{!isLogin}"
             },
-            menu:[
-                {text:"Out Login",handler:"outLogin"}
+            menu: [
+                {text: "Out Login", handler: "outLogin"}
             ]
         }
     ],
@@ -109,7 +136,9 @@ Ext.define('editpic.view.main.Main', {
             xtype: "tabpanel",
             region: 'center',
             id: "mintab",
-            scrollable: true,
+
+
+            //scrollable: true,
             getCurrentTab: function () {
                 var me = this;
                 if (!me.items) {
@@ -141,8 +170,6 @@ Ext.define('editpic.view.main.Main', {
                 }
                 var me = this;
 
-                
-
                 var panel = me.getTabByTitle(text);
                 if (panel) {
                     panel.close()
@@ -150,14 +177,19 @@ Ext.define('editpic.view.main.Main', {
 
                 var picPanel = Ext.create("editpic.view.panel.PicPanel", {
                     x: 0,
-                    y: 0
+                    y: 0,
+                    constrainHeader: false,
+                    constrain:false,
                 })
 
                 me.add(
                     {
                         xtype: "panel",
+                        constrainHeader: false,
+                        constrain:false,
                         title: text,
-                        scrollable:true,
+                        scrollable: true,
+                        layout:"absolute",
                         items: picPanel
                     }
                 ).show()
@@ -167,7 +199,7 @@ Ext.define('editpic.view.main.Main', {
             defaults: {
                 bodyStyle: {
                     //background: "url(resources/square.png)"
-                    background:"#1491fb"
+                    background: "#1491fb"
                 },
                 closable: true
             },
@@ -177,7 +209,7 @@ Ext.define('editpic.view.main.Main', {
                     title: "untitled",
                     //minWidth:1024,
                     //minHeight:768,
-                    scrollable:true,
+                    scrollable: true,
                     items: {
                         xtype: "picpanel",
                         x: 0,
@@ -222,7 +254,7 @@ Ext.define('editpic.view.main.Main', {
             xtype: "devformpanel",
             id: "devformpanel",
             region: "east"
-        },{
+        }, {
             xtype: "editpic.svgstree",
             id: "imgTreePanel",
             region: 'west',

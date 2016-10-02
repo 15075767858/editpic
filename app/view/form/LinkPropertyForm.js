@@ -138,7 +138,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                             a.add(values.getFormItems(newValue))
                             //.setItems()
                         }, focus: function (combo) {
-                           var win = Ext.create("Ext.window.Window", {
+
+                            var win = Ext.create("Ext.window.Window", {
                                 title: "Select Object_Name",
                                 autoShow: true,
                                 layout: "auto",
@@ -146,62 +147,96 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                 height: 600,
                                 scrollable: "y",
                                 modal: true,
-                                items: {
-                                    xtype: "grid",
-                                    width: "100%",
-                                    height: "100%",
-                                    scrollable: "y",
-                                    plugins: 'gridfilters',
-                                    store: combo.store,
-                                    columns: [{
-                                        text: "Object_Name", dataIndex: "name", flex: 7, filter: {
-                                            type: "string",
-                                        },
-                                        items: {
-                                            xtype: 'textfield',
-                                            flex: 1,
-                                            margin: 2,
-                                            enableKeyEvents: true,
-                                            listeners: {
-                                                change: function (field, newValue, oldValue) {
-                                                    var colum = this.up()
-                                                    colum.filter.setValue(newValue)
+                                items: [
+                                    /*{
+                                     xtype: "grid",
+                                     width: "100%",
+                                     height: "100%",
+                                     scrollable: "y",
+                                     plugins: 'gridfilters',
+                                     store: combo.store,
+                                     columns: [{
+                                     text: "Object_Name", dataIndex: "name", flex: 7, filter: {
+                                     type: "string",
+                                     },
+                                     items: {
+                                     xtype: 'textfield',
+                                     flex: 1,
+                                     margin: 2,
+                                     enableKeyEvents: true,
+                                     listeners: {
+                                     change: function (field, newValue, oldValue) {
+                                     var colum = this.up()
+                                     colum.filter.setValue(newValue)
+                                     }
+                                     }
+                                     }
+                                     }, {
+                                     text: "Key", dataIndex: "value", flex: 3, filter: {
+                                     type: "string",
+                                     },
+                                     items: {
+                                     xtype: 'textfield',
+                                     flex: 1,
+                                     margin: 2,
+                                     enableKeyEvents: true,
+                                     listeners: {
+                                     change: function (field, newValue, oldValue) {
+                                     var colum = this.up()
+                                     colum.filter.setValue(newValue)
+                                     }
+                                     }
+                                     }
+                                     }
+                                     ]
+                                     }, */
+                                    {
+                                        rootVisible:false,
+                                        xtype: "treepanel",
+                                        /*tbar: [
+                                            {
+                                                text: "", handler: function () {
+                                                //selectPath
+                                            }
+                                            }
+                                        ],
+                                        selModel:{
+                                            mode:"SIMPLE"
+                                        },*/
+                                        width: "100%",
+                                        height: "100%",
+                                        scrollable: "y",
+                                        modal: true,
+                                        store: Ext.create("Ext.data.TreeStore", {
+                                            autoLoad: true,
+                                            url: "resources/main.php?par=nodes",
+                                            proxy: {
+                                                type: "ajax",
+                                                url: "resources/main.php?par=nodes&ip=" + combo.ip + "&port=" + combo.port + "",
+                                                reader: {
+                                                    type: "json"
                                                 }
                                             }
-                                        }
-                                    }, {
-                                        text: "Key", dataIndex: "value", flex: 3, filter: {
-                                            type: "string",
-                                        },
-                                        items: {
-                                            xtype: 'textfield',
-                                            flex: 1,
-                                            margin: 2,
-                                            enableKeyEvents: true,
-                                            listeners: {
-                                                change: function (field, newValue, oldValue) {
-                                                    var colum = this.up()
-                                                    colum.filter.setValue(newValue)
-                                                }
-                                            }
-                                        }
+                                        })
                                     }
-                                    ]
-                                },
+
+                                ],
                                 buttons: [
                                     {
                                         text: "Ok",
-                                        handler:function(){
-                                            var grid = win.down("grid");
-                                            var selectArr=grid.getSelection();
-                                            if(selectArr.length){
+                                        handler: function () {
+
+
+                                            var grid = win.down("treepanel");
+                                            var selectArr = grid.getSelection();
+                                            if (selectArr.length) {
                                                 combo.setValue(selectArr[0].data.value)
                                                 win.close();
                                             }
                                         }
-                                    },{
-                                        text:"Cancel",
-                                        handler:function(){
+                                    }, {
+                                        text: "Cancel",
+                                        handler: function () {
                                             win.close();
                                         }
                                     }
