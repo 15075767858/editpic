@@ -122,6 +122,8 @@ if ($par == "login") {
 
     $userArr = $userArr['user'];
     foreach ($userArr as $user) {
+        print_r($user);
+        echo "<br>";
         if ($user['username'] == $username & $user['password'] == $password) {
             $_SESSION['isLogin'] = true;
             $_SESSION['username'] = $user['username'];

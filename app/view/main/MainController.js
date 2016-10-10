@@ -233,7 +233,7 @@ Ext.define('editpic.view.main.MainController', {
             ]
         })
     },
-    deleteHandler:function(){
+    deleteHandler: function () {
         var comboStore = My.getImageNames()
         var win = Ext.create('Ext.window.Window', {
             title: 'Delete',
@@ -269,7 +269,7 @@ Ext.define('editpic.view.main.MainController', {
                     }
                     var json = My.getImageData();
                     delete json[text];
-                    My.deleteImageData(Ext.encode(json),text)
+                    My.deleteImageData(Ext.encode(json), text)
                     win.close();
                     My.delayToast("Massage", "Delete File OK !");
                 }
@@ -376,23 +376,21 @@ Ext.define('editpic.view.main.MainController', {
         var win = Ext.create("editpic.view.window.UploadWindow", {
             url: '/upload.php?par=upload',
             uploadcomplete: function (obj, files) {
+
                 console.log(files)
+
                 if (files.length == 1) {
                     var file = files[0];
                     var fn = file.name;
                     Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
-                    /*My.AjaxAsync("/upload.php", resFn, {
-                        par: "system",
-                        command: "tar  -xzvf  " + fn
-                    })*/
+
                     My.AjaxAsync("/upload.php", resFn, {
                         par: "uploadProgram",
                         filename: fn
                     })
 
-
-
                 } else {
+
                     var namesStr = ""
                     var arr = [];
                     for (var i = 0; i < files.length; i++) {
@@ -408,16 +406,16 @@ Ext.define('editpic.view.main.MainController', {
                         }, "/upload.php?par=afterUpload", resFn
                     )
 
-
                 }
-
                 function resFn() {
+
                     Ext.Msg.show({
                         title: 'Massage',
                         message: 'graph update success .',
                         buttons: Ext.Msg.YES,
                         //icon: Ext.Msg.INFO,
                         fn: function (btn) {
+
                             My.AjaxAsync("/upload.php", "", {
                                 par: "beforeUploadGraph"
                             })
@@ -425,8 +423,10 @@ Ext.define('editpic.view.main.MainController', {
                             if (btn === 'yes') {
                                 location.reload()
                             }
+
                         }
                     });
+
                 }
 
                 win.close()
@@ -570,7 +570,7 @@ My.putImageData = function (content, text) {
     })
     return data;
 }
-My.deleteImageData=function(content,text){
+My.deleteImageData = function (content, text) {
     console.log(content)
     var data = null;
     if (!text) {
@@ -731,7 +731,7 @@ My.linkManger.getLinkDatas = function () {
 
 My.linkManger.init = function () {
 
-   My.interval1 = setInterval(My.initLinkValue, 15000)
+    My.interval1 = setInterval(My.initLinkValue, 15000)
 
 }
 My.initLinkValue = function () {
@@ -956,7 +956,7 @@ My.initComponentConfig = {
             div.style.textAlign = "center";
             me.el.dom.appendChild(div)
             me.nameDiv = div;
-        }else{
+        } else {
             delete  me.nameDiv
         }
     }
@@ -1264,8 +1264,8 @@ My.initComponentConfig = {
                 }
                 },
                 {
-                    text:"Duplicate",
-                    handler:function(){
+                    text: "Duplicate",
+                    handler: function () {
                         var data = me.getInitData()
                         data.x = data.x + 10
                         data.y = data.y + 10
