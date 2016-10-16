@@ -142,67 +142,47 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                             var win = Ext.create("Ext.window.Window", {
                                 title: "Select Object_Name",
                                 autoShow: true,
-                                layout: "auto",
+                                layout: "card",
                                 width: 800,
                                 height: 600,
                                 scrollable: "y",
                                 modal: true,
+
                                 items: [
-                                    /*{
-                                     xtype: "grid",
-                                     width: "100%",
-                                     height: "100%",
-                                     scrollable: "y",
-                                     plugins: 'gridfilters',
-                                     store: combo.store,
-                                     columns: [{
-                                     text: "Object_Name", dataIndex: "name", flex: 7, filter: {
-                                     type: "string",
-                                     },
-                                     items: {
-                                     xtype: 'textfield',
-                                     flex: 1,
-                                     margin: 2,
-                                     enableKeyEvents: true,
-                                     listeners: {
-                                     change: function (field, newValue, oldValue) {
-                                     var colum = this.up()
-                                     colum.filter.setValue(newValue)
-                                     }
-                                     }
-                                     }
-                                     }, {
-                                     text: "Key", dataIndex: "value", flex: 3, filter: {
-                                     type: "string",
-                                     },
-                                     items: {
-                                     xtype: 'textfield',
-                                     flex: 1,
-                                     margin: 2,
-                                     enableKeyEvents: true,
-                                     listeners: {
-                                     change: function (field, newValue, oldValue) {
-                                     var colum = this.up()
-                                     colum.filter.setValue(newValue)
-                                     }
-                                     }
-                                     }
-                                     }
-                                     ]
-                                     }, */
                                     {
-                                        rootVisible:false,
+                                        rootVisible: false,
                                         xtype: "treepanel",
-                                        /*tbar: [
-                                            {
-                                                text: "", handler: function () {
-                                                //selectPath
+                                    
+                                        listeners: {
+                                            boxready: function (treePanel) {
+                                                if (!combo.value) {
+                                                    return
+                                                }
+                                                setTimeout(function () {
+                                                    var node = treePanel.store.findNode('value', combo.value)
+                                                    var path = node.getPath()
+                                                    treePanel.selectPath(path)
+                                                }, 1000)
+
                                             }
+                                        },
+                                        tbar: [
+                                            {
+                                                text: 'Expand All',
+                                                xtype: "button",
+                                                handler: function (th) {
+                                                    var me = this.up("treepanel");
+                                                    me.expandAll();
+                                                }
+                                            }, {
+                                                text: 'Collapse All',
+                                                xtype: "button",
+                                                handler: function (th) {
+                                                    var me = this.up("treepanel");
+                                                    me.collapseAll();
+                                                }
                                             }
                                         ],
-                                        selModel:{
-                                            mode:"SIMPLE"
-                                        },*/
                                         width: "100%",
                                         height: "100%",
                                         scrollable: "y",
@@ -218,16 +198,72 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                                 }
                                             }
                                         })
+                                    },
+                                    {
+                                        xtype: "grid",
+                                        width: "100%",
+                                        height: "100%",
+                                        scrollable: "y",
+                                        plugins: 'gridfilters',
+                                        store: combo.store,
+                                        columns: [{
+                                            text: "Object_Name", dataIndex: "name", flex: 7, filter: {
+                                                type: "string",
+                                            },
+                                            items: {
+                                                xtype: 'textfield',
+                                                flex: 1,
+                                                margin: 2,
+                                                enableKeyEvents: true,
+                                                listeners: {
+                                                    change: function (field, newValue, oldValue) {
+                                                        var colum = this.up()
+                                                        colum.filter.setValue(newValue)
+                                                    }
+                                                }
+                                            }
+                                        }, {
+                                            text: "Key", dataIndex: "value", flex: 3, filter: {
+                                                type: "string",
+                                            },
+                                            items: {
+                                                xtype: 'textfield',
+                                                flex: 1,
+                                                margin: 2,
+                                                enableKeyEvents: true,
+                                                listeners: {
+                                                    change: function (field, newValue, oldValue) {
+                                                        var colum = this.up()
+                                                        colum.filter.setValue(newValue)
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        ]
                                     }
 
+
                                 ],
+
                                 buttons: [
+                                    {
+                                        text: "Select mode", handler: function () {
+                                        var activeItem = win.layout.getActiveItem();
+                                        if (activeItem.next()) {
+                                            win.layout.setActiveItem(activeItem.next())
+                                        } else {
+                                            win.layout.setActiveItem(activeItem.prev())
+                                        }
+
+                                    }
+                                    },
+                                    "->",
                                     {
                                         text: "Ok",
                                         handler: function () {
 
-
-                                            var grid = win.down("treepanel");
+                                            //var grid = win.down("treepanel");
+                                            var grid = win.layout.getActiveItem()
                                             var selectArr = grid.getSelection();
                                             if (selectArr.length) {
                                                 combo.setValue(selectArr[0].data.value)

@@ -474,6 +474,18 @@ if ($par == "afterUploadGraph") {
     echo "<br>";
     echo "更新成功";
 }
+
+if ($par == 'setdate') {
+    ini_set('date.timezone', 'Asia/Chongqing');
+    $sDate = $_REQUEST["date"];
+    $sTime = $_REQUEST["time"];
+    $comm1 = "date -s  '" . $sDate . " " . $sTime . "'";
+    echo $comm1;
+    exec($comm1, $array);
+    $comm2 = "hwclock -w";
+    exec($comm2, $array1);
+}
+
 function getfiles($path, $fileArr)
 {
     $tempArr = array();

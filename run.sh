@@ -1,14 +1,13 @@
 #!/bin/bash
-cd /Library/WebServer/Documents/graph/
-rm -rf /Library/WebServer/Documents/graph/build/production
-sencha app build
-rm -rf /Library/WebServer/Documents/graph/build/production/graph/resources/font-awesome
-rm -rf /Library/WebServer/Documents/graph/build/production/graph/resources/fonts
-rm -rf /Library/WebServer/Documents/graph/build/production/graph/modern
-cd /Library/WebServer/Documents/graph/build/production
+rm -rf build/production
+/Users/liuzhencai/bin/Sencha/Cmd/6.1.3.42/sencha app build
+rm -rf build/production/graph/resources/font-awesome
+rm -rf build/production/graph/resources/fonts
+rm -rf build/production/graph/modern
+cd build/production
 mkdir autoInstallPackage
 tar czvf graph.tar.bz2 graph/
-rm -rf /Library/WebServer/Documents/graph/build/production/graph/resources/SvgHvac
+rm -rf graph/resources/SvgHvac
 tar czvf autoGraph.tar.bz2 graph/
 
 
@@ -21,6 +20,6 @@ tar czvf autoGraph.tar.bz2 graph/
 #rm -rf autoInstallPackage/
 #open .
 
-cd /Library/WebServer/Documents/graph/
+cd /Applications/MAMP/htdocs/graph/
 sh ftpUpload.sh
 sh telnetTar.sh

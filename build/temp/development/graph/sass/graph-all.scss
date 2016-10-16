@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'graph' );
-$image-search-path: '/Library/WebServer/Documents/editpic/build/development/graph/classic/resources';
+$image-search-path: '/Applications/MAMP/htdocs/graph/build/development/graph/classic/resources';
 $theme-name:  dynamic( 'theme-aria' );
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;
@@ -1110,12 +1110,28 @@ $include-editpic-store-personnel: dynamic(true);;
 $include-editpic-store-picdatas: dynamic(true);;
 $include-editpic-store-treelistmodel: dynamic(true);;
 $include-editpic-view-drag-simple: dynamic(true);;
+$include-editpic-view-form-canvasmenubaseform: dynamic(true);;
+$include-editpic-view-form-canvasmenubaseformcontroller: dynamic(true);;
+$include-editpic-view-form-canvasmenubaseformmodel: dynamic(true);;
+$include-editpic-view-form-labelform: dynamic(true);;
+$include-editpic-view-form-linkpropertyform: dynamic(true);;
+$include-editpic-view-img-basetool: dynamic(true);;
+$include-editpic-view-img-basetoolcontroller: dynamic(true);;
+$include-editpic-view-img-basetoolmodel: dynamic(true);;
 $include-editpic-view-img-canvasimg: dynamic(true);;
 $include-editpic-view-img-canvasimgcontroller: dynamic(true);;
 $include-editpic-view-img-canvasimgmodel: dynamic(true);;
+$include-editpic-view-img-clocktool: dynamic(true);;
+$include-editpic-view-img-dynamictexttool: dynamic(true);;
 $include-editpic-view-img-gifimg: dynamic(true);;
-$include-editpic-view-img-gifimgcontroller: dynamic(true);;
-$include-editpic-view-img-gifimgmodel: dynamic(true);;
+$include-editpic-view-img-linktool: dynamic(true);;
+$include-editpic-view-img-scheduletool: dynamic(true);;
+$include-editpic-view-img-textfieldtool: dynamic(true);;
+$include-editpic-view-img-texttool: dynamic(true);;
+$include-editpic-view-img-timetool: dynamic(true);;
+$include-editpic-view-login-loginwindow: dynamic(true);;
+$include-editpic-view-login-loginwindowcontroller: dynamic(true);;
+$include-editpic-view-login-loginwindowmodel: dynamic(true);;
 $include-editpic-view-main-list: dynamic(true);;
 $include-editpic-view-main-main: dynamic(true);;
 $include-editpic-view-main-maincontroller: dynamic(true);;
@@ -1132,12 +1148,28 @@ $include-editpic-view-panel-setapicpanelmodel: dynamic(true);;
 $include-editpic-view-panel-setpicpanel: dynamic(true);;
 $include-editpic-view-panel-setpicpanelcontroller: dynamic(true);;
 $include-editpic-view-panel-setpicpanelmodel: dynamic(true);;
+$include-editpic-view-panel-toolspanel: dynamic(true);;
+$include-editpic-view-panel-toolspanelcontroller: dynamic(true);;
+$include-editpic-view-panel-toolspanelmodel: dynamic(true);;
 $include-editpic-view-tree-devtree: dynamic(true);;
 $include-editpic-view-tree-devtreecontroller: dynamic(true);;
 $include-editpic-view-tree-devtreemodel: dynamic(true);;
 $include-editpic-view-tree-svgstree: dynamic(true);;
 $include-editpic-view-tree-svgstreecontroller: dynamic(true);;
 $include-editpic-view-tree-svgstreemodel: dynamic(true);;
+$include-editpic-view-ux-keyboard: dynamic(true);;
+$include-editpic-view-ux-keyboardcontroller: dynamic(true);;
+$include-editpic-view-ux-keyboardmodel: dynamic(true);;
+$include-editpic-view-week-weekwin: dynamic(true);;
+$include-editpic-view-week-weekwincontroller: dynamic(true);;
+$include-editpic-view-week-weekwinmodel: dynamic(true);;
+$include-editpic-view-window-canvasconponmentwindow: dynamic(true);;
+$include-editpic-view-window-canvasconponmentwindowcontroller: dynamic(true);;
+$include-editpic-view-window-canvasconponmentwindowmodel: dynamic(true);;
+$include-editpic-view-window-downloadwindow: dynamic(true);;
+$include-editpic-view-window-downloadwindowcontroller: dynamic(true);;
+$include-editpic-view-window-downloadwindowmodel: dynamic(true);;
+$include-editpic-view-window-uploadwindow: dynamic(true);;
 $output-paths: ("path": "../../classic/resources", "shared": "../../resources");
 
 /* ======================== ETC ======================== */
@@ -1189,14 +1221,6 @@ $current-package: 'theme-aria';
 $current-resource-root: $theme-aria-resource-root;
 $relative-image-path-for-uis: $theme-aria-resource-path;
 @import '../../../../../ext/classic/theme-aria/sass/etc/all';
-
-/* including package font-awesome */
-$font-awesome-resource-root: 'font-awesome' !default;
-$font-awesome-resource-path: 'font-awesome/images' !default;
-$current-package: 'font-awesome';
-$current-resource-root: $font-awesome-resource-root;
-$relative-image-path-for-uis: $font-awesome-resource-path;
-@import '../../../../../ext/packages/font-awesome/sass/etc/all';
 
 /* including package charts */
 $charts-resource-root: 'charts' !default;
@@ -1606,14 +1630,6 @@ $relative-image-path-for-uis: $theme-aria-resource-path;
 @import '../../../../../ext/classic/theme-aria/sass/src/panel/Title';
 @import '../../../../../ext/classic/theme-aria/sass/src/panel/Tool';
 @import '../../../../../ext/classic/theme-aria/sass/src/form/FieldSet';
-
-/* including package font-awesome */
-$font-awesome-resource-root: 'font-awesome' !default;
-$font-awesome-resource-path: 'font-awesome/images' !default;
-$current-package: 'font-awesome';
-$current-resource-root: $font-awesome-resource-root;
-$relative-image-path-for-uis: $font-awesome-resource-path;
-@import '../../../../../ext/packages/font-awesome/sass/src/all';
 
 /* including package charts */
 $charts-resource-root: 'charts' !default;

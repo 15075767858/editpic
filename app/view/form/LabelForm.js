@@ -125,10 +125,10 @@ Ext.define('editpic.view.form.LabelForm', {
         }
 
 
-
         if (itype > 1) {
 
-            var fontColorField = Ext.create("Ext.form.field.ComboBox", {
+
+            var fontColorField = Ext.create("Ext.form.field.Text", {
                 /*store:Ext.create("Ext.data.Store",{
                  fields:['name','color','html'],
                  data:["white","blue","red","gray","green","black"]
@@ -137,27 +137,26 @@ Ext.define('editpic.view.form.LabelForm', {
                 fieldLabel: 'Font Color',
                 value: values.fontColor || "white",
                 name: "fontColor",
-                /*listeners: {
-                    change: function (field, newValue) {
-                        values.setFontColor(newValue);
-                        // values.backgroundColor=newValue
-                    }
-                }*/
+
+                listeners: {
+                    focus: "colorPickerFocus"
+                }
             })
+
 
             labelFormItems.push(fontColorField)
 
-            if(itype==3){
+            if (itype == 3) {
                 labelFormItems.push({
-                    fieldLabel:"alias",xtype:"textfield",name:"aliasName",allowBlank:true,
-                    value:values.aliasName
+                    fieldLabel: "alias", xtype: "textfield", name: "aliasName", allowBlank: true,
+                    value: values.aliasName
                 })
                 labelFormItems.push({
-                    fieldLabel:"show filename",
-                    xtype:"checkboxfield",
-                    name:"showFilename",
-                    inputValue:true,
-                    value:values.showFilename
+                    fieldLabel: "show filename",
+                    xtype: "checkboxfield",
+                    name: "showFilename",
+                    inputValue: true,
+                    value: values.showFilename
                 })
             }
             labelFormItems.push(
@@ -249,17 +248,17 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             )
             labelFormItems.push({
-                name:"fontPostion",
-                fieldLabel:"font postion",
-                xtype:"slider",
-                minValue:0,
-                configName:"mySetFontPosition",
-                maxValue:values.height,
-                bind:{maxValue:"{height.value}"},
-                value:values.fontPostion||values.height/2-10,
+                name: "fontPostion",
+                fieldLabel: "font postion",
+                xtype: "slider",
+                minValue: 0,
+                configName: "mySetFontPosition",
+                maxValue: values.height,
+                bind: {maxValue: "{height.value}"},
+                value: values.fontPostion || values.height / 2 - 10,
                 listeners: {
                     values: values,
-                    change: function(field,newValue){
+                    change: function (field, newValue) {
                         values.mySetFontPosition(newValue)
                     }
                 }
@@ -337,6 +336,7 @@ Ext.define('editpic.view.form.LabelForm', {
                                 itemId: "backgroundColor",
                                 name: "backgroundColor",
                                 fieldLabel: "Background Color",
+
                             })
                             var win = Ext.create("Ext.window.Window", {
                                 autoShow: true,
@@ -365,8 +365,8 @@ Ext.define('editpic.view.form.LabelForm', {
                                             name: "backgroundColor",
                                             value: values.backgroundColor || "",
                                             listeners: {
+                                                focus:"colorPickerFocus",
                                                 change: function (field, newValue) {
-
                                                     values.backgroundColor = newValue
                                                 }
                                             }
@@ -458,7 +458,7 @@ Ext.define('editpic.view.form.LabelForm', {
                 xtype: 'numberfield',
                 step: 1,
                 minValue: 1,
-                reference:"height",
+                reference: "height",
                 publishes: [
                     "value"
                 ],

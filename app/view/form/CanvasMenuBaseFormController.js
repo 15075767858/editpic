@@ -35,5 +35,33 @@ Ext.define('editpic.view.form.CanvasMenuBaseFormController', {
     boxready:function(){
         console.log(this.getViewModel())
     },
+    colorPickerFocus:function(field, newValue){
 
+        var win = Ext.create("Ext.window.Window", {
+            title: "select color",
+            autoShow: true,
+            items: Ext.create("Ext.picker.Color", {
+                fieldLabel: "FontColor",
+                name: "fontColor"
+            }),
+            buttons: [
+                {
+                    text: "Ok", handler: function () {
+                    var colorPicker = win.down("colorpicker");
+                    console.log(colorPicker)
+                    //alert(colorPicker.value)
+                    field.setValue("#"+colorPicker.value);
+                    win.close();
+                }
+                },
+                {
+                    text: "Cancel", handler: function () {
+                    win.close()
+                }
+                }
+            ]
+        })
+
+    }
 });
+

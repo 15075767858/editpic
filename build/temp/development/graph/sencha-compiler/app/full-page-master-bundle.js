@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /Library/WebServer/Documents/graph/app.js
+// @require /Applications/MAMP/htdocs/graph/app.js
