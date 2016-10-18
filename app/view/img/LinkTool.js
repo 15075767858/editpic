@@ -1,11 +1,7 @@
 Ext.define('editpic.view.img.LinkTool', {
     extend: 'editpic.view.img.BaseTool',
 
-
-
     layout: "absolute",
-
-
     initComponent: function () {
         var me = this;
         me.callParent();

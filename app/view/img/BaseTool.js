@@ -1,3 +1,9 @@
+/*
+添加一个工具的流程
+首先继承基础工具
+然后在My.createImg 方法中注册
+如果需要连接数据库则在LinkPropertyForm中新建一个关于它的itype 连接数据库方法
+ */
 Ext.define('editpic.view.img.BaseTool', {
     extend: 'Ext.form.Panel',
 
@@ -295,8 +301,6 @@ Ext.define('editpic.view.img.BaseTool', {
             return "#FFFFFF";
         }
     },
-
-
     linkData: function (data) {
         var me = this;
 

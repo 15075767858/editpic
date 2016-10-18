@@ -152,7 +152,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                     {
                                         rootVisible: false,
                                         xtype: "treepanel",
-                                    
+
                                         listeners: {
                                             boxready: function (treePanel) {
                                                 if (!combo.value) {
@@ -352,8 +352,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
             ]
         }
 
-        if (itype == 12) {
-            var schdules = My.getSchdules(me.values.ip, me.values.port)
+
+        if (itype == 12 || itype == 16) {
             var ipFiled = {
                 xtype: "combo",
                 flex: 3,
@@ -371,43 +371,79 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 reference: "portfield",
                 value: "6379"
             };
-
-            var linkBtnField = {
-                xtype: "button",
-                text: "link",
-                flex: 1
-            };
-
+            /*
+             var linkBtnField = {
+             xtype: "button",
+             text: "link",
+             flex: 1
+             };*/
             me.items = [
                 ipFiled,
-                portField,
-                Ext.apply(linkBtnField, {
-                    handler: function () {
-                        var ip = me.lookup("ipfield").getValue();
-                        var port = me.lookup("portfield").getValue();
-                        var store = My.getSchdules(ip, port);
-                        if (store) {
-                            var devscombo = me.lookup("devscombo")
-                            console.log(devscombo)
-                            devscombo.setStore(store)
-                        } else {
-                            Ext.Msg.alert("Error", "Connect to database failed !");
-                        }
-                    }
-                }),
-                {
-                    xtype: "combo",
-                    name: "schdule",
-                    fieldLabel: "schdule",
-                    displayField: 'name',
-                    valueField: 'value',
-                    allowBlank: true,
-                    itemId: "devscombo",
-                    reference: "devscombo",
-                    editable: true,
-                    store: schdules
-                },
+                portField
             ]
+        }
+        if (itype == 12) {
+            var schdules = My.getSchdules(me.values.ip, me.values.port)
+            me.items.push({
+                xtype: "button",
+                text: "link",
+                flex: 1,
+                handler: function () {
+                    var ip = me.lookup("ipfield").getValue();
+                    var port = me.lookup("portfield").getValue();
+                    var store = My.getSchdules(ip, port);
+                    if (store) {
+                        var devscombo = me.lookup("devscombo")
+                        console.log(devscombo)
+                        devscombo.setStore(store)
+                    } else {
+                        Ext.Msg.alert("Error", "Connect to database failed !");
+                    }
+                }
+            })
+            me.items.push({
+                xtype: "combo",
+                name: "schdule",
+                fieldLabel: "schdule",
+                displayField: 'name',
+                valueField: 'value',
+                allowBlank: true,
+                itemId: "devscombo",
+                reference: "devscombo",
+                editable: true,
+                store: schdules
+            })
+        }
+        if (itype == 16) {
+            var devs = My.getDevNames(me.values.ip, me.values.port);
+
+            me.items.push({
+                xtype: "button",
+                text: "link",
+                flex: 1,
+                handler: function () {
+                    var ip = me.lookup("ipfield").getValue();
+                    var port = me.lookup("portfield").getValue();
+                    var store = My.getDevNames(ip, port);
+                    if (store) {
+                        var devscombo = me.lookup("devscombo")
+                        console.log(devscombo)
+                        devscombo.setStore(store)
+                    } else {
+                        Ext.Msg.alert("Error", "Connect to database failed !");
+                    }
+                }
+            })
+            me.items.push({
+                xtype: "combo",
+                name: "device",
+                fieldLabel: "devices",
+                allowBlank: true,
+                itemId: "devscombo",
+                reference: "devscombo",
+                editable: true,
+                store: devs
+            })
 
         }
 
@@ -419,6 +455,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
     }
 
 });
+
 /*
  [
  /!* {

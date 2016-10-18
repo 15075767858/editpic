@@ -731,6 +731,7 @@ $include-editpic-view-img-canvasimg: dynamic(true);;
 $include-editpic-view-img-canvasimgcontroller: dynamic(true);;
 $include-editpic-view-img-canvasimgmodel: dynamic(true);;
 $include-editpic-view-img-clocktool: dynamic(true);;
+$include-editpic-view-img-devicestool: dynamic(true);;
 $include-editpic-view-img-dynamictexttool: dynamic(true);;
 $include-editpic-view-img-gifimg: dynamic(true);;
 $include-editpic-view-img-linktool: dynamic(true);;

@@ -676,6 +676,27 @@ My.getSchdules = function (ip, port) {
     return store;
 }
 
+My.getDevNames = function (ip,port) {
+    var store = null;
+    if (!ip & !port) {
+        return store;
+    }
+    My.Ajax("resources/main.php", function (response) {
+            var data = response.responseText
+            try {
+                var ojson = Ext.decode(data);
+                store = ojson;
+            } catch (e) {
+            }
+        }, {
+            par: "getDevNames",
+            ip: ip,
+            port: port
+        }
+    )
+    return store;
+}
+
 My.getSearch = function () {
     var search = window.location.search;
     if (search) {
@@ -1629,6 +1650,9 @@ My.createImg = function (data) {
     }
     if (data.itype == 13) {
         component = Ext.create("editpic.view.img.TimeTool", data)
+    }
+    if (data.itype == 16) {
+        component = Ext.create("editpic.view.img.DevicesTool", data)
     }
     return component;
 }

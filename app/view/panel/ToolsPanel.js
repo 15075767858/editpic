@@ -60,7 +60,8 @@ Ext.define('editpic.view.panel.ToolsPanel', {
                 {src: 'resources/icons/schdule.png', caption: 'schdule',itype:12,disabled:false},
                 {src: 'resources/icons/time.png', caption: 'time',itype:13,disabled:false},
                 {src: 'resources/icons/video.png', caption: 'video',itype:14,disabled:true},
-                {src: 'resources/icons/weather.png', caption: 'weather',itype:15,disabled:true}
+                {src: 'resources/icons/weather.png', caption: 'weather',itype:15,disabled:true},
+                {src: 'resources/icons/devices_48px.png', caption: 'devices',itype:16,disabled:false}
             ]
 
             for (var i = 0; i < data.length; i++) {
