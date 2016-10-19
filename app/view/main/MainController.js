@@ -625,6 +625,40 @@ My.getDevStore = function (ip, port) {
     )
     return store;
 }
+My.getDevsByDevName = function (ip, port, devname) {
+    /*
+     根据 前四位 数字 获取数据库中的keys
+     */
+    var store = null;
+    console.log(arguments)
+    if (!ip & !port) {
+        return store;
+    }
+    My.Ajax("resources/main.php", function (response) {
+            var data = response.responseText;
+            try {
+                var ojson = Ext.decode(data)
+                if (ojson["success"]) {
+                    Ext.Msg.alert("info", ojson.info);
+                    return store;
+                } else {
+                    store = Ext.create("Ext.data.Store", {
+                        fields: ['name', 'value', 'Present_Value'],
+                        data: ojson
+                    })
+                }
+            } catch (e) {
+            }
+        }, {
+            par: "getDevsByDevName",
+            ip: ip,
+            port: port,
+            devname: devname
+        }
+    )
+    return store;
+
+}
 My.getDevTypeStore = function (ip, port, nodename) {
 
     var store = [];
@@ -676,7 +710,7 @@ My.getSchdules = function (ip, port) {
     return store;
 }
 
-My.getDevNames = function (ip,port) {
+My.getDevNames = function (ip, port) {
     var store = null;
     if (!ip & !port) {
         return store;
@@ -825,6 +859,7 @@ My.initComponentConfig = {
             me.nodename = nodename;
             me.type = type;
         }
+
 //        console.log(data)
 
         if (!!me.ip & !!me.port & !!me.nodename & !!me.type) {
