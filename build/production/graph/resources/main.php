@@ -39,6 +39,29 @@ if ($par == "getdevs") {
     }
 }
 
+if ($par == "getDevsByDevName") {
+    $redis = getRedisConect();
+    if ($redis) {
+        $devname=$_REQUEST['devname'];
+        $arList = $redis->keys($devname."???");
+        sort($arList);
+        $arr = array();
+        foreach ($arList as $key => $value) {
+            if (is_numeric($value)) {
+                array_push($arr, array("value" => $value, "name" => $redis->hGet($value, "Object_Name"),'Present_Value'=>$redis->hGet($value,'Present_Value')));
+            }
+        }
+        sort($arList);
+        echo json_encode($arr);
+        $redis->close();
+    } else {
+        $arr = Array("success" => false,'info'=>"link database error!");
+        echo json_encode($arr);
+    }
+}
+
+//Present_Value
+
 if ($par == "gettypes") {
     $redis = getRedisConect();
     if ($redis) {

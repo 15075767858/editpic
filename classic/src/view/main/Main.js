@@ -85,7 +85,7 @@ Ext.define('editpic.view.main.Main', {
         }, {
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.21")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.22")
             }
         }
     ],
@@ -189,7 +189,7 @@ Ext.define('editpic.view.main.Main', {
                         constrain:false,
                         title: text,
                         scrollable: true,
-                        layout:"absolute",
+                        //layout:"absolute",
                         items: picPanel
                     }
                 ).show()

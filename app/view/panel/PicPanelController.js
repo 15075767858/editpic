@@ -13,11 +13,6 @@ Ext.define('editpic.view.panel.PicPanelController', {
          //storeId: "picdatas",
          autoLoad: true
          })*/
-
-
-        //setpicpanel
-
-
         this.PanelDropTarget = new Ext.dd.DropTarget(panel.id, {
             ddGroup: "picgroup",
             notifyEnter: function (ddSource, e, data) {

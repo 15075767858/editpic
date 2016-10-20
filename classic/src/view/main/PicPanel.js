@@ -36,6 +36,7 @@ Ext.define('editpic.view.panel.PicPanel', {
     viewModel: {
         type: 'panel-picpanel'
     },
+    resizable: true,
     scrollable: true,
     constrainHeader: false,
     constrain: false,
@@ -54,17 +55,14 @@ Ext.define('editpic.view.panel.PicPanel', {
     //id: "maindrawpanel",
     initComponent: function () {
         var me = this;
+        me.initMenusWindow()
+
         me.listeners = {
             el: {
-
                 mousedown: function (e, target, oP) {
-
                     var dom = this.component.up().body.el.dom
                     var st = dom.scrollTop;
                     var sl = dom.scrollLeft;
-
-
-
                     me.unSelect()
                     if (me.body.getTop() > e.pageY) {
                         return;
@@ -103,56 +101,60 @@ Ext.define('editpic.view.panel.PicPanel', {
                         if (dX < mX & dY > mY) {
                             me.selectPanel.setY(moveEven.pageY)
                             me.selectPanel.y = moveEven.pageY - me.body.getTop();
-
                         }
+
+
                     }
 
                     document.onmouseup = function () {
-
-                        selectComponent.call(me, me.selectPanel)
+                        me.selectPanel.close()
+                        me.selectComponent(function () {
+                            console.log(this)
+                            me.showFlowMenu()
+                        })
                         document.onmousemove = null;
                         document.onmouseup = null;
-                        me.selectPanel.close()
                         setTimeout(function () {
-
-                            dom.scrollTop=st
-                            dom.scrollLeft=sl
+                            dom.scrollTop = st
+                            dom.scrollLeft = sl
                         }, 1)
                     }
                 },
             }
         }
-        function selectComponent(data) {
-            var me = this;
-            var x = data.x, y = data.y, width = data.width, height = data.height;
-            if (!me.items) {
-                return;
-            }
-            me.items.each(function (items, index, length) {
-                var me = this;
-                if (items.selectStyle) {
-                    var isCollsion = isCollsionRect(me.selectPanel, items)
-                    if (isCollsion) {
-                        items.selectStyle(true);
-                    }
-                }
-            }, me)
-
-            me.textfield = me.createMoveField(
-                function (field, e) {
-                    me.items.each(function (item, index, length) {
-                        if (!!item.moveController & item.isselect) {
-                            item.moveController(e)
-                        }
-                    }, me)
-                },
-                function () {
-                    me.unSelect()
-                }
-            )
-            console.log(me.textfield)
+        me.callParent();
+    },
+    selectComponent: function (callback) {
+        var me = this;
+        var data = me.selectPanel;
+        console.log(data)
+        var x = data.x, y = data.y, width = data.width, height = data.height;
+        if (!me.items) {
+            return;
         }
+        me.items.each(function (items, index, length) {
+            var me = this;
+            if (items.selectStyle) {
+                var isCollsion = isCollsionRect(me.selectPanel, items)
+                if (isCollsion) {
+                    items.selectStyle(true);
+                }
+            }
+        }, me)
 
+        me.textfield = me.createMoveField(
+            function (field, e) {
+                me.items.each(function (item, index, length) {
+                    if (!!item.moveController & item.isselect) {
+                        item.moveController(e)
+                    }
+                }, me)
+            },
+            function () {
+                //me.unSelect()
+            }
+        )
+        callback()
         function isCollsionRect(mR, oR) {
             var mRwidth = mR.x + mR.width;
             var mRheight = mR.y + mR.height;
@@ -165,10 +167,7 @@ Ext.define('editpic.view.panel.PicPanel', {
                 return false;
             }
         }
-
-        me.callParent();
     },
-
     unSelect: function () {
         var me = this;
         if (me.selectPanel) {
@@ -186,7 +185,74 @@ Ext.define('editpic.view.panel.PicPanel', {
             }
         })
     },
+    getSelectItems: function () {
+        var me = this;
+        var items = me.items.items;
+        var arr = [];
+        for (var i = 0; i < items.length; i++) {
+            console.log(items[i])
+            if (items[i].isselect) {
+                arr.push(items[i]);
+            }
+        }
+        return arr;
+    },
+    showFlowMenu: function () {
+        var me = this;
+        var items = me.getSelectItems();
+        if (!me.menuWindow) {
+            return
+        }
+        if (items.length < 2) {
+            me.menuWindow.hide();
+            return;
+        } else {
+            me.menuWindow.show();
+        }
+    },
+    initMenusWindow: function () {
+        var me = this;
+        me.menuWindow = Ext.create("Ext.window.Window", {
+            hideMode: "offsets",
+            width: 200,
+            height: 200,
+            tbar: [
+                {
+                    icon: 'resources/icons/left_alignment_16px.png', tooltip: "left alignment",
+                    handler: function () {
+                        var items = me.getSelectItems()
+                        items.sort(function (a, b) {
+                            return a.x - b.x
+                        })
+                        for (var i = 0; i < items.length; i++) {
+                            items[i].mySetX(items[0].x)
+                        }
 
+                    }
+                },
+                {
+                    icon: 'resources/icons/top_alignment_16px.png', tooltip: "top alignment",
+                    handler: function () {
+                        var items = me.getSelectItems()
+                        items.sort(function (a, b) {
+                            return a.y - b.y
+                        })
+                        for (var i = 0; i < items.length; i++) {
+                            items[i].mySetY(items[0].y)
+                        }
+                    }
+                },
+                {
+                    icon: 'resources/icons/close_16px.png', tooltip: "delete", handler: function () {
+                    var items = me.getSelectItems();
+                    for (var i = 0; i < items.length; i++) {
+                        me.remove(items[i])
+                    }
+                }
+                }
+            ]
+        })
+    },
     createMoveField: function (focusFn, leaveFn) {
         var me = this;
         var textfield = Ext.create("Ext.form.field.Text", {
@@ -265,13 +331,9 @@ Ext.define('editpic.view.panel.PicPanel', {
             hidden: true
         })
         for (var i = 0; i < data.length; i++) {
-
             var img = My.createImg(data[i])
             img.bufferDatas = data[i];
             bufferContainer.add(img);
-            //me.add(img);
-            //img.init(data[i])
-
         }
         me.add(bufferContainer.items.items);
         var items = me.items.items;
@@ -432,7 +494,6 @@ Ext.define('editpic.view.panel.PicPanel', {
         me.viewModel.set("removeStack", removeStack.concat([]));
     },
     //sprites: [],
-
 
     listeners: {
         boxready: "boxready",
