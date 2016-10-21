@@ -54,15 +54,15 @@ Ext.define('editpic.view.panel.PicPanelController', {
                      zindex: 0
                      }
                      )*/
-                    var itype=dragData.itype;
-                    var zindex=0;
-                    if(itype==2||itype==4){
-                        zindex=20;
+                    var itype = dragData.itype;
+                    var zindex = 0;
+                    if (itype == 2 || itype == 4) {
+                        zindex = 20;
                     }
-                    if(itype==5||itype==3){
-                        zindex=15;
-                    }else{
-                        zindex=20;
+                    if (itype == 5 || itype == 3) {
+                        zindex = 15;
+                    } else {
+                        zindex = 20;
                     }
 
 
@@ -73,7 +73,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
                         width: 100,
                         height: 100,
                         disabled: false,
-                        boxShadow:"1px 1px 1px #FFFFFF",
+                        boxShadow: "1px 1px 1px #FFFFFF",
                         zindex: zindex
                     })
 
@@ -98,11 +98,17 @@ Ext.define('editpic.view.panel.PicPanelController', {
                     var selectRecord = ddSource.dragData.records[0].data;
                     var url = selectRecord.url;
 
+                    var img = new Image()
+                    img.src = url;
+
+                    var width = img.width;
+                    var height = img.height;
+
                     var data = {
                         x: e.event.offsetX,
                         y: e.event.offsetY,
-                        width: 100,
-                        height: 100,
+                        width: width,
+                        height: height,
                         disabled: false,
                         src: url,
                         hidden: true,
@@ -155,7 +161,6 @@ Ext.define('editpic.view.panel.PicPanelController', {
                                         panel.add(imagePanel);
                                         imagePanel.init(resData)
                                         selectImgWin.close()
-
                                     },
                                     cancel: function () {
                                         selectImgWin.close()

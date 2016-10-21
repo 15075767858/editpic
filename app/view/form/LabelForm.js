@@ -25,25 +25,7 @@ Ext.define('editpic.view.form.LabelForm', {
 
         if (itype == 0 || itype == 1) {
             labelFormItems = [
-                /*{
-                 xtype: "combo", fieldLabel: "Image Type",
-                 name: "itype", allowBlank: true,
-                 store: Ext.create("Ext.data.Store", {
-                 fields: ["name", "value"],
-                 data: [
-                 {name: "static Image", value: 0},
-                 {name: "Dynamic Image", value: 1}
-                 ]
-                 }),
-                 editable: false,
-                 value: 0,
-                 displayField: 'name',
-                 valueField: 'value',
-                 reference: "ImageType",
-                 publishes: [
-                 "value"
-                 ]
-                 },*/
+
                 {
                     xtype: "checkboxfield", fieldLabel: "link database",
                     reference: "isLinkDataBase",
@@ -53,20 +35,9 @@ Ext.define('editpic.view.form.LabelForm', {
                     name: "isLinkDataBase",
                     hidden: itype == 1,
                     disabled: itype == 1,
-                    /*listeners:{
-                     change:function(field,bol){
-                     var win =  me.up();
-                     var isBindComponent = win.query("[name=isBind]")[0];
-                     isBindComponent.setDisabled(!bol)
-                     }
-                     }*/
+
                 },
-                /* {
-                 xtype: "hiddenfield", name: "isLinkDataBase", disabled: itype == 1,
-                 bind: {
-                 value: "{isLinkDataBase.checked}"
-                 }
-                 },*/
+
                 {
                     xtype: "numberfield",
                     allowBlank: true,
@@ -90,10 +61,6 @@ Ext.define('editpic.view.form.LabelForm', {
                 {
                     xtype: "textfield",
                     name: "dynamicSrc", allowBlank: true, fieldLabel: "Dynamic Image",
-                    /*bind: {
-                     disabled: "{!ImageType.value}",
-                     hidden: "{!ImageType.value}"
-                     },*/
                     hidden: values.itype == 0,
                     disabled: values.itype == 0,
                     editable: true,
@@ -129,10 +96,7 @@ Ext.define('editpic.view.form.LabelForm', {
 
 
             var fontColorField = Ext.create("Ext.form.field.Text", {
-                /*store:Ext.create("Ext.data.Store",{
-                 fields:['name','color','html'],
-                 data:["white","blue","red","gray","green","black"]
-                 }),*/
+
                 store: ["white", "blue", "red", "gray", "brown", "green", "black"],
                 fieldLabel: 'Font Color',
                 value: values.fontColor || "white",
@@ -443,7 +407,7 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             },
             {
-                name: "width", fieldLabel: "width", configName: "mySetWidth", xtype: 'numberfield',
+                name: "width", fieldLabel: "width",itemId:"width", configName: "mySetWidth", xtype: 'numberfield',
                 step: 1,
                 minValue: 1,
                 listeners: {
@@ -456,6 +420,7 @@ Ext.define('editpic.view.form.LabelForm', {
                 fieldLabel: "height",
                 configName: "mySetHeight",
                 xtype: 'numberfield',
+                itemId:"height",
                 step: 1,
                 minValue: 1,
                 reference: "height",

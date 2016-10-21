@@ -214,8 +214,8 @@ Ext.define('editpic.view.panel.PicPanel', {
         var me = this;
         me.menuWindow = Ext.create("Ext.window.Window", {
             hideMode: "offsets",
-            width: 200,
-            height: 200,
+            width: 110,
+            height: 75,
             tbar: [
                 {
                     icon: 'resources/icons/left_alignment_16px.png', tooltip: "left alignment",
@@ -243,11 +243,26 @@ Ext.define('editpic.view.panel.PicPanel', {
                     }
                 },
                 {
-                    icon: 'resources/icons/close_16px.png', tooltip: "delete", handler: function () {
-                    var items = me.getSelectItems();
-                    for (var i = 0; i < items.length; i++) {
-                        me.remove(items[i])
-                    }
+                    icon: 'resources/icons/close_16px.png', tooltip: "delete", handler: function (btn) {
+                    Ext.MessageBox.show({
+                        title: 'Delete Images',
+                        msg: 'Would you delete images ?',
+                        buttons: Ext.MessageBox.YESNOCANCEL,
+                        scope: this,
+                        fn: function (ms) {
+                            console.log(arguments)
+
+                            if (ms == 'yes') {
+                                var items = me.getSelectItems();
+                                for (var i = 0; i < items.length; i++) {
+                                    me.remove(items[i])
+                                }
+                            }
+                        },
+                        animateTarget: btn,
+                        icon: Ext.MessageBox.QUESTION,
+                    });
+
                 }
                 }
             ]

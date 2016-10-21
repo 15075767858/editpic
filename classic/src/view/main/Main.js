@@ -5,6 +5,7 @@
  *
  * TODO - Replace this content of this view to suite the needs of your application.
  */
+
 Ext.define('editpic.view.main.Main', {
     extend: 'Ext.panel.Panel',
     xtype: 'app-main',
@@ -85,7 +86,7 @@ Ext.define('editpic.view.main.Main', {
         }, {
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.22")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.23")
             }
         }
     ],
