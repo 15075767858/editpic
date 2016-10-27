@@ -26,7 +26,8 @@ Ext.define('editpic.view.main.Main', {
         "Ext.window.Toast",
         "editpic.view.login.LoginWindow",
         "editpic.view.ux.KeyBoard",
-        "editpic.view.week.WeekWin"
+        "editpic.view.week.WeekWin",
+        "editpic.view.tool.PublishPic"
     ],
 
     id: "mainPanel",
@@ -86,7 +87,7 @@ Ext.define('editpic.view.main.Main', {
         }, {
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.23")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.25")
             }
         }
     ],
@@ -97,7 +98,6 @@ Ext.define('editpic.view.main.Main', {
             inputValue: true,
             boxLabel: " Screen keyboard",
             handler: function (field, bol) {
-                console.log(arguments)
                 My.isKeyBord = bol;
             }
         },

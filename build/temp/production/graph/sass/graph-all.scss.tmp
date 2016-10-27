@@ -758,6 +758,8 @@ $include-editpic-view-panel-setpicpanelmodel: dynamic(false);;
 $include-editpic-view-panel-toolspanel: dynamic(false);;
 $include-editpic-view-panel-toolspanelcontroller: dynamic(false);;
 $include-editpic-view-panel-toolspanelmodel: dynamic(false);;
+$include-editpic-view-tool-publishpiccontroller: dynamic(false);;
+$include-editpic-view-tool-publishpicmodel: dynamic(false);;
 $include-editpic-view-tree-devtreecontroller: dynamic(false);;
 $include-editpic-view-tree-devtreemodel: dynamic(false);;
 $include-editpic-view-tree-svgstreecontroller: dynamic(false);;

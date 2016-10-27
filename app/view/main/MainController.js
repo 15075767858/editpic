@@ -506,8 +506,8 @@ My.AjaxSimplePost = function (params, url, success) {
     });
 }
 My.AjaxSimplePostAsync = function (params, url, success) {
-    console.log("开始")
-    console.log(params)
+//    console.log("开始")
+    //console.log(params)
     Ext.Ajax.request({
         url: url || "resources/main.php",
         method: "POST",
@@ -542,7 +542,7 @@ My.getImageData = function () {
     var data = {};
 
     My.Ajax("resources/main.php?par=getImageData", function (response) {
-        console.log(response.responseText)
+//        console.log(response.responseText)
         try {
             data = Ext.decode(response.responseText);
         } catch (e) {
@@ -797,7 +797,7 @@ My.initLinkValue = function () {
     }
 
     My.AjaxSimplePostAsync(data, "resources/main.php?par=getLinkValues", function (response) {
-        console.log(response.responseText)
+//        console.log(response.responseText)
         try {
             Ext.decode(response.responseText);
         } catch (e) {
@@ -827,7 +827,16 @@ My.initLinkValue = function () {
         }
     });
 
+    My.util.PublishPic.run()
 };
+
+My.publish=function(){
+    var curPanel = My.getCurrentPicPanel();
+}
+
+My.getCurrentPicPanle=function(){
+}
+
 
 My.initComponentConfig = {
     draggable: !My.getSearch(),
@@ -848,6 +857,9 @@ My.initComponentConfig = {
     },
 
     isLinkData: function (data) {
+        /*
+         该方法判断图形对象是否是一个完整的可以获得连接服务器数据的对象
+         */
         var me = this;
         if (data) {
             var ip = data.ip;
@@ -874,13 +886,15 @@ My.initComponentConfig = {
             return true;
         }
     },
-    linkInfo: function () {
+
+    linkInfo: function (callback) {
         //return {"ip":true,"nodename":"1001004","type":false}
 
         var resJson = {};
         var me = this;
         My.AjaxAsync("resources/main.php", function (response) {
             resJson = Ext.decode(response.responseText);
+            callback(resJson)
         }, {
             par: 'linkInfo',
             ip: me.ip,
@@ -889,90 +903,83 @@ My.initComponentConfig = {
             type: me.type
         })
         return resJson;
-
     },
     mySubscribe: function () {
         var me = this;
-
         if (!me.isLinkData()) {
             return;
         }
-        var linkJson = me.linkInfo();
-        if (!(linkJson.ip & linkJson.nodename)) {
-            setTimeout(function () {
-                me.mySubscribe();
-            }, My.eachDelay)
 
-            return;
-        }
-        console.log("开始监听 ip=" + me.ip + "nodename=" + me.nodename + " " + me.type + "=" + me.value);
-        console.log(me);
-        var subnode = me.nodename.substr(0, 4) + ".8.*";
-
-        var data = {
-            params: {
-                subnode: subnode
-            },
-            timeout: 0,
-            success: function (response) {
-                console.log("success");
-                me.mySubscribe();
-                var resJson = Ext.decode(response.responseText.substring(1, response.responseText.length - 1))
-                console.log(resJson)
-
-                var arr = resJson.value.split("\r\n");
-                console.log(arr)
-                if (arr.length != 3) {
-                    console.log("length ! = 3")
-                    return;
-                }
-
-                if (arr[0] != me.nodename) {
-                    console.log(arr[0])
-                    return;
-                }
-                if (arr[1] != me.type) {
-                    console.log(arr[1])
-                    return;
-                }
-                if (arr[2] != me.linkValue) {
-                    console.log(arr[2])
-                    me.setLinkValue(arr[2])
-                }
-            },
-            failure: function () {
+        me.linkInfo(callbackFn.bind(me));
+        function callbackFn(linkJson) {
+            var me = this;
+            if (!(linkJson.ip & linkJson.nodename)) {
                 setTimeout(function () {
-                    me.mySubscribe()
+                    me.mySubscribe();
                 }, My.eachDelay)
+                console.log("断开了连接")
+                return;
             }
-        };
+            console.log("开始监听 ip=" + me.ip + "nodename=" + me.nodename + " " + me.type + "=" + me.value);
+            var subnode = me.nodename.substr(0, 4) + ".8.*";
+            var data = {
+                params: {
+                    subnode: subnode
+                },
+                timeout: 0,
 
-        if (location.hostname == me.ip) {
-            data.url = "resources/subscribe.php"
-            Ext.Ajax.request(data)
-        } else {
-            data.url = "http://" + me.ip + "/graph/resources/subscribe.php"
-            Ext.data.JsonP.request(data)
+                success: function (response) {
+
+                    console.log("success");
+                    console.log(response)
+                    var resJson = response;
+                    if(response.responseText){
+                        resJson=Ext.decode(response.responseText)
+                    }
+
+                    var arr = resJson.value.split("\r\n");
+                    console.log(arr)
+
+                    if (arr.length != 3) {
+                        console.log("length ! = 3");
+                        return;
+                    }
+
+                    if (arr[0] != me.nodename) {
+                        console.log(arr[0]);
+                        return;
+                    }
+                    if (arr[1] != me.type) {
+                        console.log(arr[1]);
+                        return;
+                    }
+                    if (arr[2] != me.linkValue) {
+                        console.log(arr[2]);
+                        me.setLinkValue(arr[2])
+                    }
+                    me.mySubscribe();
+
+                },
+                failure: function () {
+
+                    console.log(arguments)
+                    setTimeout(function () {
+                        me.mySubscribe()
+                    }, My.eachDelay);
+
+                }
+            };
+            if (location.hostname == me.ip) {
+                data.url = "resources/subscribe.php";
+                Ext.Ajax.request(data)
+            } else {
+                data.url = "http://" + me.ip + "/graph/resources/subscribe.php";
+                Ext.data.JsonP.request(data)
+            }
         }
 
-        /*        Ext.Ajax.request({
-         url: "resources/main.php?par=subscribe",
-         method: "GET",
-         async: true,
-         params: {},
-         success: function (response) {
-         console.log('success')
-         console.log(arguments)
-         var data = response.responseText
-         console.log(data.split('\r\n'))
-         },
-         failure: function () {
-         console.log('failure')
-         console.log(arguments)
-         }
-         });*/
-
-    }, subscribeCallBack: function (value) {
+    },
+    subscribeCallBack: function (value) {
         var arr = []
         if (value) {
             arr = value.split('\r\n');
@@ -986,7 +993,8 @@ My.initComponentConfig = {
         for (key in items) {
         }
         console.log(arr);
-    }, getSubscribeIps: function () {
+    },
+    getSubscribeIps: function () {
         var items = My.linkManger.items;
         var key;
         var arr = [];
@@ -1691,7 +1699,8 @@ My.createImg = function (data) {
     }
     return component;
 }
-My.eachDelay = 1000 * 60 * 3
+My.eachDelay = 1000 * 60 * 3;//侦听失败后重试时间
+
 window.requestAnimFrame = (function () {
     return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
         function (/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
@@ -1768,7 +1777,8 @@ Array.prototype.unique1 = function () {
     {
         //如果当前数组的第i已经保存进了临时数组，那么跳过，
         //否则把当前项push到临时数组里面
-        if (n.indexOf(this[i]) == -1) n.push(this[i]);
+        if (n.indexOf(this[i]) == -1)
+            n.push(this[i]);
     }
     return n;
 }

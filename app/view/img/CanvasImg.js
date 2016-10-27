@@ -50,7 +50,7 @@ Ext.define('editpic.view.img.CanvasImg', {
         me.priorityValue = data.priorityValue;
         me.isBindPriority = data.isBindPriority;
         me.setRotate(data.ratate);
-        me.mySubscribe()
+        //me.mySubscribe()
         //me.refreshCanvas();
     },
 

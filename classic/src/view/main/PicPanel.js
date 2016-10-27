@@ -53,6 +53,17 @@ Ext.define('editpic.view.panel.PicPanel', {
         }
     },
     //id: "maindrawpanel",
+    getSubscribeItems: function () {
+        var me=this;
+        var items=me.items.items;
+        var arr = [];
+        for (var i = 0; i < items.length; i++) {
+            if (My.initComponentConfig.isLinkData(items[i])) {
+                arr.push(items[i])
+            }
+        }
+        return arr;
+    },
     initComponent: function () {
         var me = this;
         me.initMenusWindow()

@@ -61,7 +61,7 @@ Ext.define('editpic.view.img.BaseTool', {
         me.mySetFontPosition(data.fontPostion);
         me.setFont(data.font);
         me.setFontColor(data.fontColor);
-        me.mySubscribe()
+        //me.mySubscribe()
 
         //me.fontStyle=data.fontStyle;
         //me.fontVariant=data.fontVariant;
