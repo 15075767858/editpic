@@ -42,20 +42,20 @@ if ($par == "getdevs") {
 if ($par == "getDevsByDevName") {
     $redis = getRedisConect();
     if ($redis) {
-        $devname=$_REQUEST['devname'];
-        $arList = $redis->keys($devname."???");
+        $devname = $_REQUEST['devname'];
+        $arList = $redis->keys($devname . "???");
         sort($arList);
         $arr = array();
         foreach ($arList as $key => $value) {
             if (is_numeric($value)) {
-                array_push($arr, array("value" => $value, "name" => $redis->hGet($value, "Object_Name"),'Present_Value'=>$redis->hGet($value,'Present_Value')));
+                array_push($arr, array("value" => $value, "name" => $redis->hGet($value, "Object_Name"), 'Present_Value' => $redis->hGet($value, 'Present_Value')));
             }
         }
         sort($arList);
         echo json_encode($arr);
         $redis->close();
     } else {
-        $arr = Array("success" => false,'info'=>"link database error!");
+        $arr = Array("success" => false, 'info' => "link database error!");
         echo json_encode($arr);
     }
 }
@@ -348,6 +348,16 @@ if ($par == "getImageData") {
         file_put_contents($fn, "");
     }
 }
+/**
+ *
+ */
+if ($par == 'getHomeFileNames') {
+    $dir = "../../home";
+    $scanned_directory = array_diff(scandir($dir), array('..', '.'));
+    $arr = array_values($scanned_directory);
+    echo json_encode($arr);
+}
+
 if ($par == "putImageData") {
     $fn = "../../home/data.json";
     $content = $_REQUEST['content'];

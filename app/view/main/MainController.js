@@ -155,22 +155,43 @@ Ext.define('editpic.view.main.MainController', {
                         Ext.Msg.alert('Info', 'Plase input file name.');
                         return;
                     }
-
                     var picPanel = curPanel.down("picpanel");
-                    var datas = picPanel.save();
-                    var json = My.getImageData();
-                    console.log(typeof json == "object")
-                    if (typeof json == 'object') {
-                        json[text] = datas;
-                    } else {
-                        json = {}
-                        json[text] = datas;
-                    }
-                    curPanel.setTitle(text)
-                    My.putImageData(Ext.encode(json), text)
-                    //console.log(json);
+                    picPanel.save(text);
+
+                    //var datas = picPanel.saveRemoteData(text);
+
+                    //var saveData = Ext.encode(datas)
+
+
+                    /*My.AjaxPost('resources/xmlRW.php', function (response) {
+                     if (response.responseText == saveData.length) {
+                     My.AjaxSimple({
+                     par: "saveImageAsHtml",
+                     graph: text
+                     })
+                     My.delayToast("Massage", "Save File OK !");
+                     } else {
+                     My.delayToast("Massage", "exception " + response.responseText)
+                     }
+                     }, {
+                     rw: "w",
+                     fileName: "../../home/" + text + ".json",
+                     content: saveData
+                     })*/
+
+
+                    //var json = My.getImageData();
+                    //console.log(typeof json == "object")
+                    //if (typeof json == 'object') {
+                    //    json[text] = datas;
+                    //} else {
+                    //    json = {};
+                    //    json[text] = datas;
+                    //}
+                    //var content = Ext.encode(json)//存储的内容
+                    //My.putImageData(content, text)
+                    //console.log(text)
                     win.close();
-                    My.delayToast("Massage", "Save File OK !");
                 }
                 },
                 {
@@ -181,10 +202,140 @@ Ext.define('editpic.view.main.MainController', {
             ]
         })
     },
+    openNewHandler: function () {
+        var fileNames = My.getHomeFileNames();
+        var win = Ext.create('Ext.window.Window', {
+            title: 'Open',
+            frame: true,
+            width: 325,
+            bodyPadding: 10,
+            autoShow: true,
+            defaultType: 'textfield',
+            defaults: {
+                anchor: '100%'
+            },
+            items: [
+                {
+                    margin: 10,
+                    xtype: "combobox",
+                    allowBlank: false,
+                    fieldLabel: 'File Name',
+                    store: fileNames,
+                    editable: false,
+                    queryMode: 'local',
+                    autoSelect: false
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Ok', handler: function () {
+                    var text = win.down("textfield").getValue();
+                    if (text == null) {
+                        Ext.Msg.alert('Info', 'Plase input file name.');
+                        return;
+                    }
+                    var minTab = Ext.getCmp("mintab");
+                    minTab.addTab(text);
+                    win.close();
+                    My.delayToast("Massage", "Open File OK !");
+                }
+                },
+                {
+                    text: 'Cancel', handler: function () {
+                    win.close();
+                }
+                }
+            ]
+        })
+
+    },
+    toNewVersion: function () {
+        var textarea = Ext.create("Ext.form.field.TextArea", {
+            width: "100%",
+            border: false,
+            height: 500,
+        })
+
+
+        var win = Ext.create("Ext.window.Window", {
+            title: "compatibility processing",
+            width: 800,
+            frame: true,
+            autoShow: true,
+            closable: true,
+            layout: "auto",
+            tbar: [
+                {
+                    xtype: "filebutton",
+                    text: "Select File",
+                    listeners: {
+                        change: function (menu, target, eOpts) {
+                            var files = target.target.files;
+
+                            if (files.length) {
+                                var file = files[0];
+                                var reader = new FileReader();
+                                reader.onload = function () {
+                                    textarea.setValue(this.result);
+                                };
+                                reader.readAsText(file);
+                            }
+                        }
+                    }
+                },
+            ],
+            items: [{
+                html: "this function is take old version data.json transformational new version data .<br> so please select old version data.json . "
+            }, textarea],
+            buttons: [
+                {
+                    text: 'OK',
+                    itemId: "Ok",
+                    handler: function (menu) {
+                        menu.setDisabled(true);
+                        var jsonData = Ext.decode(textarea.getValue())
+                        var str = "<div style='color: darkturquoise;'>";
+                        for (var name in jsonData) {
+                            str += name + ".json  "
+                        }
+                        str+="</div>";
+                        Ext.Msg.show({
+                            title: 'warning !',
+                            message: "select yes to ovewrite files  <br>" + str,
+                            buttons: Ext.Msg.YESNOCANCEL,
+                            icon: Ext.Msg.WARNING,
+                            fn: function (btn) {
+                                if (btn === 'yes') {
+                                    for (var data in jsonData) {
+                                        My.savePicPanelData(data, Ext.encode(jsonData[data]))
+                                    }
+                                    win.close();
+                                } else {
+
+                                    win.close();
+                                }
+                            }
+                        });
+
+
+                    }
+                }, {
+                    text: "Close",
+                    itemId: "Close",
+                    handler: function () {
+                        win.close()
+                    }
+                }
+            ]
+        })
+        testwin = win;
+        console.log(win);
+
+        //\r\n warning ! this operating
+    },
     openHandler: function () {
 
         var comboStore = My.getImageNames()
-
 
         var win = Ext.create('Ext.window.Window', {
             title: 'Open',
@@ -220,7 +371,8 @@ Ext.define('editpic.view.main.MainController', {
                     }
                     var minTab = Ext.getCmp("mintab")
 
-                    minTab.addTab(text)
+                    minTab.addTab(text, My.getImageData()[text])
+                    console.log(text)
                     win.close();
                     My.delayToast("Massage", "Open File OK !");
                 }
@@ -548,11 +700,23 @@ My.getImageData = function () {
         } catch (e) {
 
         }
-
     })
     return data;
 }
 
+My.getImageDataByJson = function (text) {
+    var data = null;
+    My.Ajax("/home/" + text + ".json", function (response) {
+//        console.log(response.responseText)
+        try {
+            data = Ext.decode(response.responseText);
+        } catch (e) {
+            Ext.Msg.alert("Massage", "exception " + response.responseText)
+        }
+
+    })
+    return data;
+}
 My.putImageData = function (content, text) {
     var data = null;
     if (!text) {
@@ -592,15 +756,63 @@ My.getImageNames = function () {
     }
     return arr;
 }
+My.savePicPanelData = function (text, content) {
+
+    My.AjaxPost('resources/xmlRW.php', function (response) {
+        if (response.responseText == content.length) {
+            My.AjaxSimple({
+                par: "saveImageAsHtml",
+                graph: text
+            })
+            My.delayToast("Massage", "Save File OK !");
+        } else {
+            My.delayToast("Massage", "exception " + response.responseText)
+        }
+    }, {
+        rw: "w",
+        fileName: "../../home/" + text + ".json",
+        content: content
+    })
+
+}
+/**
+ * by a HTTP GET ajax request in server /home directory get all files in the folder.
+ * returns a {@link Ext.data.Store} ,by a filter get all .json files.
+ * @returns {Array}
+ */
+
+
+My.getHomeFileNames = function () {
+    var data = null;
+    My.Ajax('resources/main.php', function (response) {
+        try {
+            var resArray = Ext.decode(response.responseText);
+            var arr = [];
+            resArray.find(function (item) {
+                var extensionName = item.substr(item.indexOf("."), item.length)
+                if (extensionName == ".json") {
+                    var fileName = item.substr(0, item.indexOf("."));
+                    arr.push(fileName)
+                }
+            })
+            data = arr;
+        } catch (e) {
+            Ext.Msg.alert("Massage", "exception" + response.responseText);
+            throw new Error(e);
+        }
+    }, {
+        par: "getHomeFileNames"
+    })
+    return data;
+}
+
+
 My.getDevStore = function (ip, port) {
     var store = null;
-
     console.log(arguments)
-
     if (!ip & !port) {
         return store;
     }
-
     My.Ajax("resources/main.php", function (response) {
             var data = response.responseText
             try {
@@ -625,6 +837,7 @@ My.getDevStore = function (ip, port) {
     )
     return store;
 }
+
 My.getDevsByDevName = function (ip, port, devname) {
     /*
      根据 前四位 数字 获取数据库中的keys
@@ -830,11 +1043,11 @@ My.initLinkValue = function () {
     My.util.PublishPic.run()
 };
 
-My.publish=function(){
+My.publish = function () {
     var curPanel = My.getCurrentPicPanel();
 }
 
-My.getCurrentPicPanle=function(){
+My.getCurrentPicPanle = function () {
 }
 
 
@@ -933,8 +1146,8 @@ My.initComponentConfig = {
                     console.log("success");
                     console.log(response)
                     var resJson = response;
-                    if(response.responseText){
-                        resJson=Ext.decode(response.responseText)
+                    if (response.responseText) {
+                        resJson = Ext.decode(response.responseText)
                     }
 
                     var arr = resJson.value.split("\r\n");

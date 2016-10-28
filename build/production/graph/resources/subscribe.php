@@ -6,14 +6,22 @@
 
 
 $redis = new Redis();
-$redis->connect("127.0.0.1", "6379");
+if(!$redis){
+    echo  json_encode(array('success'=>false,'info'=>'Redis error'));
+    exit();
+}
+$redis->connect("127.0.0.1", "6379",15) or $redis = false;
+if(!$redis){
+    echo  json_encode(array('success'=>false,'info'=>'Connction error'));
+    exit();
+}
 
-$channel =$_REQUEST['subnode'];  // channel
+//$channel =$_REQUEST['subnode'];  // channel
 
-$channels = $_REQUEST['subnodes'];
+$channels = json_decode($_REQUEST['subnodes']);
 
+$redis->psubscribe($channels, 'callback');
 
-$redis->psubscribe(array($channel), 'callback');
 function callback($redis, $channel, $message, $val)
 {
     $ip = $_SERVER["SERVER_ADDR"];
@@ -22,9 +30,13 @@ function callback($redis, $channel, $message, $val)
     $arr['value']=$val;
     if (!empty($_REQUEST['callback'])) {
         header('Content-Type: application/javascript');
+        //echo $_REQUEST['callback'] . '(';
         echo $_REQUEST['callback'] . '(';
     }
-    echo json_encode($arr);
+
+    echo json_encode(array("success"=>true,'info'=>$arr));
+
+    //echo json_encode($arr);
     if (!empty($_REQUEST['callback'])) {
         echo ');';
     }

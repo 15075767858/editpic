@@ -73,8 +73,15 @@ Ext.define('editpic.view.main.Main', {
         {
             text: "save", handler: "saveHandler"
         }, {
-            text: "open", handler: "openHandler"
+            text:"open",handler:"openNewHandler"
         }, {
+            text: "open old version", handler: "openHandler",hidden:true
+        },
+        {
+          text:"data.json to new version data",
+            handler:"toNewVersion"
+        },
+        {
             text: "delete", handler: "deleteHandler"
         },
         {
@@ -87,7 +94,7 @@ Ext.define('editpic.view.main.Main', {
         }, {
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.25")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.26")
             }
         }
     ],
@@ -195,7 +202,7 @@ Ext.define('editpic.view.main.Main', {
                     }
                 ).show()
 
-                picPanel.load(My.getImageData()[text])
+                picPanel.load(My.getImageDataByJson(text))
             },
             defaults: {
                 bodyStyle: {

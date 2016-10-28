@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="49b86983-bab5-4959-b19f-e3d3d1223679" name="huanyuwj" url="http://www.huanyuwj.com">
+        <fileTransfer host="www.huanyuwj.com" port="21" password="dfc2dfdfdfcbdfc4dfd3dfdfdfdddfc0" username="huanyuwj">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
