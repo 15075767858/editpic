@@ -349,7 +349,7 @@ Ext.define('editpic.view.panel.PicPanel', {
 
 
         this.setTitle(text)
-        My.savePicPanelData(text,picpanelData);
+        My.savePicPanelData(text,Ext.encode(picpanelData));
         //return picpanelData;
 
 
