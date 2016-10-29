@@ -39,30 +39,30 @@ Ext.define('editpic.view.main.Main', {
 
 
             /*var win = Ext.create("Ext.window.Window", {
-                autoShow: true,
-                width: 800,
-                height: 600,
-                items: {
-                    xtype: "treepanel",
-                    width: 800,
-                    height: 600,
+             autoShow: true,
+             width: 800,
+             height: 600,
+             items: {
+             xtype: "treepanel",
+             width: 800,
+             height: 600,
 
-                    store: Ext.create("Ext.data.TreeStore", {
-                        autoLoad: true,
-                        url: "resources/main.php?par=nodes",
+             store: Ext.create("Ext.data.TreeStore", {
+             autoLoad: true,
+             url: "resources/main.php?par=nodes",
 
-                        proxy: {
-                            type: "ajax",
-                            url: "resources/main.php?par=nodes&ip=192.168.253.253&port=6379",
-                            reader: {
-                                type: "json"
-                            }
-                        }
-                    })
-                }
+             proxy: {
+             type: "ajax",
+             url: "resources/main.php?par=nodes&ip=192.168.253.253&port=6379",
+             reader: {
+             type: "json"
+             }
+             }
+             })
+             }
 
-            })
-            testtree = win.down('treepanel')*/
+             })
+             testtree = win.down('treepanel')*/
             var me = this;
             me.getViewModel().set(My.getSession())
             //Ext.create("editpic.view.ux.KeyBoard")
@@ -73,13 +73,20 @@ Ext.define('editpic.view.main.Main', {
         {
             text: "save", handler: "saveHandler"
         }, {
-            text:"open",handler:"openNewHandler"
+            text: "open", handler: "openNewHandler", hidden: true
         }, {
-            text: "open old version", handler: "openHandler",hidden:true
+            text: "open old version", handler: "openHandler", hidden: true
         },
         {
-          text:"data.json to new version data",
-            handler:"toNewVersion"
+            text: "open", menu: [
+            {text: "open", handler: "openNewHandler"},
+            {text: "data.json to new version data", handler: "toNewVersion"}
+        ]
+        },
+        {
+            text: "data.json to new version data",
+            handler: "toNewVersion",
+            hidden: true
         },
         {
             text: "delete", handler: "deleteHandler"
@@ -94,7 +101,7 @@ Ext.define('editpic.view.main.Main', {
         }, {
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.27")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.28 Beat")
             }
         }
     ],
@@ -187,14 +194,14 @@ Ext.define('editpic.view.main.Main', {
                     x: 0,
                     y: 0,
                     constrainHeader: false,
-                    constrain:false,
+                    constrain: false,
                 })
 
                 me.add(
                     {
                         xtype: "panel",
                         constrainHeader: false,
-                        constrain:false,
+                        constrain: false,
                         title: text,
                         scrollable: true,
                         //layout:"absolute",
