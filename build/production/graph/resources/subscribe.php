@@ -3,7 +3,7 @@
 
 //ini_set('default_socket_timeout', -1);
 
-
+ini_set('default_socket_timeout', -1);
 
 $redis = new Redis();
 if(!$redis){
@@ -19,7 +19,6 @@ if(!$redis){
 //$channel =$_REQUEST['subnode'];  // channel
 
 $channels = json_decode($_REQUEST['subnodes']);
-
 $redis->psubscribe($channels, 'callback');
 
 function callback($redis, $channel, $message, $val)

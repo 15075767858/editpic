@@ -528,28 +528,26 @@ Ext.define('editpic.view.main.MainController', {
         var win = Ext.create("editpic.view.window.UploadWindow", {
             url: '/upload.php?par=upload',
             uploadcomplete: function (obj, files) {
+                Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
 
-                console.log(files)
+                console.log(arguments)
 
-                if (files.length == 1) {
+                console.log("升级完毕")
+               /* if (files.length == 1) {
                     var file = files[0];
                     var fn = file.name;
                     Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
-
                     My.AjaxAsync("/upload.php", resFn, {
                         par: "uploadProgram",
                         filename: fn
                     })
-
                 } else {
-
                     var namesStr = ""
                     var arr = [];
                     for (var i = 0; i < files.length; i++) {
                         arr.push(files[i].name)
                         namesStr += files[i].name + ",";
                     }
-
                     My.AjaxSimplePostAsync(
                         {
                             par: 'afterUpload',
@@ -557,7 +555,6 @@ Ext.define('editpic.view.main.MainController', {
                             nameArr: Ext.encode(arr)
                         }, "/upload.php?par=afterUpload", resFn
                     )
-
                 }
                 function resFn() {
 
@@ -580,7 +577,7 @@ Ext.define('editpic.view.main.MainController', {
                     });
 
                 }
-
+*/
                 win.close()
 
 
