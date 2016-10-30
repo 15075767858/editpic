@@ -201,7 +201,7 @@ Ext.define('editpic.view.panel.PicPanel', {
         var items = me.items.items;
         var arr = [];
         for (var i = 0; i < items.length; i++) {
-            console.log(items[i])
+//            console.log(items[i])
             if (items[i].isselect) {
                 arr.push(items[i]);
             }

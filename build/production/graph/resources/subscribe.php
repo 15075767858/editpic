@@ -28,6 +28,7 @@ function callback($redis, $channel, $message, $val)
     $arr = array();
     $arr['ip']=$ip;
     $arr['value']=$val;
+
     if (!empty($_REQUEST['callback'])) {
         header('Content-Type: application/javascript');
         //echo $_REQUEST['callback'] . '(';

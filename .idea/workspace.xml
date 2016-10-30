@@ -5,15 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4568aa7c-9baf-4272-89c0-4058b3e5febd" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/tool/PublishPicController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/tool/PublishPicModel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classic/src/view/main/PublishPic.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/autoGraph.tar.bz2" afterPath="$PROJECT_DIR$/build/production/autoGraph.tar.bz2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph.tar.bz2" afterPath="$PROJECT_DIR$/build/production/graph.tar.bz2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/DynamicTextTool.js" afterPath="$PROJECT_DIR$/app/view/img/DynamicTextTool.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/MainController.js" afterPath="$PROJECT_DIR$/app/view/main/MainController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" afterPath="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic.json" afterPath="$PROJECT_DIR$/build/production/graph/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/app.js" afterPath="$PROJECT_DIR$/build/production/graph/classic/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern.json" afterPath="$PROJECT_DIR$/build/production/graph/modern.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/subscribe.php" afterPath="$PROJECT_DIR$/build/production/graph/resources/subscribe.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.css" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss.tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss.tmp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/Main.js" afterPath="$PROJECT_DIR$/classic/src/view/main/Main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" afterPath="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modern.json" afterPath="$PROJECT_DIR$/modern.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/subscribe.php" afterPath="$PROJECT_DIR$/resources/subscribe.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
     </list>
     <ignored path="editpic.iws" />
@@ -47,61 +62,68 @@
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/PicPanel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="351" column="40" selection-start-line="351" selection-start-column="40" selection-end-line="351" selection-end-column="40" />
+              <caret line="203" column="2" selection-start-line="203" selection-start-column="2" selection-end-line="203" selection-end-column="2" />
               <folding>
                 <element signature="e#1588#4505#0" expanded="false" />
                 <element signature="e#4548#6009#0" expanded="false" />
                 <element signature="e#6037#6495#0" expanded="false" />
-                <element signature="e#6529#6817#0" expanded="false" />
-                <element signature="e#6849#7126#0" expanded="false" />
-                <element signature="e#7161#9383#0" expanded="false" />
-                <element signature="e#9434#9985#0" expanded="false" />
-                <element signature="e#10014#10551#0" expanded="false" />
-                <element signature="e#16291#16717#0" expanded="false" />
-                <element signature="e#16755#16972#0" expanded="false" />
-                <element signature="e#17006#17273#0" expanded="false" />
+                <element signature="e#6851#7128#0" expanded="false" />
+                <element signature="e#7163#9385#0" expanded="false" />
+                <element signature="e#9436#9987#0" expanded="false" />
+                <element signature="e#10016#10553#0" expanded="false" />
+                <element signature="e#16293#16719#0" expanded="false" />
+                <element signature="e#16757#16974#0" expanded="false" />
+                <element signature="e#17008#17275#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+      <file leaf-file-name="DynamicTextTool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/img/DynamicTextTool.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="170" column="23" selection-start-line="170" selection-start-column="23" selection-end-line="170" selection-end-column="23" />
+              <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="105" column="9" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
+              <folding>
+                <element signature="e#1217#1887#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.22992127">
+              <caret line="2021" column="26" selection-start-line="2021" selection-start-column="26" selection-end-line="2021" selection-end-column="26" />
               <folding>
                 <element signature="e#5932#5963#0" expanded="false" />
                 <element signature="e#15374#16951#0" expanded="false" />
                 <element signature="e#37538#38414#0" expanded="false" />
                 <element signature="e#38772#39145#0" expanded="false" />
-                <marker date="1477642217000" expanded="true" signature="9867:9888" placeholder="..." />
-                <marker date="1477642217000" expanded="true" signature="52170:52187" placeholder="..." />
+                <marker date="1477822491000" expanded="true" signature="9867:9888" placeholder="..." />
+                <marker date="1477822491000" expanded="true" signature="52170:52187" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
+      <file leaf-file-name="subscribe.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/subscribe.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55804044">
-              <caret line="91" column="52" selection-start-line="91" selection-start-column="52" selection-end-line="91" selection-end-column="52" />
-              <folding>
-                <element signature="e#1215#1885#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="371" column="1" selection-start-line="371" selection-start-column="1" selection-end-line="371" selection-end-column="1" />
-              <folding>
-                <element signature="e#17524#17856#0#PHP" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="-11.833333">
+              <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -130,8 +152,6 @@
         <option value="$PROJECT_DIR$/app/view/form/CanvasMenuBaseForm.js" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/app/view/img/TextTool.js" />
-        <option value="$PROJECT_DIR$/app/view/img/DynamicTextTool.js" />
-        <option value="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" />
         <option value="$PROJECT_DIR$/app/view/img/ClockTool.js" />
         <option value="$PROJECT_DIR$/app/view/window/DrawWeeksWindowModel.js" />
         <option value="$PROJECT_DIR$/app/view/window/DrawWeeksWindowController.js" />
@@ -166,17 +186,19 @@
         <option value="$PROJECT_DIR$/app/view/form/CanvasMenuBaseFormController.js" />
         <option value="$PROJECT_DIR$/app/view/form/LabelForm.js" />
         <option value="$PROJECT_DIR$/app/view/panel/PicPanelController.js" />
-        <option value="$PROJECT_DIR$/app/view/tool/PublishPic.js" />
         <option value="$PROJECT_DIR$/app/view/tool/PublishPicModel.js" />
         <option value="$PROJECT_DIR$/app/view/tool/PublishPicController.js" />
         <option value="$PROJECT_DIR$/app/view/img/BaseTool.js" />
         <option value="$PROJECT_DIR$/app/view/img/CanvasImg.js" />
-        <option value="$PROJECT_DIR$/resources/subscribe.php" />
         <option value="$PROJECT_DIR$/classic/src/view/main/PublishPic.js" />
         <option value="$PROJECT_DIR$/resources/main.php" />
-        <option value="$PROJECT_DIR$/app/view/main/MainController.js" />
+        <option value="$PROJECT_DIR$/app/view/img/DynamicTextTool.js" />
+        <option value="$PROJECT_DIR$/app/view/tool/PublishPic.js" />
+        <option value="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/PicPanel.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
+        <option value="$PROJECT_DIR$/resources/subscribe.php" />
+        <option value="$PROJECT_DIR$/app/view/main/MainController.js" />
       </list>
     </option>
   </component>
@@ -197,7 +219,7 @@
     <option name="x" value="-1920" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="height" value="971" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -224,6 +246,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -239,6 +262,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="graph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -346,13 +383,56 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="panel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -364,7 +444,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="type&#9;FILE&#9;file:///Applications/MAMP/htdocs/graph/ext/packages/core/test/specs/data/Types.js&#10;types&#9;null&#9;null&#10;dragImage&#9;null&#9;null&#10;all.css&#9;FILE&#9;file:///Library/WebServer/Documents/editpic/build/development/editpic/classic/resources/editpic-all_2.css&#10;.fa-reply&#9;null&#9;null&#10;all.&#9;FILE&#9;file:///Library/WebServer/Documents/editpic/ext/classic/theme-aria/sass/etc/all.scss&#10;fa-th-list&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="PublishPic&#9;FILE&#9;file:///Applications/MAMP/htdocs/graph/classic/src/view/main/PublishPic.js&#10;type&#9;FILE&#9;file:///Applications/MAMP/htdocs/graph/ext/packages/core/test/specs/data/Types.js&#10;types&#9;null&#9;null&#10;dragImage&#9;null&#9;null&#10;all.css&#9;FILE&#9;file:///Library/WebServer/Documents/editpic/build/development/editpic/classic/resources/editpic-all_2.css&#10;.fa-reply&#9;null&#9;null&#10;all.&#9;FILE&#9;file:///Library/WebServer/Documents/editpic/ext/classic/theme-aria/sass/etc/all.scss&#10;fa-th-list&#9;null&#9;null" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
@@ -372,19 +452,19 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/classic/src/view/main" />
-      <recent name="$PROJECT_DIR$/resources/icons" />
-      <recent name="$PROJECT_DIR$/app/view/week" />
-      <recent name="$PROJECT_DIR$/app/view/window" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/icons" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/app/view/window" />
       <recent name="$PROJECT_DIR$/resources/SvgHvac" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/view/tool" />
+      <recent name="$PROJECT_DIR$/classic/src/view/main" />
+      <recent name="$PROJECT_DIR$/resources/icons" />
+      <recent name="$PROJECT_DIR$/app/view/week" />
+      <recent name="$PROJECT_DIR$/app/view/window" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.test.html">
@@ -536,29 +616,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="-1920" y="23" width="1920" height="971" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2518637" sideWeight="0.49754602" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25452608" sideWeight="0.49754602" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07618284" sideWeight="0.6830443" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32678387" sideWeight="0.49614644" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.3169557" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2495183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19544984" sideWeight="0.31406552" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2167991" sideWeight="0.31406552" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22254336" sideWeight="0.502454" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39988458" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0010341262" sideWeight="0.3169557" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885212" sideWeight="0.49614644" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39988458" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -591,13 +671,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.sencha/app/codegen.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.2594843">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.sencha/app/watch-impl.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.8209408">
@@ -689,13 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/icons/link2.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -705,13 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12779553">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/ToolsPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41245973">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -736,24 +795,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/panel/DevFormPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3490364">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/form/CanvasMenuBaseForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27301928">
           <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/img/DynamicTextTool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -827,20 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/tool/PublishPicModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="19" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/tool/PublishPicController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ext/build/ext-modern-all.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34436274">
@@ -852,20 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9252669">
           <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Redis.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34220073">
-          <caret line="486" column="20" selection-start-line="486" selection-start-column="20" selection-end-line="486" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/subscribe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74365175">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -914,51 +931,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/PublishPic.js">
+    <entry file="file://$PROJECT_DIR$/build/testing/graph/classic/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.66705745">
+          <caret line="246376" column="35" selection-start-line="246376" selection-start-column="35" selection-end-line="246376" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/PicPanel.js">
+    <entry file="file://$PROJECT_DIR$/app/view/panel/ToolsPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="351" column="40" selection-start-line="351" selection-start-column="40" selection-end-line="351" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.103019536">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
-            <element signature="e#1588#4505#0" expanded="false" />
-            <element signature="e#4548#6009#0" expanded="false" />
-            <element signature="e#6037#6495#0" expanded="false" />
-            <element signature="e#6529#6817#0" expanded="false" />
-            <element signature="e#6849#7126#0" expanded="false" />
-            <element signature="e#7161#9383#0" expanded="false" />
-            <element signature="e#9434#9985#0" expanded="false" />
-            <element signature="e#10014#10551#0" expanded="false" />
-            <element signature="e#16291#16717#0" expanded="false" />
-            <element signature="e#16755#16972#0" expanded="false" />
-            <element signature="e#17006#17273#0" expanded="false" />
+            <marker date="1476624471000" expanded="true" signature="2933:2952" placeholder="..." />
+            <marker date="1476624471000" expanded="true" signature="2968:2980" placeholder="..." />
+            <marker date="1476624471000" expanded="true" signature="3052:3071" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/SetPicPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="170" column="23" selection-start-line="170" selection-start-column="23" selection-end-line="170" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.026642984">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
           <folding>
-            <element signature="e#5932#5963#0" expanded="false" />
-            <element signature="e#15374#16951#0" expanded="false" />
-            <element signature="e#37538#38414#0" expanded="false" />
-            <element signature="e#38772#39145#0" expanded="false" />
-            <marker date="1477642217000" expanded="true" signature="9867:9888" placeholder="..." />
-            <marker date="1477642217000" expanded="true" signature="52170:52187" placeholder="..." />
+            <marker date="1470834223000" expanded="true" signature="1364:1387" placeholder="..." />
+            <marker date="1470834223000" expanded="true" signature="2022:2106" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
+        <state vertical-scroll-proportion="-1.2244898">
           <caret line="371" column="1" selection-start-line="371" selection-start-column="1" selection-end-line="371" selection-end-column="1" />
           <folding>
             <element signature="e#17524#17856#0#PHP" expanded="false" />
@@ -966,12 +972,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/panel/DevFormPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41385436">
+          <caret line="183" column="31" selection-start-line="183" selection-start-column="31" selection-end-line="183" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/PicPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="203" column="2" selection-start-line="203" selection-start-column="2" selection-end-line="203" selection-end-column="2" />
+          <folding>
+            <element signature="e#1588#4505#0" expanded="false" />
+            <element signature="e#4548#6009#0" expanded="false" />
+            <element signature="e#6037#6495#0" expanded="false" />
+            <element signature="e#6851#7128#0" expanded="false" />
+            <element signature="e#7163#9385#0" expanded="false" />
+            <element signature="e#9436#9987#0" expanded="false" />
+            <element signature="e#10016#10553#0" expanded="false" />
+            <element signature="e#16293#16719#0" expanded="false" />
+            <element signature="e#16757#16974#0" expanded="false" />
+            <element signature="e#17008#17275#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Redis.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3469388">
+          <caret line="486" column="20" selection-start-line="486" selection-start-column="20" selection-end-line="486" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/subscribe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.833333">
+          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/DynamicTextTool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55804044">
-          <caret line="91" column="52" selection-start-line="91" selection-start-column="52" selection-end-line="91" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="105" column="9" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
           <folding>
-            <element signature="e#1215#1885#0" expanded="false" />
+            <element signature="e#1217#1887#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22992127">
+          <caret line="2021" column="26" selection-start-line="2021" selection-start-column="26" selection-end-line="2021" selection-end-column="26" />
+          <folding>
+            <element signature="e#5932#5963#0" expanded="false" />
+            <element signature="e#15374#16951#0" expanded="false" />
+            <element signature="e#37538#38414#0" expanded="false" />
+            <element signature="e#38772#39145#0" expanded="false" />
+            <marker date="1477822491000" expanded="true" signature="9867:9888" placeholder="..." />
+            <marker date="1477822491000" expanded="true" signature="52170:52187" placeholder="..." />
           </folding>
         </state>
       </provider>

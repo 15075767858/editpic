@@ -14,6 +14,7 @@ Ext.define('editpic.view.panel.DevFormPanel', {
 
     title: "Settings",
     //iconCls:"fa-cog",
+    hideMode: "offsets",
     width: 300,
     header: {},
     scrollable: "y",
@@ -180,15 +181,21 @@ Ext.define('editpic.view.panel.DevFormPanel', {
                 id: "imgGrid"
             })
             panel.add(picpanel)
+            panel.setCollapsed()
 
-            setTimeout(function () {
-                panel.setCollapsed(true)
-                setTimeout(function () {
-                    if (My.getSearch()) {
-                        panel.hide()
-                    }
-                }, 500)
-            }, 50)
+            if (My.getSearch()) {
+                panel.hide()
+            }
+            //panel.hide()
+            //setTimeout(function () {
+            //    panel.setCollapsed(true)
+            //    setTimeout(function () {
+            //        if (My.getSearch()) {
+            //            panel.hide()
+            //        }
+            //    }, 500)
+            //}, 50)
+
         },
 
     }

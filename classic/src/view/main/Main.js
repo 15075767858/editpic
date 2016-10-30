@@ -27,7 +27,7 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.login.LoginWindow",
         "editpic.view.ux.KeyBoard",
         "editpic.view.week.WeekWin",
-        "editpic.view.tool.PublishPic"
+        //"editpic.view.tool.PublishPic"
     ],
 
     id: "mainPanel",
@@ -101,7 +101,7 @@ Ext.define('editpic.view.main.Main', {
         }, {
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.28 Beat")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.29 Beat")
             }
         }
     ],
