@@ -64,6 +64,7 @@ Ext.define("editpic.view.window.UploadWindow", {
         });
 
         me.uploader.bind('UploadProgress', function (uploader, file) {
+
             console.log(file)
 
             //var store = Ext.data.StoreManager.lookup('UploadWindowSelectFilesStore');
@@ -79,6 +80,7 @@ Ext.define("editpic.view.window.UploadWindow", {
              console.log(arguments)
             }
         )
+
         me.uploader.bind("UploadComplete", me.uploadcomplete||function(){
                 console.log("UploadComplete")
                 console.log(arguments)

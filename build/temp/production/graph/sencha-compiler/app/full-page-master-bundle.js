@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /Applications/MAMP/htdocs/graph/app.js
+// @require /Applications/XAMPP/xamppfiles/htdocs/graph/app.js

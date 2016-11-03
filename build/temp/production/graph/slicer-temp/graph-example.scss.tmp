@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'graph' );
-$image-search-path: '/Applications/MAMP/htdocs/graph/build/production/graph/classic/resources';
+$image-search-path: '/Applications/XAMPP/xamppfiles/htdocs/graph/build/production/graph/classic/resources';
 $theme-name:  dynamic( 'theme-aria' );
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;
@@ -1169,6 +1169,9 @@ $include-editpic-view-window-canvasconponmentwindowmodel: dynamic(true);;
 $include-editpic-view-window-downloadwindow: dynamic(true);;
 $include-editpic-view-window-downloadwindowcontroller: dynamic(true);;
 $include-editpic-view-window-downloadwindowmodel: dynamic(true);;
+$include-editpic-view-window-editfile: dynamic(true);;
+$include-editpic-view-window-editfilecontroller: dynamic(true);;
+$include-editpic-view-window-editfilemodel: dynamic(true);;
 $include-editpic-view-window-uploadwindow: dynamic(true);;
 
 

@@ -27,6 +27,7 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.login.LoginWindow",
         "editpic.view.ux.KeyBoard",
         "editpic.view.week.WeekWin",
+        "editpic.view.window.EditFile"
         //"editpic.view.tool.PublishPic"
     ],
 
@@ -38,35 +39,6 @@ Ext.define('editpic.view.main.Main', {
         boxready: function () {
 
 
-            /*var win = Ext.create("Ext.window.Window", {
-             autoShow: true,
-             width: 800,
-             height: 600,
-             items: {
-             xtype: "treepanel",
-             width: 800,
-             height: 600,
-
-             store: Ext.create("Ext.data.TreeStore", {
-             autoLoad: true,
-             url: "resources/main.php?par=nodes",
-
-             proxy: {
-             type: "ajax",
-             url: "resources/main.php?par=nodes&ip=192.168.253.253&port=6379",
-             reader: {
-             type: "json"
-             }
-             }
-             })
-             }
-
-             })
-             testtree = win.down('treepanel')*/
-            var me = this;
-            me.getViewModel().set(My.getSession())
-            //Ext.create("editpic.view.ux.KeyBoard")
-            //var socket=new WebSocket("resources/test.main?ip=192.168.253.253&port=6379");
         }
     },
     tbar: [
@@ -82,6 +54,9 @@ Ext.define('editpic.view.main.Main', {
             {text: "open", handler: "openNewHandler"},
             {text: "data.json to new version data", handler: "toNewVersion"}
         ]
+        },
+        {
+            text: "replace", handler: 'replaceHandler'
         },
         {
             text: "data.json to new version data",
@@ -101,7 +76,7 @@ Ext.define('editpic.view.main.Main', {
         }, {
             text: "about",
             handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.30 Beat")
+                Ext.Msg.alert("Version", "SmartIOgraphTools 2.31 Beat")
             }
         }
     ],
@@ -136,16 +111,20 @@ Ext.define('editpic.view.main.Main', {
         height: 50,
         style: {
             lineHeight: 50
-        },
+        }
+        ,
         title: {
             bind: {
                 text: '{name}'
-            },
+            }
+            ,
             flex: 1
         }
-    },
+    }
+    ,
     layout: "border",
-    defaults: {},
+    defaults: {}
+    ,
     items: [
         {
             xtype: "tabpanel",

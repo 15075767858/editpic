@@ -328,7 +328,6 @@ Ext.define('editpic.view.main.MainController', {
                 }
             ]
         })
-        testwin = win;
         console.log(win);
 
         //\r\n warning ! this operating
@@ -384,6 +383,56 @@ Ext.define('editpic.view.main.MainController', {
                 }
             ]
         })
+    },
+    replaceHandler:function(){
+        var win = Ext.create("editpic.view.window.EditFile", {
+            showCombo: true,
+            showFileButton: false,
+            okHandler: function () {
+
+                Ext.Ajax.request({
+                    url: "resources/xmlRW.php",
+                    async: false,
+                    method: "POST",
+                    params: {
+                        fileName: "../../home/" + win.combo.value+".json",
+                        content: win.textArea.value,
+                        rw: "w"
+                    },
+                    success: function (response) {
+                        if (win.textArea.value.length == response.responseText) {
+                            My.delayToast("Maasage", "save success ." + response.responseText);
+                        } else {
+                            Ext.Msg.alert("Error", response.responseText);
+                        }
+                        console.log(arguments)
+                    }
+                })
+            },
+            combo: Ext.create("Ext.form.field.ComboBox", {
+                fieldLabel: "Select File",
+                store: My.getHomeFileNames(),
+                margin: 10,
+                allowBlank: false,
+                fieldLabel: 'File Name',
+                editable: false,
+                queryMode: 'local',
+                displayField: 'name',
+                valueField: 'name',
+                autoSelect: false,
+                listeners: {
+                    change: function (combo, newValue) {
+                        console.log(arguments)
+
+                        My.Ajax('/home/' + newValue+".json", function (response) {
+                            win.textArea.setValue(response.responseText);
+                            console.log(arguments)
+                        })
+                    }
+                }
+            })
+        })
+
     },
     deleteHandler: function () {
         var comboStore = My.getImageNames()
@@ -528,6 +577,7 @@ Ext.define('editpic.view.main.MainController', {
         var win = Ext.create("editpic.view.window.UploadWindow", {
             url: '/upload.php?par=upload',
             uploadcomplete: function (obj, files) {
+
                 Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
 
                 console.log(arguments)

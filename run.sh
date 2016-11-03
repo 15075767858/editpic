@@ -20,7 +20,7 @@ tar czvf autoGraph.tar.bz2 graph/
 #rm -rf autoInstallPackage/
 #open .
 
-cd /Applications/MAMP/htdocs/graph/
-sh ftpUpload.sh
-sh telnetTar.sh
-/Users/liuzhencai/bin/Sencha/Cmd/6.1.3.42/sencha app build testing
+#cd /Applications/MAMP/htdocs/graph/
+#sh ftpUpload.sh
+#sh telnetTar.sh
+#/Users/liuzhencai/bin/Sencha/Cmd/6.1.3.42/sencha app build testing
