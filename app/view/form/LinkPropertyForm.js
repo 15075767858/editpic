@@ -344,7 +344,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         disabled: "{!isBind.checked}"
                     },
                     //flex: 2,
-                    store: My.getImageNames(),
+                    store: My.getHomeFileNames(),
                     fieldLabel: "Type",
                     editable: false,
                     name: "linkValue"
