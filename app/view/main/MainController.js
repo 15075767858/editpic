@@ -144,7 +144,7 @@ Ext.define('editpic.view.main.MainController', {
                     xtype: "textfield",
                     allowBlank: false,
                     value: curPanel.title,
-                    fieldLabel: 'File Name',
+                    fieldLabel: 'File Name'
                 }
             ],
             buttons: [
@@ -253,7 +253,7 @@ Ext.define('editpic.view.main.MainController', {
         var textarea = Ext.create("Ext.form.field.TextArea", {
             width: "100%",
             border: false,
-            height: 500,
+            height: 500
         })
 
 
@@ -282,11 +282,13 @@ Ext.define('editpic.view.main.MainController', {
                             }
                         }
                     }
-                },
+                }
             ],
             items: [{
                 html: "this function is take old version data.json transformational new version data .<br> so please select old version data.json . "
-            }, textarea],
+            },
+                textarea
+            ],
             buttons: [
                 {
                     text: 'OK',
@@ -298,7 +300,7 @@ Ext.define('editpic.view.main.MainController', {
                         for (var name in jsonData) {
                             str += name + ".json  "
                         }
-                        str+="</div>";
+                        str += "</div>";
                         Ext.Msg.show({
                             title: 'warning !',
                             message: "select yes to ovewrite files  <br>" + str,
@@ -384,7 +386,7 @@ Ext.define('editpic.view.main.MainController', {
             ]
         })
     },
-    replaceHandler:function(){
+    replaceHandler: function () {
         var win = Ext.create("editpic.view.window.EditFile", {
             showCombo: true,
             showFileButton: false,
@@ -395,7 +397,7 @@ Ext.define('editpic.view.main.MainController', {
                     async: false,
                     method: "POST",
                     params: {
-                        fileName: "../../home/" + win.combo.value+".json",
+                        fileName: "../../home/" + win.combo.value + ".json",
                         content: win.textArea.value,
                         rw: "w"
                     },
@@ -424,7 +426,7 @@ Ext.define('editpic.view.main.MainController', {
                     change: function (combo, newValue) {
                         console.log(arguments)
 
-                        My.Ajax('/home/' + newValue+".json", function (response) {
+                        My.Ajax('/home/' + newValue + ".json", function (response) {
                             win.textArea.setValue(response.responseText);
                             console.log(arguments)
                         })
@@ -583,51 +585,51 @@ Ext.define('editpic.view.main.MainController', {
                 console.log(arguments)
 
                 console.log("升级完毕")
-               /* if (files.length == 1) {
-                    var file = files[0];
-                    var fn = file.name;
-                    Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
-                    My.AjaxAsync("/upload.php", resFn, {
-                        par: "uploadProgram",
-                        filename: fn
-                    })
-                } else {
-                    var namesStr = ""
-                    var arr = [];
-                    for (var i = 0; i < files.length; i++) {
-                        arr.push(files[i].name)
-                        namesStr += files[i].name + ",";
-                    }
-                    My.AjaxSimplePostAsync(
-                        {
-                            par: 'afterUpload',
-                            names: namesStr.substr(0, namesStr.length - 1),
-                            nameArr: Ext.encode(arr)
-                        }, "/upload.php?par=afterUpload", resFn
-                    )
-                }
-                function resFn() {
+                /* if (files.length == 1) {
+                 var file = files[0];
+                 var fn = file.name;
+                 Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
+                 My.AjaxAsync("/upload.php", resFn, {
+                 par: "uploadProgram",
+                 filename: fn
+                 })
+                 } else {
+                 var namesStr = ""
+                 var arr = [];
+                 for (var i = 0; i < files.length; i++) {
+                 arr.push(files[i].name)
+                 namesStr += files[i].name + ",";
+                 }
+                 My.AjaxSimplePostAsync(
+                 {
+                 par: 'afterUpload',
+                 names: namesStr.substr(0, namesStr.length - 1),
+                 nameArr: Ext.encode(arr)
+                 }, "/upload.php?par=afterUpload", resFn
+                 )
+                 }
+                 function resFn() {
 
-                    Ext.Msg.show({
-                        title: 'Massage',
-                        message: 'graph update success .',
-                        buttons: Ext.Msg.YES,
-                        //icon: Ext.Msg.INFO,
-                        fn: function (btn) {
+                 Ext.Msg.show({
+                 title: 'Massage',
+                 message: 'graph update success .',
+                 buttons: Ext.Msg.YES,
+                 //icon: Ext.Msg.INFO,
+                 fn: function (btn) {
 
-                            My.AjaxAsync("/upload.php", "", {
-                                par: "beforeUploadGraph"
-                            })
+                 My.AjaxAsync("/upload.php", "", {
+                 par: "beforeUploadGraph"
+                 })
 
-                            if (btn === 'yes') {
-                                location.reload()
-                            }
+                 if (btn === 'yes') {
+                 location.reload()
+                 }
 
-                        }
-                    });
+                 }
+                 });
 
-                }
-*/
+                 }
+                 */
                 win.close()
 
 
@@ -1830,7 +1832,6 @@ My.initComponentConfig = {
         console.log(strnull)
         console.log(pubstr)
     }
-    ,
 }
 ;
 
@@ -1844,7 +1845,7 @@ My.textfieldFocus = function (field, t, e) {
 
     function popKeybord(id) {
         $(id).keyboard({
-            layout: 'qwerty',
+            layout: 'qwerty'
         })
 
         var keybord = document.querySelector(".ui-keyboard");
@@ -1892,7 +1893,7 @@ My.createKeyBordTextField = function (data) {
 
                     function popKeybord(id) {
                         $(id).keyboard({
-                            layout: 'qwerty',
+                            layout: 'qwerty'
                         })
 
                         var keybord = document.querySelector(".ui-keyboard");
@@ -2007,8 +2008,8 @@ My.devPublish = function (key, value, success, ip, port) {
         }
     })
 }
-My.util={}
-My.util.PublishPic={
+My.util = {}
+My.util.PublishPic = {
     run: function () {
         console.log(this)
         this.getSubscribe();
@@ -2116,10 +2117,10 @@ My.util.PublishPic={
                 //me.getSubscribe(img.ip);//得到订阅返回值后继续订阅
             }
         }
-        
+
         ipsArr = ipsArr.unique1()
         console.log(ipsArr)
-        for(var i=0;i<ipsArr.length;i++){
+        for (var i = 0; i < ipsArr.length; i++) {
             console.log(ipsArr[i])
             me.getSubscribe(ipsArr[i]);
         }

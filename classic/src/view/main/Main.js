@@ -27,7 +27,8 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.login.LoginWindow",
         "editpic.view.ux.KeyBoard",
         "editpic.view.week.WeekWin",
-        "editpic.view.window.EditFile"
+        "editpic.view.window.EditFile",
+
         //"editpic.view.tool.PublishPic"
     ],
 
@@ -43,42 +44,55 @@ Ext.define('editpic.view.main.Main', {
     },
     tbar: [
         {
-            text: "save", handler: "saveHandler"
-        }, {
-            text: "open", handler: "openNewHandler", hidden: true
-        }, {
-            text: "open old version", handler: "openHandler", hidden: true
+            text: "File",
+            menu: [
+                {
+                    text: "save", handler: "saveHandler"
+                }, {
+                    text: "open", handler: "openNewHandler", hidden: true
+                }, {
+                    text: "open old version", handler: "openHandler", hidden: true
+                },
+                {
+                    text: "open", menu: [
+                    {text: "open", handler: "openNewHandler"},
+                    {text: "data.json to new version data", handler: "toNewVersion"}
+                ]
+                },
+                {
+                    text: "delete", handler: "deleteHandler"
+                },
+                {
+                    text: "replace", handler: 'replaceHandler'
+                },
+                {
+                    text: "data.json to new version data",
+                    handler: "toNewVersion",
+                    hidden: true
+                },
+
+                {
+                    text: "Backup Graphice", handler: "BackupGraphice"
+                },
+                {
+                    text: "Restor Graphice", handler: "dataJsonUpload"
+                }
+            ]
         },
         {
-            text: "open", menu: [
-            {text: "open", handler: "openNewHandler"},
-            {text: "data.json to new version data", handler: "toNewVersion"}
-        ]
-        },
-        {
-            text: "replace", handler: 'replaceHandler'
-        },
-        {
-            text: "data.json to new version data",
-            handler: "toNewVersion",
-            hidden: true
-        },
-        {
-            text: "delete", handler: "deleteHandler"
-        },
-        {
-            text: "Backup Graphice", handler: "BackupGraphice"
-        },
-        {
-            text: "Restor Graphice", handler: "dataJsonUpload"
-        }, {
-            text: "update graph", handler: "updateGraph"
-        }, {
-            text: "about",
-            handler: function () {
-                Ext.Msg.alert("Version", "SmartIOgraphTools 2.32 Beat")
-            }
+            text: "Help",
+            menu: [
+                {
+                    text: "update graph", handler: "updateGraph"
+                }, {
+                    text: "about",
+                    handler: function () {
+                        Ext.Msg.alert("Version", "SmartIOgraphTools 2.33 Beat")
+                    }
+                }
+            ]
         }
+
     ],
     bbar: [] || [
         "->",

@@ -32,7 +32,7 @@ Ext.define('editpic.view.img.ScheduleTool', {
         var me = this;
         var data = me.callParent()
         Ext.apply(data, {
-            schdule: me.schdule,
+            schdule: me.schdule
         })
         return data;
     },

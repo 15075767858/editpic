@@ -49,7 +49,7 @@ Ext.define('editpic.view.img.LinkTool', {
         if (!me.contentPanel) {
             me.contentPanel = Ext.create("Ext.panel.Panel", {
                 bodyStyle: {
-                    backgroundColor: "transparent",
+                    backgroundColor: "transparent"
                 },
                 //y:50,
                 //height: "-50%",

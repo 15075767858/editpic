@@ -19,7 +19,7 @@ Ext.define('editpic.view.img.DevicesTool', {
         var me = this;
         var data = me.callParent()
         Ext.apply(data, {
-            device: me.device,
+            device: me.device
         })
         return data;
     },
@@ -45,7 +45,7 @@ Ext.define('editpic.view.img.DevicesTool', {
         if (!me.contentPanel) {
             me.contentPanel = Ext.create("Ext.panel.Panel", {
                 bodyStyle: {
-                    backgroundColor: "transparent",
+                    backgroundColor: "transparent"
                 },
                 //y:50,
                 //height: "-50%",

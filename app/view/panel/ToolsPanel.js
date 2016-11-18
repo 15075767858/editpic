@@ -73,7 +73,7 @@ Ext.define('editpic.view.panel.ToolsPanel', {
                     html: [
                         "<div  style='text-align: center;'><image style='width: 40px;' src=" + data[i].src + "></div>",
                         "<div style='text-align: center;'>" + data[i].caption + "</div>"
-                    ],
+                    ]
                 })
 
                 me.add(panel)

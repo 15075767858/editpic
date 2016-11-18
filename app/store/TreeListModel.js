@@ -1,6 +1,9 @@
 /**
  * Created by liuzhencai on 16/6/21.
  */
+Ext.onReady(function(){
+})
+
 Ext.define('editpic.store.TreeListModel', {
     extend: 'Ext.data.TreeStore',
     fields: [{
@@ -18,7 +21,6 @@ Ext.define('editpic.store.TreeListModel', {
         }
     }
 });
-
 /*
 root:[
     {text:'resources/svg/boolean/bulbFalse.svg'},

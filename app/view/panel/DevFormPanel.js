@@ -196,7 +196,7 @@ Ext.define('editpic.view.panel.DevFormPanel', {
                }, 500)
             }, 50)
 
-        },
+        }
 
     }
 

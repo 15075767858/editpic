@@ -20,14 +20,14 @@ Ext.define('editpic.view.window.EditFileController', {
                     margin: 10,
                     xtype: "textfield",
                     allowBlank: false,
-                    fieldLabel: 'old value',
+                    fieldLabel: 'old value'
                 },
                 {
                     itemId: "newvalue",
                     margin: 10,
                     xtype: "textfield",
                     allowBlank: false,
-                    fieldLabel: 'new value',
+                    fieldLabel: 'new value'
                 }
             ],
             buttons: [

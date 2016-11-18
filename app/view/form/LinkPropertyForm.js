@@ -52,7 +52,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         disabled: "{!isBind.checked}"
                     },
                     store: [window.location.hostname, "192.168.253.253"],
-                    value: window.location.hostname,
+                    value: window.location.hostname
 
                 },
                 {
@@ -71,7 +71,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     xtype: "button",
                     text: "link",
                     bind: {
-                        hidden: "{!isBind.checked}",
+                        hidden: "{!isBind.checked}"
                     },
                     flex: 1,
                     handler: function (menu) {
@@ -208,7 +208,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                         store: combo.store,
                                         columns: [{
                                             text: "Object_Name", dataIndex: "name", flex: 7, filter: {
-                                                type: "string",
+                                                type: "string"
                                             },
                                             items: {
                                                 xtype: 'textfield',
@@ -224,7 +224,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                             }
                                         }, {
                                             text: "Key", dataIndex: "value", flex: 3, filter: {
-                                                type: "string",
+                                                type: "string"
                                             },
                                             items: {
                                                 xtype: 'textfield',
@@ -284,7 +284,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 {
                     xtype: "combo",
                     bind: {
-                        hidden: "{!isBind.checked}",
+                        hidden: "{!isBind.checked}"
                     },
                     reference: "typescombo",
                     fieldLabel: "Type",
@@ -321,7 +321,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     },
                     bind: {
                         hidden: "{!isBindPriority.checked}",
-                        disabled: "{!isBindPriority.checked}",
+                        disabled: "{!isBindPriority.checked}"
                     },
                     items: values.getFormItems ? values.getFormItems() : []
                 }

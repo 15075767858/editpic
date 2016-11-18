@@ -76,7 +76,7 @@ Ext.onReady(function(){
 My.singleToolTip={
     tip: Ext.create("Ext.tip.ToolTip", {
         autoShow: true,
-        hideDelay: 1,
+        hideDelay: 1
     }),
     getTip:function(id,content,e){
        var me=this;

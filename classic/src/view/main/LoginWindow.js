@@ -69,7 +69,7 @@ Ext.define('editpic.view.login.LoginWindow', {
             {
                 text: 'Login', handler: function () {
                 var values = loginForm.getValues();
-
+                
                 My.login(values);
                 if (My.isLogin()) {
                     Ext.Msg.alert("Massage", "login success .")

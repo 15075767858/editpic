@@ -34,7 +34,7 @@ Ext.define('editpic.view.form.LabelForm', {
                     },
                     name: "isLinkDataBase",
                     hidden: itype == 1,
-                    disabled: itype == 1,
+                    disabled: itype == 1
 
                 },
 
@@ -299,7 +299,7 @@ Ext.define('editpic.view.form.LabelForm', {
                             var colorfield = Ext.create("Ext.ux.colorpick.Field", {
                                 itemId: "backgroundColor",
                                 name: "backgroundColor",
-                                fieldLabel: "Background Color",
+                                fieldLabel: "Background Color"
 
                             })
                             var win = Ext.create("Ext.window.Window", {
@@ -345,7 +345,7 @@ Ext.define('editpic.view.form.LabelForm', {
                                                     values.backgroundImage = newValue
                                                 }
                                             }
-                                        },
+                                        }
 
                                     ]
                                 },
@@ -386,7 +386,7 @@ Ext.define('editpic.view.form.LabelForm', {
         var publicItems = [
             {
                 xtype: "hiddenfield",
-                name: "itype",
+                name: "itype"
             },
             {
                 name: "x", fieldLabel: "x", configName: "mySetX", xtype: 'numberfield',
@@ -502,7 +502,7 @@ Ext.define('editpic.view.form.LabelForm', {
 
     },
     listeners: {
-        boxready: "boxready",
+        boxready: "boxready"
 
     }
 });

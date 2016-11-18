@@ -3,7 +3,7 @@ Ext.define('editpic.view.form.CanvasMenuBaseForm',{
     extend: 'Ext.form.Panel',
 
     requires: [
-        'editpic.view.form.CanvasMenuBaseFormController',
+        'editpic.view.form.CanvasMenuBaseFormController'
         //'editpic.view.form.CanvasMenuBaseFormModel'
     ],
 
@@ -24,7 +24,7 @@ Ext.define('editpic.view.form.CanvasMenuBaseForm',{
         var me=this;
 
         var values = me.values;
-        me.callParent()
+        this.callParent();
     }
 
 });

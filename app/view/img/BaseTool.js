@@ -31,12 +31,12 @@ Ext.define('editpic.view.img.BaseTool', {
         //backgroundImage:"resources/SmartIO.png",
         //backgroundRepeat:"noRepeat",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "100% 100%",
+        backgroundSize: "100% 100%"
     },
 
     initComponent: function () {
         var me = this;
-        me.callParent()
+        me.callParent();
         Ext.apply(me, My.initComponentConfig)
     },
     init: function (data) {
