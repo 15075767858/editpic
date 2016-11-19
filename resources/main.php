@@ -680,7 +680,14 @@ function hGet($redis, $nodename, $type)
 {
     $value = $redis->hGet($nodename, $type);
 
-    return mb_convert_encoding($value, "UTF-8", "GBK");
+    if (preg_match("/[\x7f-\xff]/", $value)) {  //判断字符串中是否有中文
+        return "base64=".base64_encode($value);
+    } else {
+        return $value;
+    }
+    //return mb_convert_encoding($value, "UTF-8", "GBK");
+
+
 }
 
 /*

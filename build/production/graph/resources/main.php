@@ -27,7 +27,7 @@ if ($par == "getdevs") {
         $arr = array();
         foreach ($arList as $key => $value) {
             if (is_numeric($value)) {
-                array_push($arr, array("value" => $value, "name" => $redis->hGet($value, "Object_Name")));
+                array_push($arr, array("value" => $value, "name" => hGet($redis, $value, "Object_Name")));
             }
         }
         sort($arList);
@@ -48,7 +48,9 @@ if ($par == "getDevsByDevName") {
         $arr = array();
         foreach ($arList as $key => $value) {
             if (is_numeric($value)) {
-                array_push($arr, array("value" => $value, "name" => $redis->hGet($value, "Object_Name"), 'Present_Value' => $redis->hGet($value, 'Present_Value')));
+                $Object_Name = hGet($redis, $value, "Object_Name");
+                $Present_Value = hGet($redis, $value, "Present_Value");
+                array_push($arr, array("value" => $value, "name" => $Object_Name, 'Present_Value' => $Present_Value));
             }
         }
         sort($arList);
@@ -83,7 +85,8 @@ if ($par == "getSchdule") {
         $arr = array();
         foreach ($arList as $key => $value) {
             if (is_numeric($value)) {
-                array_push($arr, array("value" => $value, "name" => $redis->hGet($value, "Object_Name")));
+                $Object_Name = hGet($redis, $value, "Object_Name");
+                array_push($arr, array("value" => $value, "name" => $Object_Name));
             }
         }
         sort($arList);
@@ -117,7 +120,8 @@ if ($par == "linkInfo") {
         $nodename = $redis->keys($_REQUEST['nodename'])[0];
         $arr['nodename'] = $nodename;
         if ($nodename) {
-            $arr['type'] = $redis->hGet($nodename, $_REQUEST['type']);
+            $arr['type'] = hGet($redis, $nodename, $_REQUEST['type']);
+            //$arr['type'] = $redis->hGet($nodename, $_REQUEST['type']);
         }
     }
     echo json_encode($arr);
@@ -176,7 +180,8 @@ if ($par == "gettypevalue") {
     $nodeName = $_REQUEST['nodename'];
     $type = $_REQUEST['type'];
     $redis = getRedisConect();
-    echo $redis->hGet($nodeName, $type);
+    echo hGet($redis, $nodeName, $type);
+    //echo $redis->hGet($nodeName, $type);
     $redis->close();
 
 }
@@ -203,7 +208,9 @@ if ($par == "nodes") {
     getDevs($arList);
     $allArr = array();
     foreach ($arList as $value) {
-        $Object_Name = $redis->hGet($value, 'Object_Name');
+        $Object_Name = hGet($redis, $value, "Object_Name");
+
+        //$Object_Name = $redis->hGet($value, 'Object_Name');
         //$Object_Name= mb_convert_encoding($Object_Name,'UTF-8','GBK');
         if (strlen($value) == 7 & is_numeric($value)) {
             array_push($allArr, array("leaf" => true, "text" => $Object_Name, 'value' => $value));
@@ -264,7 +271,9 @@ function getChildren($arList, $devValue, $redis)
     $arr = array();
     foreach ($arList as $value) {
         if (substr($value, 0, 5) == $devValue) {
-            $Object_Name = $redis->hGet($value, 'Object_Name');
+            //$Object_Name = $redis->hGet($value, 'Object_Name');
+            $Object_Name = hGet($redis, $value, "Object_Name");
+
             array_push($arr, array('leaf' => true, 'text' => $Object_Name, 'value' => $value));
         }
     }
@@ -484,7 +493,9 @@ function getNodeTypeValue($arr)
     //$ip="192.168.2.20";
     $redis->connect($ip, $port, 0.5) or $redis = false;
     if ($redis) {
-        $value = $redis->hGet($nodeName, $type);
+        //$value = $redis->hGet($nodeName, $type);
+        $value = hGet($redis, $nodeName,$type);
+
         $redis->close();
         return $value;
     } else {
@@ -664,6 +675,12 @@ function getTelnet()
 
 
     return $telnet;
+}
+function hGet($redis, $nodename, $type)
+{
+    $value = $redis->hGet($nodename, $type);
+
+    return mb_convert_encoding($value, "UTF-8", "GBK");
 }
 
 /*

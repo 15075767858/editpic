@@ -1,16 +1,14 @@
 #!/bin/bash
 rm -rf build
 sencha app build
-#rm -rf build/production/graph/resources/font-awesome
-#rm -rf build/production/graph/resources/fonts
-#rm -rf build/production/graph/modern
-#cd build/production
-#tar czvf graph.tar.bz2 graph/
-#mkdir autoInstallPackage
-#rm -rf graph/resources/SvgHvac
-#tar czvf autoGraph.tar.bz2 graph/
-
-
+rm -rf build/production/graph/resources/font-awesome
+rm -rf build/production/graph/resources/fonts
+rm -rf build/production/graph/modern
+cd build/production
+tar czvf graph.tar.bz2 graph/
+mkdir autoInstallPackage
+rm -rf graph/resources/SvgHvac
+tar czvf autoGraph.tar.bz2 graph/
 #split -b 1m graph.tar.bz2 autoInstallPackage/autoInstallGraph.
 #tar czvf autoInstallPackage.tar.bz2 autoInstallPackage
 

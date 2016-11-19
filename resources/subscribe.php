@@ -5,12 +5,16 @@
 
 ini_set('default_socket_timeout', -1);
 
+
+
 $redis = new Redis();
 if(!$redis){
     echo  json_encode(array('success'=>false,'info'=>'Redis error'));
     exit();
 }
+
 $redis->connect("127.0.0.1", "6379",15) or $redis = false;
+
 if(!$redis){
     echo  json_encode(array('success'=>false,'info'=>'Connction error'));
     exit();
