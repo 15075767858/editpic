@@ -672,8 +672,6 @@ function getTelnet()
     $telnet->write("$username\r\n");
     echo $telnet->read_till("password: ");
     $telnet->write("$password\r\n");
-
-
     return $telnet;
 }
 function hGet($redis, $nodename, $type)
@@ -686,8 +684,6 @@ function hGet($redis, $nodename, $type)
         return $value;
     }
     //return mb_convert_encoding($value, "UTF-8", "GBK");
-
-
 }
 
 /*

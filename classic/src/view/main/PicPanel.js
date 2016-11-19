@@ -54,8 +54,8 @@ Ext.define('editpic.view.panel.PicPanel', {
     },
     //id: "maindrawpanel",
     getSubscribeItems: function () {
-        var me=this;
-        var items=me.items.items;
+        var me = this;
+        var items = me.items.items;
         var arr = [];
         for (var i = 0; i < items.length; i++) {
             if (My.initComponentConfig.isLinkData(items[i])) {
@@ -143,6 +143,7 @@ Ext.define('editpic.view.panel.PicPanel', {
         if (!me.items) {
             return;
         }
+
         me.items.each(function (items, index, length) {
             var me = this;
             if (items.selectStyle) {
@@ -227,6 +228,13 @@ Ext.define('editpic.view.panel.PicPanel', {
             hideMode: "offsets",
             width: 110,
             height: 75,
+            listeners: {
+                beforeclose:function () {
+                    console.log("close")
+                    me.menuWindow.hide()
+                    return false;
+                }
+            },
             tbar: [
                 {
                     icon: 'resources/icons/left_alignment_16px.png', tooltip: "left alignment",
@@ -349,7 +357,7 @@ Ext.define('editpic.view.panel.PicPanel', {
 
 
         this.setTitle(text)
-        My.savePicPanelData(text,Ext.encode(picpanelData));
+        My.savePicPanelData(text, Ext.encode(picpanelData));
         //return picpanelData;
 
 

@@ -2060,40 +2060,44 @@ My.util.PublishPic = {
         var me = this;
         var ips = this.getSubscribeIpsDevNames(subIp);
         for (var ip in ips) {
+            console.log(ip)
             var subnodes = Ext.encode(ips[ip]);
-            var data = {
+
+
+            Ext.Ajax.request({
                 params: {
                     subnodes: subnodes
                 },
                 callbackKey: "callback",
                 callbackName: "callback",
-                timeout: 0
-            };
-            if (location.hostname == ip) {
-                data.url = "resources/subscribe.php";
-                data.success = function (response) {
+                timeout: 0,
+                url: "resources/subscribe.php?ip="+ip,
+                success: function (response) {
                     try {
                         var resJson = Ext.decode(response.responseText)
                         if (resJson.success) {
                             me.subscribeSuccess(resJson.info)
+                        }else{
+                            console.log(resJson.info)
                         }
                     } catch (e) {
-                        throw new Error(e)
+                        //throw new Error(e)
                         console.log(e)
                         return;
                     }
                 }
-                Ext.Ajax.request(data);
-            } else {
-                data.url = "http://" + ip + "/graph/resources/subscribe.php";
-                //data.timeout=1000
-                data.success = function (response) {
-                    if (response.success) {
-                        me.subscribeSuccess(response.info)
-                    }
-                }
-                Ext.data.JsonP.request(data);
-            }
+            });
+
+            /*else {
+             data.url = "http://" + ip + "/graph/resources/subscribe.php";
+             //data.timeout=1000
+             data.success = function (response) {
+             if (response.success) {
+             me.subscribeSuccess(response.info)
+             }
+             }
+             Ext.data.JsonP.request(data);
+             }*/
         }
     },
     subscribeSuccess: function (resJson) {

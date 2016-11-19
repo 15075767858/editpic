@@ -50,6 +50,7 @@ Ext.define('editpic.view.img.TextTool', {
                     html: me.text
                 })
                 me.add(me.contentPanel);
+                console.log(me.text)
             } else{
                 me.contentPanel.setHtml(me.text||"")
             }
