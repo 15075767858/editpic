@@ -499,13 +499,14 @@ Ext.define('editpic.view.main.MainController', {
         //上传home目录下的文件
         console.log(arguments)
         var win = Ext.create("editpic.view.window.UploadWindow", {
-                url: '/upload.php?par=upload',
+                url: 'resources/main.php?par=uploadHomeFile',
                 fieuploaded: function (object, file) {
-                    My.Ajax("/upload.php", function () {
+                    My.delayToast("Massage",file.name+" upload .")
+                    /*My.Ajax("/upload.php", function () {
                     }, {
                         par: "system",
                         command: "mv " + file.name + " home"
-                    })
+                    })*/
                 },
                 uploadcomplete: function () {
                     My.delayToast("Status", "File Upload successfully .");
@@ -1686,6 +1687,7 @@ My.initComponentConfig = {
                         if (win1) {
                             return;
                         }
+
                         var isUseKeyboard = form.getComponent("useKeyboard").getValue();
                         if (isUseKeyboard) {
 

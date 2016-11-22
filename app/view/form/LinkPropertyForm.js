@@ -56,7 +56,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
                 },
                 {
-                    xtype: "textfield",
+                    xtype: "combo",
                     flex: 1,
                     fieldLabel: "port",
                     name: "port",
@@ -65,6 +65,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         disabled: "{!isBind.checked}"
                     },
                     reference: "portfield",
+                    store:['6379'],
                     value: "6379"
                 },
                 {
@@ -364,11 +365,12 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 value: window.location.hostname
             };
             var portField = {
-                xtype: "textfield",
+                xtype: "combo",
                 flex: 1,
                 fieldLabel: "port",
                 name: "port",
                 reference: "portfield",
+                store:['6379'],
                 value: "6379"
             };
             /*

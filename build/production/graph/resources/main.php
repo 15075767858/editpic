@@ -11,6 +11,9 @@ if ($ip == "127.0.0.1") {
 
 //echo move_uploaded_file($_FILES["file"]["tmp_name"], "devsinfo/" . $_FILES["file"]["name"]);
 
+if ($par == "uploadHomeFile") {
+    echo move_uploaded_file($_FILES["file"]["tmp_name"], "devsinfo/" . $_FILES["file"]["name"]);
+}
 
 if ($par == 'getSvgTree') {
     //$path = "svg";
@@ -18,6 +21,7 @@ if ($par == 'getSvgTree') {
     //$path = "SvgHvac";
     echo json_encode(getfiles($path, $fileArr = Array()));
 }
+
 
 if ($par == "getdevs") {
     $redis = getRedisConect();
@@ -494,7 +498,7 @@ function getNodeTypeValue($arr)
     $redis->connect($ip, $port, 0.5) or $redis = false;
     if ($redis) {
         //$value = $redis->hGet($nodeName, $type);
-        $value = hGet($redis, $nodeName,$type);
+        $value = hGet($redis, $nodeName, $type);
 
         $redis->close();
         return $value;
@@ -674,17 +678,19 @@ function getTelnet()
     $telnet->write("$password\r\n");
     return $telnet;
 }
+
 function hGet($redis, $nodename, $type)
 {
     $value = $redis->hGet($nodename, $type);
 
     if (preg_match("/[\x7f-\xff]/", $value)) {  //判断字符串中是否有中文
-        return "base64=".base64_encode($value);
+        return "base64=" . base64_encode($value);
     } else {
         return $value;
     }
     //return mb_convert_encoding($value, "UTF-8", "GBK");
 }
+
 
 /*
 function listDir($dir)
