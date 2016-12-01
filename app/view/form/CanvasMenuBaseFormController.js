@@ -36,7 +36,6 @@ Ext.define('editpic.view.form.CanvasMenuBaseFormController', {
         console.log(this.getViewModel())
     },
     colorPickerFocus:function(field, newValue){
-
         var win= Ext.create("graph.view.ux.ColorSelect",
             {
                 ok: function (color) {

@@ -223,6 +223,7 @@ Ext.define('editpic.view.form.LabelForm', {
                             autoShow: true,
                             width: 400,
                             modal: true,
+                            controller:me.controller,
                             title: "set shadow",
                             items: {
                                 xtype: "form",
@@ -249,8 +250,12 @@ Ext.define('editpic.view.form.LabelForm', {
                                     {
                                         fieldLabel: "shadow color",
                                         name: "shadowColor",
-                                        xtype: 'colorfield',
-                                        value: "#FFFFFF"
+                                        xtype: 'textfield',
+                                        value: "#FFFFFF",
+                                        editable:true,
+                                        listeners: {
+                                            focus:"colorPickerFocus"
+                                        }
                                     }
                                 ]
                             },
@@ -307,10 +312,6 @@ Ext.define('editpic.view.form.LabelForm', {
                                     items: [
 
                                         Ext.create("Ext.form.field.ComboBox", {
-                                            /*store:Ext.create("Ext.data.Store",{
-                                             fields:['name','color','html'],
-                                             data:["white","blue","red","gray","green","black"]
-                                             }),*/
                                             store: ["white", "blue", "red", "gray", "brown", "green", "black"],
                                             fieldLabel: "Background Color",
                                             name: "backgroundColor",
