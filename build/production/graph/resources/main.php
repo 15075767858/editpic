@@ -12,7 +12,7 @@ if ($ip == "127.0.0.1") {
 //echo move_uploaded_file($_FILES["file"]["tmp_name"], "devsinfo/" . $_FILES["file"]["name"]);
 
 if ($par == "uploadHomeFile") {
-    echo move_uploaded_file($_FILES["file"]["tmp_name"], "devsinfo/" . $_FILES["file"]["name"]);
+    echo move_uploaded_file($_FILES["file"]["tmp_name"], "../../home/" . $_FILES["file"]["name"]);
 }
 
 if ($par == 'getSvgTree') {
@@ -493,8 +493,12 @@ function getNodeTypeValue($arr)
     $port = $arr['port'];
     $nodeName = $arr['nodename'];
     $type = $arr['type'];
+    error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+
     $redis = new Redis();
+
     //$ip="192.168.2.20";
+
     $redis->connect($ip, $port, 0.5) or $redis = false;
     if ($redis) {
         //$value = $redis->hGet($nodeName, $type);
@@ -505,6 +509,7 @@ function getNodeTypeValue($arr)
     } else {
         return false;
     }
+
 }
 
 if ($par == "beforeUploadGraph") {

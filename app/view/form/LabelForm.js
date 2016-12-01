@@ -22,10 +22,8 @@ Ext.define('editpic.view.form.LabelForm', {
         var values = me.values;
         var itype = values.itype;
         var labelFormItems = [];
-
         if (itype == 0 || itype == 1) {
             labelFormItems = [
-
                 {
                     xtype: "checkboxfield", fieldLabel: "link database",
                     reference: "isLinkDataBase",
@@ -35,9 +33,7 @@ Ext.define('editpic.view.form.LabelForm', {
                     name: "isLinkDataBase",
                     hidden: itype == 1,
                     disabled: itype == 1
-
                 },
-
                 {
                     xtype: "numberfield",
                     allowBlank: true,
@@ -90,26 +86,17 @@ Ext.define('editpic.view.form.LabelForm', {
                 }
             ]
         }
-
-
         if (itype > 1) {
-
-
             var fontColorField = Ext.create("Ext.form.field.Text", {
-
                 store: ["white", "blue", "red", "gray", "brown", "green", "black"],
                 fieldLabel: 'Font Color',
                 value: values.fontColor || "white",
                 name: "fontColor",
-
                 listeners: {
                     focus: "colorPickerFocus"
                 }
             })
-
-
             labelFormItems.push(fontColorField)
-
             if (itype == 3) {
                 labelFormItems.push({
                     fieldLabel: "alias", xtype: "textfield", name: "aliasName", allowBlank: true,
@@ -300,8 +287,8 @@ Ext.define('editpic.view.form.LabelForm', {
                                 itemId: "backgroundColor",
                                 name: "backgroundColor",
                                 fieldLabel: "Background Color"
-
                             })
+
                             var win = Ext.create("Ext.window.Window", {
                                 autoShow: true,
                                 width: 400,

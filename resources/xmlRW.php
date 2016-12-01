@@ -1,6 +1,6 @@
 <?php
-$fn = $_POST['fileName'];
-$rw = $_POST['rw'];
+$fn = $_REQUEST['fileName'];
+$rw = $_REQUEST['rw'];
 
 $ip = $_SERVER["SERVER_ADDR"];
 if ($ip != "127.0.0.1") {
@@ -9,10 +9,10 @@ if ($ip != "127.0.0.1") {
     }
 
 }
-
 if ($rw == 'r') {
+
     $isFile = file_exists($fn);
-    if ($isFile == false) {
+    if (!$isFile) {
         echo "null";
         return;
     }

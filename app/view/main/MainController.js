@@ -1475,6 +1475,7 @@ My.initComponentConfig = {
 
         var me = this;
 
+
         //console.log(me)
         /*if(me.itype==4){
          Ext.getCmp("mintab").addTab(me.linkValue)
@@ -1482,6 +1483,7 @@ My.initComponentConfig = {
          }*/
 
         if (My.getSearch()) {
+
             if (me.clientOpenMenu()) {
                 me.openAlermWindow()
             }
