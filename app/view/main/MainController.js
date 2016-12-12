@@ -437,7 +437,9 @@ Ext.define('editpic.view.main.MainController', {
 
     },
     deleteHandler: function () {
-        var comboStore = My.getImageNames()
+        var comboStore =My.getHomeFileNames();
+
+
         var win = Ext.create('Ext.window.Window', {
             title: 'Delete',
             frame: true,
@@ -790,7 +792,7 @@ My.deleteImageData = function (content, text) {
     if (!text) {
         return data
     }
-    My.AjaxPost("resources/main.php?par=deleteImageData", function (response) {
+    My.AjaxPost("resources/main.php?par=deleteGraphFile", function (response) {
 
     }, {
         graph: text,

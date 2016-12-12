@@ -83,11 +83,11 @@ Ext.define('editpic.view.main.Main', {
             text: "Help",
             menu: [
                 {
-                    text: "update graph", handler: "updateGraph"
+                    text: "update graph", hidden:true,handler: "updateGraph"
                 }, {
                     text: "about",
                     handler: function () {
-                        Ext.Msg.alert("Version", "SmartIOgraphTools 2.41")
+                        Ext.Msg.alert("Version", "SmartIOgraphTools 2.42")
                     }
                 }
             ]

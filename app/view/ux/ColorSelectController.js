@@ -5,7 +5,6 @@ Ext.define('graph.view.ux.ColorSelectController', {
         var win = this.view;
         var panel = this.createColorPanel();
         win.add(panel);
-
     },
     deleteColorHandler: function () {
         var win = this.view;
