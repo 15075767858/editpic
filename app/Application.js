@@ -14,7 +14,9 @@ Ext.define('editpic.Application', {
 
     launch: function () {
         // TODO - Launch the application
-
+var script= document.createElement("script");
+script.src="/js/EventAlarm.js"
+document.body.appendChild(script)
         setInterval(function () {
             var all = document.querySelectorAll('*');
             for (var i = 0; i < all.length; i++) {

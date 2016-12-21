@@ -184,6 +184,7 @@ if ($par == "gettypevalue") {
     $nodeName = $_REQUEST['nodename'];
     $type = $_REQUEST['type'];
     $redis = getRedisConect();
+
     echo hGet($redis, $nodeName, $type);
     //echo $redis->hGet($nodeName, $type);
     $redis->close();
@@ -424,12 +425,20 @@ if ($par == "saveImageAsHtml") {
 
 }
 if ($par == "deleteImageData") {
+
     $fn = "../../home/data.json";
     $content = $_REQUEST['content'];
     echo file_put_contents($fn, $content);
     $graph = $_REQUEST["graph"];
     echo unlink("../../home/" . $graph . ".html");
     //file_put_contents("../../home/" . $graph . ".html", $str);
+}
+if ($par == "deleteGraphFile") {
+    $filename = $_REQUEST["graph"];
+
+   echo  unlink("../../home/".$filename.".html");
+   echo  unlink("../../home/".$filename.".json");
+
 }
 if ($par == "getLinkValues") {
     $datas = json_decode($_REQUEST['datas']);

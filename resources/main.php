@@ -184,6 +184,7 @@ if ($par == "gettypevalue") {
     $nodeName = $_REQUEST['nodename'];
     $type = $_REQUEST['type'];
     $redis = getRedisConect();
+
     echo hGet($redis, $nodeName, $type);
     //echo $redis->hGet($nodeName, $type);
     $redis->close();

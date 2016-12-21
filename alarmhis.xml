@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <savetime>604800000</savetime>
+
+
+    <logs>
+   <log><ip>127.0.0.1</ip><port>6379</port><key>1001006</key><objectname>UI6 </objectname><presentvalue>1</presentvalue><alarmtxt></alarmtxt><normaltxt></normaltxt><time>1482335312031</time></log><log><ip>127.0.0.1</ip><port>6379</port><key>1001006</key><objectname>UI6 </objectname><presentvalue>4411</presentvalue><alarmtxt></alarmtxt><normaltxt></normaltxt><time>1482337361245</time></log><log><ip>127.0.0.1</ip><port>6379</port><key>1001006</key><objectname>UI6 </objectname><presentvalue>41</presentvalue><alarmtxt></alarmtxt><normaltxt></normaltxt><time>1482337367531</time></log><log><ip>127.0.0.1</ip><port>6379</port><key>1001006</key><objectname>UI6 </objectname><presentvalue>411</presentvalue><alarmtxt></alarmtxt><normaltxt></normaltxt><time>1482337646677</time></log></logs>
+
+</root>
