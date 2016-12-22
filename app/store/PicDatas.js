@@ -3,6 +3,7 @@
  */
 Ext.define("editpic.store.PicDatas", {
     extend: "Ext.data.Store",
+
     groupField: "Group",
     fields: [
         "Group",

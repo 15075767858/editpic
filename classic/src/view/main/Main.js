@@ -16,6 +16,10 @@ Ext.define('editpic.view.main.Main', {
         'Ext.panel.Panel',
         'Ext.tab.Panel',
         'Ext.tree.Panel',
+        "Ext.window.Toast",
+        "Ext.form.field.*",
+        "Ext.window.*",
+        "Ext.data.*",
         'editpic.view.main.MainModel',
         'editpic.view.main.MainController',
         'editpic.view.tree.SvgsTree',
@@ -23,11 +27,12 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.panel.SetPicPanel",
         "editpic.view.panel.DevFormPanel",
         'editpic.view.panel.ToolsPanel',
-        "Ext.window.Toast",
         "editpic.view.login.LoginWindow",
         "editpic.view.ux.KeyBoard",
         "editpic.view.week.WeekWin",
-        "editpic.view.window.EditFile"
+        "editpic.view.window.EditFile",
+
+        //"editpic.view.EventAlarm.EventAlarmSetting"
         //"editpic.view.tool.PublishPic"
     ],
 
@@ -37,7 +42,6 @@ Ext.define('editpic.view.main.Main', {
     //ui: 'navigation',
     listeners: {
         boxready: function () {
-
 
 
         }
@@ -83,11 +87,11 @@ Ext.define('editpic.view.main.Main', {
             text: "Help",
             menu: [
                 {
-                    text: "update graph", hidden:true,handler: "updateGraph"
+                    text: "update graph", hidden: true, handler: "updateGraph"
                 }, {
                     text: "about",
                     handler: function () {
-                        Ext.Msg.alert("Version", "SmartIOgraphTools 2.42")
+                        Ext.Msg.alert("Version", "SmartIOgraphTools 2.50")
                     }
                 }
             ]

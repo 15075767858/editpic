@@ -36,6 +36,7 @@ Ext.define('editpic.view.panel.PicPanel', {
     viewModel: {
         type: 'panel-picpanel'
     },
+    collapsible:true,
     resizable: true,
     scrollable: true,
     constrainHeader: false,
@@ -364,6 +365,7 @@ Ext.define('editpic.view.panel.PicPanel', {
     },
 
     load: function (json) {
+
         var start = new Date().getTime();
         var me = this;
         me.body.setStyle("backgroundColor", json.bodyColor);
@@ -385,6 +387,8 @@ Ext.define('editpic.view.panel.PicPanel', {
         me.viewModel.set("width", json.width);
         me.viewModel.set("height", json.height);
         My.initLinkValue()
+        
+        testpanel =me;
     },
     draggable: true,
     header: {

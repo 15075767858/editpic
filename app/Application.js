@@ -14,9 +14,10 @@ Ext.define('editpic.Application', {
 
     launch: function () {
         // TODO - Launch the application
-var script= document.createElement("script");
-script.src="/js/EventAlarm.js"
-document.body.appendChild(script)
+        EventRootUrl = "/"
+        EventAlarmUrl = EventRootUrl + "graph/resources/EventAlarm.php"
+        Ext.create("editpic.view.EventAlarm.ListenEventAlarm")
+
         setInterval(function () {
             var all = document.querySelectorAll('*');
             for (var i = 0; i < all.length; i++) {
@@ -70,6 +71,7 @@ document.body.appendChild(script)
             }, delay || 3000)
 
         }
-        My.randomChangeValue=randomChangeValue
+
+        My.randomChangeValue = randomChangeValue
     })
 })()

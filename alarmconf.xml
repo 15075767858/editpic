@@ -1,123 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <item id="MonitorModel-2">
+  <item id="editpic.model.MonitorModel-3">
     <ip>127.0.0.1</ip>
     <port>6379</port>
-    <key>1001005</key>
-    <objectname>UI5 </objectname>
-    <alarmtxt>11</alarmtxt>
-    <normaltxt>222</normaltxt>
-  </item>
-  <item id="MonitorModel-3">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001102</key>
-    <objectname>ANALOG OUTPUT2</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-4">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001102</key>
-    <objectname>ANALOG OUTPUT2</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-5">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001102</key>
-    <objectname>ANALOG OUTPUT2</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-6">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001102</key>
-    <objectname>ANALOG OUTPUT2</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-7">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001102</key>
-    <objectname>ANALOG OUTPUT2</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-8">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001102</key>
-    <objectname>ANALOG OUTPUT2</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-9">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001102</key>
-    <objectname>ANALOG OUTPUT2</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-10">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001102</key>
-    <objectname>ANALOG OUTPUT2</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-14">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001006</key>
-    <objectname>UI6 </objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-15">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001101</key>
-    <objectname>ANALOG OUTPUT1</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-16">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001101</key>
-    <objectname>ANALOG OUTPUT1</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-17">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001101</key>
-    <objectname>ANALOG OUTPUT1</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
-  </item>
-  <item id="MonitorModel-11">
-    <ip>192.168.1.188</ip>
-    <port>6379</port>
-    <key>1001005</key>
-    <objectname>UI5 </objectname>
-    <alarmtxt>111</alarmtxt>
-    <normaltxt>222</normaltxt>
-  </item>
-  <item id="MonitorModel-12">
-    <ip>192.168.253.251</ip>
-    <port>6379</port>
-    <key>1001005</key>
+    <key>1001202</key>
     <objectname/>
-    <alarmtxt>111</alarmtxt>
-    <normaltxt>bbb</normaltxt>
+    <alarmtxt>ararmtxt</alarmtxt>
+    <normaltxt>normaltxt</normaltxt>
+  </item>
+  <item id="editpic.model.MonitorModel-5">
+    <ip>127.0.0.1</ip>
+    <port>6379</port>
+    <key>9900201</key>
+    <objectname>ewq</objectname>
+    <alarmtxt>ararmtxt</alarmtxt>
+    <normaltxt>normaltxt</normaltxt>
   </item>
 </root>
