@@ -1,7 +1,6 @@
-
-Ext.define('editpic.view.EventAlarm.ListenGrid',{
+Ext.define('editpic.view.EventAlarm.ListenGrid', {
     extend: 'Ext.grid.Panel',
-    alias:"ListenGrid",
+    alias: "ListenGrid",
     requires: [
         'editpic.view.EventAlarm.ListenGridController',
         'editpic.view.EventAlarm.ListenGridModel'
@@ -43,7 +42,7 @@ Ext.define('editpic.view.EventAlarm.ListenGrid',{
             listeners: {
                 add: function () {
                     me.playAlarm()
-                    me.up("window").show()
+
                     console.log(this)
                     console.log(arguments)
                 }
@@ -55,6 +54,28 @@ Ext.define('editpic.view.EventAlarm.ListenGrid',{
             text: "STOP", icon: EventRootUrl + "graph/resources/icons/alarm_24px.png", handler: function (button) {
             button.up("grid").pauseAlarm()
         }
+        }, {
+            text: "DELETE",
+            icon: EventRootUrl + "graph/resources/icons/delete_Trash_23.6px.png",
+            handler: function (button) {
+                var grid = button.up("grid")
+                var selModels = grid.getSelection()
+                if (selModels[0]) {
+                    var selModel = selModels[0];
+                    selModel.delLog(function (response) {
+                        try {
+                            var resJson = Ext.decode(response.responseText);
+                            if (resJson.success) {
+                                Ext.Msg.alert("Massage", "Delete ok " + resJson.info)
+                                grid.store.remove(selModel);
+                            }
+                        } catch (e) {
+                            console.log(e)
+                            Ext.Msg.alert("Maasage", e)
+                        }
+                    })
+                }
+            }
         }, "->"
         , {
             text: "Event Alarm Setting", handler: function () {
@@ -108,11 +129,7 @@ Ext.define('editpic.view.EventAlarm.ListenGrid',{
         var me = this;
         json.time = new Date().getTime();
         var lm = Ext.createByAlias("ListenModel", json);
-        Ext.Ajax.request({
-            url: EventAlarmUrl + "?par=addLog",
-            params: json
-        }).then(function (response) {
-            console.log(response);
+        lm.addLog(function (response) {
             try {
                 var resJson = Ext.decode(response.responseText);
                 me.store.insert(0, lm)
@@ -120,6 +137,18 @@ Ext.define('editpic.view.EventAlarm.ListenGrid',{
                 Ext.Msg.alert("Maasage", e)
             }
         })
+        /*Ext.Ajax.request({
+         url: EventAlarmUrl + "?par=addLog",
+         params: json
+         }).then(function (response) {
+         console.log(response);
+         try {
+         var resJson = Ext.decode(response.responseText);
+         me.store.insert(0, lm)
+         } catch (e) {
+         Ext.Msg.alert("Maasage", e)
+         }
+         })*/
         /*lm.save({
          callback: function (record, operation, success) {
          if (success) {
@@ -165,6 +194,8 @@ Ext.define('editpic.view.EventAlarm.ListenGrid',{
         {text: "key", dataIndex: "key", flex: 1},
         {text: "object name", dataIndex: "objectname", flex: 1},
         {text: "present value", dataIndex: "presentvalue", flex: 1},
+        {text: "alarmtxt", dataIndex: "alarmtxt", flex: 1},
+        {text: "normaltxt", dataIndex: "normaltxt", flex: 1},
         {
             text: "time", dataIndex: "time", flex: 2, renderer: function (v) {
             return new Date(v).toLocaleString()
@@ -180,7 +211,7 @@ Ext.define('editpic.view.EventAlarm.ListenGrid',{
         var alarmAudio = document.createElement("audio");
         var alarmSource = document.createElement("source");
         alarmAudio.id = "alarmAudio";
-        alarmSource.src =  "resources/audio/alarm.mp3";
+        alarmSource.src = "resources/audio/alarm.mp3";
         alarmSource.type = "audio/mpeg"
         alarmAudio.appendChild(alarmSource);
         alarmAudio.loop = true;
@@ -194,6 +225,12 @@ Ext.define('editpic.view.EventAlarm.ListenGrid',{
         me.eventAudio = eventAudio;
     },
     playAlarm: function () {
+        var me = this;
+        var win = me.up("window")
+        console.log(win)
+        win.show()
+        win.expand()
+        //win.toggleCollapse()
         this.alarmAudio.play()
     },
     pauseAlarm: function () {

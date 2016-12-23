@@ -14,7 +14,7 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm',{
     collapsible: true,
     autoShow: true,
     title: "Listen Event Alarm",
-    width: 800,
+    width: 900,
     y: 100,
     initComponent: function () {
         var me = this;

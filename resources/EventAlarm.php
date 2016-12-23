@@ -9,6 +9,7 @@ class EventAlarm
 
     const LookType = "Alarm";
     const ListenType = "Present_Value";
+    const types = array("ip", "port", "key", "objectname", "presentvalue", "alarmtxt", "normaltxt", "time");
 
     public function __construct()
     {
@@ -52,10 +53,10 @@ class EventAlarm
         $dom->formatOutput = true;
         $dom->load($this::alarmhisXml);
         $logs = $dom->getElementsByTagName('logs');
-        $types = array("ip", "port", "key", "objectname", "presentvalue", "alarmtxt", "normaltxt", "time");
+        //$types = array("ip", "port", "key", "objectname", "presentvalue", "alarmtxt", "normaltxt", "time");
         $log = $dom->createElement("log");
-        foreach ($types as $value) {
-
+        $log->setAttribute("id", $arr['id']);
+        foreach ($this::types as $value) {
             $nodeValue = isset($arr[$value]) ? $arr[$value] : "";
             $tag = $this->createXmlNode($dom, $value, $nodeValue);
             $log->appendChild($tag);
@@ -64,14 +65,45 @@ class EventAlarm
         return $dom->save($this::alarmhisXml, LIBXML_NOEMPTYTAG);
     }
 
-    public function delLog($id)
+    public function delLog($arr)
     {
         $dom = new DOMDocument('1.0', 'UTF-8');
         $dom->formatOutput = true;
         $dom->load($this::alarmhisXml);
-        $log = $dom->getElementById($id);
+
+        $logs = $dom->getElementsByTagName("log");
+
+        foreach ($logs as $log) {
+            if ($this->comparisonLog($arr, $log)) {
+                $log->parentNode->removeChild($log);
+            }
+        }
+        return $dom->save($this::alarmhisXml);
+        //print_r($log);
+    }
+
+    /** comparison log
+     * @param array $arr
+     *
+     * @param DOMNode $log
+     *
+     * @return bool true equally
+     */
+    public function comparisonLog($arr, $log)
+    {
+        for ($i = 0; $i < sizeof($this::types); $i++) {
+            $type = $this::types[$i];
+            $target = $arr[$type];
+            $source = $log->getElementsByTagName($type)->item(0)->nodeValue;
+            if ($target != $source) {
+                return false;
+            }
+        }
+
+        return true;
 
     }
+
 
     public function getAlarmhisXml()
     {
@@ -146,15 +178,19 @@ class EventAlarm
         $dom = new DOMDocument('1.0', 'UTF-8');
         $dom->load($this::alarmconfXml);
         $items = $dom->getElementsByTagName("item");
+
         $saveArray = array();
         foreach ($items as $item) {
+            //print_r($id);
             $ip = $item->getElementsByTagName("ip")->item(0)->nodeValue;
             $port = $item->getElementsByTagName("port")->item(0)->nodeValue;
             $key = $item->getElementsByTagName("key")->item(0)->nodeValue;
+            $alarmtxt = $item->getElementsByTagName("alarmtxt")->item(0)->nodeValue;
+            $normaltxt = $item->getElementsByTagName("normaltxt")->item(0)->nodeValue;
             //if ($this->isListen($ip, $port, $key)) {
             $value = $this->getTypeValue($ip, $port, $key, $this::ListenType);
             $objectname = $item->getElementsByTagName("objectname")->item(0)->nodeValue;;
-            array_push($saveArray, array("ip" => $ip, "port" => $port, "key" => $key, "presentvalue" => $value, "objectname" => $objectname));
+            array_push($saveArray, array("ip" => $ip, "port" => $port, "key" => $key, "presentvalue" => $value, "objectname" => $objectname, "alarmtxt" => $alarmtxt, "normaltxt" => $normaltxt));
             //}
         }
 
@@ -324,6 +360,10 @@ if ($par == "addLog") {
     //$array = file_get_contents("php://input");
     //$array = json_decode($array);
     $size = $eventAlarm->addLog($_REQUEST);
+    echo "{success:true,info:'$size'}";
+}
+if ($par == "delLog") {
+    $size = $eventAlarm->delLog($_REQUEST);
     echo "{success:true,info:'$size'}";
 }
 if ($par == "setSaveTime") {
