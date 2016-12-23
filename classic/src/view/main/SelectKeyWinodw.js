@@ -41,17 +41,7 @@ Ext.define('editpic.view.EventAlarm.SelectKeyWinodw', {
                 }
             },
             tbar: [
-                {
-                    xtype: "textfield",
-                    bind: "{filterKey}",
-                    emptyText: "key",
-                    hidden: true
-                }, {
-                    xtype: "textfield",
-                    bind: "{filterObj}",
-                    hidden: true,
-                    emptyText: "Object Name"
-                },
+
                 {
                     text: 'Expand All',
                     xtype: "button",
@@ -66,21 +56,35 @@ Ext.define('editpic.view.EventAlarm.SelectKeyWinodw', {
                         var me = this.up("treepanel");
                         me.collapseAll();
                     }
+                },
+                {
+                    xtype: "textfield",
+                    emptyText: "Object Name",
+                    filterName: "text",
+                    listeners: {
+                        buffer: 500,
+                        change: "onFilterUp"
+                    }
+                },
+                {
+                    xtype: "textfield",
+                    emptyText: "key",
+                    filterName: "value",
+                    //enableKeyEvents: true,
+                    listeners: {
+                        buffer: 500,
+                        change: "onFilterUp"
+                    }
                 }
             ],
             width: "100%",
             height: "100%",
             scrollable: "y",
             modal: true,
-            /*bind: {
-             store: "{store}"
-             },*/
-            store: Ext.create("Ext.data.TreeStore", {
-                filters: [function (item) {
-                    console.log(item)
-                    return true;
-                }],
+            store: {
+                type: "tree",
                 autoLoad: true,
+                filters: [],
                 url: EventRootUrl + "graph/resources/main.php?par=nodes",
                 proxy: {
                     type: "ajax",
@@ -89,7 +93,25 @@ Ext.define('editpic.view.EventAlarm.SelectKeyWinodw', {
                         type: "json"
                     }
                 }
-            })
+            },
+            columns: [
+                {xtype: "treecolumn", dataIndex: "text", flex: 1},
+                {text: "object name", dataIndex: "text", flex: 1},
+                {text: "key", dataIndex: "value", flex: 1},
+
+            ]
+            /*store: Ext.create("Ext.data.TreeStore", {
+
+             autoLoad: true,
+             url: EventRootUrl + "graph/resources/main.php?par=nodes",
+             proxy: {
+             type: "ajax",
+             url: EventRootUrl + "graph/resources/main.php?par=nodes&ip=" + me.ip + "&port=" + me.port + "",
+             reader: {
+             type: "json"
+             }
+             }
+             })*/
         }]
         me.buttons = [{
             text: "Ok",
@@ -112,6 +134,6 @@ Ext.define('editpic.view.EventAlarm.SelectKeyWinodw', {
             }
         }]
         me.callParent();
-        testme = me;
+        testme = me.down("treepanel");
     }
 });

@@ -30,7 +30,7 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm',{
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: 'alarmhis.xml',
+                    fieldLabel: 'Alarmtory',
                     defaultType: 'radiofield',
                     padding: 10,
                     defaults: {

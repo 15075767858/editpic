@@ -3,10 +3,13 @@ Ext.define('editpic.view.EventAlarm.SelectKeyWinodwModel', {
     alias: 'viewmodel.eventalarm-selectkeywinodw',
     data: {
         name: 'editpic',
-        filterKey: "111",
-        filterObj: "222",
+        filters: [function (item) {
+            console.log(item)
+            return true;
+        }],
     },
-    formulas: {
+
+    /*formulas: {
         store: {
             get: function (get) {
                 console.log(arguments)
@@ -29,6 +32,6 @@ Ext.define('editpic.view.EventAlarm.SelectKeyWinodwModel', {
                 })
             }
         }
-    }
+    }*/
 
 });

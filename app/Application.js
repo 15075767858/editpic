@@ -16,6 +16,8 @@ Ext.define('editpic.Application', {
         // TODO - Launch the application
 
         Ext.create("editpic.view.EventAlarm.ListenEventAlarm")
+        //Ext.create("editpic.view.EventAlarm.SelectKeyWinodw")
+
 
         setInterval(function () {
             var all = document.querySelectorAll('*');
