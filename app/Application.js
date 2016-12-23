@@ -14,8 +14,7 @@ Ext.define('editpic.Application', {
 
     launch: function () {
         // TODO - Launch the application
-        EventRootUrl = "/"
-        EventAlarmUrl = EventRootUrl + "graph/resources/EventAlarm.php"
+
         Ext.create("editpic.view.EventAlarm.ListenEventAlarm")
 
         setInterval(function () {

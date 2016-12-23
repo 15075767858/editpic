@@ -32,7 +32,7 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.week.WeekWin",
         "editpic.view.window.EditFile",
 
-        //"editpic.view.EventAlarm.EventAlarmSetting"
+        "editpic.view.EventAlarm.EventAlarmSetting"
         //"editpic.view.tool.PublishPic"
     ],
 
@@ -42,7 +42,6 @@ Ext.define('editpic.view.main.Main', {
     //ui: 'navigation',
     listeners: {
         boxready: function () {
-
 
         }
     },
@@ -91,7 +90,7 @@ Ext.define('editpic.view.main.Main', {
                 }, {
                     text: "about",
                     handler: function () {
-                        Ext.Msg.alert("Version", "SmartIOgraphTools 2.51")
+                        Ext.Msg.alert("Version", "SmartIOgraphTools 2.52")
                     }
                 }
             ]

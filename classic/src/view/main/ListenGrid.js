@@ -106,7 +106,7 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
                         newArr.find(function (json, index) {
                             if (json.ip == oldArr[i].ip & json.port == oldArr[i].port & json.key == oldArr[i].key & json.presentvalue != oldArr[i].presentvalue) {
                                 diffArr.push(json);
-                                console.log(json)
+                                //console.log(json)
                             }
                         })
                     }

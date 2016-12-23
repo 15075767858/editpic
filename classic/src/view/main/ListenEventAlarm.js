@@ -71,8 +71,12 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm',{
                             store: Ext.create("Ext.data.Store", {
                                 fields: ["name", "value"],
                                 data: [
+                                    {name: "1 days", value: 86400000},
                                     {name: "7 days", value: 604800000},
-                                    {name: "30 days", value: 2592000000}
+                                    {name: "30 days", value: 2592000000},
+                                    {name: "180 days", value: 15552000000},
+                                    {name: "360 days", value: 31104000000}
+
                                 ]
                             }),
                             listeners: {
