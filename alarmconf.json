@@ -1,1 +1,1 @@
-[{"ip":"127.0.0.1","port":"6379","key":"9900201","presentvalue":"11","objectname":"ewq","alarmtxt":"ararmtxt","normaltxt":"\u53d1\u554a"}]
+[{"ip":"127.0.0.1","port":"6379","key":"9900201","presentvalue":false,"objectname":"ewq","alarmtxt":"ararmtxt","normaltxt":"\u53d1\u554a"}]
