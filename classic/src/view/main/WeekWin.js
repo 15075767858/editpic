@@ -11,7 +11,7 @@ Ext.define('editpic.view.week.WeekWin',{
         type: 'week-weekwin'
     },
 
-    height: 768,
+    height: 550,
     width: 1024,
     constrainHeader: true,//禁止移出父窗口
     autoShow: true,

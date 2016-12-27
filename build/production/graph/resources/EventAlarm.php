@@ -9,12 +9,9 @@ class EventAlarm
 
     const LookType = "Alarm";
     const ListenType = "Present_Value";
-    const types = array("ip", "port", "key", "objectname", "presentvalue", "alarmtxt", "normaltxt", "time");
 
-    public function __construct()
-    {
+    //const types = array("ip", "port", "key", "objectname", "presentvalue", "alarmtxt", "normaltxt", "time");
 
-    }
 
     public function getAlarmconfXml()
     {
@@ -53,10 +50,10 @@ class EventAlarm
         $dom->formatOutput = true;
         $dom->load($this::alarmhisXml);
         $logs = $dom->getElementsByTagName('logs');
-        //$types = array("ip", "port", "key", "objectname", "presentvalue", "alarmtxt", "normaltxt", "time");
+        $types = array("ip", "port", "key", "objectname", "presentvalue", "alarmtxt", "normaltxt", "time");
         $log = $dom->createElement("log");
         $log->setAttribute("id", $arr['id']);
-        foreach ($this::types as $value) {
+        foreach ($types as $value) {
             $nodeValue = isset($arr[$value]) ? $arr[$value] : "";
             $tag = $this->createXmlNode($dom, $value, $nodeValue);
             $log->appendChild($tag);
@@ -91,8 +88,10 @@ class EventAlarm
      */
     public function comparisonLog($arr, $log)
     {
-        for ($i = 0; $i < sizeof($this::types); $i++) {
-            $type = $this::types[$i];
+        $types = array("ip", "port", "key", "objectname", "presentvalue", "alarmtxt", "normaltxt", "time");
+
+        for ($i = 0; $i < sizeof($types); $i++) {
+            $type = $types[$i];
             $target = $arr[$type];
             $source = $log->getElementsByTagName($type)->item(0)->nodeValue;
             if ($target != $source) {
@@ -322,6 +321,8 @@ class EventAlarm
 $par = $_REQUEST['par'];
 $ip = $_SERVER["SERVER_ADDR"];
 $eventAlarm = new EventAlarm();
+
+
 if ($par == "saveAlarmconfXml") {
     echo $eventAlarm->saveAlarmconfXml($_REQUEST['content']);
 }
