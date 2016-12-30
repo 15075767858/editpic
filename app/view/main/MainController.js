@@ -437,7 +437,7 @@ Ext.define('editpic.view.main.MainController', {
 
     },
     deleteHandler: function () {
-        var comboStore =My.getHomeFileNames();
+        var comboStore = My.getHomeFileNames();
 
 
         var win = Ext.create('Ext.window.Window', {
@@ -503,12 +503,12 @@ Ext.define('editpic.view.main.MainController', {
         var win = Ext.create("editpic.view.window.UploadWindow", {
                 url: 'resources/main.php?par=uploadHomeFile',
                 fieuploaded: function (object, file) {
-                    My.delayToast("Massage",file.name+" upload .")
+                    My.delayToast("Massage", file.name + " upload .")
                     /*My.Ajax("/upload.php", function () {
-                    }, {
-                        par: "system",
-                        command: "mv " + file.name + " home"
-                    })*/
+                     }, {
+                     par: "system",
+                     command: "mv " + file.name + " home"
+                     })*/
                 },
                 uploadcomplete: function () {
                     My.delayToast("Status", "File Upload successfully .");
@@ -1692,7 +1692,11 @@ My.initComponentConfig = {
                             return;
                         }
 
-                        var isUseKeyboard = form.getComponent("useKeyboard").getValue();
+                        var useKeybord = form.getComponent("useKeyboard")
+                        if (!useKeybord) {
+                            return
+                        }
+                        var isUseKeyboard = useKeybord.getValue();
                         if (isUseKeyboard) {
 
 
@@ -1814,6 +1818,7 @@ My.initComponentConfig = {
             var aPriority = response.responseText.split(",");
             for (var i = 0; i < 16; i++) {
                 if (i + 1 == parseInt(me.Priority_For_Writing)) {
+
                     strnull += me.priorityValue + ",";
                     pubstr += me.priorityValue + ",";
                 } else {
@@ -1831,7 +1836,19 @@ My.initComponentConfig = {
                 number: me.Priority_For_Writing,
                 type: "Priority_Array",
                 value: pubstr.substr(0, pubstr.length - 1)
-            }, "", function () {
+            }, "", function (response) {
+
+                My.AjaxSimple({
+                    par: "changevalue",
+                    ip: ip,
+                    port: port,
+                    nodename: nodename,
+                    type: "Present_Value",
+                    value: me.priorityValue,
+                }, "", function (response1) {
+                    console.log("Massage", response.responseText)
+                })
+                console.log(response.responseText)
                 My.delayToast('Success', nodename + ' Change value Priority_Array success new value is ' + strnull.substr(0, strnull.length - 1), 0)
             })
         })
@@ -2077,13 +2094,13 @@ My.util.PublishPic = {
                 callbackKey: "callback",
                 callbackName: "callback",
                 timeout: 0,
-                url: "resources/subscribe.php?ip="+ip,
+                url: "resources/subscribe.php?ip=" + ip,
                 success: function (response) {
                     try {
                         var resJson = Ext.decode(response.responseText)
                         if (resJson.success) {
                             me.subscribeSuccess(resJson.info)
-                        }else{
+                        } else {
                             console.log(resJson.info)
                         }
                     } catch (e) {

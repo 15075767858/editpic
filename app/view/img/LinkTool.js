@@ -90,6 +90,7 @@ Ext.define('editpic.view.img.LinkTool', {
                                 } else {
                                     Ext.Msg.alert("Error", "Permission denied .")
                                 }
+
                             }
                         }
                     )
