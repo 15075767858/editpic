@@ -5,30 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4568aa7c-9baf-4272-89c0-4058b3e5febd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/autoGraph.tar.bz2" afterPath="$PROJECT_DIR$/build/production/autoGraph.tar.bz2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph.tar.bz2" afterPath="$PROJECT_DIR$/build/production/graph.tar.bz2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alarmconf.json" afterPath="$PROJECT_DIR$/alarmconf.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alarmconf.xml" afterPath="$PROJECT_DIR$/alarmconf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alarmhis.xml" afterPath="$PROJECT_DIR$/alarmhis.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/LinkTool.js" afterPath="$PROJECT_DIR$/app/view/img/LinkTool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/MainController.js" afterPath="$PROJECT_DIR$/app/view/main/MainController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/cache.appcache" afterPath="$PROJECT_DIR$/build/production/graph/cache.appcache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic.json" afterPath="$PROJECT_DIR$/build/production/graph/classic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/app.js" afterPath="$PROJECT_DIR$/build/production/graph/classic/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/resources/graph-all_1.css" afterPath="$PROJECT_DIR$/build/production/graph/classic/resources/graph-all_1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/resources/graph-all_2.css" afterPath="$PROJECT_DIR$/build/production/graph/classic/resources/graph-all_2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/index.html" afterPath="$PROJECT_DIR$/build/production/graph/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern.json" afterPath="$PROJECT_DIR$/build/production/graph/modern.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example_1.css" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example_1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example_2.css" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example_2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/Main.js" afterPath="$PROJECT_DIR$/classic/src/view/main/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dump.rdb" afterPath="$PROJECT_DIR$/dump.rdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modern.json" afterPath="$PROJECT_DIR$/modern.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/git.sh" afterPath="$PROJECT_DIR$/git.sh" />
     </list>
     <ignored path="editpic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,6 +40,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
               <caret line="92" column="106" selection-start-line="92" selection-start-column="106" selection-end-line="92" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="git.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/git.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -130,7 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/store/TreeListModel.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/SvgsTree.js" />
         <option value="$PROJECT_DIR$/app/view/img/ScheduleTool.js" />
         <option value="$PROJECT_DIR$/app/view/panel/DevFormPanel.js" />
@@ -180,6 +168,7 @@
         <option value="$PROJECT_DIR$/resources/main.php" />
         <option value="$PROJECT_DIR$/app/view/img/LinkTool.js" />
         <option value="$PROJECT_DIR$/app/view/main/MainController.js" />
+        <option value="$PROJECT_DIR$/git.sh" />
         <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
       </list>
     </option>
@@ -758,7 +747,7 @@
       <workItem from="1482840262326" duration="1320000" />
       <workItem from="1482841643399" duration="186000" />
       <workItem from="1482982367699" duration="1914000" />
-      <workItem from="1483108690665" duration="2247000" />
+      <workItem from="1483108690665" duration="2320000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1468561867953</created>
@@ -841,7 +830,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108575000" />
+    <option name="totallyTimeSpent" value="108648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="-257" width="1920" height="1053" extended-state="6" />
@@ -899,11 +888,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/icons/url2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/icons/top_alignment_16px.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1241,6 +1225,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
@@ -1252,10 +1244,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
+    <entry file="file://$PROJECT_DIR$/git.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
