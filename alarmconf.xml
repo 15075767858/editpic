@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <item id="editpic.model.MonitorModel-2">
+  <item id="editpic.model.MonitorModel-5">
     <ip>127.0.0.1</ip>
     <port>6379</port>
-    <key>9900201</key>
-    <objectname/>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>发啊</normaltxt>
-  </item>
-  <item id="editpic.model.MonitorModel-4">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001001</key>
-    <objectname>UI1 1</objectname>
-    <alarmtxt>ararmtxt</alarmtxt>
-    <normaltxt>normaltxt</normaltxt>
+    <key>1001003</key>
+    <objectname>UI3 </objectname>
+    <alarmtxt>6IuP5omT57KJ</alarmtxt>
+    <normaltxt>5omT55qE</normaltxt>
   </item>
 </root>

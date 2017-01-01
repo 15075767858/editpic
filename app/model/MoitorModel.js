@@ -1,4 +1,3 @@
-
 Ext.define('editpic.model.MonitorModel', {
     extend: 'Ext.data.Model',
     alias: "MonitorModel",
@@ -21,6 +20,7 @@ Ext.define('editpic.model.MonitorModel', {
             name: "normaltxt", type: "string", defaultValue: "normaltxt"
         }
     ],
+
     getPresentValue: function () {
         var __this = this;
         Ext.Ajax.request({

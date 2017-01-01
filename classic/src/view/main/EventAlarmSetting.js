@@ -61,10 +61,10 @@ Ext.define('editpic.view.EventAlarm.EventAlarmSetting', {
                     objectname.innerHTML = json.objectname;
                     item.appendChild(objectname)
                     var alarmtxt = document.createElement("alarmtxt");
-                    alarmtxt.innerHTML = json.alarmtxt;
+                    alarmtxt.innerHTML = Ext.util.Base64.encode(json.alarmtxt);
                     item.appendChild(alarmtxt)
                     var normaltxt = document.createElement("normaltxt");
-                    normaltxt.innerHTML = json.normaltxt;
+                    normaltxt.innerHTML = Ext.util.Base64.encode(json.normaltxt);
                     item.appendChild(normaltxt)
                     /*var presentvalue = document.createElement("presentvalue");
                      presentvalue.innerHTML = json.presentvalue;
@@ -207,14 +207,20 @@ Ext.define('editpic.view.EventAlarm.EventAlarmSetting', {
                 },
 
                 {
-                    text: 'alarmtxt', editable: true, dataIndex: 'alarmtxt', flex: 1, editor: {
-                    xtype: 'textfield'
-                }
+                    text: 'alarmtxt', editable: false, dataIndex: 'alarmtxt', flex: 1,
+                    renderer: function (val) {
+                        console.log(val)
+                        return Ext.util.Base64.decode(val)
+                    },
+
                 },
                 {
-                    text: 'normaltxt', editable: true, dataIndex: 'normaltxt', flex: 1, editor: {
-                    xtype: 'textfield'
-                }
+                    text: 'normaltxt', editable: false, dataIndex: 'normaltxt', flex: 1,
+                    renderer: function (val) {
+                        console.log(Ext.util.Base64.decode(val))
+                        return Ext.util.Base64.decode(val)
+                    },
+
                 },
                 {
                     text: "object name", dataIndex: "objectname", flex: 1
@@ -230,7 +236,7 @@ Ext.define('editpic.view.EventAlarm.EventAlarmSetting', {
         boxready: function (window) {
             setTimeout(function () {
                 window.collapse()
-            }, 1000)
+            }, 500)
         },
         collapse: function (window) {
             window.setPosition(0, 0, true)

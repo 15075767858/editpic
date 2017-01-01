@@ -194,8 +194,14 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
         {text: "key", dataIndex: "key", flex: 1},
         {text: "object name", dataIndex: "objectname", flex: 1},
         {text: "present value", dataIndex: "presentvalue", flex: 1},
-        {text: "alarmtxt", dataIndex: "alarmtxt", flex: 1},
-        {text: "normaltxt", dataIndex: "normaltxt", flex: 1},
+        {text: "alarmtxt", dataIndex: "alarmtxt", flex: 1,renderer:function (v) {
+            console.log(arguments)
+            return Ext.util.Base64.decode(v);
+        }},
+        {text: "normaltxt", dataIndex: "normaltxt", flex: 1,renderer:function (v) {
+            console.log(arguments)
+            return Ext.util.Base64.decode(v);
+        }},
         {
             text: "time", dataIndex: "time", flex: 2, renderer: function (v) {
             return new Date(v).toLocaleString()

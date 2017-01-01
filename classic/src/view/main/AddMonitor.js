@@ -1,7 +1,6 @@
-
-Ext.define('editpic.view.EventAlarm.AddMonitor',{
+Ext.define('editpic.view.EventAlarm.AddMonitor', {
     extend: 'Ext.window.Window',
-    alias:"AddMonitor",
+    alias: "AddMonitor",
     requires: [
         'editpic.view.EventAlarm.AddMonitorController',
         'editpic.view.EventAlarm.AddMonitorModel'
@@ -20,9 +19,16 @@ Ext.define('editpic.view.EventAlarm.AddMonitor',{
                 text: "Ok", handler: function () {
                 var form = me.down("form")
                 console.log(form.getValues())
-                var mm = Ext.createByAlias("MonitorModel", form.getValues())
+                var values = form.getValues()
+                //values.alarmtxt = Ext.util.Base64.encode(values.alarmtxt);
+                //values.normaltxt = Ext.util.Base64.encode(values.normaltxt);
+                var mm = Ext.createByAlias("MonitorModel", values)
+                //mm.set("alarmtxt",Ext.util.Base64.decode(mm.get("alarmtxt")));
+                //mm.set("normaltxt",Ext.util.Base64.decode(mm.get("normaltxt ")));
                 if (form.isValid()) {
+
                     me.callback(mm);
+
                 } else {
                     Ext.Msg.alert("Massage", "valid")
                 }
