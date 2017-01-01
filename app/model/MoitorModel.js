@@ -20,7 +20,12 @@ Ext.define('editpic.model.MonitorModel', {
             name: "normaltxt", type: "string", defaultValue: "normaltxt"
         }
     ],
+    Base64Encode: function () {
+        var me = this;
+        me.set("alarmtxt", Ext.util.Base64.encode(me.data.alarmtxt));
+        me.set("normaltxt", Ext.util.Base64.encode(me.data.normaltxt));
 
+    },
     getPresentValue: function () {
         var __this = this;
         Ext.Ajax.request({

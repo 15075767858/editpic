@@ -3,5 +3,5 @@
     <savetime>604800000</savetime>
     <logs>
         
-    <log id="editpic.model.ListenModel-2"><ip>127.0.0.1</ip><port>6379</port><key>1001003</key><objectname>UI3 </objectname><presentvalue>12</presentvalue><alarmtxt>6IuP5omT57KJ</alarmtxt><normaltxt>5omT55qE</normaltxt><time>1483238594874</time></log></logs>
+    <log id="editpic.model.ListenModel-6"><ip>127.0.0.1</ip><port>6379</port><key>1001002</key><objectname>UI2 </objectname><presentvalue>0</presentvalue><alarmtxt>5pWF6Zqc5oql6K2m</alarmtxt><normaltxt>5LiA5qW85byV6aOO5py6</normaltxt><time>1483241345882</time></log></logs>
 </root>

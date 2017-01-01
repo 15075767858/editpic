@@ -61,10 +61,12 @@ Ext.define('editpic.view.EventAlarm.EventAlarmSetting', {
                     objectname.innerHTML = json.objectname;
                     item.appendChild(objectname)
                     var alarmtxt = document.createElement("alarmtxt");
-                    alarmtxt.innerHTML = Ext.util.Base64.encode(json.alarmtxt);
+                    alarmtxt.innerHTML = json.alarmtxt;
+                    //alarmtxt.innerHTML = Ext.util.Base64.encode(json.alarmtxt);
                     item.appendChild(alarmtxt)
                     var normaltxt = document.createElement("normaltxt");
-                    normaltxt.innerHTML = Ext.util.Base64.encode(json.normaltxt);
+                    normaltxt.innerHTML = json.normaltxt;
+                    //normaltxt.innerHTML = Ext.util.Base64.encode(json.normaltxt);
                     item.appendChild(normaltxt)
                     /*var presentvalue = document.createElement("presentvalue");
                      presentvalue.innerHTML = json.presentvalue;
@@ -127,17 +129,22 @@ Ext.define('editpic.view.EventAlarm.EventAlarmSetting', {
                     }
                 }, listeners: {
                     load: function (store, records, successful, operation, eOpts) {
-                        //console.log("load", arguments)
+                        console.log("load", arguments)
+
                         this.fireEvent("change", store, records)
                     },
                     add: function (store, records, index, eOpts) {
-                        //console.log("add", arguments)
+                        console.log("add", arguments)
+
+                        records[0].Base64Encode()
+                        console.log("add", arguments)
+
                         this.fireEvent("change", store, records)
 
                     },
 
                     change: function (store, records) {
-                        //console.log("change", arguments)
+                        console.log("change", arguments)
 
                         for (var i = 0; i < records.length; i++) {
                             //console.log(records[i])
@@ -234,9 +241,9 @@ Ext.define('editpic.view.EventAlarm.EventAlarmSetting', {
     },
     listeners: {
         boxready: function (window) {
-            setTimeout(function () {
+            /*setTimeout(function () {
                 window.collapse()
-            }, 500)
+            }, 500)*/
         },
         collapse: function (window) {
             window.setPosition(0, 0, true)

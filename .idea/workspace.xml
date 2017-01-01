@@ -5,623 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4568aa7c-9baf-4272-89c0-4058b3e5febd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/SvgHvac.zip" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/autoGraph.tar.bz2" afterPath="$PROJECT_DIR$/build/production/autoGraph.tar.bz2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph.tar.bz2" afterPath="$PROJECT_DIR$/build/production/graph.tar.bz2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/SmartIO.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/SmartIO.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/CT.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/CT.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/FCXP.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/FCXP.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/JHWP.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/JHWP.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/K.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/K.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/LEDGray.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/LEDGray.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/LEDGreen.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/LEDGreen.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/LEDred.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/LEDred.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/Off.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/Off.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/On.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/On.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/OnOff.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/OnOff.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/QB.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/QB.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/SP.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/SP.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/SUP.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/SUP.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/Tank.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/Tank.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/WAC.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/WAC.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/X.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/X.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/XH.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/XH.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/auto.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/auto.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/beiya.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/beiya.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulb.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulb.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbSmall.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbSmall.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbSmallFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbSmallFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbSmallTrue.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbSmallTrue.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbTrue.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/bulbTrue.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color1.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color2.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color3.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color4.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color5.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color6.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/color6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/device_no.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/device_no.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/device_ok.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/device_ok.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/device_run.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/device_run.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/device_stop.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/device_stop.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/fanLeftTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/fanLeftTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/fanRightTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/fanRightTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/manual.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/manual.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupied.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupied.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupiedSmall.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupiedSmall.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupiedSmallFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupiedSmallFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupiedSmallTrue.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/occupiedSmallTrue.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/pDeckFull.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/pDeckFull.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/pDeckLimited.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/pDeckLimited.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/pDeckVacancy.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/pDeckVacancy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/textPlateLEDGreenFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/boolean/textPlateLEDGreenFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoil.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoil.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wL.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wL.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wLFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wLFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wLTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wLTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wR.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wR.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wRFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wRFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wRTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wRTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wTrueBack.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv2wTrueBack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wL.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wL.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wLFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wLFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wLTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wLTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wR.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wR.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wRFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wRFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wRTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilv3wRTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilvFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilvFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilvTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/coolingCoilvTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/electricHeatingCoil.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/electricHeatingCoil.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/electricHeatingCoilFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/electricHeatingCoilFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/electricHeatingCoilFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/electricHeatingCoilFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/electricHeatingCoilTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/electricHeatingCoilTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterH_1.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterH_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterH_2.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterH_2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterH_3.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterH_3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterH_4.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterH_4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterH_5.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterH_5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV1.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV1.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV2.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV2.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV3.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV3.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV4.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV4.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV5.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV5.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV_1.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV_2.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV_2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV_3.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV_3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV_4.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV_4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV_5.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/filterV_5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoil.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoil.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wL.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wL.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wLFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wLFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wLTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wLTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wR.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wR.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wRFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wRFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wRTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wRTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wTrueBack.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv2wTrueBack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wL.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wL.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wLFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wLFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wLTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wLTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wR.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wR.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wRFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wRFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wRTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilv3wRTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilvFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilvFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilvTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/coils/heatingCoilvTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH1.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH1.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH1.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH2.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH2.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH2.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH3.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH3.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH3.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH4.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH4.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH4.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH5.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH5.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH5.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperH5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV1.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV1.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV1.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV2.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV2.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV2.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV3.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV3.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV3.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV4.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV4.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV4.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV5.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV5.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV5.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/damperV5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA1.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA1.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA1.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA2.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA2.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA2.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA3.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA3.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA3.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA4.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA4.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA4.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA5.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA5.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA5.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperA5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB1.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB1.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB1.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB2.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB2.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB2.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB3.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB3.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB3.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB4.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB4.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB4.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB5.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB5.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB5.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/dampers/vavDamperB5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongBtmAlarm.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongBtmAlarm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongBtmNorm.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongBtmNorm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongRightAlarm.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongRightAlarm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongRightNorm.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongRightNorm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongTopAlarm.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongTopAlarm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongTopAlarm.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongTopAlarm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongTopNorm.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongTopNorm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongTopNorm.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsLongTopNorm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortBtmAlarm.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortBtmAlarm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortBtmNorm.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortBtmNorm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortRightAlarm.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortRightAlarm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortRightNorm.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortRightNorm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortTopAlarm.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortTopAlarm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortTopAlarm.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortTopAlarm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortTopNorm.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortTopNorm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortTopNorm.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/dpsShortTopNorm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/flowSensorCircle.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/flowSensorCircle.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/flowSensorCircle.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/flowSensorCircle.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/flowSensorCross.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/flowSensorCross.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/flowSensorCross.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/flowSensorCross.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/humidifierFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/humidifierFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/humidifierFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/humidifierFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/humidifierTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/humidifierTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorBottom.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorBottom.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorRight.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorRight.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorTop.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorTop.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorTop.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/pipeSensorTop.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorFalse_Right.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorFalse_Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorFalse_Top.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorFalse_Top.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorTrue_Right.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorTrue_Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorTrue_Top.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/smokeDetectorTrue_Top.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/tempSensorBottom.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/tempSensorBottom.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/tempSensorLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/tempSensorLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/tempSensorRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/tempSensorRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/tempSensorTop.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/tempSensorTop.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/tempSensorTop.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/devices/tempSensorTop.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/ductA.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/ductA.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/ductB.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/ductB.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/ductC.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/ductC.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/ductD.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/ductD.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlbreak.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlbreak.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlend.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlend.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlend.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlend.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlendGrate.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlendGrate.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlendHole.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlendHole.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlendSolid.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hlendSolid.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hmid.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hmid.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hmid.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hmid.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hmidSmall.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hmidSmall.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrbreak.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrbreak.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrend.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrend.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrend.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrend.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendGrate.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendGrate.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendGrate.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendGrate.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendHole.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendHole.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendHole.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendHole.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendSolid.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendSolid.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendSolid.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrendSolid.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy3wayL.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy3wayL.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy3wayL.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy3wayL.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy3wayMid.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy3wayMid.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy3wayR.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy3wayR.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy3wayR.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhy3wayR.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhyL.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhyL.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhyLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhyLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhyMid.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhyMid.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhyR.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/hrwhyR.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundLEnd.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundLEnd.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundLEnd.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundLEnd.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundLTrans.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundLTrans.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundLTrans.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundLTrans.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundMid.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundMid.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundMid.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundMid.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundREnd.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundREnd.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundREnd.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundREnd.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundRTrans.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundRTrans.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundRTrans.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/roundRTrans.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/tnorth.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/tnorth.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/tnorth.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/tnorth.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/tsouth.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/tsouth.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/tsouth.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/tsouth.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vbend.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vbend.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vbend.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vbend.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vmid.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vmid.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vmid.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vmid.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vtend.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vtend.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vtend.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/ducts/vtend.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/chillerBasic.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/chillerBasic.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/chillerBasic.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/chillerBasic.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/coolingTowerFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/coolingTowerFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/coolingTowerFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/coolingTowerFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/coolingTowerTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/coolingTowerTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/exhaustFanFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/exhaustFanFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/exhaustFanFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/exhaustFanFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/exhaustFanTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/exhaustFanTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanLeftFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanLeftFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanLeftFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanLeftFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanLeftTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanLeftTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanRightFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanRightFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanRightFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanRightFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanRightTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/fanRightTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/generatorFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/generatorFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/generatorFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/generatorFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/generatorTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/generatorTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/heatExchanger.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/heatExchanger.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/heatExchanger.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/heatExchanger.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/heatExchangerPF.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/heatExchangerPF.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/heatExchangerPF.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/heatExchangerPF.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/mac0.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/mac0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/mac1.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/mac1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDial.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDial.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDial.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDial.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft0.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft0.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft0.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft1.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft1.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft1.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft2.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft2.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft2.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft3.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft3.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft3.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft4.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft4.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft4.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft5.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft5.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft5.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft6.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft6.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft6.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft7.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft7.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft7.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft8.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft8.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft8.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft9.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft9.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft9.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialLeft9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight0.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight0.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight0.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight1.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight1.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight1.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight2.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight2.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight2.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight3.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight3.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight3.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight4.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight4.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight4.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight5.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight5.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight5.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight6.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight6.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight6.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight7.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight7.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight7.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight8.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight8.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight8.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight9.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight9.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight9.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDialRight9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDigital.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDigital.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDigital.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/meterDigital.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/mnc.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/mnc.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/mnc1.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/mnc1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpColdLeftFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpColdLeftFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpColdLeftTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpColdLeftTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpColdRightFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpColdRightFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpColdRightTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpColdRightTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpCoolLeftFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpCoolLeftFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpCoolLeftTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpCoolLeftTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpCoolRightFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpCoolRightFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpCoolRightTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpCoolRightTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHorizFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHorizFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHorizTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHorizTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHotLeftFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHotLeftFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHotLeftTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHotLeftTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHotRightFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHotRightFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHotRightTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpHotRightTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpLeftFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpLeftFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpLeftTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpLeftTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpRightFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpRightFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpRightTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpRightTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpVertFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpVertFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpVertTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpVertTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpWarmLeftFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpWarmLeftFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpWarmLeftTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpWarmLeftTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpWarmRightFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpWarmRightFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpWarmRightTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/pumpWarmRightTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/sun" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/sun" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/sun.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/sun.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/wac.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/equipment/wac.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowDown.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowDown.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowDown.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowDown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowLeft.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowLeft.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowRight.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowRight.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowUp.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowUp.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowUp.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/arrowUp.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowDown.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowDown.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowDown.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowDown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowLeft.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowLeft.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowRight.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowRight.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowUp.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowUp.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowUp.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cArrowUp.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowDown.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowDown.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowDown.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowDown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowLeft.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowLeft.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowRight.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowRight.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowUp.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowUp.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowUp.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/cPipeArrowUp.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch2PosLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch2PosLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch2PosLeft.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch2PosLeft.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch2PosRight.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch2PosRight.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch2PosRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch2PosRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosLeft.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosLeft.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosMiddle.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosMiddle.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosMiddle.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosMiddle.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosRight.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosRight.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/dialSwitch3PosRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowDown.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowDown.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowDown.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowDown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowLeft.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowLeft.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowRight.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowRight.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowUp.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowUp.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowUp.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hArrowUp.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowDown.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowDown.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowDown.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowDown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowLeft.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowLeft.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowRight.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowRight.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowUp.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowUp.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowUp.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/hPipeArrowUp.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/meterNiagara.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/meterNiagara.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckFull.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckFull.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckFull.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckFull.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckLimited.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckLimited.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckLimited.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckLimited.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckVacancy.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckVacancy.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckVacancy.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pDeckVacancy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowDown.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowDown.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowDown.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowDown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowLeft.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowLeft.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowRight.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowRight.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowUp.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowUp.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowUp.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/pipeArrowUp.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedLeft.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedLeft.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedMid.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedMid.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedMid.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedMid.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedRight.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedRight.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateDepressedRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDGreenFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDGreenFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDGreenFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDGreenFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDGreenTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDGreenTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDGreenTrue.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDGreenTrue.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDRedFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDRedFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDRedFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDRedFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDRedTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDRedTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDRedTrue.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDRedTrue.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDYellowFalse.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDYellowFalse.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDYellowFalse.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDYellowFalse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDYellowTrue.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDYellowTrue.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDYellowTrue.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLEDYellowTrue.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLeft.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLeft.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLeft.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateLeft.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateMid.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateMid.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateMid.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateMid.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateRight.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateRight.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateRight.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/textPlateRight.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/thermometer.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/thermometer.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/thermometer.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/thermometer.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/thermometerSpectrum.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/thermometerSpectrum.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/thermometerSpectrum.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/misc/thermometerSpectrum.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldCross.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldCross.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldElbowNE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldElbowNE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldElbowNW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldElbowNW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldElbowSE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldElbowSE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldElbowSW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldElbowSW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldEndE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldEndE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldEndN.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldEndN.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldEndS.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldEndS.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldEndW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldEndW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldHoriz.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldHoriz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldTeeE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldTeeE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldTeeN.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldTeeN.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldTeeS.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldTeeS.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldTeeW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldTeeW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldVert.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cold/coldVert.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldCross.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldCross.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldElbowNE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldElbowNE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldElbowNW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldElbowNW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldElbowSE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldElbowSE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldElbowSW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldElbowSW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldHoriz.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldHoriz.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldTeeE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldTeeE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldTeeN.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldTeeN.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldTeeS.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldTeeS.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldTeeW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldTeeW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldVert.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coldVert.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolCross.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolCross.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolElbowNE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolElbowNE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolElbowNW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolElbowNW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolElbowSE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolElbowSE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolElbowSW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolElbowSW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolEndE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolEndE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolEndN.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolEndN.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolEndS.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolEndS.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolEndW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolEndW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolHoriz.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolHoriz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolTeeE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolTeeE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolTeeN.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolTeeN.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolTeeS.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolTeeS.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolTeeW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolTeeW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolVert.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/cool/coolVert.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolCross.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolCross.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolElbowNE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolElbowNE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolElbowNW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolElbowNW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolElbowSE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolElbowSE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolElbowSW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolElbowSW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolHoriz.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolHoriz.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolTeeE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolTeeE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolTeeN.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolTeeN.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolTeeS.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolTeeS.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolTeeW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolTeeW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolVert.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/coolVert.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotCross.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotCross.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotElbowNE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotElbowNE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotElbowNW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotElbowNW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotElbowSE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotElbowSE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotElbowSW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotElbowSW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotEndE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotEndE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotEndN.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotEndN.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotEndS.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotEndS.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotEndW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotEndW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotHoriz.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotHoriz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotTeeE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotTeeE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotTeeN.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotTeeN.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotTeeS.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotTeeS.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotTeeW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotTeeW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotVert.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hot/hotVert.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotCross.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotCross.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotElbowNE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotElbowNE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotElbowNW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotElbowNW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotElbowSE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotElbowSE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotElbowSW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotElbowSW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotHoriz.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotHoriz.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotTeeE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotTeeE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotTeeN.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotTeeN.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotTeeS.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotTeeS.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotTeeW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotTeeW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotVert.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/hotVert.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nCross.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nCross.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nElbowNE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nElbowNE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nElbowNW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nElbowNW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nElbowSE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nElbowSE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nElbowSW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nElbowSW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nHoriz.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nHoriz.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nTeeE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nTeeE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nTeeN.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nTeeN.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nTeeS.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nTeeS.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nTeeW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nTeeW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nVert.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/nVert.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nCross.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nCross.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nElbowNE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nElbowNE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nElbowNW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nElbowNW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nElbowSE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nElbowSE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nElbowSW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nElbowSW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nEndE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nEndE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nEndN.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nEndN.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nEndS.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nEndS.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nEndW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nEndW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nHoriz.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nHoriz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nTeeE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nTeeE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nTeeN.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nTeeN.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nTeeS.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nTeeS.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nTeeW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nTeeW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nVert.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/neutral/nVert.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmCross.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmCross.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmElbowNE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmElbowNE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmElbowNW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmElbowNW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmElbowSE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmElbowSE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmElbowSW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmElbowSW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmEndE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmEndE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmEndN.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmEndN.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmEndS.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmEndS.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmEndW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmEndW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmHoriz.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmHoriz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmTeeE.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmTeeE.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmTeeN.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmTeeN.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmTeeS.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmTeeS.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmTeeW.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmTeeW.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmVert.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warm/warmVert.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmCross.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmCross.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmElbowNE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmElbowNE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmElbowNW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmElbowNW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmElbowSE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmElbowSE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmElbowSW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmElbowSW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmHoriz.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmHoriz.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmTeeE.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmTeeE.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmTeeN.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmTeeN.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmTeeS.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmTeeS.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmTeeW.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmTeeW.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmVert.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/piping/warmVert.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/textPlate.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/textPlate.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayL.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayL.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayL.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayL.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayLTop.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayLTop.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayLTop.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayLTop.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayR.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayR.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayR.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayR.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayRTop.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayRTop.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayRTop.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve2wayRTop.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayL.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayL.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayL.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayL.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayLTop.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayLTop.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayLTop.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayLTop.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayR.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayR.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayR.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayR.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayRTop.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayRTop.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayRTop.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/cValve3wayRTop.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/globeValve2Way.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/globeValve2Way.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/globeValve2Way.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/globeValve2Way.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/globeValve3Way.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/globeValve3Way.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/globeValve3Way.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/globeValve3Way.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayL.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayL.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayL.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayL.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayLTop.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayLTop.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayLTop.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayLTop.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayR.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayR.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayR.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayR.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayRTop.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayRTop.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayRTop.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve2wayRTop.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayL.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayL.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayL.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayL.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayLTop.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayLTop.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayLTop.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayLTop.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayR.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayR.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayR.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayR.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayRTop.gif" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayRTop.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayRTop.png" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/valves/hValve3wayRTop.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alarmconf.json" afterPath="$PROJECT_DIR$/alarmconf.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alarmconf.xml" afterPath="$PROJECT_DIR$/alarmconf.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alarmhis.xml" afterPath="$PROJECT_DIR$/alarmhis.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/MoitorModel.js" afterPath="$PROJECT_DIR$/app/model/MoitorModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap.js" afterPath="$PROJECT_DIR$/bootstrap.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic.json" afterPath="$PROJECT_DIR$/build/production/graph/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/app.js" afterPath="$PROJECT_DIR$/build/production/graph/classic/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern.json" afterPath="$PROJECT_DIR$/build/production/graph/modern.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern/app.js" afterPath="$PROJECT_DIR$/build/production/graph/modern/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/module.palette" afterPath="$PROJECT_DIR$/build/production/graph/resources/SvgHvac/module.palette" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/AddMonitor.js" afterPath="$PROJECT_DIR$/classic/src/view/main/AddMonitor.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/EventAlarmSetting.js" afterPath="$PROJECT_DIR$/classic/src/view/main/EventAlarmSetting.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/ListenGrid.js" afterPath="$PROJECT_DIR$/classic/src/view/main/ListenGrid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/Main.js" afterPath="$PROJECT_DIR$/classic/src/view/main/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dump.rdb" afterPath="$PROJECT_DIR$/dump.rdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modern.json" afterPath="$PROJECT_DIR$/modern.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
     </list>
@@ -654,18 +50,8 @@
       <file leaf-file-name="EventAlarmSetting.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/EventAlarmSetting.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="692">
-              <caret line="219" column="64" selection-start-line="219" selection-start-column="64" selection-end-line="219" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="92" column="106" selection-start-line="92" selection-start-column="106" selection-end-line="92" selection-end-column="106" />
+            <state relative-caret-position="404">
+              <caret line="199" column="32" selection-start-line="199" selection-start-column="32" selection-end-line="199" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -674,9 +60,8 @@
       <file leaf-file-name="AddMonitor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/AddMonitor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            <state relative-caret-position="420">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -685,30 +70,38 @@
       <file leaf-file-name="MoitorModel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/model/MoitorModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
-              <caret line="19" column="72" selection-start-line="19" selection-start-column="72" selection-end-line="19" selection-end-column="72" />
+            <state relative-caret-position="330">
+              <caret line="22" column="16" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListenEventAlarm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/main/ListenEventAlarm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="914">
-              <caret line="103" column="35" selection-start-line="103" selection-start-column="35" selection-end-line="103" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListenGrid.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ListenGrid.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/ListenGrid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2955">
-              <caret line="201" column="33" selection-start-line="201" selection-start-column="33" selection-end-line="201" selection-end-column="33" />
-              <caret line="197" column="33" selection-start-line="197" selection-start-column="33" selection-end-line="197" selection-end-column="33" />
+            <state relative-caret-position="285">
+              <caret line="201" column="34" selection-start-line="201" selection-start-column="34" selection-end-line="201" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alarmconf.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/alarmconf.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alarmconf.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/alarmconf.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="77" selection-start-line="0" selection-start-column="77" selection-end-line="0" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -763,7 +156,6 @@
         <option value="$PROJECT_DIR$/app/view/EventAlarm/EventAlarmSetting.js" />
         <option value="$PROJECT_DIR$/app/view/EventAlarm/ListenGrid.js" />
         <option value="$PROJECT_DIR$/app.json" />
-        <option value="$PROJECT_DIR$/alarmconf.json" />
         <option value="$PROJECT_DIR$/build/production/graph/resources/EventAlarm.php" />
         <option value="$PROJECT_DIR$/alarmhis.xml" />
         <option value="$PROJECT_DIR$/app/model/ListenModel.js" />
@@ -781,11 +173,12 @@
         <option value="$PROJECT_DIR$/app/view/img/LinkTool.js" />
         <option value="$PROJECT_DIR$/app/view/main/MainController.js" />
         <option value="$PROJECT_DIR$/git.sh" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/ListenGrid.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/EventAlarmSetting.js" />
-        <option value="$PROJECT_DIR$/app/model/MoitorModel.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/AddMonitor.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/Main.js" />
+        <option value="$PROJECT_DIR$/alarmconf.json" />
+        <option value="$PROJECT_DIR$/app/model/MoitorModel.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/EventAlarmSetting.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/ListenGrid.js" />
       </list>
     </option>
   </component>
@@ -1366,7 +759,7 @@
       <workItem from="1483156906166" duration="6253000" />
       <workItem from="1483229428897" duration="485000" />
       <workItem from="1483232101481" duration="744000" />
-      <workItem from="1483233949931" duration="1999000" />
+      <workItem from="1483233949931" duration="3585000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1468561867953</created>
@@ -1449,7 +842,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118705000" />
+    <option name="totallyTimeSpent" value="120291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
@@ -1539,33 +932,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alarmconf.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="77" selection-start-line="0" selection-start-column="77" selection-end-line="0" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/production/graph/resources/EventAlarm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alarmconf.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alarmhis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1814,53 +1184,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/ListenGrid.js">
+    <entry file="file://$PROJECT_DIR$/alarmhis.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2955">
-          <caret line="201" column="33" selection-start-line="201" selection-start-column="33" selection-end-line="201" selection-end-column="33" />
-          <caret line="197" column="33" selection-start-line="197" selection-start-column="33" selection-end-line="197" selection-end-column="33" />
+        <state relative-caret-position="75">
+          <caret line="5" column="164" selection-start-line="5" selection-start-column="164" selection-end-line="5" selection-end-column="188" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/ListenEventAlarm.js">
+    <entry file="file://$PROJECT_DIR$/alarmconf.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="914">
-          <caret line="103" column="35" selection-start-line="103" selection-start-column="35" selection-end-line="103" selection-end-column="35" />
+        <state relative-caret-position="0">
+          <caret line="0" column="77" selection-start-line="0" selection-start-column="77" selection-end-line="0" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/MoitorModel.js">
+    <entry file="file://$PROJECT_DIR$/alarmconf.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
-          <caret line="19" column="72" selection-start-line="19" selection-start-column="72" selection-end-line="19" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/AddMonitor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/EventAlarmSetting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="219" column="64" selection-start-line="219" selection-start-column="64" selection-end-line="219" selection-end-column="64" />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="92" column="106" selection-start-line="92" selection-start-column="106" selection-end-line="92" selection-end-column="106" />
+        <state relative-caret-position="990">
+          <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/MoitorModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/AddMonitor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/EventAlarmSetting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="199" column="32" selection-start-line="199" selection-start-column="32" selection-end-line="199" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/ListenEventAlarm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="103" column="37" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/ListenGrid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="201" column="34" selection-start-line="201" selection-start-column="34" selection-end-line="201" selection-end-column="34" />
           <folding />
         </state>
       </provider>
