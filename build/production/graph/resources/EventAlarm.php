@@ -50,7 +50,7 @@ class EventAlarm
         $dom->formatOutput = true;
         $dom->load($this::alarmhisXml);
         $logs = $dom->getElementsByTagName('logs');
-        $types = array("ip", "port", "key", "objectname", "presentvalue", "alarmtxt", "normaltxt", "time");
+        $types = array("ip", "port", "key", "objectname", "presentvalue", "alarmtxt", "normaltxt", "time", "status");
         $log = $dom->createElement("log");
         $log->setAttribute("id", $arr['id']);
         foreach ($types as $value) {
@@ -62,21 +62,39 @@ class EventAlarm
         return $dom->save($this::alarmhisXml, LIBXML_NOEMPTYTAG);
     }
 
-    public function delLog($arr)
+    public function logController($arr, $callback)
     {
         $dom = new DOMDocument('1.0', 'UTF-8');
         $dom->formatOutput = true;
         $dom->load($this::alarmhisXml);
-
         $logs = $dom->getElementsByTagName("log");
-
         foreach ($logs as $log) {
             if ($this->comparisonLog($arr, $log)) {
-                $log->parentNode->removeChild($log);
+                $callback($log);
             }
         }
         return $dom->save($this::alarmhisXml);
-        //print_r($log);
+    }
+
+    public function delLog($arr)
+    {
+        $this->logController($arr, function ($log) {
+            $log->parentNode->removeChild($log);
+        });
+    }
+
+    public function setStatusNormal($arr)
+    {
+        $this->logController($arr, function ($log) {
+            $log->getElementsByTagName("status")->item(0)->nodeValue = "normal";
+        });
+    }
+
+    public function setStatusHold($arr)
+    {
+        $this->logController($arr, function ($log) {
+            $log->getElementsByTagName("status")->item(0)->nodeValue = "hold";
+        });
     }
 
     /** comparison log
@@ -131,6 +149,9 @@ class EventAlarm
         $dom->formatOutput = true;
         $dom->load($this::alarmhisXml);
         $timeout = $dom->getElementsByTagName("savetime")->item(0)->nodeValue or 0;
+        if ($timeout == 0) {
+            return 0;
+        }
         $logs = $dom->getElementsByTagName("log");
         for ($i = $logs->length; $i > 0; $i--) {
             $log = $logs[$i - 1];
@@ -358,9 +379,16 @@ if ($par == "saveAlarmEvent") {
     echo $eventAlarm->saveAlarmEvent();
 }
 if ($par == "addLog") {
-    //$array = file_get_contents("php://input");
-    //$array = json_decode($array);
     $size = $eventAlarm->addLog($_REQUEST);
+    echo "{success:true,info:'$size'}";
+}
+
+if ($par == "setStatusNormal") {
+    $size = $eventAlarm->setStatusNormal($_REQUEST);
+    echo "{success:true,info:'$size'}";
+}
+if ($par == "setStatusHold") {
+    $size = $eventAlarm->setStatusHold($_REQUEST);
     echo "{success:true,info:'$size'}";
 }
 if ($par == "delLog") {

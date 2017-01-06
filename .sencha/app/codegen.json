@@ -304,6 +304,18 @@
         "modelNamespace": "editpic.model",
         "name": "ListenModel"
       }
+    },
+    "app/model/PrintSettingModel.js": {
+      "source": "{modelFileName}.js.tpl.merge",
+      "version": "31d5356142a167c72422f7902f19df3c583f3249",
+      "parameters": {
+        "appName": "graph",
+        "baseClass": "Ext.data.Model",
+        "fields": "number:string:null",
+        "modelFileName": "PrintSettingModel",
+        "modelNamespace": "graph.model",
+        "name": "PrintSettingModel"
+      }
     }
   }
 }

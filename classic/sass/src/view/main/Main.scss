@@ -128,7 +128,7 @@
         $include-split-over-arrows: $button-include-split-over-arrows,
         $opacity-disabled: $button-opacity-disabled,
         $inner-opacity-disabled: $button-inner-opacity-disabled,
-        $background-color:blue
+        $background-color: blue
 )
 
 /*
@@ -152,6 +152,29 @@
 }
 
 */
+@keyframes alarm {
+  0% {
+    background: red;
+  }
+  50% {
+    background: black;
+  }
+  100% {
+    background: red;
+  }
+}
+
+.alarm {
+  animation: alarm 2s linear 1s infinite alternate;
+}
+
+.hold {
+  background:peru;
+}
+
+.normal {
+
+}
 
 .opacity1 {
   opacity: 1;

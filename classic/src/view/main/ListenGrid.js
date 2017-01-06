@@ -10,14 +10,18 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
     viewModel: {
         type: 'eventalarm-listengrid'
     },
-    height: 400,
-    maxHeight: 400,
+    height: 340,
+    maxHeight: 340,
+    closeListener:true,
     initComponent: function () {
         var me = this;
-        me.initStore()
+        me.initStore();
         me.audioInit();
         me.callParent()
         me.runListen();
+        setTimeout(function () {
+            me.initListenerNormal();
+        }, 3000)
     },
     initStore: function () {
         var me = this
@@ -26,6 +30,21 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
             autoLoad: true,
             sorters: [
                 {
+                    sorterFn: function (record1, record2) {
+                        var status1 = record1.data.status;
+                        var status2 = record2.data.status;
+                        var weights = {
+                            hold: 1,
+                            alarm: 0,
+                            normal: -1
+                        }
+                        var w1 = weights[status1];
+                        var w2 = weights[status2];
+                        return (w1 > w2) ? 1 : (w1 === w2) ? 0 : -1;
+                    },
+                    direction: 'DESC'
+                }
+                , {
                     property: 'time',
                     direction: 'DESC'
                 }
@@ -44,10 +63,53 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
                     me.playAlarm()
 
                     console.log(this)
-                    console.log(arguments)
                 }
             }
         })
+    },
+    getNormalModel: function () {
+
+        var me = this, store = this.store, items = this.store.data.items;
+        var models = items.filter(function (v, index) {
+            if (v.data.status == 'normal') {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        var arr = []
+        for (var i = 0; i < models.length; i++) {
+            var exist = arr.find(function (v, index) {
+                if (models[i].comparisonModel(v)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            })
+            if (!exist) {
+                arr.push(models[i])
+            }
+        }
+        return arr;
+    },
+
+    initListenerNormal: function () {
+        var me = this;
+        var store = me.store;
+        //presentValueIs1
+        setInterval(function () {
+
+            var models = me.getNormalModel();
+            for (var i = 0; i < models.length; i++) {
+                store.getAt(i).getCloneModel(function (model) {
+                    if (model) {
+                        console.log(model)
+                        store.add(model)
+                    }
+                })
+            }
+        }, 1800000)
+        //30分钟1800000
     },
     tbar: [
         {
@@ -55,7 +117,12 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
             button.up("grid").pauseAlarm()
         }
         }, {
+            text: "Print Setting",
+            icon: EventRootUrl + "graph/resources/icons/print_24px.png",
+            handler: "printSetting"
+        }, {
             text: "DELETE",
+            hidden: true,
             icon: EventRootUrl + "graph/resources/icons/delete_Trash_23.6px.png",
             handler: function (button) {
                 var grid = button.up("grid")
@@ -85,12 +152,16 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
     ],
     listeners: {
         boxready: function (grid) {
-        }
+        },
+        itemcontextmenu: "itemcontextmenu"
     },
 
     runListen: function () {
         var me = this;
         setInterval(function () {
+            if (me.closeListener) {
+                return;
+            }
             me.getDiffJson()
         }, 3000)
     },
@@ -114,7 +185,6 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
                         console.log(diffArr)
                         me.addListenModels(diffArr)
                     }
-                    console.log(diffArr)
                 })
             })
         })
@@ -125,6 +195,7 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
             me.addListenModel(arr[i])
         }
     },
+
     addListenModel: function (json) {
         var me = this;
         json.time = new Date().getTime();
@@ -188,25 +259,40 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
             }
         })
     },
+    viewConfig: {
+        getRowClass: function (record, index, rowParams, store) {
+            return record.data.status;
+        }
+    },
     columns: [
         {text: "ip", dataIndex: "ip", flex: 1},
         {text: "port", dataIndex: "port", flex: 1},
         {text: "key", dataIndex: "key", flex: 1},
         {text: "object name", dataIndex: "objectname", flex: 1},
         {text: "present value", dataIndex: "presentvalue", flex: 1},
-        {text: "alarmtxt", dataIndex: "alarmtxt", flex: 1,renderer:function (v) {
-            console.log(arguments)
+        {
+            text: "alarmtxt", dataIndex: "alarmtxt", flex: 1, renderer: function (v) {
             return Ext.util.Base64.decode(v);
-        }},
-        {text: "normaltxt", dataIndex: "normaltxt", flex: 1,renderer:function (v) {
-            console.log(arguments)
+        }
+        },
+        {
+            text: "normaltxt", dataIndex: "normaltxt", flex: 1, renderer: function (v) {
             return Ext.util.Base64.decode(v);
-        }},
+        }
+        },
         {
             text: "time", dataIndex: "time", flex: 2, renderer: function (v) {
             return new Date(v).toLocaleString()
         }
-        }
+        },
+        /*{
+         text: "status", dataIndex: "status", renderer: function (value, metaData) {
+         console.log(arguments)
+         metaData.css="red";
+         metaData.tdStyle = 'color:red';
+         return value;
+         }
+         }*/
     ],
     audioInit: function () {
         /*<audio id="audio">

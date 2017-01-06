@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <item id="editpic.model.MonitorModel-5">
+  <item id="editpic.model.MonitorModel-2">
     <ip>127.0.0.1</ip>
     <port>6379</port>
     <key>1001002</key>
-    <objectname>UI2 </objectname>
+    <objectname/>
     <alarmtxt>5pWF6Zqc5oql6K2m</alarmtxt>
     <normaltxt>5LiA5qW85byV6aOO5py6</normaltxt>
+  </item>
+  <item id="editpic.model.MonitorModel-4">
+    <ip>127.0.0.1</ip>
+    <port>6379</port>
+    <key>1001001</key>
+    <objectname>UI11</objectname>
+    <alarmtxt>YXJhcm10eHQ=</alarmtxt>
+    <normaltxt>bm9ybWFsdHh0</normaltxt>
   </item>
 </root>

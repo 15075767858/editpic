@@ -31,7 +31,6 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.ux.KeyBoard",
         "editpic.view.week.WeekWin",
         "editpic.view.window.EditFile",
-
         "editpic.view.EventAlarm.EventAlarmSetting"
         //"editpic.view.tool.PublishPic"
     ],
@@ -75,10 +74,10 @@ Ext.define('editpic.view.main.Main', {
                 },
 
                 {
-                    text: "Backup Graphice", handler: "BackupGraphice"
+                    text: "Backup Graphic", handler: "BackupGraphice"
                 },
                 {
-                    text: "Restor Graphice", handler: "dataJsonUpload"
+                    text: "Restor Graphic", handler: "dataJsonUpload"
                 }
             ]
         },

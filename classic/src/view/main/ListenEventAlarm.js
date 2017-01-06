@@ -76,7 +76,6 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm',{
                                     {name: "30 days", value: 2592000000},
                                     {name: "180 days", value: 15552000000},
                                     {name: "360 days", value: 31104000000}
-
                                 ]
                             }),
                             listeners: {
@@ -98,12 +97,10 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm',{
                         }
                     ]
                 },
-
             ]
         })
         var grid = Ext.create("ListenGrid", {
-            scrollable: true,
-
+            scrollable: true
         })
         me.items = [form, grid]
     },
@@ -118,9 +115,9 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm',{
             }).then(function () {
                 console.log(arguments)
             })
-            setTimeout(function () {
-                window.collapse()
-            }, 1000)
+            //setTimeout(function () {
+            //    window.collapse()
+            //}, 1000)
         },
         collapse: function (window) {
             window.setPosition(0, 0, true)

@@ -9,6 +9,7 @@ Ext.define('editpic.view.EventAlarm.EventAlarmSetting', {
 
         'editpic.model.ListenModel',
         'editpic.model.MonitorModel',
+        "editpic.model.PrintSettingModel",
 
         'editpic.view.EventAlarm.AddMonitor',
         'editpic.view.EventAlarm.ListenEventAlarm',

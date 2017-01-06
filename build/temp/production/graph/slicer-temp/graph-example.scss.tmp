@@ -1193,6 +1193,9 @@ $include-editpic-view-window-uploadwindow: dynamic(true);;
 $include-graph-view-ux-colorselect: dynamic(true);;
 $include-graph-view-ux-colorselectcontroller: dynamic(true);;
 $include-graph-view-ux-colorselectmodel: dynamic(true);;
+$include-graph-view-window-schedule: dynamic(true);;
+$include-graph-view-window-schedulecontroller: dynamic(true);;
+$include-graph-view-window-schedulemodel: dynamic(true);;
 
 
 /* ======================== ETC ======================== */

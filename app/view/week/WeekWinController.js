@@ -78,6 +78,7 @@ Ext.define('editpic.view.week.WeekWinController', {
         })
     },
     getDivData: function () {
+
         var me = this;
         var weekly = {
             "Weekly_Schedule": {}
@@ -132,17 +133,17 @@ Ext.define('editpic.view.week.WeekWinController', {
                                     "hour": sH,
                                     "minute": sM,
                                     "second": sS,
-                                    "hundredths": 0
+                                    "hundredths": 1
                                 },
-                                value: true
+                                value: false
                             }, {
                                 time: {
                                     "hour": eH,
                                     "minute": eM,
                                     "second": eS,
-                                    "hundredths": 0
+                                    "hundredths": 1
                                 },
-                                value: false
+                                value: true
                             }
                         )
                     }
@@ -153,17 +154,17 @@ Ext.define('editpic.view.week.WeekWinController', {
                                 "hour": sH,
                                 "minute": sM,
                                 "second": sS,
-                                "hundredths": 0
+                                "hundredths": 1
                             },
-                            value: true
+                            value: false
                         }, {
                             time: {
                                 "hour": eH,
                                 "minute": eM,
                                 "second": eS,
-                                "hundredths": 0
+                                "hundredths": 1
                             },
-                            value: false
+                            value: true
                         }
                     )
                 }
@@ -228,8 +229,6 @@ Ext.define('editpic.view.week.WeekWinController', {
                     else {
                         $(aWeeks[i]).css("left", WeekArrJson[j].left);
                     }
-
-
                 }
             }
         }
