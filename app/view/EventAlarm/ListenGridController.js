@@ -50,10 +50,11 @@ Ext.define('editpic.view.EventAlarm.ListenGridController', {
     },
     printSetting: function () {
         var __this = this;
-        console.log(__this.view.viewModel)
+
+        var viewModel = __this.view.viewModel
         var win = Ext.create("Ext.window.Window", {
             title: "Print Setting",
-            viewModel: __this.view.viewModel,
+            viewModel: viewModel,
             icon: EventRootUrl + "graph/resources/icons/print_24px.png",
             autoShow: true,
             width: 400,
@@ -64,17 +65,18 @@ Ext.define('editpic.view.EventAlarm.ListenGridController', {
                     xtype: "fieldset",
                     title: "Print Number",
                     defaultType: 'radiofield',
+
                     items: [
                         {
                             boxLabel: '1',
                             name: 'number',
                             inputValue: '1',
-                            bind: "{number}"
+
                         }, {
                             boxLabel: '10',
                             name: 'number',
                             inputValue: '10',
-                            bind: "{number}"
+
                         }
                     ]
                 }, {
@@ -96,11 +98,7 @@ Ext.define('editpic.view.EventAlarm.ListenGridController', {
                 }],
                 listeners: {
                     boxready: function (form) {
-
-                        var m = Ext.createByAlias("PrintSettingModel")
-                        m.loadPrintSettingData(function () {
-                            form.loadRecord(m)
-                        })
+                        form.loadRecord(__this.view.printSettingModel)
                     }
                 },
             },
@@ -117,6 +115,7 @@ Ext.define('editpic.view.EventAlarm.ListenGridController', {
                         if (isNaN(v)) {
                             Ext.Msg.alert("Massage", v)
                         } else {
+                            __this.view.printSettingModel=m;
                             My.delayToast("Massage", "Save Ok " + v)
                         }
                         console.log(arguments)
@@ -124,7 +123,7 @@ Ext.define('editpic.view.EventAlarm.ListenGridController', {
                 }
                 }, {
                     text: "Close", handler: function () {
-
+                        win.close();
                     }
                 }
             ]

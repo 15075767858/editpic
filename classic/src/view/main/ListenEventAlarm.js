@@ -115,9 +115,9 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm',{
             }).then(function () {
                 console.log(arguments)
             })
-            //setTimeout(function () {
-            //    window.collapse()
-            //}, 1000)
+            setTimeout(function () {
+                window.collapse()
+            }, 1000)
         },
         collapse: function (window) {
             window.setPosition(0, 0, true)

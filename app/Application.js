@@ -64,7 +64,7 @@ Ext.define('editpic.Application', {
                     ip: ip,
                     port: "6379",
                     nodename: nodename,
-                    type: type || "Parsent_Value",
+                    type: type || "Present_Value",
                     value: randomNumber,
                 }, "", function () {
                     console.log(arguments)

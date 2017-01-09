@@ -436,8 +436,8 @@ if ($par == "deleteImageData") {
 if ($par == "deleteGraphFile") {
     $filename = $_REQUEST["graph"];
 
-   echo  unlink("../../home/".$filename.".html");
-   echo  unlink("../../home/".$filename.".json");
+    echo unlink("../../home/" . $filename . ".html");
+    echo unlink("../../home/" . $filename . ".json");
 
 }
 if ($par == "getLinkValues") {
@@ -452,7 +452,40 @@ if ($par == "getLinkValues") {
     }
     echo json_encode($datas);
 }
+if ($par == "getSubscribeItemsValues") {
+    $datas = json_decode($_REQUEST['datas']);
+    $datas = object_array($datas);
+    $arr = array();
+    foreach ($datas as $data) {
+        array_push($arr, array("id" => $data['id'], "value" => getNodeTypeValue($data)));
+    }
+    echo json_encode($arr);
+}
 
+function getNodeTypeValue($arr)
+{
+    $ip = $arr['ip'];
+    $port = $arr['port'];
+    $nodeName = $arr['nodename'];
+    $type = $arr['type'];
+    error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+
+    $redis = new Redis();
+
+    //$ip="192.168.2.20";
+
+    $redis->connect($ip, $port, 0.5) or $redis = false;
+    if ($redis) {
+        //$value = $redis->hGet($nodeName, $type);
+        $value = hGet($redis, $nodeName, $type);
+
+        $redis->close();
+        return $value;
+    } else {
+        return false;
+    }
+
+}
 
 /*function callback($redis, $channel, $message, $val)
 {
@@ -494,31 +527,6 @@ function object_array($array)
     }
 
     return $array;
-}
-
-function getNodeTypeValue($arr)
-{
-    $ip = $arr['ip'];
-    $port = $arr['port'];
-    $nodeName = $arr['nodename'];
-    $type = $arr['type'];
-    error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
-
-    $redis = new Redis();
-
-    //$ip="192.168.2.20";
-
-    $redis->connect($ip, $port, 0.5) or $redis = false;
-    if ($redis) {
-        //$value = $redis->hGet($nodeName, $type);
-        $value = hGet($redis, $nodeName, $type);
-
-        $redis->close();
-        return $value;
-    } else {
-        return false;
-    }
-
 }
 
 if ($par == "beforeUploadGraph") {

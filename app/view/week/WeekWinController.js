@@ -35,12 +35,12 @@ Ext.define('editpic.view.week.WeekWinController', {
                 floating: true,  // usually you want this set to True (default)
                 items: [
                     {
-                        text:"Copy Time",
-                        handler:function(){
-                            me.copydiv=div;
+                        text: "Copy Time",
+                        handler: function () {
+                            me.copydiv = div;
 
                         }
-                    },{
+                    }, {
                         text: 'Delete Time',
                         handler: function () {
                             div.remove()
@@ -96,9 +96,9 @@ Ext.define('editpic.view.week.WeekWinController', {
             var newWeeks = document.querySelectorAll(".new" + WeekArr[i]);
             console.log(newWeeks)
             var oldWeeks = document.querySelectorAll(".old" + WeekArr[i]);
-            var isPubWeek = !(oldWeeks.length ==me.dwPars.WeekArrJson[i].oldCount)
-            if(newWeeks.length>0){
-                isPubWeek=true;
+            var isPubWeek = !(oldWeeks.length == me.dwPars.WeekArrJson[i].oldCount)
+            if (newWeeks.length > 0) {
+                isPubWeek = true;
             }
             console.info(isPubWeek)
             weekly.Weekly_Schedule[WeekArr[i]] = []
@@ -135,7 +135,7 @@ Ext.define('editpic.view.week.WeekWinController', {
                                     "second": sS,
                                     "hundredths": 1
                                 },
-                                value: false
+                                value: true
                             }, {
                                 time: {
                                     "hour": eH,
@@ -143,7 +143,7 @@ Ext.define('editpic.view.week.WeekWinController', {
                                     "second": eS,
                                     "hundredths": 1
                                 },
-                                value: true
+                                value: false
                             }
                         )
                     }
@@ -156,7 +156,7 @@ Ext.define('editpic.view.week.WeekWinController', {
                                 "second": sS,
                                 "hundredths": 1
                             },
-                            value: false
+                            value: true
                         }, {
                             time: {
                                 "hour": eH,
@@ -164,7 +164,7 @@ Ext.define('editpic.view.week.WeekWinController', {
                                 "second": eS,
                                 "hundredths": 1
                             },
-                            value: true
+                            value: false
                         }
                     )
                 }
@@ -248,7 +248,7 @@ Ext.define('editpic.view.week.WeekWinController', {
                     var div = me.dwPars.div()
                     div.addClass(WeekArr[i])
                     div.addClass("old" + WeekArr[i]);
-                    me.dwPars.WeekArrJson[i].oldCount=dweek.length/2
+                    me.dwPars.WeekArrJson[i].oldCount = dweek.length / 2
                     var starttime = new Date(1970, 1, 1, times[j].time.hour, times[j].time.minute, times[j].time.second)
                     var endtime = new Date(1970, 1, 1, times[j + 1].time.hour, times[j + 1].time.minute, times[j + 1].time.second)
 
@@ -270,13 +270,13 @@ Ext.define('editpic.view.week.WeekWinController', {
             var drawWindowData = []
             var WeekArr = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
             var WeekArrJson = [
-                {name: "monday", left: "",oldCount:0},
-                {name: "tuesday", left: "",oldCount:0},
-                {name: "wednesday", left: "",oldCount:0},
-                {name: "thursday", left: "",oldCount:0},
-                {name: "friday", left: "",oldCount:0},
-                {name: "saturday", left: "",oldCount:0},
-                {name: "sunday", left: "",oldCount:0}];
+                {name: "monday", left: "", oldCount: 0},
+                {name: "tuesday", left: "", oldCount: 0},
+                {name: "wednesday", left: "", oldCount: 0},
+                {name: "thursday", left: "", oldCount: 0},
+                {name: "friday", left: "", oldCount: 0},
+                {name: "saturday", left: "", oldCount: 0},
+                {name: "sunday", left: "", oldCount: 0}];
             var dw = me;
             var oCanvas = $(dw.el.dom.querySelectorAll("canvas")[4]);
             var oneDay = 86400000;
@@ -339,5 +339,5 @@ Ext.define('editpic.view.week.WeekWinController', {
         })()
 
     }
-    
+
 });

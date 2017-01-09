@@ -16,7 +16,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
             var nodeNameStore = My.getDevStore(me.values.ip, me.values.port)
             var nodeTypeStore = My.getDevTypeStore(me.values.ip, me.values.port, me.values.nodename);
 
-
             me.items = [
                 {
                     xtype: 'checkbox',
@@ -138,7 +137,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                             a.removeAll()
                             a.add(values.getFormItems(newValue))
                             //.setItems()
-                        }, focus: function (combo) {
+                        },
+                        focus: function (combo) {
 
                             var win = Ext.create("Ext.window.Window", {
                                 title: "Select Object_Name",
@@ -271,7 +271,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                                 win.close();
                                             }
                                         }
-                                    }, {
+                                    },
+                                    {
                                         text: "Cancel",
                                         handler: function () {
                                             win.close();

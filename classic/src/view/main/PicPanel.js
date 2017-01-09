@@ -397,7 +397,6 @@ Ext.define('editpic.view.panel.PicPanel', {
         me.viewModel.set("height", json.height);
         My.initLinkValue()
         me.refreshPanel()
-        testpanel = me;
     },
     draggable: true,
     header: {

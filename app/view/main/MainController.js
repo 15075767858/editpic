@@ -158,39 +158,7 @@ Ext.define('editpic.view.main.MainController', {
                     var picPanel = curPanel.down("picpanel");
                     picPanel.save(text);
 
-                    //var datas = picPanel.saveRemoteData(text);
 
-                    //var saveData = Ext.encode(datas)
-
-
-                    /*My.AjaxPost('resources/xmlRW.php', function (response) {
-                     if (response.responseText == saveData.length) {
-                     My.AjaxSimple({
-                     par: "saveImageAsHtml",
-                     graph: text
-                     })
-                     My.delayToast("Massage", "Save File OK !");
-                     } else {
-                     My.delayToast("Massage", "exception " + response.responseText)
-                     }
-                     }, {
-                     rw: "w",
-                     fileName: "../../home/" + text + ".json",
-                     content: saveData
-                     })*/
-
-
-                    //var json = My.getImageData();
-                    //console.log(typeof json == "object")
-                    //if (typeof json == 'object') {
-                    //    json[text] = datas;
-                    //} else {
-                    //    json = {};
-                    //    json[text] = datas;
-                    //}
-                    //var content = Ext.encode(json)//存储的内容
-                    //My.putImageData(content, text)
-                    //console.log(text)
                     win.close();
                 }
                 },
@@ -516,64 +484,7 @@ Ext.define('editpic.view.main.MainController', {
             }
         )
 
-        /*  var win = Ext.create("Ext.window.Window", {
-         autoShow: true,
-         width: 400,
-         title: "Upload data.json",
-         items: {
-         xtype: "form",
-         bodyPadding: 10,
-         frame: true,
-         items: [{
-         xtype: 'filebutton',
-         name: 'file',
-         fieldLabel: 'data.json',
-         labelWidth: 50,
-         msgTarget: 'side',
-         allowBlank: false,
-         anchor: '100%',
-         buttonText: 'Select data.json',
-         /!*validator: function (val) {
-         return "adsdadsa";
-         },*!/
-         //isFileUpload : Boolean
-         listeners: {
-         change: function (menu, target, eOpts) {
-         var files = target.target.files;
 
-         if (files.length) {
-         var file = files[0];
-         var reader = new FileReader();
-         reader.onload = function () {
-         //document.getElementById("filecontent").innerHTML = this.result;
-
-         textarea.setValue(this.result);
-         checkbox.setValue(true)
-         };
-         reader.readAsText(file);
-         }
-         }
-         }
-         }
-         ],
-         },
-         buttons: [{
-         text: 'Upload',
-         handler: function () {
-         var form = win.down('form').getForm();
-         if (form.isValid()) {
-         form.submit({
-         url: 'photo-upload.php',
-         waitMsg: 'Uploading your photo...',
-         success: function (fp, o) {
-         Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
-         }
-         });
-         }
-         }
-         }]
-         });
-         */
     },
     updateGraph: function () {
         My.AjaxAsync("/upload.php", "", {
@@ -588,51 +499,7 @@ Ext.define('editpic.view.main.MainController', {
                 console.log(arguments)
 
                 console.log("升级完毕")
-                /* if (files.length == 1) {
-                 var file = files[0];
-                 var fn = file.name;
-                 Ext.Msg.alert("Massage", "graph uploading please wait... It takes about 5 minutes.")
-                 My.AjaxAsync("/upload.php", resFn, {
-                 par: "uploadProgram",
-                 filename: fn
-                 })
-                 } else {
-                 var namesStr = ""
-                 var arr = [];
-                 for (var i = 0; i < files.length; i++) {
-                 arr.push(files[i].name)
-                 namesStr += files[i].name + ",";
-                 }
-                 My.AjaxSimplePostAsync(
-                 {
-                 par: 'afterUpload',
-                 names: namesStr.substr(0, namesStr.length - 1),
-                 nameArr: Ext.encode(arr)
-                 }, "/upload.php?par=afterUpload", resFn
-                 )
-                 }
-                 function resFn() {
 
-                 Ext.Msg.show({
-                 title: 'Massage',
-                 message: 'graph update success .',
-                 buttons: Ext.Msg.YES,
-                 //icon: Ext.Msg.INFO,
-                 fn: function (btn) {
-
-                 My.AjaxAsync("/upload.php", "", {
-                 par: "beforeUploadGraph"
-                 })
-
-                 if (btn === 'yes') {
-                 location.reload()
-                 }
-
-                 }
-                 });
-
-                 }
-                 */
                 win.close()
 
 
@@ -1022,85 +889,6 @@ My.getSession = function () {
     })
     return res;
 };
-My.linkManger = {};
-My.linkManger.items = {};
-My.linkManger.getValue = function (data) {
-    var linkManger = this;
-
-
-    var items = linkManger.items;
-    var id = data.id;
-    if (!items[id]) {
-        items[id] = {};
-    }
-
-    items[id].ip = data.ip;
-    items[id].port = data.port;
-    items[id].nodename = data.nodename;
-    items[id].type = data.type;
-
-    return linkManger.items[id].value;
-}
-
-My.linkManger.autoLink = function () {
-
-}
-My.linkManger.getLinkDatas = function () {
-    return Ext.encode(My.linkManger.items);
-}
-
-My.linkManger.init = function () {
-
-    My.interval1 = setInterval(My.initLinkValue, 15000)
-
-}
-My.initLinkValue = function () {
-
-    var data = {
-        //par: "getLinkValues",
-        datas: My.linkManger.getLinkDatas()
-    }
-
-    My.AjaxSimplePostAsync(data, "resources/main.php?par=getLinkValues", function (response) {
-//        console.log(response.responseText)
-        try {
-            Ext.decode(response.responseText);
-        } catch (e) {
-
-            //Ext.Msg.alert("Massage"," linkDataBase Error Program 10 seconds after the automatic return to normal . "+response.responseText);
-            clearInterval(My.interval1);
-            setTimeout(function () {
-                My.linkManger.init()
-            }, My.eachDelay)
-            return;
-        }
-        if (response.responseText.length == 2) {
-            //console.log(response.responseText)
-            My.linkManger.items = {}
-        } else {
-            My.linkManger.items = Ext.decode(response.responseText)
-            for (var id in My.linkManger.items) {
-                var img = Ext.getCmp(id);
-                if (img) {
-                    if (img.linkValue != My.linkManger.items[id].value) {
-                        img.setLinkValue(My.linkManger.items[id].value)
-                    }
-                } else {
-                    delete My.linkManger.items[id];
-                }
-            }
-        }
-    });
-
-    My.util.PublishPic.run()
-};
-
-My.publish = function () {
-    var curPanel = My.getCurrentPicPanel();
-}
-
-My.getCurrentPicPanle = function () {
-}
 
 
 My.initComponentConfig = {
@@ -1341,10 +1129,7 @@ My.initComponentConfig = {
     mySetWidth: function (value) {
         value = parseInt(value)
         var me = this;
-        //if (me.field) {
-        //    me.field.setWidth(value)
-        //}
-//        console.log(me.field);
+
         me.setWidth(value)
         me.width = value
     }
@@ -1352,49 +1137,12 @@ My.initComponentConfig = {
     mySetHeight: function (value) {
         value = parseInt(value)
         var me = this;
-        //me.setStyle("lineHeight", value + "px")
-        //if (me.field) {
-        //    me.field.setHeight(value)
-        //}
+
         me.setHeight(value)
         me.height = value;
     }
     ,
 
-    /*    mySetX: function (newValue) {
-     newValue = parseInt(newValue)
-     var me = this;
-     var panel = me.up("picpanel");
-     var value = newValue + panel.body.getX();
-     me.x = newValue;
-     me.setX(value);
-     },
-     mySetY: function (newValue) {
-     newValue = parseInt(newValue)
-     var me = this;
-     var panel = me.up("picpanel");
-     var value = newValue + panel.body.getY();
-     me.y = newValue;
-     me.setY(value);
-     },
-     mySetWidth: function (newValue) {
-     console.log(newValue)
-     newValue = parseInt(newValue)
-     newValue = newValue - 0
-     var me = this;
-     me.setWidth(newValue)
-     me.width = newValue;
-     },
-     mySetHeight: function (newValue) {
-     console.log(newValue)
-     newValue = parseInt(newValue)
-     newValue = newValue - 0
-
-     var me = this;
-
-     me.setHeight(newValue)
-     me.height = newValue
-     },*/
     mySetZIndex: function (value) {
         var me = this;
         if (me.el) {
@@ -1441,7 +1189,6 @@ My.initComponentConfig = {
         } else {
             me.linkValue = linkValue;
         }
-        //me.linkValue = linkValue || My.linkManger.getValue(me);
         me.refreshCanvas();
     }
     ,
@@ -1855,9 +1602,7 @@ My.initComponentConfig = {
         console.log(strnull)
         console.log(pubstr)
     }
-}
-;
-
+};
 My.textfieldFocus = function (field, t, e) {
     console.log(arguments)
     if (!My.isKeyBord) {
@@ -1983,30 +1728,6 @@ My.createImg = function (data) {
     }
     return component;
 }
-My.eachDelay = 1000 * 60 * 3;//侦听失败后重试时间
-
-window.requestAnimFrame = (function () {
-    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-        function (/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
-            return window.setTimeout(callback, 1000 / 60);
-        };
-})();
-My.isTime = function (val) {
-    console.log(val)
-    var vals = val.split(":")
-    if (vals.length != 3) {
-        return "This field error";
-    }
-    if (!(vals[0] >= 0 & vals[0] <= 23 & vals[1] >= 0 & vals[1] <= 59 & vals[2] >= 0 & vals[2] <= 59)) {
-        return "This field error";
-    }
-    for (var i = 0; i < vals.length; i++) {
-        if (isNaN(vals[i]) || (vals[i] + "") == "-0") {
-            return "This field error";
-        }
-    }
-    return true;
-}
 
 My.devPublish = function (key, value, success, ip, port) {
 
@@ -2033,24 +1754,28 @@ My.devPublish = function (key, value, success, ip, port) {
 }
 My.util = {}
 My.util.PublishPic = {
+    /*获取所有点位信息后 开始订阅图片信息
+     */
     run: function () {
         console.log(this)
+        return;
         this.getSubscribe();
     },
     subscribeItems: null,
+    /*
+     获取所有
+     */
     getSubscribeItems: function () {
         var items = Ext.getCmp('mintab').getCurrentTab().items.items[0].getSubscribeItems();
         this.subscribeItems = items;
         return items;
     },
+    /*
+     获得可以订阅的ip 以及相关ip的devname
+     返回值格式{ip:[],ip:[]}
+     */
     getSubscribeIpsDevNames: function (subIp) {
-        /*
-         获得可以订阅的ip 以及相关ip的devname
-         返回值格式
-         {ip:[],
-         ip:[]
-         }
-         */
+
         var items = this.getSubscribeItems();
         var ips = [];
         for (var i = 0; i < items.length; i++) {
@@ -2110,17 +1835,6 @@ My.util.PublishPic = {
                     }
                 }
             });
-
-            /*else {
-             data.url = "http://" + ip + "/graph/resources/subscribe.php";
-             //data.timeout=1000
-             data.success = function (response) {
-             if (response.success) {
-             me.subscribeSuccess(response.info)
-             }
-             }
-             Ext.data.JsonP.request(data);
-             }*/
         }
     },
     subscribeSuccess: function (resJson) {
@@ -2156,6 +1870,22 @@ My.util.PublishPic = {
 
     }
 }
+My.isTime = function (val) {
+    console.log(val)
+    var vals = val.split(":")
+    if (vals.length != 3) {
+        return "This field error";
+    }
+    if (!(vals[0] >= 0 & vals[0] <= 23 & vals[1] >= 0 & vals[1] <= 59 & vals[2] >= 0 & vals[2] <= 59)) {
+        return "This field error";
+    }
+    for (var i = 0; i < vals.length; i++) {
+        if (isNaN(vals[i]) || (vals[i] + "") == "-0") {
+            return "This field error";
+        }
+    }
+    return true;
+}
 
 function getNetNumberValue(filename) {
     var str = "";
@@ -2181,6 +1911,13 @@ function isBarCollsion(x1, y1, x2, y2, w, h) {
     }
     return false;
 }
+window.requestAnimFrame = (function () {
+    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+        function (/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+            return window.setTimeout(callback, 1000 / 60);
+        };
+})();
+
 Array.prototype.unique1 = function () {
     var n = []; //一个新的临时数组
     for (var i = 0; i < this.length; i++) //遍历当前数组
@@ -2194,15 +1931,417 @@ Array.prototype.unique1 = function () {
 }
 
 
+My.linkManger = {};
+My.linkManger.items = {};
+My.eachDelay = 1000 * 60 * 3;//侦听失败后重试时间
+My.linkManger.getValue = function (data) {
+    var linkManger = this;
+    var items = linkManger.items;
+    var id = data.id;
+    if (!items[id]) {
+        items[id] = {};
+    }
+    items[id].ip = data.ip;
+    items[id].port = data.port;
+    items[id].nodename = data.nodename;
+    items[id].type = data.type;
+    return linkManger.items[id].value;
+}
+
+My.linkManger.autoLink = function () {
+
+}
+My.linkManger.getLinkDatas = function () {
+    return Ext.encode(My.linkManger.items);
+}
+
+/*
+ 开启定时器订阅
+ */
+My.linkManger.init = function () {
+    //  My.interval1 = setInterval(My.initLinkValue, 15000)
+}
+
+My.initLinkValue = function () {
+
+    var data = {
+        //par: "getLinkValues",
+        datas: My.linkManger.getLinkDatas()
+    }
 
 
+    My.AjaxSimplePostAsync(data, "resources/main.php?par=getLinkValues", function (response) {
+//        console.log(response.responseText)
+
+        try {
+            Ext.decode(response.responseText);
+        } catch (e) {
+            clearInterval(My.interval1);
+            console.log(response.responseText);
+            setTimeout(function () {
+                My.linkManger.init()
+            }, My.eachDelay)
+            return;
+        }
+
+        if (response.responseText.length == 2) {
+            //console.log(response.responseText)
+            My.linkManger.items = {}
+        } else {
+            My.linkManger.items = Ext.decode(response.responseText)
+            for (var id in My.linkManger.items) {
+                var img = Ext.getCmp(id);
+                if (img) {
+                    if (img.linkValue != My.linkManger.items[id].value) {
+                        img.setLinkValue(My.linkManger.items[id].value)
+                    }
+                } else {
+                    delete My.linkManger.items[id];
+                }
+            }
+        }
+    });
+
+    My.util.PublishPic.run()
+};
+
+My.publish = function () {
+    var curPanel = My.getCurrentPicPanel();
+}
+
+My.getCurrentPicPanle = function () {
+}
+My.util.getFormNextTimeMillisecond = function (mill) {
+    return mill - new Date().getTime() % mill;
+}
+/**
+ * 这个方法用来轮询读取数据库
+ */
+Ext.onReady(function () {
+    //需要查询的图片对象 存在这里
+    var aInquireItems = [];
+
+    //订阅 和 轮询数据库的间隔;
+    var iQuireInterval = 10000;
+
+    var subscribeUrl = "/graph/resources/subscribe.php";
+
+    /**
+     * 从当前画面中获取所有要进行订阅的点位
+     * 失败返回false 成功返回需要查询的数组
+     *
+     *@return {boolean/Array} 返回false 代表没有成功或者数组为0 返回数组代表返回成功
+     */
+    function getSubscribeItems() {
+        var mainTab = Ext.getCmp("mintab");
+        if (!mainTab) {
+            console.log("mintab not found")
+            return false;
+        }
+        var currentTab = mainTab.getCurrentTab();
+        if (!currentTab) {
+            console.log("current tab not found")
+            return false;
+        }
+        var picPanel = currentTab.down("picpanel");
+        if (!picPanel) {
+            console.log("picpanel not found")
+            return false;
+        }
+        var subItems = picPanel.getSubscribeItems();
+        if (!subItems) {
+            console.log("subitems not found")
+            return false;
+        }
+        if (subItems.length == 0) {
+            console.log("subitems length = 0")
+            return false;
+        }
+        aInquireItems = subItems;
+        return subItems.map(function (item) {
+            return {
+                id: item.id,
+                ip: item.ip,
+                port: item.port,
+                nodename: item.nodename,
+                type: item.type
+            }
+        })
+    }
 
 
+    /**
+     * 这个方法能自动获得需要请求的数据 用来向服务器请求需要轮询的数据
+     * @param success 成功的回调方法
+     * @param failure 失败的回调方法
+     */
+    function getSubscribeItemsValues(success, failure) {
+        //获取需要请求的数据
+        var items = getSubscribeItems();
+        if (!items.length) {
+            return;
+        }
+        var url = "resources/main.php?par=getSubscribeItemsValues";
+        Ext.Ajax.request({
+            url: url,
+            params: {
+                datas: Ext.encode(items)
+            }
+        }).then(success, failure)
+    }
+
+    /**
+     * 这个方法用来接收 {@link getSubscribeItemsValues } 这个方法的成功回调
+     * 会对 {@link aInquireItems} 这个数组中的对象 进行修改 linkValue 操作
+     * @param {Object}response
+     */
+    function subscribeItemsSuccessCallback(response) {
+        var aResData = null;
+        try {
+            aResData = Ext.decode(response.responseText);
+            for (var i = 0; i < aResData.length; i++) {
+                var id = aResData[i].id;
+                var oItem = Ext.getCmp(id);
+                if (oItem) {
+                    oItem.setLinkValue(aResData[i].value)
+                }
+            }
+        } catch (e) {
+            My.delayToast("Massage", "Error " + response.responseText);
+            throw e;
+            return;
+        }
+    }
+
+    /**
+     * 这个方法用来接收 {@link getSubscribeItemsValues } 这个方法的失败回调
+     * @param {Object}response
+     */
+    function subscribeItemsFailureCallback(response) {
+        console.log(response)
+        Ext.Msg.alert("Massage  status " + response.status, "Error  " + response.request.url + response.responseText)
+    }
+
+    /**
+     * 这里运行10秒轮询 和 订阅
+     */
+    setInterval(function () {
+        getSubscribeItemsValues(subscribeItemsSuccessCallback, subscribeItemsFailureCallback)
+        subscribeRequestFire()
+    }, iQuireInterval)
+
+    /**
+     *传入一个对象，从对象中获取要查看的数据
+     * @param items 图片对象
+     * @returns {*}
+     */
+    function subscribeItemsToJson(items) {
+        //请求数据的格式 [{id:{ip:"",port:"",nodename:"",type:""}}]
+        return
+    }
+
+    /**
+     * 这个方法用来合并需要订阅的数据
+     *
+     * @return {Array}
+     * 格式 [{ip:"111.111.111.111",port:"6379",subnodes:['1001.8.*','1200.8.*'],types:['Object_Name','Present_Value']}]
+     */
+    function mergeSubscribeRequest() {
+        var items = getSubscribeItems();
+        var ipPortArr = [];
+
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i]
+
+            var isHave = ipPortArr.find(function (v) {
+                return equalIpPort(item, v);
+            })
+            //不存在就push
+            if (isHave == undefined) {
+                ipPortArr.push(items[i])
+            }
+        }
+        console.log(ipPortArr)
+        //
+        ipPortArr.map(function (v) {
+            var types = [];
+            var subnodes = [];
+            for (var i = 0; i < items.length; i++) {
+                var item = items[i];
+                if (equalIpPort(item, v)) {
+                    types.push(item.type);
+                    subnodes.push(item.nodename.substr(0, 4) + ".8.*");
+                }
+            }
+            v.types = types.unique1();
+            v.subnodes = subnodes.unique1();
+            delete v.id;
+            delete v.nodename;
+            delete v.type;
+        })
+
+        function equalIpPort(Obj1, Obj2) {
+            if (Obj1.ip + Obj1.port == Obj2.ip + Obj2.port) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        return ipPortArr
+    }
+
+    /**
+     * 这个方法用来订阅进行订阅
+     * @param success
+     * @param failure
+     * @param time
+     */
+    function subscribeRequest(success, failure, time, ip) {
+        var subscribeItems = mergeSubscribeRequest();
+        console.log(subscribeItems)
+        var startTime = new Date().getTime();
+        if (time) {
+            startTime = startTime - time;
+        }
+        for (var i = 0; i < subscribeItems.length; i++) {
+            var subscribeItem = subscribeItems[i];
+            if (ip != undefined) {
+                if (ip != subscribeItem.ip) {
+                    continue
+                }
+            }
+            Ext.Ajax.request({
+                url: subscribeUrl,
+                params: {
+                    ip: subscribeItem.ip,
+                    port: subscribeItem.port,
+                    subnodes: Ext.encode(subscribeItem.subnodes),
+                    types: Ext.encode(subscribeItem.types),
+                    redistimeout: Math.ceil((time || iQuireInterval) / 1000),//redis超时链接时间
+                    time: startTime //记录请求的开始时间
+                },
+                timeout: iQuireInterval
+            }).then(success, failure)
+        }
+    }
+
+    /**
+     * 进行一次订阅请求
+     */
+    function subscribeRequestFire(time, ip) {
+        console.log("%c 开始订阅 间隔时间是" + time, "color:red")
+        subscribeRequest(subscribeRequestSuccessCallback, subscribeRequestFailureCallback, time, ip)
+    }
+
+    /**
+     * 当订阅有返回值时候的成功处理函数
+     */
+    function subscribeRequestSuccessCallback(response) {
+        var resJson = null;
+        try {
+            resJson = Ext.decode(response.responseText).info;
+        } catch (e) {
+            console.log(e);
+            throw e;
+        }
+        var befTime = resJson.time;
+        var nowTime = new Date().getTime();
+        var diffTime = nowTime - befTime;
+        var ip = resJson.ip;
+        //如果当前时间减去上次请求时间小于两次时间间隔 则继续进行请求
+        if (diffTime < iQuireInterval) {
+            console.log("再次请求" + diffTime + "ip = " + ip)
+            subscribeRequestFire(diffTime, ip)
+        } else {
+            console.log("%c 取消请求" + diffTime + "ip = " + ip, "background:red")
+        }
+        //iQuireInterva
+        var arr = resJson.value.split("\r\n");
+
+        console.log(arr)
+        if (arr.length != 3) {
+            console.log("length ! = 3");
+            return;
+        }
+        var subscribeItems = getSubscribeItems()
+        for (var i = 0; i < subscribeItems.length; i++) {
+            var img = Ext.getCmp(subscribeItems[i].id);
+            if (img.ip == ip & img.nodename == arr[0] & img.type == arr[1]) {
+                img.setLinkValue(arr[2]);//成功后设置值
+            }
+        }
+    }
+
+    /**
+     * 订阅失败的返回函数
+     */
+    function subscribeRequestFailureCallback(response) {
+        console.log("Massage  status " + response.status, "Error  " + response.statusText + response.request.url + response.responseText)
+    }
 
 
+    return My.mergeSubscribeRequest = mergeSubscribeRequest
 
+})
 
+/**
+ * 测试模块
+ */
+Ext.onReady(function () {
 
+    console.log(this)
 
+    /**
+     * 测试浏览器最大并发数
+     * @param count
+     */
+    var testsubscribe = function (count) {
+        for (var i = 0; i < count; i++) {
 
+            (function (i) {
+                var url = "http://127.0.0.1/graph/resources/subscribe.php?ip=192.168.253.253&subnodes=[%221001.8.*%22]";
+                if (i % 2 == 0) {
+                    url = "http://127.0.0.1/graph/resources/subscribe.php?ip=192.168.253.253&subnodes=[%221001.8.*%22]";
+                } else {
+                    url = "http://127.0.0.1/graph/resources/subscribe.php?ip=127.0.0.1&subnodes=[%221001.8.*%22]";
+                }
+                Ext.Ajax.request({
+                    url: url,
+                    timeout: 0
+                }).then(function (response) {
+                    console.log(i, response.status, response, new Date().toLocaleString());
+                }, function (response) {
+                    console.log(i, response.status, response, new Date().toLocaleString());
+                })
 
+            })(i)
+        }
+    }
+    /**
+     * 测试Ext 查找dom速度
+     */
+    var testgetCmp = function () {
+        var startTime = new Date().getTime();
+        for (var i = 0; i < 1000; i++) {
+            var a = Ext.getCmp("mintab" + Math.random())
+        }
+        console.log((new Date().getTime() - startTime) / 1000 + "秒")
+    }
+
+    var diffSecond = function () {
+
+        setInterval(function () {
+
+            console.log(new Date().getTime() % 10000)
+
+        }, 1000)
+
+    }
+
+    var test = {}
+    test.testsubscribe = testsubscribe;
+    test.testgetCmp = testgetCmp;
+    test.diffSecond = diffSecond;
+    My.test = test
+}.bind(My))
