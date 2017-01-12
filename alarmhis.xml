@@ -24,5 +24,5 @@
         
         
         
-    <log id="editpic.model.ListenModel-112"><ip>127.0.0.1</ip><port>6379</port><key>1001001</key><objectname>759</objectname><presentvalue>352</presentvalue><alarmtxt>YXJhcm10eHQ=</alarmtxt><normaltxt>bm9ybWFsdHh0</normaltxt><time>1483925757623</time><status>alarm</status></log><log id="editpic.model.ListenModel-113"><ip>127.0.0.1</ip><port>6379</port><key>1001001</key><objectname>759</objectname><presentvalue>3521</presentvalue><alarmtxt>YXJhcm10eHQ=</alarmtxt><normaltxt>bm9ybWFsdHh0</normaltxt><time>1483926106861</time><status>alarm</status></log></logs>
+    </logs>
 </root>

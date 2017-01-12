@@ -1897,9 +1897,21 @@ function getNetNumberValue(filename) {
             rw: "r"
         },
         success: function (response) {
-            var text = response.responseText
-            var xml = $($.parseXML(text));
-            str = xml.find("root net").text()
+            try {
+
+                //var text = response.responseText
+                //console.log(response)
+                var xml = $($.parseXML(response.responseText));
+                console.log(xml)
+                //var xml = response.responseXML;
+                if (xml) {
+                    str = xml.find("root net").text()
+                } else {
+                    Ext.Msg.alert("Exception ", "bac_config is not fount .")
+                }
+            } catch (e) {
+                Ext.Msg.alert("Massage", "Error " + response.responseText);
+            }
 
         }
     })
@@ -2072,8 +2084,9 @@ Ext.onReady(function () {
 
     /**
      * 这个方法能自动获得需要请求的数据 用来向服务器请求需要轮询的数据
-     * @param success 成功的回调方法
-     * @param failure 失败的回调方法
+     *
+     * @param success 成功的回调方法 {@link subscribeRequestSuccessCallback}
+     * @param failure 失败的回调方法 {@link subscribeRequestFailureCallback}
      */
     function getSubscribeItemsValues(success, failure) {
         //获取需要请求的数据
@@ -2119,7 +2132,7 @@ Ext.onReady(function () {
      */
     function subscribeItemsFailureCallback(response) {
         console.log(response)
-        Ext.Msg.alert("Massage  status " + response.status, "Error  " + response.request.url + response.responseText)
+        console.log("Massage  status " + response.status, "Error  " + response.request.url + response.responseText)
     }
 
     /**
@@ -2130,15 +2143,6 @@ Ext.onReady(function () {
         subscribeRequestFire()
     }, iQuireInterval)
 
-    /**
-     *传入一个对象，从对象中获取要查看的数据
-     * @param items 图片对象
-     * @returns {*}
-     */
-    function subscribeItemsToJson(items) {
-        //请求数据的格式 [{id:{ip:"",port:"",nodename:"",type:""}}]
-        return
-    }
 
     /**
      * 这个方法用来合并需要订阅的数据
@@ -2245,6 +2249,7 @@ Ext.onReady(function () {
             console.log(e);
             throw e;
         }
+
         var befTime = resJson.time;
         var nowTime = new Date().getTime();
         var diffTime = nowTime - befTime;
@@ -2255,6 +2260,10 @@ Ext.onReady(function () {
             subscribeRequestFire(diffTime, ip)
         } else {
             console.log("%c 取消请求" + diffTime + "ip = " + ip, "background:red")
+        }
+        if(resJson.success==false){
+            console.log(resJson.info);
+            return
         }
         //iQuireInterva
         var arr = resJson.value.split("\r\n");

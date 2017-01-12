@@ -3,7 +3,8 @@ Ext.define('editpic.view.week.WeekWin',{
     requires: [
         'editpic.view.week.WeekWinController',
         'editpic.view.week.WeekWinModel',
-        "Ext.chart.*"
+        "Ext.chart.*",
+        "graph.model.WeekModel"
     ],
 
     controller: 'week-weekwin',
@@ -13,7 +14,7 @@ Ext.define('editpic.view.week.WeekWin',{
 
     height: 550,
     width: 1024,
-    constrainHeader: true,//禁止移出父窗口
+    //constrainHeader: true,//禁止移出父窗口
     autoShow: true,
     layout: 'card',
     resizable: false,
@@ -22,43 +23,41 @@ Ext.define('editpic.view.week.WeekWin',{
         hideGroupedHeader: true,
         startCollapsed: true
     }),
-    buttons: [
+    tbar: [
         {
             text: "next",
             id: "drawWindow_next",
-            handler: function () {
-                var me = this.up("window");
-                me.controller.getDivData.call(me)
-
-                var store = Ext.data.StoreManager.lookup('drawWindowStore');
-                store.setData(me.dwPars.drawWindowData)
-                var me = this.up("window");
+            handler: function (button) {
+                var me = this.up('window');
+                me.fireEvent("nextHandler")
                 var l = me.getLayout();
-                this.hide()
-                $(".week").hide()
-                me.controller.weekDivResetPosition.call(me)
-                Ext.getCmp("drawWindow_previous").show()
+                button.hide()
                 l.setActiveItem(1)
             }
-        }, {
+        },
+        {
             text: "Previous",
             id: "drawWindow_previous",
             hidden: true,
-            handler: function () {
-                var me = this.up("window");
+            handler: function (button) {
+                var me = this.up('window');
                 var l = me.getLayout();
-                this.hide()
-                $(".week").show()
-                me.controller.weekDivResetPosition.call(me)
-                Ext.getCmp("drawWindow_next").show()
-                l.setActiveItem(0)
+                button.hide();
+                l.setActiveItem(0);
+                me.fireEvent("PreviousHandler");
             }
         },
         {
             text: "Ok",
             handler: function (th) {
                 var me = this.up("window");
-                var oJson = me.controller.getDivData.call(me)
+                if(me.layout.activeItem.xtype=="gridpanel"){
+                    me.fireEvent("PreviousHandler");
+                }else{
+                    me.fireEvent("nextHandler");
+                }
+
+                var oJson = me.controller.divDataToJson()
                 console.log(oJson)
                 Ext.Ajax.request({
                     url: "resources/main.php?par=changevaluenopublish&nodename=" + me.sDevNodeName + "&type=Weekly_Schedule&ip="+me.ip+"&port="+me.port,
@@ -71,18 +70,77 @@ Ext.define('editpic.view.week.WeekWin',{
                     }
                 });
                 if (me.sDevName != getNetNumberValue()) {
-
                     My.devPublish(me.sDevName + ".8.*", me.sDevNodeName + "\r\nWeekly_Schedule\r\n" + (Ext.encode(oJson.pubweekly)).replaceAll("\\s*|\t|\r|\n", ""),function(){},me.ip,me.port);
                 }
                 this.up("window").close()
             }
+        },
+        {
+            text: "divDataToJson", hidden: true, handler: function () {
+            var me = this.up("window");
+            me.fireEvent("divDataToJson")
+        }
+        }, {
+            text: "gridDataToJson", hidden: true, handler: "gridDataToJson"
         }
 
     ],
+    /**
+     *表格数据转换成JSON
+     */
+    gridDataToJson: function () {
+        var me = this;
+        var store = Ext.data.StoreManager.lookup('drawWindowStore');
+        var WeekArr = me.dwPars.WeekArr;
+        var weekly = {
+            "Weekly_Schedule": {}
+        }
+        for (var i = 0; i < WeekArr.length; i++) {
+            var dayArr = []
+            var days = store.queryRecords('Week', WeekArr[i])
+            for (var j = 0; j < days.length; j++) {
+                var dayData = days[j].data
+                var times = dayData.time.split(":");
+
+                console.log(dayData)
+                var obj = {
+                    "time": {
+                        "hour": Number(times[0]),
+                        "minute": Number(times[1]),
+                        "second": Number(times[2]),
+                        "hundredths": 1
+                    },
+                    "value": dayData.value
+                };
+                dayArr.push(obj);
+            }
+            weekly["Weekly_Schedule"][WeekArr[i]] = dayArr;
+        }
+        console.log(weekly)
+        return weekly;
+    },
     initComponent: function () {
         var me = this;
-        me.title = me.sDevNodeName + " Property",
-            me.callParent();
+        me.title = me.sDevNodeName + " Property"
+
+        me.callParent();
+    },
+    addDayDiv: function (starttime, endtime, week, className) {
+        var me = this;
+        var div = me.dwPars.div();
+        var dw = me.dwPars.dw;
+        //var starttime = dataToDate(starttime);
+        //var endtime = dataToDate(endtime);
+        if (starttime & endtime) {
+            div.attr("starttime", starttime);
+            div.attr("endtime", endtime);
+            div.addClass(week)
+            div.addClass(className)
+            console.log(div)
+            $(dw.el.dom).append(div)
+            me.controller.weekDivAddEvent(div)
+        }
+
     },
     items: [
         {
@@ -134,7 +192,6 @@ Ext.define('editpic.view.week.WeekWin',{
                 minimum: 2649600000,
                 maximum: 2736000000,
                 renderer: function (label, value, lastLabel) {
-                    console.log(arguments)
                     var chaTime = (2736000000 - value) + 2649600000;
                     var time = new Date(chaTime)
                     var hours = time.getHours();
@@ -178,16 +235,25 @@ Ext.define('editpic.view.week.WeekWin',{
                 storeId: "drawWindowStore",
                 groupField: 'SortWeek',
                 //groupDir:"DESC",
-                sortOnLoad: false,
-                fields: ["divId", 'Week', 'StartTime', 'EndTime']
-                //data: dwPars.drawWindowData
+                sortOnLoad: true,
+                //fields: ["divId", 'Week', 'StartTime', 'EndTime', "level"],
+                model: Ext.createByAlias("WeekModel"),
+                sorters: [{
+                    property: 'level',
+                    direction: 'ASC'
+                }]
             }),
-            features: new Ext.grid.feature.Grouping({
+            listeners: {
+                boxready: function (grid) {
+                }
+            },
+            /*features: new Ext.grid.feature.Grouping({
 
-                groupHeaderTpl: '{name}{renderedGroupValue} &nbsp;&nbsp;({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
-                hideGroupedHeader: true,
-                startCollapsed: true
-            }),
+             groupHeaderTpl: "."||'{name}{renderedGroupValue} &nbsp;&nbsp;({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
+             hideGroupedHeader: true,
+             startCollapsed: true
+             }),*/
+
             tbar: [{
                 text: 'Expand All',
                 handler: function () {
@@ -200,6 +266,9 @@ Ext.define('editpic.view.week.WeekWin',{
                     var me = this.up("gridpanel")
                     me.features[0].collapseAll()
                 }
+            }, {
+                text: "insert",
+                handler: "insertWeek"
             }],
             columnLines: true,
             rowLines: true,
@@ -207,128 +276,146 @@ Ext.define('editpic.view.week.WeekWin',{
                 ptype: 'rowediting',
                 clicksToEdit: 1,
                 listeners: {
-                    edit: function (edit, context, eOpts) {
-                        var me = context.grid.up("window");
-                        console.log(arguments)
-                        var aStarttime = context.newValues.StartTime.split(":");
-                        var aEndtime = context.newValues.EndTime.split(":");
-                        var starttime = new Date(1970, 1, 1, aStarttime[0], aStarttime[1], aStarttime[2])
-                        var endtime = new Date(1970, 1, 1, aEndtime[0], aEndtime[1], aEndtime[2])
-                        if (starttime > endtime) {
-                            me.dwPars.drawWindowData[context.rowIdx].StartTime = context.originalValues.StartTime
-                            me.dwPars.drawWindowData[context.rowIdx].EndTime = context.originalValues.EndTime
-                            context.store.store.loadData(me.dwPars.drawWindowData)
-                            Ext.Msg.alert('Error', 'Start time is not greater than end time .');
-                            return false;
-                        }
-                        console.log($("#" + context.originalValues.divId))
-                        $("#" + context.originalValues.divId).attr("starttime", starttime).attr("endtime", endtime)
-                        //return false
-                    }
+                    /*edit: function (edit, context, eOpts) {
+                     var me = context.grid.up("window");
+                     console.log(arguments)
+                     var aStarttime = context.newValues.StartTime.split(":");
+                     var aEndtime = context.newValues.EndTime.split(":");
+                     var starttime = new Date(1970, 1, 1, aStarttime[0], aStarttime[1], aStarttime[2]);
+                     var endtime = new Date(1970, 1, 1, aEndtime[0], aEndtime[1], aEndtime[2]);
+                     if (starttime > endtime) {
+                     me.dwPars.drawWindowData[context.rowIdx].StartTime = context.originalValues.StartTime
+                     me.dwPars.drawWindowData[context.rowIdx].EndTime = context.originalValues.EndTime
+                     context.store.store.loadData(me.dwPars.drawWindowData)
+                     Ext.Msg.alert('Error', 'Start time is not greater than end time .');
+                     return false;
+                     }
+                     console.log($("#" + context.originalValues.divId))
+                     $("#" + context.originalValues.divId).attr("starttime", starttime).attr("endtime", endtime)
+                     //return false
+                     }*/
                 }
             },
             selModel: 'rowmodel',
             columns: [
                 {
-                    text: 'divId', dataIndex: 'divId', hidden: true
-                },
-                {
                     text: 'Week',
                     dataIndex: 'Week',
                     flex: 1
                 },
+
                 {
-                    text: 'Start time', dataIndex: 'StartTime', flex: 1, editor: {
-                    xtype: 'spinnerfield',
-                    allowBlank: false,
-                    validator: My.isTime,
-                    onSpinUp: function () {
-                        var oldValue = this.getValue().split(":");
-                        var time = new Date(1970, 1, 1, oldValue[0], oldValue[1], oldValue[2]).getTime()
-                        time += 10000;
-                        var newTime = new Date(time)
-                        var H = newTime.getHours()
-                        var M = newTime.getMinutes()
-                        var S = newTime.getSeconds()
-                        //if(newTime>2649600000&newTime<2736000000)
-                        this.setValue(H + ":" + M + ":" + S);
-                    },
-                    onSpinDown: function () {
-                        var oldValue = this.getValue().split(":");
-                        var time = new Date(1970, 1, 1, oldValue[0], oldValue[1], oldValue[2]).getTime()
-                        time -= 10000;
-                        var newTime = new Date(time)
-                        var H = newTime.getHours()
-                        var M = newTime.getMinutes()
-                        var S = newTime.getSeconds()
-                        this.setValue(H + ":" + M + ":" + S);
-                    }
-                }
-                },
-                {
-                    text: 'End time', dataIndex: 'EndTime', flex: 1
+                    text: 'time', dataIndex: 'time', flex: 1
                     , editor: {
                     xtype: 'spinnerfield',
                     allowBlank: false,
                     validator: My.isTime,
-                    onSpinUp: function () {
-                        var oldValue = this.getValue().split(":");
-                        var time = new Date(1970, 1, 1, oldValue[0], oldValue[1], oldValue[2]).getTime()
-                        time += 10000;
-                        var newTime = new Date(time)
-                        var H = newTime.getHours()
-                        var M = newTime.getMinutes()
-                        var S = newTime.getSeconds()
-                        //if(newTime>2649600000&newTime<2736000000)
-                        this.setValue(H + ":" + M + ":" + S);
+                    onSpinUp: My.onSpinUp,
+                    onSpinDown: My.onSpinDown
+                }
+                },
+                {
+                    text: "activation", dataIndex: 'value',
+                    renderer: function (v) {
+                        if (v) {
+                            return 'on';
+                        } else {
+                            return 'off';
+                        }
                     },
-                    onSpinDown: function () {
-                        var oldValue = this.getValue().split(":");
-                        var time = new Date(1970, 1, 1, oldValue[0], oldValue[1], oldValue[2]).getTime()
-                        time -= 10000;
-                        var newTime = new Date(time)
-                        var H = newTime.getHours()
-                        var M = newTime.getMinutes()
-                        var S = newTime.getSeconds()
-                        this.setValue(H + ":" + M + ":" + S);
+                    editor: {
+                        xtype: 'combo',
+                        store: Ext.create("Ext.data.Store", {
+                            fields: ['name', 'value'],
+                            data: [
+                                {name: "on", value: true},
+                                {name: "off", value: false}
+                            ]
+                        }),
+                        displayField: 'name',
+                        valueField: 'value',
                     }
-                }
-                }
+                },
+                /*{
+                 text: 'divId', dataIndex: 'divId', hidden: true
+                 },
+                 {
+                 text: 'Week',
+                 dataIndex: 'Week',
+                 flex: 1
+                 },
+                 {
+                 text: 'Start time', dataIndex: 'StartTime', flex: 1, editor: {
+                 xtype: 'spinnerfield',
+                 allowBlank: false,
+                 validator: My.isTime,
+                 onSpinUp: function () {
+                 var oldValue = this.getValue().split(":");
+                 var time = new Date(1970, 1, 1, oldValue[0], oldValue[1], oldValue[2]).getTime()
+                 time += 10000;
+                 var newTime = new Date(time)
+                 var H = newTime.getHours()
+                 var M = newTime.getMinutes()
+                 var S = newTime.getSeconds()
+                 //if(newTime>2649600000&newTime<2736000000)
+                 this.setValue(H + ":" + M + ":" + S);
+                 },
+                 onSpinDown: function () {
+                 var oldValue = this.getValue().split(":");
+                 var time = new Date(1970, 1, 1, oldValue[0], oldValue[1], oldValue[2]).getTime()
+                 time -= 10000;
+                 var newTime = new Date(time)
+                 var H = newTime.getHours()
+                 var M = newTime.getMinutes()
+                 var S = newTime.getSeconds()
+                 this.setValue(H + ":" + M + ":" + S);
+                 }
+                 }
+                 },
+                 {
+                 text: 'End time', dataIndex: 'EndTime', flex: 1
+                 , editor: {
+                 xtype: 'spinnerfield',
+                 allowBlank: false,
+                 validator: My.isTime,
+                 onSpinUp: function () {
+                 var oldValue = this.getValue().split(":");
+                 var time = new Date(1970, 1, 1, oldValue[0], oldValue[1], oldValue[2]).getTime()
+                 time += 10000;
+                 var newTime = new Date(time)
+                 var H = newTime.getHours()
+                 var M = newTime.getMinutes()
+                 var S = newTime.getSeconds()
+                 //if(newTime>2649600000&newTime<2736000000)
+                 this.setValue(H + ":" + M + ":" + S);
+                 },
+                 onSpinDown: function () {
+                 var oldValue = this.getValue().split(":");
+                 var time = new Date(1970, 1, 1, oldValue[0], oldValue[1], oldValue[2]).getTime()
+                 time -= 10000;
+                 var newTime = new Date(time)
+                 var H = newTime.getHours()
+                 var M = newTime.getMinutes()
+                 var S = newTime.getSeconds()
+                 this.setValue(H + ":" + M + ":" + S);
+                 }
+                 }
+                 }*/
             ]
         }
     ],
     listeners: {
-
-        boxready: function () {
-            var me = this;
-            var canIntval= setInterval(isCanvasRender,1)
-            function isCanvasRender(){
-                if(me.el.dom.querySelectorAll("canvas").length>4){
-                    me.controller.dwParsInit.call(me)
-                    clearInterval(canIntval)
-                    Ext.MessageBox.progress('Message', {msg: 'Server Ready ...'});
-                    var count = 0;
-                    var interval_0 = setInterval(function () {
-                        Ext.MessageBox.updateProgress(count / 9, 'Loading,please wait... ');
-                        count++
-                        if (count == 10) {
-                            clearInterval(interval_0)
-                            Ext.MessageBox.close();
-                            My.Ajax("resources/main.php?par=gettypevalue&nodename=" + me.sDevNodeName + "&type=Weekly_Schedule&ip="+me.ip+"&port="+me.port, function (response) {
-                                try {
-                                    var text = Ext.decode(response.responseText);
-                                    if (text) {
-                                        me.controller.drawWindowAddDiv.call(me, text)
-                                    }
-                                } catch (e) {
-                                    Ext.Msg.alert('Error', 'load data failure .');
-                                }
-                            })
-                        }
-                    }, 100)
-                }
-            }
+        move: function (me) {
+            me.fireEvent("dwParsInit");
         },
+        nextHandler: "nextHandler",
+        PreviousHandler: "PreviousHandler",
+        dwParsInit: "dwParsInit",
+        jsonToDivData: "jsonToDivData",
+        boxready: "boxready",
+        weekDivAddEvent: "weekDivAddEvent",
+        weekDivResetPosition: "weekDivResetPosition",
+        divDataToJson: "divDataToJson",
         el: {
             contextmenu: function (win, el, eOpts) {
                 var me = Ext.getCmp(this.id);
@@ -336,16 +423,17 @@ Ext.define('editpic.view.week.WeekWin',{
                 //柱子间隔 27  宽100  高625
                 if (el.tagName != "CANVAS") {
                     return;
-                };
+                }
+                ;
                 console.log(win.pageY)
-                if(win.pageY<100){
-                    return ;
+                if (win.pageY < 100) {
+                    return;
                 }
                 console.log(me.el.getTop(true))
                 var WeekArrJson = me.dwPars.WeekArrJson;
-                var pageLeft = win.pageX-me.el.getLeft(true);
-                for(var i=0;i<WeekArrJson.length;i++){
-                    if(WeekArrJson[i].left<pageLeft&WeekArrJson[i].left+100>pageLeft){
+                var pageLeft = win.pageX - me.el.getLeft(true);
+                for (var i = 0; i < WeekArrJson.length; i++) {
+                    if (WeekArrJson[i].left < pageLeft & WeekArrJson[i].left + 100 > pageLeft) {
                         Ext.create('Ext.menu.Menu', {
                             width: 100,
                             plain: true,
@@ -358,23 +446,23 @@ Ext.define('editpic.view.week.WeekWin',{
                                 handler: function () {
                                     me.addNewBar(win)
                                 }
-                            },{
-                                text:"Paste Time",
-                                disabled:true,
-                                handler:function(){
-                                    me.addNewBar(win,me.copydiv);
+                            }, {
+                                text: "Paste Time",
+                                disabled: true,
+                                handler: function () {
+                                    me.addNewBar(win, me.copydiv);
                                 },
-                                listeners:{
-                                    boxready:function(menu){
+                                listeners: {
+                                    boxready: function (menu) {
                                         console.log(me.copydiv)
-                                        if(me.copydiv){
+                                        if (me.copydiv) {
                                             menu.setDisabled(false);
                                         }
                                     }
                                 }
-                            },"-",{
-                                text:"Time Value",
-                                disabled:true
+                            }, "-", {
+                                text: "Time Value",
+                                disabled: true
                             }
                             ]
                         });
@@ -384,12 +472,11 @@ Ext.define('editpic.view.week.WeekWin',{
                 }
 
 
-
                 win.stopEvent();
             }
         }
     },
-    addNewBar: function (eve,copydiv) {
+    addNewBar: function (eve, copydiv) {
         var win = this;
         var WeekArr = win.dwPars.WeekArrJson
         var dw = win.dwPars.dw;
@@ -400,7 +487,6 @@ Ext.define('editpic.view.week.WeekWin',{
         var bMarginTop = win.dwPars.bMarginTop
         var bMaxHeight = win.dwPars.bMaxHeight
         var bLeft;
-
         var div = win.dwPars.div()
             .css("top", eve.pageY - winOffsetTop + "px");
         div.addClass("new")
@@ -408,7 +494,7 @@ Ext.define('editpic.view.week.WeekWin',{
             if (isBarCollsion(eve.pageX, eve.pageY, posLeftArr[i] + winOffsetLeft, bMarginTop, bWidth, bMaxHeight)) {
                 bLeft = posLeftArr[i];
                 div.addClass(WeekArr[i].name);
-                div.addClass("new"+WeekArr[i].name);
+                div.addClass("new" + WeekArr[i].name);
             }
         }
         if (bLeft) {
@@ -418,71 +504,20 @@ Ext.define('editpic.view.week.WeekWin',{
         }
         $(dw.el.dom).append(div)
 
-        win.controller.weekDivAddEvent.call(win, div)
+        win.fireEvent("weekDivAddEvent", div);
+
         var tmStart = win.getTimeByLocation(parseInt(div.css("Top")) - bMarginTop);
         var tmEnd = win.getTimeByLocation(parseInt(div.css("Top")) - bMarginTop + parseInt(div.css("height")))
-        if(copydiv){
-            div.attr("startTime",copydiv.attr("startTime")).attr("endTime",copydiv.attr("endTime"));
-        }else{
+        if (copydiv) {
+            div.attr("startTime", copydiv.attr("startTime")).attr("endTime", copydiv.attr("endTime"));
+        } else {
             div.attr("startTime", tmStart).attr("endTime", tmEnd)
         }
-        win.weekDivResetPosition()
+        win.fireEvent("weekDivResetPosition", false);
     },
     getTimeByLocation: function (weizhi) {
-        var me=this;
+        var me = this;
         var time = new Date(me.dwPars.oneDay * (weizhi / me.dwPars.bMaxHeight) + 2649600000);
         return time;
     },
-    weekDivResetPosition: function (banimate) {
-        var me = this;
-        var WeekArrJson = me.dwPars.WeekArrJson
-        var oCanvas = me.dwPars.oCanvas
-        var oneDay = me.dwPars.oneDay;
-        var bMarginTop = me.dwPars.bMarginTop;
-        WeekArr = me.dwPars.WeekArr;
-        for (var i = 0; i < WeekArr.length; i++) {
-            var dayTimeArr = document.querySelectorAll("." + WeekArr[i]);
-            if (dayTimeArr.length > 0) {
-                for (var j = 0; j < dayTimeArr.length; j++) {
-                    var starttime = new Date($(dayTimeArr[j]).attr("starttime"));
-                    var divStartPageY = parseInt(oCanvas.css("height")) * ((starttime - 2649600000) / oneDay);
-                    //$(dayTimeArr[j]).css("top", divStartPageY + bMarginTop)
-                    var endtime = new Date($(dayTimeArr[j]).attr("endtime"));
-                    var divEndPageY = parseInt(oCanvas.css("height")) * ((endtime - 2649600000) / oneDay);
-                    //$(dayTimeArr[j]).css("height", divEndPageY - divStartPageY + "px");
-                    $(dayTimeArr[j]).animate({
-                        top: divStartPageY + bMarginTop,
-                        height: divEndPageY - divStartPageY
-                    }, 1000)
-                }
-            }
-        }
-        var aWeeks = $(".week");
-        for (var i = 0; i < aWeeks.length; i++) {
-            for (var j = 0; j < WeekArrJson.length; j++) {
-                if ($(aWeeks[i]).hasClass(WeekArrJson[j].name)) {
-                    if (banimate) {
-                        $(aWeeks[i]).css("left", me.dwPars.dw.el.getWidth() / 2.5);
-                        function randomlingdao() {
-                            for (var i = 0; i < 10; i++) {
-                                var a = (Math.random() * 2.5);
-                                if (a > 2 & a < 2.5) {
-                                    return a
-                                }
-                            }
-                            return 2;
-                        }
-
-                        $(aWeeks[i]).animate({
-                            left: WeekArrJson[j].left
-                        }, 1000)
-                    }
-                    else {
-                        $(aWeeks[i]).css("left", WeekArrJson[j].left);
-                    }
-                }
-            }
-        }
-
-    }
 });

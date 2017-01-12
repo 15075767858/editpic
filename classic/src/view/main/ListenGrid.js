@@ -12,14 +12,14 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
     },
     height: 340,
     maxHeight: 340,
-    closeListener: true,
+    closeListener: false,
     initComponent: function () {
         var me = this;
         me.initPrintSettring()
 
         me.initStore();
         me.audioInit();
-        me.callParent()
+        me.callParent();
         me.runListen();
         setTimeout(function () {
             me.initListenerNormal();
@@ -32,16 +32,26 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
         m.loadPrintSettingData(function () {
             me.printSettingModel = m;
         })
-
     },
+
     printLogs: function () {
         var me = this;
         var store = me.store;
         var items = store.data.items;
 
+        var alarmModels = items.filter(function (v) {
+            if (v.data.status == "alarm") {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        console.log(alarmModels);
+        return
         items.sort(function (a, b) {
             return a.data.time > b.data.time;
         })
+
         var number = me.printSettingModel.data.number
         var mode = me.printSettingModel.data.mode
         var printArr = [];
@@ -91,7 +101,7 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
                 },
                 add: function (store, records) {
                     me.playAlarm()
-                    //me.printLogs();
+                    me.printLogs();
                     console.log(this)
                 }
             }
@@ -148,7 +158,7 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
         }
         }, {
             text: "Print Setting",
-            disabled:true,
+            disabled: true,
             icon: EventRootUrl + "graph/resources/icons/print_24px.png",
             handler: "printSetting"
         }, {
