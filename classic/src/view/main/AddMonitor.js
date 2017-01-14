@@ -75,32 +75,68 @@ Ext.define('editpic.view.EventAlarm.AddMonitor', {
                 fieldLabel: "port"
             },
             {
-                xtype: "combo", name: "key", fieldLabel: "key", allowBlank: false, listeners: {
-                focus: function (field) {
-                    console.log(arguments)
-                    var values = field.up("form").getValues();
-                    var id = "SelectKeyWinodw" + field.id
-                    var component = Ext.getCmp(id)
-                    if (component) {
-                        return
-                    }
-                    var selectKeyWin = Ext.createByAlias("SelectKeyWinodw", {
-                        id: id,
-                        ip: values.ip,
-                        port: values.port,
-                        key: field.value,
-                        callback: function (models) {
-                            var objectname = models[0].get("text");
-                            var key = models[0].get("value");
-                            console.log(objectname, key)
-                            field.setValue(key);
-                            field.up().getComponent("objectname").setValue(objectname)
-                            selectKeyWin.close();
+                xtype: "container",
+                layout: "hbox",
+
+                items: [
+                    {
+                        xtype: "textfield", itemId: "key", name: "key", fieldLabel: "key", allowBlank: false,
+                        enableKeyEvents: true,
+                        //checkChangeBuffer:1000,//缓冲改变时间
+                        listeners: {
+                            keyup: function (field) {
+                                console.log(field)
+                                if (field.value.length == 7 & !isNaN(field.value)) {
+                                    var form = field.up('form');
+                                    var ip = form.getValues().ip
+                                    var port = form.getValues().port;
+                                    console.log(field.value)
+                                    Ext.Ajax.request({
+                                        url: "resources/main.php?par=gettypevalue",
+                                        params: {
+                                            ip: ip,
+                                            port: port,
+                                            nodename:field.value,
+                                            type: "Object_Name"
+                                        }
+                                    }).then(function (response) {
+                                        form.getComponent("objectname").setValue(response.responseText);
+                                    })
+                                }
+
+                            }
                         }
-                    })
-                }
-            }
+                    },
+                    {
+                        xtype: "button", text: "select", handler: function (button) {
+                        var field = button.up().getComponent("key");
+                        var form = field.up('form');
+                        var values = form.getValues();
+                        var id = "SelectKeyWinodw" + field.id
+                        var component = Ext.getCmp(id)
+                        if (component) {
+                            return
+                        }
+
+                        var selectKeyWin = Ext.createByAlias("SelectKeyWinodw", {
+                            id: id,
+                            ip: values.ip,
+                            port: values.port,
+                            key: field.value,
+                            callback: function (models) {
+                                var objectname = models[0].get("text");
+                                var key = models[0].get("value");
+                                console.log(objectname, key)
+                                field.setValue(key);
+                                form.getComponent("objectname").setValue(objectname)
+                                selectKeyWin.close();
+                            }
+                        })
+                    }
+                    }
+                ]
             },
+
             {
                 xtype: "textfield",
                 itemId: "objectname",

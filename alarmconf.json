@@ -1,1 +1,1 @@
-[{"ip":"127.0.0.1","port":"6379","key":"1001001","presentvalue":"1212","objectname":"7","alarmtxt":"YXJhcm10eHQ=","normaltxt":"bm9ybWFsdHh0"}]
+[{"ip":"127.0.0.1","port":"6379","key":"1001003","presentvalue":"01121","objectname":"UI3 ","alarmtxt":"YXJhcm10eHQ=","normaltxt":"bm9ybWFsdHh0"},{"ip":"127.0.0.1","port":"6379","key":"1001001","presentvalue":"3","objectname":"7","alarmtxt":"YXJhcm10eHQ=","normaltxt":"bm9ybWFsdHh0"},{"ip":"192.168.253.253","port":"6379","key":"1001001","presentvalue":"2311","objectname":"as","alarmtxt":"YXJhcm10eHQ=","normaltxt":"bm9ybWFsdHh0"}]

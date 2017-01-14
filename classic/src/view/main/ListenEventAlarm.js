@@ -1,7 +1,6 @@
-
-Ext.define('editpic.view.EventAlarm.ListenEventAlarm',{
+Ext.define('editpic.view.EventAlarm.ListenEventAlarm', {
     extend: 'Ext.window.Window',
-    alias:"ListenEventAlarm",
+    alias: "ListenEventAlarm",
     requires: [
         'editpic.view.EventAlarm.ListenEventAlarmController',
         'editpic.view.EventAlarm.ListenEventAlarmModel'
@@ -79,9 +78,29 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm',{
                                 ]
                             }),
                             listeners: {
-                                boxready: function (combo) {
-                                    console.log(combo.setValue(combo.store.getAt(0)))
+                                render: function (combo) {
+                                    Ext.Ajax.request({
+                                        url: "/graph/alarmhis.xml?par="+Math.random()
+                                    }).then(function (response) {
+                                        console.log(response)
+                                        var xml = response.responseXML
+                                        if (xml) {
+                                            var savetime = xml.querySelector("savetime").innerHTML
+                                            var store = combo.store;
+                                            for (var i = 0; i < store.data.length; i++) {
+                                                var model = store.getAt(i)
+                                                console.log(savetime)
+                                                console.log(model.get("value"))
+                                                console.log(savetime==model.get("value"))
+                                                if(savetime==model.get("value")){
+                                                    combo.setValue(model)
+                                                }
+                                            }
+                                        }
+                                    })
+                                    //console.log(combo.setValue(combo.store.getAt(0)))
                                 }
+
                             }
                         }, {
                             xtype: "button", text: "Ok", handler: function () {

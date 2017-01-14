@@ -179,6 +179,7 @@ Ext.define('editpic.view.EventAlarm.EventAlarmSetting', {
                     text: "Add Monitor",
                     handler: function () {
                         Ext.createByAlias("AddMonitor", {
+                            x:100,
                             callback: function (model) {
                                 grid.store.add(model)
                                 Ext.Msg.alert("Massage", "ok , add Monitor")

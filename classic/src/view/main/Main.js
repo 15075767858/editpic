@@ -72,7 +72,6 @@ Ext.define('editpic.view.main.Main', {
                     handler: "toNewVersion",
                     hidden: true
                 },
-
                 {
                     text: "Backup Graphic", handler: "BackupGraphice"
                 },
@@ -89,7 +88,7 @@ Ext.define('editpic.view.main.Main', {
                 }, {
                     text: "about",
                     handler: function () {
-                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.66")
+                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.67")
                     }
                 }
             ]

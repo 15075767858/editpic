@@ -41,7 +41,9 @@ class EventAlarm
             $savetime->nodeValue = $time;
             $dom->appendChild($savetime);//设置root为跟节点
         }
-        return $dom->save($this::alarmhisXml);
+        //return $dom->save($this::alarmhisXml);
+        return $dom->save($this::alarmhisXml, LIBXML_NOEMPTYTAG);
+
     }
 
     public function addLog($arr)
@@ -73,7 +75,7 @@ class EventAlarm
                 $callback($log);
             }
         }
-        return $dom->save($this::alarmhisXml);
+        return $dom->save($this::alarmhisXml, LIBXML_NOEMPTYTAG);
     }
 
     public function delLog($arr)
@@ -134,7 +136,7 @@ class EventAlarm
             $root->appendChild($savetime);
             $logs = $dom->createElement('logs');//新建节点
             $root->appendChild($logs);
-            $dom->save($this::alarmhisXml);
+            $dom->save($this::alarmhisXml, LIBXML_NOEMPTYTAG);
             return file_get_contents($this::alarmhisXml);
         } else {
             return file_get_contents($this::alarmhisXml);
@@ -179,7 +181,7 @@ class EventAlarm
         $dom = new DOMDocument('1.0', 'UTF-8');
         $dom->formatOutput = true;
         $dom->loadXML($content);
-        $dom->save($this::alarmconfXml);
+        $dom->save($this::alarmconfXml, LIBXML_NOEMPTYTAG);
         return strlen($content);
         //return file_put_contents($this::alarmconfXml, $content);
     }
@@ -189,7 +191,7 @@ class EventAlarm
         $dom = new DOMDocument('1.0', 'UTF-8');
         $dom->formatOutput = true;
         $dom->loadXML($content);
-        $dom->save($this::alarmhisXml);
+        $dom->save($this::alarmhisXml, LIBXML_NOEMPTYTAG);
         return strlen($content);
     }
 
@@ -399,6 +401,7 @@ if ($par == "setSaveTime") {
     if ($_REQUEST['alarmhis'] == "true") {
         $time = $_REQUEST['savetime'];
         $size = $eventAlarm->setSaveTime($time);
+
         echo "{success:true,info:'$size'}";
     } else {
         $time = 0;
