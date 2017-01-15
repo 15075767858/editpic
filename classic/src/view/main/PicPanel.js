@@ -227,16 +227,49 @@ Ext.define('editpic.view.panel.PicPanel', {
         var me = this;
         me.menuWindow = Ext.create("Ext.window.Window", {
             hideMode: "offsets",
-            width: 110,
+            title: "tools",
+            width: 140,
             height: 75,
             listeners: {
+                boxready: function () {
+                    console.log("boxready")
+                    //console.log(me.show())
+                    me.textfield.setValue('asd')
+                },
+                show: function () {
+                    console.log("show")
+                    me.textfield.focus();
+                    setTimeout(function () {
+                        me.textfield.focus();
+                    })
+                },
                 beforeclose: function () {
                     console.log("close")
                     me.menuWindow.hide()
+                    me.textfield.focus();
                     return false;
                 }
             },
             tbar: [
+                {
+                    icon: 'resources/icons/copy_24px.png',
+                    tooltip: "copy",
+                    handler: function () {
+                        var items = me.getSelectItems()
+                        for (var i = 0; i < items.length; i++) {
+                             me.copyImg = items[i];
+                            var img =  me.pasteImg();
+                            img.selectStyle(true)
+                            items[i].selectStyle(false)
+                        }
+                        me.menuWindow.close();
+                        me.textfield.focus()
+                        setTimeout(function(){
+                            me.textfield.focus()
+                        },1000)
+
+                    }
+                },
                 {
                     icon: 'resources/icons/left_alignment_16px.png', tooltip: "left alignment",
                     handler: function () {
@@ -545,7 +578,18 @@ Ext.define('editpic.view.panel.PicPanel', {
         me.viewModel.set("removeStack", removeStack.concat([]));
     },
     //sprites: [],
-
+    pasteImg: function () {
+        var me = this;
+        if (me.copyImg) {
+            var data = me.copyImg.getInitData()
+            data.x = data.x + 10
+            data.y = data.y + 10
+            var img = My.createImg(data)
+            me.add(img)
+            img.init(data)
+            return img;
+        }
+    },
     listeners: {
         boxready: "boxready",
         add: function () {
@@ -565,14 +609,16 @@ Ext.define('editpic.view.panel.PicPanel', {
                     items: [
                         {
                             text: "paste", disabled: !me.copyImg, handler: function () {
-                            if (me.copyImg) {
-                                var data = me.copyImg.getInitData()
-                                data.x = data.x + 10
-                                data.y = data.y + 10
-                                var img = My.createImg(data)
-                                me.add(img)
-                                img.init(data)
-                            }
+                            me.pasteImg();
+                            /*
+                             if (me.copyImg) {
+                             var data = me.copyImg.getInitData()
+                             data.x = data.x + 10
+                             data.y = data.y + 10
+                             var img = My.createImg(data)
+                             me.add(img)
+                             img.init(data)
+                             }*/
                         }
                         }
                     ]

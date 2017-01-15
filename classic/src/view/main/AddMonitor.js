@@ -84,19 +84,18 @@ Ext.define('editpic.view.EventAlarm.AddMonitor', {
                         enableKeyEvents: true,
                         //checkChangeBuffer:1000,//缓冲改变时间
                         listeners: {
-                            keyup: function (field) {
+                            change: function (field,newValue) {
                                 console.log(field)
-                                if (field.value.length == 7 & !isNaN(field.value)) {
+                                if (newValue.length == 7 & !isNaN(newValue)) {
                                     var form = field.up('form');
                                     var ip = form.getValues().ip
                                     var port = form.getValues().port;
-                                    console.log(field.value)
                                     Ext.Ajax.request({
                                         url: "resources/main.php?par=gettypevalue",
                                         params: {
                                             ip: ip,
                                             port: port,
-                                            nodename:field.value,
+                                            nodename:newValue,
                                             type: "Object_Name"
                                         }
                                     }).then(function (response) {

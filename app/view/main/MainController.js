@@ -1288,6 +1288,7 @@ My.initComponentConfig = {
          textfield.focus()*/
     },
     moveController: function (e) {
+        console.log(e)
         if (!e.keyCode) {
             return;
         }
