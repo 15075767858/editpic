@@ -12,9 +12,21 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm', {
     },
     collapsible: true,
     autoShow: true,
-    title: "Listen Event Alarm",
+    header: {
+        title: "Listen Event Alarm",
+        items: [{
+            xtype: "button",
+            text: "User Manager",
+            handler:function(){
+                Ext.create("UserManager")
+            }
+        }],
+        //layout:"fit"
+    },
+    //title: "Listen Event Alarm",
     width: 900,
     y: 100,
+
     initComponent: function () {
         var me = this;
         me.initItemsListen()
@@ -80,7 +92,7 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm', {
                             listeners: {
                                 render: function (combo) {
                                     Ext.Ajax.request({
-                                        url: "/graph/alarmhis.xml?par="+Math.random()
+                                        url: "/graph/alarmhis.xml?par=" + Math.random()
                                     }).then(function (response) {
                                         console.log(response)
                                         var xml = response.responseXML
@@ -91,8 +103,8 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm', {
                                                 var model = store.getAt(i)
                                                 console.log(savetime)
                                                 console.log(model.get("value"))
-                                                console.log(savetime==model.get("value"))
-                                                if(savetime==model.get("value")){
+                                                console.log(savetime == model.get("value"))
+                                                if (savetime == model.get("value")) {
                                                     combo.setValue(model)
                                                 }
                                             }
