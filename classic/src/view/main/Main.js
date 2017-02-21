@@ -42,10 +42,10 @@ Ext.define('editpic.view.main.Main', {
     listeners: {
         boxready: function (panel) {
             //panel.createOutLoginMenu()
-            //var maintab = Ext.getCmp("mintab");
-            //setTimeout(function () {
-            //    maintab.addTab("index")
-            //},5000)
+            var maintab = Ext.getCmp("mintab");
+            setTimeout(function () {
+                maintab.addTab("index")
+            },1000)
         }
     },
     createOutLoginMenu: function () {
@@ -259,6 +259,7 @@ Ext.define('editpic.view.main.Main', {
                      me.addTab(resObj['graph'])
                      }
                      }*/
+
                     var resObj = My.getSearch();
                     if (resObj) {
                         me.removeAll();
