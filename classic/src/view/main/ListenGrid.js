@@ -295,8 +295,9 @@ Ext.define('editpic.view.EventAlarm.ListenGrid', {
                     success(resArr);
                 }
             } catch (e) {
-                console.log(e)
-                Ext.Msg.alert("Error", e)
+                //console.log(e)
+                throw new Error(e)
+                ///Ext.Msg.alert("Error", e)
             }
         })
     },

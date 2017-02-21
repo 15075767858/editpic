@@ -409,7 +409,17 @@ Ext.define('editpic.view.panel.PicPanel', {
     load: function (json) {
 
         var start = new Date().getTime();
+        console.log(json)
+
         var me = this;
+        console.log(me.body)
+        //me.load(json);
+
+        /*if(!me.body){
+            setTimeout(function(){
+            },1000)
+            return;
+        }*/
         me.body.setStyle("backgroundColor", json.bodyColor);
         var data = json.items;
         var bufferContainer = Ext.create("Ext.panel.Panel", {

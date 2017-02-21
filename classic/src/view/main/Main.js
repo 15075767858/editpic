@@ -42,8 +42,10 @@ Ext.define('editpic.view.main.Main', {
     listeners: {
         boxready: function (panel) {
             //panel.createOutLoginMenu()
-            var maintab = Ext.getCmp("mintab");
-            maintab.addTab("index")
+            //var maintab = Ext.getCmp("mintab");
+            //setTimeout(function () {
+            //    maintab.addTab("index")
+            //},5000)
         }
     },
     createOutLoginMenu: function () {
@@ -103,7 +105,7 @@ Ext.define('editpic.view.main.Main', {
                 }, {
                     text: "about",
                     handler: function () {
-                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.75")
+                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.76")
                     }
                 }
             ]
@@ -193,6 +195,12 @@ Ext.define('editpic.view.main.Main', {
                 }
                 var me = this;
 
+                var resDataJson = My.getImageDataByJson(text)
+                if (resDataJson == null) {
+                    Ext.Msg.alert("Exception", text + " does not exist .")
+                    return;
+                }
+
                 var panel = me.getTabByTitle(text);
                 if (panel) {
                     panel.close()
@@ -216,8 +224,8 @@ Ext.define('editpic.view.main.Main', {
                         items: picPanel
                     }
                 ).show()
+                picPanel.load(resDataJson)
 
-                picPanel.load(My.getImageDataByJson(text))
             },
             defaults: {
                 bodyStyle: {
@@ -228,17 +236,17 @@ Ext.define('editpic.view.main.Main', {
             },
             items: [
                 /*{
-                    xtype: "panel",
-                    title: "untitled",
-                    //minWidth:1024,
-                    //minHeight:768,
-                    scrollable: true,
-                    items: {
-                        xtype: "picpanel",
-                        x: 0,
-                        y: 0
-                    }
-                }*/
+                 xtype: "panel",
+                 title: "untitled",
+                 //minWidth:1024,
+                 //minHeight:768,
+                 scrollable: true,
+                 items: {
+                 xtype: "picpanel",
+                 x: 0,
+                 y: 0
+                 }
+                 }*/
             ],
             listeners: {
                 boxready: function () {
