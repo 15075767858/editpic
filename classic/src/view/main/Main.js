@@ -42,6 +42,8 @@ Ext.define('editpic.view.main.Main', {
     listeners: {
         boxready: function (panel) {
             //panel.createOutLoginMenu()
+            var maintab = Ext.getCmp("mintab");
+            maintab.addTab("index")
         }
     },
     createOutLoginMenu: function () {
@@ -101,7 +103,7 @@ Ext.define('editpic.view.main.Main', {
                 }, {
                     text: "about",
                     handler: function () {
-                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.73")
+                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.75")
                     }
                 }
             ]
@@ -225,7 +227,7 @@ Ext.define('editpic.view.main.Main', {
                 closable: true
             },
             items: [
-                {
+                /*{
                     xtype: "panel",
                     title: "untitled",
                     //minWidth:1024,
@@ -236,7 +238,7 @@ Ext.define('editpic.view.main.Main', {
                         x: 0,
                         y: 0
                     }
-                }
+                }*/
             ],
             listeners: {
                 boxready: function () {
