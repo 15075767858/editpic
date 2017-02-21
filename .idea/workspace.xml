@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/classic/src/view/main/Main.js" description="}" line="108" />
+    <bookmark url="file://$PROJECT_DIR$/classic/src/view/main/Main.js" description="}" line="110" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4568aa7c-9baf-4272-89c0-4058b3e5febd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/autoGraph.tar.bz2" afterPath="$PROJECT_DIR$/build/production/autoGraph.tar.bz2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph.tar.bz2" afterPath="$PROJECT_DIR$/build/production/graph.tar.bz2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap.css" afterPath="$PROJECT_DIR$/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap.js" afterPath="$PROJECT_DIR$/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic.json" afterPath="$PROJECT_DIR$/build/production/graph/classic.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/app.js" afterPath="$PROJECT_DIR$/build/production/graph/classic/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern.json" afterPath="$PROJECT_DIR$/build/production/graph/modern.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/Main.js" afterPath="$PROJECT_DIR$/classic/src/view/main/Main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modern.json" afterPath="$PROJECT_DIR$/modern.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.js" afterPath="$PROJECT_DIR$/sass/example/bootstrap.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
     </list>
     <ignored path="editpic.iws" />
@@ -43,22 +45,19 @@
       <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+            <state relative-caret-position="154">
+              <caret line="109" column="106" selection-start-line="109" selection-start-column="106" selection-end-line="109" selection-end-column="106" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+      <file leaf-file-name="LinkTool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/img/LinkTool.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="1628" column="24" selection-start-line="1628" selection-start-column="19" selection-end-line="1628" selection-end-column="24" />
-              <folding>
-                <marker date="1484399783000" expanded="true" signature="8595:8616" ph="..." />
-                <marker date="1484399783000" expanded="true" signature="47098:47115" ph="..." />
-              </folding>
+            <state relative-caret-position="89">
+              <caret line="75" column="37" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -296,6 +295,28 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graph" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -524,7 +545,8 @@
       <workItem from="1484631186222" duration="1181000" />
       <workItem from="1487561241467" duration="3212000" />
       <workItem from="1487663699683" duration="3258000" />
-      <workItem from="1487668278329" duration="917000" />
+      <workItem from="1487668278329" duration="1292000" />
+      <workItem from="1487670016746" duration="127000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1468561867953</created>
@@ -607,14 +629,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262625000" />
+    <option name="totallyTimeSpent" value="263127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279483" sideWeight="0.49754602" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33279485" sideWeight="0.49754602" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21555915" sideWeight="0.6882068" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -836,7 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,7 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,9 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487668825000" expanded="true" signature="93193:93216" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -933,10 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1215">
           <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding>
-            <marker date="1470834223000" expanded="true" signature="1364:1387" ph="..." />
-            <marker date="1470834223000" expanded="true" signature="2022:2106" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -947,19 +960,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/img/LinkTool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/ListenGrid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="297" column="18" selection-start-line="297" selection-start-column="18" selection-end-line="297" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,7 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="269" column="19" selection-start-line="269" selection-start-column="19" selection-end-line="269" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,7 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -983,7 +985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="106" column="11" selection-start-line="106" selection-start-column="11" selection-end-line="106" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -991,13 +992,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
+        <state relative-caret-position="397">
           <caret line="1628" column="24" selection-start-line="1628" selection-start-column="19" selection-end-line="1628" selection-end-column="24" />
           <folding>
             <marker date="1484399783000" expanded="true" signature="8595:8616" ph="..." />
@@ -1006,10 +1006,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/img/LinkTool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="75" column="37" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        <state relative-caret-position="154">
+          <caret line="109" column="106" selection-start-line="109" selection-start-column="106" selection-end-line="109" selection-end-column="106" />
           <folding />
         </state>
       </provider>
