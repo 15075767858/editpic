@@ -21,12 +21,18 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     xtype: 'checkbox',
                     fieldLabel: "bind",
                     name: 'isBind',
-                    hidden: false,
+                    hidden: true,
                     inputValue: true,
                     reference: "isBind",
                     bind: itype != 0 || {
                         disabled: "{!isLinkDataBase.checked}"
-                    }, handler: function (field, value) {
+                    },
+                    listeners:{
+                      render:function(checkbox){
+                          checkbox.setValue(true)
+                      }
+                    },
+                    handler: function (field, value) {
                     var priority = me.lookup("priority");
                     var isBindPriority = me.lookup("isBindPriority");
                     if (!value) {
@@ -336,8 +342,13 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     xtype: 'checkbox',
                     fieldLabel: "bind",
                     name: 'isBind',
-                    hidden: false,
-                    reference: "isBind"
+                    hidden: true,
+                    reference: "isBind",
+                    listeners:{
+                        render:function(checkbox){
+                            checkbox.setValue(true)
+                        }
+                    }
                 },
                 {
                     xtype: "combo",
@@ -432,6 +443,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         var devscombo = me.lookup("devscombo")
                         console.log(devscombo)
                         devscombo.setStore(store)
+                        devscombo.setDisabled(false)
                     } else {
                         Ext.Msg.alert("Error", "Connect to database failed !");
                     }
@@ -441,11 +453,20 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 xtype: "combo",
                 name: "device",
                 fieldLabel: "devices",
+                //disabled:true,
                 allowBlank: true,
                 itemId: "devscombo",
                 reference: "devscombo",
                 editable: true,
-                store: devs
+                store: devs,
+                listeners:{
+                    render:function(combo){
+                        if(!combo.value){
+                            combo.setDisabled(true)
+                        }
+                    }
+
+                }
             })
 
         }
