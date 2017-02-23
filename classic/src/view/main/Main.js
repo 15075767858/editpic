@@ -67,11 +67,14 @@ Ext.define('editpic.view.main.Main', {
         {
             text: "File",
             menu: [
+
                 {
                     text: "save", handler: "saveHandler"
                 }, {
                     text: "open", handler: "openNewHandler", hidden: true
-                }, {
+                },
+
+                {
                     text: "open old version", handler: "openHandler", hidden: true
                 },
                 {
@@ -79,6 +82,9 @@ Ext.define('editpic.view.main.Main', {
                     {text: "open", handler: "openNewHandler"},
                     {text: "data.json to new version data", handler: "toNewVersion"}
                 ]
+                },
+                {
+                    text:"new",handler:"createNewTab"
                 },
                 {
                     text: "delete", handler: "deleteHandler"
@@ -107,7 +113,7 @@ Ext.define('editpic.view.main.Main', {
                 }, {
                     text: "about",
                     handler: function () {
-                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.79")
+                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.80")
                     }
                 }
             ]
@@ -208,7 +214,7 @@ Ext.define('editpic.view.main.Main', {
                     panel.close()
                 }
 
-                var picPanel = Ext.create("editpic.view.panel.PicPanel", {
+                /*var picPanel = Ext.create("editpic.view.panel.PicPanel", {
                     x: 0,
                     y: 0,
                     constrainHeader: false,
@@ -225,9 +231,31 @@ Ext.define('editpic.view.main.Main', {
                         //layout:"absolute",
                         items: picPanel
                     }
-                ).show()
+                ).show()*/
+                var picPanel = me.createNewTab(text)
                 picPanel.load(resDataJson)
 
+            },
+            createNewTab: function (text) {
+                var me = this;
+                var picPanel = Ext.create("editpic.view.panel.PicPanel", {
+                    x: 0,
+                    y: 0,
+                    constrainHeader: false,
+                    constrain: false,
+                })
+                me.add(
+                    {
+                        xtype: "panel",
+                        constrainHeader: false,
+                        constrain: false,
+                        title: text,
+                        scrollable: true,
+                        //layout:"absolute",
+                        items: picPanel
+                    }
+                ).show()
+                return picPanel
             },
             defaults: {
                 bodyStyle: {

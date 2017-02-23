@@ -124,7 +124,6 @@ Ext.define('editpic.view.main.MainController', {
             password: ""
         })
     },
-
     saveHandler: function () {
         var curPanel = Ext.getCmp("mintab").getCurrentTab()
         console.log(curPanel)
@@ -216,6 +215,9 @@ Ext.define('editpic.view.main.MainController', {
             ]
         })
 
+    },
+    createNewTab:function(){
+        Ext.getCmp("mintab").createNewTab("untitled")
     },
     toNewVersion: function () {
         var textarea = Ext.create("Ext.form.field.TextArea", {
