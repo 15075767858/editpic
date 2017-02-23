@@ -72,7 +72,7 @@ Ext.define('editpic.view.img.DevicesTool', {
                 if (!me.device) {
                     return;
                 }
-                var types = ['AI', "AO", "AV", "BI", "BO", "BV", "SCHEDULE"]
+                var types = ['AI', "AO", "AV", "BI", "BO", "BV"]
                 var gridItems = [];
                 for (var i = 0; i < types.length; i++) {
                     var store = My.getDevsByDevName(me.ip, me.port, me.device);
@@ -81,19 +81,22 @@ Ext.define('editpic.view.img.DevicesTool', {
                             return item.data.value.substr(0, 5) == me.device + i
                         }
                     ])
+
                     gridItems.push({
                         title: types[i],
                         xtype: "grid",
                         border: true,
                         //split:true,
+                        height: 340,
+                        maxHeight: 340,
                         fields: ['name', "value", 'Present_Value'],
                         store: store,
                         autoScroll: true,
                         columns: [
                             {
-                                dataIndex: "name", text: "name", flex: 1
+                                dataIndex: "name", text: "name", flex: 3
                             }, {
-                                dataIndex: "value", text: "key", flex: 1,hidden:true
+                                dataIndex: "value", text: "key", flex: 1, hidden: true
                             },
                             {
                                 dataIndex: "Present_Value", text: "value", flex: 1
@@ -107,7 +110,17 @@ Ext.define('editpic.view.img.DevicesTool', {
                     title: me.device + " devices",
                     width: Ext.getBody().getWidth(),
                     height: 600,
-                    layout: "hbox",
+                    //layout: "hbox",
+                    layout: {
+                        type: "table",
+                        columns: 3,
+                        tableAttrs: {
+                            style: {
+                                flex: 1,
+                                width: "100%"
+                            }
+                        }
+                    },
                     defaults: {
                         flex: 1,
                         margin: 3
