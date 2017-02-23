@@ -340,7 +340,6 @@ Ext.define('editpic.view.img.BaseTool', {
             console.log("move")
         },
         el: {
-            select:My.stopEventAndPro,
             scope: "this",
             click: "click",
 
