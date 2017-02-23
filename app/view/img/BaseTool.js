@@ -329,6 +329,7 @@ Ext.define('editpic.view.img.BaseTool', {
             })
 
         },
+
         resize: function (me, width, height) {
             me.mySetWidth(width);
             me.mySetHeight(height)
@@ -339,6 +340,7 @@ Ext.define('editpic.view.img.BaseTool', {
             console.log("move")
         },
         el: {
+            select:My.stopEventAndPro,
             scope: "this",
             click: "click",
 

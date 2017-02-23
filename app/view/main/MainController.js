@@ -2357,6 +2357,7 @@ Ext.onReady(function () {
 }.bind(My))
 
 My.stopEventAndPro=function(e){
+    console.log(e)
     e.stopPropagation();
     return false;
 }

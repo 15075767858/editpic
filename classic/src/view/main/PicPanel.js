@@ -36,6 +36,7 @@ Ext.define('editpic.view.panel.PicPanel', {
     viewModel: {
         type: 'panel-picpanel'
     },
+    bodyCls:"disableSelect",
     collapsible: true,
     resizable: true,
     scrollable: true,
@@ -82,14 +83,14 @@ Ext.define('editpic.view.panel.PicPanel', {
             el: {
                 mousedown: function (e, target, oP) {
                     My.stopEventAndPro(e)
-                    console.log(e)
+                    //console.log(e)
                     var dom = this.component.up().body.el.dom
 
 
                     var st = dom.scrollTop;
                     var sl = dom.scrollLeft;
                     var offsetXY = this.getOffsetsTo( this.component.up())
-                    console.log(offsetXY)
+                    //console.log(offsetXY)
                     //b.getOffsetsTo(Ext.getBody())
                     My.pageX=-offsetXY[0];
                     My.pageY=-offsetXY[1];
@@ -143,10 +144,10 @@ Ext.define('editpic.view.panel.PicPanel', {
                         })
                         document.onmousemove = null;
                         document.onmouseup = null;
-                        setTimeout(function () {
+                        /*setTimeout(function () {
                             dom.scrollTop = st
                             dom.scrollLeft = sl
-                        }, 1)
+                        }, 1)*/
                     }
                 },
             }
@@ -190,7 +191,7 @@ Ext.define('editpic.view.panel.PicPanel', {
             var mRheight = mR.y + mR.height;
             var oRwidth = oR.x + oR.width;
             var oRheight = oR.y + oR.height;
-            console.log(mR.x < oR.x & mR.y < oR.y & mR.width > oR.width & mR.height > oR.height)
+            //console.log(mR.x < oR.x & mR.y < oR.y & mR.width > oR.width & mR.height > oR.height)
             if (mR.x < oR.x & mR.y < oR.y & mRwidth > oRwidth & mRheight > oRheight) {
                 return true;
             } else {
@@ -356,7 +357,7 @@ Ext.define('editpic.view.panel.PicPanel', {
         })
 
         me.add(textfield)
-        //textfield.setZIndex(-1)
+        textfield.setZIndex(-1)
 
         textfield.focus()
         textfield.focus()
