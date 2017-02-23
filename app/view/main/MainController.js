@@ -2355,3 +2355,8 @@ Ext.onReady(function () {
     test.diffSecond = diffSecond;
     My.test = test
 }.bind(My))
+
+My.stopEventAndPro=function(e){
+    e.stopPropagation();
+    return false;
+}

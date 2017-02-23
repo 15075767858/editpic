@@ -70,11 +70,29 @@ Ext.define('editpic.view.panel.PicPanel', {
         me.initMenusWindow()
 
         me.listeners = {
+            boxready:function(panel){
+                console.log(panel)
+                var dom = panel.el.dom;
+                //dom.onclick=My.stopEventAndPro;
+                //dom.onselect=My.stopEventAndPro;
+                //dom.onmousedown=stopEventAndPro;
+
+
+            },
             el: {
                 mousedown: function (e, target, oP) {
+                    My.stopEventAndPro(e)
+                    console.log(e)
                     var dom = this.component.up().body.el.dom
+
+
                     var st = dom.scrollTop;
                     var sl = dom.scrollLeft;
+                    var offsetXY = this.getOffsetsTo( this.component.up())
+                    console.log(offsetXY)
+                    //b.getOffsetsTo(Ext.getBody())
+                    My.pageX=-offsetXY[0];
+                    My.pageY=-offsetXY[1];
                     me.unSelect()
                     if (me.body.getTop() > e.pageY) {
                         return;
@@ -121,7 +139,6 @@ Ext.define('editpic.view.panel.PicPanel', {
                     document.onmouseup = function () {
                         me.selectPanel.close()
                         me.selectComponent(function () {
-                            console.log(this)
                             me.showFlowMenu()
                         })
                         document.onmousemove = null;
@@ -327,6 +344,8 @@ Ext.define('editpic.view.panel.PicPanel', {
             hidden: false,
             width: 1,
             height: 1,
+            x:My.pageX,
+            y:My.pageY,
             listeners: {
                 specialkey: focusFn,
                 focusleave: leaveFn || function () {
@@ -335,8 +354,10 @@ Ext.define('editpic.view.panel.PicPanel', {
                 }
             }
         })
+
         me.add(textfield)
-        textfield.setZIndex(-1)
+        //textfield.setZIndex(-1)
+
         textfield.focus()
         textfield.focus()
         return textfield;
