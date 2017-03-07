@@ -31,7 +31,8 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.ux.KeyBoard",
         "editpic.view.week.WeekWin",
         "editpic.view.window.EditFile",
-        "editpic.view.EventAlarm.EventAlarmSetting"
+        "editpic.view.EventAlarm.EventAlarmSetting",
+        'graph.view.window.ShowDevices'
         //"editpic.view.tool.PublishPic"
     ],
 
@@ -42,6 +43,9 @@ Ext.define('editpic.view.main.Main', {
     listeners: {
         boxready: function (panel) {
             //panel.createOutLoginMenu()
+
+
+
             if (!My.getSearch()) {
                 var maintab = Ext.getCmp("mintab");
                 setTimeout(function () {
@@ -113,7 +117,7 @@ Ext.define('editpic.view.main.Main', {
                 }, {
                     text: "about",
                     handler: function () {
-                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.83")
+                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.85")
                     }
                 }
             ]

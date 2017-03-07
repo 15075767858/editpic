@@ -777,7 +777,7 @@ My.getDevsByDevName = function (ip, port, devname) {
                     return store;
                 } else {
                     store = Ext.create("Ext.data.Store", {
-                        fields: ['name', 'value', 'Present_Value'],
+                        fields: ['name', 'value', 'Present_Value','update'],
                         data: ojson
                     })
                 }

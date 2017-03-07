@@ -790,6 +790,8 @@ $include-graph-view-ux-colorselectcontroller: dynamic(false);;
 $include-graph-view-ux-colorselectmodel: dynamic(false);;
 $include-graph-view-window-schedulecontroller: dynamic(false);;
 $include-graph-view-window-schedulemodel: dynamic(false);;
+$include-graph-view-window-showdevicescontroller: dynamic(false);;
+$include-graph-view-window-showdevicesmodel: dynamic(false);;
 $output-paths: ("path": "../../modern/resources", "shared": "../../resources");
 
 /* ======================== ETC ======================== */
