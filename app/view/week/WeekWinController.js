@@ -459,6 +459,7 @@ Ext.define('editpic.view.week.WeekWinController', {
         me.dwPars = (function () {
             var drawWindowData = []
             var WeekArr = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+            var ShowWeekArr = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
             var WeekArrJson = [
                 {name: "monday", left: "", oldCount: 0},
                 {name: "tuesday", left: "", oldCount: 0},
@@ -480,14 +481,25 @@ Ext.define('editpic.view.week.WeekWinController', {
             var startPoint = bMarginLeft + interval / 2 - 6;
             var posLeftArr = [];
             posLeftArr.push(startPoint)
+
             WeekArrJson[0]['left'] = startPoint;
+            var __startPoint = startPoint;
             for (var i = 0; i < 7; i++) {
+
                 var weekleft = Math.ceil(startPoint += bWidth + interval);
                 posLeftArr.push(weekleft)
                 if (i < 6) {
                     WeekArrJson[i + 1]['left'] = weekleft;
                 }
             }
+            posLeftArr.push(posLeftArr.shift())
+            console.log(posLeftArr)
+            for (var i = 0; i < WeekArrJson.length; i++) {
+                WeekArrJson[i].left = posLeftArr[i]
+            }
+            WeekArrJson[6].left = __startPoint
+
+            console.log(WeekArrJson)
             var bMaxHeight = oCanvas.attr("height");
             var bMarginTopHeight = parseInt(bMarginTop) + parseInt(bMaxHeight);
 
@@ -503,9 +515,8 @@ Ext.define('editpic.view.week.WeekWinController', {
                 return div;
             }
 
-            //.css("top", bMarginTop + "px");
-            //.css("top", win.pageY - winOffsetTop + "px");
             var e = {
+                ShowWeekArr: ShowWeekArr,
                 WeekArrJson: WeekArrJson,
                 dw: dw,
                 oCanvas: oCanvas,
@@ -577,11 +588,17 @@ Ext.define('editpic.view.week.WeekWinController', {
             }
         }
     },
+    modifyHandler: function () {
+        var __this = this;
+        var me = this.view;
+        var viewModel = me.viewModel;
+        viewModel.data["modify"]["0"] = true;
+        __this.savePublish();
+        me.close();
+    },
     insertWeek: function () {
         var me = this.view;
         var gridPanel = this.view.down("gridpanel")
-        var wm0 = Ext.createByAlias("WeekModel");
-        var wm1 = Ext.createByAlias("WeekModel");
 
         var win = Ext.create('Ext.window.Window', {
                 title: "insert",
@@ -589,6 +606,8 @@ Ext.define('editpic.view.week.WeekWinController', {
                 buttons: [
                     {
                         text: "Ok", handler: function () {
+                        var wm0 = Ext.createByAlias("WeekModel");
+                        var wm1 = Ext.createByAlias("WeekModel");
 
                         var form = win.down("form")
                         var values = form.getValues()
@@ -599,7 +618,8 @@ Ext.define('editpic.view.week.WeekWinController', {
                         wm1.set("time", values.endTime)
                         wm1.set("value", values.endActivation)
                         console.log(wm0, wm1)
-                        gridPanel.store.add([wm0, wm1])
+                        //gridPanel.store.add([wm0, wm1])
+                        gridPanel.store.add(wm0)
                         delayToast("Massage", "Insert Ok .")
                     }
                     },
@@ -635,7 +655,7 @@ Ext.define('editpic.view.week.WeekWinController', {
                         {
                             xtype: 'spinnerfield',
                             name: "startTime",
-                            fieldLabel: "start time",
+                            fieldLabel: "Time",
                             allowBlank: false,
                             validator: My.isTime,
                             value: "0:0:1",
@@ -660,11 +680,13 @@ Ext.define('editpic.view.week.WeekWinController', {
                             listeners: {
                                 render: function (field) {
                                     console.log(field)
-                                    field.setValue(field.store.getAt(0))
+                                    field.setValue(field.store.getAt(1))
                                 }
                             }
                         },
                         {
+                            hidden:true,
+
                             xtype: 'spinnerfield',
                             name: "endTime",
                             fieldLabel: "end time",
@@ -676,6 +698,7 @@ Ext.define('editpic.view.week.WeekWinController', {
                             editable: true
                         },
                         {
+                            hidden:true,
                             xtype: 'combo',
                             name: "endActivation",
                             fieldLabel: "activation",

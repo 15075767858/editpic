@@ -6711,3 +6711,7 @@ tr.x-grid-subtable-row {
     -ms-user-select: none;
     user-select: none;
 }
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:191 */
+.phoneButton {
+    border-radius: 20px;
+}

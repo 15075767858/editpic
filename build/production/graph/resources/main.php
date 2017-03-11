@@ -54,7 +54,8 @@ if ($par == "getDevsByDevName") {
             if (is_numeric($value)) {
                 $Object_Name = hGet($redis, $value, "Object_Name");
                 $Present_Value = hGet($redis, $value, "Present_Value");
-                array_push($arr, array("value" => $value, "name" => $Object_Name, 'Present_Value' => $Present_Value));
+                $Update_Time = hGet($redis,$value,"Update_Time");
+                array_push($arr, array("value" => $value, "name" => $Object_Name, 'Present_Value' => $Present_Value,'update'=>$Update_Time));
             }
         }
         sort($arList);

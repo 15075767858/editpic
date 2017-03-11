@@ -25,7 +25,10 @@ Ext.define('editpic.view.week.WeekWin',{
     }),
     tbar: [
         {
-            text: "next",
+            ui:"default",
+            cls:"phoneButton",
+            scale:"medium",
+            text: "Next ->",
             id: "drawWindow_next",
             handler: function (button) {
                 var me = this.up('window');
@@ -36,7 +39,11 @@ Ext.define('editpic.view.week.WeekWin',{
             }
         },
         {
-            text: "Previous",
+            ui:"default",
+            cls:"phoneButton",
+
+            scale:"medium",
+            text: "<- Previous",
             id: "drawWindow_previous",
             hidden: true,
             handler: function (button) {
@@ -47,6 +54,7 @@ Ext.define('editpic.view.week.WeekWin',{
                 me.fireEvent("PreviousHandler");
             }
         },
+        "->",
         {
             text: "Ok",
             handler: function (th) {
@@ -74,6 +82,21 @@ Ext.define('editpic.view.week.WeekWin',{
                 }
                 this.up("window").close()
             }
+        },
+        {
+            xtype: "segmentedbutton",
+            bind: "{modify}",
+            allowMultiple: true,
+            items: [{
+                ui:"default",
+                cls:"phoneButton",
+
+                text: "Modify",
+                scale:"medium",
+                handler: "modifyHandler",
+                value: true,
+                tooltip: "publish modify"
+            }]
         },
         {
             text: "divDataToJson", hidden: true, handler: function () {
@@ -150,28 +173,30 @@ Ext.define('editpic.view.week.WeekWin',{
             padding: '10 0 0 0',
             store: {
                 fields: ['time', 'open', 'high', 'low', 'close'],
-                data: [{
-                    'time': "Monday",
-                    'close': 2730000000
-                }, {
-                    'time': "Tuesday",
-                    'close': 2730000000
-                }, {
-                    'time': "Wednesday",
-                    'close': 2726000000
-                }, {
-                    'time': "Thursday",
-                    'close': 2730000000
-                }, {
-                    'time': "Friday",
-                    'close': 2730000000
-                }, {
-                    'time': "Saturday",
-                    'close': 2730000000
-                }, {
-                    'time': "Sunday",
-                    'close': 2736000000
-                }
+                data: [
+                    {
+                        'time': "Sunday",
+                        'close': 2736000000
+                    },
+                    {
+                        'time': "Monday",
+                        'close': 2730000000
+                    }, {
+                        'time': "Tuesday",
+                        'close': 2730000000
+                    }, {
+                        'time': "Wednesday",
+                        'close': 2726000000
+                    }, {
+                        'time': "Thursday",
+                        'close': 2730000000
+                    }, {
+                        'time': "Friday",
+                        'close': 2730000000
+                    }, {
+                        'time': "Saturday",
+                        'close': 2730000000
+                    }
                 ]
             },
 
@@ -254,13 +279,16 @@ Ext.define('editpic.view.week.WeekWin',{
              startCollapsed: true
              }),*/
 
-            tbar: [{
+            tbar: [
+                {
+                hidden:true,
                 text: 'Expand All',
                 handler: function () {
                     var me = this.up("gridpanel")
                     me.features[0].expandAll()
                 }
             }, {
+                hidden:true,
                 text: 'Collapse All',
                 handler: function () {
                     var me = this.up("gridpanel")
