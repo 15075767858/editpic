@@ -216,7 +216,7 @@ Ext.define('editpic.view.main.MainController', {
         })
 
     },
-    createNewTab:function(){
+    createNewTab: function () {
         Ext.getCmp("mintab").createNewTab("untitled")
     },
     toNewVersion: function () {
@@ -360,6 +360,105 @@ Ext.define('editpic.view.main.MainController', {
         var win = Ext.create("editpic.view.window.EditFile", {
             showCombo: true,
             showFileButton: false,
+            replaceClick: function () {
+                var me = win;
+
+                var win1 = Ext.create('Ext.window.Window', {
+                    title: 'Replace •••',
+                    frame: true,
+                    width: 325,
+                    bodyPadding: 10,
+                    autoShow: true,
+                    defaultType: 'textfield',
+                    defaults: {
+                        anchor: '100%'
+                    },
+                    getReplaceTypeValueArr: function (type) {
+                        var me = win;
+                        var oJson = Ext.decode(me.textArea.value)
+                        var resArr = [];
+                        var items = oJson.items;
+                        for (var i = 0; i < items.length; i++) {
+                            console.log(items[i][type])
+
+                            if (items[i][type]) {
+                                resArr.push(items[i][type])
+                            }
+                        }
+                        console.log(resArr)
+                        return resArr.unique1()
+                    },
+                    items: [
+                        {
+                            itemId: "type",
+                            margin: 10,
+                            xtype: "combo",
+                            allowBlank: false,
+                            fieldLabel: 'type',
+                            store: Ext.create("Ext.data.Store", {
+                                field: ["ip", "key", "name"],
+                                data: [
+                                    {name: "ip", value: "ip"},
+                                    {name: "key", value: "nodename"},
+                                    {name: "name", value: "name"}
+                                ]
+                            }),
+                            displayField: "name",
+                            valueField: "value",
+                            //store: ["ip", "key", "name"],
+                            listeners: {
+                                change: function (combo, newValue) {
+                                    var me = combo.up()
+                                    var arr = me.getReplaceTypeValueArr(newValue);
+                                    console.log(arr)
+                                    me.getComponent("oldvalue").setStore(arr);
+                                }
+                            }
+                        },
+                        {
+                            itemId: "oldvalue",
+                            margin: 10,
+                            xtype: "combo",
+                            allowBlank: false,
+                            fieldLabel: 'old value'
+                        },
+                        {
+                            itemId: "newvalue",
+                            margin: 10,
+                            xtype: "textfield",
+                            allowBlank: false,
+                            fieldLabel: 'new value'
+                        }
+                    ],
+                    buttons: [
+                        {
+                            text: 'Ok', handler: function () {
+                            var type = win1.getComponent("type").getValue();
+                            var oldValue = win1.getComponent("oldvalue").getValue();
+                            var newValue = win1.getComponent("newvalue").getValue();
+                            var oJson = Ext.decode(me.textArea.value)
+                            console.log(oJson)
+                            var items = oJson.items;
+                            for (var i = 0; i < items.length; i++) {
+                                if (items[i][type] == oldValue) {
+                                    items[i][type] = newValue
+                                }
+                            }
+
+                            me.textArea.setValue(Ext.encode(oJson));
+                            win1.close();
+
+                        }
+                        },
+                        {
+                            text: 'Cancel', handler: function () {
+                            win1.close();
+                        }
+                        }
+                    ]
+                })
+
+            },
             okHandler: function () {
 
                 Ext.Ajax.request({
@@ -777,7 +876,7 @@ My.getDevsByDevName = function (ip, port, devname) {
                     return store;
                 } else {
                     store = Ext.create("Ext.data.Store", {
-                        fields: ['name', 'value', 'Present_Value','update'],
+                        fields: ['name', 'value', 'Present_Value', 'update'],
                         data: ojson
                     })
                 }
@@ -1331,15 +1430,19 @@ My.initComponentConfig = {
             y: e.pageY,
             autoShow: true,
             items: [
-
                 {
-                    text: "copy", handler: function () {
+                    text: "Edit", handler: function () {
+
+                }
+                },
+                {
+                    text: "Copy", handler: function () {
                     me.up().copyImg = me;
                 }
                 },
 
                 {
-                    text: "delete", handler: function () {
+                    text: "Delete", handler: function () {
                     console.log(me.up('panel'))
                     me.up("panel").removeStackPush(me)
                 }
@@ -2264,7 +2367,7 @@ Ext.onReady(function () {
         } else {
             console.log("%c 取消请求" + diffTime + "ip = " + ip, "background:red")
         }
-        if(resJson.success==false){
+        if (resJson.success == false) {
             console.log(resJson.info);
             return
         }
@@ -2358,7 +2461,7 @@ Ext.onReady(function () {
     My.test = test
 }.bind(My))
 
-My.stopEventAndPro=function(e){
+My.stopEventAndPro = function (e) {
     console.log(e)
     e.stopPropagation();
     return false;

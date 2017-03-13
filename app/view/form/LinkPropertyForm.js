@@ -159,7 +159,10 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                     {
                                         rootVisible: false,
                                         xtype: "treepanel",
-
+                                        width: "100%",
+                                        height: "100%",
+                                        scrollable: "y",
+                                        modal: true,
                                         listeners: {
                                             boxready: function (treePanel) {
                                                 if (!combo.value) {
@@ -190,10 +193,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                                 }
                                             }
                                         ],
-                                        width: "100%",
-                                        height: "100%",
-                                        scrollable: "y",
-                                        modal: true,
+
                                         store: Ext.create("Ext.data.TreeStore", {
                                             autoLoad: true,
                                             url: "resources/main.php?par=nodes",
@@ -213,7 +213,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                         scrollable: "y",
                                         plugins: 'gridfilters',
                                         store: combo.store,
-                                        columns: [{
+                                        columns: [
+                                            {
                                             text: "Object_Name", dataIndex: "name", flex: 7, filter: {
                                                 type: "string"
                                             },

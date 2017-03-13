@@ -32,7 +32,7 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.week.WeekWin",
         "editpic.view.window.EditFile",
         "editpic.view.EventAlarm.EventAlarmSetting",
-        'graph.view.window.ShowDevices'
+        'graph.view.window.ShowDevices',
         //"editpic.view.tool.PublishPic"
     ],
 
@@ -117,7 +117,7 @@ Ext.define('editpic.view.main.Main', {
                 }, {
                     text: "about",
                     handler: function () {
-                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.86")
+                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 2.87")
                     }
                 }
             ]

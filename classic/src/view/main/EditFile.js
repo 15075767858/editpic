@@ -27,7 +27,7 @@ Ext.define('editpic.view.window.EditFile', {
     showCombo: false,
     okHandler: null,
     fileName: null,//button按钮上传的文件名
-
+    replaceClick:null,
     //combo: null,
 
     initComponent: function () {
@@ -64,6 +64,7 @@ Ext.define('editpic.view.window.EditFile', {
 
             me.items.push(me.fileButton);
         }
+
         if (me.showTextArea) {
             me.textArea = Ext.create("Ext.form.field.TextArea", {
                 width: "100%",
@@ -75,7 +76,7 @@ Ext.define('editpic.view.window.EditFile', {
         }
         me.buttons = [
             {
-                text: "replace", handler: "replaceClick"
+                text: "replace", handler: me.replaceClick||"replaceClick"
             },
             "->",
             {
