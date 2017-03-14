@@ -15,6 +15,8 @@ Ext.define('editpic.Application', {
     launch: function () {
         // TODO - Launch the application
 
+        //testComponent()
+
         Ext.create("editpic.view.EventAlarm.ListenEventAlarm")
         //Ext.create("editpic.view.EventAlarm.SelectKeyWinodw")
 
@@ -45,9 +47,26 @@ Ext.define('editpic.Application', {
          );*/
     }
 });
+function testComponent() {
+
+    Ext.create("Ext.window.Window", {
+        autoShow: true,
+        width: 800,
+        height: 600,
+        items: [
+           Ext.create("graph.view.tree.DeviceTree",{
+               ip:"127.0.0.1",
+               port:"6379"
+           })
+        ]
+    })
+
+
+}
 
 (function () {
     Ext.onReady(function () {
+
 
         //setInterval(function () {
         //    randomChangeValue('192.168.253.253', '1001001')

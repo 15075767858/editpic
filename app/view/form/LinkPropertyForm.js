@@ -6,6 +6,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
         anchor: "100%",
         allowBlank: false
     },
+
     initComponent: function () {
         var me = this, values = me.values, itype = me.values.itype;
 

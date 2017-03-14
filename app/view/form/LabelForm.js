@@ -16,7 +16,7 @@ Ext.define('editpic.view.form.LabelForm', {
      type: 'form-canvasmenubaseform'
      },
      */
-
+    SimpleModel:true,
     initComponent: function () {
         var me = this;
         var values = me.values;
@@ -283,6 +283,7 @@ Ext.define('editpic.view.form.LabelForm', {
                     }
                 }
             })
+
             labelFormItems.push(
                 {
                     xtype: "textfield", allowBlank: true, name: "background", fieldLabel: "background",
@@ -293,7 +294,6 @@ Ext.define('editpic.view.form.LabelForm', {
                                 name: "backgroundColor",
                                 fieldLabel: "Background Color"
                             })
-
                             var win = Ext.create("Ext.window.Window", {
                                 autoShow: true,
                                 width: 400,

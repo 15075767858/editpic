@@ -1432,7 +1432,16 @@ My.initComponentConfig = {
             items: [
                 {
                     text: "Edit", handler: function () {
+                    Ext.create("editpic.view.window.CanvasConponmentWindow", {
+                        SimpleModel:true,
+                        values: me,
+                        ok: function (data) {
+                            me.init(data);
+                        },
+                        cancel: function () {
 
+                        }
+                    })
                 }
                 },
                 {

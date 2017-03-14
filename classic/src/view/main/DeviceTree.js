@@ -1,5 +1,4 @@
-
-Ext.define('graph.view.tree.DeviceTree',{
+Ext.define('graph.view.tree.DeviceTree', {
     extend: 'Ext.tree.Panel',
 
     requires: [
@@ -11,8 +10,9 @@ Ext.define('graph.view.tree.DeviceTree',{
     viewModel: {
         type: 'tree-devicetree'
     },
+    xtype:"DeviceTree",
+    alias:"DeviceTree",
     rootVisible: false,
-    xtype: "treepanel",
     width: "100%",
     height: "100%",
     scrollable: "y",
@@ -34,22 +34,20 @@ Ext.define('graph.view.tree.DeviceTree',{
             }
         }
     ],
-    initComponent:function(){
-        var me=this;
-
-        me.store= Ext.create("Ext.data.TreeStore", {
+    initComponent: function () {
+        var me = this;
+        me.store = Ext.create("Ext.data.TreeStore", {
             autoLoad: true,
             url: "resources/main.php?par=nodes",
             proxy: {
                 type: "ajax",
-                url: "resources/main.php?par=nodes&ip=" + combo.ip + "&port=" + combo.port + "",
+                url: "resources/main.php?par=nodes&ip=" + me.ip + "&port=" + me.port + "",
                 reader: {
                     type: "json"
                 }
             }
         })
-
         me.callParent();
-    },
+    }
 
 });
