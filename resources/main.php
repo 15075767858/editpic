@@ -301,6 +301,8 @@ if ($par == "changevalue") {
 
     //echo "{type:'".$type."',value:'"."12313"."'}";
     $redis->hSet($nodeName, $type, $value);
+    setRedisUpdateTime($redis,$nodeName);
+
     $redis->publish(substr($nodeName, 0, 4) . ".8." . rand(1000, 9999), $nodeName . "\r\n" . $type . "\r\n" . $value);
     $redis->close();
 
@@ -318,6 +320,8 @@ if ($par == "changevaluenopublish") {
             $value = $_REQUEST["value"];
         }
         $redis->hSet($nodeName, $type, $value);
+        setRedisUpdateTime($redis,$nodeName);
+
         $redis->close();
 
     }
@@ -714,6 +718,10 @@ function hGet($redis, $nodename, $type)
     //return mb_convert_encoding($value, "UTF-8", "GBK");
 }
 
+function setRedisUpdateTime($redis, $nodename)
+{
+    $redis->hSet($nodename, "Update_Time", date("Y-m-d h:i:s"));
+}
 
 /*
 function listDir($dir)

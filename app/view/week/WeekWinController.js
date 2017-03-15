@@ -350,7 +350,17 @@ Ext.define('editpic.view.week.WeekWinController', {
         //console.log(Ext.encode(pubweekly))
         console.log(me.dwPars.drawWindowData)
         console.log(Ext.encode(weekly))
-
+        for (var i = 0; i < WeekArr.length; i++) {
+            var hArr = weekly.Weekly_Schedule[WeekArr[i]];
+            if (hArr.length > 0) {
+                var hArr = hArr.sort(function (a, b) {
+                    var d1 = new Date(1970, 1, 1, a.time.hour, a.time.minute, a.time.second).getTime();
+                    var d2 = new Date(1970, 1, 1, b.time.hour, b.time.minute, b.time.second).getTime();
+                    return d1 - d2;
+                })
+                weekly.Weekly_Schedule[WeekArr[i]] = hArr
+            }
+        }
         return {weekly: weekly, pubweekly: weekly};
     },
     /**

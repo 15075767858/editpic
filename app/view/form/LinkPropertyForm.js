@@ -9,14 +9,10 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
     initComponent: function () {
         var me = this, values = me.values, itype = me.values.itype;
-
-
         console.log(itype)
-
         if (itype == 0 || itype == 1 || itype == 2 || itype == 5) {
             var nodeNameStore = My.getDevStore(me.values.ip, me.values.port)
             var nodeTypeStore = My.getDevTypeStore(me.values.ip, me.values.port, me.values.nodename);
-
             me.items = [
                 {
                     xtype: 'checkbox',

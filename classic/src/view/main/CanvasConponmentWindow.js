@@ -1,11 +1,9 @@
 Ext.define('editpic.view.window.CanvasConponmentWindow', {
     extend: 'Ext.window.Window',
-
     requires: [
         'editpic.view.window.CanvasConponmentWindowController',
         'editpic.view.window.CanvasConponmentWindowModel'
     ],
-
     controller: 'window-canvasconponmentwindow',
     viewModel: {
         type: 'window-canvasconponmentwindow'
