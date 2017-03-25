@@ -817,7 +817,7 @@ My.getHomeFileNames = function () {
             })
             data = arr;
         } catch (e) {
-            Ext.Msg.alert("Massage", "exception" + response.responseText);
+            Ext.Msg.alert("Massage", "exception " + response.responseText);
             throw new Error(e);
         }
     }, {
@@ -2231,7 +2231,9 @@ Ext.onReady(function () {
                 var id = aResData[i].id;
                 var oItem = Ext.getCmp(id);
                 if (oItem) {
-                    oItem.setLinkValue(aResData[i].value)
+                    if(oItem.itype!=3){
+                        oItem.setLinkValue(aResData[i].value)
+                    }
                 }
             }
         } catch (e) {
@@ -2392,7 +2394,9 @@ Ext.onReady(function () {
         for (var i = 0; i < subscribeItems.length; i++) {
             var img = Ext.getCmp(subscribeItems[i].id);
             if (img.ip == ip & img.nodename == arr[0] & img.type == arr[1]) {
-                img.setLinkValue(arr[2]);//成功后设置值
+                if(img.itype!=3){
+                    img.setLinkValue(arr[2]);//成功后设置值
+                }
             }
         }
     }

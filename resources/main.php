@@ -201,8 +201,8 @@ if ($par == "PresentArraySetNull") {
     $type = $_REQUEST['type'];
     echo json_encode($_REQUEST);
     echo $redis->hSet($nodeName, $type, $value);
-
     $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\nCancel_Priority_Array\r\n" . $number);
+    setRedisUpdateTime($redis,$nodename);
     $redis->close();
 }
 
