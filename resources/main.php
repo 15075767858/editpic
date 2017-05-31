@@ -54,8 +54,8 @@ if ($par == "getDevsByDevName") {
             if (is_numeric($value)) {
                 $Object_Name = hGet($redis, $value, "Object_Name");
                 $Present_Value = hGet($redis, $value, "Present_Value");
-                $Update_Time = hGet($redis,$value,"Update_Time");
-                array_push($arr, array("value" => $value, "name" => $Object_Name, 'Present_Value' => $Present_Value,'update'=>$Update_Time));
+                $Update_Time = hGet($redis, $value, "Update_Time");
+                array_push($arr, array("value" => $value, "name" => $Object_Name, 'Present_Value' => $Present_Value, 'update' => $Update_Time));
             }
         }
         sort($arList);
@@ -84,8 +84,21 @@ if ($par == "gettypes") {
 
 if ($par == "getSchdule") {
     $redis = getRedisConect();
+    $arList = $redis->keys("????6??");
+    sort($arList);
+    $arr = array();
+    foreach ($arList as $key => $value) {
+        if (is_numeric($value)) {
+            array_push($arr, array("value" => $value, "name" => hGet($redis, $value, "Object_Name")));
+        }
+    }
+    sort($arList);
+    echo json_encode($arr);
+    $redis->close();
+    exit(0);
     if ($redis) {
-        $arList = array_merge($redis->keys("????601"), $redis->keys("????602"), $redis->keys("????604"), $redis->keys("????605"), $redis->keys("????606"), $redis->keys("????607"), $redis->keys("????608"), $redis->keys("????609"), $redis->keys("????610"));
+        $arList = array_merge($redis->keys("????601"), $redis->keys("????602"), $redis->keys("????603"), $redis->keys("????604"), $redis->keys("????605"), $redis->keys("????606"), $redis->keys("????607"), $redis->keys("????608"), $redis->keys("????609"), $redis->keys("????610"));
+
         sort($arList);
         $arr = array();
         foreach ($arList as $key => $value) {
@@ -202,7 +215,7 @@ if ($par == "PresentArraySetNull") {
     echo json_encode($_REQUEST);
     echo $redis->hSet($nodeName, $type, $value);
     $redis->publish(substr($nodeName, 0, 4) . ".8.*", $nodeName . "\r\nCancel_Priority_Array\r\n" . $number);
-    setRedisUpdateTime($redis,$nodename);
+    setRedisUpdateTime($redis, $nodename);
     $redis->close();
 }
 
@@ -301,7 +314,7 @@ if ($par == "changevalue") {
 
     //echo "{type:'".$type."',value:'"."12313"."'}";
     $redis->hSet($nodeName, $type, $value);
-    setRedisUpdateTime($redis,$nodeName);
+    setRedisUpdateTime($redis, $nodeName);
 
     $redis->publish(substr($nodeName, 0, 4) . ".8." . rand(1000, 9999), $nodeName . "\r\n" . $type . "\r\n" . $value);
     $redis->close();
@@ -320,7 +333,7 @@ if ($par == "changevaluenopublish") {
             $value = $_REQUEST["value"];
         }
         $redis->hSet($nodeName, $type, $value);
-        setRedisUpdateTime($redis,$nodeName);
+        setRedisUpdateTime($redis, $nodeName);
 
         $redis->close();
 
