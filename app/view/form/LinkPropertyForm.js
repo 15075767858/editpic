@@ -53,8 +53,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         hidden: "{!isBind.checked}",
                         disabled: "{!isBind.checked}"
                     },
-                    store: [window.location.hostname, "192.168.253.253"],
-                    value: window.location.hostname
+                    store: ["127.0.0.1",window.location.hostname, "192.168.253.253"],
+                    value: "127.0.0.1"
 
                 },
                 {
@@ -371,8 +371,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 fieldLabel: "ip",
                 reference: "ipfield",
                 name: "ip",
-                store: [window.location.hostname, "192.168.253.253"],
-                value: window.location.hostname
+                store: ["127.0.0.1",window.location.hostname, "192.168.253.253"],
+                value: "127.0.0.1"
             };
             var portField = {
                 xtype: "combo",

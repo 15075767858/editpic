@@ -44,7 +44,6 @@ Ext.define('editpic.view.EventAlarm.AddMonitor', {
     },
     items: {
         xtype: "form",
-
         defaults: {
             margin: 10
         },
@@ -61,7 +60,7 @@ Ext.define('editpic.view.EventAlarm.AddMonitor', {
             {
                 xtype: "combo",
                 name: "ip",
-                store: ["192.168.253.253", location.host],
+                store: ["127.0.0.1","192.168.253.253", location.host],
                 allowBlank: false,
                 regex: /^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$/,
                 fieldLabel: "ip"
