@@ -1,3 +1,4 @@
+//显AIAOAVBIBOBV 并排6个窗口
 Ext.define('graph.view.window.ShowDevices',{
     extend: 'Ext.window.Window',
    

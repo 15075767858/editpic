@@ -76,17 +76,18 @@ Ext.define('editpic.view.main.MainController', {
                  text: 'Register'
                  },*/
                 {
-                    text: 'Login', handler: function () {
-                    var values = loginForm.getValues();
-                    if (values['remember']) {
-                        localStorage.setItem("loginUserName", values['username']);
-                        localStorage.setItem("loginRemember", values['remember']);
+                    text: 'Login',
+                    handler: function () {
+                        var values = loginForm.getValues();
+                        if (values['remember']) {
+                            localStorage.setItem("loginUserName", values['username']);
+                            localStorage.setItem("loginRemember", values['remember']);
+                        }
+                        loginForm.submit({
+                            success: loginFn,
+                            failure: loginFn
+                        });
                     }
-                    loginForm.submit({
-                        success: loginFn,
-                        failure: loginFn
-                    });
-                }
                 }
             ],
             defaults: {
@@ -137,34 +138,33 @@ Ext.define('editpic.view.main.MainController', {
             defaults: {
                 anchor: '100%'
             },
-            items: [
-                {
-                    margin: 10,
-                    xtype: "textfield",
-                    allowBlank: false,
-                    value: curPanel.title,
-                    fieldLabel: 'File Name'
-                }
-            ],
-            buttons: [
-                {
-                    text: 'Ok', handler: function () {
-                    var text = win.down("textfield").getValue();
-                    if (text == null) {
-                        Ext.Msg.alert('Info', 'Plase input file name.');
-                        return;
+            items: [{
+                margin: 10,
+                xtype: "textfield",
+                allowBlank: false,
+                value: curPanel.title,
+                fieldLabel: 'File Name'
+            }],
+            buttons: [{
+                    text: 'Ok',
+                    handler: function () {
+                        var text = win.down("textfield").getValue();
+                        if (text == null) {
+                            Ext.Msg.alert('Info', 'Plase input file name.');
+                            return;
+                        }
+                        var picPanel = curPanel.down("picpanel");
+                        picPanel.save(text);
+
+
+                        win.close();
                     }
-                    var picPanel = curPanel.down("picpanel");
-                    picPanel.save(text);
-
-
-                    win.close();
-                }
                 },
                 {
-                    text: 'Cancel', handler: function () {
-                    win.close();
-                }
+                    text: 'Cancel',
+                    handler: function () {
+                        win.close();
+                    }
                 }
             ]
         })
@@ -181,36 +181,35 @@ Ext.define('editpic.view.main.MainController', {
             defaults: {
                 anchor: '100%'
             },
-            items: [
-                {
-                    margin: 10,
-                    xtype: "combobox",
-                    allowBlank: false,
-                    fieldLabel: 'File Name',
-                    store: fileNames,
-                    editable: false,
-                    queryMode: 'local',
-                    autoSelect: false
-                }
-            ],
-            buttons: [
-                {
-                    text: 'Ok', handler: function () {
-                    var text = win.down("textfield").getValue();
-                    if (text == null) {
-                        Ext.Msg.alert('Info', 'Plase input file name.');
-                        return;
+            items: [{
+                margin: 10,
+                xtype: "combobox",
+                allowBlank: false,
+                fieldLabel: 'File Name',
+                store: fileNames,
+                editable: false,
+                queryMode: 'local',
+                autoSelect: false
+            }],
+            buttons: [{
+                    text: 'Ok',
+                    handler: function () {
+                        var text = win.down("textfield").getValue();
+                        if (text == null) {
+                            Ext.Msg.alert('Info', 'Plase input file name.');
+                            return;
+                        }
+                        var minTab = Ext.getCmp("mintab");
+                        minTab.addTab(text);
+                        win.close();
+                        My.delayToast("Massage", "Open File OK !");
                     }
-                    var minTab = Ext.getCmp("mintab");
-                    minTab.addTab(text);
-                    win.close();
-                    My.delayToast("Massage", "Open File OK !");
-                }
                 },
                 {
-                    text: 'Cancel', handler: function () {
-                    win.close();
-                }
+                    text: 'Cancel',
+                    handler: function () {
+                        win.close();
+                    }
                 }
             ]
         })
@@ -234,71 +233,67 @@ Ext.define('editpic.view.main.MainController', {
             autoShow: true,
             closable: true,
             layout: "auto",
-            tbar: [
-                {
-                    xtype: "filebutton",
-                    text: "Select File",
-                    listeners: {
-                        change: function (menu, target, eOpts) {
-                            var files = target.target.files;
+            tbar: [{
+                xtype: "filebutton",
+                text: "Select File",
+                listeners: {
+                    change: function (menu, target, eOpts) {
+                        var files = target.target.files;
 
-                            if (files.length) {
-                                var file = files[0];
-                                var reader = new FileReader();
-                                reader.onload = function () {
-                                    textarea.setValue(this.result);
-                                };
-                                reader.readAsText(file);
-                            }
+                        if (files.length) {
+                            var file = files[0];
+                            var reader = new FileReader();
+                            reader.onload = function () {
+                                textarea.setValue(this.result);
+                            };
+                            reader.readAsText(file);
                         }
                     }
                 }
-            ],
+            }],
             items: [{
-                html: "this function is take old version data.json transformational new version data .<br> so please select old version data.json . "
-            },
+                    html: "this function is take old version data.json transformational new version data .<br> so please select old version data.json . "
+                },
                 textarea
             ],
-            buttons: [
-                {
-                    text: 'OK',
-                    itemId: "Ok",
-                    handler: function (menu) {
-                        menu.setDisabled(true);
-                        var jsonData = Ext.decode(textarea.getValue())
-                        var str = "<div style='color: darkturquoise;'>";
-                        for (var name in jsonData) {
-                            str += name + ".json  "
-                        }
-                        str += "</div>";
-                        Ext.Msg.show({
-                            title: 'warning !',
-                            message: "select yes to ovewrite files  <br>" + str,
-                            buttons: Ext.Msg.YESNOCANCEL,
-                            icon: Ext.Msg.WARNING,
-                            fn: function (btn) {
-                                if (btn === 'yes') {
-                                    for (var data in jsonData) {
-                                        My.savePicPanelData(data, Ext.encode(jsonData[data]))
-                                    }
-                                    win.close();
-                                } else {
-
-                                    win.close();
+            buttons: [{
+                text: 'OK',
+                itemId: "Ok",
+                handler: function (menu) {
+                    menu.setDisabled(true);
+                    var jsonData = Ext.decode(textarea.getValue())
+                    var str = "<div style='color: darkturquoise;'>";
+                    for (var name in jsonData) {
+                        str += name + ".json  "
+                    }
+                    str += "</div>";
+                    Ext.Msg.show({
+                        title: 'warning !',
+                        message: "select yes to ovewrite files  <br>" + str,
+                        buttons: Ext.Msg.YESNOCANCEL,
+                        icon: Ext.Msg.WARNING,
+                        fn: function (btn) {
+                            if (btn === 'yes') {
+                                for (var data in jsonData) {
+                                    My.savePicPanelData(data, Ext.encode(jsonData[data]))
                                 }
+                                win.close();
+                            } else {
+
+                                win.close();
                             }
-                        });
+                        }
+                    });
 
 
-                    }
-                }, {
-                    text: "Close",
-                    itemId: "Close",
-                    handler: function () {
-                        win.close()
-                    }
                 }
-            ]
+            }, {
+                text: "Close",
+                itemId: "Close",
+                handler: function () {
+                    win.close()
+                }
+            }]
         })
         console.log(win);
 
@@ -318,40 +313,39 @@ Ext.define('editpic.view.main.MainController', {
             defaults: {
                 anchor: '100%'
             },
-            items: [
-                {
-                    margin: 10,
-                    xtype: "combobox",
-                    allowBlank: false,
-                    fieldLabel: 'File Name',
-                    store: comboStore,
-                    editable: false,
-                    queryMode: 'local',
-                    displayField: 'name',
-                    valueField: 'name',
-                    autoSelect: false
-                }
-            ],
-            buttons: [
-                {
-                    text: 'Ok', handler: function () {
-                    var text = win.down("textfield").getValue();
-                    if (text == null) {
-                        Ext.Msg.alert('Info', 'Plase input file name.');
-                        return;
-                    }
-                    var minTab = Ext.getCmp("mintab")
+            items: [{
+                margin: 10,
+                xtype: "combobox",
+                allowBlank: false,
+                fieldLabel: 'File Name',
+                store: comboStore,
+                editable: false,
+                queryMode: 'local',
+                displayField: 'name',
+                valueField: 'name',
+                autoSelect: false
+            }],
+            buttons: [{
+                    text: 'Ok',
+                    handler: function () {
+                        var text = win.down("textfield").getValue();
+                        if (text == null) {
+                            Ext.Msg.alert('Info', 'Plase input file name.');
+                            return;
+                        }
+                        var minTab = Ext.getCmp("mintab")
 
-                    minTab.addTab(text, My.getImageData()[text])
-                    console.log(text)
-                    win.close();
-                    My.delayToast("Massage", "Open File OK !");
-                }
+                        minTab.addTab(text, My.getImageData()[text])
+                        console.log(text)
+                        win.close();
+                        My.delayToast("Massage", "Open File OK !");
+                    }
                 },
                 {
-                    text: 'Cancel', handler: function () {
-                    win.close();
-                }
+                    text: 'Cancel',
+                    handler: function () {
+                        win.close();
+                    }
                 }
             ]
         })
@@ -388,8 +382,7 @@ Ext.define('editpic.view.main.MainController', {
                         console.log(resArr)
                         return resArr.unique1()
                     },
-                    items: [
-                        {
+                    items: [{
                             itemId: "type",
                             margin: 10,
                             xtype: "combo",
@@ -397,10 +390,18 @@ Ext.define('editpic.view.main.MainController', {
                             fieldLabel: 'type',
                             store: Ext.create("Ext.data.Store", {
                                 field: ["ip", "key", "name"],
-                                data: [
-                                    {name: "ip", value: "ip"},
-                                    {name: "key", value: "nodename"},
-                                    {name: "name", value: "name"}
+                                data: [{
+                                        name: "ip",
+                                        value: "ip"
+                                    },
+                                    {
+                                        name: "key",
+                                        value: "nodename"
+                                    },
+                                    {
+                                        name: "name",
+                                        value: "name"
+                                    }
                                 ]
                             }),
                             displayField: "name",
@@ -430,30 +431,31 @@ Ext.define('editpic.view.main.MainController', {
                             fieldLabel: 'new value'
                         }
                     ],
-                    buttons: [
-                        {
-                            text: 'Ok', handler: function () {
-                            var type = win1.getComponent("type").getValue();
-                            var oldValue = win1.getComponent("oldvalue").getValue();
-                            var newValue = win1.getComponent("newvalue").getValue();
-                            var oJson = Ext.decode(me.textArea.value)
-                            console.log(oJson)
-                            var items = oJson.items;
-                            for (var i = 0; i < items.length; i++) {
-                                if (items[i][type] == oldValue) {
-                                    items[i][type] = newValue
+                    buttons: [{
+                            text: 'Ok',
+                            handler: function () {
+                                var type = win1.getComponent("type").getValue();
+                                var oldValue = win1.getComponent("oldvalue").getValue();
+                                var newValue = win1.getComponent("newvalue").getValue();
+                                var oJson = Ext.decode(me.textArea.value)
+                                console.log(oJson)
+                                var items = oJson.items;
+                                for (var i = 0; i < items.length; i++) {
+                                    if (items[i][type] == oldValue) {
+                                        items[i][type] = newValue
+                                    }
                                 }
+
+                                me.textArea.setValue(Ext.encode(oJson));
+                                win1.close();
+
                             }
-
-                            me.textArea.setValue(Ext.encode(oJson));
-                            win1.close();
-
-                        }
                         },
                         {
-                            text: 'Cancel', handler: function () {
-                            win1.close();
-                        }
+                            text: 'Cancel',
+                            handler: function () {
+                                win1.close();
+                            }
                         }
                     ]
                 })
@@ -519,39 +521,38 @@ Ext.define('editpic.view.main.MainController', {
             defaults: {
                 anchor: '100%'
             },
-            items: [
-                {
-                    margin: 10,
-                    xtype: "combobox",
-                    allowBlank: false,
-                    fieldLabel: 'File Name',
-                    store: comboStore,
-                    editable: false,
-                    queryMode: 'local',
-                    displayField: 'name',
-                    valueField: 'name',
-                    autoSelect: false
-                }
-            ],
-            buttons: [
-                {
-                    text: 'Ok', handler: function () {
-                    var text = win.down("textfield").getValue();
-                    if (text == null) {
-                        Ext.Msg.alert('Info', 'Plase input file name.');
-                        return;
+            items: [{
+                margin: 10,
+                xtype: "combobox",
+                allowBlank: false,
+                fieldLabel: 'File Name',
+                store: comboStore,
+                editable: false,
+                queryMode: 'local',
+                displayField: 'name',
+                valueField: 'name',
+                autoSelect: false
+            }],
+            buttons: [{
+                    text: 'Ok',
+                    handler: function () {
+                        var text = win.down("textfield").getValue();
+                        if (text == null) {
+                            Ext.Msg.alert('Info', 'Plase input file name.');
+                            return;
+                        }
+                        var json = My.getImageData();
+                        delete json[text];
+                        My.deleteImageData(Ext.encode(json), text)
+                        win.close();
+                        My.delayToast("Massage", "Delete File OK !");
                     }
-                    var json = My.getImageData();
-                    delete json[text];
-                    My.deleteImageData(Ext.encode(json), text)
-                    win.close();
-                    My.delayToast("Massage", "Delete File OK !");
-                }
                 },
                 {
-                    text: 'Cancel', handler: function () {
-                    win.close();
-                }
+                    text: 'Cancel',
+                    handler: function () {
+                        win.close();
+                    }
                 }
             ]
         })
@@ -570,20 +571,19 @@ Ext.define('editpic.view.main.MainController', {
         //上传home目录下的文件
         console.log(arguments)
         var win = Ext.create("editpic.view.window.UploadWindow", {
-                url: 'resources/main.php?par=uploadHomeFile',
-                fieuploaded: function (object, file) {
-                    My.delayToast("Massage", file.name + " upload .")
-                    /*My.Ajax("/upload.php", function () {
-                     }, {
-                     par: "system",
-                     command: "mv " + file.name + " home"
-                     })*/
-                },
-                uploadcomplete: function () {
-                    My.delayToast("Status", "File Upload successfully .");
-                }
+            url: 'resources/main.php?par=uploadHomeFile',
+            fieuploaded: function (object, file) {
+                My.delayToast("Massage", file.name + " upload .")
+                /*My.Ajax("/upload.php", function () {
+                 }, {
+                 par: "system",
+                 command: "mv " + file.name + " home"
+                 })*/
+            },
+            uploadcomplete: function () {
+                My.delayToast("Status", "File Upload successfully .");
             }
-        )
+        })
 
 
     },
@@ -678,7 +678,7 @@ My.AjaxSimplePost = function (params, url, success) {
     });
 }
 My.AjaxSimplePostAsync = function (params, url, success) {
-//    console.log("开始")
+    //    console.log("开始")
     //console.log(params)
     Ext.Ajax.request({
         url: url || "resources/main.php",
@@ -714,7 +714,7 @@ My.getImageData = function () {
     var data = {};
 
     My.Ajax("resources/main.php?par=getImageData", function (response) {
-//        console.log(response.responseText)
+        //        console.log(response.responseText)
         try {
             data = Ext.decode(response.responseText);
         } catch (e) {
@@ -727,7 +727,7 @@ My.getImageData = function () {
 My.getImageDataByJson = function (text) {
     var data = null;
     My.Ajax("/home/" + text + ".json", function (response) {
-//        console.log(response.responseText)
+        //        console.log(response.responseText)
         try {
             data = Ext.decode(response.responseText);
         } catch (e) {
@@ -771,7 +771,7 @@ My.deleteImageData = function (content, text) {
 My.getImageNames = function () {
     var imgData = My.getImageData()
     var arr = [];
-    for (var name  in imgData) {
+    for (var name in imgData) {
         arr.push(name);
     }
     return arr;
@@ -834,27 +834,25 @@ My.getDevStore = function (ip, port) {
         return store;
     }
     My.Ajax("resources/main.php", function (response) {
-            var data = response.responseText
-            try {
-                var ojson = Ext.decode(data)
-                if (ojson["isError"]) {
+        var data = response.responseText
+        try {
+            var ojson = Ext.decode(data)
+            if (ojson["isError"]) {
 
 
-                    return store;
-                } else {
-                    store = Ext.create("Ext.data.Store", {
-                        fields: ['name', 'value'],
-                        data: ojson
-                    })
-                }
-            } catch (e) {
+                return store;
+            } else {
+                store = Ext.create("Ext.data.Store", {
+                    fields: ['name', 'value'],
+                    data: ojson
+                })
             }
-        }, {
-            par: "getdevs",
-            ip: ip,
-            port: port
-        }
-    )
+        } catch (e) {}
+    }, {
+        par: "getdevs",
+        ip: ip,
+        port: port
+    })
     return store;
 }
 
@@ -868,27 +866,25 @@ My.getDevsByDevName = function (ip, port, devname) {
         return store;
     }
     My.Ajax("resources/main.php", function (response) {
-            var data = response.responseText;
-            try {
-                var ojson = Ext.decode(data)
-                if (ojson["success"]) {
-                    Ext.Msg.alert("info", ojson.info);
-                    return store;
-                } else {
-                    store = Ext.create("Ext.data.Store", {
-                        fields: ['name', 'value', 'Present_Value', 'update'],
-                        data: ojson
-                    })
-                }
-            } catch (e) {
+        var data = response.responseText;
+        try {
+            var ojson = Ext.decode(data)
+            if (ojson["success"]) {
+                Ext.Msg.alert("info", ojson.info);
+                return store;
+            } else {
+                store = Ext.create("Ext.data.Store", {
+                    fields: ['name', 'value', 'Present_Value', 'update'],
+                    data: ojson
+                })
             }
-        }, {
-            par: "getDevsByDevName",
-            ip: ip,
-            port: port,
-            devname: devname
-        }
-    )
+        } catch (e) {}
+    }, {
+        par: "getDevsByDevName",
+        ip: ip,
+        port: port,
+        devname: devname
+    })
     return store;
 
 }
@@ -919,27 +915,25 @@ My.getSchdules = function (ip, port) {
         return store;
     }
     My.Ajax("resources/main.php", function (response) {
-            var data = response.responseText
-            try {
-                var ojson = Ext.decode(data)
-                if (ojson["isError"]) {
-                    return store;
-                } else {
+        var data = response.responseText
+        try {
+            var ojson = Ext.decode(data)
+            if (ojson["isError"]) {
+                return store;
+            } else {
 
-                    store = Ext.create("Ext.data.Store", {
-                        fields: ['name', 'value'],
-                        data: ojson
-                    })
+                store = Ext.create("Ext.data.Store", {
+                    fields: ['name', 'value'],
+                    data: ojson
+                })
 
-                }
-            } catch (e) {
             }
-        }, {
-            par: "getSchdule",
-            ip: ip,
-            port: port
-        }
-    )
+        } catch (e) {}
+    }, {
+        par: "getSchdule",
+        ip: ip,
+        port: port
+    })
     return store;
 }
 
@@ -949,18 +943,16 @@ My.getDevNames = function (ip, port) {
         return store;
     }
     My.Ajax("resources/main.php", function (response) {
-            var data = response.responseText
-            try {
-                var ojson = Ext.decode(data);
-                store = ojson;
-            } catch (e) {
-            }
-        }, {
-            par: "getDevNames",
-            ip: ip,
-            port: port
-        }
-    )
+        var data = response.responseText
+        try {
+            var ojson = Ext.decode(data);
+            store = ojson;
+        } catch (e) {}
+    }, {
+        par: "getDevNames",
+        ip: ip,
+        port: port
+    })
     return store;
 }
 
@@ -977,8 +969,7 @@ My.getSearch = function () {
 My.login = function (data) {
     My.Ajax("resources/main.php?par=login", function (response) {
 
-        }, data
-    )
+    }, data)
 }
 My.isLogin = function () {
     return My.getSession().isLogin;
@@ -1026,7 +1017,7 @@ My.initComponentConfig = {
             me.type = type;
         }
 
-//        console.log(data)
+        //        console.log(data)
 
         if (!!me.ip & !!me.port & !!me.nodename & !!me.type) {
             return true;
@@ -1065,6 +1056,7 @@ My.initComponentConfig = {
         }
 
         me.linkInfo(callbackFn.bind(me));
+
         function callbackFn(linkJson) {
             var me = this;
             if (!(linkJson.ip & linkJson.nodename)) {
@@ -1144,8 +1136,7 @@ My.initComponentConfig = {
         var items = My.linkManger.items;
         var key;
         var arr = [];
-        for (key in items) {
-        }
+        for (key in items) {}
         console.log(arr);
     },
     getSubscribeIps: function () {
@@ -1175,10 +1166,9 @@ My.initComponentConfig = {
             me.el.dom.appendChild(div)
             me.nameDiv = div;
         } else {
-            delete  me.nameDiv
+            delete me.nameDiv
         }
-    }
-    ,
+    },
     myGetName: function () {
         var me = this;
         if (me.name) {
@@ -1186,8 +1176,7 @@ My.initComponentConfig = {
         } else {
             return "";
         }
-    }
-    ,
+    },
     mySetBackgroundColor: function (color) {
         if (!color) {
             return;
@@ -1205,8 +1194,7 @@ My.initComponentConfig = {
             }
         }
 
-    }
-    ,
+    },
     mySetX: function (newValue) {
         newValue = parseInt(newValue)
         var me = this;
@@ -1215,8 +1203,7 @@ My.initComponentConfig = {
         me.setX(value);
 
         me.x = newValue;
-    }
-    ,
+    },
     mySetY: function (newValue) {
         newValue = parseInt(newValue)
         var me = this;
@@ -1225,24 +1212,21 @@ My.initComponentConfig = {
         me.setY(value);
 
         me.y = newValue;
-    }
-    ,
+    },
     mySetWidth: function (value) {
         value = parseInt(value)
         var me = this;
 
         me.setWidth(value)
         me.width = value
-    }
-    ,
+    },
     mySetHeight: function (value) {
         value = parseInt(value)
         var me = this;
 
         me.setHeight(value)
         me.height = value;
-    }
-    ,
+    },
 
     mySetZIndex: function (value) {
         var me = this;
@@ -1250,8 +1234,7 @@ My.initComponentConfig = {
             me.setZIndex(value);
             me.zindex = value;
         }
-    }
-    ,
+    },
 
     hasLinkValue: function () {
         var me = this;
@@ -1260,8 +1243,7 @@ My.initComponentConfig = {
         } else {
             return true;
         }
-    }
-    ,
+    },
     /*getLinkValue: function () {
      var me = this;
      if (me.hasLinkValue()) {
@@ -1284,15 +1266,14 @@ My.initComponentConfig = {
     setLinkValue: function (linkValue) {
         var me = this;
         linkValue += ""
-//        console.log(linkValue)
+        //        console.log(linkValue)
         if (linkValue == "undefined" || linkValue == "" || linkValue == "false") {
             me.linkValue = My.linkManger.getValue(me);
         } else {
             me.linkValue = linkValue;
         }
         me.refreshCanvas();
-    }
-    ,
+    },
 
     clearInterval: function () {
         var me = this;
@@ -1305,8 +1286,7 @@ My.initComponentConfig = {
         if (me.interval) {
             clearInterval(me.interval);
         }
-    }
-    ,
+    },
 
     openMenu: function (ok, cancel) {
         var me = this;
@@ -1406,15 +1386,13 @@ My.initComponentConfig = {
         if (e.keyCode == 40) {
             me.mySetY(me.y + 1)
         }
-    }
-    ,
+    },
     clientOpenMenu: function () {
         /*if (!My.isLogin()) {
          return false;
          }*/
         return true;
-    }
-    ,
+    },
     contextmenu: function (e) {
 
         e.stopEvent()
@@ -1429,32 +1407,34 @@ My.initComponentConfig = {
             x: e.pageX,
             y: e.pageY,
             autoShow: true,
-            items: [
-                {
-                    text: "Edit", handler: function () {
-                    Ext.create("editpic.view.window.CanvasConponmentWindow", {
-                        SimpleModel:true,
-                        values: me,
-                        ok: function (data) {
-                            me.init(data);
-                        },
-                        cancel: function () {
+            items: [{
+                    text: "Edit",
+                    handler: function () {
+                        Ext.create("editpic.view.window.CanvasConponmentWindow", {
+                            SimpleModel: true,
+                            values: me,
+                            ok: function (data) {
+                                me.init(data);
+                            },
+                            cancel: function () {
 
-                        }
-                    })
-                }
+                            }
+                        })
+                    }
                 },
                 {
-                    text: "Copy", handler: function () {
-                    me.up().copyImg = me;
-                }
+                    text: "Copy",
+                    handler: function () {
+                        me.up().copyImg = me;
+                    }
                 },
 
                 {
-                    text: "Delete", handler: function () {
-                    console.log(me.up('panel'))
-                    me.up("panel").removeStackPush(me)
-                }
+                    text: "Delete",
+                    handler: function () {
+                        console.log(me.up('panel'))
+                        me.up("panel").removeStackPush(me)
+                    }
                 },
                 {
                     text: "Duplicate",
@@ -1468,23 +1448,23 @@ My.initComponentConfig = {
                     }
                 },
                 {
-                    text: "Property", handler: function () {
-                    me.openMenu()
-                    /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
-                     values: me,
-                     ok: function (data) {
-                     me.init(data);
-                     },
-                     cancel: function () {
+                    text: "Property",
+                    handler: function () {
+                        me.openMenu()
+                        /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
+                         values: me,
+                         ok: function (data) {
+                         me.init(data);
+                         },
+                         cancel: function () {
 
-                     }
-                     })*/
-                }
+                         }
+                         })*/
+                    }
                 }
             ]
         })
-    }
-    ,
+    },
     dblclick: function (e, el) {
         var me = this;
         if (My.getSearch()) {
@@ -1492,8 +1472,7 @@ My.initComponentConfig = {
         }
         console.log(me)
         me.openMenu()
-    }
-    ,
+    },
 
     getFormItems: function (nodename, bloakFn) {
         var me = this;
@@ -1584,19 +1563,27 @@ My.initComponentConfig = {
 
         } else if (nodeType == 4 || nodeType == 5) {
 
-            valueField = Ext.create("Ext.form.field.ComboBox",
-                {
-                    fieldLabel: "Value",
-                    store: Ext.create("Ext.data.Store", {
-                        field: ["name", "value"],
-                        data: [{name: "Off", value: 0}, {name: "On", value: 1}, {name: "Null", value: "NULL"}]
-                    }),
-                    displayField: 'name',
-                    editable: false,
-                    valueField: 'value',
-                    name: "priorityValue",
-                    value: me.priorityValue
-                })
+            valueField = Ext.create("Ext.form.field.ComboBox", {
+                fieldLabel: "Value",
+                store: Ext.create("Ext.data.Store", {
+                    field: ["name", "value"],
+                    data: [{
+                        name: "Off",
+                        value: 0
+                    }, {
+                        name: "On",
+                        value: 1
+                    }, {
+                        name: "Null",
+                        value: "NULL"
+                    }]
+                }),
+                displayField: 'name',
+                editable: false,
+                valueField: 'value',
+                name: "priorityValue",
+                value: me.priorityValue
+            })
 
         } else {
             return null;
@@ -1618,7 +1605,9 @@ My.initComponentConfig = {
         })
 
         items.push({
-            xtype: "button", text: "OK", handler: function (button) {
+            xtype: "button",
+            text: "OK",
+            handler: function (button) {
                 me.Priority_For_Writing = combo1.getValue();
                 me.priorityValue = valueField.getValue();
                 if (button.up("form").isValid()) {
@@ -1630,8 +1619,7 @@ My.initComponentConfig = {
             }
         })
         return items;
-    }
-    ,
+    },
     openAlermWindow: function () {
         var me = this;
 
@@ -1664,12 +1652,16 @@ My.initComponentConfig = {
 
         })
         form.getForm().setValues(me);
-    }
-    ,
+    },
 
     publishPriority: function () {
         var me = this;
-        var ip = me.ip, port = me.port, nodename = me.nodename, devname = me.nodename.substr(0, 4), strnull = "", pubstr = "";
+        var ip = me.ip,
+            port = me.port,
+            nodename = me.nodename,
+            devname = me.nodename.substr(0, 4),
+            strnull = "",
+            pubstr = "";
         My.AjaxSimple({
             par: "gettypevalue",
             ip: ip,
@@ -1766,39 +1758,38 @@ My.getColorArr = function () {
     return arr;
 }
 My.createKeyBordTextField = function (data) {
-    var data = Ext.apply(
-        {
-            listeners: {
-                focus: function (field, t, e) {
-                    console.log(arguments)
-                    var id = "#" + t.target.id;
-                    var keybord = popKeybord(id);
+    var data = Ext.apply({
+        listeners: {
+            focus: function (field, t, e) {
+                console.log(arguments)
+                var id = "#" + t.target.id;
+                var keybord = popKeybord(id);
 
-                    function popKeybord(id) {
-                        $(id).keyboard({
-                            layout: 'qwerty'
-                        })
+                function popKeybord(id) {
+                    $(id).keyboard({
+                        layout: 'qwerty'
+                    })
 
-                        var keybord = document.querySelector(".ui-keyboard");
-                        if (keybord) {
-                            return keybord
-                        } else {
-                            field.focus()
-                            return keybord
-                        }
+                    var keybord = document.querySelector(".ui-keyboard");
+                    if (keybord) {
+                        return keybord
+                    } else {
+                        field.focus()
+                        return keybord
                     }
-
-                    //keybord.style.position = "fixed";
-                    keybord.style.zIndex = 200000;
-                    //keybord.style.top ="1px";
-                    //keybord.style.left = "1px";
-
-                    //keybord.style.left = (field.getX() + field.labelWidth) + "px";
-                    //keybord.style.top = field.getY() + "px";
-                    keybord.style.backgroundColor = "#3f4655"
                 }
+
+                //keybord.style.position = "fixed";
+                keybord.style.zIndex = 200000;
+                //keybord.style.top ="1px";
+                //keybord.style.left = "1px";
+
+                //keybord.style.left = (field.getX() + field.labelWidth) + "px";
+                //keybord.style.top = field.getY() + "px";
+                keybord.style.backgroundColor = "#3f4655"
             }
-        }, data)
+        }
+    }, data)
     return Ext.create("Ext.form.field.Text", data);
 }
 My.isKeyBord = false;
@@ -1840,6 +1831,9 @@ My.createImg = function (data) {
     }
     if (data.itype == 16) {
         component = Ext.create("editpic.view.img.DevicesTool", data)
+    }
+    if (data.itype == 17) {
+        component = Ext.create("graph.view.img.HistoryTool", data)
     }
     return component;
 }
@@ -1968,7 +1962,7 @@ My.util.PublishPic = {
         for (var i = 0; i < me.subscribeItems.length; i++) {
             var img = me.subscribeItems[i];
             if (img.ip == ip & img.nodename == arr[0] & img.type == arr[1]) {
-                img.setLinkValue(arr[2]);//成功后设置值
+                img.setLinkValue(arr[2]); //成功后设置值
                 ipsArr.push(img.ip);
                 //me.getSubscribe(img.ip);//得到订阅返回值后继续订阅
             }
@@ -2032,6 +2026,7 @@ function getNetNumberValue(filename) {
     })
     return str;
 }
+
 function isBarCollsion(x1, y1, x2, y2, w, h) {
     if (x1 >= x2 && x1 <= x2 + w && y1 >= y2 && y1 <= y2 + h) {
         return true;
@@ -2040,7 +2035,7 @@ function isBarCollsion(x1, y1, x2, y2, w, h) {
 }
 window.requestAnimFrame = (function () {
     return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-        function (/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+        function ( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
             return window.setTimeout(callback, 1000 / 60);
         };
 })();
@@ -2060,7 +2055,7 @@ Array.prototype.unique1 = function () {
 
 My.linkManger = {};
 My.linkManger.items = {};
-My.eachDelay = 1000 * 60 * 3;//侦听失败后重试时间
+My.eachDelay = 1000 * 60 * 3; //侦听失败后重试时间
 My.linkManger.getValue = function (data) {
     var linkManger = this;
     var items = linkManger.items;
@@ -2098,7 +2093,7 @@ My.initLinkValue = function () {
 
 
     My.AjaxSimplePostAsync(data, "resources/main.php?par=getLinkValues", function (response) {
-//        console.log(response.responseText)
+        //        console.log(response.responseText)
 
         try {
             Ext.decode(response.responseText);
@@ -2136,8 +2131,7 @@ My.publish = function () {
     var curPanel = My.getCurrentPicPanel();
 }
 
-My.getCurrentPicPanle = function () {
-}
+My.getCurrentPicPanle = function () {}
 My.util.getFormNextTimeMillisecond = function (mill) {
     return mill - new Date().getTime() % mill;
 }
@@ -2231,7 +2225,7 @@ Ext.onReady(function () {
                 var id = aResData[i].id;
                 var oItem = Ext.getCmp(id);
                 if (oItem) {
-                    if(oItem.itype!=3){
+                    if (oItem.itype != 3) {
                         oItem.setLinkValue(aResData[i].value)
                     }
                 }
@@ -2339,7 +2333,7 @@ Ext.onReady(function () {
                     port: subscribeItem.port,
                     subnodes: Ext.encode(subscribeItem.subnodes),
                     types: Ext.encode(subscribeItem.types),
-                    redistimeout: Math.ceil((time || iQuireInterval) / 1000),//redis超时链接时间
+                    redistimeout: Math.ceil((time || iQuireInterval) / 1000), //redis超时链接时间
                     time: startTime //记录请求的开始时间
                 },
                 timeout: iQuireInterval
@@ -2394,8 +2388,8 @@ Ext.onReady(function () {
         for (var i = 0; i < subscribeItems.length; i++) {
             var img = Ext.getCmp(subscribeItems[i].id);
             if (img.ip == ip & img.nodename == arr[0] & img.type == arr[1]) {
-                if(img.itype!=3){
-                    img.setLinkValue(arr[2]);//成功后设置值
+                if (img.itype != 3) {
+                    img.setLinkValue(arr[2]); //成功后设置值
                 }
             }
         }

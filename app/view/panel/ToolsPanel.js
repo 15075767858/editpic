@@ -21,8 +21,6 @@ Ext.define('editpic.view.panel.ToolsPanel', {
     //collapsed:true,
     initComponent: function () {
         var me = this;
-
-
         /*       me.items=Ext.create('Ext.view.View', {
          store:Ext.create('Ext.data.Store', {
          id:'imagesStore',
@@ -61,7 +59,8 @@ Ext.define('editpic.view.panel.ToolsPanel', {
                 {src: 'resources/icons/time.png', caption: 'time',itype:13,disabled:false},
                 {src: 'resources/icons/video.png', caption: 'video',itype:14,disabled:true},
                 {src: 'resources/icons/weather.png', caption: 'weather',itype:15,disabled:true},
-                {src: 'resources/icons/devices_48px.png', caption: 'devices',itype:16,disabled:false}
+                {src: 'resources/icons/devices_48px.png', caption: 'devices',itype:16,disabled:false},
+                {src: 'resources/icons/Graphique_chart_48px.png',caption:"history",itype:17,disabled:true}
             ]
 
             for (var i = 0; i < data.length; i++) {

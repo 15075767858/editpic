@@ -76,7 +76,6 @@ Ext.define('editpic.view.img.LinkTool', {
                 if (My.getSearch()) {
                     var session=My.getSession();
                     if(session.level>99){
-
                         Ext.getCmp("mintab").addTab(me.linkValue);
                         return ;
                     }
@@ -90,7 +89,6 @@ Ext.define('editpic.view.img.LinkTool', {
                                 } else {
                                     Ext.Msg.alert("Error", "Permission denied .")
                                 }
-
                             }
                         }
                     )

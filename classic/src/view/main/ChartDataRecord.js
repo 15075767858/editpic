@@ -1,4 +1,3 @@
-
 Ext.define('graph.view.chart.ChartDataRecord',{
     extend: 'Ext.chart.CartesianChart',
     alias:"ChartDataRecord",
@@ -130,7 +129,6 @@ Ext.define('graph.view.chart.ChartDataRecord',{
         },
         xField: 'last_update_time',
         yField: 'Present_Value',
-
         label: {
             field: 'Object_Name',
             display: 'over',

@@ -20,7 +20,5 @@ Ext.define('editpic.view.img.ClockTool',{
             },1000)
             me.add(me.contentPanel);
         }
-
-
     }
 });

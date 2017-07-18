@@ -364,7 +364,9 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
         }
 
 
-        if (itype == 12 || itype == 16) {
+
+        //redis ip port 选择框
+        if (itype == 12 || itype == 16 ||itype==17) {
             var ipFiled = {
                 xtype: "combo",
                 flex: 3,

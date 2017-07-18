@@ -6,7 +6,7 @@ Ext.define('editpic.view.main.List', {
     xtype: 'mainlist',
 
     requires: [
-        'editpic.store.Personnel'
+        //'editpic.store.Personnel'
     ],
 
     title: 'Personnel',
