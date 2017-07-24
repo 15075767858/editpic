@@ -8,13 +8,14 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
     },
 
     initComponent: function () {
-        var me = this, values = me.values, itype = me.values.itype;
+        var me = this,
+            values = me.values,
+            itype = me.values.itype;
         console.log(itype)
         if (itype == 0 || itype == 1 || itype == 2 || itype == 5) {
             var nodeNameStore = My.getDevStore(me.values.ip, me.values.port)
             var nodeTypeStore = My.getDevTypeStore(me.values.ip, me.values.port, me.values.nodename);
-            me.items = [
-                {
+            me.items = [{
                     xtype: 'checkbox',
                     fieldLabel: "bind",
                     name: 'isBind',
@@ -24,23 +25,23 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     bind: itype != 0 || {
                         disabled: "{!isLinkDataBase.checked}"
                     },
-                    listeners:{
-                      render:function(checkbox){
-                          checkbox.setValue(true)
-                      }
+                    listeners: {
+                        render: function (checkbox) {
+                            checkbox.setValue(true)
+                        }
                     },
                     handler: function (field, value) {
-                    var priority = me.lookup("priority");
-                    var isBindPriority = me.lookup("isBindPriority");
-                    if (!value) {
-                        priority.hide()
-                        priority.setDisabled(true)
-                        isBindPriority.hide()
-                        isBindPriority.setValue(value)
-                    } else {
-                        isBindPriority.show()
+                        var priority = me.lookup("priority");
+                        var isBindPriority = me.lookup("isBindPriority");
+                        if (!value) {
+                            priority.hide()
+                            priority.setDisabled(true)
+                            isBindPriority.hide()
+                            isBindPriority.setValue(value)
+                        } else {
+                            isBindPriority.show()
+                        }
                     }
-                }
                 },
                 {
                     //xtype: "textfield",
@@ -53,7 +54,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         hidden: "{!isBind.checked}",
                         disabled: "{!isBind.checked}"
                     },
-                    store: ["127.0.0.1",window.location.hostname, "192.168.253.253"],
+                    store: ["127.0.0.1", window.location.hostname, "192.168.253.253"],
                     value: "127.0.0.1"
 
                 },
@@ -67,7 +68,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                         disabled: "{!isBind.checked}"
                     },
                     reference: "portfield",
-                    store:['6379'],
+                    store: ['6379'],
                     value: "6379"
                 },
                 {
@@ -152,8 +153,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                 scrollable: "y",
                                 modal: true,
 
-                                items: [
-                                    {
+                                items: [{
                                         rootVisible: false,
                                         xtype: "treepanel",
                                         width: "100%",
@@ -173,23 +173,21 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
                                             }
                                         },
-                                        tbar: [
-                                            {
-                                                text: 'Expand All',
-                                                xtype: "button",
-                                                handler: function (th) {
-                                                    var me = this.up("treepanel");
-                                                    me.expandAll();
-                                                }
-                                            }, {
-                                                text: 'Collapse All',
-                                                xtype: "button",
-                                                handler: function (th) {
-                                                    var me = this.up("treepanel");
-                                                    me.collapseAll();
-                                                }
+                                        tbar: [{
+                                            text: 'Expand All',
+                                            xtype: "button",
+                                            handler: function (th) {
+                                                var me = this.up("treepanel");
+                                                me.expandAll();
                                             }
-                                        ],
+                                        }, {
+                                            text: 'Collapse All',
+                                            xtype: "button",
+                                            handler: function (th) {
+                                                var me = this.up("treepanel");
+                                                me.collapseAll();
+                                            }
+                                        }],
 
                                         store: Ext.create("Ext.data.TreeStore", {
                                             autoLoad: true,
@@ -210,9 +208,11 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                         scrollable: "y",
                                         plugins: 'gridfilters',
                                         store: combo.store,
-                                        columns: [
-                                            {
-                                            text: "Object_Name", dataIndex: "name", flex: 7, filter: {
+                                        columns: [{
+                                            text: "Object_Name",
+                                            dataIndex: "name",
+                                            flex: 7,
+                                            filter: {
                                                 type: "string"
                                             },
                                             items: {
@@ -228,7 +228,10 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                                 }
                                             }
                                         }, {
-                                            text: "Key", dataIndex: "value", flex: 3, filter: {
+                                            text: "Key",
+                                            dataIndex: "value",
+                                            flex: 3,
+                                            filter: {
                                                 type: "string"
                                             },
                                             items: {
@@ -243,24 +246,23 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                                     }
                                                 }
                                             }
-                                        }
-                                        ]
+                                        }]
                                     }
 
 
                                 ],
 
-                                buttons: [
-                                    {
-                                        text: "Select mode", handler: function () {
-                                        var activeItem = win.layout.getActiveItem();
-                                        if (activeItem.next()) {
-                                            win.layout.setActiveItem(activeItem.next())
-                                        } else {
-                                            win.layout.setActiveItem(activeItem.prev())
-                                        }
+                                buttons: [{
+                                        text: "Select mode",
+                                        handler: function () {
+                                            var activeItem = win.layout.getActiveItem();
+                                            if (activeItem.next()) {
+                                                win.layout.setActiveItem(activeItem.next())
+                                            } else {
+                                                win.layout.setActiveItem(activeItem.prev())
+                                            }
 
-                                    }
+                                        }
                                     },
                                     "->",
                                     {
@@ -335,15 +337,14 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
         }
 
         if (itype == 3) {
-            me.items = [
-                {
+            me.items = [{
                     xtype: 'checkbox',
                     fieldLabel: "bind",
                     name: 'isBind',
                     hidden: true,
                     reference: "isBind",
-                    listeners:{
-                        render:function(checkbox){
+                    listeners: {
+                        render: function (checkbox) {
                             checkbox.setValue(true)
                         }
                     }
@@ -366,14 +367,14 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
 
         //redis ip port 选择框
-        if (itype == 12 || itype == 16 ||itype==17) {
+        if (itype == 12 || itype == 16 || itype == 17) {
             var ipFiled = {
                 xtype: "combo",
                 flex: 3,
                 fieldLabel: "ip",
                 reference: "ipfield",
                 name: "ip",
-                store: ["127.0.0.1",window.location.hostname, "192.168.253.253"],
+                store: ["127.0.0.1", window.location.hostname, "192.168.253.253"],
                 value: "127.0.0.1"
             };
             var portField = {
@@ -382,7 +383,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 fieldLabel: "port",
                 name: "port",
                 reference: "portfield",
-                store:['6379'],
+                store: ['6379'],
                 value: "6379"
             };
             /*
@@ -396,6 +397,69 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 portField
             ]
         }
+        if (itype == 17) {
+            var addListen = {
+                xtype: "button",
+                flex: 1,
+                text: "AddHistoryPoint",
+                handler: function () {
+                    var ip = me.lookup("ipfield").getValue();
+                    var port = me.lookup("portfield").getValue();
+                    Ext.createByAlias("SelectKeyWinodw", {
+                        ip: ip || "127.0.0.1",
+                        port: port || 6379,
+                        callback: function (selectArr) {
+                            var win = this;
+                            var keys = this.down("treepanel").getChecked();
+                            this.down("treepanel")
+                            keys = keys.filter(function (val, index) {
+                                if (val.data.leaf) {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            })
+                            if (keys.length > 8) {
+                                Ext.Msg.alert("Exception", "The maximum quantity is 8");
+                                return;
+                            }
+                            var keysArr = [];
+                            for (var i = 0; i < keys.length; i++) {
+                                keysArr.push(keys[i].data.value);
+                            }
+                            var keysStr = keysArr.join(",");
+                            hostPoint.setValue(keysStr);
+                            My.delayToast("info", "select ok ." + keysStr);
+                            win.close();
+                        }
+                    })
+                }
+            }
+            var tableName = Ext.createWidget("textfield", {
+                flex: 1,
+                name: "tableName",
+                fieldLabel: "table name",
+                value: "",
+                // validator :function(){
+                //     return "dfa"
+                // },
+                listeners: {
+                    focusleave: function () {
+                        console.log("focusleave")
+                    }
+                }
+            })
+            var hostPoint = Ext.createWidget("textfield", {
+                flex: 1,
+                name: "hostPoint",
+                fieldLabel: "host point",
+                value: ""
+            })
+            me.items.push(tableName)
+            me.items.push(addListen)
+            me.items.push(hostPoint)
+        }
+
         if (itype == 12) {
             var schdules = My.getSchdules(me.values.ip, me.values.port)
             me.items.push({
@@ -459,9 +523,9 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 reference: "devscombo",
                 editable: true,
                 store: devs,
-                listeners:{
-                    render:function(combo){
-                        if(!combo.value){
+                listeners: {
+                    render: function (combo) {
+                        if (!combo.value) {
                             combo.setDisabled(true)
                         }
                     }
@@ -471,6 +535,26 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
         }
 
+        me.myIsValid = function () {
+            if (itype == 17) {
+                var isTableExist=false;
+                Ext.Ajax.request({
+                    url: "resources/mysql.php",
+                    async: false,
+                    params: {
+                        par: "isTableExist"
+                    },
+                    success: function (response) {
+                        var obj = Ext.decode(response.responseText);
+
+                    }
+                })
+
+                return me.isValid() & confirm("table was already exist. would you like to change it? ");
+            }
+
+            return me.isValid();
+        }
 
         me.callParent();
     },

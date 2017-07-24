@@ -10,17 +10,13 @@ Ext.define('editpic.view.EventAlarm.SelectKeyWinodw', {
     viewModel: {
         type: 'eventalarm-selectkeywinodw'
     },
-
+    checkPropagation: "both",
     title: "Select Key",
     autoShow: true,
     width: 600,
     maxHeight: 390,
     scrollable: "y",
-    listeners: {
-        boxready: function () {
-            console.log(arguments)
-        }
-    },
+
     initComponent: function () {
         var me = this;
         me.ip = me.ip || location.host;
@@ -30,6 +26,22 @@ Ext.define('editpic.view.EventAlarm.SelectKeyWinodw', {
             rootVisible: false,
             xtype: "treepanel",
             listeners: {
+                checkchange: function (node, checked, e, eOpts) {
+                    checkNode(node, checked)
+
+                    function checkNode(node, checked) {
+                        var childNodes = node.childNodes;
+                        if (childNodes.length > 0) {
+                            for (var i = 0; i < childNodes.length; i++) {
+                                childNodes[i].set("checked", checked)
+                                if (childNodes[i].childNodes.length > 0) {
+                                    checkNode(childNodes[i], checked);
+                                }
+                            }
+                        }
+                    }
+                    console.log(arguments)
+                },
                 boxready: function (treePanel) {
                     setTimeout(function () {
                         var node = treePanel.store.findNode('value', me.key)
@@ -94,10 +106,21 @@ Ext.define('editpic.view.EventAlarm.SelectKeyWinodw', {
                     }
                 }
             },
-            columns: [
-                {xtype: "treecolumn", dataIndex: "text", flex: 1},
-                {text: "object name", dataIndex: "text", flex: 1},
-                {text: "key", dataIndex: "value", flex: 1},
+            columns: [{
+                    xtype: "treecolumn",
+                    dataIndex: "text",
+                    flex: 1
+                },
+                {
+                    text: "object name",
+                    dataIndex: "text",
+                    flex: 1
+                },
+                {
+                    text: "key",
+                    dataIndex: "value",
+                    flex: 1
+                },
 
             ]
             /*store: Ext.create("Ext.data.TreeStore", {
@@ -134,6 +157,6 @@ Ext.define('editpic.view.EventAlarm.SelectKeyWinodw', {
             }
         }]
         me.callParent();
-        testme = me.down("treepanel");
+        //testme = me.down("treepanel");
     }
 });

@@ -19,6 +19,7 @@ Ext.define('graph.view.chart.ChartDataRecord',{
         right: 18,
         top: 18
     },
+
     tbar: {
         itemId: "toolbar",
         items: [

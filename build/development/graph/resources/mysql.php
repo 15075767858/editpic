@@ -54,6 +54,11 @@ if ($par == "getEventData") {
     echo json_encode($arr);
 }
 
+if($par=="isTableExist"){
+    
+    
+}
+
 function getOne($mysql, $sql)
 {
     $res = mysqli_query($mysql, $sql);
@@ -73,3 +78,4 @@ function getArray($mysql, $sql)
     }
     return $arr;
 }
+

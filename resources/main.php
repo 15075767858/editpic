@@ -2,6 +2,7 @@
 
 $ip = $_SERVER["SERVER_ADDR"];
 $par = $_REQUEST["par"];
+
 /*$redis = new Redis();
 if ($ip == "127.0.0.1") {
     $redis->connect("192.168.253.253", 6379);
@@ -16,6 +17,7 @@ if ($par == "uploadHomeFile") {
 }
 
 if ($par == 'getSvgTree') {
+
     //$path = "svg";
     $path = $_REQUEST['path'];
     //$path = "SvgHvac";
@@ -265,7 +267,7 @@ function getDevs($arList)
     }
     $devs = array_unique($arr);
     foreach ($devs as $value) {
-        array_push($root['children'], array('leaf' => false, 'text' => $value, 'children' => getDevChildren($arList, $value, $redis)));
+        array_push($root['children'], array('leaf' => false,"checked"=>false, 'text' => $value, 'children' => getDevChildren($arList, $value, $redis)));
     }
     echo json_encode($root);
     //return $arr;
@@ -279,7 +281,7 @@ function getDevChildren($arList, $devValue, $redis)
     for ($i = 0; $i <= 6; $i++) {
         $children = getChildren($arList, $devValue . (string)$i, $redis);
         if (sizeof($children)) {
-            array_push($arr, array('text' => $types[$i], 'leaf' => false, 'children' => $children));
+            array_push($arr, array('text' => $types[$i], 'leaf' => false, "checked"=>false,'children' => $children));
         }
     }
     return $arr;
@@ -293,7 +295,7 @@ function getChildren($arList, $devValue, $redis)
             //$Object_Name = $redis->hGet($value, 'Object_Name');
             $Object_Name = hGet($redis, $value, "Object_Name");
 
-            array_push($arr, array('leaf' => true, 'text' => $Object_Name, 'value' => $value));
+            array_push($arr, array('leaf' => true, 'text' => $Object_Name,"checked"=>false, 'value' => $value));
         }
     }
     return $arr;
@@ -735,7 +737,15 @@ function setRedisUpdateTime($redis, $nodename)
 {
     $redis->hSet($nodename, "Update_Time", date("Y-m-d h:i:s"));
 }
+function isMac(){
+    $name= php_uname();
 
+    if(substr($name,0,6)=="Darwin"){
+        return true;
+    }else{
+        return false;
+    }
+}
 /*
 function listDir($dir)
 {

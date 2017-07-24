@@ -787,6 +787,8 @@ $include-editpic-view-window-editfilemodel: dynamic(false);;
 $include-graph-model-weekmodel: dynamic(false);;
 $include-graph-view-chart-chartdatarecordcontroller: dynamic(false);;
 $include-graph-view-chart-chartdatarecordmodel: dynamic(false);;
+$include-graph-view-chart-historychartcontroller: dynamic(false);;
+$include-graph-view-chart-historychartmodel: dynamic(false);;
 $include-graph-view-img-historytool: dynamic(true);;
 $include-graph-view-img-historytoolcontroller: dynamic(true);;
 $include-graph-view-img-historytoolmodel: dynamic(true);;

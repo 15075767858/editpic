@@ -4,7 +4,7 @@ Ext.define('graph.view.window.DataRecordWindow', {
     requires: [
         'graph.view.window.DataRecordWindowController',
         'graph.view.window.DataRecordWindowModel',
-         'Ext.ux.ProgressBarPager',
+        'Ext.ux.ProgressBarPager',
     ],
 
     controller: 'window-datarecordwindow',
@@ -1056,7 +1056,7 @@ Ext.define('QueryDataRecord', {
                     "-", {
                         listeners: {
                             change: function (field, newV, oldV) {
-                                field.up().pageSize=newV;
+                                field.up().pageSize = newV;
                                 me.store.setPageSize(newV)
                             }
                         },
@@ -1255,3 +1255,206 @@ Ext.define('QueryEventRecord', {
 
 
 });
+
+Ext.define("FilterPoint", {
+    extend: "Ext.grid.Panel",
+    alias: "FilterPoint",
+    xtype: "FilterPoint",
+    width: 500,
+    height: 300,
+    store: Ext.create("Ext.data.XmlStore", {
+        autoLoad: true,
+        fields: ["ip", "port", "object_name", "key"],
+        proxy: {
+            url: "php/file.php?fileName=/mnt/nandflash/filterpoint.xml&par=get",
+            type: "ajax",
+            reader: {
+                type: 'xml',
+                record: "item",
+                rootProperty: "root"
+            }
+        },
+        data: []
+    }),
+    getXmlStr: function () {
+        var me = this;
+        var store = me.store;
+        var items = store.data.items;
+        var root = document.createElement("root");
+        for (var i = 0; i < items.length; i++) {
+            var item = document.createElement("item");
+            var ip = document.createElement("ip");
+            var port = document.createElement("port");
+            var object_name = document.createElement("object_name");
+            var key = document.createElement("key");
+
+            ip.innerHTML = items[i].data.ip;
+            port.innerHTML = items[i].data.port;
+            object_name.innerHTML = items[i].data.object_name;
+            key.innerHTML = items[i].data.key;
+
+            item.appendChild(ip)
+            item.appendChild(port)
+            item.appendChild(object_name)
+            item.appendChild(key)
+            root.appendChild(item);
+        }
+        var xmlstr = '<?xml version="1.0" encoding="utf-8"?>' + root.outerHTML;
+        console.log(xmlstr);
+        return xmlstr
+    },
+    saveIpsXml: function () {
+        var xmlstr = this.getXmlStr()
+        Ext.Ajax.request({
+            url: "php/file.php",
+            method: "POST",
+            params: {
+                par: "save",
+                fileName: "/mnt/nandflash/filterpoint.xml",
+                content: xmlstr
+            }
+        }).then(function (response) {
+            if (isNaN(response.responseText)) {
+                Ext.Msg.alert("info ", "save file done " + response.responseText)
+            } else {
+                Ext.Msg.alert("info ", "save file ok " + response.responseText)
+            }
+        })
+    },
+    columns: [{
+            text: "Ip",
+            dataIndex: "ip",
+            flex: 1,
+            editor: {
+                xtype: 'textfield',
+                allowBlank: false
+            }
+        },
+        {
+            text: "Port",
+            dataIndex: "port",
+            flex: 1,
+            hidden: true,
+            editor: {
+                xtype: 'numberfield',
+                allowBlank: false,
+                minValue: 1,
+                //maxValue: 99
+            }
+        },
+        {
+            text: "Key",
+            dataIndex: "key",
+            flex: 1,
+            editor: {
+                xtype: "textfield",
+                allowBlank: false
+            }
+        },
+        {
+            text: "Object_Name",
+            dataIndex: "object_name",
+            flex: 1,
+            renderer: function (und, ele, model) {
+                var key = model.data.key
+                //console.log(arguments)
+                if (und != "") {
+                    return und;
+                }
+                if (key) {
+                    Ext.Ajax.request({
+                        url: "php/main.php",
+                        async: false,
+                        params: {
+                            par: "getNodeTypeValue",
+                            ip: ip,
+                            port: port,
+                            nodename: model.data.key,
+                            type: "Object_Name"
+                        },
+                        success: function (response) {
+
+                            und = response.responseText;
+                            model.data.objectname = und
+                        }
+                    })
+                }
+                return und;
+            }
+        }
+    ],
+    plugins: [
+        Ext.create('Ext.grid.plugin.CellEditing', {
+            clicksToEdit: 1
+        })
+    ],
+    addItem: function (data) {
+        var grid = this;
+        //var selArr = grid.getSelection();
+        grid.store.add(data)
+    },
+    deleteSelectItem: function () {
+        var grid = this;
+        var selArr = grid.getSelection();
+        if (selArr[0]) {
+            grid.store.remove(selArr[0])
+        }
+    },
+    initComponent: function () {
+        var me = this;
+        me.callParent();
+    },
+    listeners: {
+        boxready: function (grid) {
+            testgrid = grid
+            console.log(arguments)
+        }
+    }
+})
+
+Ext.define("FilterPointWindow", {
+    extend: "Ext.window.Window",
+    width: 500,
+    height: 300,
+    title: "Setting Event No Listen Point",
+    autoShow: true,
+    scrollable: "y",
+    items: [{
+        xtype: "FilterPoint"
+    }],
+    buttons: [{
+            text: "Add",
+            handler: function () {
+                var grid = this.up("window").down("grid")
+                Ext.create("SelectKeyFormWindow", {
+                    callback: function (res) {
+                        console.log(res)
+                        grid.addItem(res)
+                    }
+                })
+            }
+        },
+        {
+            text: "Delete",
+            handler: function () {
+                var grid = this.up("window").down("grid")
+                grid.deleteSelectItem();
+            }
+        },
+        "->",
+        {
+            text: "Ok",
+            handler: function () {
+                var grid = this.up("window").down("grid")
+                console.log(grid)
+                grid.saveIpsXml();
+            }
+        },
+        {
+            text: "Cancel",
+            handler: function () {
+                this.up("window").close()
+            }
+        }
+    ]
+})

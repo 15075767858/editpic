@@ -88,8 +88,8 @@ Ext.define('editpic.view.window.CanvasConponmentWindow', {
                 text: "OK", handler: function () {
 
                 var labelForm = me.labelFormPanel.getForm();
-                var bindForm = me.bindFormPanel.getForm();
-                if (labelForm.isValid() & bindForm.isValid()) {
+                var bindForm = me.bindFormPanel
+                if (labelForm.isValid() & bindForm.myIsValid()) {
                     var bindValues = bindForm.getValues()
                     console.log(bindValues)
                     var datas = labelForm.getValues();

@@ -54,10 +54,10 @@ function testComponent() {
         width: 800,
         height: 600,
         items: [
-           Ext.create("graph.view.tree.DeviceTree",{
-               ip:"127.0.0.1",
-               port:"6379"
-           })
+            Ext.create("graph.view.tree.DeviceTree", {
+                ip: "127.0.0.1",
+                port: "6379"
+            })
         ]
     })
 
@@ -66,6 +66,16 @@ function testComponent() {
 
 (function () {
     Ext.onReady(function () {
+
+        setTimeout(function () {
+            Ext.create("Ext.window.Window", {
+                autoShow: true,
+                height: 600,
+                width: 800,
+                items: Ext.createByAlias("HistoryChart"),
+
+            })
+        }, 5000)
 
 
         //setInterval(function () {
@@ -334,8 +344,8 @@ function showDataRecordWindow() {
                 var keysArr = treePanel.getSelectPoints();
 
                 var qdr = Ext.create("QueryEventRecord", {
-                    ip:  IPCombo.value,
-                    keys:keysArr.join(",")
+                    ip: IPCombo.value,
+                    keys: keysArr.join(",")
                 })
                 // var cdr = Ext.create("ChartDataRecord", {
                 //     store: qdr.store
@@ -345,7 +355,7 @@ function showDataRecordWindow() {
                     title: "Show Data Record",
                     autoShow: true,
                     scrollable: "y",
-                    items: [ qdr]
+                    items: [qdr]
                 })
 
 

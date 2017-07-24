@@ -11,7 +11,22 @@ Ext.define('graph.view.img.HistoryTool', {
         type: 'img-historytool'
     },
     layout: "absolute",
-
+    init: function (data) {
+        var me = this;
+        console.log(data);
+         me.hostPoint = data.hostPoint;
+         me.tableName = data.tableName;
+        me.callParent(arguments)
+    },
+    getInitData: function () {
+        var me = this;
+        var data = me.callParent()
+        Ext.apply(data, {
+            tableName: me.tableName,
+            hostPoint: me.hostPoint
+        })
+        return data;
+    },
     refreshCanvas: function () {
         console.log("clock refreshCanvas")
         var me = this;
