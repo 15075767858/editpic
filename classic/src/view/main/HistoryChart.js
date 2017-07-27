@@ -3,7 +3,8 @@ Ext.define('graph.view.chart.HistoryChart', {
     alias: "HistoryChart",
     requires: [
         'graph.view.chart.HistoryChartController',
-        'graph.view.chart.HistoryChartModel'
+        'graph.view.chart.HistoryChartModel',
+        "graph.store.HistoryStore"
     ],
 
     controller: 'chart-historychart',
@@ -12,440 +13,29 @@ Ext.define('graph.view.chart.HistoryChart', {
     },
     initComponent: function () {
         var me = this;
-        var data= [
-            {
-            "0": "1",
-            "id": "1",
-            "1": "10",
-            "device": "10",
-            "2": "",
-            "Object_Name": "",
-            "3": "1001",
-            "device_instance": "1001",
-            "4": "0",
-            "device_type": "0",
-            "5": "01",
-            "device_number": "01",
-            "6": "-597",
-            "Present_Value": "-597",
-            "7": "2017-07-07 11:42:45",
-            "last_update_time": "2017-07-07 11:42:45"
-        }, {
-            "0": "2",
-            "id": "2",
-            "1": "10",
-            "device": "10",
-            "2": "",
-            "Object_Name": "",
-            "3": "1001",
-            "device_instance": "1001",
-            "4": "0",
-            "device_type": "0",
-            "5": "01",
-            "device_number": "01",
-            "6": "336",
-            "Present_Value": "336",
-            "7": "2017-07-07 11:42:47",
-            "last_update_time": "2017-07-07 11:42:47"
-        }, {
-            "0": "3",
-            "id": "3",
-            "1": "10",
-            "device": "10",
-            "2": "",
-            "Object_Name": "",
-            "3": "1001",
-            "device_instance": "1001",
-            "4": "0",
-            "device_type": "0",
-            "5": "01",
-            "device_number": "01",
-            "6": "631",
-            "Present_Value": "631",
-            "7": "2017-07-07 11:42:47",
-            "last_update_time": "2017-07-07 11:42:47"
-        }, {
-            "0": "4",
-            "id": "4",
-            "1": "10",
-            "device": "10",
-            "2": "",
-            "Object_Name": "",
-            "3": "1001",
-            "device_instance": "1001",
-            "4": "0",
-            "device_type": "0",
-            "5": "01",
-            "device_number": "01",
-            "6": "805",
-            "Present_Value": "805",
-            "7": "2017-07-07 11:42:48",
-            "last_update_time": "2017-07-07 11:42:48"
-        },
-            {
-                "0": "5",
-                "id": "5",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "634",
-                "Present_Value": "634",
-                "7": "2017-07-07 11:42:49",
-                "last_update_time": "2017-07-07 11:42:49"
-            }, {
-                "0": "6",
-                "id": "6",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "249",
-                "Present_Value": "249",
-                "7": "2017-07-07 11:42:51",
-                "last_update_time": "2017-07-07 11:42:51"
-            }, {
-                "0": "7",
-                "id": "7",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "229",
-                "Present_Value": "229",
-                "7": "2017-07-07 11:42:52",
-                "last_update_time": "2017-07-07 11:42:52"
-            }, {
-                "0": "8",
-                "id": "8",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "339",
-                "Present_Value": "339",
-                "7": "2017-07-07 11:42:53",
-                "last_update_time": "2017-07-07 11:42:53"
-            }, {
-                "0": "9",
-                "id": "9",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "139",
-                "Present_Value": "139",
-                "7": "2017-07-07 11:42:54",
-                "last_update_time": "2017-07-07 11:42:54"
-            }, {
-                "0": "10",
-                "id": "10",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "424",
-                "Present_Value": "424",
-                "7": "2017-07-07 11:42:55",
-                "last_update_time": "2017-07-07 11:42:55"
-            }, {
-                "0": "11",
-                "id": "11",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "891",
-                "Present_Value": "891",
-                "7": "2017-07-07 11:42:55",
-                "last_update_time": "2017-07-07 11:42:55"
-            }, {
-                "0": "12",
-                "id": "12",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "411",
-                "Present_Value": "411",
-                "7": "2017-07-07 11:42:57",
-                "last_update_time": "2017-07-07 11:42:57"
-            }, {
-                "0": "13",
-                "id": "13",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "266",
-                "Present_Value": "266",
-                "7": "2017-07-07 11:42:58",
-                "last_update_time": "2017-07-07 11:42:58"
-            }, {
-                "0": "14",
-                "id": "14",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "83.",
-                "Present_Value": "83.",
-                "7": "2017-07-07 11:42:58",
-                "last_update_time": "2017-07-07 11:42:58"
-            }, {
-                "0": "15",
-                "id": "15",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "-755",
-                "Present_Value": "-755",
-                "7": "2017-07-07 11:42:59",
-                "last_update_time": "2017-07-07 11:42:59"
-            }, {
-                "0": "16",
-                "id": "16",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "850",
-                "Present_Value": "850",
-                "7": "2017-07-07 11:43:00",
-                "last_update_time": "2017-07-07 11:43:00"
-            }, {
-                "0": "17",
-                "id": "17",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "839",
-                "Present_Value": "839",
-                "7": "2017-07-07 11:43:01",
-                "last_update_time": "2017-07-07 11:43:01"
-            }, {
-                "0": "18",
-                "id": "18",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "793",
-                "Present_Value": "793",
-                "7": "2017-07-07 11:43:03",
-                "last_update_time": "2017-07-07 11:43:03"
-            }, {
-                "0": "19",
-                "id": "19",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "751",
-                "Present_Value": "751",
-                "7": "2017-07-07 11:43:03",
-                "last_update_time": "2017-07-07 11:43:03"
-            }, {
-                "0": "20",
-                "id": "20",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "658",
-                "Present_Value": "658",
-                "7": "2017-07-07 11:43:04",
-                "last_update_time": "2017-07-07 11:43:04"
-            }, {
-                "0": "21",
-                "id": "21",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "273",
-                "Present_Value": "273",
-                "7": "2017-07-07 11:43:28",
-                "last_update_time": "2017-07-07 11:43:28"
-            }, {
-                "0": "22",
-                "id": "22",
-                "1": "10",
-                "device": "10",
-                "2": "",
-                "Object_Name": "",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "0",
-                "device_type": "0",
-                "5": "01",
-                "device_number": "01",
-                "6": "76.",
-                "Present_Value": "76.",
-                "7": "2017-07-07 11:43:29",
-                "last_update_time": "2017-07-07 11:43:29"
-            }, {
-                "0": "23",
-                "id": "23",
-                "1": "10",
-                "device": "10",
-                "2": "CH_B1_REQ",
-                "Object_Name": "CH_B1_REQ",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "2",
-                "device_type": "2",
-                "5": "01",
-                "device_number": "01",
-                "6": "628",
-                "Present_Value": "628",
-                "7": "2017-07-07 11:50:09",
-                "last_update_time": "2017-07-07 11:50:09"
-            },
-            {
-                "0": "24",
-                "id": "24",
-                "1": "10",
-                "device": "10",
-                "2": "CH_B1_REQ",
-                "Object_Name": "CH_B1_REQ",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "2",
-                "device_type": "2",
-                "5": "01",
-                "device_number": "01",
-                "6": "854",
-                "Present_Value": "854",
-                "7": "2017-07-07 11:50:09",
-                "last_update_time": "2017-07-07 11:50:09"
-            },
-            {
-                "0": "25",
-                "id": "25",
-                "1": "10",
-                "device": "10",
-                "2": "CH_B1_REQ",
-                "Object_Name": "CH_B1_REQ",
-                "3": "1001",
-                "device_instance": "1001",
-                "4": "2",
-                "device_type": "2",
-                "5": "01",
-                "device_number": "01",
-                "6": "541",
-                "Present_Value": "541",
-                "7": "2017-07-07 11:50:11",
-                "last_update_time": "2017-07-07 11:50:11"
+        var data;
+        Ext.Ajax.request({
+            url: "http://127.0.0.1/graph/resources/mysql.php?par=getDataRecord&ip=192.168.253.253&keys=1103001,1103002,1103101,1103102,1103301,1103302,1103401,1103402&_dc=1500861814067&page=1&start=0&limit=25",
+            async: false,
+            success: function (response) {
+                var res = Ext.decode(response.responseText)
+                data = res.topics
+                console.log(res)
             }
-        ]
-        data = data.map(function(){
-            console.log(arguments)
         })
+
+        var a = {
+            last_update_time: 12312321,
+            key1: '1',
+            key2: "3",
+            key3: "4",
+            key4: "5",
+            key5: '1',
+            key6: "3",
+            key7: "4",
+            key8: "5",
+
+        }
         //Ext.chart.CartesianChart
         Ext.apply(me, {
             items: [{
@@ -455,92 +45,110 @@ Ext.define('graph.view.chart.HistoryChart', {
                 height: 500,
                 legend: {
                     type: 'sprite',
-                    docked: 'right'
+                    docked: 'left'
                 },
                 store: Ext.create("Ext.data.Store", {
-                    fields: [
-                        {
+                    fields: [{
                             name: 'last_update_time',
                             type: 'date'
                         },
+                        {
+                            name: "key",
+                            convert: function (v, model) {
+                                //console.log(arguments)
+                                return model.data.device_instance + model.data.device_type + model.data.device_number;
+                            }
+                        },
                         "key1", "key2", "key3", "key4", "key5", "key6", "key7", "key8",
                     ],
-                    //data:data
-
+                    data: data
                 }),
                 insetPadding: 40,
-                axes: [
-                    {
-                        type: 'numeric',
-                        position: 'left',
-                        fields: ['Present_Value'],
-                        title: {
-                            //text: 'SmartIO Data Record ',
-                            text: "Present Value",
-                            fontSize: 15
-                        },
-                        grid: true,
-                    }, {
-                        type: 'time',
-                        grid: true,
-                        //dateFormat: 'Y-m-d',
-                        //visibleRange: [0, 1],
-                        position: 'bottom',
-                        fields: ['last_update_time'],
-                        titleMargin: 12,
-                        title: {
-                            text: 'Time'
+                axes: [{
+                    type: 'numeric',
+                    position: 'left',
+                    fields: ['Present_Value', "key1"],
+                    title: {
+                        text: "Present Value",
+                        fontSize: 15
+                    },
+                    grid: true,
+                }, {
+                    type: 'numeric',
+                    grid: true,
+                    //dateFormat: 'Y-m-d',
+                    //visibleRange: [0, 1],
+                    position: 'bottom',
+                    fields: ['last_update_time'],
+                    titleMargin: 12,
+                    title: {
+                        text: 'Time'
+                    },
+                    renderer: function (numeric, val) {
+                        console.log(arguments)
+                        return new Date(val).toLocaleString()
+                    },
+                    //maximum:1500605196000,
+                    //minimum:1500635196000
+                }],
+                series: [{
+                    type: 'line',
+                    style: {
+                        stroke: 'rgba(0,0,0,0.8)',
+                        lineWidth: 1
+                    },
+                    highlightCfg: {
+                        scaling: 2
+                    },
+                    renderer: function (sprite, config, rendererData, index) {
+                        console.log(arguments)
+
+                        config.y = 20;
+                        //rendererData
+                        // console.log(index)
+                        // //rendererData.store.getAt(index).set("key1",Math.floor(Math.random()*1000))
+                        // return 20;
+                    },
+                    xField: 'last_update_time',
+                    yField: 'Present_Value',
+                    label: {
+                        field: 'Object_Name',
+                        display: 'over',
+                        fontSize: 10,
+                        translateY: 5, // lower label closer to the marker
+                        // renderer: function (val) {
+                        //     //console.log(arguments)
+                        //     return val
+                        // }
+                    },
+                    marker: {
+                        type: 'circle',
+                        fill: "white",
+                        fx: {
+                            duration: 200,
+                            easing: 'backOut'
                         }
-                    }],
-                series: [
-                    {
-                        type: 'line',
-                        style: {
-                            stroke: 'rgba(0,0,0,0.8)',
-                            lineWidth: 1
-                        },
-                        highlightCfg: {
-                            scaling: 2
-                        },
-                        xField: 'last_update_time',
-                        yField: 'Present_Value',
-                        label: {
-                            field: 'Object_Name',
-                            display: 'over',
-                            fontSize: 10,
-                            translateY: 5, // lower label closer to the marker
-                            renderer: function (val) {
-                                //console.log(arguments)
-                                return val
+                    },
+                    tooltip: {
+                        trackMouse: true,
+                        showDelay: 0,
+                        dismissDelay: 0,
+                        hideDelay: 0,
+                        renderer: function (tooltip, record, item) {
+                            var arr = ["Object Name :" + record.data.Object_Name,
+                                "Device Instance :" + record.data.device_instance,
+                                "Device Type :" + record.data.device_type,
+                                "Device Number :" + record.data.device_number,
+                                "Present Value :" + record.data.Present_Value,
+                                "Time :" + new Date(record.data.last_update_time).toLocaleString()
+                            ]
+                            if (record.data.message_number) {
+                                arr.push("message :" + record.data.message_number + "");
                             }
-                        },
-                        marker: {
-                            type: 'circle',
-                            fill: "white",
-                            fx: {
-                                duration: 200,
-                                easing: 'backOut'
-                            }
-                        },
-                        tooltip: {
-                            trackMouse: true,
-                            showDelay: 0,
-                            dismissDelay: 0,
-                            hideDelay: 0,
-                            renderer: function (tooltip, record, item) {
-                                var arr = ["Object Name :" + record.data.Object_Name,
-                                    "Device Instance :" + record.data.device_instance,
-                                    "Device Type :" + record.data.device_type,
-                                    "Device Number :" + record.data.device_number,
-                                    "Present Value :" + record.data.Present_Value,
-                                    "Time :" + new Date(record.data.last_update_time).toLocaleString()]
-                                if (record.data.message_number) {
-                                    arr.push("message :" + record.data.message_number + "");
-                                }
-                                tooltip.setHtml(arr.join("<br>"))
-                            }
+                            tooltip.setHtml(arr.join("<br>"))
                         }
-                    }]
+                    }
+                }]
             }]
         })
 
@@ -550,5 +158,231 @@ Ext.define('graph.view.chart.HistoryChart', {
         me.callParent();
     },
 
+});
+
+
+
+
+Ext.define("ConfigHistoryTableWindow", {
+    extend: "Ext.window.Window",
+    title: "Setting History Tables",
+    autoShow: true,
+    scrollable: "y",
+    initComponent: function () {
+        var me = this;
+        var grid = Ext.createByAlias("ConfigXmlFileGrid", {
+            restartServer:function () {
+              Ext.Ajax.request({
+                  url:"resources/mysqlinit.php",
+                  params:{
+                      par:"runListen"
+                  }
+              }).then(function (response) {
+                  console.log(response.responseText)
+              })
+            },
+            remoteDeleteSelectItem: function () {
+                var grid = this;
+                var selArr = grid.getSelection();
+                if (selArr[0]) {
+                    Ext.Msg.confirm("delete", "would you want to delete the table?", function (msg) {
+                        if (msg == "yes") {
+                            var model = selArr[0];
+                            Ext.Ajax.request({
+                                url: "resources/mysql.php",
+                                params: {
+                                    par: "deleteHistoryTable",
+                                    tablename: model.data.tablename.trim()
+                                },
+                            }).then(function (response) {
+                                grid.store.remove(model);
+                                console.log(response)
+                                My.delayToast("message", response.responseText);
+                                grid.saveIpsXml()
+                            })
+                        }
+                        console.log(arguments, this)
+                    }, grid)
+                }
+            },
+            getWindowButtons: function () {
+                return [{
+                        xtype: "button",
+                        text: "add",
+                        handler: function () {
+                            grid.addItemClick()
+                        }
+                    }, {
+                        xtype: "button",
+                        text: "delete",
+                        handler: function () {
+                            grid.remoteDeleteSelectItem();
+                        }
+                    },
+                    "->",
+                    {
+                        xtype: "button",
+                        text: "Ok",
+                        handler: function () {
+                            grid.saveIpsXml();
+                        }
+                    },
+                    {
+                        xtype: "button",
+                        text: "Cancel",
+                        handler: function () {
+                            me.close()
+                        }
+                    }
+                ]
+            },
+            fileName: "/mnt/nandflash/HistoryTable.xml",
+            store: Ext.create("graph.store.HistoryStore"),
+            addItemClick: function () {
+                Ext.create("SelectHistoryKeyFormWindow", {
+                    callback: function (data) {
+                        console.log(data)
+                        var isHave = grid.store.data.items.find(function (val) {
+                            console.log(val)
+                            if (val.data.tablename == data.tablename) {
+                                return true;
+                            }
+                        })
+                        if (isHave) {
+                            Ext.Msg.alert("Exception", "This table already exists.")
+                        } else {
+                            grid.store.add(data)
+                            grid.saveIpsXml()
+                            grid.restartServer()
+                            this.close();
+                        }
+                    }
+                })
+            }
+        })
+        me.items = grid;
+        me.buttons = grid.getWindowButtons();
+        me.callParent();
+    },
 })
-;
+
+Ext.define("SelectHistoryKeyFormWindow", {
+    extend: "Ext.window.Window",
+    title: "Select Key",
+    autoShow: true,
+    width: 300,
+    height: 215,
+    buttons: [{
+            text: "select",
+            handler: function () {
+                var me = this.up("window")
+                var form = me.down("form");
+                var keyfield = form.getComponent("keys");
+                var tablefield = form.getComponent("tablename");
+                var ip = form.getComponent("ip").value || "127.0.0.1";
+                var port = form.getComponent("port").value || "6379";
+                var win = Ext.create("SelectKeyWinodw", {
+                    ip: ip,
+                    port: port,
+                    callback: function (selectArr) {
+                        var keys = this.getCheckdKeys();
+                        if (keys.length > 8) {
+                            Ext.Msg.alert("Exception", "The maximum quantity is 8");
+                            return;
+                        }
+                        var keysArr = [];
+                        for (var i = 0; i < keys.length; i++) {
+                            keysArr.push(keys[i].data.value);
+                        }
+                        var keysStr = keysArr.join(",");
+                        keyfield.setValue(keysStr);
+                        My.delayToast("info", "select ok ." + keysStr);
+
+                        win.close()
+
+                    }
+                })
+            }
+        },
+        "->",
+        {
+            text: "Ok",
+            handler: function () {
+                var win = this.up("window")
+                var form = win.down("form");
+                if (form.isValid()) {
+                    win.callback(form.getValues())
+                }
+                //grid.store.add(form.getValues())
+            }
+        },
+        {
+            text: "Cancel",
+            handler: function () {
+                this.up("window").close()
+            }
+        }
+    ],
+    items: [{
+        xtype: "form",
+        defaultType: 'textfield',
+        //margin:10,
+        width: "100%",
+        height: "100%",
+        defaults: {
+            margin: 10,
+            allowBlank: false
+        },
+        listeners: {
+            boxready: function (form) {
+                var win = form.up("window")
+                form.form.setValues({
+                    ip: win.ip || "127.0.0.1",
+                    port: win.port || 6379
+                })
+                //form.loadRecord(rec)
+            }
+        },
+        items: [{
+                fieldLabel: 'Table Name',
+                name: 'tablename',
+                itemId: "tablename",
+                allowBlank: false
+            },
+            {
+                fieldLabel: 'Keys',
+                name: 'keys',
+                itemId: "keys",
+                allowBlank: false,
+                validator: function (val) {
+
+                    var arr = val.split(",");
+                    for (var i = 0; i < arr.length; i++) {
+
+                        if (arr[i].length != 7 || isNaN(arr[i])) {
+                            return "error key " + arr[i]
+                        }
+                    }
+                    return true;
+                }
+            },
+            {
+                xtype: "combo",
+                store: [location.host, "192.168.253.253", "127.0.0.1"],
+                fieldLabel: "Ip",
+                itemId: "ip",
+                name: "ip",
+                value: "127.0.0.1"
+            },
+            {
+                fieldLabel: "Port",
+                name: "port",
+                xtype: "numberfield",
+                value: "6379",
+                itemId: "port",
+                //maxValue: 99,
+                minValue: 1
+            }
+        ],
+    }]
+})

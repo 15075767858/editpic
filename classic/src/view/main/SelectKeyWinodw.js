@@ -16,7 +16,21 @@ Ext.define('editpic.view.EventAlarm.SelectKeyWinodw', {
     width: 600,
     maxHeight: 390,
     scrollable: "y",
-
+    getCheckdKeys: function () {
+        var treepanel =  this.down("treepanel");
+        var keys = treepanel.getChecked();
+        keys = keys.filter(function (val, index) {
+            if (val.data.leaf) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        keys.sort(function (a, b) {
+            return a.data.value[4] - b.data.value[4];
+        })
+        return keys;
+    },
     initComponent: function () {
         var me = this;
         me.ip = me.ip || location.host;

@@ -14,8 +14,7 @@ Ext.define('graph.view.img.HistoryTool', {
     init: function (data) {
         var me = this;
         console.log(data);
-         me.hostPoint = data.hostPoint;
-         me.tableName = data.tableName;
+        me.tableName = data.tableName;
         me.callParent(arguments)
     },
     getInitData: function () {

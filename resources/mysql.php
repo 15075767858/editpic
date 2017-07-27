@@ -58,12 +58,32 @@ if($par=="isTableExist"){
     
     
 }
+if($par=="deleteHistoryTable"){
+    $tablename = $_REQUEST['tablename'];
+    $sql = "select * from smartio_history_index where tablename='$tablename' ;";
+    if($id = getOne($mysql,$sql)["id"]){
+        if(getOne($mysql,"delete from smartio_history where tablename=$id")){
+            getOne($mysql,"delete from smartio_history_index where id=$id");
+        }else{
+            echo "delete history fail.";
+        }
+        //getOne($mysql,"delete from smartio_history_index where id=$id");
+        echo "delete ok";
+    }else{
+        echo "table does not exist .";
+    }
+//echo json_encode()
+}
 
 function getOne($mysql, $sql)
 {
     $res = mysqli_query($mysql, $sql);
-    $row = mysqli_fetch_array($res);
-    return $row;
+    if(gettype($res)=="boolean"){
+       return $res; 
+    }else{
+        $row = mysqli_fetch_array($res);
+        return $row;
+    }
 }
 
 function getArray($mysql, $sql)

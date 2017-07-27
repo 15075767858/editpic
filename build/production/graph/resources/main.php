@@ -2,6 +2,7 @@
 
 $ip = $_SERVER["SERVER_ADDR"];
 $par = $_REQUEST["par"];
+
 /*$redis = new Redis();
 if ($ip == "127.0.0.1") {
     $redis->connect("192.168.253.253", 6379);
@@ -16,6 +17,7 @@ if ($par == "uploadHomeFile") {
 }
 
 if ($par == 'getSvgTree') {
+
     //$path = "svg";
     $path = $_REQUEST['path'];
     //$path = "SvgHvac";
@@ -735,7 +737,15 @@ function setRedisUpdateTime($redis, $nodename)
 {
     $redis->hSet($nodename, "Update_Time", date("Y-m-d h:i:s"));
 }
+function isMac(){
+    $name= php_uname();
 
+    if(substr($name,0,6)=="Darwin"){
+        return true;
+    }else{
+        return false;
+    }
+}
 /*
 function listDir($dir)
 {

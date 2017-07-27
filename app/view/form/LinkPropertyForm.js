@@ -367,7 +367,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
 
         //redis ip port 选择框
-        if (itype == 12 || itype == 16 || itype == 17) {
+        if (itype == 12 || itype == 16 ) {
             var ipFiled = {
                 xtype: "combo",
                 flex: 3,
@@ -398,6 +398,15 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
             ]
         }
         if (itype == 17) {
+            me.items=[]
+            var setHistoryButton = {
+                xtype: "button",
+                flex: 1,
+                text: "ConfigHistoryTableWindow",
+                handler: function () {
+                    Ext.create("ConfigHistoryTableWindow")
+                }
+            }
             var addListen = {
                 xtype: "button",
                 flex: 1,
@@ -435,14 +444,17 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     })
                 }
             }
-            var tableName = Ext.createWidget("textfield", {
+            var tableName = Ext.createWidget("combo", {
                 flex: 1,
                 name: "tableName",
                 fieldLabel: "table name",
-                value: "",
-                // validator :function(){
-                //     return "dfa"
-                // },
+                //value: "",
+                store: Ext.create("graph.store.HistoryStore", {
+                    // filterIp: me.values.ip
+                }),
+                valueField: "tablename",
+                displayField: "tablename",
+                editable:false,
                 listeners: {
                     focusleave: function () {
                         console.log("focusleave")
@@ -456,8 +468,8 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 value: ""
             })
             me.items.push(tableName)
-            me.items.push(addListen)
-            me.items.push(hostPoint)
+            me.items.push(setHistoryButton)
+            
         }
 
         if (itype == 12) {
@@ -537,7 +549,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
         me.myIsValid = function () {
             if (itype == 17) {
-                var isTableExist=false;
+                var isTableExist = false;
                 Ext.Ajax.request({
                     url: "resources/mysql.php",
                     async: false,

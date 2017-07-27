@@ -63,12 +63,10 @@ Ext.define('editpic.view.window.CanvasConponmentWindow', {
             itype: itype
         })
 
-        me.bindFormPanel = Ext.create("editpic.view.form.LinkPropertyForm",
-            {
-                viewModel: me.viewModel,
-                values: me.values
-            }
-        )
+        me.bindFormPanel = Ext.create("editpic.view.form.LinkPropertyForm", {
+            viewModel: me.viewModel,
+            values: me.values
+        })
         me.bindFormPanel.getForm().setValues(me.values)
         console.log(me.bindFormPanel)
         if (me.labelFormPanel.items.length) {
@@ -83,26 +81,27 @@ Ext.define('editpic.view.window.CanvasConponmentWindow', {
          me.items=me.labelFormPanel
          }*/
 
-        me.buttons = [
-            {
-                text: "OK", handler: function () {
-
-                var labelForm = me.labelFormPanel.getForm();
-                var bindForm = me.bindFormPanel
-                if (labelForm.isValid() & bindForm.myIsValid()) {
-                    var bindValues = bindForm.getValues()
-                    console.log(bindValues)
-                    var datas = labelForm.getValues();
-                    me.ok(Ext.apply(datas, bindValues));
-                    me.close()
+        me.buttons = [{
+                text: "OK",
+                handler: function () {
+                    
+                    var labelForm = me.labelFormPanel.getForm();
+                    var bindForm = me.bindFormPanel
+                    if (labelForm.isValid() & bindForm.isValid()) {
+                        var bindValues = bindForm.getValues()
+                        console.log(bindValues)
+                        var datas = labelForm.getValues();
+                        me.ok(Ext.apply(datas, bindValues));
+                        me.close()
+                    }
                 }
-            }
             },
             {
-                text: "Cancel", handler: function () {
+                text: "Cancel",
+                handler: function () {
 
-                me.close()
-            }
+                    me.close()
+                }
             }
         ]
         me.callParent();
