@@ -53,34 +53,57 @@ if ($par == "getEventData") {
     $arr['totalCount'] = getOne($mysql, $countSql)[0];
     echo json_encode($arr);
 }
-
-if($par=="isTableExist"){
-    
-    
+if ($par == "getHistory") {
+    $tablename = $_REQUEST['tablename'];
+    $page = $_REQUEST['page'];
+    $start = $_REQUEST["start"];
+    $limit = $_REQUEST['limit'];
+    $arr = [];
+    $fields = "ip,port,tablename,keys,last_update_time,key1,key2,key3,key4,key5,key6,key7,key8,key1_value,key2_value,key3_value,key4_value,key5_value,key6_value,key7_value,key8_value";
+    $sql = "select * from smartio_history inner JOIN smartio_history_index on smartio_history.tablename=smartio_history_index.id where smartio_history_index.tablename='$tablename' limit $start,$limit";
+    $resArr = getArray($mysql, $sql);
+    for ($i = 0; $i < sizeof($resArr); $i++) {
+        unset($resArr[$i]['id']);
+    }
+    //echo json_encode($resArr[0]);
+    $arr['topics'] = $resArr;
+    $countSql = "select count(*) from smartio_history inner JOIN smartio_history_index on smartio_history.tablename=smartio_history_index.id where smartio_history_index.tablename='$tablename' ";
+    $arr['totalCount'] = getOne($mysql, $countSql)[0];
+    echo json_encode($arr);
 }
-if($par=="deleteHistoryTable"){
+
+if ($par == "isTableExist") {
+
+
+}
+if ($par == "deleteHistoryTable") {
     $tablename = $_REQUEST['tablename'];
     $sql = "select * from smartio_history_index where tablename='$tablename' ;";
-    if($id = getOne($mysql,$sql)["id"]){
-        if(getOne($mysql,"delete from smartio_history where tablename=$id")){
-            getOne($mysql,"delete from smartio_history_index where id=$id");
-        }else{
+    if ($id = getOne($mysql, $sql)["id"]) {
+        if (getOne($mysql, "delete from smartio_history where tablename=$id")) {
+            getOne($mysql, "delete from smartio_history_index where id=$id");
+        } else {
             echo "delete history fail.";
         }
         //getOne($mysql,"delete from smartio_history_index where id=$id");
         echo "delete ok";
-    }else{
+    } else {
         echo "table does not exist .";
     }
 //echo json_encode()
+}
+if($par == "getHistoryIndexByTableName"){
+    $tablename = $_REQUEST['tablename'];
+    $res = getOne($mysql, "select * from smartio_history_index where tablename='$tablename'");
+    echo json_encode($res);
 }
 
 function getOne($mysql, $sql)
 {
     $res = mysqli_query($mysql, $sql);
-    if(gettype($res)=="boolean"){
-       return $res; 
-    }else{
+    if (gettype($res) == "boolean") {
+        return $res;
+    } else {
         $row = mysqli_fetch_array($res);
         return $row;
     }

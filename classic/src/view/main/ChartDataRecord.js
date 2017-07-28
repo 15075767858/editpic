@@ -168,3 +168,5 @@ Ext.define('graph.view.chart.ChartDataRecord',{
         }
     }]
 });
+
+

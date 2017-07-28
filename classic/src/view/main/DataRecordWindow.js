@@ -1069,25 +1069,7 @@ Ext.define('QueryDataRecord', {
                 ],
                 plugins: new Ext.ux.ProgressBarPager()
             }
-            // bbar: {
-            //     xtype: 'pagingtoolbar',
-            //     pageSize: 10,
-            //     displayInfo: true,
-            //     items: [
-            //         "-", {
-            //             listeners: {
-            //                 change: function (field, newV, oldV) {
-            //                     me.store.setPageSize(newV)
-            //                 }
-            //             },
-            //             value: pageSize,
-            //             fieldLabel: "pageSize",
-            //             xtype: "textfield",
-            //             labelWidth: 50,
-            //             width: 100
-            //         }
-            //     ]
-            // }
+           
         });
 
 

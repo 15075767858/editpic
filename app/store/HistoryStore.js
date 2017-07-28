@@ -10,6 +10,7 @@ Ext.define("graph.store.HistoryStore", {
         'tablename',
         'keys',
     ],
+    
     constructor: function (config) {
         var store = this;
         store.callParent([config]);

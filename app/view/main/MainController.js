@@ -694,7 +694,24 @@ My.AjaxSimplePostAsync = function (params, url, success) {
     });
 
 }
-
+My.getObjectName = function (ip, port, key) {
+    var data;
+    Ext.Ajax.request({
+        url: "resources/main.php",
+        async: false,
+        params: {
+            par: "gettypevalue",
+            ip: ip,
+            port: port,
+            nodename: key,
+            type: "Object_Name"
+        },
+        success: function (response) {
+            data = response.responseText
+        }
+    });
+    return data;
+}
 My.delayToast = function (title, html, delay) {
     setTimeout(function () {
         Ext.toast({

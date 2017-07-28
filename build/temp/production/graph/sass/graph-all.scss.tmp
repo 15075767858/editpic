@@ -785,6 +785,7 @@ $include-editpic-view-window-downloadwindowmodel: dynamic(false);;
 $include-editpic-view-window-editfilecontroller: dynamic(false);;
 $include-editpic-view-window-editfilemodel: dynamic(false);;
 $include-graph-model-weekmodel: dynamic(false);;
+$include-graph-store-historyrecord: dynamic(false);;
 $include-graph-store-historystore: dynamic(false);;
 $include-graph-view-chart-chartdatarecordcontroller: dynamic(false);;
 $include-graph-view-chart-chartdatarecordmodel: dynamic(false);;

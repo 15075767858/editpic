@@ -1,6 +1,6 @@
 <?php
 $par = $_REQUEST['par'];
-$mysqlConfigXmlPath="/mnt/nandflash/mysqlconfig.xml";
+$mysqlConfigXmlPath = "/mnt/nandflash/mysqlconfig.xml";
 if ($par == "testConnect") {
     $mysql = mysqli_connect($_REQUEST['host'], $_REQUEST['username'], $_REQUEST['password']);
     if ($mysql) {
@@ -45,10 +45,25 @@ if ($par == "getConfig") {
     echo file_get_contents($mysqlConfigXmlPath);
 }
 
-if($par=="runListen"){
-    
-   $pPath =  substr(__DIR__,0,strlen(__DIR__)-3);
-    $expath= "initfiles\\n.exe initfiles\\index.js";
-    echo $expath;
-    echo system($expath);
+if ($par == "runListen") {
+    if (isMac()) {
+        echo "run";
+        echo system("node /Applications/XAMPP/htdocs/SmartioBackgroundServer/index.js");
+    } else {
+        $pPath = substr(__DIR__, 0, strlen(__DIR__) - 3);
+        $expath = "initfiles\\n.exe initfiles\\index.js";
+        echo $expath;
+        echo system($expath);
+    }
+}
+
+function isMac()
+{
+    $name = php_uname();
+
+    if (substr($name, 0, 6) == "Darwin") {
+        return true;
+    } else {
+        return false;
+    }
 }

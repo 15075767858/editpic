@@ -68,16 +68,19 @@ function testComponent() {
     Ext.onReady(function () {
 
         setTimeout(function () {
-            testwindow = Ext.create("ConfigHistoryTableWindow");
-            return;
+            //            testwindow = Ext.create("ConfigHistoryTableWindow");
 
             Ext.create("Ext.window.Window", {
                 autoShow: true,
-                height: 600,
-                width: 800,
-                items: Ext.createByAlias("HistoryChart"),
-
+                title: "History",
+                items: [
+                    Ext.createByAlias("HistoryChart", {
+                        tablename:"tb1"
+                        //store: store
+                    }),
+                ]
             })
+
         }, 2000)
 
 

@@ -4,164 +4,207 @@ Ext.define('graph.view.chart.HistoryChart', {
     requires: [
         'graph.view.chart.HistoryChartController',
         'graph.view.chart.HistoryChartModel',
-        "graph.store.HistoryStore"
+        "graph.store.HistoryStore",
+        "graph.store.HistoryRecord"
     ],
-
     controller: 'chart-historychart',
     viewModel: {
         type: 'chart-historychart'
     },
     initComponent: function () {
         var me = this;
-        var data;
-        Ext.Ajax.request({
-            url: "http://127.0.0.1/graph/resources/mysql.php?par=getDataRecord&ip=192.168.253.253&keys=1103001,1103002,1103101,1103102,1103301,1103302,1103401,1103402&_dc=1500861814067&page=1&start=0&limit=25",
-            async: false,
-            success: function (response) {
-                var res = Ext.decode(response.responseText)
-                data = res.topics
-                console.log(res)
+        //Ext.chart.CartesianChart
+        var tablename = me.tablename;
+        var hiData = getHistoryIndexData(tablename)
+        var keysArr = hiData.keys.split(",")
+
+        var series = [];
+        var cloumns = [];
+        for (var i = 0; i < keysArr.length; i++) {
+            var objname = My.getObjectName(hiData.ip, hiData.port, keysArr[i])
+            console.log(objname)
+            var line = {
+                type: 'line',
+                title: objname,
+                xField: 'last_update_time',
+                yField: 'key' + (i + 1) + '_value',
+                marker: {
+                    type: 'triangle',
+                    fx: {
+                        duration: 200,
+                        easing: 'backOut'
+                    }
+                },
+                highlightCfg: {
+                    scaling: 2
+                }
+            }
+            series.push(line);
+        }
+
+        var store = Ext.create("graph.store.HistoryRecord", {
+            proxy: {
+                type: "ajax",
+                url: "resources/mysql.php?par=getHistory&tablename=" + tablename,
+                reader: {
+                    type: 'json',
+                    rootProperty: "topics",
+                    totalProperty: 'totalCount',
+                }
             }
         })
 
-        var a = {
-            last_update_time: 12312321,
-            key1: '1',
-            key2: "3",
-            key3: "4",
-            key4: "5",
-            key5: '1',
-            key6: "3",
-            key7: "4",
-            key8: "5",
-
-        }
-        //Ext.chart.CartesianChart
         Ext.apply(me, {
             items: [{
-                xtype: 'cartesian',
-                reference: 'chart',
-                width: '100%',
-                height: 500,
-                legend: {
-                    type: 'sprite',
-                    docked: 'left'
+                    xtype: 'cartesian',
+                    reference: 'chart',
+                    width: '100%',
+                    height: 500,
+                    legend: {
+                        type: 'sprite',
+                        docked: 'top',
+                    },
+                    store: store,
+                    insetPadding: 40,
+                    axes: [{
+                        type: 'numeric',
+                        position: 'left',
+                        fields: ["key1_value", "key2_value", "key3_value", "key4_value", "key5_value", "key6_value", "key7_value", "key8_value"],
+                        title: {
+                            text: "Present Value",
+                            fontSize: 15
+                        },
+                        grid: true,
+                    }, {
+                        type: 'numeric',
+                        grid: true,
+                        //dateFormat: 'Y-m-d',
+                        //visibleRange: [0, 1],
+                        position: 'bottom',
+                        fields: 'last_update_time',
+                        titleMargin: 12,
+                        title: {
+                            text: 'Time'
+                        },
+                        renderer: function (numeric, val) {
+                            //console.log(arguments)
+                            return new Date(val).toLocaleString()
+                        }
+                    }],
+                    series: series
                 },
-                store: Ext.create("Ext.data.Store", {
-                    fields: [{
-                            name: 'last_update_time',
-                            type: 'date'
-                        },
-                        {
-                            name: "key",
-                            convert: function (v, model) {
-                                //console.log(arguments)
-                                return model.data.device_instance + model.data.device_type + model.data.device_number;
-                            }
-                        },
-                        "key1", "key2", "key3", "key4", "key5", "key6", "key7", "key8",
-                    ],
-                    data: data
-                }),
-                insetPadding: 40,
-                axes: [{
-                    type: 'numeric',
-                    position: 'left',
-                    fields: ['Present_Value', "key1"],
-                    title: {
-                        text: "Present Value",
-                        fontSize: 15
-                    },
-                    grid: true,
-                }, {
-                    type: 'numeric',
-                    grid: true,
-                    //dateFormat: 'Y-m-d',
-                    //visibleRange: [0, 1],
-                    position: 'bottom',
-                    fields: ['last_update_time'],
-                    titleMargin: 12,
-                    title: {
-                        text: 'Time'
-                    },
-                    renderer: function (numeric, val) {
-                        console.log(arguments)
-                        return new Date(val).toLocaleString()
-                    },
-                    //maximum:1500605196000,
-                    //minimum:1500635196000
-                }],
-                series: [{
-                    type: 'line',
-                    style: {
-                        stroke: 'rgba(0,0,0,0.8)',
-                        lineWidth: 1
-                    },
-                    highlightCfg: {
-                        scaling: 2
-                    },
-                    renderer: function (sprite, config, rendererData, index) {
-                        console.log(arguments)
-
-                        config.y = 20;
-                        //rendererData
-                        // console.log(index)
-                        // //rendererData.store.getAt(index).set("key1",Math.floor(Math.random()*1000))
-                        // return 20;
-                    },
-                    xField: 'last_update_time',
-                    yField: 'Present_Value',
-                    label: {
-                        field: 'Object_Name',
-                        display: 'over',
-                        fontSize: 10,
-                        translateY: 5, // lower label closer to the marker
-                        // renderer: function (val) {
-                        //     //console.log(arguments)
-                        //     return val
-                        // }
-                    },
-                    marker: {
-                        type: 'circle',
-                        fill: "white",
-                        fx: {
-                            duration: 200,
-                            easing: 'backOut'
-                        }
-                    },
-                    tooltip: {
-                        trackMouse: true,
-                        showDelay: 0,
-                        dismissDelay: 0,
-                        hideDelay: 0,
-                        renderer: function (tooltip, record, item) {
-                            var arr = ["Object Name :" + record.data.Object_Name,
-                                "Device Instance :" + record.data.device_instance,
-                                "Device Type :" + record.data.device_type,
-                                "Device Number :" + record.data.device_number,
-                                "Present Value :" + record.data.Present_Value,
-                                "Time :" + new Date(record.data.last_update_time).toLocaleString()
-                            ]
-                            if (record.data.message_number) {
-                                arr.push("message :" + record.data.message_number + "");
-                            }
-                            tooltip.setHtml(arr.join("<br>"))
-                        }
-                    }
-                }]
-            }]
+                Ext.create("HistoryGrid", {
+                    tablename:tablename,
+                    store: store
+                })
+            ]
         })
-
-
-        console.log("aaaaaa")
-
         me.callParent();
     },
 
 });
 
-
-
+function getHistoryIndexData(tablename) {
+    var data;
+    Ext.Ajax.request({
+        url: "resources/mysql.php?par=getHistoryIndexByTableName&tablename=" + tablename,
+        async: false,
+        success: function (response) {
+            console.log(response)
+            var res = Ext.decode(response.responseText);
+            data = res;
+        }
+    })
+    return data;
+}
+Ext.define('HistoryGrid', {
+    extend: 'Ext.grid.Panel',
+    requires: [
+        'Ext.data.*',
+        'Ext.grid.*',
+        'Ext.util.*',
+        'Ext.toolbar.Paging',
+    ],
+    xtype: 'progress-bar-pager',
+    height: 360,
+    frame: true,
+    initComponent: function () {
+        var me = this;
+        this.width = 1000;
+        var store = me.store;
+        var tablename = me.tablename;
+        var pageSize = 25;
+        var hiData = getHistoryIndexData(tablename)
+        var keysArr = hiData.keys.split(",")
+        var columns = [{
+                text: 'Ip',
+                sortable: true,
+                dataIndex: 'ip',
+                flex: 2,
+                hidden: true
+            },
+            {
+                text: 'Port',
+                sortable: true,
+                dataIndex: 'port',
+                flex: 2,
+                hidden: true
+            },
+            {
+                text: 'Table Name',
+                sortable: true,
+                dataIndex: 'tablename',
+                flex: 1
+            },
+            {
+                text: 'Time',
+                sortable: true,
+                dataIndex: 'last_update_time',
+                flex: 2,
+                renderer: function (val) {
+                    return new Date(val).toLocaleString()
+                }
+            }
+        ];
+        for (var i = 0; i < keysArr.length; i++) {
+            var objname = My.getObjectName(hiData.ip, hiData.port, keysArr[i])
+            console.log(objname)
+            var data = {
+                text: objname,
+                sortable: true,
+                dataIndex: 'key' + (i + 1) + '_value',
+                flex: 1
+            }
+            columns.push(data);
+        }
+        Ext.apply(this, {
+            columns: columns,
+            bbar: {
+                xtype: 'pagingtoolbar',
+                pageSize: 25,
+                store: store,
+                displayInfo: true,
+                items: [
+                    "-", {
+                        listeners: {
+                            change: function (field, newV, oldV) {
+                                field.up().pageSize = newV;
+                                me.store.setPageSize(newV)
+                            }
+                        },
+                        value: pageSize,
+                        fieldLabel: "pageSize",
+                        xtype: "textfield",
+                        labelWidth: 50,
+                        width: 100
+                    }
+                ],
+                plugins: new Ext.ux.ProgressBarPager()
+            }
+        });
+        this.callParent();
+    }
+});
 
 Ext.define("ConfigHistoryTableWindow", {
     extend: "Ext.window.Window",
@@ -171,15 +214,15 @@ Ext.define("ConfigHistoryTableWindow", {
     initComponent: function () {
         var me = this;
         var grid = Ext.createByAlias("ConfigXmlFileGrid", {
-            restartServer:function () {
-              Ext.Ajax.request({
-                  url:"resources/mysqlinit.php",
-                  params:{
-                      par:"runListen"
-                  }
-              }).then(function (response) {
-                  console.log(response.responseText)
-              })
+            restartServer: function () {
+                Ext.Ajax.request({
+                    url: "resources/mysqlinit.php",
+                    params: {
+                        par: "runListen"
+                    }
+                }).then(function (response) {
+                    console.log(response.responseText)
+                })
             },
             remoteDeleteSelectItem: function () {
                 var grid = this;

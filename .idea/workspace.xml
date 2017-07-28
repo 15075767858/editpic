@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4568aa7c-9baf-4272-89c0-4058b3e5febd" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/store/HistoryRecord.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/theme-capture.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Application.js" afterPath="$PROJECT_DIR$/app/Application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/form/LinkPropertyForm.js" afterPath="$PROJECT_DIR$/app/view/form/LinkPropertyForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/img/HistoryTool.js" afterPath="$PROJECT_DIR$/app/view/img/HistoryTool.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/development/graph/resources/mysql.php" afterPath="$PROJECT_DIR$/build/development/graph/resources/mysql.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/development/graph/resources/mysqlInit.php" afterPath="$PROJECT_DIR$/build/development/graph/resources/mysqlInit.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic.json" afterPath="$PROJECT_DIR$/build/production/graph/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/classic/app.js" afterPath="$PROJECT_DIR$/build/production/graph/classic/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern.json" afterPath="$PROJECT_DIR$/build/production/graph/modern.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/modern/app.js" afterPath="$PROJECT_DIR$/build/production/graph/modern/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/main.php" afterPath="$PROJECT_DIR$/build/production/graph/resources/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/mysql.php" afterPath="$PROJECT_DIR$/build/production/graph/resources/mysql.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/graph/resources/mysqlInit.php" afterPath="$PROJECT_DIR$/build/production/graph/resources/mysqlInit.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/graph/sass/graph-all.scss" afterPath="$PROJECT_DIR$/build/temp/development/graph/sass/graph-all.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/development/graph/sass/graph-all.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/development/graph/sass/graph-all.scss.tmp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss" afterPath="$PROJECT_DIR$/build/temp/production/graph/sass/graph-all.scss" />
@@ -22,12 +24,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss.tmp" afterPath="$PROJECT_DIR$/build/temp/production/graph/slicer-temp/graph-example.scss.tmp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/CanvasConponmentWindow.js" afterPath="$PROJECT_DIR$/classic/src/view/main/CanvasConponmentWindow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/ChartDataRecord.js" afterPath="$PROJECT_DIR$/classic/src/view/main/ChartDataRecord.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/HistoryChart.js" afterPath="$PROJECT_DIR$/classic/src/view/main/HistoryChart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/SelectKeyWinodw.js" afterPath="$PROJECT_DIR$/classic/src/view/main/SelectKeyWinodw.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modern.json" afterPath="$PROJECT_DIR$/modern.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/mysql.php" afterPath="$PROJECT_DIR$/resources/mysql.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/mysqlInit.php" afterPath="$PROJECT_DIR$/resources/mysqlInit.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
     </list>
     <ignored path="editpic.iws" />
@@ -53,44 +53,59 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="editpic" />
+    <favorites_list name="editpic">
+      <favorite_root url="file://$PROJECT_DIR$/app/Application.js" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConfigXmlFileGrid.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/main/ConfigXmlFileGrid.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="45" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HistoryChart.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HistoryChart.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/main/HistoryChart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="255" column="48" selection-start-line="255" selection-start-column="48" selection-end-line="255" selection-end-column="48" />
+            <state relative-caret-position="145">
+              <caret line="293" column="18" selection-start-line="293" selection-start-column="18" selection-end-line="312" selection-end-column="13" />
+              <folding>
+                <element signature="e#605#7647#0" expanded="false" />
+                <element signature="e#986#1426#0" expanded="false" />
+                <element signature="e#2095#7629#0" expanded="false" />
+                <element signature="e#8247#10424#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Application.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Application.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mysqlInit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/mysqlInit.php">
+      <file leaf-file-name="DataRecordWindow.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/main/DataRecordWindow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="47" column="22" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="22" />
+            <state relative-caret-position="48">
+              <caret line="1049" column="18" selection-start-line="1049" selection-start-column="18" selection-end-line="1070" selection-end-column="13" />
               <folding>
-                <marker date="1501150868000" expanded="true" signature="254:267" ph="..." />
-                <marker date="1501150868000" expanded="true" signature="341:352" ph="..." />
-                <marker date="1501150868000" expanded="true" signature="510:523" ph="..." />
-                <marker date="1501150868000" expanded="true" signature="597:608" ph="..." />
-                <marker date="1501150868000" expanded="true" signature="926:939" ph="..." />
-                <marker date="1501150868000" expanded="true" signature="1278:1291" ph="..." />
-                <marker date="1501150868000" expanded="true" signature="1423:1651" ph="..." />
+                <element signature="e#34488#34587#0" expanded="false" />
+                <element signature="e#34605#34700#0" expanded="false" />
+                <element signature="e#34718#34815#0" expanded="false" />
+                <element signature="e#34833#34931#0" expanded="false" />
+                <element signature="e#38887#43897#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HistoryRecord.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/store/HistoryRecord.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,9 +116,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="XSLT Stylesheet" />
         <option value="tsconfig.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -116,9 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/model/PrintSettingModel.js" />
-        <option value="$PROJECT_DIR$/app/view/EventAlarm/ListenGridController.js" />
-        <option value="$PROJECT_DIR$/ext/build/ext-debug.js" />
         <option value="$PROJECT_DIR$/resources/subscribe.php" />
         <option value="$PROJECT_DIR$/resources/tcpdf_include.php" />
         <option value="$PROJECT_DIR$/resources/TCPDF/print1.php" />
@@ -159,13 +171,16 @@
         <option value="$PROJECT_DIR$/app/view/form/LinkPropertyForm.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/AddMonitor.js" />
         <option value="$PROJECT_DIR$/app/view/chart/ChartDataRecord.js" />
-        <option value="$PROJECT_DIR$/app/Application.js" />
         <option value="$PROJECT_DIR$/app/view/chart/HistoryChartController.js" />
         <option value="$PROJECT_DIR$/resources/main.php" />
         <option value="$PROJECT_DIR$/classic/src/view/main/DataRecordWindow.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/main/ChartDataRecord.js" />
         <option value="$PROJECT_DIR$/resources/mysqlInit.php" />
         <option value="$PROJECT_DIR$/classic/src/view/main/ConfigXmlFileGrid.js" />
+        <option value="$PROJECT_DIR$/app/store/history.js" />
+        <option value="$PROJECT_DIR$/resources/mysql.php" />
+        <option value="$PROJECT_DIR$/classic/src/view/main/ChartDataRecord.js" />
+        <option value="$PROJECT_DIR$/app/Application.js" />
+        <option value="$PROJECT_DIR$/app/store/HistoryRecord.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/HistoryChart.js" />
       </list>
     </option>
@@ -216,7 +231,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -232,6 +246,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="graph" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graph" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -307,74 +335,9 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editpic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graph" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editpic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graph" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="form" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editpic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graph" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chart" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -638,7 +601,8 @@
       <workItem from="1499994821980" duration="5163000" />
       <workItem from="1500596413854" duration="2380000" />
       <workItem from="1500600712787" duration="7474000" />
-      <workItem from="1501150050354" duration="2599000" />
+      <workItem from="1501150050354" duration="3399000" />
+      <workItem from="1501200099533" duration="10556000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1468561867953</created>
@@ -721,16 +685,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="336452000" />
+    <option name="totallyTimeSpent" value="347808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="347" y="1103" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21082391" sideWeight="0.49754602" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21405493" sideWeight="0.49754602" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21555915" sideWeight="0.6882068" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875606" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.49614644" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32524273" sideWeight="0.49614644" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2495183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26569343" sideWeight="0.3117932" order="11" side_tool="false" content_ui="tabs" />
@@ -745,7 +710,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.3169557" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.49614644" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39988458" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -775,32 +739,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="84" />
+      <option name="time" value="86" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/EditFile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-333">
-          <caret line="78" column="72" selection-start-line="78" selection-start-column="60" selection-end-line="78" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/KeyBoard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3648">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/Schedule.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/SelectKeyWinodw.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1728">
@@ -1011,41 +954,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/ChartDataRecord.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="168" selection-end-column="6" />
-          <folding>
-            <element signature="e#519#1386#0" expanded="false" />
-            <element signature="e#1449#2075#0" expanded="false" />
-            <element signature="e#2136#2294#0" expanded="false" />
-            <element signature="e#2669#3197#0" expanded="false" />
-            <element signature="e#3211#4780#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/CanvasConponmentWindow.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-30">
           <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,19 +972,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/DataRecordWindow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="959" column="12" selection-start-line="959" selection-start-column="12" selection-end-line="959" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/chart/HistoryChartController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,7 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="489" column="0" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1088,7 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="547" column="9" selection-start-line="547" selection-start-column="9" selection-end-line="547" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1096,15 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-80">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/main/ConfigXmlFileGrid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="45" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,11 +1016,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/ConfigXmlFileGrid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="45" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/KeyBoard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/HistoryStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/mysql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <folding>
+            <marker date="1501205623000" expanded="true" signature="946:1009" ph="select * fro... smartio_data_record" />
+            <marker date="1501205623000" expanded="true" signature="1146:1193" ph="select count... smartio_data_record" />
+            <marker date="1501205623000" expanded="true" signature="1868:1925" ph="select * fro... smartio_event" />
+            <marker date="1501205623000" expanded="true" signature="2019:2060" ph="select count... smartio_event" />
+            <marker date="1501205623000" expanded="true" signature="2535:2708" ph="select * fro... smartio_history" />
+            <marker date="1501205623000" expanded="true" signature="2535:2709" ph="select * fro... smartio_history" />
+            <marker date="1501205623000" expanded="true" signature="2535:2716" ph="select * fro... smartio_history" />
+            <marker date="1501205623000" expanded="true" signature="2933:3095" ph="select count... smartio_history" />
+            <marker date="1501205623000" expanded="true" signature="2933:3097" ph="select count... smartio_history" />
+            <marker date="1501205623000" expanded="true" signature="2933:3107" ph="select count... smartio_history" />
+            <marker date="1501205623000" expanded="true" signature="3320:3384" ph="select * fro... smartio_history_index" />
+            <marker date="1501205623000" expanded="true" signature="3461:3505" ph="delete from " />
+            <marker date="1501205623000" expanded="true" signature="3542:3585" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/ChartDataRecord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="169" column="3" selection-start-line="169" selection-start-column="3" selection-end-line="169" selection-end-column="3" />
+          <folding>
+            <element signature="e#519#1386#0" expanded="false" />
+            <element signature="e#1449#2075#0" expanded="false" />
+            <element signature="e#2136#2294#0" expanded="false" />
+            <element signature="e#2669#3197#0" expanded="false" />
+            <element signature="e#3221#4779#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/main/HistoryChart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="255" column="48" selection-start-line="255" selection-start-column="48" selection-end-line="255" selection-end-column="48" />
+        <state relative-caret-position="145">
+          <caret line="293" column="18" selection-start-line="293" selection-start-column="18" selection-end-line="312" selection-end-column="13" />
+          <folding>
+            <element signature="e#605#7647#0" expanded="false" />
+            <element signature="e#986#1426#0" expanded="false" />
+            <element signature="e#2095#7629#0" expanded="false" />
+            <element signature="e#8247#10424#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/HistoryRecord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/main/DataRecordWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="1049" column="18" selection-start-line="1049" selection-start-column="18" selection-end-line="1070" selection-end-column="13" />
+          <folding>
+            <element signature="e#34488#34587#0" expanded="false" />
+            <element signature="e#34605#34700#0" expanded="false" />
+            <element signature="e#34718#34815#0" expanded="false" />
+            <element signature="e#34833#34931#0" expanded="false" />
+            <element signature="e#38887#43897#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

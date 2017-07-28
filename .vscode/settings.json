@@ -3,5 +3,6 @@
         "DataRecordWindow",
         "ShowDevices",
         "LinkPropertyForm"
-    ]
+    ],
+    "vscode-janus-debug.uploadOnSaveGlobal": false
 }
