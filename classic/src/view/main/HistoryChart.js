@@ -20,24 +20,50 @@ Ext.define('graph.view.chart.HistoryChart', {
 
         var series = [];
         var cloumns = [];
+
         for (var i = 0; i < keysArr.length; i++) {
+            var key = keysArr[i];
             var objname = My.getObjectName(hiData.ip, hiData.port, keysArr[i])
-            console.log(objname)
-            var line = {
-                type: 'line',
-                title: objname,
-                xField: 'last_update_time',
-                yField: 'key' + (i + 1) + '_value',
-                marker: {
-                    type: 'triangle',
-                    fx: {
-                        duration: 200,
-                        easing: 'backOut'
+            var valueField = 'key' + (i + 1) + '_value'
+            var line =  createLine(key,objname,valueField)
+             function createLine(key,objname,valueField) {
+                var line = {
+                    type: 'line',
+                    title: objname,
+                    xField: 'last_update_time',
+                    yField: valueField,
+                    marker: {
+                        type: 'triangle',
+                        fx: {
+                            duration: 200,
+                            easing: 'backOut'
+                        }
+                    },
+                    highlightCfg: {
+                        scaling: 2
+                    },
+                    tooltip: {
+                        trackMouse: true,
+                        showDelay: 0,
+                        dismissDelay: 0,
+                        hideDelay: 0,
+                        renderer: function (tooltip, record, item) {
+                            console.log('key' + (i + 1) + '_value')
+                            var arr = ["Object Name :" + objname,
+                                "Device Instance :" + key.substr(0, 4),
+                                //"Device Type :" + record.data.device_type,
+                                "Device Number :" + key.substr(5, 7),
+                                "Present Value :" + record.data[valueField],
+                                "Time :" + new Date(record.data.last_update_time).toLocaleString()
+                            ]
+                            if (record.data.message_number) {
+                                arr.push("message :" + record.data.message_number + "");
+                            }
+                            tooltip.setHtml(arr.join("<br>"))
+                        }
                     }
-                },
-                highlightCfg: {
-                    scaling: 2
                 }
+                return line
             }
             series.push(line);
         }
@@ -94,7 +120,7 @@ Ext.define('graph.view.chart.HistoryChart', {
                     series: series
                 },
                 Ext.create("HistoryGrid", {
-                    tablename:tablename,
+                    tablename: tablename,
                     store: store
                 })
             ]

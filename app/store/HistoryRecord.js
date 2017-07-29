@@ -31,38 +31,7 @@ Ext.define("graph.store.HistoryRecord", {
         "key6_value",
         "key7_value",
         "key8_value",
-        {
-            name: "key1_name",
-            convert: abcd
-        },
-        {
-            name: "key2_name",
-            convert: abcd
-        },
-        {
-            name: "key3_name",
-            convert: abcd
-        },
-        {
-            name: "key4_name",
-            convert: abcd
-        },
-        {
-            name: "key5_name",
-            convert: abcd
-        },
-        {
-            name: "key6_name",
-            convert: abcd
-        },
-        {
-            name: "key7_name",
-            convert: abcd
-        },
-        {
-            name: "key8_name",
-            convert: abcd
-        },
+        
         'keys',
     ],
     constructor: function (config) {
