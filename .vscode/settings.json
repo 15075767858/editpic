@@ -4,5 +4,8 @@
         "ShowDevices",
         "LinkPropertyForm"
     ],
-    "vscode-janus-debug.uploadOnSaveGlobal": false
+    "vscode-janus-debug.uploadOnSaveGlobal": false,
+    "vscode-janus-debug.uploadOnSave": [
+        "Main"
+    ]
 }

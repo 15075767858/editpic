@@ -33,6 +33,8 @@ Ext.define('editpic.view.main.Main', {
         "editpic.view.window.EditFile",
         "editpic.view.EventAlarm.EventAlarmSetting",
         'graph.view.window.ShowDevices',
+        "graph.view.chart.HistoryChart"
+
         //"editpic.view.tool.PublishPic"
     ],
 
@@ -57,44 +59,56 @@ Ext.define('editpic.view.main.Main', {
     createOutLoginMenu: function () {
         Ext.create("Ext.window.Window", {
             autoShow: true,
-            buttons: [
-                {
-                    text: "User Manager", handler: function () {
+            buttons: [{
+                text: "User Manager",
+                handler: function () {
 
                 }
-                }
-            ]
+            }]
 
         })
     },
-    tbar: [
-        {
+    tbar: [{
             text: "File",
             menu: [
 
                 {
-                    text: "save", handler: "saveHandler"
+                    text: "save",
+                    handler: "saveHandler"
                 }, {
-                    text: "open", handler: "openNewHandler", hidden: true
+                    text: "open",
+                    handler: "openNewHandler",
+                    hidden: true
                 },
 
                 {
-                    text: "open old version", handler: "openHandler", hidden: true
+                    text: "open old version",
+                    handler: "openHandler",
+                    hidden: true
                 },
                 {
-                    text: "open", menu: [
-                    {text: "open", handler: "openNewHandler"},
-                    {text: "data.json to new version data", handler: "toNewVersion"}
-                ]
+                    text: "open",
+                    menu: [{
+                            text: "open",
+                            handler: "openNewHandler"
+                        },
+                        {
+                            text: "data.json to new version data",
+                            handler: "toNewVersion"
+                        }
+                    ]
                 },
                 {
-                    text:"new",handler:"createNewTab"
+                    text: "new",
+                    handler: "createNewTab"
                 },
                 {
-                    text: "delete", handler: "deleteHandler"
+                    text: "delete",
+                    handler: "deleteHandler"
                 },
                 {
-                    text: "replace", handler: 'replaceHandler'
+                    text: "replace",
+                    handler: 'replaceHandler'
                 },
                 {
                     text: "data.json to new version data",
@@ -102,28 +116,30 @@ Ext.define('editpic.view.main.Main', {
                     hidden: true
                 },
                 {
-                    text: "Backup Graphic", handler: "BackupGraphice"
+                    text: "Backup Graphic",
+                    handler: "BackupGraphice"
                 },
                 {
-                    text: "Restor Graphic", handler: "dataJsonUpload"
+                    text: "Restor Graphic",
+                    handler: "dataJsonUpload"
                 }
             ]
         },
         {
             text: "Help",
-            menu: [
-                {
-                    text: "update graph", hidden: true, handler: "updateGraph"
-                }, {
-                    text: "about",
-                    handler: function () {
-                        Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 3.0.1")
-                    }
+            menu: [{
+                text: "update graph",
+                hidden: true,
+                handler: "updateGraph"
+            }, {
+                text: "about",
+                handler: function () {
+                    Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 3.0.2")
                 }
-            ]
-        },{
-            text:"Historical Record",
-            handler:function(){
+            }]
+        }, {
+            text: "Historical Record",
+            handler: function () {
                 Ext.createByAlias("DataRecordWindow")
             }
         }
@@ -139,7 +155,8 @@ Ext.define('editpic.view.main.Main', {
             }
         },
         {
-            text: "login", handler: "userLogin",
+            text: "login",
+            handler: "userLogin",
             bind: {
                 hidden: "{isLogin}"
             }
@@ -149,9 +166,10 @@ Ext.define('editpic.view.main.Main', {
                 text: "Welcome {username}",
                 hidden: "{!isLogin}"
             },
-            menu: [
-                {text: "Out Login", handler: "outLogin"}
-            ]
+            menu: [{
+                text: "Out Login",
+                handler: "outLogin"
+            }]
         }
     ],
     border: true,
@@ -159,22 +177,17 @@ Ext.define('editpic.view.main.Main', {
         height: 50,
         style: {
             lineHeight: 50
-        }
-        ,
+        },
         title: {
             bind: {
                 text: '{name}'
-            }
-            ,
+            },
             flex: 1
         }
-    }
-    ,
+    },
     layout: "border",
-    defaults: {}
-    ,
-    items: [
-        {
+    defaults: {},
+    items: [{
             xtype: "tabpanel",
             region: 'center',
             id: "mintab",
@@ -253,17 +266,15 @@ Ext.define('editpic.view.main.Main', {
                     constrainHeader: false,
                     constrain: false,
                 })
-                me.add(
-                    {
-                        xtype: "panel",
-                        constrainHeader: false,
-                        constrain: false,
-                        title: text,
-                        scrollable: true,
-                        //layout:"absolute",
-                        items: picPanel
-                    }
-                ).show()
+                me.add({
+                    xtype: "panel",
+                    constrainHeader: false,
+                    constrain: false,
+                    title: text,
+                    scrollable: true,
+                    //layout:"absolute",
+                    items: picPanel
+                }).show()
                 return picPanel
             },
             defaults: {
@@ -365,23 +376,21 @@ Ext.define("UserManager", {
             }
         });
     },
-    bbar: [
-        {
-            text: "Add User", handler: function () {
-            var win = Ext.create("Ext.window.Window", {
-                title: "Please input password and level .",
-                autoShow: true,
-                width: 300,
-                resizeable: false,
-                items: [
-                    {
+    bbar: [{
+            text: "Add User",
+            handler: function () {
+                var win = Ext.create("Ext.window.Window", {
+                    title: "Please input password and level .",
+                    autoShow: true,
+                    width: 300,
+                    resizeable: false,
+                    items: [{
                         xtype: "form",
                         defaults: {
                             margin: 10,
                             allowBlank: false
                         },
-                        items: [
-                            {
+                        items: [{
                                 xtype: "textfield",
                                 fieldLabel: "username",
                                 name: "username",
@@ -404,68 +413,75 @@ Ext.define("UserManager", {
                                 maxLength: 16,
                                 minLength: 4
                             },
-                            {xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255},
-                        ],
-                        bbar: [
                             {
-                                text: "Ok", handler: function () {
-                                var form = this.up("form");
-                                if (form.isValid()) {
-                                    var values = form.getValues();
-                                    if (values.password != values.again) {
-                                        Ext.Msg.alert("Massage", "Two passwords are not consistent .")
-                                        return;
-                                    }
-                                    form.submit({
-                                        url: "/php/login.php?par=addUser",
-                                        success: function (form, resonse) {
-                                            if (resonse.result.success) {
-                                                Ext.Msg.alert("Massage", resonse.result.info);
-                                            }
-                                            console.log(arguments)
-                                        },
-                                        failure: function (form, response) {
-                                            Ext.Msg.alert("Massage", response.result.info)
-                                            console.log(arguments)
+                                xtype: "numberfield",
+                                fieldLabel: "level",
+                                name: "level",
+                                minValue: 0,
+                                maxValue: 255
+                            },
+                        ],
+                        bbar: [{
+                                text: "Ok",
+                                handler: function () {
+                                    var form = this.up("form");
+                                    if (form.isValid()) {
+                                        var values = form.getValues();
+                                        if (values.password != values.again) {
+                                            Ext.Msg.alert("Massage", "Two passwords are not consistent .")
+                                            return;
                                         }
-                                    })
+                                        form.submit({
+                                            url: "/php/login.php?par=addUser",
+                                            success: function (form, resonse) {
+                                                if (resonse.result.success) {
+                                                    Ext.Msg.alert("Massage", resonse.result.info);
+                                                }
+                                                console.log(arguments)
+                                            },
+                                            failure: function (form, response) {
+                                                Ext.Msg.alert("Massage", response.result.info)
+                                                console.log(arguments)
+                                            }
+                                        })
+                                    }
                                 }
-                            }
                             },
                             {
-                                text: "Cancel", handler: function () {
-                                win.close();
-                            }
+                                text: "Cancel",
+                                handler: function () {
+                                    win.close();
+                                }
                             }
                         ]
-                    }
-                ]
-            })
-        }
+                    }]
+                })
+            }
         },
         {
-            text: "Delete User", handler: function (button) {
-            var win = button.up('window');
-            win.deleteUser();
+            text: "Delete User",
+            handler: function (button) {
+                var win = button.up('window');
+                win.deleteUser();
 
-        }
+            }
         },
         {
-            text: "Change User", hidden: true, handler: function () {
-            var win = Ext.create("Ext.window.Window", {
-                title: "Please input password and level .",
-                autoShow: true,
-                width: 300,
-                resizeable: false,
-                items: [
-                    {
+            text: "Change User",
+            hidden: true,
+            handler: function () {
+                var win = Ext.create("Ext.window.Window", {
+                    title: "Please input password and level .",
+                    autoShow: true,
+                    width: 300,
+                    resizeable: false,
+                    items: [{
                         xtype: "form",
                         defaults: {
                             margin: 10,
                             allowBlank: false
                         },
-                        items: [
-                            {
+                        items: [{
                                 xtype: "textfield",
                                 fieldLabel: "username",
                                 name: "username",
@@ -489,44 +505,50 @@ Ext.define("UserManager", {
                                 maxLength: 16,
                                 minLength: 4
                             },
-                            {xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255},
-                        ],
-                        bbar: [
                             {
-                                text: "Ok", handler: function () {
-                                var form = this.up("form");
-                                if (form.isValid()) {
-                                    var values = form.getValues();
-                                    if (values.password != values.again) {
-                                        Ext.Msg.alert("Massage", "Two passwords are not consistent .")
-                                        return;
-                                    }
-                                    form.submit({
-                                        url: "/php/login.php?par=addUser",
-                                        success: function (form, resonse) {
-                                            if (resonse.result.success) {
-                                                Ext.Msg.alert("Massage", resonse.result.info);
-                                            }
-                                            console.log(arguments)
-                                        },
-                                        failure: function (form, response) {
-                                            Ext.Msg.alert("Massage", response.result.info)
-                                            console.log(arguments)
+                                xtype: "numberfield",
+                                fieldLabel: "level",
+                                name: "level",
+                                minValue: 0,
+                                maxValue: 255
+                            },
+                        ],
+                        bbar: [{
+                                text: "Ok",
+                                handler: function () {
+                                    var form = this.up("form");
+                                    if (form.isValid()) {
+                                        var values = form.getValues();
+                                        if (values.password != values.again) {
+                                            Ext.Msg.alert("Massage", "Two passwords are not consistent .")
+                                            return;
                                         }
-                                    })
+                                        form.submit({
+                                            url: "/php/login.php?par=addUser",
+                                            success: function (form, resonse) {
+                                                if (resonse.result.success) {
+                                                    Ext.Msg.alert("Massage", resonse.result.info);
+                                                }
+                                                console.log(arguments)
+                                            },
+                                            failure: function (form, response) {
+                                                Ext.Msg.alert("Massage", response.result.info)
+                                                console.log(arguments)
+                                            }
+                                        })
+                                    }
                                 }
-                            }
                             },
                             {
-                                text: "Cancel", handler: function () {
-                                win.close();
-                            }
+                                text: "Cancel",
+                                handler: function () {
+                                    win.close();
+                                }
                             }
                         ]
-                    }
-                ]
-            })
-        }
+                    }]
+                })
+            }
         }
     ],
     initComponent: function () {

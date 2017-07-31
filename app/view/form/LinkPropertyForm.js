@@ -2,6 +2,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
     extend: 'editpic.view.form.CanvasMenuBaseForm',
     title: "Value Binding",
     border: true,
+    //graph.view.chart.HistoryChart
     defaults: {
         anchor: "100%",
         allowBlank: false
@@ -367,7 +368,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
 
         //redis ip port 选择框
-        if (itype == 12 || itype == 16 ) {
+        if (itype == 12 || itype == 16) {
             var ipFiled = {
                 xtype: "combo",
                 flex: 3,
@@ -398,7 +399,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
             ]
         }
         if (itype == 17) {
-            me.items=[]
+            me.items = []
             var setHistoryButton = {
                 xtype: "button",
                 flex: 1,
@@ -454,7 +455,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 }),
                 valueField: "tablename",
                 displayField: "tablename",
-                editable:false,
+                editable: false,
                 listeners: {
                     focusleave: function () {
                         console.log("focusleave")
@@ -469,7 +470,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
             })
             me.items.push(tableName)
             me.items.push(setHistoryButton)
-            
+
         }
 
         if (itype == 12) {
@@ -657,3 +658,4 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
  //Ext.create("editpic.view.form.field.KeybordNumber"),
 
  ]*/
+

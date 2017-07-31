@@ -92,6 +92,11 @@ if ($par == "deleteHistoryTable") {
     }
 //echo json_encode()
 }
+if($par == "getHistoryIndexByTableName"){
+    $tablename = $_REQUEST['tablename'];
+    $res = getOne($mysql, "select * from smartio_history_index where tablename='$tablename'");
+    echo json_encode($res);
+}
 
 function getOne($mysql, $sql)
 {
