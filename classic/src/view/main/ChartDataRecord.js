@@ -94,7 +94,6 @@ Ext.define('graph.view.chart.ChartDataRecord',{
         }
         //'itemhighlight'
     ],
-
     axes: [
         {
         type: 'numeric',

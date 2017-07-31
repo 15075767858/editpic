@@ -28,7 +28,10 @@ Ext.define('editpic.view.form.CanvasMenuBaseFormController', {
             return;
         }
         var configName=field.configName;
+
+        console.log(arguments)
         console.log(values)
+        //if(configName=="rotate")
         values[configName](newVlaue);
 
     },

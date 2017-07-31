@@ -446,7 +446,7 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
             }
             var tableName = Ext.createWidget("combo", {
                 flex: 1,
-                name: "tableName",
+                name: "tablename",
                 fieldLabel: "table name",
                 //value: "",
                 store: Ext.create("graph.store.HistoryStore", {

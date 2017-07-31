@@ -1,6 +1,7 @@
 Ext.define('graph.view.chart.HistoryChart', {
     extend: 'Ext.panel.Panel',
     alias: "HistoryChart",
+    xtype: "HistoryChart",
     requires: [
         'graph.view.chart.HistoryChartController',
         'graph.view.chart.HistoryChartModel',
@@ -25,8 +26,9 @@ Ext.define('graph.view.chart.HistoryChart', {
             var key = keysArr[i];
             var objname = My.getObjectName(hiData.ip, hiData.port, keysArr[i])
             var valueField = 'key' + (i + 1) + '_value'
-            var line =  createLine(key,objname,valueField)
-             function createLine(key,objname,valueField) {
+            var line = createLine(key, objname, valueField)
+
+            function createLine(key, objname, valueField) {
                 var line = {
                     type: 'line',
                     title: objname,
@@ -68,18 +70,7 @@ Ext.define('graph.view.chart.HistoryChart', {
             series.push(line);
         }
 
-        var store = Ext.create("graph.store.HistoryRecord", {
-            proxy: {
-                type: "ajax",
-                url: "resources/mysql.php?par=getHistory&tablename=" + tablename,
-                reader: {
-                    type: 'json',
-                    rootProperty: "topics",
-                    totalProperty: 'totalCount',
-                }
-            }
-        })
-
+        var store = me.store;
         Ext.apply(me, {
             items: [{
                     xtype: 'cartesian',
@@ -88,7 +79,7 @@ Ext.define('graph.view.chart.HistoryChart', {
                     height: 500,
                     legend: {
                         type: 'sprite',
-                        docked: 'top',
+                        docked: 'left',
                     },
                     store: store,
                     insetPadding: 40,
@@ -117,18 +108,83 @@ Ext.define('graph.view.chart.HistoryChart', {
                             return new Date(val).toLocaleString()
                         }
                     }],
-                    series: series
+                    series: series,
+                    interactions: [{
+                        type: 'panzoom',
+                        zoomOnPan: true
+                    }],
+                    tbar: {
+                        itemId: "toolbar",
+                        items: [
+                            '->',
+                            {
+                                text: 'Reset pan/zoom',
+                                handler: function () {
+                                    console.log(arguments)
+                                    console.log(this)
+                                    console.log(this.up("cartesian"))
+                                    var chart = this.up("cartesian"),
+                                        axes = chart.getAxes();
+                                    axes[0].setVisibleRange([0, 1]);
+                                    axes[1].setVisibleRange([0, 1]);
+                                    chart.redraw();
+                                }
+                            },
+                            "|"
+                        ]
+                    },
+                    listeners: {
+                        afterrender: function () {
+                            //console.log(this)
+                            var chart = this;
+                            var toolbar = this.getComponent('toolbar');
+                            console.log(toolbar)
+                            var panzoom = chart.getInteractions()[0];
+                            panzoom.getModeToggleButton()
+
+                            toolbar.add(panzoom.getModeToggleButton());
+                        }
+                    }
                 },
-                Ext.create("HistoryGrid", {
-                    tablename: tablename,
-                    store: store
-                })
+
             ]
         })
+
         me.callParent();
     },
 
 });
+
+My.ShowHistoryTable = function (tablename) {
+    var store = Ext.create("graph.store.HistoryRecord", {
+        proxy: {
+            type: "ajax",
+            url: "resources/mysql.php?par=getHistory&tablename=" + tablename,
+            reader: {
+                type: 'json',
+                rootProperty: "topics",
+                totalProperty: 'totalCount'
+            }
+        }
+    })
+    Ext.create("Ext.window.Window", {
+        autoShow: true,
+        title: "History",
+        items: [{
+                xtype: "HistoryChart",
+                width: 1000,
+                tablename: tablename,
+                store: store
+            },
+            {
+                xtype: "HistoryGrid",
+                width: 1000,
+                tablename: tablename,
+                store: store
+            }
+        ]
+    })
+}
 
 function getHistoryIndexData(tablename) {
     var data;
@@ -145,6 +201,7 @@ function getHistoryIndexData(tablename) {
 }
 Ext.define('HistoryGrid', {
     extend: 'Ext.grid.Panel',
+    xtype: "HistoryGrid",
     requires: [
         'Ext.data.*',
         'Ext.grid.*',
@@ -154,9 +211,9 @@ Ext.define('HistoryGrid', {
     xtype: 'progress-bar-pager',
     height: 360,
     frame: true,
+
     initComponent: function () {
         var me = this;
-        this.width = 1000;
         var store = me.store;
         var tablename = me.tablename;
         var pageSize = 25;
@@ -178,6 +235,7 @@ Ext.define('HistoryGrid', {
             },
             {
                 text: 'Table Name',
+                hidden: true,
                 sortable: true,
                 dataIndex: 'tablename',
                 flex: 1
@@ -268,6 +326,7 @@ Ext.define("ConfigHistoryTableWindow", {
                                 console.log(response)
                                 My.delayToast("message", response.responseText);
                                 grid.saveIpsXml()
+                                grid.restartServer()
                             })
                         }
                         console.log(arguments, this)

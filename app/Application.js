@@ -70,16 +70,11 @@ function testComponent() {
         setTimeout(function () {
             //            testwindow = Ext.create("ConfigHistoryTableWindow");
 
-            Ext.create("Ext.window.Window", {
-                autoShow: true,
-                title: "History",
-                items: [
-                    Ext.createByAlias("HistoryChart", {
-                        tablename:"tb1"
-                        //store: store
-                    }),
-                ]
-            })
+            return ;
+
+            var tablename = "tb6"
+            My.ShowHistoryTable(tablename)
+
 
         }, 2000)
 

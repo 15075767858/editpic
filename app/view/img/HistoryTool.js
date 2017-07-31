@@ -14,14 +14,14 @@ Ext.define('graph.view.img.HistoryTool', {
     init: function (data) {
         var me = this;
         console.log(data);
-        me.tableName = data.tableName;
+        me.tablename = data.tablename;
         me.callParent(arguments)
     },
     getInitData: function () {
         var me = this;
         var data = me.callParent()
         Ext.apply(data, {
-            tableName: me.tableName,
+            tablename: me.tablename,
             hostPoint: me.hostPoint
         })
         return data;
@@ -41,6 +41,14 @@ Ext.define('graph.view.img.HistoryTool', {
         //     }, 1000)
         //     me.add(me.contentPanel);
         // }
+    },
+    listeners: {
+        el: {
+            click: function () {
+                var me = this.component;
+                My.ShowHistoryTable(me.tablename)
+            }
+        }
     }
     //html: 'Hello, World!!'
 });

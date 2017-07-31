@@ -39,7 +39,7 @@ Ext.define('editpic.view.form.LabelForm', {
                     allowBlank: true,
                     configName: "setRotate",
                     name: "rotate",
-                    fieldLabel: "ratate",
+                    fieldLabel: "rotate",
                     minValue: 0,
                     maxValue: 360,
                     value: 0,
