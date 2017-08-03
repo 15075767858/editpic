@@ -9,6 +9,8 @@ tar czvf graph.tar.bz2 graph/
 mkdir autoInstallPackage
 rm -rf graph/resources/SvgHvac
 tar czvf autoGraph.tar.bz2 graph/
+
+sh /Applications/XAMPP/xamppfiles/htdocs/package.sh 
 #split -b 1m graph.tar.bz2 autoInstallPackage/autoInstallGraph.
 #tar czvf autoInstallPackage.tar.bz2 autoInstallPackage
 

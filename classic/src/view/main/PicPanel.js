@@ -3,22 +3,6 @@
  * 是绘图区域
  * */
 
-/*var a = {x:100,y:100,width:100,height:100}
- var b = {x:101,y:101,width:99,height:99}
- isCollsionRect(a,b)
- function isCollsionRect(mR,oR){
-
- if(mR.x<oR.x&mR.width>oR.width&mR.height>oR.height){
-
- return true;
-
- }else{
-
- return false;
-
- }
-
- }*/
 Ext.define('editpic.view.panel.PicPanel', {
     extend: 'Ext.panel.Panel',
     xtype: "picpanel",
@@ -42,7 +26,7 @@ Ext.define('editpic.view.panel.PicPanel', {
     scrollable: true,
     constrainHeader: false,
     constrain: false,
-    renderTo: Ext.getBody(),
+    //renderTo: Ext.getBody(),
     layout: 'absolute',
     //engine: "Ext.draw.engine.Svg",
     bind: {
@@ -221,7 +205,6 @@ Ext.define('editpic.view.panel.PicPanel', {
         var items = me.items.items;
         var arr = [];
         for (var i = 0; i < items.length; i++) {
-//            console.log(items[i])
             if (items[i].isselect) {
                 arr.push(items[i]);
             }
@@ -458,8 +441,13 @@ Ext.define('editpic.view.panel.PicPanel', {
             items[i].init(items[i].bufferDatas)
         }
         console.log("Open Info", "打开成功" + data.length + "个图片 耗时" + (new Date().getTime() - start) + "ms");
-        me.viewModel.set("width", json.width);
-        me.viewModel.set("height", json.height);
+        
+        var width =  Ext.getBody().getWidth();
+        var height = Ext.getBody().getHeight();
+        console.log(width,height)
+        me.viewModel.set("width",My.getSearch()?width:json.width);
+        me.viewModel.set("height",My.getSearch()?height:json.height);
+       
         My.initLinkValue()
         me.refreshPanel()
     },

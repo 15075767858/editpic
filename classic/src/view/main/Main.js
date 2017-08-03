@@ -45,9 +45,6 @@ Ext.define('editpic.view.main.Main', {
     listeners: {
         boxready: function (panel) {
             //panel.createOutLoginMenu()
-
-
-
             if (!My.getSearch()) {
                 var maintab = Ext.getCmp("mintab");
                 setTimeout(function () {
@@ -65,13 +62,11 @@ Ext.define('editpic.view.main.Main', {
 
                 }
             }]
-
         })
     },
     tbar: [{
             text: "File",
             menu: [
-
                 {
                     text: "save",
                     handler: "saveHandler"
@@ -80,7 +75,6 @@ Ext.define('editpic.view.main.Main', {
                     handler: "openNewHandler",
                     hidden: true
                 },
-
                 {
                     text: "open old version",
                     handler: "openHandler",
@@ -134,7 +128,7 @@ Ext.define('editpic.view.main.Main', {
             }, {
                 text: "about",
                 handler: function () {
-                    Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 3.0.2")
+                    Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 3.0.8")
                 }
             }]
         }, {
@@ -142,7 +136,31 @@ Ext.define('editpic.view.main.Main', {
             handler: function () {
                 Ext.createByAlias("DataRecordWindow")
             }
-        }
+        },
+        {
+            xtype: 'splitbutton',
+            icon: 'resources/icons/back_24px.png',
+            //text: 'Back',
+            id: "backButton",
+            handler:"clickback",
+            setBackMenu: function () {
+                var me = this;
+                var items = ["-"];
+                for (var i = 0; i < My.backup.length; i++) {
+                    var item = {
+                        text: My.backup[i],
+                        handler:"clickback"
+                    }
+                    items.push(item);
+                    items.push("-");
+                }
+                console.log(items)
+                var menu = new Ext.menu.Menu({
+                    items: items
+                })
+                me.setMenu(menu)
+            }
+        },
     ],
     bbar: [] || [
         "->",
@@ -231,29 +249,14 @@ Ext.define('editpic.view.main.Main', {
                     return;
                 }
 
+                My.backupAdd(text)
                 var panel = me.getTabByTitle(text);
                 if (panel) {
-                    panel.close()
+                    me.setActiveTab(panel)
+                    //panel.close()
+                    return 
                 }
-
-                /*var picPanel = Ext.create("editpic.view.panel.PicPanel", {
-                    x: 0,
-                    y: 0,
-                    constrainHeader: false,
-                    constrain: false,
-                })
-
-                me.add(
-                    {
-                        xtype: "panel",
-                        constrainHeader: false,
-                        constrain: false,
-                        title: text,
-                        scrollable: true,
-                        //layout:"absolute",
-                        items: picPanel
-                    }
-                ).show()*/
+                
                 var picPanel = me.createNewTab(text)
                 picPanel.load(resDataJson)
 
@@ -263,6 +266,7 @@ Ext.define('editpic.view.main.Main', {
                 var picPanel = Ext.create("editpic.view.panel.PicPanel", {
                     x: 0,
                     y: 0,
+
                     constrainHeader: false,
                     constrain: false,
                 })
@@ -272,6 +276,7 @@ Ext.define('editpic.view.main.Main', {
                     constrain: false,
                     title: text,
                     scrollable: true,
+
                     //layout:"absolute",
                     items: picPanel
                 }).show()

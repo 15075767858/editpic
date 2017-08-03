@@ -34,8 +34,6 @@ Ext.define('editpic.view.panel.DevFormPanel', {
             })
             panel.add(picpanel)
             panel.setCollapsed()
-
-
             setTimeout(function () {
                 panel.setCollapsed(true)
                setTimeout(function () {

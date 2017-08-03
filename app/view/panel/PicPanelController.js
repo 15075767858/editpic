@@ -5,9 +5,10 @@ Ext.define('editpic.view.panel.PicPanelController', {
     boxready: function (panel, width, height, eOpts) {
 
         console.log(panel)
-
+        
         if (My.getSearch()) {
             panel.header.hide();
+        
         }
         /*panel.store = Ext.create('editpic.store.PicDatas', {
          //storeId: "picdatas",

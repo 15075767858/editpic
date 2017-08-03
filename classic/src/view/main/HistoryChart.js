@@ -73,16 +73,27 @@ Ext.define('graph.view.chart.HistoryChart', {
         var store = me.store;
         Ext.apply(me, {
             items: [{
+
                     xtype: 'cartesian',
                     reference: 'chart',
                     width: '100%',
-                    height: 500,
+                    height: 350,
+                    height: me.cartesianheight,
                     legend: {
                         type: 'sprite',
                         docked: 'left',
                     },
                     store: store,
                     insetPadding: 40,
+                    sprites: [{
+                        type: 'text',
+                        text: tablename,
+                        fontSize: 22,
+                        width: 100,
+                        height: 30,
+                        x: 40, // the sprite x position
+                        y: 30 // the sprite y position
+                    }],
                     axes: [{
                         type: 'numeric',
                         position: 'left',
@@ -173,12 +184,14 @@ My.ShowHistoryTable = function (tablename) {
         items: [{
                 xtype: "HistoryChart",
                 width: 1000,
+                cartesianheight: Ext.getBody().getHeight() / 2,
                 tablename: tablename,
                 store: store
             },
             {
                 xtype: "HistoryGrid",
                 width: 1000,
+                height: Ext.getBody().getHeight() / 2.5,
                 tablename: tablename,
                 store: store
             }
@@ -207,6 +220,7 @@ Ext.define('HistoryGrid', {
         'Ext.grid.*',
         'Ext.util.*',
         'Ext.toolbar.Paging',
+        "Ext.ux.ProgressBarPager"
     ],
     xtype: 'progress-bar-pager',
     height: 360,

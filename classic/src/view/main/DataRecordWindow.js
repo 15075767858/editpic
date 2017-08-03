@@ -168,7 +168,7 @@ Ext.define('graph.view.window.DataRecordWindow', {
                                     handler: function () {
                                         var form = this.up("form");
                                         form.submit({
-                                            url: "resources/mysqlInit.php?par=createTable",
+                                            url: "/php/mysqlInit.php?par=createTable",
                                             success: function (form, action) {
                                                 Ext.Msg.alert('Info ', action.response.responseText);
                                             },
@@ -182,7 +182,7 @@ Ext.define('graph.view.window.DataRecordWindow', {
                             listeners: {
                                 boxready: function (form) {
                                     Ext.Ajax.request({
-                                        url: "resources/mysqlInit.php?par=getConfig",
+                                        url: "/php/mysqlInit.php?par=getConfig",
                                         success: function (response) {
                                             var xml = $(response.responseText);
                                             var host = xml.find("host").text()
@@ -205,7 +205,7 @@ Ext.define('graph.view.window.DataRecordWindow', {
                                     handler: function () {
                                         var form = this.up("form");
                                         form.submit({
-                                            url: "resources/mysqlInit.php?par=testConnect",
+                                            url: "/php/mysqlInit.php?par=testConnect",
                                             success: function (form, action) {
                                                 Ext.Msg.alert('Info ', action.response.responseText);
                                             },
@@ -224,7 +224,7 @@ Ext.define('graph.view.window.DataRecordWindow', {
                                         if (form.isValid()) {
                                             var values = form.getValues();
                                             form.submit({
-                                                url: "resources/mysqlInit.php?par=saveConfig",
+                                                url: "/php/mysqlInit.php?par=saveConfig",
                                                 success: function (form, action) {
                                                     Ext.Msg.alert('Info ', action.response.responseText);
                                                 },
@@ -305,9 +305,11 @@ Ext.define('graph.view.window.DataRecordWindow', {
                 var keysArr = treePanel.getSelectPoints();
                 var qdr = Ext.createByAlias("QueryDataRecord", {
                     ip: IPCombo.value,
-                    keys: keysArr.join(",")
+                    keys: keysArr.join(","),
+                    height:Ext.getBody().getHeight()/2.5,
                 })
                 var cdr = Ext.createByAlias("ChartDataRecord", {
+                    height:Ext.getBody().getHeight()/2,
                     store: qdr.store
                 })
                 Ext.create("Ext.window.Window", {
@@ -947,7 +949,7 @@ Ext.define('QueryDataRecord', {
         'Ext.toolbar.Paging'
     ],
     xtype: 'progress-bar-pager',
-    height: 360,
+    //height: 360,
     frame: true,
     initComponent: function () {
         this.width = 800;
@@ -977,7 +979,7 @@ Ext.define('QueryDataRecord', {
             pageSize: pageSize,
             proxy: {
                 type: 'ajax',
-                url: 'resources/mysql.php?par=getDataRecord&ip=' + ip + "&keys=" + keys,
+                url: '/php/mysql.php?par=getDataRecord&ip=' + ip + "&keys=" + keys,
                 reader: {
                     type: 'json',
                     rootProperty: "topics",
@@ -1129,7 +1131,7 @@ Ext.define('QueryEventRecord', {
                 ],
                 proxy: {
                     type: 'ajax',
-                    url: 'resources/mysql.php?par=getEventData&ip=' + ip + "&keys=" + keys,
+                    url: 'php/mysql.php?par=getEventData&ip=' + ip + "&keys=" + keys,
                     reader: {
                         type: 'json',
                         rootProperty: "topics",

@@ -23,7 +23,7 @@ if ($par == "createTable") {
         echo "<div style='color: green;'>database  create success .</div>";
     }
     $result = mysqli_select_db($mysql, $_REQUEST["databasename"]);
-    $fileName = "../resources/deviceip.sql";
+    $fileName = "initfiles/deviceip.sql";
     $_sql = file_get_contents($fileName);
     $_arr = explode(';', $_sql);
     foreach ($_arr as $_value) {

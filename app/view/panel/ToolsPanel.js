@@ -68,13 +68,11 @@ Ext.define('editpic.view.panel.ToolsPanel', {
                     margin:"10",
                     height:75,
                     disabled:data[i].disabled,
-
                     html: [
                         "<div  style='text-align: center;'><image style='width: 40px;' src=" + data[i].src + "></div>",
                         "<div style='text-align: center;'>" + data[i].caption + "</div>"
                     ]
                 })
-
                 me.add(panel)
                 var dd = new Ext.dd.DragSource(panel.el.dom, {
                     ddGroup: "picgroup",

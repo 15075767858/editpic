@@ -6,9 +6,18 @@
  */
 Ext.define('editpic.view.main.MainController', {
     extend: 'Ext.app.ViewController',
-
     alias: 'controller.main',
 
+    clickback: function (menu) {
+        var text = menu.text;
+        if (menu.id == "backButton") {
+            text = My.backup[My.backup.length - 2]
+        }
+        if (text) {
+            My.backupBack(text)
+            Ext.getCmp("mintab").addTab(text);
+        }
+    },
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
     },
@@ -617,6 +626,25 @@ String.prototype.replaceAll = function (s1, s2) {
 
 var My = {};
 
+My.backup = [];
+My.backupAdd = function (text) {
+    My.backup = My.backup.filter(function (v) {
+        if (v == text) {
+            return false;
+        } else {
+            return true;
+        }
+    })
+    My.backup.push(text);
+    Ext.getCmp("backButton").setBackMenu()
+}
+
+My.backupBack = function (text) {
+    var index = My.backup.indexOf(text);
+    My.backup = My.backup.slice(0, index);
+    console.log(My.backup)
+    Ext.getCmp("backButton").setBackMenu()
+}
 
 My.Ajax = function (url, success, params) {
     Ext.Ajax.request({
