@@ -5,10 +5,10 @@ Ext.define('editpic.view.panel.PicPanelController', {
     boxready: function (panel, width, height, eOpts) {
 
         console.log(panel)
-        
+
         if (My.getSearch()) {
             panel.header.hide();
-        
+
         }
         /*panel.store = Ext.create('editpic.store.PicDatas', {
          //storeId: "picdatas",
@@ -66,7 +66,6 @@ Ext.define('editpic.view.panel.PicPanelController', {
                         zindex = 20;
                     }
 
-
                     tool = My.createImg({
                         itype: dragData.itype,
                         x: e.event.offsetX,
@@ -80,25 +79,17 @@ Ext.define('editpic.view.panel.PicPanelController', {
 
                     tool.openMenu(function (data) {
                         panel.add(tool);
-                        tool.init(Ext.apply(data, {itype: dragData.itype}));
+                        tool.init(Ext.apply(data, {
+                            itype: dragData.itype
+                        }));
                     }, function () {
                         tool.close();
                     })
-                    /*Ext.create("editpic.view.window.CanvasConponmentWindow", {
-                     values: tool,
-                     ok: function (data) {
-                     panel.add(tool);
-                     tool.init(Ext.apply(data, {itype: dragData.itype}));
-                     },
-                     cancel: function () {
-                     tool.close();
-                     }
-                     })*/
+
                 }
                 if (ddSource.dragData.records) {
                     var selectRecord = ddSource.dragData.records[0].data;
                     var url = selectRecord.url;
-
                     var img = new Image()
                     img.src = url;
 
@@ -126,13 +117,20 @@ Ext.define('editpic.view.panel.PicPanelController', {
                             margin: 10,
                             xtype: "form",
                             items: {
-                                xtype: "combo", fieldLabel: "Image Type",
-                                name: "itype", allowBlank: true,
+                                xtype: "combo",
+                                fieldLabel: "Image Type",
+                                name: "itype",
+                                allowBlank: true,
                                 store: Ext.create("Ext.data.Store", {
                                     fields: ["name", "value"],
-                                    data: [
-                                        {name: "static Image", value: 0},
-                                        {name: "Dynamic Image", value: 1}
+                                    data: [{
+                                            name: "static Image",
+                                            value: 0
+                                        },
+                                        {
+                                            name: "Dynamic Image",
+                                            value: 1
+                                        }
                                     ]
                                 }),
                                 editable: false,
@@ -145,35 +143,45 @@ Ext.define('editpic.view.panel.PicPanelController', {
                                 ]
                             }
                         },
-                        buttons: [
-                            {
-                                text: "OK", handler: function () {
-                                var imageType = selectImgWin.down("combo").value
-                                var imagePanel = null;
-                                if (imageType == 0) {
-                                    imagePanel = Ext.create("editpic.view.img.CanvasImg", Ext.apply(data, {itype: 0}));
-                                } else if (imageType == 1) {
-                                    imagePanel = Ext.create("editpic.view.img.GifImg", Ext.apply(data, {itype: 1}))
-                                }
-
-                                var win = Ext.create("editpic.view.window.CanvasConponmentWindow", {
-                                    values: imagePanel,
-                                    ok: function (resData) {
-                                        panel.add(imagePanel);
-                                        imagePanel.init(resData)
-                                        selectImgWin.close()
-                                    },
-                                    cancel: function () {
-                                        selectImgWin.close()
-
+                        buttons: [{
+                                text: "OK",
+                                handler: function () {
+                                    var imageType = selectImgWin.down("combo").value
+                                    var imagePanel = null;
+                                    if (imageType == 0) {
+                                        imagePanel = Ext.create("editpic.view.img.CanvasImg", Ext.apply(data, {
+                                            itype: 0
+                                        }));
+                                    } else if (imageType == 1) {
+                                        imagePanel = Ext.create("editpic.view.img.GifImg", Ext.apply(data, {
+                                            itype: 1
+                                        }))
                                     }
-                                })
-                            }
+
+                                    var win = Ext.create("editpic.view.window.CanvasConponmentWindow", {
+                                        values: imagePanel,
+                                        ok: function (resData) {
+                                            panel.add(imagePanel);
+                                            imagePanel.init(resData)
+                                            selectImgWin.close()
+                                        },
+                                        cancel: function () {
+                                            selectImgWin.close()
+                                        }
+                                    })
+                                    setTimeout(function () {
+                                        if (imageType == 0) {
+                                            win.ok(win.labelFormPanel.getForm().getValues())
+                                            win.close();
+                                        }
+                                    }, 1000)
+                                }
                             },
                             {
-                                text: "Cancel", handler: function () {
-                                selectImgWin.close();
-                            }
+                                text: "Cancel",
+                                handler: function () {
+                                    selectImgWin.close();
+                                }
                             }
                         ]
 
@@ -301,6 +309,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
         }
         saveAsLocalImage()
         win.close()
+
         function saveAsLocalImage() {
             var myCanvas = document.getElementById("downcanvas");
             var image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
@@ -337,7 +346,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
     selectDeviceWH: function () {
 
         console.log(this)
-        var me = this.view//.up("picpanel");
+        var me = this.view //.up("picpanel");
         if (me.win) {
             me.win.show()
             return;
@@ -347,8 +356,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
             viewModel: me.viewModel,
             title: "Set Device Pixel",
             width: 1000,
-            items: [
-                {
+            items: [{
                     xtype: 'slider',
                     width: "100%",
                     fieldLabel: "Width",
@@ -389,7 +397,7 @@ Ext.define('editpic.view.panel.PicPanelController', {
         me.win = win;
     },
     onRotate: function (menu) {
-        var me = this.view//.up("picpanel");
+        var me = this.view //.up("picpanel");
         var width = me.viewModel.get("width");
         var height = me.viewModel.get("height");
         me.viewModel.set("width", height);
@@ -408,4 +416,3 @@ Ext.define('editpic.view.panel.PicPanelController', {
  console.log(img)
  surface.add(img)
  surface.renderFrame();*/
-

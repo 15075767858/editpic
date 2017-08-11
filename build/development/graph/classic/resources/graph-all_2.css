@@ -5327,1540 +5327,6 @@ tr.x-grid-subtable-row {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     opacity: 1;
 }
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
-.x-tab-navigation-top {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0;
-    padding: 24px 24px 24px 24px;
-    border-width: 0;
-    border-style: solid;
-    background-color: transparent;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
-.x-tab-navigation-top-mc {
-    background-color: transparent;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
-.x-nbr .x-tab-navigation-top {
-    padding: 0 !important;
-    border-width: 0 !important;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    -ms-border-radius: 0px;
-    -o-border-radius: 0px;
-    border-radius: 0px;
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
-.x-tab-navigation-top-frameInfo {
-    font-family: th-0-0-0-0-0-0-0-0-24-24-24-24;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
-.x-tab-navigation-top-tl {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
-.x-tab-navigation-top-tr {
-    background-position: right 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
-.x-tab-navigation-top-bl {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
-.x-tab-navigation-top-br {
-    background-position: right 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
-.x-tab-navigation-top-ml {
-    background-position: 0 top;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
-.x-tab-navigation-top-mr {
-    background-position: right top;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
-.x-tab-navigation-top-tc {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
-.x-tab-navigation-top-bc {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
-.x-tab-navigation-top-tr,
-.x-tab-navigation-top-br,
-.x-tab-navigation-top-mr {
-    padding-right: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
-.x-tab-navigation-top-tl,
-.x-tab-navigation-top-bl,
-.x-tab-navigation-top-ml {
-    padding-left: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
-.x-tab-navigation-top-tc {
-    height: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
-.x-tab-navigation-top-bc {
-    height: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
-.x-tab-navigation-top-mc {
-    padding: 24px 24px 24px 24px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-navigation-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:0 0 0 0" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
-.x-tab-navigation-bottom {
-    -moz-border-radius-topleft: 0;
-    -webkit-border-top-left-radius: 0;
-    border-top-left-radius: 0;
-    -moz-border-radius-topright: 0;
-    -webkit-border-top-right-radius: 0;
-    border-top-right-radius: 0;
-    -moz-border-radius-bottomright: 0;
-    -webkit-border-bottom-right-radius: 0;
-    border-bottom-right-radius: 0;
-    -moz-border-radius-bottomleft: 0;
-    -webkit-border-bottom-left-radius: 0;
-    border-bottom-left-radius: 0;
-    padding: 24px 24px 24px 24px;
-    border-width: 0 0 0 0;
-    border-style: solid;
-    background-color: transparent;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
-.x-tab-navigation-bottom-mc {
-    background-color: transparent;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
-.x-nbr .x-tab-navigation-bottom {
-    padding: 0 !important;
-    border-width: 0 !important;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    -ms-border-radius: 0px;
-    -o-border-radius: 0px;
-    border-radius: 0px;
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
-.x-tab-navigation-bottom-frameInfo {
-    font-family: th-0-0-0-0-0-0-0-0-24-24-24-24;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
-.x-tab-navigation-bottom-tl {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
-.x-tab-navigation-bottom-tr {
-    background-position: right 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
-.x-tab-navigation-bottom-bl {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
-.x-tab-navigation-bottom-br {
-    background-position: right 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
-.x-tab-navigation-bottom-ml {
-    background-position: 0 bottom;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
-.x-tab-navigation-bottom-mr {
-    background-position: right bottom;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
-.x-tab-navigation-bottom-tc {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
-.x-tab-navigation-bottom-bc {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
-.x-tab-navigation-bottom-tr,
-.x-tab-navigation-bottom-br,
-.x-tab-navigation-bottom-mr {
-    padding-right: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
-.x-tab-navigation-bottom-tl,
-.x-tab-navigation-bottom-bl,
-.x-tab-navigation-bottom-ml {
-    padding-left: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
-.x-tab-navigation-bottom-tc {
-    height: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
-.x-tab-navigation-bottom-bc {
-    height: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
-.x-tab-navigation-bottom-mc {
-    padding: 24px 24px 24px 24px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-navigation-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:0 0 0 0" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
-.x-tab-navigation-left {
-    -moz-border-radius-topleft: 0;
-    -webkit-border-top-left-radius: 0;
-    border-top-left-radius: 0;
-    -moz-border-radius-topright: 0;
-    -webkit-border-top-right-radius: 0;
-    border-top-right-radius: 0;
-    -moz-border-radius-bottomright: 0;
-    -webkit-border-bottom-right-radius: 0;
-    border-bottom-right-radius: 0;
-    -moz-border-radius-bottomleft: 0;
-    -webkit-border-bottom-left-radius: 0;
-    border-bottom-left-radius: 0;
-    padding: 24px 24px 24px 24px;
-    border-width: 0 0 0 0;
-    border-style: solid;
-    background-color: transparent;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
-.x-tab-navigation-left-mc {
-    background-color: transparent;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
-.x-nbr .x-tab-navigation-left {
-    padding: 0 !important;
-    border-width: 0 !important;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    -ms-border-radius: 0px;
-    -o-border-radius: 0px;
-    border-radius: 0px;
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
-.x-tab-navigation-left-frameInfo {
-    font-family: th-0-0-0-0-0-0-0-0-24-24-24-24;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
-.x-tab-navigation-left-tl {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
-.x-tab-navigation-left-tr {
-    background-position: right 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
-.x-tab-navigation-left-bl {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
-.x-tab-navigation-left-br {
-    background-position: right 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
-.x-tab-navigation-left-ml {
-    background-position: 0 top;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
-.x-tab-navigation-left-mr {
-    background-position: right top;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
-.x-tab-navigation-left-tc {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
-.x-tab-navigation-left-bc {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
-.x-tab-navigation-left-tr,
-.x-tab-navigation-left-br,
-.x-tab-navigation-left-mr {
-    padding-right: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
-.x-tab-navigation-left-tl,
-.x-tab-navigation-left-bl,
-.x-tab-navigation-left-ml {
-    padding-left: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
-.x-tab-navigation-left-tc {
-    height: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
-.x-tab-navigation-left-bc {
-    height: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
-.x-tab-navigation-left-mc {
-    padding: 24px 24px 24px 24px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-navigation-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:0 0 0 0" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
-.x-tab-navigation-right {
-    -moz-border-radius-topleft: 0;
-    -webkit-border-top-left-radius: 0;
-    border-top-left-radius: 0;
-    -moz-border-radius-topright: 0;
-    -webkit-border-top-right-radius: 0;
-    border-top-right-radius: 0;
-    -moz-border-radius-bottomright: 0;
-    -webkit-border-bottom-right-radius: 0;
-    border-bottom-right-radius: 0;
-    -moz-border-radius-bottomleft: 0;
-    -webkit-border-bottom-left-radius: 0;
-    border-bottom-left-radius: 0;
-    padding: 24px 24px 24px 24px;
-    border-width: 0 0 0 0;
-    border-style: solid;
-    background-color: transparent;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
-.x-tab-navigation-right-mc {
-    background-color: transparent;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
-.x-nbr .x-tab-navigation-right {
-    padding: 0 !important;
-    border-width: 0 !important;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    -ms-border-radius: 0px;
-    -o-border-radius: 0px;
-    border-radius: 0px;
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
-.x-tab-navigation-right-frameInfo {
-    font-family: th-0-0-0-0-0-0-0-0-24-24-24-24;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
-.x-tab-navigation-right-tl {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
-.x-tab-navigation-right-tr {
-    background-position: right 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
-.x-tab-navigation-right-bl {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
-.x-tab-navigation-right-br {
-    background-position: right 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
-.x-tab-navigation-right-ml {
-    background-position: 0 top;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
-.x-tab-navigation-right-mr {
-    background-position: right top;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
-.x-tab-navigation-right-tc {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
-.x-tab-navigation-right-bc {
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
-.x-tab-navigation-right-tr,
-.x-tab-navigation-right-br,
-.x-tab-navigation-right-mr {
-    padding-right: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
-.x-tab-navigation-right-tl,
-.x-tab-navigation-right-bl,
-.x-tab-navigation-right-ml {
-    padding-left: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
-.x-tab-navigation-right-tc {
-    height: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
-.x-tab-navigation-right-bc {
-    height: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
-.x-tab-navigation-right-mc {
-    padding: 24px 24px 24px 24px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-navigation-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, frame:0 0 0 0" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1587 */
-.x-tab-navigation {
-    border-color: #2e3746;
-    cursor: pointer;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1648 */
-.x-tab-navigation-top {
-    margin: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1652 */
-.x-tab-navigation-top.x-rtl {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1657 */
-.x-tab-navigation-top.x-tab-rotate-left {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1661 */
-.x-tab-navigation-top.x-tab-rotate-left.x-rtl {
-    margin: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1679 */
-.x-tab-navigation-top.x-tab-focus {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1708 */
-.x-tab-navigation-top.x-tab-focus.x-tab-over {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1737 */
-.x-tab-navigation-top.x-tab-focus.x-tab-active {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1763 */
-.x-tab-navigation-right {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1767 */
-.x-tab-navigation-right.x-rtl {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1772 */
-.x-tab-navigation-right.x-tab-rotate-right {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1776 */
-.x-tab-navigation-right.x-tab-rotate-right.x-rtl {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1794 */
-.x-tab-navigation-right.x-tab-focus {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1823 */
-.x-tab-navigation-right.x-tab-focus.x-tab-over {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1852 */
-.x-tab-navigation-right.x-tab-focus.x-tab-active {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1878 */
-.x-tab-navigation-bottom {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1882 */
-.x-tab-navigation-bottom.x-rtl {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1887 */
-.x-tab-navigation-bottom.x-tab-rotate-left {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1891 */
-.x-tab-navigation-bottom.x-tab-rotate-left.x-rtl {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1909 */
-.x-tab-navigation-bottom.x-tab-focus {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1938 */
-.x-tab-navigation-bottom.x-tab-focus.x-tab-over {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1967 */
-.x-tab-navigation-bottom.x-tab-focus.x-tab-active {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1993 */
-.x-tab-navigation-left {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:1997 */
-.x-tab-navigation-left.x-rtl {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2002 */
-.x-tab-navigation-left.x-tab-rotate-right {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2006 */
-.x-tab-navigation-left.x-tab-rotate-right.x-rtl {
-    margin: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2024 */
-.x-tab-navigation-left.x-tab-focus {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2053 */
-.x-tab-navigation-left.x-tab-focus.x-tab-over {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2082 */
-.x-tab-navigation-left.x-tab-focus.x-tab-active {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2108 */
-.x-tab-button-navigation {
-    height: 24px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2113 */
-.x-tab-inner-navigation {
-    font: bold 15px/19px helvetica, arial, verdana, sans-serif;
-    color: #acacac;
-    max-width: 100%;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2129 */
-.x-tab-icon-right > .x-tab-inner-navigation,
-.x-tab-icon-left > .x-tab-inner-navigation {
-    max-width: calc(100% - 24px);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2137 */
-.x-tab-icon-el-navigation {
-    min-height: 24px;
-    background-position: center center;
-    font-size: 24px;
-    line-height: 24px;
-    color: #acacac;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2138 */
-.x-tab-icon-left > .x-tab-icon-el-navigation,
-.x-tab-icon-right > .x-tab-icon-el-navigation {
-    width: 24px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2143 */
-.x-tab-icon-top > .x-tab-icon-el-navigation,
-.x-tab-icon-bottom > .x-tab-icon-el-navigation {
-    min-width: 24px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2179 */
-.x-tab-text.x-tab-icon-left > .x-tab-icon-el-navigation {
-    margin-right: 5px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2183 */
-.x-tab-text.x-tab-icon-left > .x-tab-icon-el-navigation.x-rtl {
-    margin-right: 0;
-    margin-left: 5px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2190 */
-.x-tab-text.x-tab-icon-right > .x-tab-icon-el-navigation {
-    margin-left: 5px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2194 */
-.x-tab-text.x-tab-icon-right > .x-tab-icon-el-navigation.x-rtl {
-    margin-left: 0;
-    margin-right: 5px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2201 */
-.x-tab-text.x-tab-icon-top > .x-tab-icon-el-navigation {
-    margin-bottom: 5px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2205 */
-.x-tab-text.x-tab-icon-bottom > .x-tab-icon-el-navigation {
-    margin-top: 5px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2210 */
-.x-tab-focus.x-tab-navigation {
-    border-color: #616f8c;
-    background-color: transparent;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2348 */
-.x-tab-over.x-tab-navigation {
-    border-color: #6d7b9a;
-    background-color: #505050;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2406 */
-.x-tab-over.x-tab-navigation .x-tab-inner-navigation {
-    color: #c4c4c4;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2426 */
-.x-tab-over.x-tab-navigation .x-tab-icon-el {
-    color: #c4c4c4;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2435 */
-.x-ie8m .x-tab-over.x-tab-navigation .x-tab-icon-el {
-    color: #c4c4c4;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2462 */
-.x-tab-focus.x-tab-over.x-tab-navigation {
-    border-color: #6d7b9a;
-    background-color: #505050;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2579 */
-.x-tab.x-tab-active.x-tab-navigation {
-    border-color: #74400e;
-    background-color: #303030;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2637 */
-.x-tab.x-tab-active.x-tab-navigation .x-tab-inner-navigation {
-    color: #fff;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2657 */
-.x-tab.x-tab-active.x-tab-navigation .x-tab-icon-el {
-    color: #fff;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2665 */
-.x-ie8 .x-tab.x-tab-active.x-tab-navigation .x-tab-icon-el {
-    color: #fff;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2692 */
-.x-tab-focus.x-tab-active.x-tab-navigation {
-    border-color: #74400e;
-    background-color: #303030;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2810 */
-.x-tab.x-tab-disabled.x-tab-navigation {
-    border-color: #2e3746;
-    background-color: transparent;
-    cursor: default;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2872 */
-.x-tab.x-tab-disabled.x-tab-navigation .x-tab-inner-navigation {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-    opacity: 0.3;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2896 */
-.x-tab.x-tab-disabled.x-tab-navigation .x-tab-icon-el-navigation {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    opacity: 0.5;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2901 */
-.x-tab.x-tab-disabled.x-tab-navigation .x-tab-icon-el {
-    color: #acacac;
-    opacity: 0.3;
-    filter: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2942 */
-.x-nbr .x-tab-navigation {
-    background-image: none;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-over .x-tab-navigation-top-tl,
-.x-tab-over .x-tab-navigation-top-bl,
-.x-tab-over .x-tab-navigation-top-tr,
-.x-tab-over .x-tab-navigation-top-br,
-.x-tab-over .x-tab-navigation-top-tc,
-.x-tab-over .x-tab-navigation-top-bc {
-    background-image: url(images/tab/tab-navigation-top-over-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-over .x-tab-navigation-top-ml,
-.x-tab-over .x-tab-navigation-top-mr {
-    background-image: url(images/tab/tab-navigation-top-over-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-over .x-tab-navigation-top-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-top-over-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus .x-tab-navigation-top-tl,
-.x-tab-focus .x-tab-navigation-top-bl,
-.x-tab-focus .x-tab-navigation-top-tr,
-.x-tab-focus .x-tab-navigation-top-br,
-.x-tab-focus .x-tab-navigation-top-tc,
-.x-tab-focus .x-tab-navigation-top-bc {
-    background-image: url(images/tab/tab-navigation-top-focus-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus .x-tab-navigation-top-ml,
-.x-tab-focus .x-tab-navigation-top-mr {
-    background-image: url(images/tab/tab-navigation-top-focus-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus .x-tab-navigation-top-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-top-focus-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus.x-tab-over .x-tab-navigation-top-tl,
-.x-tab-focus.x-tab-over .x-tab-navigation-top-bl,
-.x-tab-focus.x-tab-over .x-tab-navigation-top-tr,
-.x-tab-focus.x-tab-over .x-tab-navigation-top-br,
-.x-tab-focus.x-tab-over .x-tab-navigation-top-tc,
-.x-tab-focus.x-tab-over .x-tab-navigation-top-bc {
-    background-image: url(images/tab/tab-navigation-top-focus-over-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus.x-tab-over .x-tab-navigation-top-ml,
-.x-tab-focus.x-tab-over .x-tab-navigation-top-mr {
-    background-image: url(images/tab/tab-navigation-top-focus-over-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus.x-tab-over .x-tab-navigation-top-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-top-focus-over-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab.x-tab-active .x-tab-navigation-top-tl,
-.x-tab.x-tab-active .x-tab-navigation-top-bl,
-.x-tab.x-tab-active .x-tab-navigation-top-tr,
-.x-tab.x-tab-active .x-tab-navigation-top-br,
-.x-tab.x-tab-active .x-tab-navigation-top-tc,
-.x-tab.x-tab-active .x-tab-navigation-top-bc {
-    background-image: url(images/tab/tab-navigation-top-active-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab.x-tab-active .x-tab-navigation-top-ml,
-.x-tab.x-tab-active .x-tab-navigation-top-mr {
-    background-image: url(images/tab/tab-navigation-top-active-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab.x-tab-active .x-tab-navigation-top-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-top-active-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus.x-tab-active .x-tab-navigation-top-tl,
-.x-tab-focus.x-tab-active .x-tab-navigation-top-bl,
-.x-tab-focus.x-tab-active .x-tab-navigation-top-tr,
-.x-tab-focus.x-tab-active .x-tab-navigation-top-br,
-.x-tab-focus.x-tab-active .x-tab-navigation-top-tc,
-.x-tab-focus.x-tab-active .x-tab-navigation-top-bc {
-    background-image: url(images/tab/tab-navigation-top-focus-active-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus.x-tab-active .x-tab-navigation-top-ml,
-.x-tab-focus.x-tab-active .x-tab-navigation-top-mr {
-    background-image: url(images/tab/tab-navigation-top-focus-active-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus.x-tab-active .x-tab-navigation-top-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-top-focus-active-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab.x-tab-disabled .x-tab-navigation-top-tl,
-.x-tab.x-tab-disabled .x-tab-navigation-top-bl,
-.x-tab.x-tab-disabled .x-tab-navigation-top-tr,
-.x-tab.x-tab-disabled .x-tab-navigation-top-br,
-.x-tab.x-tab-disabled .x-tab-navigation-top-tc,
-.x-tab.x-tab-disabled .x-tab-navigation-top-bc {
-    background-image: url(images/tab/tab-navigation-top-disabled-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab.x-tab-disabled .x-tab-navigation-top-ml,
-.x-tab.x-tab-disabled .x-tab-navigation-top-mr {
-    background-image: url(images/tab/tab-navigation-top-disabled-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab.x-tab-disabled .x-tab-navigation-top-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-top-disabled-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-over .x-tab-navigation-right-tl,
-.x-tab-over .x-tab-navigation-right-bl,
-.x-tab-over .x-tab-navigation-right-tr,
-.x-tab-over .x-tab-navigation-right-br,
-.x-tab-over .x-tab-navigation-right-tc,
-.x-tab-over .x-tab-navigation-right-bc {
-    background-image: url(images/tab/tab-navigation-right-over-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-over .x-tab-navigation-right-ml,
-.x-tab-over .x-tab-navigation-right-mr {
-    background-image: url(images/tab/tab-navigation-right-over-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-over .x-tab-navigation-right-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-right-over-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus .x-tab-navigation-right-tl,
-.x-tab-focus .x-tab-navigation-right-bl,
-.x-tab-focus .x-tab-navigation-right-tr,
-.x-tab-focus .x-tab-navigation-right-br,
-.x-tab-focus .x-tab-navigation-right-tc,
-.x-tab-focus .x-tab-navigation-right-bc {
-    background-image: url(images/tab/tab-navigation-right-focus-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus .x-tab-navigation-right-ml,
-.x-tab-focus .x-tab-navigation-right-mr {
-    background-image: url(images/tab/tab-navigation-right-focus-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus .x-tab-navigation-right-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-right-focus-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus.x-tab-over .x-tab-navigation-right-tl,
-.x-tab-focus.x-tab-over .x-tab-navigation-right-bl,
-.x-tab-focus.x-tab-over .x-tab-navigation-right-tr,
-.x-tab-focus.x-tab-over .x-tab-navigation-right-br,
-.x-tab-focus.x-tab-over .x-tab-navigation-right-tc,
-.x-tab-focus.x-tab-over .x-tab-navigation-right-bc {
-    background-image: url(images/tab/tab-navigation-right-focus-over-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus.x-tab-over .x-tab-navigation-right-ml,
-.x-tab-focus.x-tab-over .x-tab-navigation-right-mr {
-    background-image: url(images/tab/tab-navigation-right-focus-over-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus.x-tab-over .x-tab-navigation-right-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-right-focus-over-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab.x-tab-active .x-tab-navigation-right-tl,
-.x-tab.x-tab-active .x-tab-navigation-right-bl,
-.x-tab.x-tab-active .x-tab-navigation-right-tr,
-.x-tab.x-tab-active .x-tab-navigation-right-br,
-.x-tab.x-tab-active .x-tab-navigation-right-tc,
-.x-tab.x-tab-active .x-tab-navigation-right-bc {
-    background-image: url(images/tab/tab-navigation-right-active-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab.x-tab-active .x-tab-navigation-right-ml,
-.x-tab.x-tab-active .x-tab-navigation-right-mr {
-    background-image: url(images/tab/tab-navigation-right-active-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab.x-tab-active .x-tab-navigation-right-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-right-active-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus.x-tab-active .x-tab-navigation-right-tl,
-.x-tab-focus.x-tab-active .x-tab-navigation-right-bl,
-.x-tab-focus.x-tab-active .x-tab-navigation-right-tr,
-.x-tab-focus.x-tab-active .x-tab-navigation-right-br,
-.x-tab-focus.x-tab-active .x-tab-navigation-right-tc,
-.x-tab-focus.x-tab-active .x-tab-navigation-right-bc {
-    background-image: url(images/tab/tab-navigation-right-focus-active-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus.x-tab-active .x-tab-navigation-right-ml,
-.x-tab-focus.x-tab-active .x-tab-navigation-right-mr {
-    background-image: url(images/tab/tab-navigation-right-focus-active-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus.x-tab-active .x-tab-navigation-right-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-right-focus-active-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab.x-tab-disabled .x-tab-navigation-right-tl,
-.x-tab.x-tab-disabled .x-tab-navigation-right-bl,
-.x-tab.x-tab-disabled .x-tab-navigation-right-tr,
-.x-tab.x-tab-disabled .x-tab-navigation-right-br,
-.x-tab.x-tab-disabled .x-tab-navigation-right-tc,
-.x-tab.x-tab-disabled .x-tab-navigation-right-bc {
-    background-image: url(images/tab/tab-navigation-right-disabled-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab.x-tab-disabled .x-tab-navigation-right-ml,
-.x-tab.x-tab-disabled .x-tab-navigation-right-mr {
-    background-image: url(images/tab/tab-navigation-right-disabled-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab.x-tab-disabled .x-tab-navigation-right-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-right-disabled-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-over .x-tab-navigation-bottom-tl,
-.x-tab-over .x-tab-navigation-bottom-bl,
-.x-tab-over .x-tab-navigation-bottom-tr,
-.x-tab-over .x-tab-navigation-bottom-br,
-.x-tab-over .x-tab-navigation-bottom-tc,
-.x-tab-over .x-tab-navigation-bottom-bc {
-    background-image: url(images/tab/tab-navigation-bottom-over-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-over .x-tab-navigation-bottom-ml,
-.x-tab-over .x-tab-navigation-bottom-mr {
-    background-image: url(images/tab/tab-navigation-bottom-over-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-over .x-tab-navigation-bottom-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-bottom-over-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus .x-tab-navigation-bottom-tl,
-.x-tab-focus .x-tab-navigation-bottom-bl,
-.x-tab-focus .x-tab-navigation-bottom-tr,
-.x-tab-focus .x-tab-navigation-bottom-br,
-.x-tab-focus .x-tab-navigation-bottom-tc,
-.x-tab-focus .x-tab-navigation-bottom-bc {
-    background-image: url(images/tab/tab-navigation-bottom-focus-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus .x-tab-navigation-bottom-ml,
-.x-tab-focus .x-tab-navigation-bottom-mr {
-    background-image: url(images/tab/tab-navigation-bottom-focus-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus .x-tab-navigation-bottom-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-bottom-focus-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus.x-tab-over .x-tab-navigation-bottom-tl,
-.x-tab-focus.x-tab-over .x-tab-navigation-bottom-bl,
-.x-tab-focus.x-tab-over .x-tab-navigation-bottom-tr,
-.x-tab-focus.x-tab-over .x-tab-navigation-bottom-br,
-.x-tab-focus.x-tab-over .x-tab-navigation-bottom-tc,
-.x-tab-focus.x-tab-over .x-tab-navigation-bottom-bc {
-    background-image: url(images/tab/tab-navigation-bottom-focus-over-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus.x-tab-over .x-tab-navigation-bottom-ml,
-.x-tab-focus.x-tab-over .x-tab-navigation-bottom-mr {
-    background-image: url(images/tab/tab-navigation-bottom-focus-over-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus.x-tab-over .x-tab-navigation-bottom-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-bottom-focus-over-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab.x-tab-active .x-tab-navigation-bottom-tl,
-.x-tab.x-tab-active .x-tab-navigation-bottom-bl,
-.x-tab.x-tab-active .x-tab-navigation-bottom-tr,
-.x-tab.x-tab-active .x-tab-navigation-bottom-br,
-.x-tab.x-tab-active .x-tab-navigation-bottom-tc,
-.x-tab.x-tab-active .x-tab-navigation-bottom-bc {
-    background-image: url(images/tab/tab-navigation-bottom-active-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab.x-tab-active .x-tab-navigation-bottom-ml,
-.x-tab.x-tab-active .x-tab-navigation-bottom-mr {
-    background-image: url(images/tab/tab-navigation-bottom-active-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab.x-tab-active .x-tab-navigation-bottom-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-bottom-active-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus.x-tab-active .x-tab-navigation-bottom-tl,
-.x-tab-focus.x-tab-active .x-tab-navigation-bottom-bl,
-.x-tab-focus.x-tab-active .x-tab-navigation-bottom-tr,
-.x-tab-focus.x-tab-active .x-tab-navigation-bottom-br,
-.x-tab-focus.x-tab-active .x-tab-navigation-bottom-tc,
-.x-tab-focus.x-tab-active .x-tab-navigation-bottom-bc {
-    background-image: url(images/tab/tab-navigation-bottom-focus-active-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus.x-tab-active .x-tab-navigation-bottom-ml,
-.x-tab-focus.x-tab-active .x-tab-navigation-bottom-mr {
-    background-image: url(images/tab/tab-navigation-bottom-focus-active-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus.x-tab-active .x-tab-navigation-bottom-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-bottom-focus-active-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab.x-tab-disabled .x-tab-navigation-bottom-tl,
-.x-tab.x-tab-disabled .x-tab-navigation-bottom-bl,
-.x-tab.x-tab-disabled .x-tab-navigation-bottom-tr,
-.x-tab.x-tab-disabled .x-tab-navigation-bottom-br,
-.x-tab.x-tab-disabled .x-tab-navigation-bottom-tc,
-.x-tab.x-tab-disabled .x-tab-navigation-bottom-bc {
-    background-image: url(images/tab/tab-navigation-bottom-disabled-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab.x-tab-disabled .x-tab-navigation-bottom-ml,
-.x-tab.x-tab-disabled .x-tab-navigation-bottom-mr {
-    background-image: url(images/tab/tab-navigation-bottom-disabled-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab.x-tab-disabled .x-tab-navigation-bottom-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-bottom-disabled-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-over .x-tab-navigation-left-tl,
-.x-tab-over .x-tab-navigation-left-bl,
-.x-tab-over .x-tab-navigation-left-tr,
-.x-tab-over .x-tab-navigation-left-br,
-.x-tab-over .x-tab-navigation-left-tc,
-.x-tab-over .x-tab-navigation-left-bc {
-    background-image: url(images/tab/tab-navigation-left-over-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-over .x-tab-navigation-left-ml,
-.x-tab-over .x-tab-navigation-left-mr {
-    background-image: url(images/tab/tab-navigation-left-over-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-over .x-tab-navigation-left-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-left-over-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus .x-tab-navigation-left-tl,
-.x-tab-focus .x-tab-navigation-left-bl,
-.x-tab-focus .x-tab-navigation-left-tr,
-.x-tab-focus .x-tab-navigation-left-br,
-.x-tab-focus .x-tab-navigation-left-tc,
-.x-tab-focus .x-tab-navigation-left-bc {
-    background-image: url(images/tab/tab-navigation-left-focus-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus .x-tab-navigation-left-ml,
-.x-tab-focus .x-tab-navigation-left-mr {
-    background-image: url(images/tab/tab-navigation-left-focus-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus .x-tab-navigation-left-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-left-focus-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus.x-tab-over .x-tab-navigation-left-tl,
-.x-tab-focus.x-tab-over .x-tab-navigation-left-bl,
-.x-tab-focus.x-tab-over .x-tab-navigation-left-tr,
-.x-tab-focus.x-tab-over .x-tab-navigation-left-br,
-.x-tab-focus.x-tab-over .x-tab-navigation-left-tc,
-.x-tab-focus.x-tab-over .x-tab-navigation-left-bc {
-    background-image: url(images/tab/tab-navigation-left-focus-over-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus.x-tab-over .x-tab-navigation-left-ml,
-.x-tab-focus.x-tab-over .x-tab-navigation-left-mr {
-    background-image: url(images/tab/tab-navigation-left-focus-over-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus.x-tab-over .x-tab-navigation-left-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-left-focus-over-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab.x-tab-active .x-tab-navigation-left-tl,
-.x-tab.x-tab-active .x-tab-navigation-left-bl,
-.x-tab.x-tab-active .x-tab-navigation-left-tr,
-.x-tab.x-tab-active .x-tab-navigation-left-br,
-.x-tab.x-tab-active .x-tab-navigation-left-tc,
-.x-tab.x-tab-active .x-tab-navigation-left-bc {
-    background-image: url(images/tab/tab-navigation-left-active-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab.x-tab-active .x-tab-navigation-left-ml,
-.x-tab.x-tab-active .x-tab-navigation-left-mr {
-    background-image: url(images/tab/tab-navigation-left-active-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab.x-tab-active .x-tab-navigation-left-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-left-active-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab-focus.x-tab-active .x-tab-navigation-left-tl,
-.x-tab-focus.x-tab-active .x-tab-navigation-left-bl,
-.x-tab-focus.x-tab-active .x-tab-navigation-left-tr,
-.x-tab-focus.x-tab-active .x-tab-navigation-left-br,
-.x-tab-focus.x-tab-active .x-tab-navigation-left-tc,
-.x-tab-focus.x-tab-active .x-tab-navigation-left-bc {
-    background-image: url(images/tab/tab-navigation-left-focus-active-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab-focus.x-tab-active .x-tab-navigation-left-ml,
-.x-tab-focus.x-tab-active .x-tab-navigation-left-mr {
-    background-image: url(images/tab/tab-navigation-left-focus-active-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab-focus.x-tab-active .x-tab-navigation-left-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-left-focus-active-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2961 */
-.x-tab.x-tab-disabled .x-tab-navigation-left-tl,
-.x-tab.x-tab-disabled .x-tab-navigation-left-bl,
-.x-tab.x-tab-disabled .x-tab-navigation-left-tr,
-.x-tab.x-tab-disabled .x-tab-navigation-left-br,
-.x-tab.x-tab-disabled .x-tab-navigation-left-tc,
-.x-tab.x-tab-disabled .x-tab-navigation-left-bc {
-    background-image: url(images/tab/tab-navigation-left-disabled-corners.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2970 */
-.x-tab.x-tab-disabled .x-tab-navigation-left-ml,
-.x-tab.x-tab-disabled .x-tab-navigation-left-mr {
-    background-image: url(images/tab/tab-navigation-left-disabled-sides.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2975 */
-.x-tab.x-tab-disabled .x-tab-navigation-left-mc {
-    background-repeat: repeat-x;
-    background-image: url(images/tab/tab-navigation-left-disabled-fbg.gif);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2985 */
-.x-tab-navigation-tl,
-.x-tab-navigation-bl,
-.x-tab-navigation-tr,
-.x-tab-navigation-br {
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2995 */
-.x-tab-navigation .x-tab-close-btn {
-    top: 2px;
-    right: 2px;
-    width: 12px;
-    height: 12px;
-    background: url(images/tab/tab-navigation-close.png) 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:3017 */
-.x-tab-navigation .x-tab-close-btn-over {
-    background-position: -12px 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:3027 */
-.x-tab-navigation .x-tab-close-btn-pressed {
-    background-position: -24px 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:3086 */
-.x-tab-navigation.x-tab-active .x-tab-close-btn {
-    background-position: 0 -12px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:3091 */
-.x-tab-navigation.x-tab-active .x-tab-close-btn-over {
-    background-position: -12px -12px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:3097 */
-.x-tab-navigation.x-tab-active .x-tab-close-btn-pressed {
-    background-position: -24px -12px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:3119 */
-.x-tab-navigation.x-tab-disabled .x-tab-close-btn {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-    opacity: 0.3;
-    background-position: 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:3140 */
-.x-rtl.x-tab-navigation .x-tab-close-btn {
-    right: auto;
-    left: 2px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:3146 */
-.x-tab-closable.x-tab-navigation .x-tab-button {
-    padding-right: 15px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Tab.scss:3151 */
-.x-rtl.x-tab-closable.x-tab-navigation .x-tab-button {
-    padding-right: 0px;
-    padding-left: 15px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-navigation-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-top-focus-corners.gif), sides:url(images/tab/tab-navigation-top-focus-sides.gif), frame-bg:url(images/tab/tab-navigation-top-focus-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-navigation-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-right-focus-corners.gif), sides:url(images/tab/tab-navigation-right-focus-sides.gif), frame-bg:url(images/tab/tab-navigation-right-focus-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-navigation-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-bottom-focus-corners.gif), sides:url(images/tab/tab-navigation-bottom-focus-sides.gif), frame-bg:url(images/tab/tab-navigation-bottom-focus-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-navigation-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-left-focus-corners.gif), sides:url(images/tab/tab-navigation-left-focus-sides.gif), frame-bg:url(images/tab/tab-navigation-left-focus-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-over.x-tab-navigation-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-top-over-corners.gif), sides:url(images/tab/tab-navigation-top-over-sides.gif), frame-bg:url(images/tab/tab-navigation-top-over-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-over.x-tab-navigation-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-right-over-corners.gif), sides:url(images/tab/tab-navigation-right-over-sides.gif), frame-bg:url(images/tab/tab-navigation-right-over-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-over.x-tab-navigation-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-bottom-over-corners.gif), sides:url(images/tab/tab-navigation-bottom-over-sides.gif), frame-bg:url(images/tab/tab-navigation-bottom-over-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-over.x-tab-navigation-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-left-over-corners.gif), sides:url(images/tab/tab-navigation-left-over-sides.gif), frame-bg:url(images/tab/tab-navigation-left-over-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-active.x-tab-navigation-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-top-active-corners.gif), sides:url(images/tab/tab-navigation-top-active-sides.gif), frame-bg:url(images/tab/tab-navigation-top-active-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-active.x-tab-navigation-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-right-active-corners.gif), sides:url(images/tab/tab-navigation-right-active-sides.gif), frame-bg:url(images/tab/tab-navigation-right-active-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-active.x-tab-navigation-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-bottom-active-corners.gif), sides:url(images/tab/tab-navigation-bottom-active-sides.gif), frame-bg:url(images/tab/tab-navigation-bottom-active-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-active.x-tab-navigation-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-left-active-corners.gif), sides:url(images/tab/tab-navigation-left-active-sides.gif), frame-bg:url(images/tab/tab-navigation-left-active-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-over.x-tab-navigation-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-top-focus-over-corners.gif), sides:url(images/tab/tab-navigation-top-focus-over-sides.gif), frame-bg:url(images/tab/tab-navigation-top-focus-over-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-over.x-tab-navigation-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-right-focus-over-corners.gif), sides:url(images/tab/tab-navigation-right-focus-over-sides.gif), frame-bg:url(images/tab/tab-navigation-right-focus-over-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-over.x-tab-navigation-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-bottom-focus-over-corners.gif), sides:url(images/tab/tab-navigation-bottom-focus-over-sides.gif), frame-bg:url(images/tab/tab-navigation-bottom-focus-over-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-over.x-tab-navigation-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-left-focus-over-corners.gif), sides:url(images/tab/tab-navigation-left-focus-over-sides.gif), frame-bg:url(images/tab/tab-navigation-left-focus-over-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-active.x-tab-navigation-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-top-focus-active-corners.gif), sides:url(images/tab/tab-navigation-top-focus-active-sides.gif), frame-bg:url(images/tab/tab-navigation-top-focus-active-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-active.x-tab-navigation-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-right-focus-active-corners.gif), sides:url(images/tab/tab-navigation-right-focus-active-sides.gif), frame-bg:url(images/tab/tab-navigation-right-focus-active-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-active.x-tab-navigation-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-bottom-focus-active-corners.gif), sides:url(images/tab/tab-navigation-bottom-focus-active-sides.gif), frame-bg:url(images/tab/tab-navigation-bottom-focus-active-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-focus.x-tab-active.x-tab-navigation-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-left-focus-active-corners.gif), sides:url(images/tab/tab-navigation-left-focus-active-sides.gif), frame-bg:url(images/tab/tab-navigation-left-focus-active-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-disabled.x-tab-navigation-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-top-disabled-corners.gif), sides:url(images/tab/tab-navigation-top-disabled-sides.gif), frame-bg:url(images/tab/tab-navigation-top-disabled-fbg.gif), frame:0 0 0 0, stretch:bottom" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-disabled.x-tab-navigation-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-right-disabled-corners.gif), sides:url(images/tab/tab-navigation-right-disabled-sides.gif), frame-bg:url(images/tab/tab-navigation-right-disabled-fbg.gif), frame:0 0 0 0, stretch:left" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-disabled.x-tab-navigation-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-bottom-disabled-corners.gif), sides:url(images/tab/tab-navigation-bottom-disabled-sides.gif), frame-bg:url(images/tab/tab-navigation-bottom-disabled-fbg.gif), frame:0 0 0 0, stretch:top" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-disabled.x-tab-navigation-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, corners:url(images/tab/tab-navigation-left-disabled-corners.gif), sides:url(images/tab/tab-navigation-left-disabled-sides.gif), frame-bg:url(images/tab/tab-navigation-left-disabled-fbg.gif), frame:0 0 0 0, stretch:right" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:158 */
-.x-tab-bar-navigation {
-    background-color: #404040;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:197 */
-.x-tab-bar-navigation-top > .x-tab-bar-body-navigation {
-    padding: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:201 */
-.x-tab-bar-navigation-bottom > .x-tab-bar-body-navigation {
-    padding: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:205 */
-.x-tab-bar-navigation-left > .x-tab-bar-body-navigation {
-    padding: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:210 */
-.x-rtl.x-tab-bar-navigation-left > .x-tab-bar-body-navigation {
-    padding: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:215 */
-.x-tab-bar-navigation-right > .x-tab-bar-body-navigation {
-    padding: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:220 */
-.x-rtl.x-tab-bar-navigation-right > .x-tab-bar-body-navigation {
-    padding: 0 0 0 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:259 */
-.x-tab-bar-plain.x-tab-bar-navigation-horizontal {
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    border-left-width: 0;
-    border-right-width: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:266 */
-.x-tab-bar-plain.x-tab-bar-navigation-vertical {
-    border-right-color: transparent;
-    border-left-color: transparent;
-    border-top-width: 0;
-    border-bottom-width: 0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:380 */
-.x-tab-bar-horizontal > .x-tab-bar-body-navigation {
-    min-height: 72px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:383 */
-.x-ie8m .x-tab-bar-horizontal > .x-tab-bar-body-navigation {
-    min-height: 72px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:390 */
-.x-tab-bar-vertical > .x-tab-bar-body-navigation {
-    min-width: 72px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:393 */
-.x-ie8m .x-tab-bar-vertical > .x-tab-bar-body-navigation {
-    min-width: 72px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:170 */
-.x-tab-bar-navigation-scroller .x-box-scroller-body-horizontal {
-    margin-left: 24px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:176 */
-.x-tab-bar-navigation-vertical-scroller .x-box-scroller-body-vertical {
-    margin-top: 24px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:181 */
-.x-box-scroller-tab-bar-navigation {
-    cursor: pointer;
-    color: #fff;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:191 */
-.x-box-scroller-tab-bar-navigation.x-box-scroller-hover {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-    opacity: 0.8;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:197 */
-.x-box-scroller-tab-bar-navigation.x-box-scroller-pressed {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-    opacity: 0.6;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:203 */
-.x-box-scroller-tab-bar-navigation.x-box-scroller-disabled {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-    opacity: 0.3;
-    cursor: default;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:213 */
-.x-box-scroller-tab-bar-navigation.x-box-scroller-left,
-.x-box-scroller-tab-bar-navigation.x-box-scroller-right {
-    width: 24px;
-    height: 24px;
-    top: 50%;
-    margin-top: -12px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:240 */
-.x-box-scroller-tab-bar-navigation.x-box-scroller-left {
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    background-image: url(images/tab-bar/navigation-scroll-left.png);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:265 */
-.x-box-scroller-tab-bar-navigation.x-box-scroller-right {
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    background-image: url(images/tab-bar/navigation-scroll-right.png);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:292 */
-.x-box-scroller-tab-bar-navigation.x-box-scroller-top,
-.x-box-scroller-tab-bar-navigation.x-box-scroller-bottom {
-    height: 24px;
-    width: 24px;
-    left: 50%;
-    margin-left: -12px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:319 */
-.x-box-scroller-tab-bar-navigation.x-box-scroller-top {
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    background-image: url(images/tab-bar/navigation-scroll-top.png);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:344 */
-.x-box-scroller-tab-bar-navigation.x-box-scroller-bottom {
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    background-image: url(images/tab-bar/navigation-scroll-bottom.png);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:474 */
-.x-tab-bar-plain.x-tab-bar-navigation-scroller .x-box-scroller-body-horizontal {
-    margin-left: 24px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:480 */
-.x-tab-bar-plain.x-tab-bar-navigation-vertical-scroller .x-box-scroller-body-vertical {
-    margin-top: 24px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:485 */
-.x-tab-bar-plain .x-box-scroller-tab-bar-navigation {
-    color: #b0b0b0;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:533 */
-.x-tab-bar-navigation-top .x-box-scroller-tab-bar-navigation {
-    margin-top: -12px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:537 */
-.x-tab-bar-navigation-right .x-box-scroller-tab-bar-navigation {
-    margin-left: -12px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:541 */
-.x-tab-bar-navigation-bottom .x-box-scroller-tab-bar-navigation {
-    margin-top: -12px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:545 */
-.x-tab-bar-navigation-left .x-box-scroller-tab-bar-navigation {
-    margin-left: -12px;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:554 */
-.x-box-scroller-tab-bar-navigation {
-    background-color: #404040;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:560 */
-.x-box-scroller-tab-bar-navigation .x-ie8 .x-box-scroller-plain {
-    background-color: #fff;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:572 */
-.x-box-scroller-plain.x-box-scroller-tab-bar-navigation.x-box-scroller-left {
-    background-image: url(images/tab-bar/navigation-plain-scroll-left.png);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:578 */
-.x-box-scroller-plain.x-box-scroller-tab-bar-navigation.x-box-scroller-right {
-    background-image: url(images/tab-bar/navigation-plain-scroll-right.png);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:584 */
-.x-box-scroller-plain.x-box-scroller-tab-bar-navigation.x-box-scroller-top {
-    background-image: url(images/tab-bar/navigation-plain-scroll-top.png);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/tab/Bar.scss:590 */
-.x-box-scroller-plain.x-box-scroller-tab-bar-navigation.x-box-scroller-bottom {
-    background-image: url(images/tab-bar/navigation-plain-scroll-bottom.png);
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-bar-navigation-top:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:bottom" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-bar-navigation-bottom:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:top" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-bar-navigation-left:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:right" !important;
-}
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-tab-bar-navigation-right:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, stretch:left" !important;
-}
 /* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:276 */
 .x-panel-navigation {
     border-color: #3a4155;
@@ -6909,7 +5375,7 @@ tr.x-grid-subtable-row {
     font-weight: bold;
     font-family: helvetica, arial, verdana, sans-serif;
     line-height: 24px;
-    margin: 36px;
+    margin: 20px;
 }
 /* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:393 */
 .x-panel-header-title-navigation > .x-title-text-navigation {
@@ -7192,28 +5658,1060 @@ tr.x-grid-subtable-row {
     border-color: #3a4155 !important;
     border-width: 1px !important;
 }
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:60 */
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:276 */
+.x-panel-mainpanelui {
+    border-color: #3a4155;
+    padding: 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:282 */
+.x-panel-header-mainpanelui {
+    font-size: 20px;
+    border: 1px solid #3a4155;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:289 */
+.x-panel-header-mainpanelui .x-tool-img {
+    background-color: #3a4155;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:306 */
+.x-panel-header-mainpanelui-horizontal {
+    padding: 9px 9px 10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:310 */
+.x-panel-header-mainpanelui-horizontal .x-panel-header-mainpanelui-tab-bar {
+    margin-top: -9px;
+    margin-bottom: -10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:318 */
+.x-panel-header-mainpanelui-horizontal.x-header-noborder {
+    padding: 10px 10px 10px 10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:322 */
+.x-panel-header-mainpanelui-horizontal.x-header-noborder .x-panel-header-mainpanelui-tab-bar {
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:330 */
+.x-panel-header-mainpanelui-vertical {
+    padding: 9px 9px 9px 10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:334 */
+.x-panel-header-mainpanelui-vertical .x-panel-header-mainpanelui-tab-bar {
+    margin-right: -9px;
+    margin-left: -10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:342 */
+.x-panel-header-mainpanelui-vertical.x-header-noborder {
+    padding: 10px 10px 10px 10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:346 */
+.x-panel-header-mainpanelui-vertical.x-header-noborder .x-panel-header-mainpanelui-tab-bar {
+    margin-right: -10px;
+    margin-left: -10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:355 */
+.x-rtl.x-panel-header-mainpanelui-vertical {
+    padding: 9px 10px 9px 9px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:359 */
+.x-rtl.x-panel-header-mainpanelui-vertical .x-panel-header-mainpanelui-tab-bar {
+    margin-left: -9px;
+    margin-right: -10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:367 */
+.x-rtl.x-panel-header-mainpanelui-vertical.x-header-noborder {
+    padding: 10px 10px 10px 10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:371 */
+.x-rtl.x-panel-header-mainpanelui-vertical.x-header-noborder .x-panel-header-mainpanelui-tab-bar {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:380 */
+.x-panel-header-title-mainpanelui {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: helvetica, arial, verdana, sans-serif;
+    line-height: 24px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:393 */
+.x-panel-header-title-mainpanelui > .x-title-text-mainpanelui {
+    text-transform: none;
+    padding: 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:440 */
+.x-panel-header-title-mainpanelui > .x-title-icon-wrap-mainpanelui.x-title-icon-top {
+    height: 39px;
+    padding-bottom: 15px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:445 */
+.x-panel-header-title-mainpanelui > .x-title-icon-wrap-mainpanelui.x-title-icon-right {
+    width: 39px;
+    padding-left: 15px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:450 */
+.x-panel-header-title-mainpanelui > .x-title-icon-wrap-mainpanelui.x-title-icon-right.x-rtl {
+    padding-left: 0;
+    padding-right: 15px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:457 */
+.x-panel-header-title-mainpanelui > .x-title-icon-wrap-mainpanelui.x-title-icon-bottom {
+    height: 39px;
+    padding-top: 15px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:462 */
+.x-panel-header-title-mainpanelui > .x-title-icon-wrap-mainpanelui.x-title-icon-left {
+    width: 39px;
+    padding-right: 15px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:467 */
+.x-panel-header-title-mainpanelui > .x-title-icon-wrap-mainpanelui.x-title-icon-left.x-rtl {
+    padding-right: 0;
+    padding-left: 15px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:474 */
+.x-panel-header-title-mainpanelui > .x-title-icon-wrap-mainpanelui > .x-title-icon-mainpanelui {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    color: #fff;
+    background-position: center center;
+    opacity: 0.5;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:493 */
+.x-ie8 .x-panel-header-title-mainpanelui > .x-title-icon-wrap-mainpanelui > .x-title-icon-mainpanelui {
+    color: #9da0aa;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:503 */
+.x-panel-body-mainpanelui {
+    background: #232d38;
+    border-color: #c2c2c2;
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    font-family: helvetica, arial, verdana, sans-serif;
+    border-width: 1px;
+    border-style: solid;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:667 */
+.x-panel-header-mainpanelui {
+    background-image: none;
+    background-color: #3a4155;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:671 */
+.x-panel-header-mainpanelui-vertical {
+    background-image: none;
+    background-color: #3a4155;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:676 */
+.x-rtl.x-panel-header-mainpanelui-vertical {
+    background-image: none;
+    background-color: #3a4155;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:729 */
+.x-panel .x-panel-header-mainpanelui-collapsed-border-top {
+    border-bottom-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:733 */
+.x-panel .x-panel-header-mainpanelui-collapsed-border-right {
+    border-left-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:737 */
+.x-panel .x-panel-header-mainpanelui-collapsed-border-bottom {
+    border-top-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:741 */
+.x-panel .x-panel-header-mainpanelui-collapsed-border-left {
+    border-right-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-panel-header-mainpanelui-top:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom" !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-panel-header-mainpanelui-bottom:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:top" !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-panel-header-mainpanelui-left:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:right" !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-panel-header-mainpanelui-right:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:left" !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:777 */
+.x-panel-header-mainpanelui-horizontal .x-tool-after-title {
+    margin: 0 0 0 6px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:782 */
+.x-panel-header-mainpanelui-horizontal .x-rtl.x-tool-after-title {
+    margin: 0 6px 0 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:787 */
+.x-panel-header-mainpanelui-horizontal .x-tool-before-title {
+    margin: 0 6px 0 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:792 */
+.x-panel-header-mainpanelui-horizontal .x-rtl.x-tool-before-title {
+    margin: 0 0 0 6px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:799 */
+.x-panel-header-mainpanelui-vertical .x-tool-after-title {
+    margin: 6px 0 0 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:804 */
+.x-panel-header-mainpanelui-vertical .x-rtl.x-tool-after-title {
+    margin: 6px 0 0 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:809 */
+.x-panel-header-mainpanelui-vertical .x-tool-before-title {
+    margin: 0 0 6px 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:814 */
+.x-panel-header-mainpanelui-vertical .x-rtl.x-tool-before-title {
+    margin: 0 0 6px 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:821 */
+.x-panel-header-mainpanelui .x-tool-focus {
+    outline: 1px solid #fff;
+    outline-offset: 1px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/css-outline.scss:59 */
+.x-ie8 .x-panel-header-mainpanelui .x-tool-focus {
+    outline: none;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/css-outline.scss:39 */
+.x-ie8 .x-panel-header-mainpanelui .x-tool-focus:after {
+    position: absolute;
+    content: ' ';
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    border: 1px solid #fff;
+    pointer-events: none;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:833 */
+.x-rtl.x-panel-header-mainpanelui-collapsed-border-right {
+    border-right-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:836 */
+.x-rtl.x-panel-header-mainpanelui-collapsed-border-left {
+    border-left-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/panel/Panel.scss:850 */
+.x-panel-mainpanelui-resizable .x-panel-handle {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity: 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:2 */
+.x-panel-mainpanelui-outer-border-l {
+    border-left-color: #3a4155 !important;
+    border-left-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:6 */
+.x-panel-mainpanelui-outer-border-b {
+    border-bottom-color: #3a4155 !important;
+    border-bottom-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:10 */
+.x-panel-mainpanelui-outer-border-bl {
+    border-bottom-color: #3a4155 !important;
+    border-bottom-width: 1px !important;
+    border-left-color: #3a4155 !important;
+    border-left-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:16 */
+.x-panel-mainpanelui-outer-border-r {
+    border-right-color: #3a4155 !important;
+    border-right-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:20 */
+.x-panel-mainpanelui-outer-border-rl {
+    border-right-color: #3a4155 !important;
+    border-right-width: 1px !important;
+    border-left-color: #3a4155 !important;
+    border-left-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:26 */
+.x-panel-mainpanelui-outer-border-rb {
+    border-right-color: #3a4155 !important;
+    border-right-width: 1px !important;
+    border-bottom-color: #3a4155 !important;
+    border-bottom-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:32 */
+.x-panel-mainpanelui-outer-border-rbl {
+    border-right-color: #3a4155 !important;
+    border-right-width: 1px !important;
+    border-bottom-color: #3a4155 !important;
+    border-bottom-width: 1px !important;
+    border-left-color: #3a4155 !important;
+    border-left-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:40 */
+.x-panel-mainpanelui-outer-border-t {
+    border-top-color: #3a4155 !important;
+    border-top-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:44 */
+.x-panel-mainpanelui-outer-border-tl {
+    border-top-color: #3a4155 !important;
+    border-top-width: 1px !important;
+    border-left-color: #3a4155 !important;
+    border-left-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:50 */
+.x-panel-mainpanelui-outer-border-tb {
+    border-top-color: #3a4155 !important;
+    border-top-width: 1px !important;
+    border-bottom-color: #3a4155 !important;
+    border-bottom-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:56 */
+.x-panel-mainpanelui-outer-border-tbl {
+    border-top-color: #3a4155 !important;
+    border-top-width: 1px !important;
+    border-bottom-color: #3a4155 !important;
+    border-bottom-width: 1px !important;
+    border-left-color: #3a4155 !important;
+    border-left-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:64 */
+.x-panel-mainpanelui-outer-border-tr {
+    border-top-color: #3a4155 !important;
+    border-top-width: 1px !important;
+    border-right-color: #3a4155 !important;
+    border-right-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:70 */
+.x-panel-mainpanelui-outer-border-trl {
+    border-top-color: #3a4155 !important;
+    border-top-width: 1px !important;
+    border-right-color: #3a4155 !important;
+    border-right-width: 1px !important;
+    border-left-color: #3a4155 !important;
+    border-left-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:78 */
+.x-panel-mainpanelui-outer-border-trb {
+    border-top-color: #3a4155 !important;
+    border-top-width: 1px !important;
+    border-right-color: #3a4155 !important;
+    border-right-width: 1px !important;
+    border-bottom-color: #3a4155 !important;
+    border-bottom-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/border-management.scss:86 */
+.x-panel-mainpanelui-outer-border-trbl {
+    border-color: #3a4155 !important;
+    border-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:69 */
+.x-panel-header-title-mainpanelui {
+    left: 0px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:74 */
 .x-title-icon-navigation {
     font-family: FontAwesome;
     color: #fff;
     font-size: 24px;
     line-height: 24px;
 }
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:67 */
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:82 */
 .x-tab-icon-el-navigation {
     font-family: FontAwesome;
     color: #acacac;
 }
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:71 */
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:86 */
 .x-tab-over .x-tab-icon-el-navigation {
     color: #c4c4c4;
 }
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:75 */
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:90 */
 .x-tab-active .x-tab-icon-el-navigation {
     color: #fff;
 }
-/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:80 */
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
+.x-btn-keyboard-large {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    padding: 3px 3px 3px 3px;
+    border-width: 1px;
+    border-style: solid;
+    background-image: none;
+    background-color: blue;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #1919ff), color-stop(50%, blue), color-stop(51%, #0000f2), color-stop(0%, blue));
+    background-image: -webkit-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: -moz-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: -o-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: -ms-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
+.x-btn-keyboard-large-mc {
+    background-image: url(images/btn/btn-keyboard-large-fbg.gif);
+    background-position: 0 top;
+    background-color: blue;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
+.x-nbr .x-btn-keyboard-large {
+    padding: 0 !important;
+    border-width: 0 !important;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    background-color: transparent !important;
+    background-image: none;
+    box-shadow: none !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
+.x-btn-keyboard-large-frameInfo {
+    font-family: th-3-3-3-3-1-1-1-1-3-3-3-3;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
+.x-btn-keyboard-large-tl {
+    background-position: 0 -6px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
+.x-btn-keyboard-large-tr {
+    background-position: right -9px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
+.x-btn-keyboard-large-bl {
+    background-position: 0 -12px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
+.x-btn-keyboard-large-br {
+    background-position: right -15px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
+.x-btn-keyboard-large-ml {
+    background-position: 0 top;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
+.x-btn-keyboard-large-mr {
+    background-position: right top;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
+.x-btn-keyboard-large-tc {
+    background-position: 0 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
+.x-btn-keyboard-large-bc {
+    background-position: 0 -3px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
+.x-btn-keyboard-large-tr,
+.x-btn-keyboard-large-br,
+.x-btn-keyboard-large-mr {
+    padding-right: 3px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
+.x-btn-keyboard-large-tl,
+.x-btn-keyboard-large-bl,
+.x-btn-keyboard-large-ml {
+    padding-left: 3px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
+.x-btn-keyboard-large-tc {
+    height: 3px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
+.x-btn-keyboard-large-bc {
+    height: 3px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:407 */
+.x-btn-keyboard-large-tl,
+.x-btn-keyboard-large-bl,
+.x-btn-keyboard-large-tr,
+.x-btn-keyboard-large-br,
+.x-btn-keyboard-large-tc,
+.x-btn-keyboard-large-bc,
+.x-btn-keyboard-large-ml,
+.x-btn-keyboard-large-mr {
+    background-image: url(images/btn/btn-keyboard-large-corners.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:453 */
+.x-btn-keyboard-large-ml,
+.x-btn-keyboard-large-mr {
+    background-image: url(images/btn/btn-keyboard-large-sides.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
+.x-btn-keyboard-large-mc {
+    padding: 1px 1px 1px 1px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-keyboard-large:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, frame-bg:url(images/btn/btn-keyboard-large-fbg.gif), corners:url(images/btn/btn-keyboard-large-corners.gif), sides:url(images/btn/btn-keyboard-large-sides.gif)" !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:445 */
+.x-btn-keyboard-large {
+    border-color: #222836;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:452 */
+.x-btn-button-keyboard-large {
+    min-height: 32px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:457 */
+.x-ie9m .x-btn-button-keyboard-large {
+    min-height: auto;
+    height: 32px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:464 */
+.x-btn-inner-keyboard-large {
+    font: bold 16px/20px helvetica, arial, verdana, sans-serif;
+    color: #fff;
+    padding: 0 10px;
+    max-width: 100%;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:479 */
+.x-btn-icon-right > .x-btn-inner-keyboard-large,
+.x-btn-icon-left > .x-btn-inner-keyboard-large {
+    max-width: calc(100% - 32px);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:487 */
+.x-ie10p .x-btn-inner-keyboard-large {
+    max-width: none;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:492 */
+.x-btn-icon-el-keyboard-large {
+    font-size: 32px;
+    height: 32px;
+    color: #fff;
+    line-height: 32px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:498 */
+.x-btn-icon-left > .x-btn-icon-el-keyboard-large,
+.x-btn-icon-right > .x-btn-icon-el-keyboard-large {
+    width: 32px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:503 */
+.x-btn-icon-top > .x-btn-icon-el-keyboard-large,
+.x-btn-icon-bottom > .x-btn-icon-el-keyboard-large {
+    min-width: 32px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:508 */
+.x-btn-icon-el-keyboard-large.x-btn-glyph {
+    opacity: 0.5;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:525 */
+.x-ie8 .x-btn-icon-el-keyboard-large.x-btn-glyph {
+    color: #8080ff;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:532 */
+.x-btn-text.x-btn-icon-left > .x-btn-icon-el-keyboard-large {
+    margin-right: 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:536 */
+.x-btn-text.x-btn-icon-left > .x-btn-icon-el-keyboard-large.x-rtl {
+    margin-right: 0;
+    margin-left: 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:543 */
+.x-btn-text.x-btn-icon-right > .x-btn-icon-el-keyboard-large {
+    margin-left: 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:547 */
+.x-btn-text.x-btn-icon-right > .x-btn-icon-el-keyboard-large.x-rtl {
+    margin-left: 0;
+    margin-right: 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:554 */
+.x-btn-text.x-btn-icon-top > .x-btn-icon-el-keyboard-large {
+    margin-bottom: 5px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:558 */
+.x-btn-text.x-btn-icon-bottom > .x-btn-icon-el-keyboard-large {
+    margin-top: 5px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:564 */
+.x-btn-arrow-right > .x-btn-icon.x-btn-no-text.x-btn-button-keyboard-large {
+    padding-right: 10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:567 */
+.x-btn-arrow-right > .x-btn-text.x-btn-icon-right > .x-btn-icon-el-keyboard-large {
+    margin-right: 10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:574 */
+.x-btn-arrow-bottom > .x-btn-button-keyboard-large,
+.x-btn-split-bottom > .x-btn-button-keyboard-large {
+    padding-bottom: 3px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:580 */
+.x-btn-wrap-keyboard-large.x-btn-arrow-right:after {
+    width: 28px;
+    background-image: url(images/button/keyboard-large-arrow.png);
+    padding-right: 28px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:598 */
+.x-btn-wrap-keyboard-large.x-rtl.x-btn-arrow-right:after {
+    background-image: url(images/button/keyboard-large-arrow-rtl.png);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:607 */
+.x-btn-wrap-keyboard-large.x-btn-arrow-bottom:after {
+    height: 20px;
+    background-image: url(images/button/keyboard-large-arrow.png);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:647 */
+.x-btn-wrap-keyboard-large.x-btn-split-right:after {
+    width: 35px;
+    background-image: url(images/button/keyboard-large-s-arrow.png);
+    padding-right: 35px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:663 */
+.x-btn-wrap-keyboard-large.x-rtl.x-btn-split-right:after {
+    background-image: url(images/button/keyboard-large-s-arrow-rtl.png);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:686 */
+.x-btn-wrap-keyboard-large.x-btn-split-bottom:after {
+    height: 29px;
+    background-image: url(images/button/keyboard-large-s-arrow-b.png);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:719 */
+.x-btn-split-right > .x-btn-icon.x-btn-no-text.x-btn-button-keyboard-large {
+    padding-right: 10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:722 */
+.x-btn-split-right > .x-btn-text.x-btn-icon-right > .x-btn-icon-el-keyboard-large {
+    margin-right: 10px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:727 */
+.x-btn-focus.x-btn-keyboard-large {
+    border-color: #ed9200;
+    background-image: none;
+    background-color: blue;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #1919ff), color-stop(50%, blue), color-stop(51%, #0000f2), color-stop(0%, blue));
+    background-image: -webkit-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: -moz-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: -o-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: -ms-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    -webkit-box-shadow: #d4d6d9 0 1px 0px 0 inset, #d4d6d9 0 -1px 0px 0 inset, #d4d6d9 -1px 0 0px 0 inset, #d4d6d9 1px 0 0px 0 inset;
+    -moz-box-shadow: #d4d6d9 0 1px 0px 0 inset, #d4d6d9 0 -1px 0px 0 inset, #d4d6d9 -1px 0 0px 0 inset, #d4d6d9 1px 0 0px 0 inset;
+    box-shadow: #d4d6d9 0 1px 0px 0 inset, #d4d6d9 0 -1px 0px 0 inset, #d4d6d9 -1px 0 0px 0 inset, #d4d6d9 1px 0 0px 0 inset;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:762 */
+.x-btn-keyboard-large .x-btn-arrow-el {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 38px;
+    pointer-events: none;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:771 */
+.x-btn-keyboard-large .x-btn-arrow-el.x-rtl {
+    right: inherit;
+    left: 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:778 */
+.x-btn-keyboard-large.x-arrow-focus .x-btn-arrow-el {
+    border: 1px solid #d4d6d9;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:785 */
+.x-btn-over.x-btn-keyboard-large {
+    border-color: #a16300;
+    background-image: none;
+    background-color: #0000eb;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #1919ed), color-stop(50%, #0000eb), color-stop(51%, #0000df), color-stop(0%, #0000eb));
+    background-image: -webkit-linear-gradient(top, #1919ed, #0000eb 50%, #0000df 51%, #0000eb);
+    background-image: -moz-linear-gradient(top, #1919ed, #0000eb 50%, #0000df 51%, #0000eb);
+    background-image: -o-linear-gradient(top, #1919ed, #0000eb 50%, #0000df 51%, #0000eb);
+    background-image: -ms-linear-gradient(top, #1919ed, #0000eb 50%, #0000df 51%, #0000eb);
+    background-image: linear-gradient(top, #1919ed, #0000eb 50%, #0000df 51%, #0000eb);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:812 */
+.x-btn-focus.x-btn-over.x-btn-keyboard-large {
+    -webkit-box-shadow: #fbe9cc 0 1px 0px 0 inset, #fbe9cc 0 -1px 0px 0 inset, #fbe9cc -1px 0 0px 0 inset, #fbe9cc 1px 0 0px 0 inset;
+    -moz-box-shadow: #fbe9cc 0 1px 0px 0 inset, #fbe9cc 0 -1px 0px 0 inset, #fbe9cc -1px 0 0px 0 inset, #fbe9cc 1px 0 0px 0 inset;
+    box-shadow: #fbe9cc 0 1px 0px 0 inset, #fbe9cc 0 -1px 0px 0 inset, #fbe9cc -1px 0 0px 0 inset, #fbe9cc 1px 0 0px 0 inset;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
+.x-btn.x-btn-menu-active.x-btn-keyboard-large,
+.x-btn.x-btn-pressed.x-btn-keyboard-large {
+    border-color: #955411;
+    background-image: none;
+    background-color: #0000bf;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #0000bf), color-stop(50%, #0000b6), color-stop(51%, #0000bf), color-stop(0%, #1919c6));
+    background-image: -webkit-linear-gradient(top, #0000bf, #0000b6 50%, #0000bf 51%, #1919c6);
+    background-image: -moz-linear-gradient(top, #0000bf, #0000b6 50%, #0000bf 51%, #1919c6);
+    background-image: -o-linear-gradient(top, #0000bf, #0000b6 50%, #0000bf 51%, #1919c6);
+    background-image: -ms-linear-gradient(top, #0000bf, #0000b6 50%, #0000bf 51%, #1919c6);
+    background-image: linear-gradient(top, #0000bf, #0000b6 50%, #0000bf 51%, #1919c6);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
+.x-btn-focus.x-btn-menu-active.x-btn-keyboard-large,
+.x-btn-focus.x-btn-pressed.x-btn-keyboard-large {
+    -webkit-box-shadow: #f8e5d1 0 1px 0px 0 inset, #f8e5d1 0 -1px 0px 0 inset, #f8e5d1 -1px 0 0px 0 inset, #f8e5d1 1px 0 0px 0 inset;
+    -moz-box-shadow: #f8e5d1 0 1px 0px 0 inset, #f8e5d1 0 -1px 0px 0 inset, #f8e5d1 -1px 0 0px 0 inset, #f8e5d1 1px 0 0px 0 inset;
+    box-shadow: #f8e5d1 0 1px 0px 0 inset, #f8e5d1 0 -1px 0px 0 inset, #f8e5d1 -1px 0 0px 0 inset, #f8e5d1 1px 0 0px 0 inset;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:897 */
+.x-btn.x-btn-disabled.x-btn-keyboard-large {
+    background-image: none;
+    background-color: blue;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #1919ff), color-stop(50%, blue), color-stop(51%, #0000f2), color-stop(0%, blue));
+    background-image: -webkit-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: -moz-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: -o-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: -ms-linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+    background-image: linear-gradient(top, #1919ff, blue 50%, #0000f2 51%, blue);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:929 */
+.x-btn-focus .x-btn-keyboard-large-tl,
+.x-btn-focus .x-btn-keyboard-large-bl,
+.x-btn-focus .x-btn-keyboard-large-tr,
+.x-btn-focus .x-btn-keyboard-large-br,
+.x-btn-focus .x-btn-keyboard-large-tc,
+.x-btn-focus .x-btn-keyboard-large-bc {
+    background-image: url(images/btn/btn-keyboard-large-focus-corners.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:937 */
+.x-btn-focus .x-btn-keyboard-large-ml,
+.x-btn-focus .x-btn-keyboard-large-mr {
+    background-image: url(images/btn/btn-keyboard-large-focus-sides.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:941 */
+.x-btn-focus .x-btn-keyboard-large-mc {
+    background-color: blue;
+    background-image: url(images/btn/btn-keyboard-large-focus-fbg.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:953 */
+.x-btn-over .x-btn-keyboard-large-tl,
+.x-btn-over .x-btn-keyboard-large-bl,
+.x-btn-over .x-btn-keyboard-large-tr,
+.x-btn-over .x-btn-keyboard-large-br,
+.x-btn-over .x-btn-keyboard-large-tc,
+.x-btn-over .x-btn-keyboard-large-bc {
+    background-image: url(images/btn/btn-keyboard-large-over-corners.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:961 */
+.x-btn-over .x-btn-keyboard-large-ml,
+.x-btn-over .x-btn-keyboard-large-mr {
+    background-image: url(images/btn/btn-keyboard-large-over-sides.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:965 */
+.x-btn-over .x-btn-keyboard-large-mc {
+    background-color: #0000eb;
+    background-image: url(images/btn/btn-keyboard-large-over-fbg.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:977 */
+.x-btn-focus.x-btn-over .x-btn-keyboard-large-tl,
+.x-btn-focus.x-btn-over .x-btn-keyboard-large-bl,
+.x-btn-focus.x-btn-over .x-btn-keyboard-large-tr,
+.x-btn-focus.x-btn-over .x-btn-keyboard-large-br,
+.x-btn-focus.x-btn-over .x-btn-keyboard-large-tc,
+.x-btn-focus.x-btn-over .x-btn-keyboard-large-bc {
+    background-image: url(images/btn/btn-keyboard-large-focus-over-corners.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:985 */
+.x-btn-focus.x-btn-over .x-btn-keyboard-large-ml,
+.x-btn-focus.x-btn-over .x-btn-keyboard-large-mr {
+    background-image: url(images/btn/btn-keyboard-large-focus-over-sides.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:989 */
+.x-btn-focus.x-btn-over .x-btn-keyboard-large-mc {
+    background-color: #0000eb;
+    background-image: url(images/btn/btn-keyboard-large-focus-over-fbg.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1003 */
+.x-btn.x-btn-menu-active .x-btn-keyboard-large-tl,
+.x-btn.x-btn-menu-active .x-btn-keyboard-large-bl,
+.x-btn.x-btn-menu-active .x-btn-keyboard-large-tr,
+.x-btn.x-btn-menu-active .x-btn-keyboard-large-br,
+.x-btn.x-btn-menu-active .x-btn-keyboard-large-tc,
+.x-btn.x-btn-menu-active .x-btn-keyboard-large-bc,
+.x-btn.x-btn-pressed .x-btn-keyboard-large-tl,
+.x-btn.x-btn-pressed .x-btn-keyboard-large-bl,
+.x-btn.x-btn-pressed .x-btn-keyboard-large-tr,
+.x-btn.x-btn-pressed .x-btn-keyboard-large-br,
+.x-btn.x-btn-pressed .x-btn-keyboard-large-tc,
+.x-btn.x-btn-pressed .x-btn-keyboard-large-bc {
+    background-image: url(images/btn/btn-keyboard-large-pressed-corners.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1011 */
+.x-btn.x-btn-menu-active .x-btn-keyboard-large-ml,
+.x-btn.x-btn-menu-active .x-btn-keyboard-large-mr,
+.x-btn.x-btn-pressed .x-btn-keyboard-large-ml,
+.x-btn.x-btn-pressed .x-btn-keyboard-large-mr {
+    background-image: url(images/btn/btn-keyboard-large-pressed-sides.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1015 */
+.x-btn.x-btn-menu-active .x-btn-keyboard-large-mc,
+.x-btn.x-btn-pressed .x-btn-keyboard-large-mc {
+    background-color: #0000bf;
+    background-image: url(images/btn/btn-keyboard-large-pressed-fbg.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1028 */
+.x-btn-focus.x-btn-menu-active .x-btn-keyboard-large-tl,
+.x-btn-focus.x-btn-menu-active .x-btn-keyboard-large-bl,
+.x-btn-focus.x-btn-menu-active .x-btn-keyboard-large-tr,
+.x-btn-focus.x-btn-menu-active .x-btn-keyboard-large-br,
+.x-btn-focus.x-btn-menu-active .x-btn-keyboard-large-tc,
+.x-btn-focus.x-btn-menu-active .x-btn-keyboard-large-bc,
+.x-btn-focus.x-btn-pressed .x-btn-keyboard-large-tl,
+.x-btn-focus.x-btn-pressed .x-btn-keyboard-large-bl,
+.x-btn-focus.x-btn-pressed .x-btn-keyboard-large-tr,
+.x-btn-focus.x-btn-pressed .x-btn-keyboard-large-br,
+.x-btn-focus.x-btn-pressed .x-btn-keyboard-large-tc,
+.x-btn-focus.x-btn-pressed .x-btn-keyboard-large-bc {
+    background-image: url(images/btn/btn-keyboard-large-focus-pressed-corners.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1036 */
+.x-btn-focus.x-btn-menu-active .x-btn-keyboard-large-ml,
+.x-btn-focus.x-btn-menu-active .x-btn-keyboard-large-mr,
+.x-btn-focus.x-btn-pressed .x-btn-keyboard-large-ml,
+.x-btn-focus.x-btn-pressed .x-btn-keyboard-large-mr {
+    background-image: url(images/btn/btn-keyboard-large-focus-pressed-sides.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1040 */
+.x-btn-focus.x-btn-menu-active .x-btn-keyboard-large-mc,
+.x-btn-focus.x-btn-pressed .x-btn-keyboard-large-mc {
+    background-color: #0000bf;
+    background-image: url(images/btn/btn-keyboard-large-focus-pressed-fbg.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1053 */
+.x-btn.x-btn-disabled .x-btn-keyboard-large-tl,
+.x-btn.x-btn-disabled .x-btn-keyboard-large-bl,
+.x-btn.x-btn-disabled .x-btn-keyboard-large-tr,
+.x-btn.x-btn-disabled .x-btn-keyboard-large-br,
+.x-btn.x-btn-disabled .x-btn-keyboard-large-tc,
+.x-btn.x-btn-disabled .x-btn-keyboard-large-bc {
+    background-image: url(images/btn/btn-keyboard-large-disabled-corners.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1061 */
+.x-btn.x-btn-disabled .x-btn-keyboard-large-ml,
+.x-btn.x-btn-disabled .x-btn-keyboard-large-mr {
+    background-image: url(images/btn/btn-keyboard-large-disabled-sides.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1065 */
+.x-btn.x-btn-disabled .x-btn-keyboard-large-mc {
+    background-color: blue;
+    background-image: url(images/btn/btn-keyboard-large-disabled-fbg.gif);
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1075 */
+.x-nbr .x-btn-keyboard-large {
+    background-image: none;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1081 */
+.x-btn-disabled.x-btn-keyboard-large {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    opacity: 0.5;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1100 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-keyboard-large.x-segmented-button-first {
+    border-right-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1102 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-keyboard-large.x-segmented-button-first .x-btn-keyboard-large-mc {
+    padding-right: 3px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1106 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-keyboard-large.x-segmented-button-middle {
+    border-right-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1108 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-keyboard-large.x-segmented-button-middle .x-btn-keyboard-large-mc {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1114 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-keyboard-large.x-segmented-button-last .x-btn-keyboard-large-mc {
+    padding-left: 3px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1121 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-keyboard-large.x-segmented-button-first {
+    border-bottom-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1123 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-keyboard-large.x-segmented-button-first .x-btn-keyboard-large-mc {
+    padding-bottom: 3px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1127 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-keyboard-large.x-segmented-button-middle {
+    border-bottom-width: 1px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1129 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-keyboard-large.x-segmented-button-middle .x-btn-keyboard-large-mc {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1135 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-keyboard-large.x-segmented-button-last .x-btn-keyboard-large-mc {
+    padding-top: 3px !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1141 */
+.x-nbr .x-segmented-button-item.x-btn-keyboard-large:after {
+    content: ' ';
+    border-style: solid;
+    border-width: 0;
+    position: absolute;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1159 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-keyboard-large:after {
+    top: 1px;
+    right: 0;
+    bottom: 1px;
+    left: 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1165 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-keyboard-large.x-segmented-button-first:after {
+    left: 1px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1168 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-keyboard-large.x-segmented-button-last:after {
+    right: 1px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1174 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-keyboard-large:after {
+    top: 0;
+    right: 1px;
+    bottom: 0;
+    left: 1px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1180 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-keyboard-large.x-segmented-button-first:after {
+    top: 1px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1183 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-keyboard-large.x-segmented-button-last:after {
+    bottom: 1px;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1190 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-keyboard-large:after {
+    border-width: 1px;
+    border-color: #d4d6d9;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1204 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-keyboard-large:after {
+    border-width: 1px;
+    border-color: #fbe9cc;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1219 */
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-keyboard-large:after,
+.x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-keyboard-large:after {
+    border-width: 1px;
+    border-color: #f8e5d1;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-keyboard-large:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-keyboard-large-focus-corners.gif), sides:url(images/btn/btn-keyboard-large-focus-sides.gif), frame-bg:url(images/btn/btn-keyboard-large-focus-fbg.gif)" !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-over.x-btn-keyboard-large:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-keyboard-large-over-corners.gif), sides:url(images/btn/btn-keyboard-large-over-sides.gif), frame-bg:url(images/btn/btn-keyboard-large-over-fbg.gif)" !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-keyboard-large:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-keyboard-large-focus-over-corners.gif), sides:url(images/btn/btn-keyboard-large-focus-over-sides.gif), frame-bg:url(images/btn/btn-keyboard-large-focus-over-fbg.gif)" !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-pressed.x-btn-keyboard-large:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-keyboard-large-pressed-corners.gif), sides:url(images/btn/btn-keyboard-large-pressed-sides.gif), frame-bg:url(images/btn/btn-keyboard-large-pressed-fbg.gif)" !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-keyboard-large:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-keyboard-large-focus-pressed-corners.gif), sides:url(images/btn/btn-keyboard-large-focus-pressed-sides.gif), frame-bg:url(images/btn/btn-keyboard-large-focus-pressed-fbg.gif)" !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-disabled.x-btn-keyboard-large:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:3px 3px 3px 3px, corners:url(images/btn/btn-keyboard-large-disabled-corners.gif), sides:url(images/btn/btn-keyboard-large-disabled-sides.gif), frame-bg:url(images/btn/btn-keyboard-large-disabled-fbg.gif)" !important;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1246 */
+.x-button-keyboard-large-cell > .x-grid-cell-inner {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/ext/classic/theme-neutral/sass/src/button/Button.scss:1251 */
+.x-button-keyboard-large-cell > .x-grid-cell-inner >.x-btn-keyboard-large {
+    vertical-align: top;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:155 */
+@keyframes alarm {
+    /* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:156 */
+    0% {
+        /*
 .x-panel-header-title-navigation > .x-title-text-navigation:after {
-    top: 30px;
-    right: -24px;
+  top: 30px;
+  right: -24px;
+}
+
+.x-title-icon, .x-tree-icon,.x-btn-icon-el,.x-menu-item-icon,.x-menu-item-link {
+  font-family: FontAwesome !important;
+  color: #fff !important;
+}
+
+.x-title-icon{
+  font-size: 30px !important;
+  margin-top: -15px;
+}
+
+.FontAwesome{
+  font-family: FontAwesome !important;
+}
+
+*/
+        background: red;
+    }
+    /* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:159 */
+    50% {
+        background: black;
+    }
+    /* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:162 */
+    100% {
+        background: red;
+    }
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:167 */
+.alarm {
+    animation: alarm 2s linear 1s infinite alternate;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:171 */
+.hold {
+    background: peru;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:179 */
+.opacity1 {
+    opacity: 1;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:183 */
+.disableSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* /Applications/XAMPP/xamppfiles/htdocs/graph/classic/sass/src/view/main/Main.scss:191 */
+.phoneButton {
+    border-radius: 20px;
 }

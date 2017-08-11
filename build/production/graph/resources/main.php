@@ -275,13 +275,13 @@ function getDevs($arList)
 
 function getDevChildren($arList, $devValue, $redis)
 {
-    $types = array('AI', 'AO', 'AV', 'BI', 'BO', 'BV', "SCHDULE");
+    $types = array('AI', 'AO', 'AV', 'BI', 'BO', 'BV', "SCHDULE","COMMAND","DEVICE");
 
     $arr = array();
-    for ($i = 0; $i <= 6; $i++) {
+    for ($i = 0; $i <= 8; $i++) {
         $children = getChildren($arList, $devValue . (string)$i, $redis);
         if (sizeof($children)) {
-            array_push($arr, array('text' => $types[$i], 'leaf' => false, "checked"=>false,'children' => $children));
+            array_push($arr, array('text' => $types[$i], 'leaf' => false,"visible"=>$i==7?false:true, "checked"=>false,'children' => $children));
         }
     }
     return $arr;
