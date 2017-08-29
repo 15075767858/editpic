@@ -381,6 +381,9 @@ Ext.define('editpic.view.img.CanvasImg', {
             me.clearInterval();
             return;
         }
+        if (me.isLinkDataBase == false & me.itype == 0) {
+            return;
+        }
         me.ip = ip;
         me.port = port;
         me.nodename = nodename;
