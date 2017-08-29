@@ -99,7 +99,6 @@ Ext.define('editpic.view.window.CanvasConponmentWindow', {
             {
                 text: "Cancel",
                 handler: function () {
-
                     me.close()
                 }
             }

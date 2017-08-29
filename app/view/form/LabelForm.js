@@ -30,9 +30,11 @@ Ext.define('editpic.view.form.LabelForm', {
                     publishes: {
                         value: true
                     },
+                    inputValue:true,
+                    uncheckedValue:false,
                     name: "isLinkDataBase",
-                    hidden: itype == 1,
-                    disabled: itype == 1
+                    hidden: itype != 0,
+                    disabled: itype != 0
                 },
                 {
                     xtype: "numberfield",

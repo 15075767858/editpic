@@ -16,19 +16,28 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
         if (itype == 0 || itype == 1 || itype == 2 || itype == 5) {
             var nodeNameStore = My.getDevStore(me.values.ip, me.values.port)
             var nodeTypeStore = My.getDevTypeStore(me.values.ip, me.values.port, me.values.nodename);
-            me.items = [{
+            me.defaults = {}
+            me.items = [
+                {
                     xtype: 'checkbox',
                     fieldLabel: "bind",
                     name: 'isBind',
                     hidden: true,
                     inputValue: true,
+                    uncheckedValue: false,
                     reference: "isBind",
-                    bind: itype != 0 || {
-                        disabled: "{!isLinkDataBase.checked}"
-                    },
+
                     listeners: {
                         render: function (checkbox) {
-                            checkbox.setValue(true)
+                            //alert("asd")
+                            if (itype == 0) {
+                                checkbox.setBind({
+                                    disabled: "{!isLinkDataBase.checked}",
+                                    value: "{isLinkDataBase.checked}"
+                                })
+                            } else {
+                                checkbox.setValue(true)
+                            }
                         }
                     },
                     handler: function (field, value) {
@@ -45,7 +54,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     }
                 },
                 {
-                    //xtype: "textfield",
                     xtype: "combo",
                     flex: 3,
                     fieldLabel: "ip",
@@ -88,7 +96,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 },
                 {
                     xtype: "combo",
-                    //flex: 2,
                     bind: {
                         hidden: "{!isBind.checked}"
                     },
@@ -103,7 +110,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                     itemId: "devscombo",
                     reference: "devsfield",
                     editable: true,
-
                     init: function (ip, port) {
                         var combo = this;
                         combo.ip = ip;
@@ -155,53 +161,53 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                 modal: true,
 
                                 items: [{
-                                        rootVisible: false,
-                                        xtype: "treepanel",
-                                        width: "100%",
-                                        height: "100%",
-                                        scrollable: "y",
-                                        modal: true,
-                                        listeners: {
-                                            boxready: function (treePanel) {
-                                                if (!combo.value) {
-                                                    return
-                                                }
-                                                setTimeout(function () {
-                                                    var node = treePanel.store.findNode('value', combo.value)
-                                                    var path = node.getPath()
-                                                    treePanel.selectPath(path)
-                                                }, 1000)
+                                    rootVisible: false,
+                                    xtype: "treepanel",
+                                    width: "100%",
+                                    height: "100%",
+                                    scrollable: "y",
+                                    modal: true,
+                                    listeners: {
+                                        boxready: function (treePanel) {
+                                            if (!combo.value) {
+                                                return
+                                            }
+                                            setTimeout(function () {
+                                                var node = treePanel.store.findNode('value', combo.value)
+                                                var path = node.getPath()
+                                                treePanel.selectPath(path)
+                                            }, 1000)
 
-                                            }
-                                        },
-                                        tbar: [{
-                                            text: 'Expand All',
-                                            xtype: "button",
-                                            handler: function (th) {
-                                                var me = this.up("treepanel");
-                                                me.expandAll();
-                                            }
-                                        }, {
-                                            text: 'Collapse All',
-                                            xtype: "button",
-                                            handler: function (th) {
-                                                var me = this.up("treepanel");
-                                                me.collapseAll();
-                                            }
-                                        }],
-
-                                        store: Ext.create("Ext.data.TreeStore", {
-                                            autoLoad: true,
-                                            url: "resources/main.php?par=nodes",
-                                            proxy: {
-                                                type: "ajax",
-                                                url: "resources/main.php?par=nodes&ip=" + combo.ip + "&port=" + combo.port + "",
-                                                reader: {
-                                                    type: "json"
-                                                }
-                                            }
-                                        })
+                                        }
                                     },
+                                    tbar: [{
+                                        text: 'Expand All',
+                                        xtype: "button",
+                                        handler: function (th) {
+                                            var me = this.up("treepanel");
+                                            me.expandAll();
+                                        }
+                                    }, {
+                                        text: 'Collapse All',
+                                        xtype: "button",
+                                        handler: function (th) {
+                                            var me = this.up("treepanel");
+                                            me.collapseAll();
+                                        }
+                                    }],
+
+                                    store: Ext.create("Ext.data.TreeStore", {
+                                        autoLoad: true,
+                                        url: "resources/main.php?par=nodes",
+                                        proxy: {
+                                            type: "ajax",
+                                            url: "resources/main.php?par=nodes&ip=" + combo.ip + "&port=" + combo.port + "",
+                                            reader: {
+                                                type: "json"
+                                            }
+                                        }
+                                    })
+                                },
                                     {
                                         xtype: "grid",
                                         width: "100%",
@@ -254,17 +260,17 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                                 ],
 
                                 buttons: [{
-                                        text: "Select mode",
-                                        handler: function () {
-                                            var activeItem = win.layout.getActiveItem();
-                                            if (activeItem.next()) {
-                                                win.layout.setActiveItem(activeItem.next())
-                                            } else {
-                                                win.layout.setActiveItem(activeItem.prev())
-                                            }
-
+                                    text: "Select mode",
+                                    handler: function () {
+                                        var activeItem = win.layout.getActiveItem();
+                                        if (activeItem.next()) {
+                                            win.layout.setActiveItem(activeItem.next())
+                                        } else {
+                                            win.layout.setActiveItem(activeItem.prev())
                                         }
-                                    },
+
+                                    }
+                                },
                                     "->",
                                     {
                                         text: "Ok",
@@ -339,17 +345,17 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
 
         if (itype == 3) {
             me.items = [{
-                    xtype: 'checkbox',
-                    fieldLabel: "bind",
-                    name: 'isBind',
-                    hidden: true,
-                    reference: "isBind",
-                    listeners: {
-                        render: function (checkbox) {
-                            checkbox.setValue(true)
-                        }
+                xtype: 'checkbox',
+                fieldLabel: "bind",
+                name: 'isBind',
+                hidden: true,
+                reference: "isBind",
+                listeners: {
+                    render: function (checkbox) {
+                        checkbox.setValue(true)
                     }
-                },
+                }
+            },
                 {
                     xtype: "combo",
                     bind: {
@@ -364,7 +370,6 @@ Ext.define('editpic.view.form.LinkPropertyForm', {
                 }
             ]
         }
-
 
 
         //redis ip port 选择框
