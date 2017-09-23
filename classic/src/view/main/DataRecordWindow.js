@@ -1071,7 +1071,7 @@ Ext.define('QueryDataRecord', {
                 ],
                 plugins: new Ext.ux.ProgressBarPager()
             }
-           
+
         });
 
 
@@ -1097,54 +1097,56 @@ Ext.define('QueryEventRecord', {
         var ip = this.ip || "127.0.0.1";
         var keys = this.keys;
         var pageSize = 25;
-        Ext.apply(this, {
-            store: Ext.create("Ext.data.Store", {
-                autoLoad: true,
-                fields: [{
-                        name: 'Object_Name',
-                        type: 'string'
-                    },
-                    {
-                        name: 'Description',
-                        type: "string"
-                    },
-                    {
-                        name: 'device_instance',
-                        type: 'string'
-                    },
-                    {
-                        name: 'device_number',
-                        type: 'string'
-                    },
-                    {
-                        name: 'Present_Value',
-                        type: 'string'
-                    },
-                    {
-                        name: 'message_number',
-                        type: 'string'
-                    },
-                    {
-                        name: 'last_update_time',
-                        type: 'date'
-                    }
-                ],
-                proxy: {
-                    type: 'ajax',
-                    url: 'resources/mysql.php?par=getEventData&ip=' + ip + "&keys=" + keys,
-                    reader: {
-                        type: 'json',
-                        rootProperty: "topics",
-                        totalProperty: 'totalCount'
-                    }
+        var store = Ext.create("Ext.data.Store", {
+            autoLoad: true,
+            fields: [{
+                name: 'Object_Name',
+                type: 'string'
+            },
+                {
+                    name: 'Description',
+                    type: "string"
                 },
-                listeners: {
-                    load: function () {
-                        console.log(arguments)
-                    }
+                {
+                    name: 'device_instance',
+                    type: 'string'
+                },
+                {
+                    name: 'device_number',
+                    type: 'string'
+                },
+                {
+                    name: 'Present_Value',
+                    type: 'string'
+                },
+                {
+                    name: 'message_number',
+                    type: 'string'
+                },
+                {
+                    name: 'last_update_time',
+                    type: 'date'
                 }
-            }),
-            columns: [{
+            ],
+            proxy: {
+                type: 'ajax',
+                url: 'resources/mysql.php?par=getEventData&ip=' + ip + "&keys=" + keys,
+                reader: {
+                    type: 'json',
+                    rootProperty: "topics",
+                    totalProperty: 'totalCount'
+                }
+            },
+            listeners: {
+                load: function () {
+                    console.log(arguments)
+                }
+            }
+        })
+        Ext.apply(this, {
+            store: store,
+            columns: [
+                {
                     text: 'Device Type',
                     sortable: true,
                     hidden: true,
@@ -1215,13 +1217,14 @@ Ext.define('QueryEventRecord', {
             ],
             bbar: {
                 xtype: 'pagingtoolbar',
-                pageSize: 10,
+                pageSize: 25,
+                store: store,
                 displayInfo: true,
-                //plugins: Ext.ProgressBar()
                 items: [
                     "-", {
                         listeners: {
                             change: function (field, newV, oldV) {
+                                field.up().pageSize = newV;
                                 me.store.setPageSize(newV)
                             }
                         },
@@ -1231,8 +1234,10 @@ Ext.define('QueryEventRecord', {
                         labelWidth: 50,
                         width: 100
                     }
-                ]
+                ],
+                plugins: new Ext.ux.ProgressBarPager()
             }
+
         });
         this.callParent();
     },

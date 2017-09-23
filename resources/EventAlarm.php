@@ -146,13 +146,11 @@ class EventAlarm
     public function removeTimeoutTag($curtime)
     {
         $this->getAlarmhisXml();
-
         $dom = new DOMDocument('1.0', 'UTF-8');
         $dom->formatOutput = true;
         $dom->load($this::alarmhisXml);
         $timeout = $dom->getElementsByTagName("savetime")->item(0)->nodeValue or 0;
         if ($timeout == 0) {
-            return 0;
         }
         $logs = $dom->getElementsByTagName("log");
         for ($i = $logs->length; $i > 0; $i--) {
@@ -162,7 +160,6 @@ class EventAlarm
                 $log->parentNode->removeChild($log);
             }
         }
-
         return $dom->save($this::alarmhisXml);
     }
 
