@@ -979,7 +979,7 @@ Ext.define('QueryDataRecord', {
             pageSize: pageSize,
             proxy: {
                 type: 'ajax',
-                url: '/php/mysql.php?par=getDataRecord&ip=' + ip + "&keys=" + keys,
+                url: 'resources/mysql.php?par=getDataRecord&ip=' + ip + "&keys=" + keys,
                 reader: {
                     type: 'json',
                     rootProperty: "topics",
@@ -1131,7 +1131,7 @@ Ext.define('QueryEventRecord', {
                 ],
                 proxy: {
                     type: 'ajax',
-                    url: 'php/mysql.php?par=getEventData&ip=' + ip + "&keys=" + keys,
+                    url: 'resources/mysql.php?par=getEventData&ip=' + ip + "&keys=" + keys,
                     reader: {
                         type: 'json',
                         rootProperty: "topics",
