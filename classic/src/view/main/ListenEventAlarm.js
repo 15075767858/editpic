@@ -14,7 +14,15 @@ Ext.define('editpic.view.EventAlarm.ListenEventAlarm', {
     autoShow: true,
     header: {
         title: "Listen Event Alarm",
-        items: [{
+        items: [
+            {
+                xtype: "button",
+                text: "Historical Record",
+                handler: function () {
+                    Ext.createByAlias("DataRecordWindow")
+                }
+            },
+            {
             xtype: "button",
             text: "User Manager",
             handler:function(){
