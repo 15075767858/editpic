@@ -306,10 +306,10 @@ Ext.define('graph.view.window.DataRecordWindow', {
                 var qdr = Ext.createByAlias("QueryDataRecord", {
                     ip: IPCombo.value,
                     keys: keysArr.join(","),
-                    height:Ext.getBody().getHeight()/2.5,
+                    height: Ext.getBody().getHeight() / 2.5,
                 })
                 var cdr = Ext.createByAlias("ChartDataRecord", {
-                    height:Ext.getBody().getHeight()/2,
+                    height: Ext.getBody().getHeight() / 2,
                     store: qdr.store
                 })
                 Ext.create("Ext.window.Window", {
@@ -797,17 +797,7 @@ Ext.define("modbusConfig", {
                 },
 
             },
-            {
-                xtype: 'actioncolumn',
-                text: "Setting",
-                hidden: true,
-                width: 60,
-                items: [{
-                    icon: "resources/setting_24px.png",
-                    tooltip: 'Edit',
 
-                }]
-            }
         ]
         me.callParent();
     },
@@ -906,6 +896,104 @@ Ext.define("ListenIps", {
                 minValue: 1,
                 //maxValue: 99
             }
+        },
+        {
+            text: "Points",
+            dataIndex: "Points",
+            flex: 1,
+
+        },
+        {
+            menuDisabled: true,
+            sortable: false,
+            xtype: 'actioncolumn',
+            flex: 1,
+            text: "Setting",
+            items: [{
+                icon: "resources/icons/config_set_24px.png",
+                tooltip: 'Sell stock',
+                handler: function (grid, rowIndex, colIndex) {
+
+                    var win = Ext.create("Ext.window.Window", {
+                        title: "Set Points",
+                        autoShow: true,
+                        width: 600,
+                        height: 400,
+                        items: [{
+                            xtype: "grid",
+                            plugins: [
+                                Ext.create('Ext.grid.plugin.CellEditing', {
+                                    clicksToEdit: 1
+                                })
+                            ],
+                            store: {
+                                fields: ["number", "loop_time", "history", "event"]
+                            },
+                            columns: [{
+                                text: "key",
+                                dataIndex: "number"
+                            }, {
+                                text: "loop time (ms)",
+                                dataIndex: "loop_time",
+                                tooltip:"If the value is 0, the subscription mode is used.",
+                                editor: {
+                                    xtype: 'numberfield',
+                                    step: 1000,
+                                    allowBlank: false,
+                                    minValue: 0
+                                }
+                            }, {
+                                xtype: 'checkcolumn',
+                                text: "history",
+                                dataIndex: "history"
+                            }, {
+                                xtype: 'checkcolumn',
+                                text: "event",
+                                dataIndex: "event"
+                            }]
+                        }],
+                        buttons: [{
+                                text: "Change",
+                                handler: function () {
+
+                                    Ext.create("SelectKeyWinodw", {
+                                        callback: function () {
+                                            var keys = this.down("treepanel").getChecked();
+                                            keys = keys.filter(function (val, index) {
+                                                if (val.data.leaf) {
+                                                    return true;
+                                                } else {
+                                                    return false;
+                                                }
+                                            })
+                                            keys.sort(function (a, b) {
+                                                return a.data.value[4] - b.data.value[4];
+                                            })
+                                            for (var i = 0; i < keys.length; i++) {
+                                                win.down("grid").store.add({
+                                                    number: keys[i].data.value,
+                                                    "loop_time": 0,
+                                                    event: 1,
+
+                                                })
+                                            }
+                                            console.log(keys)
+                                            console.log(arguments)
+                                        }
+                                    })
+                                }
+                            },
+                            "->",
+                            {
+                                text: "Ok",
+                            }, {
+                                text: "Cancel"
+                            }
+                        ]
+                    })
+                    console.log(arguments)
+                }
+            }],
         }
     ],
     plugins: [
@@ -1100,9 +1188,9 @@ Ext.define('QueryEventRecord', {
         var store = Ext.create("Ext.data.Store", {
             autoLoad: true,
             fields: [{
-                name: 'Object_Name',
-                type: 'string'
-            },
+                    name: 'Object_Name',
+                    type: 'string'
+                },
                 {
                     name: 'Description',
                     type: "string"
@@ -1145,8 +1233,7 @@ Ext.define('QueryEventRecord', {
         })
         Ext.apply(this, {
             store: store,
-            columns: [
-                {
+            columns: [{
                     text: 'Device Type',
                     sortable: true,
                     hidden: true,

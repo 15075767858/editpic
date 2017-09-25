@@ -1,11 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root>
-  <item id="editpic.model.MonitorModel-3">
-    <ip>127.0.0.1</ip>
-    <port>6379</port>
-    <key>1001001</key>
-    <objectname></objectname>
-    <alarmtxt>YXJhcm10eHQ=</alarmtxt>
-    <normaltxt>bm9ybWFsdHh0</normaltxt>
-  </item>
-</root>
+<root></root>
