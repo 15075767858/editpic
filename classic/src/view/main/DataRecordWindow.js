@@ -984,8 +984,9 @@ Ext.define("ListenIps", {
                         buttons: [{
                                 text: "Change",
                                 handler: function () {
-
                                     Ext.create("SelectKeyWinodw", {
+                                        ip:ipgrid.store.getAt(rowIndex).get("ip"),
+                                        port:"6379",
                                         callback: function () {
                                             var keys = this.down("treepanel").getChecked();
                                             keys = keys.filter(function (val, index) {
