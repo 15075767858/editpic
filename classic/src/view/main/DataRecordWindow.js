@@ -854,6 +854,21 @@ Ext.define("ListenIps", {
             item.appendChild(ip)
             item.appendChild(port)
             root.appendChild(item);
+            var points = items[i].data.points;
+            itemAddPoints(item, points);
+        }
+
+        function itemAddPoints(item, points) {
+            var pointArr = points.split(",");
+            for (var i = 0; i < pointArr.length; i++) {
+                var ntheProperty = pointArr[i].split(":");
+                var key = document.createElement("key");
+                key.setAttribute("number", ntheProperty[0]);
+                key.setAttribute("loop_time", ntheProperty[1]);
+                key.setAttribute("history", ntheProperty[2]);
+                key.setAttribute("event", ntheProperty[3]);
+                item.appendChild(key);
+            }
         }
         var xmlstr = '<?xml version="1.0" encoding="utf-8"?>' + root.outerHTML;
         console.log(xmlstr);
@@ -899,9 +914,11 @@ Ext.define("ListenIps", {
         },
         {
             text: "Points",
-            dataIndex: "Points",
+            dataIndex: "points",
             flex: 1,
-
+            editor: {
+                xtype: 'textfield',
+            }
         },
         {
             menuDisabled: true,
@@ -912,13 +929,13 @@ Ext.define("ListenIps", {
             items: [{
                 icon: "resources/icons/config_set_24px.png",
                 tooltip: 'Sell stock',
-                handler: function (grid, rowIndex, colIndex) {
-
+                handler: function (ipgrid, rowIndex, colIndex) {
                     var win = Ext.create("Ext.window.Window", {
                         title: "Set Points",
                         autoShow: true,
                         width: 600,
                         height: 400,
+                        scrollable: "y",
                         items: [{
                             xtype: "grid",
                             plugins: [
@@ -931,11 +948,17 @@ Ext.define("ListenIps", {
                             },
                             columns: [{
                                 text: "key",
-                                dataIndex: "number"
+                                dataIndex: "number",
+                                flex: 1,
+                                editor: {
+                                    xtype: 'textfield',
+                                    allowBlank: false,
+                                }
                             }, {
                                 text: "loop time (ms)",
                                 dataIndex: "loop_time",
-                                tooltip:"If the value is 0, the subscription mode is used.",
+                                flex: 1,
+                                tooltip: "If the value is 0, the subscription mode is used.",
                                 editor: {
                                     xtype: 'numberfield',
                                     step: 1000,
@@ -945,10 +968,16 @@ Ext.define("ListenIps", {
                             }, {
                                 xtype: 'checkcolumn',
                                 text: "history",
+                                flex: 1,
+                                inputValue: 1,
+                                uncheckedValue: 0,
                                 dataIndex: "history"
                             }, {
                                 xtype: 'checkcolumn',
                                 text: "event",
+                                flex: 1,
+                                inputValue: 1,
+                                uncheckedValue: 0,
                                 dataIndex: "event"
                             }]
                         }],
@@ -986,8 +1015,26 @@ Ext.define("ListenIps", {
                             "->",
                             {
                                 text: "Ok",
+                                handler: function () {
+                                    var grid = win.down("grid");
+                                    var store = grid.store;
+                                    var items = store.data.items;
+                                    var keys = [];
+                                    for (var i = 0; i < items.length; i++) {
+                                        var number = items[i].data.number;
+                                        var loop_time = items[i].data.loop_time;
+                                        var event = items[i].data.event || 0;
+                                        var history = items[i].data.history || 0;
+                                        keys.push(number + ":" + loop_time + ":" + event + ":" + history)
+                                    }
+                                    ipgrid.store.getAt(rowIndex).set("points", keys.join(","))
+                                    win.close()
+                                }
                             }, {
-                                text: "Cancel"
+                                text: "Cancel",
+                                handler: function () {
+                                    win.close();
+                                }
                             }
                         ]
                     })
