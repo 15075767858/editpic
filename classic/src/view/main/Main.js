@@ -9,7 +9,6 @@
 Ext.define('editpic.view.main.Main', {
     extend: 'Ext.panel.Panel',
     xtype: 'app-main',
-
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
@@ -51,6 +50,9 @@ Ext.define('editpic.view.main.Main', {
                     maintab.addTab("index")
                 }, 1000)
             }
+            Ext.Ajax.request({
+                url:"/php/mysqlInit.php?par="+"listenNode",
+            })
         }
     },
     createOutLoginMenu: function () {
@@ -128,7 +130,7 @@ Ext.define('editpic.view.main.Main', {
             }, {
                 text: "about",
                 handler: function () {
-                    Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 3.2.1")
+                    Ext.Msg.alert("Version", "<code class='smartiologo'>SmartIO </code>graphTools 3.2.2")
                 }
             }]
         }, {
