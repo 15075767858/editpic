@@ -1013,7 +1013,6 @@ My.getSearch = function () {
 }
 My.login = function (data) {
     My.Ajax("resources/main.php?par=login", function (response) {
-
     }, data)
 }
 My.isLogin = function () {

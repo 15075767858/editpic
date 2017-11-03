@@ -181,6 +181,11 @@ if ($par == "login") {
 
     echo json_encode($_SESSION);
 }
+
+if ($par == 'getLoginInfo') {
+    session_start();
+    echo json_encode($_SESSION);
+}
 if ($par == "getSession") {
     session_start();
     echo json_encode($_SESSION);

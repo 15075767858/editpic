@@ -1,8 +1,8 @@
 Ext.define('editpic.view.ux.KeyBoard', {
     extend: 'Ext.window.Window',
-
     autoShow: true,
     title: "Keybord",
+    id:"keybord",
     requires: [
         'editpic.view.ux.KeyBoardController',
         'editpic.view.ux.KeyBoardModel'
@@ -21,6 +21,7 @@ Ext.define('editpic.view.ux.KeyBoard', {
             width: "97%",
             height: 50,
             margin: 5,
+            inputType: "password",
             value: me.inputValue
         });
 
@@ -51,21 +52,19 @@ Ext.define('editpic.view.ux.KeyBoard', {
     getButton: function (data) {
         var me = this;
         var button = Ext.create("Ext.button.Button", Ext.apply(data, {
-                //ui: "keyboard",
-                style:{
-                    backgroundColor:"blue"
-                },
-                bodyStyle:{
-                    backgroundColor:"blue"
-                },
-                //cls: "opacity1",
-                scale: 'large',
+            //ui: "keyboard",
+            style: {
+                backgroundColor: "blue"
+            },
+            bodyStyle: {
+                backgroundColor: "blue"
+            },
+            //cls: "opacity1",
+            scale: 'large',
 
-                handler: "buttonHandler"
+            handler: "buttonHandler"
 
-            }
-            )
-        )
+        }))
         return button;
     },
     loadKeyBoard: function (keyboardType) {
@@ -104,22 +103,70 @@ Ext.define('editpic.view.ux.KeyBoard', {
                 tdAttrs: {
                     style: 'padding: 5px;'
                 }
-            }, items: [
-                me.getButton({glyph: 55, inputValue: "7"}),
-                me.getButton({glyph: 56, inputValue: "8"}),
-                me.getButton({glyph: 57, inputValue: "9"}),
-                me.getButton({text: "⌫", inputValue: "{del}"}),
-                me.getButton({glyph: 52, inputValue: "4"}),
-                me.getButton({glyph: 53, inputValue: "5"}),
-                me.getButton({glyph: 54, inputValue: "6"}),
-                me.getButton({text: "→", inputValue: "{right}"}),
-                me.getButton({glyph: 49, inputValue: "1"}),
-                me.getButton({glyph: 50, inputValue: "2"}),
-                me.getButton({glyph: 51, inputValue: "3"}),
-                me.getButton({text: "←", inputValue: "{left}"}),
-                me.getButton({glyph: 48, inputValue: "0"}),
-                me.getButton({glyph: 46, inputValue: "."}),
-                me.getButton({text: "Enter", inputValue: "{Enter}", colspan: 2, width: "100%"}),
+            },
+            items: [
+                me.getButton({
+                    glyph: 55,
+                    inputValue: "7"
+                }),
+                me.getButton({
+                    glyph: 56,
+                    inputValue: "8"
+                }),
+                me.getButton({
+                    glyph: 57,
+                    inputValue: "9"
+                }),
+                me.getButton({
+                    text: "⌫",
+                    inputValue: "{del}"
+                }),
+                me.getButton({
+                    glyph: 52,
+                    inputValue: "4"
+                }),
+                me.getButton({
+                    glyph: 53,
+                    inputValue: "5"
+                }),
+                me.getButton({
+                    glyph: 54,
+                    inputValue: "6"
+                }),
+                me.getButton({
+                    text: "→",
+                    inputValue: "{right}"
+                }),
+                me.getButton({
+                    glyph: 49,
+                    inputValue: "1"
+                }),
+                me.getButton({
+                    glyph: 50,
+                    inputValue: "2"
+                }),
+                me.getButton({
+                    glyph: 51,
+                    inputValue: "3"
+                }),
+                me.getButton({
+                    text: "←",
+                    inputValue: "{left}"
+                }),
+                me.getButton({
+                    glyph: 48,
+                    inputValue: "0"
+                }),
+                me.getButton({
+                    glyph: 46,
+                    inputValue: "."
+                }),
+                me.getButton({
+                    text: "Enter",
+                    inputValue: "{Enter}",
+                    colspan: 2,
+                    width: "100%"
+                }),
                 me.getButton({
                     text: "abc",
                     colspan: 3,
@@ -148,29 +195,93 @@ Ext.define('editpic.view.ux.KeyBoard', {
                 tdAttrs: {
                     style: 'padding: 5px;'
                 }
-            }, items: [
-                me.getButton({glyph: 113 - isCase, inputValue: isCase ? "Q" : "q"}),
-                me.getButton({glyph: 119 - isCase, inputValue: isCase ? "W" : "w"}),
-                me.getButton({glyph: 101 - isCase, inputValue: isCase ? "E" : "e"}),
-                me.getButton({glyph: 114 - isCase, inputValue: isCase ? "R" : "r"}),
-                me.getButton({glyph: 116 - isCase, inputValue: isCase ? "T" : "t"}),
-                me.getButton({glyph: 121 - isCase, inputValue: isCase ? "Y" : "y"}),
-                me.getButton({glyph: 117 - isCase, inputValue: isCase ? "U" : "u"}),
-                me.getButton({glyph: 105 - isCase, inputValue: isCase ? "I" : "i"}),
-                me.getButton({glyph: 111 - isCase, inputValue: isCase ? "O" : "o"}),
-                me.getButton({glyph: 112 - isCase, inputValue: isCase ? "P" : "p"}),
-                me.getButton({text: "⌫", inputValue: "{del}"}),
+            },
+            items: [
+                me.getButton({
+                    glyph: 113 - isCase,
+                    inputValue: isCase ? "Q" : "q"
+                }),
+                me.getButton({
+                    glyph: 119 - isCase,
+                    inputValue: isCase ? "W" : "w"
+                }),
+                me.getButton({
+                    glyph: 101 - isCase,
+                    inputValue: isCase ? "E" : "e"
+                }),
+                me.getButton({
+                    glyph: 114 - isCase,
+                    inputValue: isCase ? "R" : "r"
+                }),
+                me.getButton({
+                    glyph: 116 - isCase,
+                    inputValue: isCase ? "T" : "t"
+                }),
+                me.getButton({
+                    glyph: 121 - isCase,
+                    inputValue: isCase ? "Y" : "y"
+                }),
+                me.getButton({
+                    glyph: 117 - isCase,
+                    inputValue: isCase ? "U" : "u"
+                }),
+                me.getButton({
+                    glyph: 105 - isCase,
+                    inputValue: isCase ? "I" : "i"
+                }),
+                me.getButton({
+                    glyph: 111 - isCase,
+                    inputValue: isCase ? "O" : "o"
+                }),
+                me.getButton({
+                    glyph: 112 - isCase,
+                    inputValue: isCase ? "P" : "p"
+                }),
+                me.getButton({
+                    text: "⌫",
+                    inputValue: "{del}"
+                }),
                 {},
-                me.getButton({glyph: 97 - isCase, inputValue: isCase ? "A" : "a"}),
-                me.getButton({glyph: 115 - isCase, inputValue: isCase ? "S" : "s"}),
-                me.getButton({glyph: 100 - isCase, inputValue: isCase ? "D" : "d"}),
-                me.getButton({glyph: 102 - isCase, inputValue: isCase ? "F" : "f"}),
-                me.getButton({glyph: 103 - isCase, inputValue: isCase ? "G" : "g"}),
-                me.getButton({glyph: 104 - isCase, inputValue: isCase ? "H" : "h"}),
-                me.getButton({glyph: 106 - isCase, inputValue: isCase ? "J" : "j"}),
-                me.getButton({glyph: 107 - isCase, inputValue: isCase ? "K" : "k"}),
-                me.getButton({glyph: 108 - isCase, inputValue: isCase ? "L" : "l"}),
-                me.getButton({text: "→", inputValue: "{right}"}),
+                me.getButton({
+                    glyph: 97 - isCase,
+                    inputValue: isCase ? "A" : "a"
+                }),
+                me.getButton({
+                    glyph: 115 - isCase,
+                    inputValue: isCase ? "S" : "s"
+                }),
+                me.getButton({
+                    glyph: 100 - isCase,
+                    inputValue: isCase ? "D" : "d"
+                }),
+                me.getButton({
+                    glyph: 102 - isCase,
+                    inputValue: isCase ? "F" : "f"
+                }),
+                me.getButton({
+                    glyph: 103 - isCase,
+                    inputValue: isCase ? "G" : "g"
+                }),
+                me.getButton({
+                    glyph: 104 - isCase,
+                    inputValue: isCase ? "H" : "h"
+                }),
+                me.getButton({
+                    glyph: 106 - isCase,
+                    inputValue: isCase ? "J" : "j"
+                }),
+                me.getButton({
+                    glyph: 107 - isCase,
+                    inputValue: isCase ? "K" : "k"
+                }),
+                me.getButton({
+                    glyph: 108 - isCase,
+                    inputValue: isCase ? "L" : "l"
+                }),
+                me.getButton({
+                    text: "→",
+                    inputValue: "{right}"
+                }),
                 me.getButton({
                     text: "CapsLock",
                     inputValue: "{bksp}",
@@ -178,18 +289,60 @@ Ext.define('editpic.view.ux.KeyBoard', {
                     xtype: "segmentedbutton",
                     width: "100%"
                 }),
-                me.getButton({glyph: 122 - isCase, inputValue: isCase ? "Z" : "z"}),
-                me.getButton({glyph: 120 - isCase, inputValue: isCase ? "X" : "x"}),
-                me.getButton({glyph: 99 - isCase, inputValue: isCase ? "C" : "c"}),
-                me.getButton({glyph: 118 - isCase, inputValue: isCase ? "V" : "v"}),
-                me.getButton({glyph: 98 - isCase, inputValue: isCase ? "B" : "b"}),
-                me.getButton({glyph: 110 - isCase, inputValue: isCase ? "N" : "n"}),
-                me.getButton({glyph: 109 - isCase, inputValue: isCase ? "M" : "m"}),
-                me.getButton({glyph: 46, inputValue: "."}),
-                me.getButton({text: "←", inputValue: "{left}"}),
-                me.getButton({text: "123", inputValue: "{123}", colspan: 2, width: "100%"}),
-                me.getButton({text: " ", inputValue: " ", colspan: 7, width: "100%"}),
-                me.getButton({text: "Enter", inputValue: "{Enter}", colspan: 2, width: "100%"})
+                me.getButton({
+                    glyph: 122 - isCase,
+                    inputValue: isCase ? "Z" : "z"
+                }),
+                me.getButton({
+                    glyph: 120 - isCase,
+                    inputValue: isCase ? "X" : "x"
+                }),
+                me.getButton({
+                    glyph: 99 - isCase,
+                    inputValue: isCase ? "C" : "c"
+                }),
+                me.getButton({
+                    glyph: 118 - isCase,
+                    inputValue: isCase ? "V" : "v"
+                }),
+                me.getButton({
+                    glyph: 98 - isCase,
+                    inputValue: isCase ? "B" : "b"
+                }),
+                me.getButton({
+                    glyph: 110 - isCase,
+                    inputValue: isCase ? "N" : "n"
+                }),
+                me.getButton({
+                    glyph: 109 - isCase,
+                    inputValue: isCase ? "M" : "m"
+                }),
+                me.getButton({
+                    glyph: 46,
+                    inputValue: "."
+                }),
+                me.getButton({
+                    text: "←",
+                    inputValue: "{left}"
+                }),
+                me.getButton({
+                    text: "123",
+                    inputValue: "{123}",
+                    colspan: 2,
+                    width: "100%"
+                }),
+                me.getButton({
+                    text: " ",
+                    inputValue: " ",
+                    colspan: 7,
+                    width: "100%"
+                }),
+                me.getButton({
+                    text: "Enter",
+                    inputValue: "{Enter}",
+                    colspan: 2,
+                    width: "100%"
+                })
             ]
         })
         return container

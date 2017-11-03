@@ -16,22 +16,23 @@ Ext.define('editpic.Application', {
         // TODO - Launch the application
 
 
-        Ext.Ajax.request({
-            url: "resources/main.php?par=getLoginInfo",
-            method: "post",
-            success: function (response) {
-                try {
-                    var resJson = Ext.decode(response.responseText);
-                    if (resJson.isLogin) {
-                    } else {
-                        window.location.href = "/"
+        if (idebug) {
+            Ext.Ajax.request({
+                url: "resources/main.php?par=getLoginInfo",
+                method: "post",
+                success: function (response) {
+                    try {
+                        var resJson = Ext.decode(response.responseText);
+                        if (resJson.isLogin) {} else {
+                            window.location.href = "/"
+                        }
+                    } catch (e) {
+                        Ext.Msg.alert('error', e + response.responseText);
+                        throw new Error(e);
                     }
-                } catch (e) {
-                    Ext.Msg.alert('error', e + response.responseText);
-                    throw new Error(e);
                 }
-            }
-        })
+            })
+        }
         //testComponent()
 
         Ext.create("editpic.view.EventAlarm.ListenEventAlarm")
@@ -87,7 +88,7 @@ function testComponent() {
         setTimeout(function () {
             //            testwindow = Ext.create("ConfigHistoryTableWindow");
 
-            return ;
+            return;
 
             var tablename = "tb6"
             My.ShowHistoryTable(tablename)
