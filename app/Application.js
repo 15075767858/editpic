@@ -17,6 +17,7 @@ Ext.define('editpic.Application', {
 
 
         if (idebug) {
+            
             Ext.Ajax.request({
                 url: "resources/main.php?par=getLoginInfo",
                 method: "post",
@@ -24,7 +25,9 @@ Ext.define('editpic.Application', {
                     try {
                         var resJson = Ext.decode(response.responseText);
                         if (resJson.isLogin) {} else {
+                            if(location.hash!=="#nopassword"){
                             window.location.href = "/"
+                        }
                         }
                     } catch (e) {
                         Ext.Msg.alert('error', e + response.responseText);
